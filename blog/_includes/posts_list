@@ -1,4 +1,0 @@
-  {% for post in posts_list  %}
-    <li><span>{{ post.date | date: "%B %e, %Y" }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}{% if post.tagline %} - {{post.tagline}}{% endif %}</a></li>
-  {% endfor %}
-{% assign posts_list = nil %}
