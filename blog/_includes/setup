@@ -1,0 +1,15 @@
+{% capture jbcache %}
+    {% if site.safe and site.BASE_PATH and site.BASE_PATH != '' %}
+      {% assign BASE_PATH = site.JB.BASE_PATH %}
+      {% assign HOME_PATH = site.JB.BASE_PATH %}
+    {% else %}
+      {% assign BASE_PATH = nil %}
+      {% assign HOME_PATH = "/" %}
+    {% endif %}
+
+    {% if site.ASSET_PATH %}
+      {% assign ASSET_PATH = site.ASSET_PATH %}
+    {% else %}
+      {% capture ASSET_PATH %}{{ BASE_PATH }}/assets/themes/{{ page.theme.name }}{% endcapture %}
+    {% endif %}  
+{% endcapture %}{% assign jbcache = nil %}

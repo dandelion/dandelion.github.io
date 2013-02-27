@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Dandelion Project</title>
+ <link href="http://dandelion.github.com/blog//atom.xml" rel="self"/>
+ <link href="http://dandelion.github.com/blog"/>
+ <updated>2013-02-27T14:27:51+01:00</updated>
+ <id>http://dandelion.github.com/blog</id>
+ <author>
+   <name>Dandelion Team</name>
+   <email>dandelion-devteam@googlegroups.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>Dandelion Datatables</title>
+   <link href="http://dandelion.github.com/blog/versions/2013/02/23/dandelion-datatables"/>
+   <updated>2013-02-23T00:00:00+01:00</updated>
+   <id>http://dandelion.github.com/blog/versions/2013/02/23/dandelion-datatables</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;Dandelion-Datatables v0.8.5 has been released in Maven Central.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id='issues'&gt;Issues&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='https://github.com/dandelion/issues/issues/19'&gt;issue #19&lt;/a&gt; - Shift in the first row if a columnTag has a body&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/dandelion/issues/issues/20'&gt;issue #20&lt;/a&gt; - ExportLink position issue when Bootstrap2 theme enabled&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;for more information, see dandelion-datatables &lt;a href='http://dandelion.github.com/dandelion-datatables/changelog.html'&gt;changlog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Dandelion Datatables</title>
+   <link href="http://dandelion.github.com/blog/versions/2013/02/21/dandelion-datatables"/>
+   <updated>2013-02-21T00:00:00+01:00</updated>
+   <id>http://dandelion.github.com/blog/versions/2013/02/21/dandelion-datatables</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;Dandelion-Datatables v0.8.4 has been released in Maven Central.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id='changes'&gt;Changes&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DataTables4j&lt;/strong&gt; has became &lt;strong&gt;Dandelion-datatables&lt;/strong&gt;! See the &lt;a href='http://dandelion.github.com/dandelion-datatables/migration.html'&gt;migration guide&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id='issues'&gt;Issues&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='https://github.com/dandelion/issues/issues/16'&gt;issue #16&lt;/a&gt; - Dynamic value for table&amp;#8217;s id&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/dandelion/issues/issues/17'&gt;issue #17&lt;/a&gt; - Table display issue&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;for more information, see dandelion-datatables &lt;a href='http://dandelion.github.com/dandelion-datatables/changelog.html'&gt;changlog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Announcement</title>
+   <link href="http://dandelion.github.com/blog/news/2013/02/16/announcement"/>
+   <updated>2013-02-16T00:00:00+01:00</updated>
+   <id>http://dandelion.github.com/blog/news/2013/02/16/announcement</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;Hi all!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Along with the &lt;a href='https://github.com/datatables4j'&gt;DataTables4j&lt;/a&gt; development, Romain and I have been working on a new project for several weeks. Its name? Dandelion!&lt;/p&gt;
+
+&lt;p&gt;A brand new doc site is coming, with lots of explanations, but to be succinct, here are the main guidelines of Dandelion :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Simplications in web assets management (js, css, &amp;#8230;), you&amp;#8217;ll see how a bit later&lt;/li&gt;
+
+&lt;li&gt;Rich and easily expandable component library for easier web development&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You may ask yourself what kind of component?&lt;/p&gt;
+
+&lt;p&gt;Well, the first one will be, guess what, &lt;a href='https://github.com/dandelion/dandelion-datatables'&gt;Dandelion-datatables&lt;/a&gt;! :-)&lt;/p&gt;
+
+&lt;p&gt;The goal is indeed to provide multiples components, that you will be able to use in your webapp, still with JSP and Thymeleaf support.&lt;/p&gt;
+
+&lt;p&gt;So, DataTables4j will become the first Dandelion web component!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;More technically speaking now.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To avoid complicated and cumbersome migration from DataTables4j to Dandelion-datatables, we decided to switch to Dandelion relatively early, that&amp;#8217;s why we&amp;#8217;re going to operate the change in the v0.8.4.&lt;/p&gt;
+
+&lt;p&gt;Basically, the main changes consist in simple renaming but a migration guide will still be prepared.&lt;/p&gt;
+
+&lt;p&gt;DataTables4j development, enhancements and bug fixes will be moved to Dandelion-datatables.&lt;/p&gt;
+
+&lt;p&gt;Current DataTables4j source repositories, issues, documentation, forum and demos will remain available, except we&amp;#8217;ll add some (discrete) announcements to invite you to switch to Dandelion. ;-)&lt;/p&gt;
+
+&lt;p&gt;Current support, through this forum, won&amp;#8217;t be stopped but all the questions/bugs that need code update will be done in the new Github repo (Dandelion-datatables).&lt;/p&gt;
+
+&lt;p&gt;Finally, all current opened issues have already been copied to the &lt;a href='http://github.com/Dandelion/issues/issues'&gt;new issues repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We&amp;#8217;ll keep you updated!&lt;/p&gt;
+
+&lt;p&gt;Regards,&lt;/p&gt;
+
+&lt;p&gt;Romain and Thibault&lt;/p&gt;</content>
+ </entry>
+ 
+ 
+</feed>
