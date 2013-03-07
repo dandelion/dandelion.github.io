@@ -1,0 +1,25 @@
+permalink: /blog/:year/:month/:day/:title 
+
+auto: true
+pygments: true
+
+title : Dandelion Project
+tagline: Extensible web library for funnier web development
+author :
+  name : Dandelion Team
+  email : dandelion-devteam@googlegroups.com
+  github : dandelion
+  twitter : dandelion_proj
+
+production_url : http://dandelion.github.com
+
+analytics_google_tracking_id : 'UA-33818546-8'
+
+BASE_PATH : http://dandelion.github.com
+ASSET_PATH : false
+
+atom_path : /blog/atom.xml
+rss_path : /blog/rss.xml
+archive_path: /blog/archive.html
+categories_path : /blog/categories.html
+tags_path : /blog/tags.html
