@@ -15,4 +15,4 @@ tags : [dandelion-datatables]
 * [issue #16](https://github.com/dandelion/issues/issues/16) - Dynamic value for table's id
 * [issue #17](https://github.com/dandelion/issues/issues/17) - Table display issue
 
-_for more information, see dandelion-datatables [changlog](http://dandelion.github.com/dandelion-datatables/changelog.html)_
+_for more information, see dandelion-datatables [changelog](http://dandelion.github.com/dandelion-datatables/changelog.html)_

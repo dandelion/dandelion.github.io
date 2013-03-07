@@ -12,4 +12,4 @@ tags : [dandelion-datatables]
 * [issue #19](https://github.com/dandelion/issues/issues/19) - Shift in the first row if a columnTag has a body
 * [issue #20](https://github.com/dandelion/issues/issues/20) - ExportLink position issue when Bootstrap2 theme enabled
 
-_for more information, see dandelion-datatables [changlog](http://dandelion.github.com/dandelion-datatables/changelog.html)_
+_for more information, see dandelion-datatables [changelog](http://dandelion.github.com/dandelion-datatables/changelog.html)_
