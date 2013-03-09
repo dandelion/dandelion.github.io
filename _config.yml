@@ -24,5 +24,4 @@ archive_path: /blog/archive.html
 categories_path : /blog/categories.html
 tags_path : /blog/tags.html
 
-dandelion:
-  team: Dandelion Team 2013
+ddlteam: Dandelion Team 2013
