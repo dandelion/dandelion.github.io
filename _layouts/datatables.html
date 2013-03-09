@@ -1,141 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Dandelion Project</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="web, component, library, assets, datatables">
-<meta name="author" content="Dandelion">
-<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
-<style type="text/css">
-body {
-	padding-top: 60px;
-	padding-bottom: 40px;
-}
-
-.sidebar-nav {
-	padding: 9px 0;
-}
-
-@media ( max-width : 980px) { /* Enable use of floated navbar text */
-	.navbar-text.pull-right {
-		float: none;
-		padding-left: 5px;
-		padding-right: 5px;
-	}
-}
-</style>
-<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
-<!--[if IE 7]>
-      <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
-      <![endif]-->
-<!--[if lt IE 9]>
-      <script src="/assets/js/html5shiv.js"></script>
-      <![endif]-->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
-<link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
-<link rel="shortcut icon" href="/assets/images/dandelion_square.png">
-<script type="text/javascript">
-	var _gaq = _gaq || [];
-	_gaq.push([ '_setAccount', 'UA-33818546-8' ]);
-	_gaq.push([ '_trackPageview' ]);
-	(function() {
-		var ga = document.createElement('script');
-		ga.type = 'text/javascript';
-		ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl'
-				: 'http://www')
-				+ '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0];
-		s.parentNode.insertBefore(ga, s);
-	})();
-</script>
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
-</head>
-<body>
-   <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-         <div class="container-fluid">
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-               <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a class="brand" href="/datatables"><img src="/assets/images/dandelion_square.png" width="17" height="17" /> Dandelion-DataTables</a>
-            <div class="nav-collapse collapse">
-               <ul class="nav pull-right">
-                  <li class="active"><a href="#"><i class="icon-comment-alt"></i><span class="hidden-phone">Blog</span></a></li>
-                  <li><a href="#"><i class="icon-comments-alt"></i><span class="hidden-phone">Forum</span></a></li>
-                  <li><a href="http://dandelion.github.com"><i class="icon-home"></i><span class="hidden-phone">Home</span></a></li>
-               </ul>
-            </div>
-            <!--/.nav-collapse -->
-         </div>
-      </div>
+--- 
+layout: component 
+module: Dandelion-DataTables 
+---
+<div class="span2">
+   <div class="well sidebar-nav">
+      <ul class="nav nav-list">
+         <li class="nav-header">Overview</li>
+         <li {% if page.menu == 'home' %} class="active"{% endif %}><a href="/datatables"> <i class="none"></i>Home
+         </a></li>
+         <li {% if page.menu == 'features' %} class="active"{% endif %}><a href="/datatables/features/" title="Features"> <i class="none"></i> Features
+         </a></li>
+         <li {% if page.menu == 'installation' %} class="active"{% endif %}><a href="/datatables/installation/" title="Installation"> <i class="icon-chevron-right"></i> Installation
+         </a></li>
+         <li {% if page.menu == 'changelog' %} class="active"{% endif %}><a href="/datatables/changelog.html" title="Changelog"> <i class="none"></i> Changelog
+         </a></li>
+         <li {% if page.menu == 'roadmap' %} class="active"{% endif %}><a href="/datatables/roadmap.html" title="Roadmap"> <i class="none"></i> Roadmap
+         </a></li>
+         <li {% if page.menu == 'download' %} class="active"{% endif %}><a href="/datatables/download.html" title="Download"> <i class="none"></i> Download
+         </a></li>
+         <li {% if page.menu == 'migration' %} class="active"{% endif %}><a href="/datatables/migration.html" title="Migration guide"> <i class="none"></i> Migration guide
+         </a></li>
+         <li class="nav-header">Tutorials</li>
+         <li {% if page.menu == 'basics' %} class="active"{% endif %}><a href="/datatables/features/basics/" title="Basics"> <i class="icon-chevron-right"></i> Basics
+         </a></li>
+         <li {% if page.menu == 'advanced' %} class="active"{% endif %}><a href="/datatables/features/advanced/" title="Advanced"> <i class="icon-chevron-right"></i> Advanced
+         </a></li>
+         <li {% if page.menu == 'themes' %} class="active"{% endif %}><a href="/datatables/features/themes/" title="Themes"> <i class="icon-chevron-right"></i> Themes
+         </a></li>
+         <li {% if page.menu == 'export' %} class="active"{% endif %}><a href="/datatables/features/export/" title="Export"> <i class="icon-chevron-right"></i> Export
+         </a></li>
+         <li {% if page.menu == 'ajax' %} class="active"{% endif %}><a href="/datatables/features/ajax/" title="AJAX"> <i class="icon-chevron-right"></i> AJAX
+         </a></li>
+         <li {% if page.menu == 'plugins' %} class="active"{% endif %}><a href="/datatables/features/plugins/" title="Plugins"> <i class="icon-chevron-right"></i> Plugins
+         </a></li>
+         <li class="nav-header">Reference</li>
+         <li {% if page.menu == 'jsp' %} class="active"{% endif %}><a href="/datatables/ref/jsp/" title="JSP taglib"> <i class="icon-chevron-right"></i> JSP taglib
+         </a></li>
+         <li {% if page.menu == 'thymeleaf' %} class="active"{% endif %}><a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> <i class="icon-chevron-right"></i> Thymeleaf dialect
+         </a></li>
+         <li {% if page.menu == 'properties' %} class="active"{% endif %}><a href="/datatables/ref/configuration/" title="Configuration properties"> <i class="none"></i> Configuration
+               properties
+         </a>
+         <li {% if page.menu == 'javadoc' %} class="active"{% endif %}><a href="/datatables/javadoc"> <i class="none"></i>Javadoc
+         </a></li>
+         </li>
+      </ul>
    </div>
-   <div class="container-fluid">
-      <div class="row-fluid">
-         <div class="span2">
-            <div class="well sidebar-nav">
-               <ul class="nav nav-list">
-                  <li class="nav-header">Overview</li>
-                  <li {% if page.menu == 'home' %} class="active"{% endif %}><a href="/datatables"> <i class="none"></i>Home
-                  </a></li>
-                  <li {% if page.menu == 'features' %} class="active"{% endif %}><a href="/datatables/features/" title="Features"> <i class="none"></i> Features
-                  </a></li>
-                  <li {% if page.menu == 'installation' %} class="active"{% endif %}><a href="/datatables/installation/" title="Installation"> <i class="icon-chevron-right"></i> Installation
-                  </a></li>
-                  <li {% if page.menu == 'changelog' %} class="active"{% endif %}><a href="/datatables/changelog.html" title="Changelog"> <i class="none"></i> Changelog
-                  </a></li>
-                  <li {% if page.menu == 'roadmap' %} class="active"{% endif %}><a href="/datatables/roadmap.html" title="Roadmap"> <i class="none"></i> Roadmap
-                  </a></li>
-                  <li {% if page.menu == 'download' %} class="active"{% endif %}><a href="/datatables/download.html" title="Download"> <i class="none"></i> Download
-                  </a></li>
-                  <li {% if page.menu == 'migration' %} class="active"{% endif %}><a href="/datatables/migration.html" title="Migration guide"> <i class="none"></i> Migration guide
-                  </a></li>
-                  <li class="nav-header">Tutorials</li>
-                  <li {% if page.menu == 'basics' %} class="active"{% endif %}><a href="/datatables/features/basics/" title="Basics"> <i class="icon-chevron-right"></i> Basics
-                  </a></li>
-                  <li {% if page.menu == 'advanced' %} class="active"{% endif %}><a href="/datatables/features/advanced/" title="Advanced"> <i class="icon-chevron-right"></i> Advanced
-                  </a></li>
-                  <li {% if page.menu == 'themes' %} class="active"{% endif %}><a href="/datatables/features/themes/" title="Themes"> <i class="icon-chevron-right"></i> Themes
-                  </a></li>
-                  <li {% if page.menu == 'export' %} class="active"{% endif %}><a href="/datatables/features/export/" title="Export"> <i class="icon-chevron-right"></i> Export
-                  </a></li>
-                  <li {% if page.menu == 'ajax' %} class="active"{% endif %}><a href="/datatables/features/ajax/" title="AJAX"> <i class="icon-chevron-right"></i> AJAX
-                  </a></li>
-                  <li {% if page.menu == 'plugins' %} class="active"{% endif %}><a href="/datatables/features/plugins/" title="Plugins"> <i class="icon-chevron-right"></i> Plugins
-                  </a></li>
-                  <li class="nav-header">Reference</li>
-                  <li {% if page.menu == 'jsp' %} class="active"{% endif %}><a href="/datatables/jsp/" title="JSP taglib"> <i class="icon-chevron-right"></i> JSP taglib
-                  </a></li>
-                  <li {% if page.menu == 'thymeleaf' %} class="active"{% endif %}><a href="/datatables/thymeleaf/" title="Thymeleaf dialect"> <i class="icon-chevron-right"></i>
-                        Thymeleaf dialect
-                  </a></li>
-                  <li {% if page.menu == 'properties' %} class="active"{% endif %}><a href="/datatables/properties.html" title="Configuration properties"> <i class="none"></i> Configuration
-                        properties
-                  </a>
-                  <li {% if page.menu == 'javadoc' %} class="active"{% endif %}><a href="/datatables/javadoc"> <i class="none"></i>Javadoc
-                  </a></li>
-                  </li>
-               </ul>
-            </div>
-            <!--/.well -->
-         </div>
-         <!--/span-->
-         <div class="span10">
-            <div class="row-fluid">{{ content }}</div>
-            <!--/row-->
-         </div>
-         <!--/span-->
-      </div>
-      <!--/row-->
-      <hr>
-      <footer>
-         <p>&copy; Company 2013</p>
-      </footer>
-   </div>
-   <!--/.fluid-container-->
-</body>
-</html>
+</div>
+<div class="span10">
+   <div class="row-fluid">{{ content }}</div>
+</div>

@@ -31,7 +31,7 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td>Filtering enablement</td>
       <td><a href="/datatables/ref/jsp/table.html#filter">filter</a></td>
       <td><a href="/datatables/ref/thymeleaf/table.html#dt:filter">dt:filter</a></td>
-      <td><a href="/datatables/basics/featurenablement.html" class="btn btn-mini btn-info">More details »</a></td>    
+      <td><a href="/datatables/features/basics/featurenablement.html" class="btn btn-mini btn-info">More details »</a></td>    
     </tr>
     <tr>
       <td>Paging enablement</td>
