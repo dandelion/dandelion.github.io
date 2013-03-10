@@ -1,10 +1,10 @@
 --- 
 layout: datatables
 ---
-<div class="row-fluid visible-desktop">
+<div id="datatablesbasics" class="row-fluid visible-desktop">
    <div class="span10">{{ content }}</div>
    <div class="span2">
-      <ul class="nav nav-tabs nav-stacked pull-right" data-spy="affix" data-offset-top="60">
+      <ul class="nav nav-tabs nav-stacked pull-right hidden-phone" data-spy="affix" data-offset-top="60">
          <li {% if page.level3.url == 'featurenablement' %} class="active"{% endif %}><a href="/datatables/features/basics/featurenablement.html"> Feature enablement</a></li>
          <li {% if page.level3.url == 'sorting' %} class="active"{% endif %}><a href="/datatables/features/basics/sorting.html" title="Sorting data"> Sorting data</a></li>
          <li {% if page.level3.url == 'filtering' %} class="active"{% endif %}><a href="/datatables/features/basics/filtering.html" title="Filtering data"> Filtering data</a></li>
@@ -19,8 +19,11 @@ layout: datatables
    </div>
 </div>
 
-<div class="row-fluid hidden-desktop">
-   <div class="span12">
-      {{ content }}
-   </div>
-</div>
+<script>
+$(document).ready(function () {
+   if($('#datatablesbasics ul.nav').is(":hidden")){
+      $('#datatablesbasics div:eq(0)').removeClass('span10');
+      $('#datatablesbasics div:eq(0)').addClass('span12');
+   }
+});   
+</script>

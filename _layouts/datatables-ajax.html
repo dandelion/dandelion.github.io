@@ -1,12 +1,12 @@
 --- 
 layout: datatables
 ---
-<div class="row-fluid visible-desktop">
+<div id="datatablesajax" class="row-fluid visible-desktop">
    <div class="span10">{{ content }}</div>
    <div class="span2">
       <ul>
       </ul>
-      <ul class="nav nav-tabs nav-stacked pull-right" data-spy="affix" data-offset-top="60">
+      <ul class="nav nav-tabs nav-stacked pull-right hidden-phone" data-spy="affix" data-offset-top="60">
          <li {% if page.level3.url == 'ajaxsource' %} class="active"{% endif %}><a href="/datatables/features/ajax/ajaxsource.html">How to use AJAX source</a></li>
          <li {% if page.level3.url == 'handlingnullvalues' %} class="active"{% endif %}><a href="/datatables/features/ajax/handlingnullvalues.html">Handling null/default values</a></li>
          <li {% if page.level3.url == 'serverside' %} class="active"{% endif %}><a href="/datatables/features/ajax/serverside.html">Server-side processing</a></li>
@@ -15,8 +15,12 @@ layout: datatables
       </ul>
    </div>
 </div>
-<div class="row-fluid hidden-desktop">
-   <div class="span12">
-      {{ content }}
-   </div>
-</div>
+
+<script>
+$(document).ready(function () {
+   if($('#datatablesajax ul.nav').is(":hidden")){
+      $('#datatablesajax div:eq(0)').removeClass('span10');
+      $('#datatablesajax div:eq(0)').addClass('span12');
+   }
+});   
+</script>
