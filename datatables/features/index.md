@@ -255,6 +255,17 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td><a href="/datatables/ref/thymeleaf/head.html#dt:fixedheader">dt:fixedheader</a></td>
       <td><a href="/datatables/features/plugins/fixedheader.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
+    
+    <tr>
+      <td><h4>Compression</h4></td>
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td>Compressor</td>
+      <td><a href="/datatables/ref/configuration#compressor">compressor.enable</a></td>
+      <td><a href="/datatables/ref/configuration#compressor">compressor.enable</a></td>
+      <td><a href="/datatables/features/advanced/compression.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
   </tbody>
 </table>
 
