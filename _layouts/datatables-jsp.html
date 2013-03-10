@@ -1,0 +1,20 @@
+--- 
+layout: datatables
+---
+
+<div class="row-fluid">
+   <div class="span10">
+      {{ content }}
+   </div>
+   <div class="span2">
+      <ul class="nav nav-tabs nav-stacked pull-right" data-spy="affix" data-offset-top="60">
+         <li {% if page.level3.url == 'table' %} class="active"{% endif %}><a href="/datatables/ref/jsp/table.html">Table tag</a></li>
+         <li {% if page.level3.url == 'column' %} class="active"{% endif %}><a href="/datatables/ref/jsp/column.html">Column tag</a></li>
+         <li {% if page.level3.url == 'columnhead' %} class="active"{% endif %}><a href="/datatables/ref/jsp/columnhead.html">ColumnHead tag</a></li>
+         <li {% if page.level3.url == 'extraconf' %} class="active"{% endif %}><a href="/datatables/ref/jsp/extraconf.html">ExtraConf tag</a></li>
+         <li {% if page.level3.url == 'extrafile' %} class="active"{% endif %}><a href="/datatables/ref/jsp/extrafile.html">ExtraFile tag</a></li>
+         <li {% if page.level3.url == 'prop' %} class="active"{% endif %}><a href="/datatables/ref/jsp/prop.html">Prop tag</a></li>
+         <li {% if page.level3.url == 'export' %} class="active"{% endif %}><a href="/datatables/ref/jsp/export.html">Export tag</a></li>
+      </ul>
+   </div>
+</div>
