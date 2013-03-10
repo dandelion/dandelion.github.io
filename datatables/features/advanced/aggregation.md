@@ -1,6 +1,13 @@
 ---
-layout: datatables
+layout: datatables-advanced
 menu: advanced
+level1: features
+level2:
+  url: advanced
+  name: Advanced
+level3:
+  url: aggregation
+  name: Using aggregation
 ---
 
 ### Advanced :: Using aggregation

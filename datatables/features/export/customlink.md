@@ -1,6 +1,13 @@
 ---
-layout: datatables
+layout: datatables-export
 menu: export
+level1: features
+level2:
+  url: export
+  name: Export
+level3:
+  url: customlink
+  name: Link style and position
 ---
 
 ### Export :: Links style and position

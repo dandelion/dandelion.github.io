@@ -1,0 +1,21 @@
+--- 
+layout: datatables
+---
+<div class="row-fluid visible-desktop">
+   <div class="span10">{{ content }}</div>
+   <div class="span2">
+      <ul class="nav nav-tabs nav-stacked pull-right" data-spy="affix" data-offset-top="60">
+         <li {% if page.level3.url == 'rowid' %} class="active"{% endif %}><a href="/datatables/features/advanced/rowid.html">Row id</a></li>
+         <li {% if page.level3.url == 'i18n' %} class="active"{% endif %}><a href="/datatables/features/advanced/i18n.html">Internationalisation</a></li>
+         <li {% if page.level3.url == 'extrafile' %} class="active"{% endif %}><a href="/datatables/features/advanced/extrafile.html">Using extra file</a></li>
+         <li {% if page.level3.url == 'extraconf' %} class="active"{% endif %}><a href="/datatables/features/advanced/extraconf.html">Using extra conf</a></li>
+         <li {% if page.level3.url == 'overrideconf' %} class="active"{% endif %}><a href="/datatables/features/advanced/overrideconf.html">Overriding default configuration</a></li>
+         <li {% if page.level3.url == 'compression' %} class="active"{% endif %}><a href="/datatables/features/advanced/compression.html">Using compression</a></li>
+      </ul>
+   </div>
+</div>
+<div class="row-fluid hidden-desktop">
+   <div class="span12">
+      {{ content }}
+   </div>
+</div>

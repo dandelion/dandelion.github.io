@@ -1,0 +1,25 @@
+--- 
+layout: datatables
+---
+
+<div class="row-fluid visible-desktop">
+   <div class="span10">
+      {{ content }}
+   </div>
+   <div class="span2">
+      <ul class="nav nav-tabs nav-stacked pull-right" data-spy="affix" data-offset-top="60">
+        <li {% if page.level3.url == 'activateexport' %} class="active"{% endif %}><a href="/datatables/features/export/activateexport.html">Exporting data</a></li>
+        <li {% if page.level3.url == 'multiple' %} class="active"{% endif %}><a href="/datatables/features/export/multiple.html">Multiple export formats</a></li>
+        <li {% if page.level3.url == 'customlink' %} class="active"{% endif %}><a href="/datatables/features/export/customlink.html">Adapting export links</a></li>
+        <li {% if page.level3.url == 'exportoptions' %} class="active"{% endif %}><a href="/datatables/features/export/exportoptions.html">Export options</a></li>
+        <li {% if page.level3.url == 'adaptcontent' %} class="active"{% endif %}><a href="/datatables/features/export/adaptcontent.html">Adapt exports content</a></li>
+        <li {% if page.level3.url == '' %} class="active"{% endif %}><a href="#">Write your own export classes (soon!)</a></li>
+      </ul>
+   </div>
+</div>
+
+<div class="row-fluid hidden-desktop">
+   <div class="span12">
+      {{ content }}
+   </div>
+</div>

@@ -1,5 +1,5 @@
 ---
-layout: datatables
+layout: datatables-plugins
 menu: plugins
 level1: features
 level2: 

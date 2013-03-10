@@ -1,5 +1,5 @@
 ---
-layout: datatables
+layout: datatables-themes
 menu: themes
 level1: features
 level2: 

@@ -1,6 +1,13 @@
 ---
-layout: datatables
+layout: datatables-ajax
 menu: ajax
+level1: features
+level2:
+  url: ajax
+  name: AJAX
+level3:
+  url: handlingnullvalues
+  name: Handling null/default values
 ---
 
 ### AJAX :: Handling null/default values
@@ -13,11 +20,11 @@ Using JSP with AJAX sources, null values are handled in the same way than for DO
 By default, an empty string will be displayed. You can also use the `default` column attribute to replace the empty string by any string you want.
 
 	<datatables:table id="myTableId" url="/persons">
-	   <datatables:column title="Id" property="id" />
-	   <datatables:column title="FirstName" property="firstName" />
-	   <datatables:column title="LastName" property="lastName" />
-	   <datatables:column title="City" property="address.town.name" default="My default value !" />
-	   <datatables:column title="Mail" property="mail" />
+	    <datatables:column title="Id" property="id" />
+	    <datatables:column title="FirstName" property="firstName" />
+	    <datatables:column title="LastName" property="lastName" />
+	    <datatables:column title="City" property="address.town.name" default="My default value !" />
+	    <datatables:column title="Mail" property="mail" />
 	</datatables:table>
 
 <br /> 

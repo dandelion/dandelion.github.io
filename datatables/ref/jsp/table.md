@@ -23,8 +23,7 @@ Decribes how the HTML table should be generated.
        ...
     </datatables:table>
 
-<p class="alert alert-warn"><strong>Warning !</strong><br /> The table tag must have a body.</p>
-
+<br />
 #### Reference
 
 <table id="tableReference" class="table table-striped table-bordered">

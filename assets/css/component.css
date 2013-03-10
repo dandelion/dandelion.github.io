@@ -25,3 +25,10 @@ body {
     top: 50px;
     margin-right: 20px; 
 }
+
+.nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {
+color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+background-color: #0088cc;
+}
+
