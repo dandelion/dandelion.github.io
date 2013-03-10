@@ -1,5 +1,5 @@
 ---
-layout: datatables-basics
+layout: datatables
 menu: basics
 level1: features
 level2: 

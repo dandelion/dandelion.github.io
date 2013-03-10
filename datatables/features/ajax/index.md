@@ -2,7 +2,7 @@
 layout: datatables
 menu: ajax
 level1: features
-level2: 
+level2:
   url: ajax
   name: AJAX
 ---

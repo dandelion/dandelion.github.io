@@ -1,0 +1,15 @@
+--- 
+layout: datatables
+---
+<div class="row-fluid visible-desktop">
+   <div class="span10">{{ content }}</div>
+   <div class="span2">
+      <ul class="nav nav-tabs nav-stacked pull-right" data-spy="affix" data-offset-top="60">
+         <li {% if page.level3.url == 'bootstrap2' %} class="active"{% endif %}><a href="/datatables/features/themes/bootstrap2.html">Bootstrap2</a></li>
+         <li {% if page.level3.url == 'jqueryui' %} class="active"{% endif %}><a href="/datatables/features/themes/jqueryui.html">jQuery UI</a></li>
+      </ul>
+   </div>
+</div>
+<div class="row-fluid hidden-desktop">
+   <div class="span12">{{ content }}</div>
+</div>

@@ -1,6 +1,13 @@
 ---
-layout: datatables
+layout: datatables-ajax
 menu: ajax
+level1: features
+level2:
+  url: ajax
+  name: AJAX
+level3:
+  url: springmvc
+  name: Spring MVC integration
 ---
 
 ### AJAX :: Spring MVC integration
@@ -17,7 +24,7 @@ First, add the new dependency :
 	<dependency>
 	   <groupId>com.github.dandelion</groupId>
 	   <artifactId>datatables-spring3</artifactId>
-	   <version>0.8.6</version>
+	   <version>{{ site.dandelion.components.datatables.version }}</version>
 	</dependency>
 
 Moreover, you need to register a new custom WebArgumentResolvers as follows :

@@ -1,6 +1,13 @@
 ---
-layout: datatables
+layout: datatables-ajax
 menu: ajax
+level1: features
+level2:
+  url: ajax
+  name: AJAX
+level3:
+  url: pipelining
+  name: Pipelining data
 ---
 
 ### AJAX :: Pipelining data

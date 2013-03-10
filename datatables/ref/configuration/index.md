@@ -28,7 +28,7 @@ If you decide to create your own configuration file, just ensure that :
 <br />
 <h4>Reference</h4>
 
-<table id="reference" class="table table-striped table-bordered">
+<table id="tableReference" class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Name</th>

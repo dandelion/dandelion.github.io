@@ -1,6 +1,13 @@
 ---
-layout: datatables
+layout: datatables-ajax
 menu: ajax
+level1: features
+level2:
+  url: ajax
+  name: AJAX
+level3:
+  url: serverside
+  name: Server-side processing
 ---
 
 ### AJAX :: Server-side processing

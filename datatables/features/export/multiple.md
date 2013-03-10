@@ -1,6 +1,13 @@
 ---
-layout: datatables
+layout: datatables-export
 menu: export
+level1: features
+level2:
+  url: export
+  name: Export
+level3:
+  url: multiple
+  name: Allowing multiple export formats
 ---
 
 ### Export :: Allowing multiple export formats

@@ -1,6 +1,13 @@
 ---
-layout: datatables
+layout: datatables-ajax
 menu: ajax
+level1: features
+level2:
+  url: ajax
+  name: AJAX
+level3:
+  url: ajaxsource
+  name: How to use AJAX source
 ---
 
 ### AJAX :: How to use AJAX source
@@ -18,21 +25,22 @@ Since Spring performs the JSON serialization using the default Jackson JSON proc
 <br />      
 #### Using JSP
 Using JSP, be aware to fill in the `url` table attribute with your AJAX source URL.
+
 Moreover:
+ *	If the value you pass in begins with a leading slash ("/"), the full request context will be prepended 
+ *	Otherwise, the value is left untouched
 
-	* If the value you pass in begins with a leading slash ("/"), the full request context will be prepended
-	* Otherwise, the value is left untouched
-
+<br />
 
 	<datatables:table id="myTableId" url="/persons" row="person">
-        <datatables:column title="Id" property="id" />
-        <datatables:column title="FirstName" property="firstName" />
-        <datatables:column title="LastName" property="lastName" />
-        <datatables:column title="City" property="address.town.name" />
-        <datatables:column title="Mail" property="mail" />
-    </datatables:table>
+		<datatables:column title="Id" property="id" />
+		<datatables:column title="FirstName" property="firstName" />
+		<datatables:column title="LastName" property="lastName" />
+		<datatables:column title="City" property="address.town.name" />
+		<datatables:column title="Mail" property="mail" />
+	</datatables:table>
 
-
+<br />
 #### Using Thymeleaf
 Using Thymeleaf, you have to fill in the `dt:url` table attribute. The same rules apply as for JSP regarding the value you set.
 

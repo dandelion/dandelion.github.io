@@ -1,0 +1,20 @@
+--- 
+layout: datatables
+---
+<div class="row-fluid visible-desktop">
+   <div class="span10">{{ content }}</div>
+   <div class="span2">
+      <ul>
+      </ul>
+      <ul class="nav nav-tabs nav-stacked pull-right" data-spy="affix" data-offset-top="60">
+         <li {% if page.level3.url == 'colreorder' %} class="active"{% endif %}><a href="/datatables/features/plugins/colreorder.html">ColReorder</a></li>
+         <li {% if page.level3.url == 'scroller' %} class="active"{% endif %}><a href="/datatables/features/plugins/scroller.html">Scroller</a></li>
+         <li {% if page.level3.url == 'fixedheader' %} class="active"{% endif %}><a href="/datatables/features/plugins/fixedheader.html">FixedHeader</a></li>
+      </ul>
+   </div>
+</div>
+<div class="row-fluid hidden-desktop">
+   <div class="span12">
+      {{ content }}
+   </div>
+</div>

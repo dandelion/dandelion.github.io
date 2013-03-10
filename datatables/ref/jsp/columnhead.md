@@ -1,6 +1,13 @@
 ---
-layout: datatables
+layout: datatables-jsp
 menu: taglib
+level1: ref
+level2:
+  url: jsp
+  name: JSP
+level3:
+  url: columnhead
+  name: ColumnHead tag
 ---
 
 ### ColumnHead tag

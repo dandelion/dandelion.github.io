@@ -1,5 +1,5 @@
 ---
-layout: datatables
+layout: datatables-jsp
 menu: taglib
 level1: ref
 level2:
@@ -7,7 +7,7 @@ level2:
   name: JSP
 level3:
   url: table
-  name: table tag
+  name: Table tag
 ---
 
 ### Table tag
@@ -23,8 +23,7 @@ Decribes how the HTML table should be generated.
        ...
     </datatables:table>
 
-<p class="alert alert-warn"><strong>Warning !</strong><br /> The table tag must have a body.</p>
-
+<br />
 #### Reference
 
 <table id="tableReference" class="table table-striped table-bordered">

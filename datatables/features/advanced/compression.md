@@ -1,6 +1,13 @@
 ---
-layout: datatables
+layout: datatables-advanced
 menu: advanced
+level1: features
+level2:
+  url: advanced
+  name: Advanced
+level3:
+  url: compression
+  name: Using compression
 ---
 
 
@@ -23,15 +30,15 @@ Two things are needed to enable compression :
 
  * Add the YUI Compressor module to your classpath :
  
-	* Using Maven or Maven-compatible dependency manager, just add the following dependency to your POM :
+	*	Using Maven or Maven-compatible dependency manager, just add the following dependency to your POM :
 
-		<dependency>
-			<groupId>com.github.datatables4j</groupId>
-			<artifactId>datatables4j-compression-yui</artifactId>
-			<version>0.3.7</version>
-		</dependency>
-	
-	* Manually, just grab the latest version of the module [here](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22datatables-compression-yui%22) and all needed dependencies.
+        	<dependency>
+	        	<groupId>com.github.datatables4j</groupId>
+            	<artifactId>datatables4j-compression-yui</artifactId>
+            	<version>{{ site.dandelion.components.datatables.version }}</version>
+        	</dependency>
+
+	*	Manually, just grab the latest version of the module [here](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22datatables-compression-yui%22) and all needed dependencies.
 
 <br />
 #### Using JSP
