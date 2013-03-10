@@ -1,7 +1,8 @@
 ---
 layout: datatables
 menu: installation
-submenu:
+level1: installation
+level2:
   url: jsp
   name: JSP
 ---

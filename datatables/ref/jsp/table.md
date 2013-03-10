@@ -1,6 +1,13 @@
 ---
 layout: datatables
 menu: taglib
+level1: ref
+level2:
+  url: jsp
+  name: JSP
+level3:
+  url: table
+  name: table tag
 ---
 
 ### Table tag
