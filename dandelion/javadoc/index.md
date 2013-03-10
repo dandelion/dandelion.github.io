@@ -1,6 +1,0 @@
----
-layout: dandelion
-menu: 
----
-
-### Soon...
