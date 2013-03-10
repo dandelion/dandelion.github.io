@@ -88,7 +88,9 @@ If you decide to create your own configuration file, just ensure that :
   <tr>
     <td>aggregator.mode</td>
     <td>Specify the aggregation mode.</td>
-    <td>ALL|PLUGINS_JS|PLUGINS_CSS</td>
+    <td>ALL|
+    PLUGINS_JS|
+    PLUGINS_CSS</td>
     <td>ALL</td>
   </tr>
   <tr>
