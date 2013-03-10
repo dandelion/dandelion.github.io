@@ -1,6 +1,10 @@
 ---
 layout: datatables
-menu: home
+menu: javadoc
+level1: ref
+level2:
+  url: javadoc
+  name: Javadoc
 ---
 
 ### JavaDoc

@@ -1,6 +1,7 @@
 ---
 layout: datatables
 menu: installation
+level1: installation
 ---
 
 ### Installation guide
@@ -21,9 +22,14 @@ Actually, you\'ll have no trouble either with lower versions thanks to the [back
 <br />
 ####Guides
 The installation guide defers, depending on the template engine you want to use and the target container. Please begin by choosing below a template engine.
-
- * [With JSP](jsp.html)
- * [With Thymeleaf](thymeleaf.html)
+<br />
+<div style="text-align:center;">
+<a href="jsp.html" class="btn btn-large">JSP</a>
+&nbsp;
+or
+&nbsp;
+<a href="thymeleaf.html" class="btn btn-large">Thymeleaf</a>
+</div>
 
 
 

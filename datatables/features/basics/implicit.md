@@ -1,6 +1,13 @@
 ---
-layout: datatables
+layout: datatables-basics
 menu: basics
+level1: features
+level2:
+  url: basics
+  name: Basics
+level3:
+  url: implicit
+  name: Using implicif object
 ---
 
 ### Basics :: Using implicit object 

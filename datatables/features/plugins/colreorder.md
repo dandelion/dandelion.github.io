@@ -1,6 +1,13 @@
 ---
 layout: datatables
 menu: plugins
+level1: features
+level2: 
+  url: plugins
+  name: Plugins
+level3:
+  url: colreorder
+  name: ColReorder
 ---
 
 ### Plugins :: ColReorder

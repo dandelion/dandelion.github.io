@@ -15,6 +15,9 @@ production_url : http://dandelion.github.com
 
 analytics_google_tracking_id : 'UA-33818546-8'
 
+dandelion :
+  team : "Dandelion Team 2013"
+
 BASE_PATH : http://dandelion.github.com
 ASSET_PATH : false
 
@@ -22,6 +25,4 @@ atom_path : /blog/atom.xml
 rss_path : /blog/rss.xml
 archive_path: /blog/archive.html
 categories_path : /blog/categories.html
-tags_path : /blog/tags.html
-
-ddlteam: Dandelion Team 2013
+tags_path : /blog/tags.html   

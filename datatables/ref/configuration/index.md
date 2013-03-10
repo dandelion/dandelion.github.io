@@ -1,6 +1,10 @@
 ---
 layout: datatables
 menu: properties
+level1: ref
+level2:
+  url: configuration
+  name: Configuration
 ---
 
 ### Configuration properties

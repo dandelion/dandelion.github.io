@@ -1,6 +1,7 @@
 ---
 layout: datatables
 menu: migration
+level1: migration
 ---
 
 ### Migrating from DataTables4j to Dandelion-datatables

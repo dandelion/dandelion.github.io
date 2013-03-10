@@ -1,6 +1,13 @@
 ---
 layout: datatables
 menu: themes
+level1: features
+level2: 
+  url: themes
+  name: Themes
+level3:
+  url: jqueryui
+  name: jQuery UI
 ---
 
 ### Themes :: jQuery UI

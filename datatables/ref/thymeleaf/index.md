@@ -1,6 +1,10 @@
 ---
 layout: datatables
 menu: thymeleaf
+level1: ref
+level2:
+  url: thymelead
+  name: Thymeleaf
 ---
 
 <a href="http://www.thymeleaf.org"><img src="/assets/images/logo_thymeleaf_withname.png" style="float:right; margin-right: 10px;" /></a>

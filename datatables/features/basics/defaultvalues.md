@@ -1,5 +1,5 @@
 ---
-layout: datatables
+layout: datatables-basics
 menu: basics
 ---
 

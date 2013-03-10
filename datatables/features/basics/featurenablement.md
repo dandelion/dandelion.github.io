@@ -1,14 +1,21 @@
 ---
-layout: datatables
+layout: datatables-basics
 menu: basics
+level1: features
+level2:
+  url: basics
+  name: Basics
+level3:
+  url: featurenablement
+  name: Feature enablement/disablement
 ---
 
-### Basics :: Feature enablement/disablement
+#### Basics :: Feature enablement/disablement
 
 Basic features as sorting, paging, filtering, \... can be easily enabled/disabled using the corresponding table attribute.
 You can see beelow all the features you can enable/disable setting its value to `true`/`false`:
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Feature</th>

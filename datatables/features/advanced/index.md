@@ -1,6 +1,10 @@
 ---
 layout: datatables
 menu: advanced
+level1: features
+level2: 
+  url: advanced
+  name: Advanced
 ---
 
 ### Advanced

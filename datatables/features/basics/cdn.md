@@ -1,8 +1,15 @@
 ---
-layout: datatables
+layout: datatables-basics
 menu: basics
+level1: features
+level2:
+  url: basics
+  name: Basics
+level3:
+  url: cdn
+  name: Using CDN 
 ---
-
+            
 ### Basics :: Using CDN
 
 You can choose to load the required Datatables web assets (JS, CSS, images) using the Microsoft\'s CDN.

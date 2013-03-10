@@ -1,6 +1,9 @@
 ---
 layout: datatables
 menu: installation
+submenu:
+  url: thymeleaf
+  name: Thymeleaf
 ---
 
 <a href="http://www.thymeleaf.org"><img src="/assets/images/logo_thymeleaflogonamesmall.png" style="float:right; margin-right: 10px;" width="400px" height="90px" /></a>

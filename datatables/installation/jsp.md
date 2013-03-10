@@ -1,6 +1,9 @@
 ---
 layout: datatables
 menu: installation
+submenu:
+  url: jsp
+  name: JSP
 ---
 
 ### Installation guide with JSP

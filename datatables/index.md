@@ -1,6 +1,5 @@
 ---
 layout: datatables
-menu: home
 ---
 
 <img src="/assets/images/logo_DataTables.jpg" style="float: right;" />

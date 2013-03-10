@@ -1,6 +1,7 @@
 ---
 layout: datatables
 menu: features
+level1: features
 ---
 
 ### Feature comparison

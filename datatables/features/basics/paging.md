@@ -1,6 +1,13 @@
 ---
-layout: datatables
+layout: datatables-basics
 menu: basics
+level1: features
+level2:
+  url: basics
+  name: Basics
+level3:
+  url: paging
+  name: Paging data
 ---
 
 ### Basics :: Paging data

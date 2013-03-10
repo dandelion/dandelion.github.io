@@ -1,6 +1,13 @@
 ---
-layout: datatables
+layout: datatables-basics
 menu: basics
+level1: features
+level2:
+  url: basics
+  name: Basics
+level3:
+  url: multiple
+  name: Multiple tables
 ---
 
 ### Basics :: Multiple tables

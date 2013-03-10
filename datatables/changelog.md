@@ -1,6 +1,7 @@
 ---
 layout: datatables
 menu: changelog
+level1: changelog
 ---
 
 <h3>Changelog</h3>

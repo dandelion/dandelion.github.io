@@ -1,6 +1,10 @@
 ---
 layout: datatables
 menu: themes
+level1: features
+level2: 
+  url: themes
+  name: Themes
 ---
 
 ### Themes

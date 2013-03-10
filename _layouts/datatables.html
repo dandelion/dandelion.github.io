@@ -5,48 +5,82 @@ module: Dandelion-DataTables
 <div class="span2">
    <div class="well sidebar-nav">
       <ul class="nav nav-list">
+         
          <li class="nav-header">Overview</li>
-         <li {% if page.menu == 'home' %} class="active"{% endif %}><a href="/datatables"> <i class="none"></i>Home
-         </a></li>
-         <li {% if page.menu == 'features' %} class="active"{% endif %}><a href="/datatables/features/" title="Features"> <i class="none"></i> Features
-         </a></li>
-         <li {% if page.menu == 'installation' %} class="active"{% endif %}><a href="/datatables/installation/" title="Installation"> <i class="icon-chevron-right"></i> Installation
-         </a></li>
-         <li {% if page.menu == 'changelog' %} class="active"{% endif %}><a href="/datatables/changelog.html" title="Changelog"> <i class="none"></i> Changelog
-         </a></li>
-         <li {% if page.menu == 'roadmap' %} class="active"{% endif %}><a href="/datatables/roadmap.html" title="Roadmap"> <i class="none"></i> Roadmap
-         </a></li>
-         <li {% if page.menu == 'download' %} class="active"{% endif %}><a href="/datatables/download.html" title="Download"> <i class="none"></i> Download
-         </a></li>
-         <li {% if page.menu == 'migration' %} class="active"{% endif %}><a href="/datatables/migration.html" title="Migration guide"> <i class="none"></i> Migration guide
-         </a></li>
+         <li {% if page.menu == 'home' %} class="active"{% endif %}>
+            <a href="/datatables"><i class="icon-home"></i> Home</a>
+         </li>
+         <li {% if page.menu == 'features' %} class="active"{% endif %}>
+            <a href="/datatables/features/" title="Features"><i class="icon-th-list"></i> Features</a>
+         </li>
+         <li {% if page.menu == 'installation' %} class="active"{% endif %}>
+            <a href="/datatables/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+         </li>
+         <li {% if page.menu == 'download' %} class="active"{% endif %}>
+            <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
+         </li>
+         <li {% if page.menu == 'changelog' %} class="active"{% endif %}>
+            <a href="/datatables/changelog.html" title="Changelog"> <i class="none"></i> Changelog</a>
+         </li>
+         <li {% if page.menu == 'roadmap' %} class="active"{% endif %}>
+            <a href="/datatables/roadmap.html" title="Roadmap"><i class="icon-road"></i> Roadmap</a>
+         </li>
+         <li {% if page.menu == 'migration' %} class="active"{% endif %}>
+            <a href="/datatables/migration.html" title="Migration guide"> <i class="none"></i> Migration guide</a>
+         </li>
+         
          <li class="nav-header">Tutorials</li>
-         <li {% if page.menu == 'basics' %} class="active"{% endif %}><a href="/datatables/features/basics/" title="Basics"> <i class="icon-chevron-right"></i> Basics
-         </a></li>
-         <li {% if page.menu == 'advanced' %} class="active"{% endif %}><a href="/datatables/features/advanced/" title="Advanced"> <i class="icon-chevron-right"></i> Advanced
-         </a></li>
-         <li {% if page.menu == 'themes' %} class="active"{% endif %}><a href="/datatables/features/themes/" title="Themes"> <i class="icon-chevron-right"></i> Themes
-         </a></li>
-         <li {% if page.menu == 'export' %} class="active"{% endif %}><a href="/datatables/features/export/" title="Export"> <i class="icon-chevron-right"></i> Export
-         </a></li>
-         <li {% if page.menu == 'ajax' %} class="active"{% endif %}><a href="/datatables/features/ajax/" title="AJAX"> <i class="icon-chevron-right"></i> AJAX
-         </a></li>
-         <li {% if page.menu == 'plugins' %} class="active"{% endif %}><a href="/datatables/features/plugins/" title="Plugins"> <i class="icon-chevron-right"></i> Plugins
-         </a></li>
+         <li {% if page.menu == 'basics' %} class="active"{% endif %}>
+            <a href="/datatables/features/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+         </li>
+         <li {% if page.menu == 'advanced' %} class="active"{% endif %}>
+            <a href="/datatables/features/advanced/" title="Advanced"> <i class="icon-fire"></i> Advanced</a>
+         </li>
+         <li {% if page.menu == 'themes' %} class="active"{% endif %}>
+            <a href="/datatables/features/themes/" title="Themes"> <i class="icon-magic"></i> Themes</a>
+         </li>
+         <li {% if page.menu == 'export' %} class="active"{% endif %}>
+            <a href="/datatables/features/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+         </li>
+         <li {% if page.menu == 'ajax' %} class="active"{% endif %}>
+            <a href="/datatables/features/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+         </li>
+         <li {% if page.menu == 'plugins' %} class="active"{% endif %}>
+            <a href="/datatables/features/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+         </li>
+         
          <li class="nav-header">Reference</li>
-         <li {% if page.menu == 'jsp' %} class="active"{% endif %}><a href="/datatables/ref/jsp/" title="JSP taglib"> <i class="icon-chevron-right"></i> JSP taglib
+         <li {% if page.menu == 'jsp' %} class="active"{% endif %}><a href="/datatables/ref/jsp/" title="JSP taglib"> JSP taglib
          </a></li>
-         <li {% if page.menu == 'thymeleaf' %} class="active"{% endif %}><a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> <i class="icon-chevron-right"></i> Thymeleaf dialect
+         <li {% if page.menu == 'thymeleaf' %} class="active"{% endif %}><a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect
          </a></li>
          <li {% if page.menu == 'properties' %} class="active"{% endif %}><a href="/datatables/ref/configuration/" title="Configuration properties"> <i class="none"></i> Configuration
                properties
          </a>
-         <li {% if page.menu == 'javadoc' %} class="active"{% endif %}><a href="/datatables/javadoc"> <i class="none"></i>Javadoc
+         <li {% if page.menu == 'javadoc' %} class="active"{% endif %}><a href="/datatables/ref/javadoc"> <i class="none"></i>Javadoc
          </a></li>
          </li>
       </ul>
    </div>
 </div>
 <div class="span10">
-   <div class="row-fluid">{{ content }}</div>
+   <div class="row-fluid">
+      <ul class="breadcrumb" style="">
+         <li><a href="/datatables">Home</a></li>
+         
+         {% if page.level1 | size >= 0 %}
+         <li> <span class="divider">|</span><a href="/datatables/{{ page.level1 | downcase }}">{{ page.level1 | downcase | capitalize }}</a></li>
+         {% endif %}
+         
+         {% if page.level2 | size >= 0 %}
+         <li> <span class="divider">|</span><a href="/datatables/{{ page.level1 | downcase }}/{{ page.level2.url | downcase }}">{{ page.level2.name }}</a></li>
+         {% endif %}
+         
+         {% if page.level3 | size >= 0 %}
+         <li> <span class="divider">|</span><a href="/datatables/{{ page.level1 | downcase }}/{{ page.level2.url | downcase }}/{{ page.level3.url | downcase }}.html">{{ page.level3.name }}</a></li>
+         {% endif %}
+      </ul>
+      
+      {{ content }}
+   </div>
 </div>
