@@ -19,7 +19,7 @@ Since v0.8.1, you can use <strong>Dandelion-DataTables</strong> with Thymeleaf t
 
 You can find below the dialect reference, sorted by HTML tags :
 
- * [&lt;table> attributes](tmltable.html)
- * [&lt;thead> attributes](tmlthead.html)
- * [&lt;th> attributes](tmlth.html)
+ * [&lt;table> attributes](/datatables/ref/thymeleaf/table.html)
+ * [&lt;thead> attributes](/datatables/ref/thymeleaf/thead.html)
+ * [&lt;th> attributes](/datatables/ref/thymeleaf/th.html)
 
