@@ -19,3 +19,9 @@ body {
 	padding: 4px 15px;
 	font-size: 11px;	
 }
+
+.affix {
+    position: fixed; 
+    top: 50px;
+    margin-right: 20px; 
+}
