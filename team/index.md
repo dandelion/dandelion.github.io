@@ -1,5 +1,5 @@
 ---
-layout: datatables
+layout: default
 menu: team
 ---
 
