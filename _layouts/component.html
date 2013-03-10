@@ -45,8 +45,12 @@
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="/datatables"><img src="/assets/images/dandelion_square.png" width="17" height="17" /> {{ page.module }}</a>
+            <a class="brand" href="/datatables"><img src="/assets/images/dandelion_square.png" width="17" height="17" /> {{ site.dandelion.components.datatables.name }}</a>
             <div class="nav-collapse collapse">
+               <ul class="nav">
+                  <li class="navbar-text">Latest release :</li>
+                  <li><a href="/datatables/changelog.html">{{ site.dandelion.components.datatables.version }}</a></li>
+               </ul>
                <ul class="nav pull-right">
                   <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>
                   <li><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>

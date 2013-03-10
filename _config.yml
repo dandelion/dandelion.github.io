@@ -16,7 +16,18 @@ production_url : http://dandelion.github.com
 analytics_google_tracking_id : 'UA-33818546-8'
 
 dandelion :
-  team : "Dandelion Team 2013"
+  team: "Dandelion Team 2013"
+  components:
+    core:
+      name: Dandelion-Core
+      version: 0.1.0
+    datatables:
+      name: Dandelion-DataTables
+      version: 0.8.6
+    webanalytics:
+      name: Dandelion-WebAnalytics
+      version: 0.1.1
+    
 
 BASE_PATH : http://dandelion.github.com
 ASSET_PATH : false

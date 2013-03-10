@@ -1,6 +1,13 @@
 ---
 layout: datatables-basics
 menu: basics
+level1: features
+level2:
+  url: basics
+  name: Basics
+level3:
+  url: defaultvalues
+  name: Handling null/default values
 ---
 
 ### Basics :: Handling null/default values
