@@ -3,6 +3,63 @@ layout: component
 module: Dandelion 
 ---
 
-<div class="span12">
-   <div class="row-fluid">{{ content }}</div>
+<div class="span2">
+    <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+
+            <li class="nav-header">Overview</li>
+            <li {% if page.menu == 'home' %} class="active"{% endif %}>
+            <a href="/dandelion"><i class="icon-home"></i> Home</a>
+            </li>
+            <li {% if page.menu == 'features' %} class="active"{% endif %}>
+            <a href="/dandelion/features/" title="Features"><i class="icon-th-list"></i> Features</a>
+            </li>
+            <li {% if page.menu == 'installation' %} class="active"{% endif %}>
+            <a href="/dandelion/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+            </li>
+            <li {% if page.menu == 'changelog' %} class="active"{% endif %}>
+            <a href="/dandelion/changelog.html" title="Changelog"> <i class="icon-info-sign"></i> Changelog</a>
+            </li>
+            <li {% if page.menu == 'roadmap' %} class="active"{% endif %}>
+            <a href="/dandelion/roadmap.html" title="Roadmap"><i class="icon-road"></i> Roadmap</a>
+            </li>
+
+            <li class="nav-header">Tutorials</li>
+            <li {% if page.menu == 'basics' %} class="active"{% endif %}>
+            <a href="/dandelion/features/assets/" title="Assets"> <i class="icon-sitemap"></i> Assets</a>
+            </li>
+
+            <li class="nav-header">Reference</li>
+            <li {% if page.menu == 'jsp' %} class="active"{% endif %}><a href="/dandelion/ref/jsp/" title="JSP taglib"> JSP taglib
+        </a></li>
+            <li {% if page.menu == 'thymeleaf' %} class="active"{% endif %}><a href="/dandelion/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect
+        </a></li>
+            <li {% if page.menu == 'properties' %} class="active"{% endif %}>
+            <a href="/dandelion/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration</a>
+            <li {% if page.menu == 'javadoc' %} class="active"{% endif %}><a href="/dandelion/ref/javadoc"> <i class="none"></i>Javadoc
+        </a></li>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="span10">
+    <div class="row-fluid">
+        <ul class="breadcrumb hidden-phone">
+            <li><a href="/dandelion">Home</a></li>
+
+            {% if page.level1 | size >= 0 %}
+            <li> <span class="divider">|</span><a href="/dandelion/{{ page.level1 | downcase }}">{{ page.level1 | downcase | capitalize }}</a></li>
+            {% endif %}
+
+            {% if page.level2 | size >= 0 %}
+            <li> <span class="divider">|</span><a href="/dandelion/{{ page.level1 | downcase }}/{{ page.level2.url | downcase }}">{{ page.level2.name }}</a></li>
+            {% endif %}
+
+            {% if page.level3 | size >= 0 %}
+            <li> <span class="divider">|</span><a href="/dandelion/{{ page.level1 | downcase }}/{{ page.level2.url | downcase }}/{{ page.level3.url | downcase }}.html">{{ page.level3.name }}</a></li>
+            {% endif %}
+        </ul>
+
+        {{ content }}
+    </div>
 </div>
