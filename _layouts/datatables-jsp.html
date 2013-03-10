@@ -2,11 +2,11 @@
 layout: datatables
 ---
 
-<div class="row-fluid">
+<div id="layoutjsp" class="row-fluid">
    <div class="span10">
       {{ content }}
    </div>
-   <div class="span2">
+   <div class="span2 hidden-phone">
       <ul class="nav nav-tabs nav-stacked pull-right" data-spy="affix" data-offset-top="60">
          <li {% if page.level3.url == 'table' %} class="active"{% endif %}><a href="/datatables/ref/jsp/table.html">Table tag</a></li>
          <li {% if page.level3.url == 'column' %} class="active"{% endif %}><a href="/datatables/ref/jsp/column.html">Column tag</a></li>
@@ -18,3 +18,13 @@ layout: datatables
       </ul>
    </div>
 </div>
+
+
+<script>
+$(document).ready(function () {
+	if($('#layoutjsp ul.nav').is(":hidden")){
+		$('#layoutjsp div:eq(0)').removeClass('span10');
+		$('#layoutjsp div:eq(0)').addClass('span12');
+	}
+});	
+</script>
