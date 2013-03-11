@@ -24,7 +24,7 @@ Just add the following dependency in the <tt>dependencies</tt> section of your <
     <dependency>
         <groupId>com.github.dandelion</groupId>
         <artifactId>datatables-jsp</artifactId>
-        <version>0.8.6</version>
+        <version>{{ site.dandelion.components.datatables.version }}</version>
     </dependency>
 
 ##### Step 2 : Declare the taglib definition
@@ -70,7 +70,7 @@ You need to follow the first three steps described above.
     <dependency>
         <groupId>com.github.dandelion</groupId>
         <artifactId>datatables-servlet2</artifactId>
-        <version>0.8.6</version>
+        <version>{{ site.dandelion.components.datatables.version }}</version>
     </dependency>
     
 <br />
