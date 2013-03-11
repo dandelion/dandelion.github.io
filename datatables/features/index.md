@@ -49,7 +49,7 @@ You can find below the full list of features supported by **Dandelion-Datatables
     <tr>
       <td>Length change enablement</td>
       <td><a href="/datatables/ref/jsp/table.html#lengthChange">lengthChange</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:lengthchange">dt:lengthchange</a></td>
+      <td><span class="icon-remove"></span></td>
       <td><a href="/datatables/features/basics/featurenablement.html" class="btn btn-mini btn-info">More details »</a></td>    
     </tr>
     <tr>
@@ -78,13 +78,13 @@ You can find below the full list of features supported by **Dandelion-Datatables
     </tr>
     <tr>
       <td>Specific column's content</td>
-      <td><a href="/datatables/ref/jsp/column.html#property">property</a> / <a href="/jsp/table.html#row">row</a></td>
+      <td><a href="/datatables/ref/jsp/column.html#property">property</a> / <a href="/datatables/ref/jsp/table.html#row">row</a></td>
       <td>Native support</td>
       <td><a href="/datatables/features/basics/customcontent.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Specific column's head</td>
-      <td><a href="/datatables/ref/jsp/columnhead.html#uid">uid (columnHead)</a> / <a href="/jsp/column.html#uid">uid (column)</a></td>
+      <td><a href="/datatables/ref/jsp/columnhead.html#uid">uid (columnHead)</a> / <a href="/datatables/ref/jsp/column.html#uid">uid (column)</a></td>
       <td>Native support</td>
       <td><a href="/datatables/features/basics/customhead.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
@@ -103,13 +103,13 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td>Sorting initialization</td>
       <td><a href="/datatables/ref/jsp/column.html#sortInit">sortInit</a></td>
       <td><span class="icon-remove"></span></td>
-      <td><a href="/datatables/features/basics/sorting.html#Sorting_initialisation" class="btn btn-mini btn-info">More details »</a></td>   
+      <td><a href="/datatables/features/basics/sorting.html#sorting_initialisation" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Sorting direction control</td>
       <td><a href="/datatables/ref/jsp/column.html#sortDirection">sortDirection</a></td>
       <td><span class="icon-remove"></span></td>
-      <td><a href="/datatables/features/basics/sorting.html#Sorting_direction_control" class="btn btn-mini btn-info">More details »</a></td>   
+      <td><a href="/datatables/features/basics/sorting.html#sorting_direction_control" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
     <tr>
@@ -132,7 +132,7 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td>Exclude column from filtering</td>
       <td><a href="/datatables/ref/jsp/column.html#searchable">searchable</a></td>
       <td><a href="/datatables/ref/thymeleaf/th.html#dt:searchable">dt:searchable</a></td>
-      <td><a href="/datatables/features/basics/filtering.html#Exclude_column_from_filtering" class="btn btn-mini btn-info">More details »</a></td>   
+      <td><a href="/datatables/features/basics/filtering.html#exclude_column_from_filtering" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
     <tr>
@@ -158,25 +158,25 @@ You can find below the full list of features supported by **Dandelion-Datatables
     </tr>
     <tr>
       <td>Adapting links' style</td>
-      <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/jsp/export.html#label">label</a> / <a href="/jsp/export.html#cssStyle">cssStyle</a> / <a href="/jsp/export.html#cssClass">cssClass</a></td>
+      <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/datatables/ref/jsp/export.html#label">label</a> / <a href="/datatables/ref/jsp/export.html#cssStyle">cssStyle</a> / <a href="/datatables/ref/jsp/export.html#cssClass">cssClass</a></td>
       <td><span class="icon-remove"></span></td>
       <td><a href="/datatables/features/export/customlink.html#Link_style" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Adapting links' position</td>
-      <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/jsp/table.html#exportLinks">exportLinks</a></td>
+      <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/datatables/ref/jsp/table.html#exportLinks">exportLinks</a></td>
       <td><span class="icon-remove"></span></td>
       <td><a href="/datatables/features/export/customlink.html#Link_position" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Remove header (all formats)</td>
-      <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/jsp/export.html#removeHeader">removeHeader</a></td>
+      <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/datatables/ref/jsp/export.html#removeHeader">removeHeader</a></td>
       <td><span class="icon-remove"></span></td>
       <td><a href="/datatables/features/export/customlink.html#Remove_header_all_formats" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Column auto-sizing (XLS/XLSX)</td>
-      <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/jsp/export.html#autoSize">autoSize</a></td>
+      <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/datatables/ref/jsp/export.html#autoSize">autoSize</a></td>
       <td><span class="icon-remove"></span></td>
       <td><a href="/datatables/features/export/customlink.html#Column_auto-sizing_only_XLSXLSX" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
@@ -201,7 +201,7 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td><a href="http://jqueryui.com/themeroller/">jQuery UI</a></td>
       <td><a href="/datatables/ref/jsp/table.html#theme">theme</a></td>
       <td><a href="/datatables/ref/thymeleaf/table.html#dt:theme">dt:theme</a></td>
-      <td><a href="/datatables/features/themes/bootstrap2.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td><a href="/datatables/features/themes/jqueryui.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
 
     <tr>
@@ -217,7 +217,7 @@ You can find below the full list of features supported by **Dandelion-Datatables
     <tr>
       <td>Server-side processing</td>
       <td><a href="/datatables/ref/jsp/table.html#serverSide">serverSide</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:serverside">dt:serverSide</a></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:serverside">dt:serverside</a></td>
       <td><a href="/datatables/features/ajax/serverside.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
@@ -228,8 +228,8 @@ You can find below the full list of features supported by **Dandelion-Datatables
     </tr>
     <tr>
       <td>Pipelining data</td>
-      <td><a href="/datatables/ref/jsp/table.html#pipelining">pipelining</a> / <a href="/jsp/table.html#pipeSize">pipeSize</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:pipelining">dt:pipelining</a> / <a href="/thymeleaf/table.html#dt:pipesize">dt:pipesize</a></td>
+      <td><a href="/datatables/ref/jsp/table.html#pipelining">pipelining</a> / <a href="/datatables/ref/jsp/table.html#pipeSize">pipeSize</a></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:pipelining">dt:pipelining</a> / <a href="/datatables/ref/thymeleaf/table.html#dt:pipesize">dt:pipesize</a></td>
       <td><a href="/datatables/features/ajax/serverside.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
@@ -240,19 +240,19 @@ You can find below the full list of features supported by **Dandelion-Datatables
     <tr>
       <td><a href="http://datatables.net/extras/colreorder/">ColReorder</a></td>
       <td><a href="/datatables/ref/jsp/table.html#colReorder">colReorder</a></td>
-      <td><a href="/datatables/ref/thymeleaf/head.html#dt:colReorder">dt:colReorder</a></td>
+      <td><a href="/datatables/ref/thymeleaf/thead.html#dt:colReorder">dt:colReorder</a></td>
       <td><a href="/datatables/features/plugins/colreorder.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td><a href="http://datatables.net/extras/scroller/">Scroller</a></td>
       <td><a href="/datatables/ref/jsp/table.html#scroller">scroller</a></td>
-      <td><a href="/datatables/ref/thymeleaf/head.html#dt:scroller">dt:scroller</a></td>
+      <td><a href="/datatables/ref/thymeleaf/thead.html#dt:scroller">dt:scroller</a></td>
       <td><a href="/datatables/features/plugins/scroller.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td><a href="http://datatables.net/extras/fixedheader/">FixedHeader</a></td>
       <td><a href="/datatables/ref/jsp/table.html#fixedHeader">fixedHeader</a> / <a href="/jsp/table.html#offsetTop">offsetTop</a></td>
-      <td><a href="/datatables/ref/thymeleaf/head.html#dt:fixedheader">dt:fixedheader</a></td>
+      <td><a href="/datatables/ref/thymeleaf/thead.html#dt:fixedheader">dt:fixedheader</a></td>
       <td><a href="/datatables/features/plugins/fixedheader.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     

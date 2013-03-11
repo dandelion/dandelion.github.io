@@ -77,6 +77,12 @@ The <code>&lt;th&gt;</code> attributes allow to configure the columns.
     <td>java.lang.String</td>
     <td>Empty string</td>
   </tr>
+  <tr>
+    <td>dt:searchable</td>
+    <td>Enable or disable filtering on column</td>
+    <td>true|false</td>
+    <td>true</td>
+  </tr>
   </tbody>
 </table>
 

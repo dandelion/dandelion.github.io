@@ -139,6 +139,12 @@ Or you can set a body and put anything you want inside (HTML, other tags\...). S
     <td></td>
     <td>Empty string</td>
   </tr>
+  <tr>
+    <td>searchable</td>
+    <td>Enable or disable filtering on column</td>
+    <td>true|false</td>
+    <td>true</td>
+  </tr>
   </tbody>
 </table>
 
