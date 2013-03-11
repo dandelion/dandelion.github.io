@@ -10,7 +10,7 @@ tags : [documentation]
 
 The new documentation has been published! From now, we'll use [Github Pages](http://pages.github.com/) for the whole documentation generation and publication process.
 
-From now, all the informations will be centralized in [http://dandelion.github.com](http://dandelion.github.com) (documentation, blog, ...).
+All the informations are now centralized in [http://dandelion.github.com](http://dandelion.github.com) (documentation, blog, ...).
 We tried to make the site as user friendly as possible.
 
  * [http://dandelion.github.com/datatables](http://dandelion.github.com/datatables) : for the Dandelion-DataTables' documentation
