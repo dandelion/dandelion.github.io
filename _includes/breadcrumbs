@@ -1,0 +1,15 @@
+<ul class="breadcrumb hidden-phone">
+   <li><a href="/{{ site.dandelion.components.[page.module].url }}">Home</a></li>
+     
+   {% if page.level1 | size >= 0 %}
+   <li> <span class="divider">|</span><a href="/{{ site.dandelion.components.[page.module].url }}/{{ page.level1 | downcase }}">{{ page.level1 | downcase | capitalize }}</a></li>
+   {% endif %}
+     
+   {% if page.level2 | size >= 0 %}
+   <li> <span class="divider">|</span><a href="/{{ site.dandelion.components.[page.module].url }}/{{ page.level1 | downcase }}/{{ page.level2.url | downcase }}">{{ page.level2.name }}</a></li>
+   {% endif %}
+     
+   {% if page.level3 | size >= 0 %}
+   <li> <span class="divider">|</span><a href="/{{ site.dandelion.components.[page.module].url }}/{{ page.level1 | downcase }}/{{ page.level2.url | downcase }}/{{ page.level3.url | downcase }}.html">{{ page.level3.name }}</a></li>
+   {% endif %}
+</ul>

@@ -1,6 +1,13 @@
 ---
-layout: datatables
-menu: thymeleaf
+layout: datatables-thymeleaf
+menu: taglib
+level1: ref
+level2:
+  url: thymeleaf
+  name: Thymeleaf
+level3:
+  url: table
+  name: Table attributes
 ---
 
 <h3>Table attributes</h3>

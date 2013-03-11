@@ -79,7 +79,7 @@ Finally, you can add an `datatables:extraFile` tag in your table declaration as 
 #### Insert mode
 The `datatables:extraFile` tag has an `insert` attribute that is used to determine where the content of the external Javascript file will be inserted in the main generated Javascript file (datatables-XXXXX.js).
 
-<img src="./../images/img_extraFile.png" width="500px" height="1300px" style="float:left;"/>
+<img src="/assets/images/img_extraFile.png" width="500px" height="1300px" style="float:left;"/>
 The `insert` attribute can take 4 different values :
 
  * `BEFOREALL` : the Javascript code will be inserted before all existing generated code 

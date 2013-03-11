@@ -4,35 +4,16 @@ level1: acknowledgments
 ---
 
 ### Acknowledgments
-<hr />
-
-This site :
-<ul>
- <li>has been created using :
-  <ul>
-   <li>[Apache Maven](http://maven.apache.org/)</li>
-   <li>[Apache Maven Fluido Skin](http://maven.apache.org/skins/maven-fluido-skin/)</li>
-   <li>the [DataTables jQuery plugin](http://datatables.net) :-)</li>
-   <li>[Twitter\'s Bootstrap](http://twitter.github.com/bootstrap/)</li>
-  </ul>
- </li>
- <li>is automatically deployed :
-  <ul>
-   <li>to [GitHub Pages](http://pages.github.com/)</li>
-   <li>thanks to [Jenkins](http://jenkins-ci.org/) offered by [CloudBees](http://www.cloudbees.com/)</li>
-  </ul>
- </li>
-</ul>
 
 <br />
 **Dandelion-DataTables** is highly inspired by :
 
  * the excellent [Display tag](http://www.displaytag.org) library which I used many years in different projects
  * obviously the terrific Allan Jardine\'s [DataTables](http://datatables.net) library
- * the previous project : [Datatables-taglib](http://tduchateau.github.com/DataTables-taglib/) and [DataTables4j](http://datatables4j.github.com/docs/)
+ * the previous projects : [Datatables-taglib](http://tduchateau.github.com/DataTables-taglib/) and [DataTables4j](http://datatables4j.github.com/docs/)
 
 <br />
-<img src="./images/yourkit2.png" style="float:left; margin-right: 10px; margin-bottom:10px;" />
+<img src="/assets/images/yourkit2.png" style="float:left; margin-right: 10px; margin-bottom:10px;" />
 **Dandelion-DataTables** is tested using the great Java profiling tool [YourKit](http://www.yourkit.com/).
 
 YourKit is kindly supporting open source projects with its full-featured Java Profiler.<br/>

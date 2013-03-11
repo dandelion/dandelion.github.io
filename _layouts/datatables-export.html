@@ -2,12 +2,12 @@
 layout: datatables
 ---
 
-<div class="row-fluid visible-desktop">
+<div id="datatablesexport" class="row-fluid visible-desktop">
    <div class="span10">
       {{ content }}
    </div>
    <div class="span2">
-      <ul class="nav nav-tabs nav-stacked pull-right" data-spy="affix" data-offset-top="60">
+      <ul class="nav nav-tabs nav-stacked pull-right hidden-phone" data-spy="affix" data-offset-top="60">
         <li {% if page.level3.url == 'activateexport' %} class="active"{% endif %}><a href="/datatables/features/export/activateexport.html">Exporting data</a></li>
         <li {% if page.level3.url == 'multiple' %} class="active"{% endif %}><a href="/datatables/features/export/multiple.html">Multiple export formats</a></li>
         <li {% if page.level3.url == 'customlink' %} class="active"{% endif %}><a href="/datatables/features/export/customlink.html">Adapting export links</a></li>
@@ -18,8 +18,11 @@ layout: datatables
    </div>
 </div>
 
-<div class="row-fluid hidden-desktop">
-   <div class="span12">
-      {{ content }}
-   </div>
-</div>
+<script>
+$(document).ready(function () {
+   if($('#datatablesexport ul.nav').is(":hidden")){
+      $('#datatablesexport div:eq(0)').removeClass('span10');
+      $('#datatablesexport div:eq(0)').addClass('span12');
+   }
+});   
+</script>

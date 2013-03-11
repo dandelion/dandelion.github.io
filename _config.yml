@@ -21,13 +21,15 @@ dandelion :
     core:
       name: Dandelion-Core
       version: 0.1.0
+      url: dandelion
     datatables:
       name: Dandelion-DataTables
       version: 0.8.6
+      url: datatables
     webanalytics:
       name: Dandelion-WebAnalytics
       version: 0.1.1
-    
+      url: webanalytics
 
 BASE_PATH : http://dandelion.github.com
 ASSET_PATH : false

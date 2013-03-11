@@ -9,8 +9,7 @@ level3:
   url: featurenablement
   name: Feature enablement/disablement
 ---
-
-#### Basics :: Feature enablement/disablement
+### Basics :: Feature enablement/disablement
 
 Basic features as sorting, paging, filtering, \... can be easily enabled/disabled using the corresponding table attribute.
 You can see beelow all the features you can enable/disable setting its value to `true`/`false`:
@@ -47,7 +46,7 @@ You can see beelow all the features you can enable/disable setting its value to 
     <tr>
       <td>Length change (top left drop down list)</td>
       <td>lengthChange</td>
-      <td>dt:lengthchange</td>
+      <td><span class="icon-remove"></span></td>
     </tr>
   </tbody>
 </table>

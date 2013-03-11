@@ -167,3 +167,11 @@ Then, ensure to update the qualified class name in you Spring MVC configuration:
             <bean class="com.github.dandelion.datatables.extras.spring3.ajax.DatatablesCriteriasResolver" />
         </mvc:argument-resolvers>
     </mvc:annotation-driven>
+
+<br />
+#### Step 6 : Disable caching during development
+The latest release of **Dandelion-DataTables** ({{ site.dandelion.components.datatables.version }}) includes a basic caching system which is enabled by default.
+
+Take care to disable it during development thanks to the following system property :
+
+    -Ddandelion.dev.mode=true
