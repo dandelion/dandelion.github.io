@@ -21,9 +21,11 @@ Just set the `cdn` / `dt:cdn` table attributes to `true` (JSP/Thymeleaf).
 <br />
 #### CDN strategy
 
-Note that there's no fall back strategy for now. This feature will be introduced when the Dandelion's core is released.
+Please note that :
 
-Moreover, note that only DataTables assets (main js and css) are served by CDN. All other required assets are either generated server-side by **Dandelion-DataTables** (DataTables configuration and initialization, DataTables' plugins) or your responsibility (jQuery, jQuery UI, Bootstrap, ...).
+ * only the Microsoft CDN is used today. This will become configurable when the Dandelion's core is released.
+ * there's no fall back strategy for now. This feature will be also introduced when the Dandelion's core is released.
+ * only DataTables assets (main js and css) are served by CDN. All other required assets are either generated server-side by **Dandelion-DataTables** (DataTables configuration and initialization, DataTables' plugins) or your responsibility (jQuery, jQuery UI, Bootstrap, ...).
 
 <br />
 #### Using JSP
