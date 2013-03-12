@@ -4,7 +4,6 @@ menu: acknowledgments
 ---
 
 ### Acknowledgments
-
 <hr />
 Many thanks to Gianni Polito, who has designed all the logos. 
 

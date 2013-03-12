@@ -1,5 +1,5 @@
 ---
-layout: datatables
+layout: marketing
 menu: releases
 ---
 
