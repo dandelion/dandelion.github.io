@@ -7,4 +7,6 @@ level2:
   name: Dandelion Exception
 ---
 
-???
+## Dandelion Errors System
+
+`Not Documented Yet!!`

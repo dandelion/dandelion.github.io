@@ -15,9 +15,9 @@ The `Assets management system` offer you the possibility to manage all your asse
 <table class="table table-bordered">
 	<thead>
 		<tr>
-			<th style="width: 20%">Name</th>
+			<th style="width: 17%">Name</th>
 			<th style="width: 40%">Description</th>
-			<th style="width: 40%">Samples</th>
+			<th style="width: 43%">Samples</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -219,9 +219,8 @@ In `Dandelion`, the manipulations system is based on 3 components
 		<tr>
 			<td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/Assets.html">
 			Assets</a></td>
-			<td>Assets is a Helper based on AssetsConfigurator and AssetsStorage.<br/>
-			you can use through its public API :
-			<br/><br/>
+			<td>Assets is a helper based on `AssetsStorage` who is configured by `AssetsConfigurator` (on first use).<br/><br/>
+			You can use through its public API :
 			<table class="table table-bordered">
             	<thead>
             		<tr>
@@ -257,7 +256,62 @@ In `Dandelion`, the manipulations system is based on 3 components
 		<tr>
 			<td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsConfigurator.html">
 			AssetsConfigurator</a></td>
-			<td></td>
+			<td>The assets configurator use some properties load by <a href="/dandelion/features/configuration/">Dandelion Configuration</a> :<br/>
+			<table class="table table-bordered">
+            	<thead>
+            		<tr>
+            			<th style="width: 20%">Property</th>
+            			<th style="width: 10%">Type</th>
+            			<th style="width: 50%">Description</th>
+            			<th style="width: 20%">Default Value</th>
+            		</tr>
+            	</thead>
+            	<tbody>
+            		<tr>
+            		    <td>assets.loaders</td>
+            		    <td>AssetsLoader list</td>
+            		    <td>Define a ordered list of loaders</td>
+            		    <td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/loader/AssetsJsonLoader.html">AssetsJsonLoader</a></td>
+            		</tr>
+            		<tr>
+            		    <td>assets.excluded.scopes</td>
+            		    <td>String list<br/>(comma separated)</td>
+            		    <td>Define a list of scopes who be need to exclude from storage</td>
+            		    <td></td>
+            		</tr>
+            		<tr>
+            		    <td>assets.excluded.assets</td>
+            		    <td>String list<br/>(comma separated)</td>
+            		    <td>Define a list of assets who be need to exclude from storage</td>
+            		    <td></td>
+            		</tr>
+            		<tr>
+            		    <td>assets.location.wrapper.{location key}</td>
+            		    <td>AssetsLocationWrapper</td>
+            		    <td>Define a Wrapper for location key (in property key)</td>
+            		    <td><a href="/dandelion/features/assets/wrappers.html">see implementations</a></td>
+            		</tr>
+            		<tr>
+            		    <td rowspan="2">assets.locations</td>
+            		    <td rowspan="2">String list<br/>(comma separated)</td>
+            		    <td>Define a ordered list of possible location keys</td>
+            		    <td>remote,local</td>
+            		</tr>
+            		<tr>
+                        <td colspan="2">Defined keys will return the desired location of the asset based
+                        on the presence or absence of the location key in the potential of the asset.<br/>
+                        <br/>
+                        For example, take an Asset with some location keys : <b>local, local_min, remote</b><br/>
+<br/>
+If the property is configured with :<br/>
+&nbsp;-&nbsp;<b>"remote,local"</b>, <i>getAssetLocation()</i> return <b>"remote"</b>,<br/>
+&nbsp;-&nbsp;<b>"remote_min,remote,local"</b>, <i>getAssetLocation()</i> return <b>"remote"</b> because <b>"remote_min"</b> don't exists,<br/>
+&nbsp;-&nbsp;<b>"remote_min,local_min,remote,local"</b>, <i>getAssetLocation()</i> return <b>"local_min"</b>.
+                        </td>
+                    </tr>
+            	</tbody>
+            </table>
+			</td>
 		</tr>
 		<tr>
 			<td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLoader.html">
@@ -265,6 +319,14 @@ In `Dandelion`, the manipulations system is based on 3 components
 			<td>AssetsLoader is an interface to load from a source a set of assets and their scopes and scopes parents via its API <b>loadAssets()</b>
             <br/><br/>
             Some <a href="/dandelion/features/assets/loaders.html">implementations</a> are available AssetsJsonLoader (default), AssetsNopLoader.
+            </td>
+		</tr>
+		<tr>
+			<td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLocationWrapper.html">
+			AssetsLocationWrapper</a></td>
+			<td>AssetsLocationWrapper is an interface to wrap a location before to retrieve it from <b>Assets.getAssetLocation(...)</b>
+            <br/><br/>
+            Some <a href="/dandelion/features/assets/wrappers.html">implementations</a> are available for location keys : classpath, delegate, template, webjars (extras).
             </td>
 		</tr>
 	</tbody>
