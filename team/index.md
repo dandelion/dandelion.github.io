@@ -46,14 +46,12 @@ To contact the developers, please use the appropriate [mailing list](mailto:dand
 			<th>User ID</th>
 			<th>Location</th>
 			<th>Email</th>
-			<th>Role</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td>Pavel Janecka</td>
 			<td>Sorceror</td>
-			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
