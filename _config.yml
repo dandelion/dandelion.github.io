@@ -41,7 +41,7 @@ dandelion :
       url: dandelion
     datatables:
       name: Dandelion-DataTables
-      version: 0.8.6
+      version: 0.8.7
       url: datatables
     webanalytics:
       name: Dandelion-WebAnalytics
