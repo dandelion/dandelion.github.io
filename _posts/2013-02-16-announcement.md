@@ -18,7 +18,7 @@ A brand new doc site is coming, with lots of explanations, but to be succinct, h
 
 You may ask yourself what kind of component? 
 
-Well, the first one will be, guess what, [Dandelion-datatables](https://github.com/dandelion/dandelion-datatables)! :-) 
+Well, the first one will be, guess what, [Dandelion-datatables](https://github.com/dandelion/datatables)! :-) 
 
 The goal is indeed to provide multiples components, that you will be able to use in your webapp, still with JSP and Thymeleaf support. 
 
@@ -38,7 +38,7 @@ Current DataTables4j source repositories, issues, documentation, forum and demos
 
 Current support, through this forum, won't be stopped but all the questions/bugs that need code update will be done in the new Github repo (Dandelion-datatables). 
 
-Finally, all current opened issues have already been copied to the [new issues repo](http://github.com/Dandelion/issues/issues). 
+Finally, all current opened issues have already been copied to the [new issues repo](http://github.com/dandelion/issues/issues). 
 
 
 We'll keep you updated! 

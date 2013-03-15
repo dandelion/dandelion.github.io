@@ -1,7 +1,7 @@
 ---
 layout: post
 tagline: v0.8.6
-category : versions
+category : release
 tags : [dandelion-datatables]
 ---
 {% include setup %}
@@ -22,4 +22,4 @@ tags : [dandelion-datatables]
 * [issue #35](https://github.com/dandelion/issues/issues/35) - Wrong use of EVAL_PAGE in the doStartTag method of the ColumnTag
 * [issue #36](https://github.com/dandelion/issues/issues/36) - Problem with tld file on JBoss 6
 
-_for more information, see dandelion-datatables [changelog](http://dandelion.github.com/dandelion-datatables/changelog.html)_
+_for more information, see the dandelion-datatables' [changelog](http://dandelion.github.com/datatables/changelog.html)_
