@@ -7,6 +7,8 @@ level2:
   name: Javadoc
 ---
 
+## Latest release
+
 ### JavaDoc :: Core
 
  * [datatables-core](datatables-core)
@@ -21,3 +23,7 @@ level2:
  * [datatables-export-poi-ooxml](datatables-export-poi-ooxml)
  * [datatables-servlet2](datatables-servlet2)
  * [datatables-spring3](datatables-spring3)
+
+ ## Older releases
+
+ * [0.8.6](/datatables/ref/javadoc/0.8.6)
