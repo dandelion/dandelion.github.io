@@ -52,8 +52,8 @@ To contact the developers, please use the appropriate [mailing list](mailto:dand
 		<tr>
 			<td>Pavel Janecka</td>
 			<td>Sorceror</td>
-			<td></td>
-			<td></td>
+			<td>Czech Republic</td>
+			<td>janecka.pavel@gmail.com</td>
 		</tr>
 	</tbody>
 </table>
