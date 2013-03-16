@@ -1,11 +1,16 @@
 /* Bootstrap custom */
 body {
-	padding-top: 60px;
-	padding-bottom: 40px;
+	padding-top: 100px;
+	padding-bottom: 60px;
 }
 
 .sidebar-nav {
 	padding: 9px 0;
+}
+
+.navbar-inner {
+	min-height: 80px;
+	background-color : #80b122;
 }
 
 @media ( max-width : 980px) { /* Enable use of floated navbar text */
