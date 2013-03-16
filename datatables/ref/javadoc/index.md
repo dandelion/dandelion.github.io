@@ -7,23 +7,29 @@ level2:
   name: Javadoc
 ---
 
-## Latest release
+### Latest release
 
-### JavaDoc :: Core
+#### JavaDoc :: Core
 
- * [datatables-core](datatables-core)
- * [datatables-jsp](datatables-jsp)
- * [datatables-thymeleaf](datatables-thymeleaf)
+ * [datatables-core]({{ site.dandelion.components.datatables.version }}/datatables-core)
+
+#### JavaDoc :: JSP implementation
  
-### JavaDoc :: Extras
+ * [datatables-jsp]({{ site.dandelion.components.datatables.version }}/datatables-jsp)
 
- * [datatables-compression-yui](datatables-compression-yui) 
- * [datatables-export-itext](datatables-export-itext)
- * [datatables-export-poi](datatables-export-poi)
- * [datatables-export-poi-ooxml](datatables-export-poi-ooxml)
- * [datatables-servlet2](datatables-servlet2)
- * [datatables-spring3](datatables-spring3)
+#### JavaDoc :: Thymeleaf implementation
 
- ## Older releases
+ * [datatables-thymeleaf]({{ site.dandelion.components.datatables.version }}/datatables-thymeleaf)
+ 
+#### JavaDoc :: Extras
+
+ * [datatables-compression-yui]({{ site.dandelion.components.datatables.version }}/datatables-compression-yui) 
+ * [datatables-export-itext]({{ site.dandelion.components.datatables.version }}/datatables-export-itext)
+ * [datatables-export-poi]({{ site.dandelion.components.datatables.version }}/datatables-export-poi)
+ * [datatables-export-poi-ooxml]({{ site.dandelion.components.datatables.version }}/datatables-export-poi-ooxml)
+ * [datatables-servlet2]({{ site.dandelion.components.datatables.version }}/datatables-servlet2)
+ * [datatables-spring3]({{ site.dandelion.components.datatables.version }}/datatables-spring3)
+
+### Older releases
 
  * [0.8.6](/datatables/ref/javadoc/0.8.6)
