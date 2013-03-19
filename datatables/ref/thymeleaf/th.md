@@ -83,6 +83,12 @@ The <code>&lt;th&gt;</code> attributes allow to configure the columns.
     <td>true|false</td>
     <td>true</td>
   </tr>
+  <tr>
+    <td>dt:renderFunction</td>
+    <td>Name of an external Javascript function that will be used to render the column (used with AJAX sources)</td>
+    <td></td>
+    <td></td>
+  </tr>
   </tbody>
 </table>
 

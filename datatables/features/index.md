@@ -232,6 +232,12 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td><a href="/datatables/ref/thymeleaf/table.html#dt:pipelining">dt:pipelining</a> / <a href="/datatables/ref/thymeleaf/table.html#dt:pipesize">dt:pipesize</a></td>
       <td><a href="/datatables/features/ajax/serverside.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
+    <tr>
+      <td>Custom column's content</td>
+      <td><a href="/datatables/ref/jsp/column.html#renderFunction">renderFunction</a></td>
+      <td><a href="/datatables/ref/thymeleaf/th.html#dt:renderFunction">dt:renderFunction</a></td>
+      <td><a href="/datatables/features/ajax/customcontent.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
     
     <tr>
       <td><h4>Plugins</h4></td>
