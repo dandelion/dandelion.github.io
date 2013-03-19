@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: marketing
 menu: team
 ---
 
@@ -9,12 +9,51 @@ To contact the developers, please use the appropriate [mailing list](mailto:dand
 
 #### Members
 
-| Name | User ID | Location | Email | Role
-| ---- | ------- | -------- | ------| ----
-| Thibault Duchateau | tduchateau | France | thibault.duchateau@gmail.com | Project co-founder
-| Romain Lespinasse | rlespinasse | France | romain.lespinasse@gmail.com | Project co-founder
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>User ID</th>
+			<th>Location</th>
+			<th>Email</th>
+			<th>Role</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Thibault Duchateau</td>
+			<td>tduchateau</td>
+			<td>France</td>
+			<td>thibault.duchateau@gmail.com</td>
+			<td>Lead developer (project co-founder)</td>
+		</tr>
+		<tr>
+			<td>Romain Lespinasse</td>
+			<td>rlespinasse</td>
+			<td>France</td>
+			<td>romain.lespinasse@gmail.com</td>
+			<td>Lead developer (project co-founder)</td>
+		</tr>
+	</tbody>
+</table>
 
 #### Contributors
 
-Nobody so far! Don\'t be shy! :-)
-
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>User ID</th>
+			<th>Location</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Pavel Janecka</td>
+			<td>Sorceror</td>
+			<td>Czech Republic</td>
+			<td>janecka.pavel@gmail.com</td>
+		</tr>
+	</tbody>
+</table>

@@ -1,8 +1,20 @@
+#
+# Jekyll configuration
+#
 permalink: /blog/:year/:month/:day/:title 
-
 auto: true
 pygments: true
 
+#
+# Site configuration
+#
+BASE_PATH : http://dandelion.github.com
+ASSET_PATH : false
+analytics_google_tracking_id : 'UA-33818546-8'
+
+#
+# Blog configuration
+#
 title : Dandelion Project
 tagline: Extensible web library for funnier web development
 author :
@@ -10,11 +22,16 @@ author :
   email : dandelion-devteam@googlegroups.com
   github : dandelion
   twitter : dandelion_proj
-
 production_url : http://dandelion.github.com
+atom_path : /blog/atom.xml
+rss_path : /blog/rss.xml
+archive_path: /blog/archive.html
+categories_path : /blog/categories.html
+tags_path : /blog/tags.html 
 
-analytics_google_tracking_id : 'UA-33818546-8'
-
+#
+# Dandelion data
+#
 dandelion :
   team: "Dandelion Team 2013"
   components:
@@ -24,18 +41,9 @@ dandelion :
       url: dandelion
     datatables:
       name: Dandelion-DataTables
-      version: 0.8.6
+      version: 0.8.7
       url: datatables
     webanalytics:
       name: Dandelion-WebAnalytics
       version: 0.1.1
       url: webanalytics
-
-BASE_PATH : http://dandelion.github.com
-ASSET_PATH : false
-
-atom_path : /blog/atom.xml
-rss_path : /blog/rss.xml
-archive_path: /blog/archive.html
-categories_path : /blog/categories.html
-tags_path : /blog/tags.html   

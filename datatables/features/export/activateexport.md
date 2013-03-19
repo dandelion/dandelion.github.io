@@ -20,7 +20,7 @@ The following formats are available : CSV, XML, PDF, XLS and XLSX.
 
 All plain text exports (as CSV or XML) don\'t require any additional dependency whereas binary ones do (as PDF or XLS). 
 
-Regardind binary exports, **Dandelion-Datatables** provides some extras : [datatables-export-itext](https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-itext), [datatables-export-poi](https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-poi), [datatables-export-poi-ooxml](https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-poi-ooxml) which always embed :
+Regarding binary exports, **Dandelion-Datatables** provides some extras : [datatables-export-itext](https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-itext), [datatables-export-poi](https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-poi), [datatables-export-poi-ooxml](https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-poi-ooxml) which always embed :
 
  * the third-party dependency (e.g. the iText library) 
  * a basic export class that will be used by default by **Dandelion-Datatables**

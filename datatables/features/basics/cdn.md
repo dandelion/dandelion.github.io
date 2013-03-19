@@ -19,6 +19,15 @@ You can choose to load the required Datatables web assets (JS, CSS, images) usin
 Just set the `cdn` / `dt:cdn` table attributes to `true` (JSP/Thymeleaf).
 
 <br />
+#### CDN strategy
+
+Please note that :
+
+ * only the Microsoft CDN is used today. This will become configurable when the Dandelion's core is released.
+ * there's no fall back strategy for now. This feature will be also introduced when the Dandelion's core is released.
+ * only DataTables assets (main js and css) are served by CDN. All other required assets are either generated server-side by **Dandelion-DataTables** (DataTables configuration and initialization, DataTables' plugins) or your responsibility (jQuery, jQuery UI, Bootstrap, ...).
+
+<br />
 #### Using JSP
 
 	<datatables:table id="myTableId" data="${persons}" cdn="true">
@@ -29,6 +38,7 @@ Just set the `cdn` / `dt:cdn` table attributes to `true` (JSP/Thymeleaf).
 	   <datatables:column title="Mail" property="mail" />
 	</datatables:table>
 
+<br />
 #### Using Thymeleaf
 
 	<table id="myTable" dt:table="true" dt:cdn="true">

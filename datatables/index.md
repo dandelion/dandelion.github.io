@@ -73,6 +73,14 @@ If you need support or want to discuss any issues you might be having with <stro
 #### License
 **Dandelion-DataTables** is released under the [BSD 3-Clause](http://opensource.org/licenses/BSD-3-Clause) licence, i.e. you can do almost everything you want with it.
 
+<br />
+#### Around the Web
+ * **Spring MVC : From JSP and Tiles to Thymeleaf** by [Michael Isvy](https://twitter.com/michaelisvy) | [blog.springsource.org](http://blog.springsource.org/2012/10/30/spring-mvc-from-jsp-and-tiles-to-thymeleaf/)
+ * **Integrating Spring MVC with jQuery, Bootstrap, DataTables4J and webjars** by [Michael Isvy](https://twitter.com/michaelisvy) | [speakerdeck.com](https://speakerdeck.com/michaelisvy/integrating-spring-mvc-with-jquery-bootstrap-datatables4j-and-webjars)
+ * **Improving the performance of the Spring-Petclinic sample application** by [Julien Dubois](https://twitter.com/juliendubois) | [blog.ippon.fr (part1)](http://blog.ippon.fr/2013/03/11/improving-the-performance-of-the-spring-petclinic-sample-application-part-1-of-5/) / [blog.ippon.fr (part2)](http://blog.ippon.fr/2013/03/12/improving-the-performance-of-the-spring-petclinic-sample-application-part-2-of-5/)
+ * **Spring inside the Spring-Petclinic application** by [Michael Isvy](https://twitter.com/michaelisvy) | [spearkerdeck.com](https://speakerdeck.com/michaelisvy/spring-meet-up-spring-kuang-jia-hui) 
+
+
 <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" />
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
 </script>
