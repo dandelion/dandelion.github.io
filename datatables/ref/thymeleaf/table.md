@@ -143,10 +143,10 @@ Don\'t forget to add the prefix <code>dt:</code> before each attribute.
     <td>false</td>
   </tr>
   <tr>
-    <td>dt:jsonp</td>
-    <td>Allows to retrieve JSON data from any domain name, regardless of XSS protection.</td>
-    <td>true|false</td>
-    <td>false</td>
+    <td>dt:exportLinks</td>
+    <td>Comma-separated list of positions where the export links will be generated</td>
+    <td>top_left|<br/>top_middle|<br/>top_right|<br/>bottom_left|<br/>bottom_middle|<br/>bottom_right</td>
+    <td>top_right</td>
   </tr>
   </tbody>
 </table>
