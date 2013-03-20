@@ -8,7 +8,7 @@ body {
 }
 
 a {
-  color: #80b122;
+  color: #65c22f;
 } 
 
 p {
@@ -206,13 +206,13 @@ input[type="color"],
 }
 
 .navbar-inner {
-  background-image: -moz-linear-gradient(top, #80b122, #80b122);
-  background-image: -ms-linear-gradient(top, #80b122, #80b122);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#80b122), to(#80b122));
-  background-image: -webkit-linear-gradient(top, #80b122, #80b122);
-  background-image: -o-linear-gradient(top, #80b122, #80b122);
-  background-image: linear-gradient(top, #80b122, #80b122);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#'80b122, endColorstr='#'80b122, GradientType=0);
+  background-image: -moz-linear-gradient(top, #65c22f, #65c22f);
+  background-image: -ms-linear-gradient(top, #65c22f, #65c22f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#65c22f), to(#65c22f));
+  background-image: -webkit-linear-gradient(top, #65c22f, #65c22f);
+  background-image: -o-linear-gradient(top, #65c22f, #65c22f);
+  background-image: linear-gradient(top, #65c22f, #65c22f);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#'65c22f, endColorstr='#'65c22f, GradientType=0);
 }
 
 .navbar .brand {
@@ -270,5 +270,5 @@ input[type="color"],
 .nav-list>.active>a, .nav-list>.active>a:hover, .nav-list>.active>a:focus {
 color: #ffffff;
 text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-background-color: #80b122;
+background-color: #65c22f;
 }
