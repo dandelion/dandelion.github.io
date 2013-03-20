@@ -1,6 +1,6 @@
 /* Bootstrap custom */
 body {
-	padding-top: 100px;
+	padding-top: 120px;
 	padding-bottom: 60px;
 }
 
@@ -30,7 +30,7 @@ body {
 /* Bootstrap affix plugin custom */
 .affix {
     position: fixed; 
-    top: 50px;
+    top: 120px;
     margin-right: 20px; 
 }
 

@@ -216,7 +216,7 @@ input[type="color"],
 }
 
 .navbar .brand {
-  padding: 8px 20px 12px;
+  padding: 8px 20px 0px;
   font-size: 20px;
   color: #ffffff;
 }
