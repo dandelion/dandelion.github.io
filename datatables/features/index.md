@@ -136,6 +136,17 @@ You can find below the full list of features supported by **Dandelion-Datatables
     </tr>
     
     <tr>
+      <td><h4>Paging</h4></td>
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td>Changing pagination type</td>
+      <td><a href="/datatables/ref/jsp/table.html#paginationType">paginationType</a></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:paginationtype">dt:paginationtype</a></td>
+      <td><a href="/datatables/features/basics/paging.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    
+    <tr>
       <td><h4>i18n</h4></td>
       <td colspan="3"></td>
     </tr>
@@ -159,31 +170,31 @@ You can find below the full list of features supported by **Dandelion-Datatables
     <tr>
       <td>Adapting links' style</td>
       <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/datatables/ref/jsp/export.html#label">label</a> / <a href="/datatables/ref/jsp/export.html#cssStyle">cssStyle</a> / <a href="/datatables/ref/jsp/export.html#cssClass">cssClass</a></td>
-      <td><span class="icon-remove"></span></td>
+      <td><a href="/datatables/ref/thymeleaf/tbody.html">see here</a></td>
       <td><a href="/datatables/features/export/customlink.html#Link_style" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Adapting links' position</td>
       <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/datatables/ref/jsp/table.html#exportLinks">exportLinks</a></td>
-      <td><span class="icon-remove"></span></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:exportLinks">dt:exportLinks</a></td>
       <td><a href="/datatables/features/export/customlink.html#Link_position" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Remove header (all formats)</td>
       <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/datatables/ref/jsp/export.html#removeHeader">removeHeader</a></td>
-      <td><span class="icon-remove"></span></td>
+      <td><a href="/datatables/ref/thymeleaf/tbody.html">see here</a></td>
       <td><a href="/datatables/features/export/customlink.html#Remove_header_all_formats" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Column auto-sizing (XLS/XLSX)</td>
       <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/datatables/ref/jsp/export.html#autoSize">autoSize</a></td>
-      <td><span class="icon-remove"></span></td>
+      <td><a href="/datatables/ref/thymeleaf/tbody.html#dt:xls:autosize">dt:xls:autosize</a> / <a href="/datatables/ref/thymeleaf/tbody.html#dt:xlsx:autosize">dt:xlsx:autosize</a></td>
       <td><a href="/datatables/features/export/customlink.html#Column_auto-sizing_only_XLSXLSX" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Adapt export content</td>
       <td><a href="/datatables/ref/jsp/column.html#display">display</a></td>
-      <td><span class="icon-remove"></span></td>
+      <td><a href="/datatables/ref/thymeleaf/td.html#dt:csv">dt:csv</a> / <a href="/datatables/ref/thymeleaf/td.html#dt:xml">dt:xml</a> / <a href="/datatables/ref/thymeleaf/td.html#dt:pdf">dt:pdf</a> / <a href="/datatables/ref/thymeleaf/td.html#dt:xls">dt:xls</a> / <a href="/datatables/ref/thymeleaf/td.html#dt:xlsx">dt:xlsx</a></td>
       <td><a href="/datatables/features/export/adaptcontent.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     

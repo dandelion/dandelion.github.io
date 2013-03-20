@@ -23,4 +23,5 @@ You can find below the dialect reference, sorted by HTML tags :
  * [&lt;thead> attributes](/datatables/ref/thymeleaf/thead.html)
  * [&lt;tbody> attributes](/datatables/ref/thymeleaf/tbody.html)
  * [&lt;th> attributes](/datatables/ref/thymeleaf/th.html)
+ * [&lt;td> attributes](/datatables/ref/thymeleaf/td.html)
 
