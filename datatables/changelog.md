@@ -32,14 +32,9 @@ level1: changelog
 
 #### 0.8.8 (03-20-2013)
  
- * Core
- 	
- 	*   More integration tests
- 	*	Better performance : the configuration file is now loaded only once
- 	*	Code cleaning
- 	*	New `dt:exportLinks` attribute (Thymeleaf), allowing you to configure the export links' position
- 	*	New `dt:paginationtype` attribute (Thymeleaf) allowing you to configure the pagination type
- 	*	Lots of new Thymeleaf attributes added to configure export. See the documentation for more details (LINK)
+ *	Core
+ 	* Better performance : the configuration file is now loaded only once
+ 	* Code cleaning
  
  *	JSP implementation 	
  	* Tests reorganization
