@@ -16,7 +16,7 @@ You can choose to load the required Datatables web assets (JS, CSS, images) usin
 
 `link` and `script` HTML tags will be generated and will wrap the table.
 
-Just set the `cdn` / `dt:cdn` table attributes to `true` (JSP/Thymeleaf).
+Just set the {% refjsp table cdn %} / {% reftml table dt:cdn %} table attributes to `true` (JSP/Thymeleaf).
 
 <br />
 #### CDN strategy
