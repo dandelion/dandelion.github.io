@@ -12,7 +12,7 @@ level3:
 
 ### Export :: Allowing multiple export formats
 
-You can activate export in multiple formats by comma-separating them in the `export` / `dt:export` table attribute (JSP/Thymeleaf).
+You can activate export in multiple formats by comma-separating them in the [`export`](/datatables/ref/jsp/table.html#export) / [`dt:export`](/datatables/ref/thymeleaf/table.html#export) table attribute (JSP/Thymeleaf).
 
 **Dandelion-Datatables** will then generate multiple links depending on the allowed formats.
 
