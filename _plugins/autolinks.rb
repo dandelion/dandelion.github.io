@@ -6,7 +6,7 @@ module Jekyll
       args = params.split(" ").map(&:strip)
       @templateEngine = args[0].downcase
       @location = args[1].downcase
-      @parameter = args[2].downcase
+      @parameter = args[2]
     end
 
     def render(context)
