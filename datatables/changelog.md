@@ -14,6 +14,7 @@ level1: changelog
  	*	Better performance : the configuration file is now loaded only once
  	*	Code cleaning
  	*	New `dt:exportLinks` attribute (Thymeleaf), allowing you to configure the export links' position
+ 	*	New `dt:paginationtype` attribute (Thymeleaf) allowing you to configure the pagination type
  	*	Lots of new Thymeleaf attributes added to configure export. See the documentation for more details (LINK)
  
  * Issues
