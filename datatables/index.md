@@ -79,6 +79,7 @@ If you need support or want to discuss any issues you might be having with <stro
  * **Integrating Spring MVC with jQuery, Bootstrap, DataTables4J and webjars** by [Michael Isvy](https://twitter.com/michaelisvy) | [speakerdeck.com](https://speakerdeck.com/michaelisvy/integrating-spring-mvc-with-jquery-bootstrap-datatables4j-and-webjars)
  * **Improving the performance of the Spring-Petclinic sample application** by [Julien Dubois](https://twitter.com/juliendubois) | [blog.ippon.fr (part1)](http://blog.ippon.fr/2013/03/11/improving-the-performance-of-the-spring-petclinic-sample-application-part-1-of-5/) / [blog.ippon.fr (part2)](http://blog.ippon.fr/2013/03/12/improving-the-performance-of-the-spring-petclinic-sample-application-part-2-of-5/)
  * **Spring inside the Spring-Petclinic application** by [Michael Isvy](https://twitter.com/michaelisvy) | [spearkerdeck.com](https://speakerdeck.com/michaelisvy/spring-meet-up-spring-kuang-jia-hui) 
+ * **Spring PetClinic is on Github!** by [Michael Isvy](https://twitter.com/michaelisvy) | [blog.springsource.org](http://blog.springsource.org/2013/03/21/spring-petclinic-is-on-github/)
 
 
 <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" />
