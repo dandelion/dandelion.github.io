@@ -13,6 +13,17 @@ body {
 	background-color : #80b122;
 }
 
+.navbar .nav li {
+	background-color: #73c730;
+	width: 160px;
+	margin-right: 5px;
+}
+
+.navbar .nav li.dropdown.open>.dropdown-toggle, .navbar .nav li.dropdown.active>.dropdown-toggle, .navbar .nav li.dropdown.open.active>.dropdown-toggle {
+	background-color: #73c730;
+	color: #555555;
+}
+
 @media ( max-width : 980px) { /* Enable use of floated navbar text */
 	.navbar-text.pull-right {
 		float: none;
@@ -37,7 +48,23 @@ body {
 .nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-	background-color: #0088cc;
+	background-color: #73c730;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #73c730;
+  background-image: -moz-linear-gradient(top, #73c730, #73c730);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#73c730), to(#73c730));
+  background-image: -webkit-linear-gradient(top, #73c730, #73c730);
+  background-image: -o-linear-gradient(top, #73c730, #73c730);
+  background-image: linear-gradient(to bottom, #73c730, #73c730);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#73c730', endColorstr='#73c730', GradientType=0);
 }
 
 h3 {
