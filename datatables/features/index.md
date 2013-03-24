@@ -274,6 +274,29 @@ You can find below the full list of features supported by **Dandelion-Datatables
     </tr>
     
     <tr>
+      <td><h4>Extension points</h4></td>
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td>Callbacks</td>
+      <td><a href="/datatables/ref/jsp/callback.html">datatables:callback tag</a></td>
+      <td><a href="/datatables/ref/thymeleaf/tbody.html#dt:cbk">dt:cbk:*</a></td>
+      <td><a href="/datatables/features/advanced/callbacks.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td>Extra file</td>
+      <td><a href="/datatables/ref/jsp/extrafile.html">datatables:extraFile tag</a></td>
+      <td><span class="icon-remove"></span></td>
+      <td><a href="/datatables/features/advanced/extrafile.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td>Extra conf</td>
+      <td><a href="/datatables/ref/jsp/extraconf.html">datatables:extraConf tag</a></td>
+      <td><span class="icon-remove"></span></td>
+      <td><a href="/datatables/features/advanced/extraconf.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    
+    <tr>
       <td><h4>Compression</h4></td>
       <td colspan="3"></td>
     </tr>
