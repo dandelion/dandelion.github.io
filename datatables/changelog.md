@@ -8,26 +8,30 @@ level1: changelog
 
 #### 0.8.9 (03-??-2013)
  
- *	Core
- 	* All classes/interfaces have been logically reorganized
- 	* All POMs cleaned, updated some dependencies
- 	* New configuration available, called `url.base`, allowing you to override the base URL used in all URLs (assets sources, export links)
- 	* sSearch_(int) is now parsed in DatatablesCriterias, allowing you to filter data on individual column when using server-side processing
+ *   Core
+     
+     * All classes/interfaces have been logically reorganized
+     * All POMs cleaned, updated some dependencies
+     * New configuration available, called `url.base`, allowing you to override the base URL used in all URLs (assets sources, export links)
+     * sSearch_(int) is now parsed in DatatablesCriterias, allowing you to filter data on individual column when using server-side processing
  
- *	JSP implementation 	
- 	* New `datatables:callback` tag, allowing you to execute one or more callbacks
+ *   JSP implementation 	
+     
+     * New `datatables:callback` tag, allowing you to execute one or more callbacks
  
- *	Thymeleaf implementation
- 	* All attribute and element processors now use the new abstract Datatables processors
- 	* New `dt:processing` attribute
-    * New callback-related tbody attributes : `dt:cbk:cookie`, `dt:cbk:createdrow`, `dt:cbk:draw`, `dt:cbk:footer`, `dt:cbk:format`, `dt:cbk:header`, `dt:cbk:info`, `dt:cbk:init`, `dt:cbk:predraw` and  `dt:cbk:row`
+ *   Thymeleaf implementation
+     
+     * All attribute and element processors now use the new abstract Datatables processors
+     * New `dt:processing` attribute
+     * New callback-related tbody attributes : `dt:cbk:cookie`, `dt:cbk:createdrow`, `dt:cbk:draw`, `dt:cbk:footer`, `dt:cbk:format`, `dt:cbk:header`, `dt:cbk:info`, `dt:cbk:init`, `dt:cbk:predraw` and  `dt:cbk:row`
  
- * 	Issues
- 	* [issue #43](https://github.com/dandelion/issues/issues/43) (Handling column filters with server-side processing)
- 	* [issue #47](https://github.com/dandelion/issues/issues/47) (Add extension points based on DataTables callbacks)
- 	* [issue #48](https://github.com/dandelion/issues/issues/48) (Also parse sSearch_(int) before sending parameter to the server)
- 	* [issue #50](https://github.com/dandelion/issues/issues/50) (dt:processing attribute is missing in Thymeleaf implementation)
- 	* [issue #52](https://github.com/dandelion/issues/issues/52) (Add a configuration allowing to override the base URL used in all URLs (assets, export))
+ *   Issues
+     
+     * [issue #43](https://github.com/dandelion/issues/issues/43) (Handling column filters with server-side processing)
+     * [issue #47](https://github.com/dandelion/issues/issues/47) (Add extension points based on DataTables callbacks)
+     * [issue #48](https://github.com/dandelion/issues/issues/48) (Also parse sSearch_(int) before sending parameter to the server)
+     * [issue #50](https://github.com/dandelion/issues/issues/50) (dt:processing attribute is missing in Thymeleaf implementation)
+     * [issue #52](https://github.com/dandelion/issues/issues/52) (Add a configuration allowing to override the base URL used in all URLs (assets, export))
 
 
 #### 0.8.8 (03-20-2013)
