@@ -4,15 +4,22 @@ menu: assets
 level1: features
 level2:
   url: assets
-  name: Assets
+  name: Assets Stack
 level3:
   url: loaders
-  name: AssetsLoader Implementations
+  name: Loader Implementations
 ---
 
-## AssetsLoader Implementations
+### Loader Implementations
 
-### JSON implementation (use by default)
+#### How to build your own implementation?
+
+Your implementation must implement [AssetsLoader](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLoader.html).
+Now, you can setup your class with configuration property [assets.loaders](/dandelion/features/assets/configuration.html#assets.loaders).
+
+#### Built-in implementations
+
+##### JSON implementation (use by default)
 
 [AssetsJsonLoader](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/loader/AssetsJsonLoader.html) load the Assets from all `*.json` files under `dandelion` folder.
 
@@ -35,7 +42,7 @@ To add a asset, you can create a new JSON file like this :
 		]
 	}
 
-### No Operations implementation
+##### No Operations implementation
 
 [AssetsNopLoader](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/loader/AssetsNopLoader.html) load nothing, you can use it to disabled the _assets management system_.
 

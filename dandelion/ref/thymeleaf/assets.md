@@ -10,23 +10,33 @@ level3:
   name: Assets attributes
 ---
 
-
 <h3>Table attributes</h3>
-<hr />
 
 <h4>Description</h4>
-<br />
 
 The <code>assets</code> attributes allow to set the options for the assets, ie add, excludes, \...
 
 Don\'t forget to add the prefix <code>ddl:</code> before each attribute.
 
-<br />
 <h4>Usage on any HTML element</h4>
 
-    <html ddl:assets-scopes="...">
-        ...
+    <html ddl:assets-scopes="scope1,scope2">
+        <head>
+            <link href="asset1.css" ddl:assets-excludedAssets="asset1" rel="stylesheet">
+        </head>
+        <body ddl:assets-scopes="scope3">
+            <div ddl:assets-excludedScopes="scope4,scope5"></div>
+            <script src="asset2.js" ddl:assets-excludedAssets="asset2" type="text/javascript"></script>
+        </body>
     </html>
+
+The minimal usage of this dialect is
+
+    <html ddl:assets-stack="enabled">
+    </html>
+
+It's needed if you don't use another attribute of this dialect.
+
 
 <br />
 <h4>Reference</h4>
@@ -41,6 +51,12 @@ Don\'t forget to add the prefix <code>ddl:</code> before each attribute.
     </tr>
   </thead>
   <tbody>
+  <tr>
+    <td>ddl:assets-stack</td>
+    <td><strong>(optional)</strong> enable assets stack management</td>
+    <td>enabled</td>
+    <td></td>
+  </tr>
   <tr>
     <td>ddl:assets-scopes</td>
     <td><strong>(optional)</strong> add assets by scope</td>
@@ -63,7 +79,5 @@ Don\'t forget to add the prefix <code>ddl:</code> before each attribute.
 </table>
 
 <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" />
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
-</script>
-<script src="/assets/js/site_reference.js">
-</script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="/assets/js/site_reference.js"></script>

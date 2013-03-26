@@ -11,17 +11,26 @@ level3:
 ---
 
 ### Assets tag
-<br />
 
 #### Description
-Decribes how the Assets feature should generate the assets.
+Describes how the Assets feature should generate the assets.
 
-<br />
 #### Usage
 
-    <dandelion:assets ... />
 
-<br />
+    <dandelion:assets
+                renderer="false"
+                scopes="scope1,scope2,..."
+                excludedScopes="scope4,scope5,..."
+                excludedAssets="asset1,asset2,..." />
+
+
+Always define on the footer of your page the minimal usage of this taglib (needed to render the assets) :
+
+
+    <dandelion:assets />
+
+
 #### Reference
 
 <table id="tableReference" class="table table-striped table-bordered">
@@ -62,7 +71,5 @@ Decribes how the Assets feature should generate the assets.
 </table>
 
 <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" />
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
-</script>
-<script src="/assets/js/site_reference.js">
-</script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="/assets/js/site_reference.js"></script>

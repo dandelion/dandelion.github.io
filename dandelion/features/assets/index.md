@@ -4,116 +4,95 @@ menu: assets
 level1: features
 level2:
   url: assets
-  name: Assets
+  name: Assets Stack
 ---
 
-# Assets management system
+### Web assets management
 
-The `Assets management system` offer you the possibility to manage all your assets, and bring you some useful tools to do it.
+You need to deal with
+* a lot of assets
+* multiples usages on one page
+* assets with parameters
+* generated assets
+* dependency between assets
+* multiples locations for an assets
+* upgrade asset versions
+* and more
 
-### Bases
-<table class="table table-bordered">
-	<thead>
-		<tr>
-			<th style="width: 17%">Name</th>
-			<th style="width: 40%">Description</th>
-			<th style="width: 43%">Samples</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Asset</td>
-			<td>An Asset define a web resources by
-<ul>
-	<li>his name,</li>
-	<li>his version number,</li>
-	<li>his type,</li>
-	<li>these various locations (remote, locale, generate, ...)</li>
-</ul></td>
-			<td><pre>{
-  "name": "jquery",
-  "version": "1.9.1",
-  "type": "js",
-  "locations": [
-    "remote": "http://code.jquery.com/jquery-1.9.1.js",
-    "local": "/assets/libs/jquery-1.9.1.js"
-  ]
-}</pre></td>
-		</tr>
-		<tr>
-			<td>Scope</td>
-			<td>A Scope define a group of assets.<br/>The order in the assets define the display order </td>
-			<td><pre>{
-  "scope": "datatables",
-  "assets": [
-    {"name": "jquery", "type": "js", ...},
-    {"name": "datatables", "type": "js", ...},
-    {"name": "datatables", "type": "css", ...}
-  ]
-}</pre>
-<b>jQuery</b> asset is before <b>DataTables</b> assets.
-</td>
-		</tr>
-		<tr>
-			<td>Scopes Hierachy</td>
-			<td>Scopes can be define by using a parenthood hierachy (start by <b>default</b>).<br/>The parent scope is always display first</td>
-			<td><pre>{ "scope": "jquery" },
-{ "scope": "datatables", "parent": "jquery" }</pre>
-<b>DataTables</b> assets have <b>jQuery</b> assets for parent.
-</td>
-		</tr>
-		<tr>
-			<td>Scope Parent : <b>default</b></td>
-			<td>The first parent is <b>default</b>.<br/>This scope is always display.<br/>The default scope as parent is optional</td>
-			<td><pre>{ "scope": "jquery" },
-{ "scope": "jquery", "parent": "default" }</pre>
-Thoses 2 samples define the same scope/parent link.
-</td>
-		</tr>
-		<tr>
-			<td>Scope Parent : <b>none</b></td>
-			<td>It's a Detached scope, to start a specific hierachy without <b>default</b> assets.<br/>The detached scope can only use as Scope parent.</td>
-			<td>Good Usage :<pre>{ "scope": "jquery", "parent": "none" }</pre>
-Bad Usage :<pre>{ "scope": "none" }</pre></td>
-		</tr>
-		<tr>
-			<td>Asset Override</td>
-			<td>Asset Override provide you the ability to change a asset in a scope by extend this scope and change the asset.</td>
-			<td><pre>{
-  "scope": "datatables",
-  "assets": [
-    {"name": "jquery", "version": "1.9.1", ...},
-    {"name": "datatables", "type": "js", ...},
-    {"name": "datatables", "type": "css", ...}
-  ]
-}</pre>
-We change the version of <b>jQuery</b> asset :
-<pre>{
-  "scope": "my_datatables",
-  "assets": [
-    {"name": "jquery", "version": "2.0", ...}
-  ]
-}</pre>
-Only the version is change, not the display order, <b>jQuery</b> is still the first asset to be display.</td>
-		</tr>
-		<tr>
-			<td>Asset Location Override<br/>(Add)</td>
-			<td>Asset Location Override provide you the ability to <b>add</b> a location in a asset.</td>
-			<td>You can add a location to an asset using the same scope or using the <b>Asset Override</b> with same definition (name, type, version)</td>
-		</tr>
-		<tr>
-			<td>Asset Location Override<br/>(Change)</td>
-			<td>Asset Location Override provide you the ability to <b>change</b> a location in a asset.</td>
-			<td>You can change a location to an asset using the <b>Asset Override</b> with same definition (name, type, version)</td>
-		</tr> 
-	</tbody> 
-</table> 
+Dandelion bring you a feature to build a structured assets stack to deal with all yours assets with less pain.
 
-## Storage
+#### Build your own assets stack?
+
+For example, the assets stack of dandelion can be view as
+
+<div class="row-fluid show-grid">
+    <div class="span12">
+        <div class="row-fluid show-grid">
+             <div class="span8">
+                <div class="row-fluid show-grid">
+                     <div class="span12">
+                        <div class="row-fluid show-grid">
+                            <div class="span8">
+                                <div class="row-fluid show-grid">
+                                     <div class="span6">Plugins</div>
+                                     <div class="span6">Themes</div>
+                                </div>
+                                Datatables
+                            </div>
+                            <div class="span4">
+                                <div class="row-fluid show-grid">
+                                     <div class="span12">Plugins</div>
+                                </div>
+                                Bootstrap
+                            </div>
+                        </div>
+                        jQuery
+                     </div>
+                </div>
+                default
+             </div>
+             <div class="span4">
+                <div class="row-fluid show-grid">
+                     <div class="span6">google analytics</div>
+                     <div class="span6">yahoo analytics</div>
+                </div>
+                none
+             </div>
+        </div>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="/assets/css/assets_stack.css" />
+
+
+
+#### TODO to integrate
+* [Asset](/dandelion/features/assets/bases.html#select.asset)
+* [Scope](/dandelion/features/assets/bases.html#select.scope)
+* [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.parent)
+* [Default Scope Parent](/dandelion/features/assets/bases.html#select.default)
+* [Detached Scope Parent](/dandelion/features/assets/bases.html#select.none)
+* [Asset Override](/dandelion/features/assets/bases.html#select.override)
+* [Asset Location Override - Add](/dandelion/features/assets/bases.html#select.locationOverride.add)
+* [Asset Location Override - Change](/dandelion/features/assets/bases.html#select.locationOverride.change)
+
+
+
+
+
+
+
+
+
+
+
+#### TODO to split
+##### Storage
 
 In `Dandelion`, the `Assets` feature is based on a [Storage Component](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorage.html) who provide a API with Storage Rules.
 
-### **AssetsStorage** Public API
+###### **AssetsStorage** Public API
 <table class="table table-bordered">
 	<thead>
 		<tr>
@@ -141,70 +120,24 @@ In `Dandelion`, the `Assets` feature is based on a [Storage Component](/dandelio
 	</tbody> 
 </table> 
 
-### **AssetsStorage** Rules
+###### **AssetsStorage** Rules
 
-#### **Store** Rules
-<table class="table table-bordered">
-	<thead>
-		<tr>
-			<th style="width: 50%">Rule</th>
-			<th style="width: 50%"><a href="/dandelion/features/exception/">DandelionException</a></th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>An asset can't be add twice in the same scope (same name)</td>
-			<td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#ASSET_ALREADY_EXISTS_IN_SCOPE">
-			    AssetStorageError#ASSET_ALREADY_EXISTS_IN_SCOPE
-			    </a><br/>
-                &nbsp;-&nbsp;<b>originalAsset :</b> stored asset.
-            </td>
-		</tr>
-		<tr>
-			<td>A location can't be use twice in the same scope by an similar asset</td>
-			<td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#ASSET_LOCATION_ALREADY_EXISTS_IN_SCOPE">
-                AssetStorageError#ASSET_LOCATION_ALREADY_EXISTS_IN_SCOPE
-			    </a><br/>
-                &nbsp;-&nbsp;<b>locations :</b> locations to add but in error,<br/>
-                &nbsp;-&nbsp;<b>asset :</b> asset in failure.
-            </td>
-		</tr>
-		<tr>
-			<td>An asset can't have a parent scope who don't already exists</td>
-			<td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#UNDEFINED_PARENT_SCOPE">
-                AssetStorageError#UNDEFINED_PARENT_SCOPE
-			    </a><br/>
-                &nbsp;-&nbsp;<b>parentScope :</b> undefined parent scope.
-            </td>
-		</tr>
-		<tr>
-			<td>An asset can't have a couple of Scope/Parent Scope when his scope is already associated to another parent scope</td>
-			<td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#PARENT_SCOPE_INCOMPATIBILITY">
-                AssetStorageError#PARENT_SCOPE_INCOMPATIBILITY
-			    </a><br/>
-                &nbsp;-&nbsp;<b>scope :</b> scope in error,<br/>
-                &nbsp;-&nbsp;<b>parentScope :</b> scope parent in error.
-            </td>
-		</tr>
-		<tr>
-			<td>An asset can't be add with <i>Detached Scope</i> as his scope, <i>Detached Scope</i> is only allowed as a Parent Scope</td>
-			<td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#DETACHED_SCOPE_NOT_ALLOWED">
-                AssetStorageError#DETACHED_SCOPE_NOT_ALLOWED
-			    </a><br/>
-                &nbsp;-&nbsp;<b>detachedScope :</b> the detached scope.
-            </td>
-		</tr>
-	</tbody>
-</table>
+####### **Store** Rules
 
-#### **Access** Rules
+* [An asset can't be add twice in the same scope](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#ASSET_ALREADY_EXISTS_IN_SCOPE)
+* [A location can't be use twice in the same scope by an similar asset](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#ASSET_LOCATION_ALREADY_EXISTS_IN_SCOPE)
+* [An asset can't have a parent scope who don't already exists](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#UNDEFINED_PARENT_SCOPE)
+* [An asset can't have a couple of Scope/Parent Scope when his scope is already associated to another parent scope](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#PARENT_SCOPE_INCOMPATIBILITY)
+* [An asset can't be add with Detached Scope as his scope, Detached Scope is only allowed as a Parent Scope](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#DETACHED_SCOPE_NOT_ALLOWED)
+
+####### **Access** Rules
 
 All assets returned by **assetsFor(...)** has the following characteristics :
 * **All assets** are returned ordered from the oldest scope to the youngest scope,
 * **Versions** returned are those in the youngest scopes (but always keeping the order of their origin scopes in the case of a change)
 * **Locations** are merged during the course if and only if the version is identical to an asset
 
-## Assets Manipulations
+##### Assets Manipulations
 
 In `Dandelion`, the manipulations system is based on 3 components
 
@@ -256,7 +189,7 @@ In `Dandelion`, the manipulations system is based on 3 components
 		<tr>
 			<td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsConfigurator.html">
 			AssetsConfigurator</a></td>
-			<td>The assets configurator use some properties load by <a href="/dandelion/features/configuration/">Dandelion Configuration</a> :<br/>
+			<td>The assets configurator use some properties load by <a href="/dandelion/ref/configuration/">Dandelion Configuration</a> :<br/>
 			<table class="table table-bordered">
             	<thead>
             		<tr>
@@ -292,8 +225,8 @@ In `Dandelion`, the manipulations system is based on 3 components
             		    <td><a href="/dandelion/features/assets/wrappers.html">see implementations</a></td>
             		</tr>
             		<tr>
-            		    <td rowspan="2">assets.locations</td>
-            		    <td rowspan="2">String list<br/>(comma separated)</td>
+            		    <td row-fluidspan="2">assets.locations</td>
+            		    <td row-fluidspan="2">String list<br/>(comma separated)</td>
             		    <td>Define a ordered list of possible location keys</td>
             		    <td>remote,local</td>
             		</tr>
@@ -331,3 +264,76 @@ If the property is configured with :<br/>
 		</tr>
 	</tbody>
 </table>
+
+
+
+#### TODO to translate and split
+
+##### Comment utiliser la gestion des Assets dans une application?
+
+Pour les besoins d’une application web, une gestion des assets pour web via un objet AssetsRequestContext a été mis en place.
+
+Public API fluent
+- get(ServletRequest) -> le context
+	retourne le contexte de la requête HTTP (et le créer si besoin)
+- addScopes(scopes) -> le context
+	ajout un ensemble de scopes au contexte
+- removeScopes(scopes) -> le context
+	retire un ensemble de scopes au contexte
+
+- excludeAssets(String assets) -> le context
+	ajout un ensemble d’assets à exclure
+- hasBeenRendered() -> le context
+	changer l’état de rendu HTML du contexte
+
+Public API
+- getScopes(withoutExcludedScopes) -> les scopes stockés avec ou sans les exlus
+- getExcludedScopes() -> les scopes exlus
+	retourne les scopes exclus
+- getExcludedAssets() -> les assets exlus
+	retourne les assets exclus
+- isAlreadyRendered() -> boolean
+	retourne si oui ou non le contexte à déjà été utilisé pour faire un rendu HTML
+
+Ce contexte permet dans le cadre d’une requete HTTP, via sa Public API
+	- de stocker des scopes
+	- d’exclure des scopes
+	- d’exclure des assets
+	- de définir si le contexte a déjà été utilisé pour un rendu HTML
+
+Durant la vie d’une requête HTTP, on peut donc à loisir accéder à l’objet AssetsRequestContext et y rajouter des scopes, en exclure d’autres ou bien des assets.
+Un contexte n’a pas d’existance en dehors de la requete HTTP dans laquelle il a été crée.
+
+
+##### Comment utiliser la gestion des Assets dans les JSP?
+Durant la durée de vie d’une requête HTTP, vous pouvez gérer l’objet AssetsRequestContext, depuis vos jsp.
+
+La taglib accessible depuis l’URI “http://github.com/dandelion” propose le tag “assets”.
+
+Le tag “assets” permet de gérer l’objet AssetsRequestContext
+Attribute	Description	Required	Link
+scopes	List of requested scopes (comma separated)	false	AssetsRequestContext.addScopes(scopes)
+excludedScopes	List of excluded scopes (comma separated)	false	AssetsRequestContext.excludeScopes(scopes)
+excludedAssets	List of excluded assets (comma separated)	false	AssetsRequestContext.excludeAssets(assets)
+renderer	false to disable the rendering system for assets	false	AssetsRequestContext.getScopes(true)
+AssetsRequestContext.getExcludesAssets()
+Assets.assetFor(...)
+AssetsRenderer.render(...)
+AssetsRequestContext.hasBeenRendered()
+
+
+
+Dans une jsp, on peut l’utiliser comme cela
+
+	<html>
+		<head>
+			<dandelion:assets scopes=”jquery” renderer=”false”/>
+		</head>
+		<body>
+			<dandelion:assets scopes=”datatables” renderer=”false”/>
+
+			<dandelion:assets scopes=”ga”/>
+		</body>
+	</html>
+
+le rendu HTML sera qu’à la fin de la base `<body/>` les assets des scopes : jquery, datatables et ga seront crées en tant que balises `<script/>` ou `<link/>`
