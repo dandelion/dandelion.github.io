@@ -6,6 +6,29 @@ level1: changelog
 
 ### Changelog
 
+#### 0.8.8 (03-20-2013)
+ 
+ *	Core
+ 	* Better performance : the configuration file is now loaded only once
+ 	* Code cleaning
+ 
+ *	JSP implementation 	
+ 	* Tests reorganization
+ 	* More integration tests
+ 
+ *	Thymeleaf implementation
+ 	* New `dt:exportLinks` attribute (Thymeleaf), allowing you to configure the export links' position
+ 	* New `dt:paginationtype` attribute (Thymeleaf) allowing you to configure the pagination type
+ 	* Lots of new Thymeleaf attributes added to configure export. See the documentation for more details (LINK)
+ 
+ * 	Issues
+ 	* [issue #12](https://github.com/dandelion/issues/issues/12) (Improve export using Thymeleaf)
+ 	* [issue #14](https://github.com/dandelion/issues/issues/14) (Add dt:paginationtype Thymeleaf processor)
+ 	* [issue #28](https://github.com/dandelion/issues/issues/28) (Add the possibility to configure export link style and position)
+ 	* [issue #29](https://github.com/dandelion/issues/issues/29) (Add the possibility to configure export with Thymeleaf)
+ 	* [issue #44](https://github.com/dandelion/issues/issues/44) (Performance : load Dandelion properties only once)
+
+
 #### 0.8.7 (03-15-2013)
  
  * Core

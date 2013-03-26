@@ -122,7 +122,7 @@ Decribes how the HTML table should be generated.
   </tr>
   <tr>
     <td>paginationType</td>
-    <td>Choice between the two different built-in pagination interaction methods ('two_button' or 'full_numbers') which present different page controls to the end user</td>
+    <td>Choice between the different built-in pagination interaction methods which present different page controls to the end user</td>
     <td>two_button|<br/>full_numbers|<br/>four_button|<br/>bootstrap|<br/>scrolling|<br/>input|<br/>listbox|<br/>extJs</td>
     <td>two_button</td>
   </tr>

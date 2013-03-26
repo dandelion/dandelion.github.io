@@ -95,6 +95,12 @@ Don\'t forget to add the prefix <code>dt:</code> before each attribute.
     <td>true</td>
   </tr>
   <tr>
+    <td>dt:paginationtype</td>
+    <td>Choice between the different built-in pagination interaction methods which present different page controls to the end user</td>
+    <td>two_button|<br/>full_numbers|<br/>four_button|<br/>bootstrap|<br/>scrolling|<br/>input|<br/>listbox|<br/>extJs</td>
+    <td>two_button</td>
+  </tr>
+  <tr>
     <td>dt:export</td>
     <td>Enable or disable the export functionality</td>
     <td>true|false</td>
@@ -143,10 +149,10 @@ Don\'t forget to add the prefix <code>dt:</code> before each attribute.
     <td>false</td>
   </tr>
   <tr>
-    <td>dt:jsonp</td>
-    <td>Allows to retrieve JSON data from any domain name, regardless of XSS protection.</td>
-    <td>true|false</td>
-    <td>false</td>
+    <td>dt:exportLinks</td>
+    <td>Comma-separated list of positions where the export links will be generated</td>
+    <td>top_left|<br/>top_middle|<br/>top_right|<br/>bottom_left|<br/>bottom_middle|<br/>bottom_right</td>
+    <td>top_right</td>
   </tr>
   </tbody>
 </table>

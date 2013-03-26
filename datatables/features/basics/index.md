@@ -15,6 +15,7 @@ level2:
  * [Handling null/default values](defaultvalues.html)
  * [Using CDN](cdn.html)
  * [Changing table\'s appearing](changingappearing.html)
+ * [Changing pagination type](paging.html)
  * [Multiple tables](multiple.html)
  * [Using implicit object](implicit.html)
  * [Specific column's content](customcontent.html)

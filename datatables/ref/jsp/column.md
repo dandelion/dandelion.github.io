@@ -145,6 +145,12 @@ Or you can set a body and put anything you want inside (HTML, other tags\...). S
     <td>true|false</td>
     <td>true</td>
   </tr>
+  <tr>
+    <td>renderFunction</td>
+    <td>Name of an external Javascript function that will be used to render the column (used with AJAX sources)</td>
+    <td></td>
+    <td></td>
+  </tr>
   </tbody>
 </table>
 
