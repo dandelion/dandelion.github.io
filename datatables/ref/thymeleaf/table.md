@@ -154,6 +154,24 @@ Don\'t forget to add the prefix <code>dt:</code> before each attribute.
     <td>top_left|<br/>top_middle|<br/>top_right|<br/>bottom_left|<br/>bottom_middle|<br/>bottom_right</td>
     <td>top_right</td>
   </tr>
+  <tr>
+    <td>dt:lengthmenu</td>
+    <td>Specify the entries in the length drop down menu that DataTables show when pagination is enabled.</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>dt:serverdata</td>
+    <td>This parameter allows you to override the default function which obtains the data from the server ($.getJSON) so something more suitable for your application</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>dt:serverparams</td>
+    <td>Allows you to send extra information to the server when using AJAX source</td>
+    <td></td>
+    <td></td>
+  </tr>
   </tbody>
 </table>
 
