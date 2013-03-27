@@ -1,36 +1,17 @@
 ---
 layout: post
-tagline: v0.8.8
+tagline: v0.8.10
 category : release
 tags : [dandelion-datatables]
 ---
 {% include setup %}
 
-**Dandelion-Datatables v0.8.8 has been released in Maven Central.**
+**Dandelion-Datatables v0.8.10 has been released in Maven Central.**
 
-The new release contains 2 major changes :
+The new release contains lots of new features, for both JSP and Thymeleaf. See the [changelog](/datatables/changelog.html) for more details. 
 
- * integration tests have been significantly improved
- 
- * the export feature has been improved for the Thymeleaf implementation
- 
-#### Integration tests
-More and more features are covered by integration tests at the moment. That's cool! And the technical stack we choose is not for nothing.
- 
- * [JUnit](http://junit.org/)
- * [FestAssert](https://code.google.com/p/fest/)
- * [FluentLenium](https://github.com/FluentLenium/FluentLenium)
- * [GhostDriver](https://github.com/detro/ghostdriver)
- * [Jetty](http://www.eclipse.org/jetty/) 
-
-Writing integration tests with Selenium becomes really easy with this stack! We'll probably write a new post for that.
-
-#### Export feature
-The Thymeleaf implementation of **Dandelion-Datatables** was lacking some important features like adapting export content, customizing export links, ...
-
-Well, you can now configure your export in a less verbose manner than in the JSP implementation :-)
-The documentation will be updated in the day. 
+The other thing to mention is that we tried to integrate the awesome new design made by [Gianni Polito](/acknowledgments.html). For now, only [Dandelion-Datatables](/datatables) has been re-designed. Feel free to share any feedback in the forum! 
 
 _For more information, see the dandelion-datatables' [changelog](/datatables/changelog.html)_
 
-_There is a [forum discussion](http://dandelion-forum.48353.n6.nabble.com/NEWS-Dandelion-Datatables-v0-8-8-has-been-released-td263.html) for this blog post. As usual, your thoughts and feedback are very welcome. :-)_
+_As usual, there is a [forum discussion](http://dandelion-forum.48353.n6.nabble.com/NEWS-Dandelion-Datatables-v0-8-8-has-been-released-td263.html) for this blog post. As usual, your thoughts and feedback are very welcome. :-)_
