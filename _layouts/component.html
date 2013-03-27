@@ -46,8 +46,14 @@
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="/datatables"><img src="/assets/images/dandelion/github-01 copy.png" /> 
-            </a>
+            <div id="logo_container">
+                <img id="logo_image" src="/assets/images/dandelion/github-01.png" alt="dandelion"/>
+                <p id="logo_text">
+                    datatables
+                </p>
+            </div>
+            <!-- <span style="background-image: url('/assets/images/dandelion/github-01.png'); display:block; background-repeat:no-repeat; height:100px; ">Test</span> -->
+            <!-- <a class="brand" href="/datatables"><img src="/assets/images/dandelion/github-01.png" /></a> -->
             <div class="nav-collapse collapse">
                <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
                   <li class="text-center"><a href="/datatables/changelog.html">Latest : v{{ site.dandelion.components.[page.module].version }}</a></li>

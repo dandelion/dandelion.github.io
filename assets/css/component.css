@@ -74,3 +74,23 @@ h3 {
 	background: #f5f5f5;
 	border-radius: 5px;
 }
+
+#logo_container{
+	width: 331px;
+	height: 100px;
+	position: relative;
+	float: left;
+}
+#logo_image{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#logo_text{
+	z-index:100;
+    position:absolute;    
+    color:white;
+    font-size:24px;
+    left:30px;
+    top:70px;
+}
