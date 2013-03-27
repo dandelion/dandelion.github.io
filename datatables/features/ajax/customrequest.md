@@ -35,7 +35,7 @@ This Javascript function takes 4 parameters :
 
 <br />      
 #### Using JSP
-Use the {% refjsp table serverData %} table attribute and set the name of the previous Javascript function. Ensure that the function is loaded **before** using the taglib.
+Use the [`serverData`](/datatables/ref/jsp/table.html#serverData) table attribute and set the name of the previous Javascript function. Ensure that the function is loaded **before** using the taglib.
 
     <datatables:table id="myTableId" url="/persons1" serverSide="true" serverData="myAjaxRequest" processing="true">
         <datatables:column title="Id" property="id" />
@@ -47,7 +47,7 @@ Use the {% refjsp table serverData %} table attribute and set the name of the pr
 
 <br />
 #### Using Thymeleaf
-Using Thymeleaf, you can use the {% reftml table dt:serverdata%} table attribute. It works the same way than with JSP. Pass the name of the previous Javascript function.
+Using Thymeleaf, you can use the [`dt:serverdata`](/datatables/ref/thymeleaf/table.html#dt:serverdata) table attribute. It works the same way than with JSP. Pass the name of the previous Javascript function.
 
     <table id="myTableId" dt:table="true" dt:url="/persons3" dt:serverside="true" dt:serverdata="myAjaxRequest">
         <thead>

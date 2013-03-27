@@ -18,7 +18,7 @@ Since v0.8.9, **Dandelion-DataTables** provides some of the DataTables built-in 
 
 <br />
 #### Using JSP
-You need to use the {% refjsp callback %}. You'll need to declare the callback's {% refjsp callback type %} attribute and the Javascript function to execute as a callback in the {% refjsp callback function %} attribute.
+You need to use the [`datatables:callback`](/datatables/ref/jsp/callback.html) tag. You'll need to declare the callback's [`type`](/datatables/ref/jsp/callback.html#type) attribute and the Javascript function to execute as a callback in the [`function`](/datatables/ref/jsp/callback.html#function) attribute.
 
     <datatables:table id="myTableId" data="${persons}">
         <datatables:column title="Id" property="id" />
@@ -39,7 +39,7 @@ Ensure to declare the Javascript function before the `datatables:table` tag.
 
 <br />
 #### Using Thymeleaf
-All callbacks are declared using the {% reftml tbody %} tag.
+All callbacks are declared using the [`tbody`](/datatables/ref/thymeleaf/tbody.html) tag.
 
     <table id="myTableId" dt:table="true">
         <thead>

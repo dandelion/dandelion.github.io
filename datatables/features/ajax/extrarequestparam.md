@@ -26,7 +26,7 @@ This Javascript function takes 1 parameter :
 
 <br />      
 #### Using JSP
-Use the {% refjsp table serverParams %} table attribute and set the name of the previous Javascript function. Ensure that the function is loaded **before** using the taglib.
+Use the [`serverParams`](/datatables/ref/jsp/table.html#serverParams) table attribute and set the name of the previous Javascript function. Ensure that the function is loaded **before** using the taglib.
 
     <datatables:table id="myTableId" url="/persons1" serverSide="true" serverParams="getExtraParams" processing="true">
         <datatables:column title="Id" property="id" />
@@ -38,7 +38,7 @@ Use the {% refjsp table serverParams %} table attribute and set the name of the 
 
 <br />
 #### Using Thymeleaf
-Using Thymeleaf, you can use the {% reftml table dt:serverParams%} table attribute. It works the same way than with JSP. Pass the name of the previous Javascript function.
+Using Thymeleaf, you can use the [`dt:serverparams`](/datatables/ref/thymeleaf/table.html#dt:serverparams) table attribute. It works the same way than with JSP. Pass the name of the previous Javascript function.
 
     <table id="myTableId" dt:table="true" dt:url="/persons3" dt:serverside="true" dt:serverparams="getExtraParams">
         <thead>
