@@ -94,3 +94,11 @@ h3 {
     left:30px;
     top:70px;
 }
+
+.navbar .nav>li>a {
+float: none;
+padding: 10px 15px 10px;
+color: #ffffff;
+text-decoration: none;
+text-shadow: none;
+}
