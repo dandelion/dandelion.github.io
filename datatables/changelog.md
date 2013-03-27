@@ -13,7 +13,6 @@ level1: changelog
  * [issue #58](https://github.com/dandelion/issues/issues/58) (stripeclasses table attribute is missing)
  * [issue #59](https://github.com/dandelion/issues/issues/59) (servermethod attribute is mapped to an object instead of a string)
 
-
 #### 0.8.9 (03-26-2013)
  
 ##### Core
