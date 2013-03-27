@@ -6,6 +6,14 @@ level1: changelog
 
 ### Changelog
 
+#### 0.8.10 (03-27-2013)
+
+##### Issues
+    
+ * [issue #58](https://github.com/dandelion/issues/issues/58) (stripeclasses table attribute is missing)
+ * [issue #59](https://github.com/dandelion/issues/issues/59) (servermethod attribute is mapped to an object instead of a string)
+
+
 #### 0.8.9 (03-26-2013)
  
 ##### Core
@@ -20,6 +28,7 @@ level1: changelog
  * New `datatables:callback` tag, allowing you to execute one or more callbacks
  * New {% refjsp table lengthMenu %} table attribute, allowing you to adapt the length menu (when pagination is enabled)
  * New {% refjsp table cssStripes %} table attribute, allowing you to set an array of CSS classes that will be apply on the table's rows
+ * New {% refjsp table serverData %} and {% refjsp table serverParam %} table attributes, allowing you to custom the AJAX call
 
 ##### Thymeleaf implementation
     
@@ -27,7 +36,9 @@ level1: changelog
  * New `dt:processing` attribute
  * New callback-related tbody attributes : `dt:cbk:cookie`, `dt:cbk:createdrow`, `dt:cbk:draw`, `dt:cbk:footer`, `dt:cbk:format`, `dt:cbk:header`, `dt:cbk:info`, `dt:cbk:init`, `dt:cbk:predraw` and  `dt:cbk:row`
  * New {% reftml table dt:lengthmenu %} table attribute, allowing you to adapt the length menu (when pagination is enabled)
- * New {% reftml th sortinit %} and {% reftml th sortdir %} th attributes, allowing you to initiliaze the sort
+ * New {% reftml th dt:sortinit %} and {% reftml th dt:sortdir %} th attributes, allowing you to initiliaze the sort
+ * New {% reftml table dt:stripclasses %} table attributes, allowing you to define a sequence of CSS classes that will be applied on each row
+ * New {% reftml table dt:serverdata %} and {% reftml table serverparams %} table attributes, allowing you to custom the AJAX call
 
 ##### Issues
     
