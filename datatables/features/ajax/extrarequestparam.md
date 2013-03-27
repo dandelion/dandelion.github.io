@@ -16,7 +16,7 @@ Since v0.8.9, you can send extra information to the server when making an AJAX r
 
 You'll have to write a Javascript function that will be internally called by the DataTables configuration.
 
-    function addMyData ( aoData ) {
+    function getExtraParams( aoData ) {
         aoData.push( { "name": "more_data", "value": "my_value" } );
     }
 
@@ -28,7 +28,7 @@ This Javascript function takes 1 parameter :
 #### Using JSP
 Use the {% refjsp table serverParams %} table attribute and set the name of the previous Javascript function. Ensure that the function is loaded **before** using the taglib.
 
-    <datatables:table id="myTableId" url="/persons1" serverSide="true" serverParams="addMyData" processing="true">
+    <datatables:table id="myTableId" url="/persons1" serverSide="true" serverParams="getExtraParams" processing="true">
         <datatables:column title="Id" property="id" />
         <datatables:column title="FirstName" property="firstName" />
         <datatables:column title="LastName" property="lastName" />
@@ -40,7 +40,7 @@ Use the {% refjsp table serverParams %} table attribute and set the name of the 
 #### Using Thymeleaf
 Using Thymeleaf, you can use the {% reftml table dt:serverParams%} table attribute. It works the same way than with JSP. Pass the name of the previous Javascript function.
 
-    <table id="myTableId" dt:table="true" dt:url="/persons3" dt:serverside="true" dt:serverparams="addMyData">
+    <table id="myTableId" dt:table="true" dt:url="/persons3" dt:serverside="true" dt:serverparams="getExtraParams">
         <thead>
             <tr>
                 <th dt:property="id">Id</th>
