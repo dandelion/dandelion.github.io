@@ -15,3 +15,5 @@ level2:
  * [Server-side processing](serverside.html)
  * [Spring MVC integration](springmvc.html)
  * [Pipelining data](pipelining.html)
+ * [Customed AJAX request](customrequest.html)
+ * [Extra AJAX request parameter](extrarequestparam.html)
