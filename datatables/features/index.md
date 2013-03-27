@@ -249,6 +249,18 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td><a href="/datatables/ref/thymeleaf/th.html#dt:renderFunction">dt:renderFunction</a></td>
       <td><a href="/datatables/features/ajax/customcontent.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
+    <tr>
+      <td>Custom AJAX request</td>
+      <td><a href="/datatables/ref/jsp/table.html#serverData">serverData</a></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:serverdata">dt:serverdata</a></td>
+      <td><a href="/datatables/features/ajax/customrequest.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td>Extra AJAX request parameters</td>
+      <td><a href="/datatables/ref/jsp/table.html#serverParams">serverParams</a></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:serverparams">dt:serverparams</a></td>
+      <td><a href="/datatables/features/ajax/extrarequestparam.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
     
     <tr>
       <td><h4>Plugins</h4></td>
