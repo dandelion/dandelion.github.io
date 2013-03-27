@@ -24,20 +24,20 @@ level1: changelog
 
 #####  JSP implementation 	
  
- * New `datatables:callback` tag, allowing you to execute one or more callbacks
- * New {% refjsp table lengthMenu %} table attribute, allowing you to adapt the length menu (when pagination is enabled)
- * New {% refjsp table cssStripes %} table attribute, allowing you to set an array of CSS classes that will be apply on the table's rows
- * New {% refjsp table serverData %} and {% refjsp table serverParam %} table attributes, allowing you to custom the AJAX call
+ * New [`datatables:callback`](/datatables/ref/jsp/callback.html) tag, allowing you to execute one or more callbacks
+ * New [`lengthMenu`](/datatables/ref/jsp/table.html#lengthMenu) table attribute, allowing you to adapt the length menu (when pagination is enabled)
+ * New [`cssStripes`](/datatables/ref/jsp/table.html#cssStripes) table attribute, allowing you to set an array of CSS classes that will be apply on the table's rows
+ * New [`serverData`](/datatables/ref/jsp/table.html#serverData) and [serverParam](/datatables/ref/jsp/table.html#serverParam) table attributes, allowing you to custom the AJAX call
 
 ##### Thymeleaf implementation
     
  * All attribute and element processors now use the new abstract Datatables processors
  * New `dt:processing` attribute
  * New callback-related tbody attributes : `dt:cbk:cookie`, `dt:cbk:createdrow`, `dt:cbk:draw`, `dt:cbk:footer`, `dt:cbk:format`, `dt:cbk:header`, `dt:cbk:info`, `dt:cbk:init`, `dt:cbk:predraw` and  `dt:cbk:row`
- * New {% reftml table dt:lengthmenu %} table attribute, allowing you to adapt the length menu (when pagination is enabled)
- * New {% reftml th dt:sortinit %} and {% reftml th dt:sortdir %} th attributes, allowing you to initiliaze the sort
- * New {% reftml table dt:stripclasses %} table attributes, allowing you to define a sequence of CSS classes that will be applied on each row
- * New {% reftml table dt:serverdata %} and {% reftml table serverparams %} table attributes, allowing you to custom the AJAX call
+ * New [`dt:lengthmenu`](/datatables/ref/thymeleaf/table.html#dt:lengthmenu) table attribute, allowing you to adapt the length menu (when pagination is enabled)
+ * New [`dt:sortinit`](/datatables/ref/thymeleaf/th.html#dt:sortinit) and [`dt:sortdir`](/datatables/ref/thymeleaf/th.html#dt:sortdir) th attributes, allowing you to initiliaze the sort
+ * New [`dt:stripclasses`](/datatables/ref/thymeleaf/table.html#dt:stripclasses) table attributes, allowing you to define a sequence of CSS classes that will be applied on each row
+ * New [`dt:serverdata`](/datatables/ref/thymeleaf/table.html#dt:serverdata) and [`dt:serverparams`](/datatables/ref/thymeleaf/table.html#dt:serverparams) table attributes, allowing you to custom the AJAX call
 
 ##### Issues
     

@@ -1,6 +1,6 @@
 module Jekyll
   class RenderReferenceLinkThymeleafTag < Liquid::Tag
-
+	
     def initialize(tag_name, params, tokens)
       super
       @params = params
