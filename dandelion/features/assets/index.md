@@ -68,15 +68,21 @@ For example, the assets stack of dandelion can be view as
 
 
 #### TODO to integrate
-* [Asset](/dandelion/features/assets/bases.html#select.asset)
-* [Scope](/dandelion/features/assets/bases.html#select.scope)
-* [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.parent)
-* [Default Scope Parent](/dandelion/features/assets/bases.html#select.default)
-* [Detached Scope Parent](/dandelion/features/assets/bases.html#select.none)
+##### Bases
+* `google analytics` is an [Asset](/dandelion/features/assets/bases.html#select.asset)
+* `Datatables` is a scope[Scope](/dandelion/features/assets/bases.html#select.scope)
+* `default, jQuery and Datatables` are part of the [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.parent)
+* `default` is the [Default Scope Parent](/dandelion/features/assets/bases.html#select.default)
+* `none` is the [Detached Scope Parent](/dandelion/features/assets/bases.html#select.none)
 * [Asset Override](/dandelion/features/assets/bases.html#select.override)
 * [Asset Location Override - Add](/dandelion/features/assets/bases.html#select.locationOverride.add)
 * [Asset Location Override - Change](/dandelion/features/assets/bases.html#select.locationOverride.change)
 
+##### Plumbing
+* [Assets Storage](/dandelion/features/assets/storage.html)
+
+##### Usages
+*
 
 
 
@@ -89,53 +95,6 @@ For example, the assets stack of dandelion can be view as
 
 #### TODO to split
 ##### Storage
-
-In `Dandelion`, the `Assets` feature is based on a [Storage Component](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorage.html) who provide a API with Storage Rules.
-
-###### **AssetsStorage** Public API
-<table class="table table-bordered">
-	<thead>
-		<tr>
-			<th style="width: 40%">Method</th>
-			<th style="width: 60%">Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>store (Asset)</td>
-			<td>Store an asset on <b>Default Scope</b></td>
-		</tr>
-		<tr>
-			<td>store (Asset, Scope)</td>
-			<td>Store an asset on his scope under <b>Default Parent Scope</b></td>
-		</tr>
-		<tr>
-			<td>store (Asset, Scope, Parent Scope)</td>
-			<td>Store an asset on his scope under his parent scope</td>
-		</tr>
-		<tr>
-		    <td>assetsFor(Array of Scope)</td>
-		    <td>Retrieve all assets for scopes in parameters</td>
-		</tr>
-	</tbody> 
-</table> 
-
-###### **AssetsStorage** Rules
-
-####### **Store** Rules
-
-* [An asset can't be add twice in the same scope](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#ASSET_ALREADY_EXISTS_IN_SCOPE)
-* [A location can't be use twice in the same scope by an similar asset](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#ASSET_LOCATION_ALREADY_EXISTS_IN_SCOPE)
-* [An asset can't have a parent scope who don't already exists](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#UNDEFINED_PARENT_SCOPE)
-* [An asset can't have a couple of Scope/Parent Scope when his scope is already associated to another parent scope](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#PARENT_SCOPE_INCOMPATIBILITY)
-* [An asset can't be add with Detached Scope as his scope, Detached Scope is only allowed as a Parent Scope](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#DETACHED_SCOPE_NOT_ALLOWED)
-
-####### **Access** Rules
-
-All assets returned by **assetsFor(...)** has the following characteristics :
-* **All assets** are returned ordered from the oldest scope to the youngest scope,
-* **Versions** returned are those in the youngest scopes (but always keeping the order of their origin scopes in the case of a change)
-* **Locations** are merged during the course if and only if the version is identical to an asset
 
 ##### Assets Manipulations
 
