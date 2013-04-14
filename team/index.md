@@ -34,6 +34,13 @@ To contact the developers, please use the appropriate [mailing list](mailto:dand
 			<td>romain.lespinasse@gmail.com</td>
 			<td>Lead developer (project co-founder)</td>
 		</tr>
+		<tr>
+			<td>Gautier Dhordain</td>
+			<td>Jdourd</td>
+			<td>France</td>
+			<td>g.dhordain@gmail.com</td>
+			<td>Dandelion-Datatables developer</td>
+		</tr>
 	</tbody>
 </table>
 
