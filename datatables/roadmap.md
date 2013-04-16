@@ -12,23 +12,16 @@ This is not a formal roadmap, more a priority list which evolves with time.
 <br />
 <h4>High priority</h4>
 
- * Better integration with Thymeleaf
-
+ * Better i18n support
  * Extension points for AbstractExtension
- 
- * Add content assist in Eclipse for the Thymeleaf dialect and all enumerated types of the JSP taglib
- 
+ * Add content assist in Eclipse for the Thymeleaf dialect and all enumerated types of the JSP taglib 
  * Spring Data REST integration (for server-side processing)
  
- * Tests!
-
 <br />
 <h4>Medium priority</h4>
 
  * Websocket support for continuously-updating table
- 
  * Export the current (paginated / sorted) entries
-
  * [TableTools](http://datatables.net/extras/tabletools/) plugin integration
 
 <br />

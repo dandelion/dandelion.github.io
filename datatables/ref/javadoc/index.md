@@ -33,3 +33,6 @@ level2:
 ### Older releases
 
  * [0.8.6](/datatables/ref/javadoc/0.8.6)
+ * [0.8.7](/datatables/ref/javadoc/0.8.7)
+ * [0.8.8](/datatables/ref/javadoc/0.8.8)
+ * [0.8.9](/datatables/ref/javadoc/0.8.9)

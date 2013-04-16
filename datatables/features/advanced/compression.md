@@ -33,8 +33,8 @@ Two things are needed to enable compression :
 	*	Using Maven or Maven-compatible dependency manager, just add the following dependency to your POM :
 
         	<dependency>
-	        	<groupId>com.github.datatables4j</groupId>
-            	<artifactId>datatables4j-compression-yui</artifactId>
+	        	<groupId>com.github.dandelion</groupId>
+            	<artifactId>datatables-compression-yui</artifactId>
             	<version>{{ site.dandelion.components.datatables.version }}</version>
         	</dependency>
 

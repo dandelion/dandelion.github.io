@@ -241,10 +241,28 @@ Decribes how the HTML table should be generated.
     <td>5</td>
   </tr>
   <tr>
-    <td>jsonp</td>
-    <td>Allows to retrieve JSON data from any domain name, regardless of XSS protection.</td>
-    <td>true|false</td>
-    <td>false</td>
+    <td>cssStripes</td>
+    <td>Comma-separated list of CSS classes that should be applied to displayed rows. This sequence of CSS classes may be of any length, and DataTables will apply each class sequentially, looping when required.</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>lengthMenu</td>
+    <td>Specify the entries in the length drop down menu that DataTables show when pagination is enabled</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>serverData</td>
+    <td>Allows you to override the default function which obtains the data from the server ($.getJSON) so something more suitable for your application</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>serverParams</td>
+    <td>Allows you to send extra information to the server when using AJAX source</td>
+    <td></td>
+    <td></td>
   </tr>
   </tbody>
 </table>

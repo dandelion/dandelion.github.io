@@ -6,58 +6,110 @@ level1: changelog
 
 ### Changelog
 
+#### 0.8.10 (03-27-2013)
+
+##### Issues
+    
+ * [issue #58](https://github.com/dandelion/issues/issues/58) (stripeclasses table attribute is missing)
+ * [issue #59](https://github.com/dandelion/issues/issues/59) (servermethod attribute is mapped to an object instead of a string)
+
+#### 0.8.9 (03-26-2013)
+ 
+##### Core
+    
+ * All classes/interfaces have been logically reorganized
+ * All POMs cleaned, updated some dependencies
+ * New configuration available, called `url.base`, allowing you to override the base URL used in all URLs (assets sources, export links)
+ * The **sSearch_(int)** DataTables parameter is now parsed in DatatablesCriterias, allowing you to filter data on individual column when using server-side processing
+
+#####  JSP implementation 	
+ 
+ * New [`datatables:callback`](/datatables/ref/jsp/callback.html) tag, allowing you to execute one or more callbacks
+ * New [`lengthMenu`](/datatables/ref/jsp/table.html#lengthMenu) table attribute, allowing you to adapt the length menu (when pagination is enabled)
+ * New [`cssStripes`](/datatables/ref/jsp/table.html#cssStripes) table attribute, allowing you to set an array of CSS classes that will be apply on the table's rows
+ * New [`serverData`](/datatables/ref/jsp/table.html#serverData) and [serverParam](/datatables/ref/jsp/table.html#serverParam) table attributes, allowing you to custom the AJAX call
+
+##### Thymeleaf implementation
+    
+ * All attribute and element processors now use the new abstract Datatables processors
+ * New `dt:processing` attribute
+ * New callback-related tbody attributes : `dt:cbk:cookie`, `dt:cbk:createdrow`, `dt:cbk:draw`, `dt:cbk:footer`, `dt:cbk:format`, `dt:cbk:header`, `dt:cbk:info`, `dt:cbk:init`, `dt:cbk:predraw` and  `dt:cbk:row`
+ * New [`dt:lengthmenu`](/datatables/ref/thymeleaf/table.html#dt:lengthmenu) table attribute, allowing you to adapt the length menu (when pagination is enabled)
+ * New [`dt:sortinit`](/datatables/ref/thymeleaf/th.html#dt:sortinit) and [`dt:sortdir`](/datatables/ref/thymeleaf/th.html#dt:sortdir) th attributes, allowing you to initiliaze the sort
+ * New [`dt:stripclasses`](/datatables/ref/thymeleaf/table.html#dt:stripclasses) table attributes, allowing you to define a sequence of CSS classes that will be applied on each row
+ * New [`dt:serverdata`](/datatables/ref/thymeleaf/table.html#dt:serverdata) and [`dt:serverparams`](/datatables/ref/thymeleaf/table.html#dt:serverparams) table attributes, allowing you to custom the AJAX call
+
+##### Issues
+    
+ * [issue #24](https://github.com/dandelion/issues/issues/24) (Add the possibility to define the length menu)
+ * [issue #25](https://github.com/dandelion/issues/issues/25) (Add support for sorting initialisation)
+ * [issue #26](https://github.com/dandelion/issues/issues/26) (Add support for sorting direction control)
+ * [issue #27](https://github.com/dandelion/issues/issues/27) (Add support for asStripeClasses parameter)
+ * [issue #38](https://github.com/dandelion/issues/issues/38) (Add custom javascript after "server-side" call)
+ * [issue #43](https://github.com/dandelion/issues/issues/43) (Handling column filters with server-side processing)
+ * [issue #47](https://github.com/dandelion/issues/issues/47) (Add extension points based on DataTables callbacks)
+ * [issue #48](https://github.com/dandelion/issues/issues/48) (Also parse sSearch_(int) before sending parameter to the server)
+ * [issue #50](https://github.com/dandelion/issues/issues/50) (dt:processing attribute is missing in Thymeleaf implementation)
+ * [issue #52](https://github.com/dandelion/issues/issues/52) (Add a configuration allowing to override the base URL used in all URLs (assets, export))
+ * [issue #55](https://github.com/dandelion/issues/issues/55) (Support for customed AJAX calls)
+
 #### 0.8.8 (03-20-2013)
  
- *	Core
- 	* Better performance : the configuration file is now loaded only once
- 	* Code cleaning
- 
- *	JSP implementation 	
- 	* Tests reorganization
- 	* More integration tests
- 
- *	Thymeleaf implementation
- 	* New `dt:exportLinks` attribute (Thymeleaf), allowing you to configure the export links' position
- 	* New `dt:paginationtype` attribute (Thymeleaf) allowing you to configure the pagination type
- 	* Lots of new Thymeleaf attributes added to configure export. See the documentation for more details (LINK)
- 
- * 	Issues
- 	* [issue #12](https://github.com/dandelion/issues/issues/12) (Improve export using Thymeleaf)
- 	* [issue #14](https://github.com/dandelion/issues/issues/14) (Add dt:paginationtype Thymeleaf processor)
- 	* [issue #28](https://github.com/dandelion/issues/issues/28) (Add the possibility to configure export link style and position)
- 	* [issue #29](https://github.com/dandelion/issues/issues/29) (Add the possibility to configure export with Thymeleaf)
- 	* [issue #44](https://github.com/dandelion/issues/issues/44) (Performance : load Dandelion properties only once)
+##### Core
 
+ * Better performance : the configuration file is now loaded only once
+ * Code cleaning
+ 
+##### JSP implementation 	
+
+ * Tests reorganization
+ * More integration tests
+ 
+##### Thymeleaf implementation
+ 	
+ * New `dt:exportLinks` attribute, allowing you to configure the export links' position
+ * New `dt:paginationtype` attribute, allowing you to configure the pagination type
+ * Lots of new Thymeleaf attributes added to configure export. See the documentation for more details
+
+##### Issues
+ 
+ * [issue #12](https://github.com/dandelion/issues/issues/12) (Improve export using Thymeleaf)
+ * [issue #14](https://github.com/dandelion/issues/issues/14) (Add dt:paginationtype Thymeleaf processor)
+ * [issue #28](https://github.com/dandelion/issues/issues/28) (Add the possibility to configure export link style and position)
+ * [issue #29](https://github.com/dandelion/issues/issues/29) (Add the possibility to configure export with Thymeleaf)
+ * [issue #44](https://github.com/dandelion/issues/issues/44) (Performance : load Dandelion properties only once)
 
 #### 0.8.7 (03-15-2013)
  
- * Core
+##### Core
  	
- 	*	New `renderFunction` / `dt:renderFunction` (JSP/Thymeleaf) allowing you to use a custom Javascript function to render columns in tables AJAX-populated
+ * New `renderFunction` / `dt:renderFunction` (JSP/Thymeleaf) allowing you to use a custom Javascript function to render columns in tables AJAX-populated
  
- * Issues
+##### Issues
  	
- 	*	[issue #30](https://github.com/dandelion/issues/issues/30) (Export links generation)
- 	*	[issue #36](https://github.com/dandelion/issues/issues/36) (Problem with tld file on JBoss 6)
- 	*	[issue #41](https://github.com/dandelion/issues/issues/41) (Caching problems with URL that have params)
- 	*	[issue #45](https://github.com/dandelion/issues/issues/45) (test-jetty-servlet dependency not marked as a test dependency)
+ * [issue #30](https://github.com/dandelion/issues/issues/30) (Export links generation)
+ * [issue #36](https://github.com/dandelion/issues/issues/36) (Problem with tld file on JBoss 6)
+ * [issue #41](https://github.com/dandelion/issues/issues/41) (Caching problems with URL that have params)
+ * [issue #45](https://github.com/dandelion/issues/issues/45) (test-jetty-servlet dependency not marked as a test dependency)
  
 #### 0.8.6 (03-05-2013)
 
- * Major changes
+#####  Major changes
 	
-	*	**New release management** : now, all JARs (core and extras) have the same version number. This will be much clearer and simpler for both developers and users.
-	*	**New cache system** : a huge [performance issue](http://github.com/dandelion/issues/issues/34) has been raised by [Julien Dubois](https://github.com/jdubois) during his stress test of the Spring-petclinic app. It has been fixed setting up a basic cache system (a static Map at the moment) that stores the generated web resources (js, css) per request URI and per table DOM id. This way, the DataTables configuration (and other needed assets) are generated only once and then are stored in the [AssetCache](http://github.com/dandelion/dandelion-datatables/blob/master/datatables-core/src/main/java/com/github/dandelion/datatables/core/cache/AssetCache.java). So no need to use the ServletContext any longer, which was decreasing performance.
- * Minor changes
+ *	**New release management** : now, all JARs (core and extras) have the same version number. This will be much clearer and simpler for both developers and users.
+ *	**New cache system** : a huge [performance issue](http://github.com/dandelion/issues/issues/34) has been raised by [Julien Dubois](https://github.com/jdubois) during his stress test of the Spring-petclinic app. It has been fixed setting up a basic cache system (a static Map at the moment) that stores the generated web resources (js, css) per request URI and per table DOM id. This way, the DataTables configuration (and other needed assets) are generated only once and then are stored in the [AssetCache](http://github.com/dandelion/dandelion-datatables/blob/master/datatables-core/src/main/java/com/github/dandelion/datatables/core/cache/AssetCache.java). So no need to use the ServletContext any longer, which was decreasing performance.
+
+#####  Minor changes
 	
-	* Added a new `searchable` / `dt:searchable` attributes (JSP/Thymeleaf) to exclude column from searching
- * Issues
+ * Added a new `searchable` / `dt:searchable` attributes (JSP/Thymeleaf) to exclude column from searching
+
+##### Issues
 	
-	* [issue #30](https://github.com/dandelion/issues/issues/30) (Export links generation)
-	* [issue #32](https://github.com/dandelion/issues/issues/32) (Exclude column from searching)
-	* [issue #34](https://github.com/dandelion/issues/issues/34) (Memory leak)
-	* [issue #35](https://github.com/dandelion/issues/issues/35) (Wrong use of EVAL_PAGE in the doStartTag method of the ColumnTag)
-	* [issue #36](https://github.com/dandelion/issues/issues/36) (Problem with tld file on JBoss 6)
+ * [issue #30](https://github.com/dandelion/issues/issues/30) (Export links generation)
+ * [issue #32](https://github.com/dandelion/issues/issues/32) (Exclude column from searching)
+ * [issue #34](https://github.com/dandelion/issues/issues/34) (Memory leak)
+ * [issue #35](https://github.com/dandelion/issues/issues/35) (Wrong use of EVAL_PAGE in the doStartTag method of the ColumnTag)
+ * [issue #36](https://github.com/dandelion/issues/issues/36) (Problem with tld file on JBoss 6)
 
 <h4>0.8.5 (02-23-2013)</h4>
 <ul>

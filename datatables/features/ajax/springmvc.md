@@ -31,7 +31,7 @@ Moreover, you need to register a new custom WebArgumentResolvers as follows :
       
 	<mvc:annotation-driven>
 	   <mvc:argument-resolvers>
-	      <bean class="com.github.datatables4j.spring3.ajax.DatatablesCriteriasResolver" />
+	      <bean class="com.github.dandelion.datatables.extras.spring3.ajax.DatatablesCriteriasResolver" />
 	   </mvc:argument-resolvers>
 	</mvc:annotation-driven>
 

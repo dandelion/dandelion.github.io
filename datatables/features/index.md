@@ -249,6 +249,18 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td><a href="/datatables/ref/thymeleaf/th.html#dt:renderFunction">dt:renderFunction</a></td>
       <td><a href="/datatables/features/ajax/customcontent.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
+    <tr>
+      <td>Custom AJAX request</td>
+      <td><a href="/datatables/ref/jsp/table.html#serverData">serverData</a></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:serverdata">dt:serverdata</a></td>
+      <td><a href="/datatables/features/ajax/customrequest.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td>Extra AJAX request parameters</td>
+      <td><a href="/datatables/ref/jsp/table.html#serverParams">serverParams</a></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:serverparams">dt:serverparams</a></td>
+      <td><a href="/datatables/features/ajax/extrarequestparam.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
     
     <tr>
       <td><h4>Plugins</h4></td>
@@ -271,6 +283,29 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td><a href="/datatables/ref/jsp/table.html#fixedHeader">fixedHeader</a> / <a href="/jsp/table.html#offsetTop">offsetTop</a></td>
       <td><a href="/datatables/ref/thymeleaf/thead.html#dt:fixedheader">dt:fixedheader</a></td>
       <td><a href="/datatables/features/plugins/fixedheader.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    
+    <tr>
+      <td><h4>Extension points</h4></td>
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td>Callbacks</td>
+      <td><a href="/datatables/ref/jsp/callback.html">datatables:callback tag</a></td>
+      <td><a href="/datatables/ref/thymeleaf/tbody.html#dt:cbk">dt:cbk:*</a></td>
+      <td><a href="/datatables/features/advanced/callbacks.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td>Extra file</td>
+      <td><a href="/datatables/ref/jsp/extrafile.html">datatables:extraFile tag</a></td>
+      <td><span class="icon-remove"></span></td>
+      <td><a href="/datatables/features/advanced/extrafile.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td>Extra conf</td>
+      <td><a href="/datatables/ref/jsp/extraconf.html">datatables:extraConf tag</a></td>
+      <td><span class="icon-remove"></span></td>
+      <td><a href="/datatables/features/advanced/extraconf.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
     <tr>

@@ -13,6 +13,7 @@ level2:
  * [Internationalisation](i18n.html)
  * [Using extra file](extrafile.html)
  * [Using extra conf](extraconf.html)
+ * [Using callbacks](callbacks.html)
  * [Overriding default configuration](overrideconf.html) 
  * [Using compression](compression.html) 
 

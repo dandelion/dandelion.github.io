@@ -179,31 +179,91 @@ The <code>&lt;tbody&gt;</code> attributes allow you to configure the export.
     <td>dt:csv:header</td>
     <td>Indicates whether headers should be added in the CSV export file or not</td>
     <td>true|false</td>
-    <td>ture</td>
+    <td>true</td>
   </tr>
   <tr>
     <td>dt:xml:header</td>
     <td>Indicates whether headers should be added in the XML export file or not</td>
     <td>true|false</td>
-    <td>ture</td>
+    <td>true</td>
   </tr>
   <tr>
     <td>dt:pdf:header</td>
     <td>Indicates whether headers should be added in the PDF export file or not</td>
     <td>true|false</td>
-    <td>ture</td>
+    <td>true</td>
   </tr>
   <tr>
     <td>dt:xls:header</td>
     <td>Indicates whether headers should be added in the XLS export file or not</td>
     <td>true|false</td>
-    <td>ture</td>
+    <td>true</td>
   </tr>
   <tr>
     <td>dt:xlsx:header</td>
     <td>Indicates whether headers should be added in the XLSX export file or not</td>
     <td>true|false</td>
-    <td>ture</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>dt:cbk:cookie</td>
+    <td>Indicates the name of the external Javascript function that will be called as a <a href="http://datatables.net/ref#fnCookieCallback">fnCookieCallback</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>dt:cbk:createdrow</td>
+    <td>Indicates the name of the external Javascript function that will be called as a <a href="http://datatables.net/ref#fnCreatedRow">fnCreatedRow</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>dt:cbk:draw</td>
+    <td>Indicates the name of the external Javascript function that will be called as a <a href="http://datatables.net/ref#fnDrawCallback">fnDrawCallback</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>dt:cbk:footer</td>
+    <td>Indicates the name of the external Javascript function that will be called as a <a href="http://datatables.net/ref#fnFooterCallback">fnFooterCallback</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>dt:cbk:format</td>
+    <td>Indicates the name of the external Javascript function that will be called as a <a href="http://datatables.net/ref#fnFormatNumber">fnFormatNumber</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>dt:cbk:header</td>
+    <td>Indicates the name of the external Javascript function that will be called as a <a href="http://datatables.net/ref#fnHeaderCallback">fnHeaderCallback</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>dt:cbk:info</td>
+    <td>Indicates the name of the external Javascript function that will be called as a <a href="http://datatables.net/ref#fnInfoCallback">fnInfoCallback</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>dt:cbk:init</td>
+    <td>Indicates the name of the external Javascript function that will be called as a <a href="http://datatables.net/ref#fnInitComplete">fnInitComplete</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>dt:cbk:predraw</td>
+    <td>Indicates the name of the external Javascript function that will be called as a <a href="http://datatables.net/ref#fnPreDrawCallback">fnPreDrawCallback</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>dt:cbk:row</td>
+    <td>Indicates the name of the external Javascript function that will be called as a <a href="http://datatables.net/ref#fnRowCallback">fnRowCallback</a></td>
+    <td></td>
+    <td></td>
   </tr>
   </tbody>
 </table>
