@@ -24,25 +24,6 @@
 <link rel="shortcut icon" href="/assets/images/dandelion_square.png">
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-//<![CDATA[
-  (function() {
-    var shr = document.createElement('script');
-    shr.src = '//dtym7iokkjlif.cloudfront.net/assets/pub/shareaholic.js';
-    shr.type = 'text/javascript';
-    shr.async = 'true';
-    shr.onload = shr.onreadystatechange = function() {
-      var rs = this.readyState;
-      if (rs && rs != 'complete' && rs != 'loaded') return;
-      var apikey = '3d357c178e53830221bf46b13062ac5d'
-      try { Shareaholic.init(apikey); } catch (e) {}
-    };
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(shr, s);
-  })();
-//]]>
-</script>
-
 <script src="/assets/js/ga.js"></script>
 </head>
 <body>
@@ -64,28 +45,19 @@
             <!-- <a class="brand" href="/datatables"><img src="/assets/images/dandelion/github-01.png" /></a> -->
             <div class="nav-collapse collapse">
                <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
-                  <li class="text-center"><a href="/datatables/changelog.html">Latest : v{{ site.dandelion.components.[page.module].version }}</a></li>
-                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-github"></i> Issues</a></li>
+                  <li class="text-center"><a href="http://dandelion.48353.n6.nabble.com/"><i class="icon-comments-alt"></i><span class="hidden-phone">Forum</span></a></li>
+                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align:center;"><i class="icon-leaf"></i> Components <i class="icon-caret-down icon-white icon-large"></i></a>
+                     <ul class="dropdown-menu">
+                        <li style="background-color: #ffffff;"><a href="/datatables">Dandelion-Datatables</a></li>
+                     </ul>
+                  </li>
+                  <li class="text-center"><a href="/"><i class="icon-home"></i><span class="hidden-phone">Home</span></a></li>
                </ul>
                <ul class="nav pull-right" style="clear:right;">
                   <form class="navbar-search" action="http://google.com/search" method="get" style="margin-right:15px;">
                      <input type="hidden" name="q" value="site:dandelion.github.io/blog" />
                      <input type="text" class="search search-query" name="q" results="0" placeholder="Search"/>
                   </form>
-                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align:center;"><i class="icon-group"></i> Community <i class="icon-caret-down icon-white icon-large"></i></a>
-                     <ul class="dropdown-menu">
-                        <li style="background-color: #ffffff;"><a href="https://github.com/dandelion/issues/issues"><i class="icon-github"></i> Issues</a></li>
-                        <li style="background-color: #ffffff;"><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>
-                        <li style="background-color: #ffffff;"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
-                        <li style="background-color: #ffffff;"><a href="https://twitter.com/dandelion_proj"><i class="icon-twitter"></i> Twitter</a></li>
-                     </ul>
-                  </li>
-                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align:center;"><i class="icon-share-alt"></i> Back to <i class="icon-caret-down icon-white icon-large"></i></a>
-                     <ul class="dropdown-menu">
-                        <li style="background-color: #ffffff;"><a href="/"><i class="icon-home"></i> Dandelion's home</a></li>
-                        <li style="background-color: #ffffff;"><a href="https://github.com/dandelion" target="_blank"><i class="icon-github"></i> Github</a></li>
-                     </ul>
-                  </li>
                </ul>
             </div>
             <!--/.nav-collapse -->
@@ -95,11 +67,10 @@
    <div class="container-fluid">
       <div class="row-fluid">
          <div class="span9">{{ content }}</div>
-         <div class="span3 well">
+         <div class="span3">
             <div class="row-fluid">
                <div class="row12">
-                  <h4>Social</h4>
-                  <a href="https://twitter.com/dandelion_proj" class="twitter-follow-button" data-show-count="false" data-lang="fr">Suivre @dandelion_proj</a>
+                  <a href="https://twitter.com/dandelion_proj" class="twitter-follow-button" data-show-count="false">Follow @dandelion_proj</a>
                   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                </div>
             </div>
@@ -107,7 +78,7 @@
                <div class="row12">
                   <h4>Last blogs</h4>
                   <ul>
-                     {% for post in site.posts limit:3 %}
+                     {% for post in site.posts limit:5 %}
                      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
                      {% endfor %}
                   </ul>
