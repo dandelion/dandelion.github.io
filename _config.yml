@@ -23,8 +23,8 @@ author :
   github : dandelion
   twitter : dandelion_proj
 production_url : http://dandelion.github.com
-atom_path : /blog/atom.xml
-rss_path : /blog/rss.xml
+atom_path : atom.xml
+rss_path : rss.xml
 archive_path: /blog/archive.html
 categories_path : /blog/categories.html
 tags_path : /blog/tags.html 
