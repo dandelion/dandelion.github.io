@@ -1,8 +1,8 @@
 ---
 layout: post
 tagline: v0.8.4
-category : release
-tags : [dandelion-datatables]
+category : [News,Release]
+tags : [Dandelion-datatables]
 ---
 {% include setup %}
 
