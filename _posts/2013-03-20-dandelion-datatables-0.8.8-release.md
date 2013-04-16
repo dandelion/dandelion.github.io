@@ -1,6 +1,5 @@
 ---
 layout: post
-tagline: v0.8.8
 categories : [News,Release]
 tags : [Dandelion-datatables,Tests]
 ---

@@ -1,7 +1,6 @@
 ---
 layout: post
-tagline: v0.8.6
-category : "[News]"
+categories : [News]
 tags : [Documentation]
 ---
 {% include setup %}
