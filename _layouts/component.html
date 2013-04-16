@@ -21,21 +21,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
 <link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
 <link rel="shortcut icon" href="/assets/images/dandelion_square.png">
-<script type="text/javascript">
-	var _gaq = _gaq || [];
-	_gaq.push([ '_setAccount', 'UA-33818546-8' ]);
-	_gaq.push([ '_trackPageview' ]);
-	(function() {
-		var ga = document.createElement('script');
-		ga.type = 'text/javascript';
-		ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl'
-				: 'http://www')
-				+ '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0];
-		s.parentNode.insertBefore(ga, s);
-	})();
-</script>
+<script src="/assets/js/ga.js"></script>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
 </head>
@@ -46,12 +32,14 @@
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
             </button>
-            <div id="logo_container">
-                <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
-                <p id="logo_text">
-                    datatables
-                </p>
-            </div>
+            <a href="/{{ site.dandelion.components.[page.module].url }}">
+               <div id="logo_container">
+                   <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
+                   <p id="logo_text">
+                       datatables
+                   </p>
+               </div>
+            </a>
             <!-- <span style="background-image: url('/assets/images/dandelion/github-01.png'); display:block; background-repeat:no-repeat; height:100px; ">Test</span> -->
             <!-- <a class="brand" href="/datatables"><img src="/assets/images/dandelion/github-01.png" /></a> -->
             <div class="nav-collapse collapse">
@@ -60,6 +48,10 @@
                   <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-github"></i> Issues</a></li>
                </ul>
                <ul class="nav pull-right" style="clear:right;">
+                  <form class="navbar-search" action="http://google.com/search" method="get" style="margin-right:15px;">
+                     <input type="hidden" name="q" value="site:dandelion.github.io/{{ site.dandelion.components.[page.module].url }}" />
+                     <input type="text" class="search search-query" name="q" results="0" placeholder="Search"/>
+                  </form>
                   <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align:center;"><i class="icon-group"></i> Community <i class="icon-caret-down icon-white icon-large"></i></a>
                      <ul class="dropdown-menu">
                         <li style="background-color: #ffffff;"><a href="https://github.com/dandelion/issues/issues"><i class="icon-github"></i> Issues</a></li>
