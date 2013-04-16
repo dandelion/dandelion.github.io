@@ -2,7 +2,7 @@
 layout: post
 tagline: v0.8.4
 category : "[News,Release]"
-tags : "[Dandelion-datatables]"
+tags : [Dandelion-datatables]
 ---
 {% include setup %}
 
