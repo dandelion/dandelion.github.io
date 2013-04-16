@@ -20,7 +20,7 @@ layout: blog
             <li class="tag"><a href="{{ BASE_PATH }}{{ site.tags_path }}#{{ tag }}-ref">{{ tag }}</a></li>
          {% endfor %}
          {% for category in page.categories %} 
-            <li class="pull-right"><a href="{{ BASE_PATH }}{{ site.categories_path }}#{{ category }}-ref">{{ category | join: "/" }}</a></li>
+            <li class="pull-right tag"><a href="{{ BASE_PATH }}{{ site.categories_path }}#{{ category }}-ref">{{ category | join: "/" }}</a></li>
          {% endfor %}
          <li class="pull-right"></span><i class="icon-folder-open"></i></li>
       </ul>
@@ -29,7 +29,7 @@ layout: blog
          {{ content }}
       </div>
       
-      <div class="shareaholic-canvas" style="text-align:center;" data-shareaholic-widgets="share_buttons"></div>
+      <div class="shareaholic-canvas" data-shareaholic-widgets="share_buttons"></div>
       
       <div id="disqus_thread"></div>
       <script type="text/javascript">
