@@ -8,7 +8,7 @@ pygments: true
 #
 # Site configuration
 #
-BASE_PATH : http://dandelion.github.com
+BASE_PATH : http://dandelion.github.io
 ASSET_PATH : false
 analytics_google_tracking_id : 'UA-33818546-8'
 
