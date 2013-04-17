@@ -1,7 +1,7 @@
 ---
 layout: post
-categories : [News,Release]
-tags : [Dandelion-datatables]
+categories : ['News', 'Release']
+tags : ['Dandelion-datatables']
 ---
 {% include setup %}
 

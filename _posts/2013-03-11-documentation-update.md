@@ -1,7 +1,7 @@
 ---
 layout: post
-categories : [News]
-tags : [Documentation]
+categories : ['News']
+tags : ['Documentation']
 ---
 {% include setup %}
 
