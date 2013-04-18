@@ -1,8 +1,7 @@
 ---
 layout: post
-tagline: v0.8.10
-category : release
-tags : [dandelion-datatables]
+categories : ['News', 'Release']
+tags : ['Dandelion-datatables', 'Design']
 ---
 {% include setup %}
 
@@ -14,4 +13,4 @@ The other thing to mention is that we tried to integrate the awesome new design 
 
 _For more information, see the dandelion-datatables' [changelog](/datatables/changelog.html)_
 
-_As usual, there is a [forum discussion](http://dandelion-forum.48353.n6.nabble.com/Dandelion-Datatables-v0-8-10-has-been-released-td297.html) for this blog post. As usual, your thoughts and feedback are very welcome. :-)_
+_As usual, there is a [forum discussion](http://dandelion-forum.48353.n6.nabble.com/Dandelion-Datatables-v0-8-10-has-been-released-td297.html) for this blog post. As usual, your thoughts and feedback are very welcome._ :-)

@@ -1,7 +1,7 @@
 ---
 layout: post
-category : news
-tags : [datatables, datatables4j, dandelion-datatables, dandelion]
+categories : ['News']
+tags : ['Datatables4j', 'Dandelion-datatables', 'Dandelion']
 ---
 {% include setup %}
 

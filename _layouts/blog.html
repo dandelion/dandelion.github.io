@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dandelion Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="java, web, component, library, assets, datatables">
+<meta name="author" content="Dandelion">
+<link href="/blog/atom.xml" rel="alternate" title="Dandelion Project Blog" type="application/atom+xml" />
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
+<link href="/assets/css/component.css" rel="stylesheet">
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+<link href="/assets/css/blog.css" rel="stylesheet">
+<!--[if IE 7]>
+      <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
+      <![endif]-->
+<!--[if lt IE 9]>
+      <script src="/assets/js/html5shiv.js"></script>
+      <![endif]-->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+<link rel="shortcut icon" href="/assets/images/dandelion_square.png">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
+
+<script src="/assets/js/ga.js"></script>
+</head>
+<body>
+   <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+         <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a href="/blog">
+            <div id="logo_container">
+                <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
+                <p id="logo_text">
+                    blog
+                </p>
+            </div>
+            </a>
+            <!-- <span style="background-image: url('/assets/images/dandelion/github-01.png'); display:block; background-repeat:no-repeat; height:100px; ">Test</span> -->
+            <!-- <a class="brand" href="/datatables"><img src="/assets/images/dandelion/github-01.png" /></a> -->
+            <div class="nav-collapse collapse">
+               <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
+                  <li class="text-center"><a href="http://dandelion.48353.n6.nabble.com/"><i class="icon-comments-alt"></i><span class="hidden-phone">Forum</span></a></li>
+                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align:center;"><i class="icon-leaf"></i> Components <i class="icon-caret-down icon-white icon-large"></i></a>
+                     <ul class="dropdown-menu">
+                        <li style="background-color: #ffffff;"><a href="/datatables">Dandelion-Datatables</a></li>
+                     </ul>
+                  </li>
+                  <li class="text-center"><a href="/"><i class="icon-home"></i><span class="hidden-phone">Home</span></a></li>
+               </ul>
+               <ul class="nav pull-right" style="clear:right;">
+                  <form class="navbar-search" action="http://google.com/search" method="get" style="margin-right:15px;">
+                     <input type="hidden" name="q" value="site:dandelion.github.io/blog" />
+                     <input type="text" class="search search-query" name="q" results="0" placeholder="Search"/>
+                  </form>
+               </ul>
+            </div>
+            <!--/.nav-collapse -->
+         </div>
+      </div>
+   </div>
+   <div class="container-fluid">
+      <div class="row-fluid">
+         <div class="span9">{{ content }}</div>
+         <div class="span3">
+            
+            <div class="row-fluid">
+               <div class="row12">
+                  <h4>Last blogs</h4>
+                  <ul>
+                     {% for post in site.posts limit:5 %}
+                     <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                     {% endfor %}
+                  </ul>
+               </div>
+            </div>
+            <div class="row-fluid">
+               <div class="row12">
+                  <h4>Tags</h4>
+                  {% include setup %}
+                  <ul class="tag_box inline">
+                     {% assign tags_list = site.tags %}  
+                     {% include tags_list %}
+                  </ul>
+               </div>
+            </div>
+            <div class="row-fluid">
+               <div class="row12">
+                  <h4>Categories</h4>
+                  {% include setup %}
+                  <ul class="tag_box inline">
+                     {% assign categories_list = site.categories %}
+                     {% include categories_list %}
+                  </ul>
+               </div>
+            </div>
+            <div class="row-fluid" style="margin-top:10px;">
+               <div class="row12">
+                  <!-- 
+                  <a href="https://twitter.com/dandelion_proj" class="twitter-follow-button" data-show-count="false">Follow @dandelion_proj</a>
+                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                   -->
+                  <a class="twitter-timeline" href="https://twitter.com/dandelion_proj" data-widget-id="306779829204828161">Tweets from @dandelion_proj</a>
+                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+               </div>
+            </div>         
+         </div>
+      </div>
+      <hr>
+      <footer>
+         <p>
+            Copyright © The <a href="/team">Dandelion Team</a> | <a href="/acknowledgments.html">Acknowledgments</a> <span style="float: right;"><script
+                  src="http://www.ohloh.net/p/633354/widgets/project_thin_badge.js"></script></span>
+         </p>
+      </footer>
+   </div>
+</body>
+</html>

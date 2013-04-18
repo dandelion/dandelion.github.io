@@ -8,7 +8,7 @@ pygments: true
 #
 # Site configuration
 #
-BASE_PATH : http://dandelion.github.com
+BASE_PATH : http://dandelion.github.io
 ASSET_PATH : false
 analytics_google_tracking_id : 'UA-33818546-8'
 
@@ -22,7 +22,7 @@ author :
   email : dandelion-devteam@googlegroups.com
   github : dandelion
   twitter : dandelion_proj
-production_url : http://dandelion.github.com
+production_url : http://dandelion.github.io
 atom_path : /blog/atom.xml
 rss_path : /blog/rss.xml
 archive_path: /blog/archive.html
@@ -36,14 +36,14 @@ dandelion :
   team: "Dandelion Team 2013"
   components:
     core:
-      name: Dandelion-Core
+      name: dandelion
       version: 0.1.0
       url: dandelion
     datatables:
-      name: Dandelion-DataTables
+      name: datatables
       version: 0.8.10
       url: datatables
     webanalytics:
-      name: Dandelion-WebAnalytics
-      version: 0.1.1
+      name: webanalytics
+      version: 0.1.0
       url: webanalytics
