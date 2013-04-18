@@ -21,32 +21,107 @@ Nowadays, in our web apps, we need to deal with :
 
 **Dandelion** offers the opportunity to build a structured assets stack and let you deal with all yours web assets with less pain!
 
-<br />
-#### Assets stacks
+<br/>
+#### Assets Stack
 
-**Commencer par une stack (datatable), puis une autre (webanalytics), puis une plus grosse**
-
-For example, the assets stack proposed by dandelion datatables and webanalytics can be view as
+You can view your `Assets Stack` as a set of nested boxes where each of them contains a set of assets.
 
 <div class="row-fluid show-grid">
     <div class="span12">
         <div class="row-fluid show-grid">
-             <div class="span8">
+            <div class="span8">
+                <div class="row-fluid show-grid">
+                    <div class="span4">
+                        <div class="row-fluid show-grid">
+                            <div class="span12">
+                                <div class="row-fluid show-grid">
+                                    <div class="span6">scope 1</div>
+                                    <div class="span6">scope 2</div>
+                                </div>
+                                scope 3
+                            </div>
+                        </div>
+                        scope 4
+                    </div>
+                    <div class="span6">
+                        <div class="row-fluid show-grid">
+                            <div class="span6">
+                                <div class="row-fluid show-grid">
+                                    <div class="span6">scope 5</div>
+                                    <div class="span6">scope 6</div>
+                                </div>
+                                scope 7
+                            </div>
+                            <div class="span6">
+                                <div class="row-fluid show-grid">
+                                    <div class="span6">scope 8</div>
+                                    <div class="span6">scope 9</div>
+                                </div>
+                                scope 10
+                            </div>
+                        </div>
+                        scope 11
+                    </div>
+                    <div class="span2">
+                        <div class="row-fluid show-grid">
+                            <div class="span12">
+                                <div class="row-fluid show-grid">
+                                    <div class="span12">scope 12</div>
+                                </div>
+                                scope 13
+                            </div>
+                        </div>
+                        scope 14
+                    </div>
+                </div>
+                default
+            </div>
+            <div class="span4">
+                <div class="row-fluid show-grid">
+                    <div class="span12">
+                        <div class="row-fluid show-grid">
+                            <div class="span6">
+                                <div class="row-fluid show-grid">
+                                    <div class="span6">scope 15</div>
+                                    <div class="span6">scope 16</div>
+                                </div>
+                                scope 17
+                            </div>
+                            <div class="span6">
+                                <div class="row-fluid show-grid">
+                                    <div class="span6">scope 18</div>
+                                    <div class="span6">scope 19</div>
+                                </div>
+                                scope 20
+                            </div>
+                        </div>
+                        scope 21
+                    </div>
+                </div>
+                none
+            </div>
+        </div>
+    </div>
+</div>
+
+##### Bases
+The belowing stack shows us the assets distributions under nested elements called [scope](/dandelion/features/assets/bases.html#select.scope).
+A scope has a **parent scope** and can have multiple children. This is managed through a [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.parent).
+
+For example, the assets stack proposed by dandelion datatables can be view as
+<div class="row-fluid show-grid">
+    <div class="span4">
+        <div class="row-fluid show-grid">
+             <div class="span12">
                 <div class="row-fluid show-grid">
                      <div class="span12">
                         <div class="row-fluid show-grid">
-                            <div class="span8">
+                            <div class="span12">
                                 <div class="row-fluid show-grid">
                                      <div class="span6">Plugins</div>
                                      <div class="span6">Themes</div>
                                 </div>
                                 Datatables
-                            </div>
-                            <div class="span4">
-                                <div class="row-fluid show-grid">
-                                     <div class="span12">Plugins</div>
-                                </div>
-                                Bootstrap
                             </div>
                         </div>
                         jQuery
@@ -54,35 +129,67 @@ For example, the assets stack proposed by dandelion datatables and webanalytics 
                 </div>
                 default
              </div>
-             <div class="span4">
-                <div class="row-fluid show-grid">
-                     <div class="span6">google analytics</div>
-                     <div class="span6">yahoo analytics</div>
-                </div>
-                none
-             </div>
         </div>
     </div>
 </div>
-<link rel="stylesheet" href="/assets/css/assets_stack.css" />
 
-##### Bases
-The belowing stack shows us the assets distributions under nested elements called [scope](/dandelion/features/assets/bases.html#select.scope) (like yahoo analytics **pas compris la reference specifique a analytics**).
-A scope has a **parent scope** and can have multiple children. This is managed through a [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.parent).
-
-For example, the `Datatables` scope has `jQuery` as a parent scope.
+In this example, the `Datatables` scope has `jQuery` as a parent scope.
 Thoses scopes contain :
 * 2 [assets](/dandelion/features/assets/bases.html#select.asset) for datatables,
 * 1 asset for jquery.
 When you need to use the `datatables` scope in a web page, you need to include the 3 assets in a particular order (jquery before datatables).
 
 Regardind the [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.parent), you have 2 entry points :
-* the [Default Scope Parent](/dandelion/features/assets/bases.html#select.default) to build or complete a assets stack,
-* the [Detached Scope Parent](/dandelion/features/assets/bases.html#select.none) to build a standalone assets stack.
+* the [Default Scope Parent](/dandelion/features/assets/bases.html#select.default) (default) to build or complete a assets stack,
+* the [Detached Scope Parent](/dandelion/features/assets/bases.html#select.none) (none) to build a standalone assets stack.
+
+<div class="row-fluid show-grid">
+    <div class="span8">
+        <div class="row-fluid show-grid">
+             <div class="span6">
+                <div class="row-fluid show-grid">
+                     <div class="span6">scope 1</div>
+                     <div class="span6">scope 2</div>
+                </div>
+                default
+             </div>
+             <div class="span6">
+                <div class="row-fluid show-grid">
+                     <div class="span6">scope 3</div>
+                     <div class="span6">scope 4</div>
+                </div>
+                none
+             </div>
+        </div>
+    </div>
+</div>
 
 ##### Stack management
 To facilitate the stack management, you can use some `override` properties.
-Thoses properties are useful if your stack is not entirely under your control (modules, libs). **Donner un exemple ici**
+Thoses properties are useful if your stack is not entirely under your control (modules, libs).
+
+For example, the assets stack proposed by dandelion datatables is
+<div class="row-fluid show-grid">
+    <div class="span4">
+        <div class="row-fluid show-grid">
+             <div class="span12">
+                <div class="row-fluid show-grid">
+                     <div class="span12">
+                        <div class="row-fluid show-grid">
+                            <div class="span12">
+                                Datatables (v1.9)
+                            </div>
+                        </div>
+                        jQuery (v1.9.0)
+                     </div>
+                </div>
+                default
+             </div>
+        </div>
+    </div>
+</div>
+
+But you need need jQuery in v1.9.1 and DataTables in v1.9.4, you need to override jQuery and DataTables assets.
 
 Here is a list of stuff you can override :
 * [an asset of the same scope](/dandelion/features/assets/bases.html#select.override.same),
@@ -103,6 +210,8 @@ You have several [configuration points](/dandelion/features/assets/configuration
 Your assets stack is internally :
 * stored in an [Assets Storage](/dandelion/features/assets/plumbing.html),
 * managed by an [Assets Configurator](/dandelion/features/assets/plumbing.html),
-* loaded by the defined [Assets Loader](/dandelion/features/assets/plumbing.html).**"defined" ou ?**
+* loaded by the configured [Assets Loaders](/dandelion/features/assets/plumbing.html).
 
 Asset locations can be configured using [wrappers](/dandelion/features/assets/plumbing.html). We already provide some wrappers but you can of course write your own!
+
+<link rel="stylesheet" href="/assets/css/assets_stack.css" />

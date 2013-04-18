@@ -49,7 +49,7 @@ In **Dandelion**, the assets management is based on a [Storage Component](/dande
 * [A location can't be used twice in the same scope by an similar asset](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#ASSET_LOCATION_ALREADY_EXISTS_IN_SCOPE)
 * [An asset can't have a parent scope which doesn't already exist](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#UNDEFINED_PARENT_SCOPE)
 * [An asset can't have a couple of Scope/Parent Scope when its scope is already associated to another parent scope](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#PARENT_SCOPE_INCOMPATIBILITY)
-* [An asset can't be added with Detached Scope as his scope, Detached Scope is only allowed as a Parent Scope](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#DETACHED_SCOPE_NOT_ALLOWED) ** comprends pas cette phrase **
+* [An asset can't use the Detached Scope as his scope, the Detached Scope is only allowed as a Parent Scope](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#DETACHED_SCOPE_NOT_ALLOWED)
 
 ####### **Access** Rules
 
@@ -63,7 +63,7 @@ All assets returned by **assetsFor(...)** have the following characteristics :
 The [AssetsConfigurator](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsConfigurator.html) uses the [assets properties](/dandelion/features/assets/configuration.html) load by [Dandelion Configuration](/dandelion/ref/configuration/).
 
 #### Dandelion Assets Loader
-An [AssetsLoader](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLoader.html) is an interface to load from a source a set of assets and their scopes and scopes parents via its API **loadAssets()**. **comprends pas la phrase**
+An [AssetsLoader](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLoader.html) is an interface to load a set of assets from a source.
 Some [implementations](/dandelion/features/assets/loaders.html) are available : AssetsJsonLoader (default), AssetsNopLoader.
 
 #### Dandelion Assets Location Wrapper
