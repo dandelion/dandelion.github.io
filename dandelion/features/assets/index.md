@@ -88,8 +88,10 @@ You can override
 * [a location of an Asset by update](/dandelion/features/assets/bases.html#select.locationOverride.change).
 
 ##### Usages
-You can access to your assets stack at any time with the [Assets Accessor](/dandelion/features/assets/usages.html#select.accessor),
-During page rendering, you can manage your assets context with the [Assets Request Context](/dandelion/features/assets/usages.html#select.context) helper or directly in your page ([jsp](/dandelion/ref/jsp/assets.html) or [html](/dandelion/ref/thymeleaf/assets.html)).
+You can access to your assets stack at any time with the [Assets Accessor](/dandelion/features/assets/usages.html),
+During page rendering, you can manage your assets context with the [Assets Request Context](/dandelion/features/assets/usages.html) helper or directly in your page ([jsp](/dandelion/ref/jsp/assets.html) or [html](/dandelion/ref/thymeleaf/assets.html)).
+
+Some samples are available in the [Dandelion Samples Repository](https://github.com/dandelion/dandelion-samples).
 
 ##### Configuration points
 You have several [configuration points](/dandelion/features/assets/configuration.html) available for manage your assets stack.

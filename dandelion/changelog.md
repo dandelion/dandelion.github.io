@@ -5,8 +5,7 @@ level1: changelog
 ---
 
 ### Changelog
-<hr />
 
-#### 0.1.0 (xx-xx-2013)
+#### 0.1.0 (xx-04-2013)
 *	**[Assets Stack Features](/dandelion/features/assets/)** : Assets stack management system,
-*	**[Configuration Accessor](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/config/Configuration.html)** : Centralized configuration to access on all properties in `dandelion/dandelion*.properties`.
+*	**[Configuration Accessor](/dandelion/ref/configuration/)** : Centralized configuration to access on all properties in `dandelion/dandelion*.properties`.
