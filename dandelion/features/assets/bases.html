@@ -77,7 +77,7 @@ Thoses 2 samples define the same scope/parent link.
 Bad Usage :<pre>{ "scope": "none" }</pre></td>
 		</tr>
 		<tr>
-			<td><span class="hidden">select.override</span>Asset Override</td>
+			<td><span class="hidden">select.override.child</span>Asset Override on child scope</td>
 			<td>Asset Override provide you the ability to change a asset in a scope by extend this scope and change the asset.</td>
 			<td><pre>{
   "scope": "datatables",
@@ -96,6 +96,28 @@ We change the version of <b>jQuery</b> asset :
 }</pre>
 Only the version is change, not the display order, <b>jQuery</b> is still the first asset to be display.</td>
 		</tr>
+        <tr>
+            <td><span class="hidden">select.override.same</span>Asset Override on same scope</td>
+            <td>Asset Override provide you the ability to change a asset in a scope by override the complete assets list.</td>
+            <td><pre>{
+  "scope": "datatables",
+  "assets": [
+    {"name": "jquery", "version": "1.9.1", ...},
+    {"name": "datatables", "type": "js", ...},
+    {"name": "datatables", "type": "css", ...}
+  ]
+}</pre>
+                We change the version of <b>jQuery</b> asset :
+<pre>{
+  "scope": "datatables",
+  "override": true,
+  "assets": [
+    {"name": "jquery", "version": "2.0", ...},
+    {"name": "datatables", "type": "js", ...},
+    {"name": "datatables", "type": "css", ...}
+  ]
+}</pre>
+        </tr>
 		<tr>
 			<td><span class="hidden">select.locationOverride.add</span>Asset Location Override<br/>(Add)</td>
 			<td>Asset Location Override provide you the ability to <b>add</b> a location in a asset.</td>

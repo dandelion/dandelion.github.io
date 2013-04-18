@@ -7,12 +7,10 @@ level2:
   name: Assets Stack
 level3:
   url: storage
-  name: Assets Storage
+  name: Assets Plumbing
 ---
 
-### Dandelion Assets Storage
-
-
+#### Dandelion Assets Storage
 In `Dandelion`, the `Assets` feature is based on a [Storage Component](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorage.html) who provide a API with Storage Rules.
 
 ###### **AssetsStorage** Public API
@@ -60,3 +58,14 @@ All assets returned by **assetsFor(...)** has the following characteristics :
 * **Versions** returned are those in the youngest scopes (but always keeping the order of their origin scopes in the case of a change)
 * **Locations** are merged during the course if and only if the version is identical to an asset
 
+
+#### Dandelion Assets Configurator
+The [AssetsConfigurator](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsConfigurator.html) use the [assets properties](/dandelion/features/assets/configuration.html) load by [Dandelion Configuration](/dandelion/ref/configuration/).
+
+#### Dandelion Assets Loader
+An [AssetsLoader](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLoader.html) is an interface to load from a source a set of assets and their scopes and scopes parents via its API **loadAssets()**.
+Some [implementations](/dandelion/features/assets/loaders.html) are available AssetsJsonLoader (default), AssetsNopLoader.
+
+#### Dandelion Assets Location Wrapper
+An [AssetsLocationWrapper](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLocationWrapper.html) is an interface to wrap a location before to retrieve it from **Assets.getAssetLocation(...)**.
+Some [implementations](/dandelion/features/assets/wrappers.html) are available for location keys : classpath, delegate, template, webjars (extras).
