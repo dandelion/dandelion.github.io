@@ -14,8 +14,8 @@ level3:
 
 #### `Assets` Helper
 
-Anywhere in your application, you can have access to your assets stack by using the [Assets Helper](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/Assets.html) helper.
-You can use it through his public API :
+Anywhere in your application, you can access your assets stack by using the [Assets Helper](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/Assets.html).
+You can use it through its public API :
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -47,25 +47,29 @@ You can use it through his public API :
     </tbody>
 </table>
 
-On the first use, the helper load your assets stack ([more detail on the plumbing section](/dandelion/features/assets/plumbing.html))
+On the first use, the helper loads your assets stack ([more detail on the plumbing section](/dandelion/features/assets/plumbing.html))
 
 #### Assets on your page
 
-To use your asset stack on your page, you need first to enable the rendering process of your needed assets.
-* In `jsp`, by adding `<dandelion:assets/>` on the end of your page.
-* In `Thymeleaf`, by adding `ddl:assets-stack='enabled'` on the `<html>` of your page.
+To use your asset stack in your web page, you need first to enable the rendering process of your needed assets.
+* In `jsp`, by adding `<dandelion:assets/>` at the end of the page.
+* In `Thymeleaf`, by adding `ddl:assets-stack='enabled'` in the `<html>` tag.
 
-Now, you can use the `assets stack` feature on your page. For that, you have 2 ways to do it :
+Now, you can use the `assets stack` feature in your page. For that, you have 2 ways to do it :
 * on `Servlet` side, by using the `Assets Request Context` feature,
 * on `Page` side, by using `Jsp taglib` or `Thymeleaf dialect`.
 
 ##### Assets Request Context
 
-At any time during the Page rendering, you have access to [AssetsRequestContext](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsRequestContext.html) to add some scopes, exclude some scopes or assets and rendering them.
-A context is attached to a specific request, he is destroy at the request end of life.
+At any time during the page rendering, you can access the [AssetsRequestContext](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsRequestContext.html), allowing you to :
+ * add some scopes
+ * exclude some scopes or assets
+ * render them.
+
+A context is always attached to a specific request and is finally destroyed at the end of the request.
 
 ###### Declaration of needed assets
-The context is used to declare the needed assets on a page context, you can use it through his public API :
+The context is used to declare the needed assets in a page context, you can use it through its public API :
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -109,7 +113,7 @@ The context is used to extract the needed assets on a page context, you can use 
     <tbody>
         <tr>
             <td>getScopes(withoutExcludedScopes)</td>
-            <td>Return the needed assets attach to the stored scopes with ou without the excluded scopes</td>
+            <td>Return the needed assets attached to the stored scopes with ou without excluded scopes</td>
         </tr>
         <tr>
             <td>getExcludedScopes()</td>
@@ -147,7 +151,7 @@ In your JSP, you can use the tag `assets` with some attributes :
 		</body>
 	</html>
 
-The produces HTML is :
+It will produce the following HTML :
 
 	<html>
 		<head>
@@ -206,6 +210,6 @@ The produces HTML is :
 		</body>
 	</html>
 
-Due to the tree management of the HTML page by Thymeleaf, the assets are renderer :
-* for js, at the end of `body` tag,
-* for css, at the end of `head`tag.
+Due to the tree aspect of a HTML page offered by Thymeleaf, the assets are rendered using the best practices :
+* at the end of the `body` tag for Javascript file
+* at the end of the `head`tag for style sheets
