@@ -12,19 +12,15 @@ level3:
 
 ### Loader Implementations
 
-#### How to build your own implementation?
-
-Your implementation must implement [AssetsLoader](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLoader.html).
-Now, you can setup your class with configuration property [assets.loaders](/dandelion/features/assets/configuration.html#assets.loaders).
-
+<br />
 #### Built-in implementations
 
-##### JSON implementation (use by default)
+ * **JSON implementation** (used by default)
 
-[AssetsJsonLoader](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/loader/AssetsJsonLoader.html) load the Assets from all `*.json` files under `dandelion` folder.
+The [AssetsJsonLoader](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/loader/AssetsJsonLoader.html) loads the assets from all `*.json` files under the `dandelion` folder.
 
 Each JSON file is transformed in an `AssetComponent` object.
-To add a asset, you can create a new JSON file like this :
+To add an asset, you can create a new JSON file like this :
 
 	{
 		“scope”: “scopeOfAssets”,
@@ -42,7 +38,14 @@ To add a asset, you can create a new JSON file like this :
 		]
 	}
 
-##### No Operations implementation
+ * **No Operations implementation**
 
-[AssetsNopLoader](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/loader/AssetsNopLoader.html) load nothing, you can use it to disabled the _assets management system_.
+The [AssetsNopLoader](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/loader/AssetsNopLoader.html) loads nothing, you can use it to disable the _assets management system_.
 
+<br />
+#### How to build your own implementation?
+
+Let's say you want to store your stack description in a data base or in a file system. You can do it writing your own _loader_ implementation.
+
+Your custom loader must implement [AssetsLoader](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLoader.html).
+Now, you can setup your class with configuration property [assets.loaders](/dandelion/features/assets/configuration.html#assets.loaders).
