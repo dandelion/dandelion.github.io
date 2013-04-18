@@ -2,6 +2,7 @@
 layout: post
 categories : ['News']
 tags : ['Documentation']
+author: 'Thibault Duchateau'
 ---
 {% include setup %}
 

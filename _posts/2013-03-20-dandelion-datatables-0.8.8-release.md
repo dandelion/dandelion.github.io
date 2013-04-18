@@ -2,6 +2,7 @@
 layout: post
 categories : ['News', 'Release']
 tags : ['Dandelion-datatables', 'Tests']
+author: 'Thibault Duchateau'
 ---
 {% include setup %}
 

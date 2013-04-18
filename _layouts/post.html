@@ -4,8 +4,7 @@ layout: blog
 <div class="row-fluid">
    <div class="span2">
       <!-- AddThis Button BEGIN -->
-      <div class="addthis_toolbox addthis_floating_style addthis_counter_style" style="left:30px;top:187px;"
-      addthis:url="http://dandelion.github.io/blog/" addthis:title="{{ page.title }}">
+      <div class="addthis_toolbox addthis_floating_style addthis_counter_style" style="left:30px;top:187px;">
          <a class="addthis_button_tweet" tw:count="vertical" tw:via="dandelion_proj"></a>
          <a class="addthis_button_google_plusone" g:plusone:size="tall"></a>
          <a class="addthis_button_linkedin_counter" li:counter="top"></a>
@@ -14,10 +13,16 @@ layout: blog
       </div>
       <script type="text/javascript">
          var addthis_config = {
-   	        "data_track_addressbar":true,
-   	        "ui_offset_top":187,
-   	        "ui_offset_left":30
+   	        "data_track_addressbar":false,
+   	        "data_track_clickback":true,
+   	        "ui_offset_top": 187,
+   	        "ui_offset_left": 30,
+   	        "data_ga_tracker": "{{ site.analytics_google_tracking_id }}"
    	     };
+         var addthis_share = {
+            "url" : "http://dandelion.github.io{{ page.url }}",
+            "title" : "[Blog] {{ page.title }}"
+         }
       </script>
       <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-516d4b686f218f23"></script>
       <!-- AddThis Button END -->
@@ -30,7 +35,11 @@ layout: blog
       </h1>
 
       <ul class="breadcrumb tag_box">
-         <li><span>{{ page.date | date_to_long_string }}</span></li>
+         <li>By <a href="/team">{{ page.author }}</a></li>
+         <li>
+            <span class="divider">|</span>
+            <span>{{ page.date | date_to_long_string }}</span>
+         </li>
          <li>
             <span class="divider">|</span><i class="icon-comments"></i>
             <a href="{{ page.url }}#disqus_thread">Comments</a>
@@ -50,7 +59,7 @@ layout: blog
       </div>
       
       <hr />
-       
+      
       <div id="disqus_thread" style="margin-top:15px;"></div>
       <script type="text/javascript">
       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -65,7 +74,7 @@ layout: blog
       </script>
       <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-       
+        
       <hr>
    
       <div class="pagination">
