@@ -19,12 +19,12 @@ Nowadays, in our web apps, we need to deal with :
 * upgrade asset versions
 * and more...
 
-**Dandelion** offers the opportunity to build a structured assets stack and let you deal with all yours web assets with less pain!
+**Dandelion** offers the opportunity to build a structured assets stack and let you deal with all your web assets with less pain!
 
 <br/>
-#### Assets Stack
+#### Assets stacks
 
-You can view your `Assets Stack` as a set of nested boxes where each of them contains a set of assets.
+You can view your assets stack as a set of nested boxes where each of them contain a set of assets.
 
 <div class="row-fluid show-grid">
     <div class="span12">
@@ -104,11 +104,11 @@ You can view your `Assets Stack` as a set of nested boxes where each of them con
     </div>
 </div>
 
-##### Bases
+##### Scopes and assets
 The belowing stack shows us the assets distributions under nested elements called [scope](/dandelion/features/assets/bases.html#select.scope).
-A scope has a **parent scope** and can have multiple children. This is managed through a [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.parent).
+A scope has a **parent scope**, can have multiple children and is managed through a [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.parent).
 
-For example, the assets stack proposed by dandelion datatables can be view as
+For example, the assets stack proposed by **Dandelion-Datatables** can be viewed as follows:
 <div class="row-fluid show-grid">
     <div class="span4">
         <div class="row-fluid show-grid">
@@ -121,7 +121,7 @@ For example, the assets stack proposed by dandelion datatables can be view as
                                      <div class="span6">Plugins</div>
                                      <div class="span6">Themes</div>
                                 </div>
-                                Datatables
+                                DataTables
                             </div>
                         </div>
                         jQuery
@@ -133,14 +133,16 @@ For example, the assets stack proposed by dandelion datatables can be view as
     </div>
 </div>
 
-In this example, the `Datatables` scope has `jQuery` as a parent scope.
-Thoses scopes contain :
-* 2 [assets](/dandelion/features/assets/bases.html#select.asset) for datatables,
-* 1 asset for jquery.
-When you need to use the `datatables` scope in a web page, you need to include the 3 assets in a particular order (jquery before datatables).
+In this example, the `DataTables` scope has `jQuery` as a parent scope.
+Those scopes contain :
+* 2 [assets](/dandelion/features/assets/bases.html#select.asset) for [DataTables](http://datatables.net/) (JS and CSS files),
+* 1 asset for [jQuery](http://jquery.com/) (JS file).
 
-Regardind the [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.parent), you have 2 entry points :
-* the [Default Scope Parent](/dandelion/features/assets/bases.html#select.default) (default) to build or complete a assets stack,
+When you need to use the `DataTables` scope in a web page, you need to include the 3 assets in a particular order (jQuery before DataTables).**Cette phrase sous-entend qu'on doit inclure les assets à la main, c'est bizarre**
+
+**Je trouve qu'il manque une transition ici avant de parler des hierarchies**
+Regarding the [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.parent), actually you have 2 entry points :
+* the [Default Scope Parent](/dandelion/features/assets/bases.html#select.default) (default) to build or complete an assets stack,
 * the [Detached Scope Parent](/dandelion/features/assets/bases.html#select.none) (none) to build a standalone assets stack.
 
 <div class="row-fluid show-grid">
@@ -166,9 +168,9 @@ Regardind the [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.pa
 
 ##### Stack management
 To facilitate the stack management, you can use some `override` properties.
-Thoses properties are useful if your stack is not entirely under your control (modules, libs).
+Those properties are useful if your stack is not entirely under your control (modules, libs).
 
-For example, the assets stack proposed by dandelion datatables is
+For example, the assets stack proposed by **Dandelion-DataTables** is:
 <div class="row-fluid show-grid">
     <div class="span4">
         <div class="row-fluid show-grid">
@@ -189,7 +191,7 @@ For example, the assets stack proposed by dandelion datatables is
     </div>
 </div>
 
-But you need need jQuery in v1.9.1 and DataTables in v1.9.4, you need to override jQuery and DataTables assets.
+But you need jQuery in v1.9.1 and DataTables in v1.9.4, you need to override jQuery and DataTables assets.
 
 Here is a list of stuff you can override :
 * [an asset of the same scope](/dandelion/features/assets/bases.html#select.override.same),
@@ -198,15 +200,17 @@ Here is a list of stuff you can override :
 * [the location of an asset by update](/dandelion/features/assets/bases.html#select.locationOverride.change).
 
 ##### Usage
-You can access your assets stack at any time with the [Assets Accessor](/dandelion/features/assets/usages.html),
+You can access your assets stack at any time with the [Assets Accessor](/dandelion/features/assets/usages.html).
+
 During page rendering, you can manage your assets context with the [Assets Request Context](/dandelion/features/assets/usages.html) helper or directly in your page ([jsp](/dandelion/ref/jsp/assets.html) or [html](/dandelion/ref/thymeleaf/assets.html)).
 
 Some samples are available in the [Dandelion Samples Repository](https://github.com/dandelion/dandelion-samples).
 
 ##### Configuration points
-You have several [configuration points](/dandelion/features/assets/configuration.html) available to help you manage your assets stack.
+You have several [configuration points](/dandelion/features/assets/configuration.html) available to help you to organize your assets stack.
 
 ##### Plumbing
+**Il faut peut-etre laisser cette section dans une partie "advanced"?**
 Your assets stack is internally :
 * stored in an [Assets Storage](/dandelion/features/assets/plumbing.html),
 * managed by an [Assets Configurator](/dandelion/features/assets/plumbing.html),
