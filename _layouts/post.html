@@ -30,7 +30,11 @@ layout: blog
       </h1>
 
       <ul class="breadcrumb tag_box">
-         <li><span>{{ page.date | date_to_long_string }}</span></li>
+         <li>By <a href="/team">{{ page.author }}</a></li>
+         <li>
+            <span class="divider">|</span>
+            <span>{{ page.date | date_to_long_string }}</span>
+         </li>
          <li>
             <span class="divider">|</span><i class="icon-comments"></i>
             <a href="{{ page.url }}#disqus_thread">Comments</a>
