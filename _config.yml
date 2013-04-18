@@ -36,14 +36,14 @@ dandelion :
   team: "Dandelion Team 2013"
   components:
     core:
-      name: Dandelion-Core
+      name: dandelion
       version: 0.1.0
       url: dandelion
     datatables:
-      name: Dandelion-DataTables
+      name: datatables
       version: 0.8.10
       url: datatables
     webanalytics:
-      name: Dandelion-WebAnalytics
-      version: 0.1.1
+      name: webanalytics
+      version: 0.1.0
       url: webanalytics
