@@ -1,5 +1,5 @@
 ---
-layout: dandelion
+layout: dandelion-assets
 menu: assets
 level1: features
 level2:
@@ -12,7 +12,7 @@ level3:
 
 ### Assets Usages
 
-#### `Assets` Helper
+#### Assets Helper
 
 Anywhere in your application, you can access your assets stack by using the [Assets Helper](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/Assets.html).
 You can use it through its public API :

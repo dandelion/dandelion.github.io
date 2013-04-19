@@ -1,5 +1,5 @@
 ---
-layout: dandelion
+layout: dandelion-assets
 menu: assets
 level1: features
 level2:
