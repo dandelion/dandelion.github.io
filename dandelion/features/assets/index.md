@@ -105,7 +105,7 @@ You can view your assets stack as a set of nested boxes where each of them conta
 </div>
 
 ##### Scopes and assets
-The belowing stack shows us the assets distributions under nested elements called [scope](/dandelion/features/assets/bases.html#select.scope).
+The belowing stack shows us the assets distributions under nested boxes called [scope](/dandelion/features/assets/bases.html#select.scope).
 A scope has a **parent scope**, can have multiple children and is managed through a [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.parent).
 
 For example, the assets stack proposed by **Dandelion-Datatables** can be viewed as follows:
@@ -138,13 +138,12 @@ Those scopes contain :
 * 2 [assets](/dandelion/features/assets/bases.html#select.asset) for [DataTables](http://datatables.net/) (JS and CSS files),
 * 1 asset for [jQuery](http://jquery.com/) (JS file).
 
-When you need to use the `DataTables` scope in a web page, you need to include the 3 assets in a particular order (jQuery before DataTables).**Cette phrase sous-entend qu'on doit inclure les assets à la main, c'est bizarre**
+When you want all assets for use `DataTables` in a web page :
+* Without your **assets stack**, you need to include the 3 assets in a particular order (jQuery before DataTables).
+* With your **assets stack**, you just need to use the scope **DataTables**.
 
-**Je trouve qu'il manque une transition ici avant de parler des hierarchies**
-Regarding the [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.parent), actually you have 2 entry points :
-* the [Default Scope Parent](/dandelion/features/assets/bases.html#select.default) (default) to build or complete an assets stack,
-* the [Detached Scope Parent](/dandelion/features/assets/bases.html#select.none) (none) to build a standalone assets stack.
-
+##### Stack management
+###### Scopes Hierachy
 <div class="row-fluid show-grid">
     <div class="span8">
         <div class="row-fluid show-grid">
@@ -153,20 +152,26 @@ Regarding the [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.pa
                      <div class="span6">scope 1</div>
                      <div class="span6">scope 2</div>
                 </div>
-                default
+                <b>default</b>
              </div>
              <div class="span6">
                 <div class="row-fluid show-grid">
                      <div class="span6">scope 3</div>
                      <div class="span6">scope 4</div>
                 </div>
-                none
+                <b>none</b>
              </div>
         </div>
     </div>
 </div>
 
-##### Stack management
+All nested boxes represent a [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.parent).
+
+To build your own **assets stack**, you have 2 entry points on the **scopes hierachy**:
+* the [Default Scope Parent](/dandelion/features/assets/bases.html#select.default) (default) to build or complete an assets stack,
+* the [Detached Scope Parent](/dandelion/features/assets/bases.html#select.none) (none) to build a standalone assets stack.
+
+###### Assets override
 To facilitate the stack management, you can use some `override` properties.
 Those properties are useful if your stack is not entirely under your control (modules, libs).
 
@@ -206,11 +211,11 @@ During page rendering, you can manage your assets context with the [Assets Reque
 
 Some samples are available in the [Dandelion Samples Repository](https://github.com/dandelion/dandelion-samples).
 
-##### Configuration points
+##### Advanced
+###### Configuration points
 You have several [configuration points](/dandelion/features/assets/configuration.html) available to help you to organize your assets stack.
 
-##### Plumbing
-**Il faut peut-etre laisser cette section dans une partie "advanced"?**
+###### Plumbing
 Your assets stack is internally :
 * stored in an [Assets Storage](/dandelion/features/assets/plumbing.html),
 * managed by an [Assets Configurator](/dandelion/features/assets/plumbing.html),
