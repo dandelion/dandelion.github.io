@@ -105,8 +105,8 @@ You can view your assets stack as a set of nested boxes where each of them conta
 </div>
 
 ##### Scopes and assets
-The belowing stack shows us the assets distributions under nested boxes called [scope](/dandelion/features/assets/bases.html#select.scope).
-A scope has a **parent scope**, can have multiple children and is managed through a [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.parent).
+The belowing stack shows us the assets distributions under nested boxes called [scope](/dandelion/features/assets/glossary.html#select.scope).
+A scope has a **parent scope**, can have multiple children and is managed through a [Scopes Hierarchy](/dandelion/features/assets/glossary.html#select.parent).
 
 For example, the assets stack proposed by **Dandelion-Datatables** can be viewed as follows:
 <div class="row-fluid show-grid">
@@ -135,7 +135,7 @@ For example, the assets stack proposed by **Dandelion-Datatables** can be viewed
 
 In this example, the `DataTables` scope has `jQuery` as a parent scope.
 Those scopes contain :
-* 2 [assets](/dandelion/features/assets/bases.html#select.asset) for [DataTables](http://datatables.net/) (JS and CSS files),
+* 2 [assets](/dandelion/features/assets/glossary.html#select.asset) for [DataTables](http://datatables.net/) (JS and CSS files),
 * 1 asset for [jQuery](http://jquery.com/) (JS file).
 
 When you want all assets for use `DataTables` in a web page :
@@ -165,11 +165,11 @@ When you want all assets for use `DataTables` in a web page :
     </div>
 </div>
 
-All nested boxes represent a [Scopes Hierarchy](/dandelion/features/assets/bases.html#select.parent).
+All nested boxes represent a [Scopes Hierarchy](/dandelion/features/assets/glossary.html#select.parent).
 
 To build your own **assets stack**, you have 2 entry points on the **scopes hierachy**:
-* the [Default Scope Parent](/dandelion/features/assets/bases.html#select.default) (default) to build or complete an assets stack,
-* the [Detached Scope Parent](/dandelion/features/assets/bases.html#select.none) (none) to build a standalone assets stack.
+* the [Default Scope Parent](/dandelion/features/assets/glossary.html#select.default) (default) to build or complete an assets stack,
+* the [Detached Scope Parent](/dandelion/features/assets/glossary.html#select.none) (none) to build a standalone assets stack.
 
 ###### Assets override
 To facilitate the stack management, you can use some `override` properties.
@@ -199,10 +199,10 @@ For example, the assets stack proposed by **Dandelion-DataTables** is:
 But you need jQuery in v1.9.1 and DataTables in v1.9.4, you need to override jQuery and DataTables assets.
 
 Here is a list of stuff you can override :
-* [an asset of the same scope](/dandelion/features/assets/bases.html#select.override.same),
-* [an asset in a child scope](/dandelion/features/assets/bases.html#select.override.child),
-* [the location of an asset by addition](/dandelion/features/assets/bases.html#select.locationOverride.add),
-* [the location of an asset by update](/dandelion/features/assets/bases.html#select.locationOverride.change).
+* [an asset of the same scope](/dandelion/features/assets/glossary.html#select.override.same),
+* [an asset in a child scope](/dandelion/features/assets/glossary.html#select.override.child),
+* [the location of an asset by addition](/dandelion/features/assets/glossary.html#select.locationOverride.add),
+* [the location of an asset by update](/dandelion/features/assets/glossary.html#select.locationOverride.change).
 
 ##### Usage
 You can access your assets stack at any time with the [Assets Accessor](/dandelion/features/assets/usages.html).
@@ -213,7 +213,7 @@ Some samples are available in the [Dandelion Samples Repository](https://github.
 
 ##### Advanced
 ###### Configuration points
-You have several [configuration points](/dandelion/features/assets/configuration.html) available to help you to organize your assets stack.
+You have several [configuration points](/dandelion/ref/configuration/) available to help you to organize your assets stack.
 
 ###### Plumbing
 Your assets stack is internally :

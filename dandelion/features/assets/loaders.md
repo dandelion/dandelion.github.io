@@ -48,4 +48,4 @@ The [AssetsNopLoader](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion
 Let's say you want to store your stack description in a data base or in a file system. You can do it writing your own _loader_ implementation.
 
 Your custom loader must implement [AssetsLoader](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLoader.html).
-Now, you can setup your class with configuration property [assets.loaders](/dandelion/features/assets/configuration.html#assets.loaders).
+Now, you can setup your class with configuration property [assets.loaders](/dandelion/ref/configuration/#assets.loaders).

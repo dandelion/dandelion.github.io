@@ -18,13 +18,64 @@ If you decide to create your own configuration files, just ensure that :
  * All files start with **dandelion**
  * All files end with **.properties** (e.g. _dandelion-foo.properties_)
  * All files are located in the folder `dandelion` at the root of the application classpath (e.g. under `src/main/resources` if you use Maven)
- * The main properties file is named **dandelion.properties** **pourquoi tu ne l'appelerais pas dandelion-default.properties, comme dans datatables?**
+ * The main properties file is named **dandelion.properties**.
 
 You can easily access to the loaded configuration by :
 
     com.github.dandelion.core.config.Configuration.getProperties();
 
-#### References
+#### Properties
 
-**Affiche le tableau ici au lieu de mettre un lien vers le tableua**
-* [Assets Stack Configuration](/dandelion/features/assets/configuration.html)
+<table id="tableReference" class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Value(s)</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>assets.loaders</td>
+        <td>Define all loaders for assets (ordered)</td>
+        <td>implements <i>AssetsLoader</i></td>
+        <td><a href="/dandelion/features/assets/loaders.html">AssetsJsonLoader</a></td>
+      </tr>
+      <tr>
+        <td>assets.locations</td>
+        <td>Define possible locations on assets (ordered)</td>
+        <td>List of String separated by comma</td>
+        <td>remote,local</td>
+      </tr>
+      <tr>
+        <td>assets.excluded.scopes</td>
+        <td>Define the excluded scopes on load</td>
+        <td>List of String separated by comma</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>assets.excluded.assets</td>
+        <td>Define the excluded assets on load</td>
+        <td>List of String separated by comma</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>assets.excluded.assets</td>
+        <td>Define the excluded assets on load</td>
+        <td>List of String separated by comma</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>assets.location.wrapper.{location}</td>
+        <td>Define the wrapper for an asset {location}</td>
+        <td>implements <i>AssetsLocationWrapper</i></td>
+        <td><a href="/dandelion/features/assets/wrappers.html">Built-in implementations</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+<link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" />
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="/assets/js/site_reference.js"></script>

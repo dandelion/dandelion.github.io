@@ -36,7 +36,7 @@ The minimal usage of this dialect is
        ...
     </html>
 
-It's needed if you don't use another attribute of this dialect.**Préciser**
+the **ddl:assets-stack** is automaticaly enabled if you use another **assets** attribute of this dialect.
 
 
 <br />

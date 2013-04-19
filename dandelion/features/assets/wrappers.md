@@ -60,7 +60,7 @@ level3:
 Your custom wrapper must implement [AssetsLocationWrapper](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLocationWrapper.html).
 A wrapper is linked to a unique location key.
 
-Now, you can setup your class with configuration property [assets.location.wrapper.{location}](/dandelion/features/assets/configuration.html#assets.location.wrapper)
+Now, you can setup your class with configuration property [assets.location.wrapper.{location}](/dandelion/ref/configuration/#assets.location.wrapper)
 with `{location}` as your location key.
 
 
