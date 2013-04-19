@@ -25,7 +25,7 @@ Describes how the Assets feature should generate the assets.
                 excludedAssets="asset1,asset2,..." />
 
 
-Always define on the footer of your page the minimal usage of this taglib (needed to render the assets) :
+Always add in your page's footer the following tag (needed to render the assets) :
 
 
     <dandelion:assets />
@@ -45,26 +45,26 @@ Always define on the footer of your page the minimal usage of this taglib (neede
   <tbody>
   <tr>
     <td>renderer</td>
-    <td><strong>(optional)</strong> renderer the assets</td>
+    <td><strong>(optional)</strong> render the assets</td>
     <td>true|false</td>
     <td>true</td>
   </tr>
   <tr>
     <td>scopes</td>
-    <td><strong>(optional)</strong> add assets by scope</td>
-    <td>values separated by comma</td>
+    <td><strong>(optional)</strong> Scope or list of scopes to add in your page</td>
+    <td>Value or comma-separated values</td>
     <td></td>
   </tr>
   <tr>
     <td>excludedScopes</td>
-    <td><strong>(optional)</strong> exclude assets by scope</td>
-    <td>values separated by comma</td>
+    <td><strong>(optional)</strong> Scope or list of scopes to exclude from your page</td>
+    <td>Value or comma-separated values</td>
     <td></td>
   </tr>
   <tr>
     <td>excludedAssets</td>
-    <td><strong>(optional)</strong> exclude assets by name</td>
-    <td>values separated by comma</td>
+    <td><strong>(optional)</strong> Asset or list of assets to exclude from your page</td>
+    <td>Value or comma-separated values</td>
     <td></td>
   </tr>
   </tbody>
