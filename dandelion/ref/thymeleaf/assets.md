@@ -14,7 +14,7 @@ level3:
 
 <h4>Description</h4>
 
-The <code>assets</code> attributes allow to set the options for the assets, ie add, excludes, \...
+The <code>assets</code> attributes allow to set the options for the assets, i.e. add, excludes, \...
 
 Don\'t forget to add the prefix <code>ddl:</code> before each attribute.
 
@@ -33,9 +33,10 @@ Don\'t forget to add the prefix <code>ddl:</code> before each attribute.
 The minimal usage of this dialect is
 
     <html ddl:assets-stack="enabled">
+       ...
     </html>
 
-It's needed if you don't use another attribute of this dialect.
+It's needed if you don't use another attribute of this dialect.**Préciser**
 
 
 <br />
@@ -60,19 +61,19 @@ It's needed if you don't use another attribute of this dialect.
   <tr>
     <td>ddl:assets-scopes</td>
     <td><strong>(optional)</strong> add assets by scope</td>
-    <td>values separated by comma</td>
+    <td>Value or comma-separated values</td>
     <td></td>
   </tr>
   <tr>
     <td>ddl:assets-excludedScopes</td>
     <td><strong>(optional)</strong> exclude assets by scope</td>
-    <td>values separated by comma</td>
+    <td>Value or comma-separated values</td>
     <td></td>
   </tr>
   <tr>
     <td>ddl:assets-excludedAssets</td>
     <td><strong>(optional)</strong> exclude assets by name</td>
-    <td>values separated by comma</td>
+    <td>Value or comma-separated values</td>
     <td></td>
   </tr>
   </tbody>
