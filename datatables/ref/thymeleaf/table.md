@@ -105,6 +105,13 @@ Don\'t forget to add the prefix <code>dt:</code> before each attribute.
     <td>DOM/AJAX</td>
   </tr>
   <tr>
+    <td>dt:displaylength</td>
+    <td>Number of rows to display on a single page when using pagination</td>
+    <td></td>
+    <td>10</td>
+    <th>DOM/AJAX</th>
+  </tr>
+  <tr>
     <td>dt:paginationtype</td>
     <td>Choice between the different built-in pagination interaction methods which present different page controls to the end user</td>
     <td>two_button|<br/>full_numbers|<br/>four_button|<br/>bootstrap|<br/>scrolling|<br/>input|<br/>listbox|<br/>extJs</td>

@@ -56,6 +56,20 @@ The <code>&lt;th&gt;</code> attributes allow to configure the columns.
     <td>DOM/AJAX</td>
   </tr>
   <tr>
+    <td>dt:sortInit</td>
+    <td>If <code>dt:sortable</code> is enabled, set the default sorting direction</td>
+    <td>asc|desc</td>
+    <td>asc</td>
+    <td>DOM/AJAX</td>
+  </tr>
+  <tr>
+    <td>dt:sortDirection</td>
+    <td>If <code>dt:sortable</code> is enabled, allow to control the sorting direction(s)</td>
+    <td></td>
+    <td></td>
+    <td>DOM/AJAX</td>
+  </tr>
+  <tr>
     <td>dt:filterable</td>
     <td>Enable or disable filtering on column</td>
     <td>true|false</td>

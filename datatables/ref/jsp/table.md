@@ -164,6 +164,13 @@ Decribes how the HTML table should be generated.
     <th>DOM/AJAX</th>
   </tr>
   <tr>
+    <td>displayLength</td>
+    <td>Number of rows to display on a single page when using pagination</td>
+    <td></td>
+    <td>10</td>
+    <th>DOM/AJAX</th>
+  </tr>
+  <tr>
     <td>processing</td>
     <td>Enable or disable the display of a 'processing' indicator when the table is being processed (e.g. a sort). This is particularly useful for tables with large amounts of data where it can take a noticeable amount of time to sort the entries</td>
     <td>true|false</td>

@@ -49,7 +49,13 @@ You can find below the full list of features supported by **Dandelion-Datatables
     <tr>
       <td>Length change enablement</td>
       <td><a href="/datatables/ref/jsp/table.html#lengthChange">lengthChange</a></td>
-      <td><span class="icon-remove"></span></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:lengthchange">dt:lengthchange</a></td>
+      <td><a href="/datatables/features/basics/featurenablement.html" class="btn btn-mini btn-info">More details »</a></td>    
+    </tr>
+    <tr>
+      <td>Changing display length</td>
+      <td><a href="/datatables/ref/jsp/table.html#displayLength">displayLength</a></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:displaylength">dt:displaylength</a></td>
       <td><a href="/datatables/features/basics/featurenablement.html" class="btn btn-mini btn-info">More details »</a></td>    
     </tr>
     <tr>
@@ -102,13 +108,13 @@ You can find below the full list of features supported by **Dandelion-Datatables
     <tr>
       <td>Sorting initialization</td>
       <td><a href="/datatables/ref/jsp/column.html#sortInit">sortInit</a></td>
-      <td><span class="icon-remove"></span></td>
+      <td><a href="/datatables/ref/thymeleaf/th.html#dt:sortinit">dt:sortinit</a></td>
       <td><a href="/datatables/features/basics/sorting.html#sorting_initialisation" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Sorting direction control</td>
       <td><a href="/datatables/ref/jsp/column.html#sortDirection">sortDirection</a></td>
-      <td><span class="icon-remove"></span></td>
+      <td><a href="/datatables/ref/thymeleaf/th.html#dt:sortdir">dt:sortdir</a></td>
       <td><a href="/datatables/features/basics/sorting.html#sorting_direction_control" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
