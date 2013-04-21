@@ -36,6 +36,7 @@ Allows to execute a DataTables callback.
       <th>Description</th>
       <th>Value(s)</th>
       <th>Default</th>
+      <th>Data source</th>
     </tr>
   </thead>
   <tbody>
@@ -44,12 +45,14 @@ Allows to execute a DataTables callback.
     <td>Type of callback</td>
     <td>cookie|<br/>createdrow|<br/>draw|<br/>footer|<br/>format|<br/>header|<br/>info|<br/>init|<br/>predraw|<br/>row</td>
     <td></td>
+    <td>DOM/AJAX</td>
   </tr>
   <tr>
     <td><strong>(Required)</strong> function</td>
     <td>Name of an external Javascript function to execute as a callback</td>
     <td></td>
     <td></td>
+    <td>DOM/AJAX</td>
   </tr>
   </tbody>
 </table>
