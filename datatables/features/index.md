@@ -4,7 +4,7 @@ menu: features
 level1: features
 ---
 
-### Feature comparison
+### Available features
 
 You can find below the full list of features supported by **Dandelion-Datatables** and the correspondence between the JSP Taglib attributes and the Thymeleaf dialect ones.
 
@@ -53,12 +53,6 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td><a href="/datatables/features/basics/featurenablement.html" class="btn btn-mini btn-info">More details »</a></td>    
     </tr>
     <tr>
-      <td>Changing display length</td>
-      <td><a href="/datatables/ref/jsp/table.html#displayLength">displayLength</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:displaylength">dt:displaylength</a></td>
-      <td><a href="/datatables/features/basics/featurenablement.html" class="btn btn-mini btn-info">More details »</a></td>    
-    </tr>
-    <tr>
       <td>Handling default value</td>
       <td><a href="/datatables/ref/jsp/column.html#default">default</a></td>
       <td>Native support</td>
@@ -69,12 +63,6 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td><a href="/datatables/ref/jsp/table.html#cdn">cdn</a></td>
       <td><a href="/datatables/ref/thymeleaf/table.html#dt:cdn">dt:cdn</a></td>
       <td><a href="/datatables/features/basics/cdn.html" class="btn btn-mini btn-info">More details »</a></td>   
-    </tr>
-    <tr>
-      <td>Changing table's appearing</td>
-      <td><a href="/datatables/ref/jsp/table.html#appear">appear</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:appear">dt:appear</a></td>
-      <td><a href="/datatables/features/basics/changingappearing.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Using implicit objects</td>
@@ -93,6 +81,29 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td><a href="/datatables/ref/jsp/columnhead.html#uid">uid (columnHead)</a> / <a href="/datatables/ref/jsp/column.html#uid">uid (column)</a></td>
       <td>Native support</td>
       <td><a href="/datatables/features/basics/customhead.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    
+    <tr>
+      <td><h4>Changing the display</h4></td>
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td>Changing the display length</td>
+      <td><a href="/datatables/ref/jsp/table.html#displayLength">displayLength</a></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:displaylength">dt:displaylength</a></td>
+      <td><a href="/datatables/features/basics/changingdisplay.html" class="btn btn-mini btn-info">More details »</a></td>    
+    </tr>
+    <tr>
+      <td>Changing the table's appearing</td>
+      <td><a href="/datatables/ref/jsp/table.html#appear">appear</a></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:appear">dt:appear</a></td>
+      <td><a href="/datatables/features/basics/changingappearing.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td>Using scroll options</td>
+      <td><a href="/datatables/ref/jsp/table.html#scrollY">scrollY</a> / <a href="/datatables/ref/jsp/table.html#scrollCollapse">scrollCollapse</a></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:scrolly">dt:scrolly</a> / <a href="/datatables/ref/thymeleaf/table.html#dt:scrollcollapse">dt:scrollcollapse</a></td>
+      <td><a href="/datatables/features/basics/changingdisplay.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
     <tr>
