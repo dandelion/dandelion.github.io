@@ -1,0 +1,9 @@
+com.github.dandelion.datatables.thymeleaf.dialect
+com.github.dandelion.datatables.thymeleaf.matcher
+com.github.dandelion.datatables.thymeleaf.processor
+com.github.dandelion.datatables.thymeleaf.processor.ajax
+com.github.dandelion.datatables.thymeleaf.processor.basic
+com.github.dandelion.datatables.thymeleaf.processor.feature
+com.github.dandelion.datatables.thymeleaf.processor.plugin
+com.github.dandelion.datatables.thymeleaf.processor.theme
+com.github.dandelion.datatables.thymeleaf.util
