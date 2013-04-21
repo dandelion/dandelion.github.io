@@ -172,6 +172,12 @@ Don\'t forget to add the prefix <code>dt:</code> before each attribute.
     <td></td>
     <td></td>
   </tr>
+  <tr>
+    <td>dt:stripeclasses</td>
+    <td>Comma-separated list of CSS classes that should be applied to displayed rows. This sequence of CSS classes may be of any length, and DataTables will apply each class sequentially, looping when required.</td>
+    <td></td>
+    <td></td>
+  </tr>
   </tbody>
 </table>
 

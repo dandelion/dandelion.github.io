@@ -199,20 +199,30 @@ You can find below the full list of features supported by **Dandelion-Datatables
     </tr>
     
     <tr>
-      <td><h4>Themes</h4></td>
+      <td><h4>Styling</h4></td>
       <td colspan="3"></td>
     </tr>
     <tr>
-      <td><a href="http://twitter.github.com/bootstrap/">Bootstrap 2</a></td>
+      <td>Basic styling</td>
+      <td>
+         <a href="/datatables/ref/jsp/table.html#cssClass">cssClass</a> / <a href="/datatables/ref/jsp/table.html#cssStyle">cssStyle</a> (table)<br/>
+         <a href="/datatables/ref/jsp/column.html#cssClass">cssClass</a> / <a href="/datatables/ref/jsp/column.html#cssStyle">cssStyle</a> (column)<br />
+         <a href="/datatables/ref/jsp/table.html#cssStripes">cssStripes</a>
+      </td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:stripeclasses">dt:stripeclasses</a></td>
+      <td><a href="/datatables/features/styling/basicstyling.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td><a href="http://twitter.github.com/bootstrap/">Bootstrap 2 theme</a></td>
       <td><a href="/datatables/ref/jsp/table.html#theme">theme</a></td>
       <td><a href="/datatables/ref/thymeleaf/table.html#dt:theme">dt:theme</a></td>
-      <td><a href="/datatables/features/themes/bootstrap2.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td><a href="/datatables/features/styling/bootstrap2.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
 	<tr>
-      <td><a href="http://jqueryui.com/themeroller/">jQuery UI</a></td>
+      <td><a href="http://jqueryui.com/themeroller/">jQuery UI theme</a></td>
       <td><a href="/datatables/ref/jsp/table.html#theme">theme</a></td>
       <td><a href="/datatables/ref/thymeleaf/table.html#dt:theme">dt:theme</a></td>
-      <td><a href="/datatables/features/themes/jqueryui.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td><a href="/datatables/features/styling/jqueryui.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
 
     <tr>

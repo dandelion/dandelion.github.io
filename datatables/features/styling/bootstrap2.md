@@ -12,6 +12,8 @@ level3:
 
 ### Styling :: Bootstrap 2 theme
 
+One of the cool features of **Dandelion-Datatables** is the possibility to apply some themes on the tables.
+
 In order to activate the _Bootstrap 2_ theme, just :
 
  * set the `theme` / `dt:theme` table attribute to `bootstrap2` (JSP/Thymeleaf)
