@@ -10,7 +10,7 @@ I recently looked at download the stats in Maven Central and ... was pleasantly 
 
 Here are some figures:
 
- * [16 releases](http://dandelion.github.io/datatables/changelog.html), from the v0.0.0-SNAPSHOT to the current v0.8.10 
+ * [16 releases](http://dandelion.github.io/datatables/changelog.html), from the v0.0.0-SNAPSHOT (DataTables4j) to the current v0.8.10 (Dandelion-Datatables) 
  * [5 pull-requests merged](https://github.com/dandelion) (all repos)
  * [418 commits](https://www.ohloh.net/p/dandelion)
  * [4 contributors](https://www.ohloh.net/p/dandelion)
