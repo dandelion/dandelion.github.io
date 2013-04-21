@@ -209,6 +209,27 @@ Don\'t forget to add the prefix <code>dt:</code> before each attribute.
     <td></td>
     <td>DOM/AJAX</td>
   </tr>
+  <tr>
+    <td>dt:scrolly</td>
+    <td>(scroller) Table's height to display in scrolling mode.</td>
+    <td></td>
+    <td>300px</td>
+    <th>DOM/AJAX</th>
+  </tr>
+  <tr>
+    <td>dt:scrollcollapse</td>
+    <td>When vertical (y) scrolling is enabled, 
+         	DataTables will force the height of the table's viewport to the 
+         	given height at all times (useful for layout). However, this can 
+         	look odd when filtering data down to a small data set, and 
+         	the footer is left "floating" further down. This parameter 
+         	(when enabled) will cause DataTables to collapse the table's 
+         	viewport down when the result set will fit within the given 
+         	Y height.</td>
+    <td>true|false</td>
+    <td>false</td>
+    <th>DOM/AJAX</th>
+  </tr>
   </tbody>
 </table>
 

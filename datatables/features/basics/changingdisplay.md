@@ -10,7 +10,7 @@ level3:
   name: Changing the display
 ---
 
-### Basics :: Changing the table\'s display
+### Basics :: Changing table\'s display
 
 Some options are available to adapt the table's display. 
 

@@ -241,6 +241,20 @@ Decribes how the HTML table should be generated.
     <th>DOM/AJAX</th>
   </tr>
   <tr>
+    <td>scrollCollapse</td>
+    <td>When vertical (y) scrolling is enabled, 
+         	DataTables will force the height of the table's viewport to the 
+         	given height at all times (useful for layout). However, this can 
+         	look odd when filtering data down to a small data set, and 
+         	the footer is left "floating" further down. This parameter 
+         	(when enabled) will cause DataTables to collapse the table's 
+         	viewport down when the result set will fit within the given 
+         	Y height.</td>
+    <td>true|false</td>
+    <td>false</td>
+    <th>DOM/AJAX</th>
+  </tr>
+  <tr>
     <td>colReorder</td>
     <td>Enable or disable the DataTables ColReorder plugin</td>
     <td>true|false</td>

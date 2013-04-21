@@ -14,6 +14,7 @@ level2:
  * [Filtering data](filtering.html)
  * [Handling null/default values](defaultvalues.html)
  * [Using CDN](cdn.html)
+ * [Changing table\'s display](changingdisplay.html)
  * [Changing table\'s appearing](changingappearing.html)
  * [Changing pagination type](paging.html)
  * [Multiple tables](multiple.html)
