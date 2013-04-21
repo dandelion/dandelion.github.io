@@ -12,7 +12,7 @@ level3:
 
 ### Export :: Exporting data
 
-**Dandelion-Datatables** allows you to export your tables in multiple formats.
+**Dandelion-Datatables** allows you to export your tables in multiple formats. Note that for now, only table with DOM sources can be exported (support for AJAX sources will added soon).
 
 <br />
 #### Available formats
