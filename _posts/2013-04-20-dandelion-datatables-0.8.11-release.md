@@ -16,7 +16,7 @@ Well, let's see some changes.
 #### Core
 First of all, we really moved forward regarding the stability of the framework. Indeed, we added lots of unit and integration tests. I'll soon write another blog to explain how tests are written in the particular case of a framework.
 
-We also refactored the way callbacks are added because some conflicts were added using e.g. an AJAX-enabled table (where the `fnAdjustColumnSizing(true)` function is automatically called in a `fnInitComplete`) with a manual callback (e.g. the `<datatables:callback>` or the `dt:cbk:init` attribute. Well, to be short, no more conflict... :-) 
+We also refactored the way callbacks are added because some conflicts were added using e.g. an AJAX-enabled table (where the `fnAdjustColumnSizing(true)` function is automatically called in a `fnInitComplete`) with a manual callback (e.g. the `<datatables:callback>` tag or the `dt:cbk:init` attribute. Well, to be short, no more conflict... :-) 
 
 <br />
 #### JSP implementation
