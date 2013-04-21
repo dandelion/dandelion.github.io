@@ -73,9 +73,9 @@ With Thymeleaf, set the `dt:filterType` th attribute to `select`.
 	   <thead>
 	      <tr>
 	         <th>Id</th>
-	         <th dt:filterable="true" dt:filterType="select">Firstname</th>
-	         <th dt:filterable="true" dt:filterType="select">Lastname</th>
-	         <th dt:filterable="true" dt:filterType="select">City</th>
+	         <th dt:filterable="true" dt:filterType="'select'">Firstname</th>
+	         <th dt:filterable="true" dt:filterType="'select'">Lastname</th>
+	         <th dt:filterable="true" dt:filterType="'select'">City</th>
 	         <th>Mail</th>
 	      </tr>
 	   </thead>
@@ -113,8 +113,8 @@ With Thymeleaf, set the `dt:searchable` th attribute to `false`.
 	      <tr>
 	         <th>Id</th>
 	         <th dt:searchable="false">Firstname</th>
-	         <th dt:filterable="true" dt:filterType="select">Lastname</th>
-	         <th dt:filterable="true" dt:filterType="select">City</th>
+	         <th dt:filterable="true" dt:filterType="'select'">Lastname</th>
+	         <th dt:filterable="true" dt:filterType="'select'">City</th>
 	         <th>Mail</th>
 	      </tr>
 	   </thead>

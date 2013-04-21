@@ -31,7 +31,7 @@ In the following example, a duration of 1500 milliseconds has been set to the fa
 
 #### Using Thymeleaf
 
-	<table id="myTable" dt:table="true" dt:appear="fadein,1500">
+	<table id="myTable" dt:table="true" dt:appear="'fadein,1500'">
 	   <thead>
 	      <tr>
 	         <th>Id</th>

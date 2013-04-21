@@ -43,7 +43,7 @@ Since v0.8.8, you can use the following attributes :
 
 In the following example, header will appear in the CSV export but not in the PDF one.
 
-    <table id="myTable" dt:table="true" dt:export="pdf,csv">
+    <table id="myTable" dt:table="true" dt:export="'pdf,csv'">
         <thead>
             <tr>
                 <th>Id</th>
@@ -53,7 +53,7 @@ In the following example, header will appear in the CSV export but not in the PD
                 <th>Mail</th>
             </tr>
         </thead>
-        <tbody dt:csv:class="btn" dt:pdf:class="btn" dt:csv:header="true" dt:pdf:header="false">
+        <tbody dt:csv:class="'btn'" dt:pdf:class="'btn'" dt:csv:header="true" dt:pdf:header="false">
             <tr th:each="person : ${persons}">
                 <td th:text="${person.id}">1</td>
                 <td th:text="${person.firstName}">John</td>

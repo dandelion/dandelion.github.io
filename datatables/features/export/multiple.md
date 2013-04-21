@@ -32,7 +32,7 @@ You can activate export in multiple formats by comma-separating them in the [`ex
 <br />
 #### Using Thymeleaf
 
-	<table id="myTableId" dt:table="true" dt:export="pdf,xls,csv">
+	<table id="myTableId" dt:table="true" dt:export="'pdf,xls,csv'">
 	   <thead>
 	      <tr>
 	         <th>Id</th>

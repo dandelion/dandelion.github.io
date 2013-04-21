@@ -52,7 +52,7 @@ To adapt the label's link, you can use the `tbody` attributes :
  
 In the following example, CSV and XLS links have been customed.
 
-	<table id="myTableId" dt:table="true" dt:export="xls,csv">
+	<table id="myTableId" dt:table="true" dt:export="'xls,csv'">
 		<thead>
             <tr>
                 <th>Id</th>
@@ -62,7 +62,7 @@ In the following example, CSV and XLS links have been customed.
                 <th>Mail</th>
             </tr>
         </thead>
-        <tbody dt:csv:class="btn" dt:xls:class="btn" dt:csv:label="custom label for CSV" dt:xls:label="custom label for XLS">
+        <tbody dt:csv:class="'btn'" dt:xls:class="'btn'" dt:csv:label="'custom label for CSV'" dt:xls:label="'custom label for XLS'">
             <tr th:each="person : ${persons}">
                 <td th:text="${person.id}">1</td>
                 <td th:text="${person.firstName}">John</td>
@@ -82,7 +82,7 @@ Depending on your needs, you may want to move links around the table. You can do
 
 Just set on or more values (comma-separated) among `top_left`, `top_middle`, `top_right`, `bottom_left`, `bottom_middle` and `bottom_right`.
 
-	<datatables:table id="mySecondTableId" data="${persons}" export="csv,xml" exportLinks="top_right,bottom_right">
+	<datatables:table id="mySecondTableId" data="${persons}" export="'csv,xml'" exportLinks="'top_right,bottom_right'">
 	    <datatables:column title="Id" property="id" />
 	    <datatables:column title="FirstName" property="firstName" />
 	    <datatables:column title="LastName" property="lastName" />

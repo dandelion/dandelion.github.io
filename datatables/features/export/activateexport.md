@@ -75,7 +75,7 @@ To activate the export, just set the `export` table attribute to `csv` or whatev
 #### Using Thymeleaf
 With Thymeleaf, set the `dt:export` table attribute.
 
-	<table id="myTable" dt:table="true" dt:export="csv">
+	<table id="myTable" dt:table="true" dt:export="'csv'">
 	   <thead>
 	      <tr>
 	         <th>Id</th>
