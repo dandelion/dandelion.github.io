@@ -44,6 +44,7 @@ The <code>&lt;tbody&gt;</code> attributes allow you to configure the export.
       <th>Description</th>
       <th>Value(s)</th>
       <th>Default</th>
+      <th>Data source</th>
     </tr>
   </thead>
   <tbody>
@@ -52,30 +53,35 @@ The <code>&lt;tbody&gt;</code> attributes allow you to configure the export.
     <td>Processed Thymeleaf expression that will appear in the CSV export</td>
     <td></td>
     <td></td>
+    <td>DOM</td>
   </tr>
   <tr>
     <td>dt:xml</td>
     <td>Processed Thymeleaf expression that will appear in the XML export</td>
     <td></td>
     <td></td>
+    <td>DOM</td>
   </tr>
   <tr>
     <td>dt:pdf</td>
     <td>Processed Thymeleaf expression that will appear in the PDF export</td>
     <td></td>
     <td></td>
+    <td>DOM</td>
   </tr>
   <tr>
     <td>dt:xls</td>
     <td>Processed Thymeleaf expression that will appear in the XLS export</td>
     <td></td>
     <td></td>
+    <td>DOM</td>
   </tr>
   <tr>
     <td>dt:xlsx</td>
     <td>Processed Thymeleaf expression that will appear in the XLSX export</td>
     <td></td>
     <td></td>
+    <td>DOM</td>
   </tr>
   </tbody>
 </table>
