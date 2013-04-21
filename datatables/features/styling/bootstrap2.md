@@ -1,16 +1,16 @@
 ---
-layout: datatables-themes
+layout: datatables-styling
 menu: themes
 level1: features
 level2: 
-  url: themes
-  name: Themes
+  url: styling
+  name: Styling
 level3:
   url: bootstrap2
-  name: Bootstrap 2
+  name: Bootstrap 2 theme
 ---
 
-### Themes :: Bootstrap 2
+### Styling :: Bootstrap 2 theme
 
 In order to activate the _Bootstrap 2_ theme, just :
 
