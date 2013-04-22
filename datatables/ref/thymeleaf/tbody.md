@@ -90,7 +90,7 @@ The <code>&lt;tbody&gt;</code> attributes allow you to configure the export.
     <td>dt:xml:class</td>
     <td>CSS class applied on the XML export link(s)</td>
     <td></td>
-    <td></td
+    <td></td>
     <td>DOM</td>
   </tr>
   <tr>
