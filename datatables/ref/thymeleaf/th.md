@@ -44,6 +44,7 @@ The <code>&lt;th&gt;</code> attributes allow to configure the columns.
       <th>Description</th>
       <th>Value(s)</th>
       <th>Default</th>
+      <th>Data source</th>
     </tr>
   </thead>
   <tbody>
@@ -52,42 +53,63 @@ The <code>&lt;th&gt;</code> attributes allow to configure the columns.
     <td>Enable or disable sorting on column</td>
     <td>true|false</td>
     <td>true</td>
+    <td>DOM/AJAX</td>
+  </tr>
+  <tr>
+    <td>dt:sortInit</td>
+    <td>If <code>dt:sortable</code> is enabled, set the default sorting direction</td>
+    <td>asc|desc</td>
+    <td>asc</td>
+    <td>DOM/AJAX</td>
+  </tr>
+  <tr>
+    <td>dt:sortDirection</td>
+    <td>If <code>dt:sortable</code> is enabled, allow to control the sorting direction(s)</td>
+    <td></td>
+    <td></td>
+    <td>DOM/AJAX</td>
   </tr>
   <tr>
     <td>dt:filterable</td>
     <td>Enable or disable filtering on column</td>
     <td>true|false</td>
     <td>false</td>
+    <td>DOM/AJAX</td>
   </tr>
   <tr>
     <td>dt:filterType</td>
     <td>If <code>dt:filterable</code> is enabled, you can choose the filter type between 'select' and 'input', adding either select box or input field in the table's footer</td>
     <td>select|input</td>
     <td>input</td>
+    <td>DOM</td>
   </tr>
   <tr>
     <td>dt:property</td>
     <td>Property (or nested property) that must is read from the AJAX source to fill in the corresponding column</td>
     <td></td>
     <td></td>
+    <td>DOM/AJAX</td>
   </tr>
   <tr>
     <td>dt:default</td>
     <td>Default value if the property's value is null</td>
     <td>java.lang.String</td>
     <td>Empty string</td>
+    <td>DOM/AJAX</td>
   </tr>
   <tr>
     <td>dt:searchable</td>
     <td>Enable or disable filtering on column</td>
     <td>true|false</td>
     <td>true</td>
+    <td>DOM/AJAX</td>
   </tr>
   <tr>
     <td>dt:renderFunction</td>
     <td>Name of an external Javascript function that will be used to render the column (used with AJAX sources)</td>
     <td></td>
     <td></td>
+    <td>AJAX</td>
   </tr>
   </tbody>
 </table>

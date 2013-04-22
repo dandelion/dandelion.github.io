@@ -18,7 +18,7 @@ You can enable/disable the sorting feature in a specific column using the `sorta
 
 ##### Using JSP
 
-	<datatables:table id="mySecondTableId" data="${persons}">
+	<datatables:table id="myTableId" data="${persons}">
 	   <datatables:column title="Id" property="id" sortable="false" />
 	   <datatables:column title="FirstName" property="firstName" />
 	   <datatables:column title="LastName" property="lastName" />
@@ -28,7 +28,7 @@ You can enable/disable the sorting feature in a specific column using the `sorta
 
 ##### Using Thymeleaf
 
-	<table id="mySecondTableId" dt:table="true">
+	<table id="myTableId" dt:table="true">
 	   <thead>
 	      <tr>
 	         <th dt:sortable="false">Id</th>
@@ -48,6 +48,7 @@ You can enable/disable the sorting feature in a specific column using the `sorta
 	      </tr>
 	   </tbody>
 	</table>
+
 <br />
 #### Sorting initialisation
 
@@ -55,7 +56,7 @@ You can enable/disable the sorting feature in a specific column using the `sorta
 You can also initialise the column sorting direction using the `sortInit` column attribute.
 Just set it to `asc` or `desc` on each column you want sorting to be initialised.
 
-	<datatables:table id="myThirdTableId" data="${persons}">
+	<datatables:table id="myTableId" data="${persons}">
 	   <datatables:column title="Id" property="id" sortable="false" />
 	   <datatables:column title="FirstName" property="firstName" sortInit="desc" />
 	   <datatables:column title="LastName" property="lastName" sortInit="desc" />
@@ -64,7 +65,27 @@ Just set it to `asc` or `desc` on each column you want sorting to be initialised
 	</datatables:table>
 
 ##### Using Thymeleaf
-<p class="alert alert-error"><strong>:-(</strong><br /> Not supported yet</p>
+
+	<table id="myTableId" dt:table="true">
+	   <thead>
+	      <tr>
+	         <th >Id</th>
+	         <th dt:sortinit="desc">Firstname</th>
+	         <th dt:sortinit="desc">Lastname</th>
+	         <th>City</th>
+	         <th>Mail</th>
+	      </tr>
+	   </thead>
+	   <tbody>
+	      <tr th:each="person : ${persons}">
+	         <td th:text="${person.id}">1</td>
+	         <td th:text="${person.firstName}">John</td>
+	         <td th:text="${person.lastName}">Doe</td>
+	         <td th:text="${person.address.town.name}">Nobody knows !</td>
+	         <td th:text="${person.mail}">john@doe.com</td>
+	      </tr>
+	   </tbody>
+	</table>
 
 <br />
 #### Sorting direction control
@@ -74,7 +95,7 @@ Finally, you can control the column sorting behaviour using the `sortDirection` 
 
 You can set it using comma-separated list of `asc` or `desc`.
 
-	<datatables:table id="myFourthTableId" data="${persons}">
+	<datatables:table id="myTableId" data="${persons}">
 	   <datatables:column title="Id" property="id" sortable="false" />
 	   <datatables:column title="FirstName" property="firstName" />
 	   <datatables:column title="LastName" property="lastName" />
@@ -83,4 +104,24 @@ You can set it using comma-separated list of `asc` or `desc`.
 	</datatables:table>
 
 ##### Using Thymeleaf
-<p class="alert alert-error"><strong>:-(</strong><br /> Not supported yet</p>
+
+	<table id="myTableId" dt:table="true">
+	   <thead>
+	      <tr>
+	         <th>Id</th>
+	         <th>Firstname</th>
+	         <th>Lastname</th>
+	         <th dt:sortdir="asc">City</th>
+	         <th dt:sortdir="desc">Mail</th>
+	      </tr>
+	   </thead>
+	   <tbody>
+	      <tr th:each="person : ${persons}">
+	         <td th:text="${person.id}">1</td>
+	         <td th:text="${person.firstName}">John</td>
+	         <td th:text="${person.lastName}">Doe</td>
+	         <td th:text="${person.address.town.name}">Nobody knows !</td>
+	         <td th:text="${person.mail}">john@doe.com</td>
+	      </tr>
+	   </tbody>
+	</table>

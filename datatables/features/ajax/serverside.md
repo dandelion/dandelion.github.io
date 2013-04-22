@@ -53,14 +53,14 @@ Obviously, server-side processing requires a bit more work than client-side one.
 <br />
 #### Using Thymeleaf
 
-	<table id="myTableId" dt:table="true" dt:url="/persons1" dt:serverside="true" dt:processing="true">
+	<table id="myTableId" dt:table="true" dt:url="'/persons1'" dt:serverside="true" dt:processing="true">
 	   <thead>
 	      <tr>
-	         <th dt:property="id">Id</th>
-	         <th dt:property="firstName">Firstname</th>
-	         <th dt:property="lastName">Lastname</th>
-	         <th dt:property="address.town.name">City</th>
-	         <th dt:property="mail">Mail</th>
+	         <th dt:property="'id'">Id</th>
+	         <th dt:property="'firstName'">Firstname</th>
+	         <th dt:property="'lastName'">Lastname</th>
+	         <th dt:property="'address.town.name'">City</th>
+	         <th dt:property="'mail'">Mail</th>
 	      </tr>
 	   </thead>
 	</table>

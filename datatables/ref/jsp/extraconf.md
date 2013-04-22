@@ -37,6 +37,7 @@ Specify the location of a file containing a JSON-formatted DataTables configurat
       <th>Description</th>
       <th>Value(s)</th>
       <th>Default</th>
+      <th>Data source</th>
     </tr>
   </thead>
   <tbody>
@@ -45,6 +46,7 @@ Specify the location of a file containing a JSON-formatted DataTables configurat
     <td>(<strong>required</strong>) Location of the file containing the extra DataTables configuration</td>
     <td></td>
     <td></td>
+    <td>DOM/AJAX</td>
   </tr>
   </tbody>
 </table>

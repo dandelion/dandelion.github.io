@@ -44,6 +44,7 @@ You need to follow the two following steps :
       <th>Description</th>
       <th>Value(s)</th>
       <th>Default</th>
+      <th>Data source</th>
     </tr>
   </thead>
   <tbody>
@@ -52,6 +53,7 @@ You need to follow the two following steps :
     <td>Unique arbitrary id of the column, used in relation to the column tag</td>
     <td></td>
     <td></td>
+    <td>DOM</td>
   </tr>
   </tbody>
 </table>

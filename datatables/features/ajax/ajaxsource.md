@@ -49,13 +49,15 @@ Moreover, you have to tell <strong>Dandelion-datatables</strong> which property 
     <table id="myTableId" dt:table="true" dt:url="/persons">
         <thead>
             <tr>
-                <th dt:property="id">Id</th>
-                <th dt:property="firstName">Firstname</th>
-                <th dt:property="lastName">Lastname</th>
-                <th dt:property="address.town.name">City</th>
-                <th dt:property="mail">Mail</th>
+                <th dt:property="'id'">Id</th>
+                <th dt:property="'firstName'">Firstname</th>
+                <th dt:property="'lastName'">Lastname</th>
+                <th dt:property="'address.town.name'">City</th>
+                <th dt:property="'mail'">Mail</th>
             </tr>
         </thead>
      </table></tab:code>
+
+**Note that almost all attribute are processed using the Thymeleaf [Standard expressions](http://www.thymeleaf.org/standarddialect5minutes.html). That's why to need to wrap the value with single quotes.**
 
 <p class="alert alert-warn"><strong>Warning !</strong><br />Cross-domain requests are not yet supported !</p>

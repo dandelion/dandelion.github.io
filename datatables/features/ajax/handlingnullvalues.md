@@ -31,14 +31,14 @@ By default, an empty string will be displayed. You can also use the `default` co
 #### Using Thymeleaf      
 Using Thymeleaf, this is quite similar. Just use the `dt:default` TH attribute to override the default empty string.
 
-	<table id="myTableId" dt:table="true" dt:url="/persons">
+	<table id="myTableId" dt:table="true" dt:url="'/persons'">
 	   <thead>
 	      <tr>
-	         <th dt:property="id">Id</th>
-	         <th dt:property="firstName">Firstname</th>
-	         <th dt:property="lastName">Lastname</th>
-	         <th dt:property="address.town.name" dt:default="My default value !">City</th>
-	         <th dt:property="mail">Mail</th>
+	         <th dt:property="'id'">Id</th>
+	         <th dt:property="'firstName'">Firstname</th>
+	         <th dt:property="'lastName'">Lastname</th>
+	         <th dt:property="'address.town.name'" dt:default="'My default value !'">City</th>
+	         <th dt:property="'mail'">Mail</th>
 	      </tr>
 	   </thead>
 	</table>

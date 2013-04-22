@@ -77,14 +77,14 @@ Then you just need to generate HTML code in the function as follows:
 #### Using Thymeleaf
 Using Thymeleaf, you can use the `dt:renderFunction` th attribute in the same manner.
 
-    <table id="myTableId" dt:table="true" dt:url="/persons1" dt:serverSide="true">
+    <table id="myTableId" dt:table="true" dt:url="'/persons1'" dt:serverSide="true">
         <thead>
             <tr>
-                <th dt:property="id">Id</th>
-                <th dt:property="firstName">Firstname</th>
-                <th dt:property="lastName">Lastname</th>
-                <th dt:property="address.town.name">City</th>
-                <th dt:property="mail" dt:renderFunction="mailify">Mail</th>
+                <th dt:property="'id'">Id</th>
+                <th dt:property="'firstName'">Firstname</th>
+                <th dt:property="'lastName'">Lastname</th>
+                <th dt:property="'address.town.name'">City</th>
+                <th dt:property="'mail'" dt:renderFunction="'mailify'">Mail</th>
             </tr>
         </thead>
     </table>

@@ -7,10 +7,10 @@ level2:
   name: Basics
 level3:
   url: implicit
-  name: Using implicif object
+  name: Using implicif objects
 ---
 
-### Basics :: Using implicit object 
+### Basics :: Using implicit objects 
 
 <br />
 #### Using JSP
@@ -25,6 +25,18 @@ Thanks to the `row` table attribute, you will be able to give a name for the cur
 	   <datatables:column title="City" property="address.town.name" />
 	   <datatables:column title="Mail">
 	      <a href="mailto:${person.mail}">${person.mail}</a>
+	   </datatables:column>
+	</datatables:table>
+
+Moreover, one more variable is made available through the `row` attribute : the row index. You can access the row index using `${givenName_rowIndex}`
+
+    <datatables:table id="myTableId" data="${persons}" row="person">
+	   <datatables:column title="Id" property="id" />
+	   <datatables:column title="FirstName" property="firstName" />
+	   <datatables:column title="LastName" property="lastName" />
+	   <datatables:column title="City" property="address.town.name" />
+	   <datatables:column title="Mail">
+	      Row index : <c:out value="${person_rowIndex}" />
 	   </datatables:column>
 	</datatables:table>
 

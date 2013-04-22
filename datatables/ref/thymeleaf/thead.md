@@ -40,6 +40,7 @@ Don\'t forget to add the prefix <code>dt:</code> before each attribute.
       <th>Description</th>
       <th>Value(s)</th>
       <th>Default</th>
+      <th>Data source</th>
     </tr>
   </thead>
   <tbody>
@@ -48,18 +49,21 @@ Don\'t forget to add the prefix <code>dt:</code> before each attribute.
     <td>Enable or disable the DataTables Scroller plugin</td>
     <td>true|false</td>
     <td>false</td>
+    <td>DOM/AJAX</td>
   </tr>
   <tr>
     <td>dt:colreorder</td>
     <td>Enable or disable the DataTables ColReorder plugin</td>
     <td>true|false</td>
     <td>false</td>
+    <td>DOM/AJAX</td>
   </tr>
   <tr>
     <td>dt:fixedheader</td>
     <td>Enable or disable the DataTables FixedHeader plugin</td>
     <td>true|false</td>
     <td>false</td>
+    <td>DOM/AJAX</td>
   </tr>
   </tbody>
 </table>

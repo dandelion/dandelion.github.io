@@ -12,7 +12,7 @@ level3:
 
 ### Export :: Exporting data
 
-**Dandelion-Datatables** allows you to export your tables in multiple formats.
+**Dandelion-Datatables** allows you to export your tables in multiple formats. Note that for now, only table with DOM sources can be exported (support for AJAX sources will added soon).
 
 <br />
 #### Available formats
@@ -75,7 +75,7 @@ To activate the export, just set the `export` table attribute to `csv` or whatev
 #### Using Thymeleaf
 With Thymeleaf, set the `dt:export` table attribute.
 
-	<table id="myTable" dt:table="true" dt:export="csv">
+	<table id="myTable" dt:table="true" dt:export="'csv'">
 	   <thead>
 	      <tr>
 	         <th>Id</th>

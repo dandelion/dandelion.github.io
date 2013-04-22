@@ -40,14 +40,14 @@ Use the [`serverParams`](/datatables/ref/jsp/table.html#serverParams) table attr
 #### Using Thymeleaf
 Using Thymeleaf, you can use the [`dt:serverparams`](/datatables/ref/thymeleaf/table.html#dt:serverparams) table attribute. It works the same way than with JSP. Pass the name of the previous Javascript function.
 
-    <table id="myTableId" dt:table="true" dt:url="/persons3" dt:serverside="true" dt:serverparams="getExtraParams">
+    <table id="myTableId" dt:table="true" dt:url="'/persons3'" dt:serverside="true" dt:serverparams="'getExtraParams'">
         <thead>
             <tr>
-                <th dt:property="id">Id</th>
-                <th dt:property="firstName">Firstname</th>
-                <th dt:property="lastName">Lastname</th>
-                <th dt:property="address.town.name">City</th>
-                <th dt:property="mail">Mail</th>
+                <th dt:property="'id'">Id</th>
+                <th dt:property="'firstName'">Firstname</th>
+                <th dt:property="'lastName'">Lastname</th>
+                <th dt:property="'address.town.name'">City</th>
+                <th dt:property="'mail'">Mail</th>
             </tr>
         </thead>
     </table>

@@ -6,6 +6,50 @@ level1: changelog
 
 ### Changelog
 
+#### 0.8.11 (04-21-2013)
+
+##### Core
+
+ * Lots of unit and integration tests added
+ * Export links are now added in the `fnInitComplete` callback
+ * Callbacks have been refactored to avoid conflict between features that use the same callback
+ * Features that was already avaible using DOM sources are available using AJAX sources (sortInit, sortDirection, cssClass, cssStyle, ...)
+ * All StringBuffer have been replaced by StringBuilder, for performance concern
+
+##### JSP implementation
+
+ * New `cssStripes` table attribute
+ * New `format` column attribute allowing you to use [MessageFormat patterns](http://docs.oracle.com/javase/1.4.2/docs/api/java/text/MessageFormat.html)
+ * New `displayLength` table attribute
+ * New `scrollCollapse` table attribute
+ * New `scrollY` table attribute
+ * New implicit object available inside the `<datatables:table>` tag : rowIndex
+ * New `lengthChange` table attribute
+ 
+##### Thymeleaf implementation
+
+ * New `dt:stripesclasses` table attribute
+ * New `dt:displaylength` table attribute
+ * New `scrollcollapse` table attribute
+ * New `scrolly` table attribute
+ * Datatables attributes are now processed using the Thymeleaf Standard expression
+ * New `lengthchange` table attribute
+
+##### Issues
+    
+ * [issue #27](https://github.com/dandelion/issues/issues/27) (Add support for asStripeClasses parameter enhancement JSP)
+ * [issue #56](https://github.com/dandelion/issues/issues/59) (Add Support for Column Formatting with MessageFormat patterns)
+ * [issue #61](https://github.com/dandelion/issues/issues/61) (Add support for iDisplayLength)
+ * [issue #62](https://github.com/dandelion/issues/issues/62) (Add support for bScrollCollapse)
+ * [issue #64](https://github.com/dandelion/issues/issues/64) (Make the rowIndex available as a variable in the page scope)
+ * [issue #66](https://github.com/dandelion/issues/issues/66) (The data:url attribute must be processed using the Standard Expressions)
+ * [issue #70](https://github.com/dandelion/issues/issues/70) (Add support for lengthChange enhancement)
+ * [issue #71](https://github.com/dandelion/issues/issues/71) (NPE in DataCriterias.getFromRequest(request) when request hasn't iSortingCols parameter)
+ * [issue #74](https://github.com/dandelion/issues/issues/74) (Problems with how export links are added to the table)
+ * [issue #77](https://github.com/dandelion/issues/issues/77) (column.cssStyle and column.cssClass ignored on AJAX mode)
+ * [issue #79](https://github.com/dandelion/issues/issues/79) (Column display is ignored in HTML in Ajax table)
+ * [issue #81](https://github.com/dandelion/issues/issues/81) (Fix the internal callbacks conflict)
+
 #### 0.8.10 (03-27-2013)
 
 ##### Issues

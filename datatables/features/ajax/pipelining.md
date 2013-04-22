@@ -35,14 +35,14 @@ You can also set the pipe size using the `pipeSize` attribute (which is defaults
 Just set the `dt:pipelinin` to `true`.
 The pipe size can be set using the `dt:pipesize` attribute. 
 
-	<table id="myTableId" dt:table="true" dt:url="/persons2" dt:serverside="true" dt:pipelining="true" dt:pipesize="6">
+	<table id="myTableId" dt:table="true" dt:url="'/persons2'" dt:serverside="true" dt:pipelining="true" dt:pipesize="6">
 	   <thead>
 	      <tr>
-	         <th dt:property="id">Id</th>
-	         <th dt:property="firstName">Firstname</th>
-	         <th dt:property="lastName">Lastname</th>
-	         <th dt:property="address.town.name">City</th>
-	         <th dt:property="mail">Mail</th>
+	         <th dt:property="'id'">Id</th>
+	         <th dt:property="'firstName'">Firstname</th>
+	         <th dt:property="'lastName'">Lastname</th>
+	         <th dt:property="'address.town.name'">City</th>
+	         <th dt:property="'mail'">Mail</th>
 	      </tr>
 	   </thead>
 	</table>

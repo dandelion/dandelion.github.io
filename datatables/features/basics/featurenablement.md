@@ -46,7 +46,7 @@ You can see beelow all the features you can enable/disable setting its value to 
     <tr>
       <td>Length change (top left drop down list)</td>
       <td>lengthChange</td>
-      <td><span class="icon-remove"></span></td>
+      <td>dt:lengthchange</td>
     </tr>
   </tbody>
 </table>

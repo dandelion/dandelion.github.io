@@ -49,14 +49,14 @@ Use the [`serverData`](/datatables/ref/jsp/table.html#serverData) table attribut
 #### Using Thymeleaf
 Using Thymeleaf, you can use the [`dt:serverdata`](/datatables/ref/thymeleaf/table.html#dt:serverdata) table attribute. It works the same way than with JSP. Pass the name of the previous Javascript function.
 
-    <table id="myTableId" dt:table="true" dt:url="/persons3" dt:serverside="true" dt:serverdata="myAjaxRequest">
+    <table id="myTableId" dt:table="true" dt:url="/persons3" dt:serverside="true" dt:serverdata="'myAjaxRequest'">
         <thead>
             <tr>
-                <th dt:property="id">Id</th>
-                <th dt:property="firstName">Firstname</th>
-                <th dt:property="lastName">Lastname</th>
-                <th dt:property="address.town.name">City</th>
-                <th dt:property="mail">Mail</th>
+                <th dt:property="'id'">Id</th>
+                <th dt:property="'firstName'">Firstname</th>
+                <th dt:property="'lastName'">Lastname</th>
+                <th dt:property="'address.town.name'">City</th>
+                <th dt:property="'mail'">Mail</th>
             </tr>
         </thead>
     </table>

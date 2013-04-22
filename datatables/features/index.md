@@ -4,7 +4,7 @@ menu: features
 level1: features
 ---
 
-### Feature comparison
+### Available features
 
 You can find below the full list of features supported by **Dandelion-Datatables** and the correspondence between the JSP Taglib attributes and the Thymeleaf dialect ones.
 
@@ -49,7 +49,7 @@ You can find below the full list of features supported by **Dandelion-Datatables
     <tr>
       <td>Length change enablement</td>
       <td><a href="/datatables/ref/jsp/table.html#lengthChange">lengthChange</a></td>
-      <td><span class="icon-remove"></span></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:lengthchange">dt:lengthchange</a></td>
       <td><a href="/datatables/features/basics/featurenablement.html" class="btn btn-mini btn-info">More details »</a></td>    
     </tr>
     <tr>
@@ -63,12 +63,6 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td><a href="/datatables/ref/jsp/table.html#cdn">cdn</a></td>
       <td><a href="/datatables/ref/thymeleaf/table.html#dt:cdn">dt:cdn</a></td>
       <td><a href="/datatables/features/basics/cdn.html" class="btn btn-mini btn-info">More details »</a></td>   
-    </tr>
-    <tr>
-      <td>Changing table's appearing</td>
-      <td><a href="/datatables/ref/jsp/table.html#appear">appear</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:appear">dt:appear</a></td>
-      <td><a href="/datatables/features/basics/changingappearing.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Using implicit objects</td>
@@ -90,6 +84,29 @@ You can find below the full list of features supported by **Dandelion-Datatables
     </tr>
     
     <tr>
+      <td><h4>Changing the display</h4></td>
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td>Changing the display length</td>
+      <td><a href="/datatables/ref/jsp/table.html#displayLength">displayLength</a></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:displaylength">dt:displaylength</a></td>
+      <td><a href="/datatables/features/basics/changingdisplay.html" class="btn btn-mini btn-info">More details »</a></td>    
+    </tr>
+    <tr>
+      <td>Changing the table's appearing</td>
+      <td><a href="/datatables/ref/jsp/table.html#appear">appear</a></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:appear">dt:appear</a></td>
+      <td><a href="/datatables/features/basics/changingappearing.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td>Using scroll options</td>
+      <td><a href="/datatables/ref/jsp/table.html#scrollY">scrollY</a> / <a href="/datatables/ref/jsp/table.html#scrollCollapse">scrollCollapse</a></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:scrolly">dt:scrolly</a> / <a href="/datatables/ref/thymeleaf/table.html#dt:scrollcollapse">dt:scrollcollapse</a></td>
+      <td><a href="/datatables/features/basics/changingdisplay.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    
+    <tr>
       <td><h4>Sorting</h4></td>
       <td colspan="3"></td>
     </tr>
@@ -102,13 +119,13 @@ You can find below the full list of features supported by **Dandelion-Datatables
     <tr>
       <td>Sorting initialization</td>
       <td><a href="/datatables/ref/jsp/column.html#sortInit">sortInit</a></td>
-      <td><span class="icon-remove"></span></td>
+      <td><a href="/datatables/ref/thymeleaf/th.html#dt:sortinit">dt:sortinit</a></td>
       <td><a href="/datatables/features/basics/sorting.html#sorting_initialisation" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Sorting direction control</td>
       <td><a href="/datatables/ref/jsp/column.html#sortDirection">sortDirection</a></td>
-      <td><span class="icon-remove"></span></td>
+      <td><a href="/datatables/ref/thymeleaf/th.html#dt:sortdir">dt:sortdir</a></td>
       <td><a href="/datatables/features/basics/sorting.html#sorting_direction_control" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
@@ -199,20 +216,30 @@ You can find below the full list of features supported by **Dandelion-Datatables
     </tr>
     
     <tr>
-      <td><h4>Themes</h4></td>
+      <td><h4>Styling</h4></td>
       <td colspan="3"></td>
     </tr>
     <tr>
-      <td><a href="http://twitter.github.com/bootstrap/">Bootstrap 2</a></td>
+      <td>Basic styling</td>
+      <td>
+         <a href="/datatables/ref/jsp/table.html#cssClass">cssClass</a> / <a href="/datatables/ref/jsp/table.html#cssStyle">cssStyle</a> (table)<br/>
+         <a href="/datatables/ref/jsp/column.html#cssClass">cssClass</a> / <a href="/datatables/ref/jsp/column.html#cssStyle">cssStyle</a> (column)<br />
+         <a href="/datatables/ref/jsp/table.html#cssStripes">cssStripes</a>
+      </td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:stripeclasses">dt:stripeclasses</a></td>
+      <td><a href="/datatables/features/styling/basicstyling.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td><a href="http://twitter.github.com/bootstrap/">Bootstrap 2 theme</a></td>
       <td><a href="/datatables/ref/jsp/table.html#theme">theme</a></td>
       <td><a href="/datatables/ref/thymeleaf/table.html#dt:theme">dt:theme</a></td>
-      <td><a href="/datatables/features/themes/bootstrap2.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td><a href="/datatables/features/styling/bootstrap2.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
 	<tr>
-      <td><a href="http://jqueryui.com/themeroller/">jQuery UI</a></td>
+      <td><a href="http://jqueryui.com/themeroller/">jQuery UI theme</a></td>
       <td><a href="/datatables/ref/jsp/table.html#theme">theme</a></td>
       <td><a href="/datatables/ref/thymeleaf/table.html#dt:theme">dt:theme</a></td>
-      <td><a href="/datatables/features/themes/jqueryui.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td><a href="/datatables/features/styling/jqueryui.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
 
     <tr>

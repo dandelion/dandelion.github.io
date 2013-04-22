@@ -37,6 +37,7 @@ Locally override a global [Dandelion-DataTables configuration property](./ref.pr
       <th>Description</th>
       <th>Value(s)</th>
       <th>Default</th>
+      <th>Data source</th>
     </tr>
   </thead>
   <tbody>
@@ -45,12 +46,14 @@ Locally override a global [Dandelion-DataTables configuration property](./ref.pr
     <td><strong>(required)</strong> Name of the property to override</td>
     <td></td>
     <td></td>
+    <td>DOM/AJAX</td>
   </tr>
   <tr>
     <td>value</td>
     <td><strong>(required)</strong> Value of the property to override</td>
     <td></td>
     <td></td>
+    <td>DOM/AJAX</td>
   </tr>
   </tbody>
 </table>

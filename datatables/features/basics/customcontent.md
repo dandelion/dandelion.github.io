@@ -32,6 +32,19 @@ Or you can set a body with plain text, HTML code or any other JSP tags. In this 
 	   </datatables:column>
 	</datatables:table>
 
+Note that since the v0.8.11, you can format the column's content using the `format` column attribute. This attribute accepts a [MessageFormat pattern](http://docs.oracle.com/javase/1.4.2/docs/api/java/text/MessageFormat.html) that will be used to format the `property`'s value.
+
+For example, you can use it to format date or even mail :
+
+    <datatables:table id="myTableId" data="${persons}">
+        <datatables:column title="Id" property="id" />
+        <datatables:column title="FirstName" property="firstName" />
+        <datatables:column title="LastName" property="lastName" />
+        <datatables:column title="City" property="address.town.name" />
+        <datatables:column title="Mail" property="mail" format="<a href=''mailto:{0}''>{0}</a>" />
+        <datatables:column title="Birth date" property="birthdate" format="{0,date,dd-MM-yyyy}" />
+    </datatables:table>
+
 <br />
 #### Using Thymeleaf
 Actually, you just need to use the Standard Thymeleaf Expression to set any content you want inside the columns.

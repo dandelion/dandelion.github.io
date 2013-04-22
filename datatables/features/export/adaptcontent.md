@@ -41,4 +41,29 @@ That\'s why a second \"Mail\" column is added with the `display` attribute set t
 
 <br />
 #### Using Thymeleaf
-<p class="alert alert-error"><strong>:-(</strong><br /> Not supported yet</p>
+Using Thymeleaf, just use the `dt:csv` (or `dt:*`) TD attribute to adapt the cell's content in the corresponding format.
+
+
+    <table id="myTable" dt:table="true" dt:export="'pdf,xls,csv'">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>City</th>
+                <th>Mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="person : ${persons}">
+                <td th:text="${person.id}">1</td>
+                <td th:text="${person.firstName}">John</td>
+                <td th:text="${person.lastName}">Doe</td>
+                <td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !</td>
+                <td dt:csv="'csv'+${person.mail}" dt:xls="'xls'+${person.mail}">
+                    <a th:href="${'mailto:' + person.mail}" th:text="${person.mail}">john@doe.com</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
