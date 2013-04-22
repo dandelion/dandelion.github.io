@@ -140,12 +140,12 @@ In your JSP, you can use the tag `assets` with some attributes :
 	<html>
 		<head>
 		    ...
-			<dandelion:assets scopes=”jquery” renderer=”false”/>
+			<dandelion:assets scopes="jquery" renderer="false"/>
 		    ...
 		</head>
 		<body>
 		    ...
-			<dandelion:assets scopes=”datatables” renderer=”false”/>
+			<dandelion:assets scopes="datatables" renderer="false"/>
 		    ...
 			<dandelion:assets/> <!-- Always needed to rendering at the end of JSP -->
 		</body>
