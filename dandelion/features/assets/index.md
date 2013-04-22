@@ -7,7 +7,7 @@ level2:
   name: Assets Stack
 ---
 
-### Web assets management
+### Assets Stack (web assets management)
 
 Nowadays, in our web apps, we need to deal with :
 * a lot of assets
