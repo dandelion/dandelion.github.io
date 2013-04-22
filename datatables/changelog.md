@@ -14,7 +14,7 @@ level1: changelog
  * Export links are now added in the `fnInitComplete` callback
  * Callbacks have been refactored to avoid conflict between features that use the same callback
  * Features that was already avaible using DOM sources are available using AJAX sources (sortInit, sortDirection, cssClass, cssStyle, ...)
- * All StringBuilder replaced by StringBuffer
+ * All StringBuffer have been replaced by StringBuilder, for performance concern
 
 ##### JSP implementation
 
