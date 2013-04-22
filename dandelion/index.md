@@ -25,4 +25,4 @@ If you need support or want to discuss any issues you might be having with <stro
 
 <br />
 #### License
-**Dandelion** is released under the [BSD 3-Clause](http://opensource.org/licenses/BSD-3-Clause) licence, i.e. you can do almost everything you want with it.
+**Dandelion**, and all its components, are released under the [BSD 3-Clause](http://opensource.org/licenses/BSD-3-Clause) licence, i.e. you can do almost everything you want with it.
