@@ -1,9 +1,9 @@
 --- 
 layout: datatables
 ---
-<div id="datatablesthemes" class="row-fluid visible-desktop">
+<div id="datatablesthemes" class="row-fluid">
    <div class="span10">{{ content }}</div>
-   <div class="span2">
+   <div class="span2 hidden-phone">
       <ul class="nav nav-tabs nav-stacked pull-right hidden-phone" data-spy="affix" data-offset-top="60">
          <li {% if page.level3.url == 'basicstyling' %} class="active"{% endif %}><a href="/datatables/features/styling/basicstyling.html">Basic styling</a></li>
          <li {% if page.level3.url == 'bootstrap2' %} class="active"{% endif %}><a href="/datatables/features/styling/bootstrap2.html">Bootstrap2</a></li>

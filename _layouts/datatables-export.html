@@ -2,11 +2,11 @@
 layout: datatables
 ---
 
-<div id="datatablesexport" class="row-fluid visible-desktop">
+<div id="datatablesexport" class="row-fluid">
    <div class="span10">
       {{ content }}
    </div>
-   <div class="span2">
+   <div class="span2 hidden-phone">
       <ul class="nav nav-tabs nav-stacked pull-right hidden-phone" data-spy="affix" data-offset-top="60">
         <li {% if page.level3.url == 'activateexport' %} class="active"{% endif %}><a href="/datatables/features/export/activateexport.html">Exporting data</a></li>
         <li {% if page.level3.url == 'multiple' %} class="active"{% endif %}><a href="/datatables/features/export/multiple.html">Multiple export formats</a></li>
