@@ -14,7 +14,7 @@ We recently had the opportunity to integrate [Dandelion-Datatables](http://dande
 <img class="blog_img" src="/assets/images/blog/petclinic01.png" />
 </p>
 
-Technically speaking, we’ll focus on the view layer, i.e. where Dandelion-Datatables mainly comes into action in this use case. 
+Technically speaking, we’ll focus on the view layer, i.e. where [Dandelion-Datatables](http://dandelion.github.io/datatables) mainly comes into action in this use case. 
 
 <p class="text-center">
 <img class="blog_img" src="/assets/images/blog/petclinic02.png" />
@@ -159,13 +159,14 @@ Let’s comment a bit the `datatables:table` tag and its attributes:
  
  * We use the `cdn` attribute here to tell Dandelion-Datatables to grab the needed static resources from a compatible CDN (the Microsoft’s one today). This way, all JS and CSS needed by DataTables will be automatically loaded in the page
 
- * We also use one of the the cool features of Dandelion-Datatables : theming. Today, [Bootstrap 2](http://dandelion.github.io/datatables/features/styling/bootstrap2.html) and [jQuery UI ThemeRoller](http://dandelion.github.io/datatables/features/styling/jqueryui.html) are supported. Just use the `theme` attribute to activate the theme you want. Note that the static resources needed by those themes must be added manually before using the taglib.
+ * We also use one of the the cool features of Dandelion-Datatables : theming. Today, [Bootstrap 2](http://dandelion.github.io/datatables/features/styling/bootstrap2.html) and [jQuery UI ThemeRoller](http://dandelion.github.io/datatables/features/styling/jqueryui.html) are supported. Just use the `theme` attribute to activate the theme you want. 
+   Note that the static resources needed by those themes must be added manually before using the taglib.
 
- * `cssClass` is, as for `id`, an HTML pass through attribute
+ * `cssClass` is, as for `id`, a HTML pass through attribute
 
 Now let’s comment a bit the `datatables:column` tag and its attributes :
 
- * Since no property is directly displayed in a column, we can’t use the `property` attribute but instead, we set body to the `datatables:column` tag. This will allows us to use anything we need inside (JSTL, EL, plain HTML, ...)
+ * Since no property is directly displayed in a column, we can’t use the `property` attribute but instead, we set a body to the `datatables:column` tag. This will allows us to use anything we need inside (JSTL, Expression Language, plain HTML, ...)
 
  * The `title` attribute is used to fill the `th` cells
 
@@ -254,7 +255,7 @@ Also note that both tables have additional features:
 #### Bonus step : adding PDF export
 In order to show another cool feature of [Dandelion-Datatables](http://dandelion.github.io/datatables), we decided to add another one : PDF export. Well, let’s do this!
 
-Some extras already exist and provide some utilities to deal with export. In this usecase, since we want to export in PDF format, we will use the [datatables-export-itext](https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-itext) that contains :
+Some extras already exist and provide some utilities to deal with export. In this use case, since we want to export in PDF format, we will use the [datatables-export-itext](https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-itext) that contains :
 
  * the [iText library](http://itextpdf.com/)
 
