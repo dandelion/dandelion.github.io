@@ -1,15 +1,33 @@
 /* Bootstrap custom */
 
-@media (max-width:768px)
-body {
-	padding-top: 120px;
-	padding-bottom: 60px;
-}	
-
-@media (max-width:979px)
-body {
-	padding-bottom: 60px;
-}	
+/* Large desktop */
+@media (min-width: 1200px) {
+	body{
+		padding-top: 120px;
+		padding-bottom: 60px; 
+	}
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	body{
+		padding-bottom: 60px; 
+	}
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	body{
+		padding-bottom: 60px; 
+	}
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	body{
+		padding-bottom: 60px; 
+	}
+}
 
 .sidebar-nav {
 	padding: 9px 0;
