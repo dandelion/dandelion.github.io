@@ -317,26 +317,13 @@ Two problems here.
 
  1. First, the export link is a bit ugly.
 
-Indeed, Dandelion-Datatables generates unstyled links by default, in order to be as flexible as possible. You can however adapt the link to fit your need using the `datatables:export` tag.
+Indeed, [Dandelion-Datatables](http://dandelion.github.io/datatables) generates unstyled links by default, in order to be as flexible as possible. You can however adapt the link to fit your need using the `datatables:export` tag.
 
 Just add a `datatables:export` tag as follows:
 
 <pre class="prettyprint">
 &lt;datatables:table id="owners" data="${selections}" ... <span style="color:red;font-weight:bold;">export="pdf"</span>>
-    &lt;datatables:column title="Name" cssStyle="width: 150px;">
-        &lt;spring:url value="owners/{ownerId}.html" var="ownerUrl">
-            &lt;spring:param name="ownerId" value="${owner.id}"/>
-        &lt;/spring:url>
-        &lt;a href="${fn:escapeXml(ownerUrl)}">&lt;c:out value="${owner.firstName} ${owner.lastName}"/>&lt;/a>
-    &lt;/datatables:column>
-    &lt;datatables:column title="Address" property="address" cssStyle="width: 200px;"/>
-    &lt;datatables:column title="City" property="city"/>
-    &lt;datatables:column title="Telephone" property="telephone"/>
-    &lt;datatables:column title="Pets" cssStyle="width: 100px;">
-        &lt;c:forEach var="pet" items="${owner.pets}">
-            &lt;c:out value="${pet.name}"/>
-        &lt;/c:forEach>
-    &lt;/datatables:column>
+    ...
     <span style="color:red;font-weight:bold;">&lt;datatables:export type="pdf" cssClass="btn btn-small" /></span>
 &lt;/datatables:table>
 </pre>
@@ -364,14 +351,7 @@ For this purpose, you can use the `display` attribute of the `datatables:column`
     &lt;datatables:column <span style="color:red;font-weight:bold;">title="Name" display="pdf"</span>>
         &lt;c:out value="${owner.firstName} ${owner.lastName}"/>
     &lt;/datatables:column>
-    &lt;datatables:column title="Address" property="address" cssStyle="width: 200px;"/>
-    &lt;datatables:column title="City" property="city"/>
-    &lt;datatables:column title="Telephone" property="telephone"/>
-    &lt;datatables:column title="Pets" cssStyle="width: 100px;">
-        &lt;c:forEach var="pet" items="${owner.pets}">
-            &lt;c:out value="${pet.name}"/>
-        &lt;/c:forEach>
-    &lt;/datatables:column>
+    ...
     &lt;datatables:export type="pdf" cssClass="btn btn-small" />
 &lt;/datatables:table>
 </pre>
