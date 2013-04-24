@@ -1,5 +1,5 @@
 ---
-layout: dandelion
+layout: webanalytics
 menu: installation
 level1: installation
 ---

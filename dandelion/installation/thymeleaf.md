@@ -49,7 +49,7 @@ If not, add the DandelionDialect to your existing Thymeleaf template engine :
 
 <h5>Step 3 : Add the namespace declaration</h5>
 
-Everywhere you want to display a table using <strong>Dandelion</strong>, you need to add the following namespace declaration :
+Everywhere, you want to use <strong>Dandelion features</strong>, you need to add the following namespace declaration :
 
     <html xmlns:th="http://www.thymeleaf.org" xmlns:ddl="http://github.com/dandelion">
 

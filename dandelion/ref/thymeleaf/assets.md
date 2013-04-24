@@ -10,7 +10,7 @@ level3:
   name: Assets attributes
 ---
 
-<h3>Table attributes</h3>
+<h3>Assets attributes</h3>
 
 <h4>Description</h4>
 
