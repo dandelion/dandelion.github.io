@@ -253,7 +253,7 @@ Also note that both tables have additional features:
 
 <br />
 #### Bonus step : adding PDF export
-In order to show another cool feature of [Dandelion-Datatables](http://dandelion.github.io/datatables), we decided to add another one : PDF export. Well, let’s do this!
+In order to show another cool feature of [Dandelion-Datatables](http://dandelion.github.io/datatables), we decided to add a PDF export. Well, let’s do this!
 
 Some extras already exist and provide some utilities to deal with export. In this use case, since we want to export in PDF format, we will use the [datatables-export-itext](https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-itext) that contains :
 
