@@ -58,13 +58,13 @@ You need to follow the first three steps described above.
 
 Add the following configuration to your <tt>web.xml</tt> :
 
-    <!-- Dandelion-Datatables servlet definition -->
+    <!-- Dandelion servlet definition -->
     <servlet>
         <servlet-name>dandelionAssets</servlet-name>
         <servlet-class>com.github.dandelion.extras.servlet2.asset.web.AssetsServlet2</servlet-class>
     </servlet>
 
-    <!-- Dandelion-Datatables servlet mapping -->
+    <!-- Dandelion servlet mapping -->
     <servlet-mapping>
         <servlet-name>dandelionAssets</servlet-name>
         <url-pattern>/dandelion-assets/*</url-pattern>
