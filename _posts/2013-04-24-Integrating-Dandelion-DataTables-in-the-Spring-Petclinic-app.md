@@ -293,8 +293,6 @@ _Let's adapt the markup now._
 
 Enabling export is quite easy. Just set the `export` table attribute to the type of export you want (`pdf` here). Remember that Dandelion-Datatables will use the [datatables-export-itext](https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-itext) extra by default (based on the [iText library](http://itextpdf.com/)).
 
-Note that the above filter configuration is automatically done using a Servlet 3.x compatible container, so that you don’t need to add anything in the `web.xml` file.
-
 <pre class="prettyprint">
 &lt;datatables:table id="owners" data="${selections}" ... <span style="color:red;font-weight:bold;">export="pdf"</span>>
 ...
