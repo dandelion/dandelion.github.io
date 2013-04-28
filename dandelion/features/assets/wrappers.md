@@ -63,7 +63,9 @@ level3:
 #### How to build your own implementation?
 
 Your custom wrapper must implement [AssetsLocationWrapper](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/wrapper/AssetsLocationWrapper.html).
-A wrapper is linked to a unique location key.
+A wrapper is linked to a unique location key and can generate multiples locations.
+
+You can also extends [CacheableLocationWrapper](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/wrapper/CacheableLocationWrapper.html) to generate multiples contents for a location and store it in a cache.
 
 Now, you can setup your class with configuration property [assets.location.wrapper.{location}](/dandelion/ref/configuration/#assets.location.wrapper)
 with `{location}` as your location key.
