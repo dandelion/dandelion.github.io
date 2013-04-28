@@ -61,7 +61,7 @@ Now, you can use the `assets stack` feature in your page. For that, you have 2 w
 
 ##### Assets Request Context
 
-At any time during the page rendering, you can access the [AssetsRequestContext](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsRequestContext.html), allowing you to :
+At any time during the page rendering, you can access the [AssetsRequestContext](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/web/AssetsRequestContext.html), allowing you to :
  * add some scopes
  * exclude some scopes or assets
  * render them.

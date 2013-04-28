@@ -26,14 +26,14 @@ level3:
   <tbody>
       <tr>
         <td>classpath</td>
-        <td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/classpath/ClasspathLocationWrapper.html">ClasspathLocationWrapper</a></td>
+	<td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/wrapper/ClasspathLocationWrapper.html">ClasspathLocationWrapper</a></td>
         <td>This wrapper extracts the asset content for classpath
         and stores it in the <a href="/dandelion/features/assets/cache.html">Dandelion Assets Cache</a>.<br/>
         The wrapped location is the access url to the <a href="/dandelion/features/assets/cache.html">Dandelion Assets Cache</a>.</td>
       </tr>
       <tr>
         <td>delegate</td>
-        <td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/delegate/DelegateLocationWrapper.html">DelegateLocationWrapper</a></td>
+	<td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/wrapper/DelegateLocationWrapper.html">DelegateLocationWrapper</a></td>
         <td>This wrapper extracts the asset content for classpath,
         replaces template parameters by set-up values
         and stores it in the <a href="/dandelion/features/assets/cache.html">Dandelion Assets Cache</a>.<br/>
@@ -41,14 +41,19 @@ level3:
       </tr>
       <tr>
         <td>template</td>
-        <td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/template/TemplateLocationWrapper.html">TemplateLocationWrapper</a></td>
+	<td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/wrapper/TemplateLocationWrapper.html">TemplateLocationWrapper</a></td>
         <td>This wrapper delegates the content generation to the set-up object
         and stores it in the <a href="/dandelion/features/assets/cache.html">Dandelion Assets Cache</a>.<br/>
         The wrapped location is the access url to the <a href="/dandelion/features/assets/cache.html">Dandelion Assets Cache</a>.</td>
       </tr>
       <tr>
+	<td>webapp</td>
+	<td><a href="/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/wrapper/WebappLocationWrapper.html">WebappLocationWrapper</a></td>
+	<td>The wrapped location is a location of the assets in the webapp with the context path</td>
+      </tr>
+      <tr>
         <td>webjars</td>
-        <td><a href="/dandelion/ref/javadoc/dandelion-webjars/com/github/dandelion/extras/webjars/asset/WebjarsLocatorWrapper.html">WebjarsLocatorWrapper</a></td>
+	<td><a href="/dandelion/ref/javadoc/dandelion-webjars/com/github/dandelion/extras/webjars/asset/wrapper/WebjarsLocationWrapper.html">WebjarsLocationWrapper</a></td>
         <td>This wrapper delegates the location url creation to <a href="http://github.com/webjars/webjars-locator">webjars locator</a> based on <a href="http://webjars.org">webjars</a>.</td>
       </tr>
   </tbody>
@@ -57,7 +62,7 @@ level3:
 <br />
 #### How to build your own implementation?
 
-Your custom wrapper must implement [AssetsLocationWrapper](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLocationWrapper.html).
+Your custom wrapper must implement [AssetsLocationWrapper](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/wrapper/AssetsLocationWrapper.html).
 A wrapper is linked to a unique location key.
 
 Now, you can setup your class with configuration property [assets.location.wrapper.{location}](/dandelion/ref/configuration/#assets.location.wrapper)
