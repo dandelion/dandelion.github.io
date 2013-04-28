@@ -37,7 +37,7 @@ dandelion :
   components:
     core:
       name: dandelion
-      version: 0.1.0
+      version: 0.1.1
       url: dandelion
       breadcrumb: Dandelion
       sources: dandelion
@@ -49,7 +49,7 @@ dandelion :
       sources: dandelion-datatables
     webanalytics:
       name: webanalytics
-      version: 0.1.0
+      version: 0.1.1
       url: webanalytics
       breadcrumb: Dandelion-Webanalytics
       sources: dandelion-webanalytics
