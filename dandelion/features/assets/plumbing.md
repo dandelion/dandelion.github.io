@@ -68,4 +68,4 @@ Some [implementations](/dandelion/features/assets/loaders.html) are available : 
 
 ### Dandelion Assets Location Wrapper
 An [AssetsLocationWrapper](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLocationWrapper.html) is an interface which wraps a location before retrieving it from **Assets.getAssetLocation(...)**.
-Some [implementations](/dandelion/features/assets/wrappers.html) are available for location keys : classpath, delegate, template, webjars (extras).
+Some [implementations](/dandelion/features/assets/wrappers.html) are available for location keys : classpath, delegate, template, webapp, webjars (extras).
