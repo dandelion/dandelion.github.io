@@ -9,6 +9,9 @@ level1: roadmap
 
 This is not a formal roadmap, more a priority list which evolves with time.
 
+<br />
+<h4>Dandelion</h4>
+
 We've planned to make the connection between **Dandelion-Datatables** and **Dandelion** (core module) in the v0.9.0. Meanwhile, **Dandelion-Datatables** will stay on the v0.8.x branch.
 
 The v1.0.0 will be of course the first officially stable release.
