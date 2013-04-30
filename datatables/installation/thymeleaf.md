@@ -83,7 +83,7 @@ For that purpose, just set the following system property in your server launch c
 You can now begin using the DataTablesDialect ! :-)
 
 <br />
-<h4>With Servlet 2.x compatible containers</h4>
+#### With Servlet 2.x compatible containers
 
 <h5>Steps 1/2/3/4</h5>
 You need to follow the first four steps described above.

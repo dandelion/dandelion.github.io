@@ -1,0 +1,26 @@
+--- 
+layout: datatables
+---
+<div id="datatablesarchitecture" class="row-fluid">
+   <div class="span10">{{ content }}</div>
+   <div class="span2 hidden-phone">
+      <ul class="nav nav-tabs nav-stacked pull-right hidden-phone" data-spy="affix" data-offset-top="60">
+         <li {% if page.level2.url == 'general' %} class="active"{% endif %}><a href="/datatables/architecture/">Architecture</a></li>
+         <li {% if page.level2.url == 'logging' %} class="active"{% endif %}><a href="/datatables/architecture/logging.html">Logging</a></li>
+         <li {% if page.level2.url == 'caching' %} class="active"{% endif %}><a href="/datatables/architecture/caching.html">Caching</a></li>
+         <li {% if page.level2.url == 'dandelion' %} class="active"{% endif %}><a href="/datatables/architecture/dandelion.html">Integrating with Dandelion</a></li>
+         <li {% if page.level2.url == 'integration' %} class="active"{% endif %}><a href="/datatables/architecture/integration.html">Integrating with others</a></li>
+         <li {% if page.level2.url == 'server' %} class="active"{% endif %}><a href="/datatables/architecture/server.html">Server support</a></li>
+         <li {% if page.level2.url == 'browser' %} class="active"{% endif %}><a href="/datatables/architecture/browser.html">Browser support</a></li>
+      </ul>
+   </div>
+</div>
+
+<script>
+$(document).ready(function () {
+   if($('#datatablesarchitecture ul.nav').is(":hidden")){
+      $('#datatablesarchitecture div:eq(0)').removeClass('span10');
+      $('#datatablesarchitecture div:eq(0)').addClass('span12');
+   }
+});   
+</script>
