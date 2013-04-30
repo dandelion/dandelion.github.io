@@ -8,12 +8,11 @@ level1: architecture
 
 <br />
 You can find below a diagram that shows how **Dandelion-Datatables** is structured. 
+<br />
 
 <p class="text-center">
-<img class="blog_img" src="/assets/images/datatables/architecture.png" />
+<img class="blog_img" src="/assets/images/datatables/architecture.png" width="600px" height="500px" />
 </p>
-
-Let's describe the layers.
 
 <br />
 #### Core modules
