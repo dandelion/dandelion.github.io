@@ -39,11 +39,17 @@ dandelion :
       name: dandelion
       version: 0.1.0
       url: dandelion
+      breadcrumb: Dandelion
+      sources: dandelion
     datatables:
       name: datatables
       version: 0.8.11
       url: datatables
+      breadcrumb: Dandelion-Datatables
+      sources: dandelion-datatables
     webanalytics:
       name: webanalytics
       version: 0.1.0
       url: webanalytics
+      breadcrumb: Dandelion-Webanalytics
+      sources: dandelion-webanalytics
