@@ -19,7 +19,9 @@ See more details [here](/datatables/features/ajax/springmvc.html).
 
 <br />
 #### Spring Security
-Since **Dandelion-Datatables** deals with HTTP request to render static resources, you'll have to adapt your SecurityContext and allows the requests that are sent by the framework. You can add the following rule:
+Since **Dandelion-Datatables** deals with HTTP request to render static resources, you'll have to adapt your SecurityContext and allows the requests that are sent by the framework. 
+
+You can add the following rule in your configuration:
 
     <http pattern="/datatablesController/**" security="none" />
 
