@@ -73,6 +73,12 @@ You can easily access to the loaded configuration by :
         <td><a href="/dandelion/features/assets/wrappers.html">Built-in implementations</a>
         </td>
       </tr>
+      <tr>
+	<td>assets.servlet.cache.control</td>
+	<td>Define the value of <b>Cache-Control</b> in response header for the <a href="/dandelion/features/assets/cache.html">Dandelion Assets Cache</a></td>
+	<td>String</td>
+	<td>no-cache</td>
+      </tr>
   </tbody>
 </table>
 
