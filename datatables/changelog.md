@@ -25,6 +25,7 @@ level1: changelog
 ##### Thymeleaf implementation
 
  * `dt:export`, `dt:exportLinks` and `dt:filterType` attributes don't expect a Thymeleaf expression any longer. Actually you can use both header-coded values and Thymeleaf Standard expressions.
+ * New `dt:visible` column attribute, allowing you to hide column. Note that a hidden column is automatically unsearchable.
 
 ##### Issues
     
