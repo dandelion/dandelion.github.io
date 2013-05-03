@@ -111,6 +111,13 @@ The <code>&lt;th&gt;</code> attributes allow to configure the columns.
     <td></td>
     <td>AJAX</td>
   </tr>
+  <tr>
+    <td>dt:visible</td>
+    <td>Enable or disable the display of the column</td>
+    <td>true|false</td>
+    <td>true</td>
+    <td>DOM/AJAX</td>
+  </tr>
   </tbody>
 </table>
 

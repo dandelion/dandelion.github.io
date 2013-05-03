@@ -161,6 +161,7 @@ Or you can set a body and put anything you want inside (HTML, other tags\...). S
     <td>Enable or disable filtering on column</td>
     <td>true|false</td>
     <td>true</td>
+    <td>DOM/AJAX</td>
   </tr>
   <tr>
     <td>renderFunction</td>
@@ -175,6 +176,13 @@ Or you can set a body and put anything you want inside (HTML, other tags\...). S
     <td></td>
     <td></td>
     <td>DOM</td>
+  </tr>
+  <tr>
+    <td>visible</td>
+    <td>Enable or disable the display of the column</td>
+    <td>true|false</td>
+    <td>true</td>
+    <td>DOM/AJAX</td>
   </tr>
   </tbody>
 </table>
