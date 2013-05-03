@@ -37,3 +37,4 @@ level2:
  * [0.8.8](/datatables/ref/javadoc/0.8.8)
  * [0.8.9](/datatables/ref/javadoc/0.8.9)
  * [0.8.10](/datatables/ref/javadoc/0.8.10)
+ * [0.8.11](/datatables/ref/javadoc/0.8.11)
