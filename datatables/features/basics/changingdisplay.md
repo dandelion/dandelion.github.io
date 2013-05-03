@@ -91,6 +91,47 @@ Using Thymeleaf, you can use the `dt:scrollcollapse`.
         </tbody>
     </table>
 
+<br />
+#### Hide column
+It can be useful to hide column. **Dandelion-Datatables** allows you to hide column. Note that a hidden column is automatically unsearchable. 
+
+##### Using JSP 
+You can use the `visible` column attribute.
+
+    <datatables:table id="myTableId" data="${persons}">
+        <datatables:column title="Id" property="id" />
+        <datatables:column title="FirstName" property="firstName" />
+        <datatables:column title="LastName" property="lastName" />
+        <datatables:column title="City" property="address.town.name" />
+        <datatables:column title="Mail" property="mail" visible="false" />
+    </datatables:table>
+
+##### Using Thymeleaf
+Using Thymeleaf, you can use the `dt:visible` TH attribute.
+
+    <table id="myTableId" dt:table="true">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>City</th>
+                <th dt:visible="false">Mail</th>
+            </tr>
+        </thead>
+        <tbody th:remove="all-but-first">
+            <tr th:each="person : ${persons}">
+                <td th:text="${person.id}">1</td>
+                <td th:text="${person.firstName}">John</td>
+                <td th:text="${person.lastName}">Doe</td>
+                <td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !</td>
+                <td th:text="${person.mail}">john@doe.com</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
 
 
    

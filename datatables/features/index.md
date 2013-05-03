@@ -105,6 +105,12 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td><a href="/datatables/ref/thymeleaf/table.html#dt:scrolly">dt:scrolly</a> / <a href="/datatables/ref/thymeleaf/table.html#dt:scrollcollapse">dt:scrollcollapse</a></td>
       <td><a href="/datatables/features/basics/changingdisplay.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
+    <tr>
+      <td>Hide column</td>
+      <td><a href="/datatables/ref/jsp/column.html#visible">visible</a></td>
+      <td><a href="/datatables/ref/thymeleaf/column.html#dt:visible">dt:visible</a></td>
+      <td><a href="/datatables/features/basics/changingdisplay.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
     
     <tr>
       <td><h4>Sorting</h4></td>
