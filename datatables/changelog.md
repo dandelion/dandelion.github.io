@@ -6,6 +6,37 @@ level1: changelog
 
 ### Changelog
 
+#### 0.8.12 (05-03-2013)
+
+##### Core
+
+ * **dandelion.dev.mode enabled by default**
+
+ 	Now you don't need to set the dandelion.dev.mode system property to `true` to disable caching. Caching is disabled by default, which means the DataTables configuration is computed each time you access a page.
+
+ * **Performance improvement**
+ 
+ 	The `DisplayType` object, used in export, is now instantiated much less time than before.
+ 	
+##### JSP implementation
+
+ * New `visible` column attribute, allowing you to hide column. Note that a hidden column is automatically unsearchable.
+ 
+##### Thymeleaf implementation
+
+ * `dt:export`, `dt:exportLinks` and `dt:filterType` attributes don't expect a Thymeleaf expression any longer. Actually you can use both header-coded values and Thymeleaf Standard expressions.
+
+##### Issues
+    
+ * [issue #31](https://github.com/dandelion/issues/issues/31) (Error when the table's id is generated with the "th:id" processor)
+ * [issue #49](https://github.com/dandelion/issues/issues/49) (Performance : improve DisplayType feature)
+ * [issue #76](https://github.com/dandelion/issues/issues/76) (Add support for hidden columns)
+ * [issue #82](https://github.com/dandelion/issues/issues/82) (Make the dt:filtertype values unnecessary to process)
+ * [issue #83](https://github.com/dandelion/issues/issues/83) (Exclude dt:export/dt:exportLinks from being processed by Thymeleaf Standard Expression)
+ * [issue #85](https://github.com/dandelion/issues/issues/85) (Improve tag's values validation)
+ * [issue #86](https://github.com/dandelion/issues/issues/86) (Enable the dev mode by default)
+ * [issue #87](https://github.com/dandelion/issues/issues/87) (rel attribute is missing in link tags)
+
 #### 0.8.11 (04-21-2013)
 
 ##### Core
