@@ -79,6 +79,12 @@ You can easily access to the loaded configuration by :
 	<td>String</td>
 	<td>no-cache</td>
       </tr>
+      <tr>
+	<td>assets.cache</td>
+	<td>Define the 'Assets Cache' system under the <a href="/dandelion/features/assets/cache.html">Dandelion Assets Cache</a></td>
+	<td>implements <i>AssetsCache</i></td>
+	<td><a href="/dandelion/features/assets/cache.html">DefaultAssetsCache</a></td>
+      </tr>
   </tbody>
 </table>
 
