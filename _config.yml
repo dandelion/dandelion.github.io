@@ -36,7 +36,7 @@ dandelion :
   team: "Dandelion Team 2013"
   components:
     core:
-      name: dandelion
+      name: core
       version: 0.1.1
       url: dandelion
       breadcrumb: Dandelion
