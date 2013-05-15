@@ -313,7 +313,7 @@ Let’s click and see!
 
 Two problems here.
 
- 1. First, the export link is a bit ugly.
+ 1.   First, the export link is a bit ugly.
 
 Indeed, [Dandelion-Datatables](http://dandelion.github.io/datatables) generates unstyled links by default, in order to be as flexible as possible. You can however adapt the link to fit your need using the `datatables:export` tag.
 
@@ -331,7 +331,7 @@ The `datatables:export` tag allows you to [configure all exports](http://dandeli
 You need to bind the tag using the `type` attribute and then add all the configuration you need (css classes to apply, the export file name, header inclusion/exclusion, ...).
 In our case, we just add the Bootstrap classes as we did before on buttons using the `cssClass` attribute.
 
- 2. Second, more important, HTML markup appears in the PDF export.
+ 2.   Second, more important, HTML markup appears in the PDF export.
 
 Fortunately, you can also configure the column’s content in each export. Let’s see how to do this.
 Actually, you want two different types of display, one for the HTML (containing the HTML markup, links, formatting, ...) and another one for the PDF, without any HTML markup.
@@ -356,6 +356,7 @@ For this purpose, you can use the `display` attribute of the `datatables:column`
 
 You’ve noticed that two columns have been added here, with the same title, but not with the same value in the `display` attribute.
 It just means that :
+
  * the first one (with “html” as a value) will only be rendered in the HTML source, nowhere else.
 
  * the second one (with “pdf” as a value) will only be rendered in the PDF export, nowhere else.
