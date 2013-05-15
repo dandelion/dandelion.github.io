@@ -30,11 +30,9 @@ Just use the [tracker tag](/webanalytics/ref/jsp/tracker.html) everywhere in you
     </html>
 
 ##### In your Thymeleaf pages
-Just use the [tracker attributes](/webanalytics/ref/thymeleaf/tracker.html) everywhere in your web pages and enable the [dandelion assets stack](/dandelion/features/assets/).
+Just use the [tracker attributes](/webanalytics/ref/thymeleaf/tracker.html) everywhere in your web pages (enable automatically the [dandelion assets stack](/dandelion/features/assets/).
 
-        <html xmlns:ddl="http://www.thymeleaf.org/dandelion"
-              xmlns:wa="http://www.thymeleaf.org/dandelion/webanalytics"
-              ddl:assets-stack="enabled"
+	<html xmlns:wa="http://www.thymeleaf.org/dandelion/webanalytics"
               wa:provider="google" wa:token="UA-33818546-8">
             ...
         </html>

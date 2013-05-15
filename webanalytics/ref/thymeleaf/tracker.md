@@ -18,9 +18,7 @@ Describes how the tracker attributes should setup your webanalytics.
 
 #### Usage
 
-    <html xmlns:ddl="http://www.thymeleaf.org/dandelion"
-          xmlns:wa="http://www.thymeleaf.org/dandelion/webanalytics"
-       ddl:assets-stack="enabled"
+    <html xmlns:wa="http://www.thymeleaf.org/dandelion/webanalytics"
        wa:provider="google" wa:token="UA-33818546-8">
           ...
     </html>

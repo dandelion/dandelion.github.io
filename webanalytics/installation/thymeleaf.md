@@ -33,7 +33,6 @@ If you\'re using Spring / Spring MVC, update the SpringTemplateEngine bean :
         <property name="templateResolver" ref="templateResolver" />
         <property name="additionalDialects">
             <set>
-                <bean class="com.github.dandelion.thymeleaf.dialect.DandelionDialect" />
                 <bean class="com.github.dandelion.webanalytics.thymeleaf.dialect.DandelionWebAnalyticsDialect" />
             </set>
         </property>
@@ -46,7 +45,6 @@ If not, add the DandelionWebAnalyticsDialect and the DandelionDialect to your ex
 
     templateengine = new TemplateEngine();
     templateengine.setTemplateResolver(templateresolver);
-    templateengine.addDialect(new DandelionDialect());
     templateengine.addDialect(new DandelionWebAnalyticsDialect());
 
 <h5>Step 3 : Add the namespace declaration</h5>
