@@ -14,11 +14,13 @@ module: datatables
          <li {% if page.menu == 'features' %} class="active"{% endif %}>
             <a href="/datatables/features/" title="Features"><i class="icon-th-list"></i> Features</a>
          </li>
-         <li {% if page.menu == 'installation' %} class="active"{% endif %}>
-            <a href="/datatables/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
-         </li>
          <li {% if page.menu == 'download' %} class="active"{% endif %}>
             <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
+         </li>
+         
+         <li class="nav-header">Documentation</li>
+         <li {% if page.menu == 'installation' %} class="active"{% endif %}>
+            <a href="/datatables/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
          </li>
          <li {% if page.menu == 'changelog' %} class="active"{% endif %}>
             <a href="/datatables/changelog.html" title="Changelog"> <i class="icon-info-sign"></i> Changelog</a>
@@ -31,6 +33,20 @@ module: datatables
          </li>
          <li {% if page.menu == 'architecture' %} class="active"{% endif %}>
             <a href="/datatables/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
+         </li>
+         
+         <li class="nav-header">Reference</li>
+         <li {% if page.menu == 'jsp' %} class="active"{% endif %}>
+            <a href="/datatables/ref/jsp/" title="JSP taglib"> JSP taglib</a>
+         </li>
+         <li {% if page.menu == 'thymeleaf' %} class="active"{% endif %}>
+            <a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect</a>
+         </li>
+         <li {% if page.menu == 'properties' %} class="active"{% endif %}>
+            <a href="/datatables/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration</a>
+         </li>
+         <li {% if page.menu == 'javadoc' %} class="active"{% endif %}>
+            <a href="/datatables/ref/javadoc"> <i class="none"></i>Javadoc</a>
          </li>
          
          <li class="nav-header">Tutorials</li>
@@ -51,17 +67,6 @@ module: datatables
          </li>
          <li {% if page.menu == 'plugins' %} class="active"{% endif %}>
             <a href="/datatables/features/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
-         </li>
-         
-         <li class="nav-header">Reference</li>
-         <li {% if page.menu == 'jsp' %} class="active"{% endif %}><a href="/datatables/ref/jsp/" title="JSP taglib"> JSP taglib
-         </a></li>
-         <li {% if page.menu == 'thymeleaf' %} class="active"{% endif %}><a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect
-         </a></li>
-         <li {% if page.menu == 'properties' %} class="active"{% endif %}>
-            <a href="/datatables/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration</a>
-         <li {% if page.menu == 'javadoc' %} class="active"{% endif %}><a href="/datatables/ref/javadoc"> <i class="none"></i>Javadoc
-         </a></li>
          </li>
       </ul>
    </div>
