@@ -10,6 +10,6 @@ level2:
 ### Architecture :: Integrating with Dandelion
 
 <br />
-The integration with [Dandelion (core)](/dandelion) is planned for the [v0.9.0 release of **Dandelion-Datatables**](https://github.com/dandelion/issues/issues?milestone=3&state=open).
+The integration with [Dandelion (core)](/dandelion) is planned for the v0.10.0 or v0.11.0 release of **Dandelion-Datatables**.
 
-From this release, you'll be able to use Dandelion-Datatables inside your Dandelion asset stack.
+From this release, you'll be able to use [Dandelion-Datatables](/datatables) inside your Dandelion [asset stack](/dandelion/features/assets/).
