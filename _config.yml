@@ -41,7 +41,7 @@ dandelion :
       sources: dandelion
     datatables:
       name: datatables
-      version: 0.8.13
+      version: 0.8.14
       url: datatables
       breadcrumb: Dandelion-Datatables
       sources: dandelion-datatables
