@@ -118,6 +118,13 @@ The <code>&lt;th&gt;</code> attributes allow to configure the columns.
     <td>true</td>
     <td>DOM/AJAX</td>
   </tr>
+  <tr>
+    <td>dt:selector</td>
+    <td>jQuery selector used to populate a placeholder with a filtering widget</td>
+    <td></td>
+    <td></td>
+    <td>DOM/AJAX</td>
+  </tr>
   </tbody>
 </table>
 

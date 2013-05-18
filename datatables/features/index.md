@@ -157,6 +157,12 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td><a href="/datatables/ref/thymeleaf/th.html#dt:searchable">dt:searchable</a></td>
       <td><a href="/datatables/features/basics/filtering.html#exclude_column_from_filtering" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
+    <tr>
+      <td>Using an external search form</td>
+      <td><a href="/datatables/ref/jsp/column.html#selector">selector</a></td>
+      <td><a href="/datatables/ref/thymeleaf/th.html#dt:selector">dt:selector</a></td>
+      <td><a href="/datatables/features/basics/filtering.html#using_an_external_search_form" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
     
     <tr>
       <td><h4>Paging</h4></td>

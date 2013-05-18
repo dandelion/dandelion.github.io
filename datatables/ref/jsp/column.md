@@ -184,6 +184,13 @@ Or you can set a body and put anything you want inside (HTML, other tags\...). S
     <td>true</td>
     <td>DOM/AJAX</td>
   </tr>
+  <tr>
+    <td>selector</td>
+    <td>jQuery selector used to populate a placeholder with a filtering widget</td>
+    <td></td>
+    <td></td>
+    <td>DOM/AJAX</td>
+  </tr>
   </tbody>
 </table>
 
