@@ -23,6 +23,20 @@ Describes how the tracker attributes should setup your webanalytics.
           ...
     </html>
 
+or
+
+    <html xmlns:wa="http://www.thymeleaf.org/dandelion/webanalytics"
+       wa:tracker="token" wa:token="UA-33818546-8">
+	  ...
+    </html>
+
+or
+
+    <html xmlns:wa="http://www.thymeleaf.org/dandelion/webanalytics"
+       wa:tracker="all">
+	  ...
+    </html>
+
 #### Reference
 
 <table id="tableReference" class="table table-striped table-bordered">
@@ -37,15 +51,21 @@ Describes how the tracker attributes should setup your webanalytics.
   <tbody>
   <tr>
     <td>wa:provider</td>
-    <td><strong>(mandatory)</strong> name of the provider</td>
+    <td><strong>(optional)</strong> name of the provider</td>
     <td><a href="/webanalytics/features/providers/">a provider key</a></td>
     <td></td>
   </tr>
   <tr>
     <td>wa:token</td>
-    <td><strong>(mandatory)</strong> a valid token depending on your provider</td>
+    <td><strong>(optional)</strong> a valid token depending on your provider</td>
     <td>String</td>
     <td></td>
+  </tr>
+  <tr>
+    <td>wa:tracker</td>
+    <td><strong>(optional)</strong> a valid token depending on your provider</td>
+    <td>String</td>
+    <td>token|all</td>
   </tr>
   </tbody>
 </table>

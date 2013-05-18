@@ -22,6 +22,11 @@ Describes how the `tracker` tag should setup your web analytics provider.
     ...
     <dandelion:assets />
 
+or
+
+    <webanalytics:tracker />
+    ...
+    <dandelion:assets />
 
 #### Reference
 
@@ -37,13 +42,13 @@ Describes how the `tracker` tag should setup your web analytics provider.
   <tbody>
   <tr>
     <td>provider</td>
-    <td><strong>(mandatory)</strong> name of the provider</td>
+    <td><strong>(optional)</strong> name of the provider</td>
     <td><a href="/webanalytics/features/providers/">a provider key</a></td>
     <td></td>
   </tr>
   <tr>
     <td>token</td>
-    <td><strong>(mandatory)</strong> a valid token depending on your provider</td>
+    <td><strong>(optional)</strong> a valid token depending on your provider</td>
     <td>String</td>
     <td></td>
   </tr>
