@@ -1,6 +1,6 @@
 ---
 layout: datatables-thymeleaf
-menu: taglib
+menu: thymeleaf
 level1: ref
 level2:
   url: thymeleaf
@@ -229,6 +229,13 @@ Don\'t forget to add the prefix <code>dt:</code> before each attribute.
     <td>true|false</td>
     <td>false</td>
     <th>DOM/AJAX</th>
+  </tr>
+  <tr>
+    <td>dt:dom</td>
+    <td>Allows you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page (for example you might want the pagination controls at the top of the table). DIV elements (with or without a custom class) can also be added to aid styling.</td>
+    <td></td>
+    <td>lfrtip</td>
+    <td>DOM/AJAX</td>
   </tr>
   </tbody>
 </table>

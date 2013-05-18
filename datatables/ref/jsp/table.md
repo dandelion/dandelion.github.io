@@ -1,6 +1,6 @@
 ---
 layout: datatables-jsp
-menu: taglib
+menu: jsp
 level1: ref
 level2:
   url: jsp
@@ -323,6 +323,13 @@ Decribes how the HTML table should be generated.
     <td></td>
     <td></td>
     <td>AJAX</td>
+  </tr>
+  <tr>
+    <td>dom</td>
+    <td>Allows you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page (for example you might want the pagination controls at the top of the table). DIV elements (with or without a custom class) can also be added to aid styling.</td>
+    <td></td>
+    <td>lfrtip</td>
+    <td>DOM/AJAX</td>
   </tr>
   </tbody>
 </table>

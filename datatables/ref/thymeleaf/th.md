@@ -1,6 +1,6 @@
 ---
 layout: datatables-thymeleaf
-menu: taglib
+menu: thymeleaf
 level1: ref
 level2:
   url: thymeleaf

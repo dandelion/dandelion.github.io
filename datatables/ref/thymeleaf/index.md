@@ -3,7 +3,7 @@ layout: datatables
 menu: thymeleaf
 level1: ref
 level2:
-  url: thymelead
+  url: thymeleaf
   name: Thymeleaf
 ---
 

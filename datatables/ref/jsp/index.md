@@ -1,6 +1,6 @@
 ---
 layout: datatables
-menu: taglib
+menu: jsp
 level1: ref
 level2:
   url: jsp
