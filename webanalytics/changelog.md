@@ -6,6 +6,14 @@ level1: changelog
 
 ### Changelog
 
+#### 0.2.0 (18-05-2013)
+
+##### Core
+* [issue #96](https://github.com/dandelion/issues/issues/96) (Add a configuration point for the webanalytics provider and token)
+
+##### Thymeleaf implementation
+* [issue #98](https://github.com/dandelion/issues/issues/98) (Find a way to make optional the use of 'ddl:assets-stack="enabled"' in webanalytics thymeleaf)
+
 #### 0.1.0 (22-04-2013)
 *	**[Basic Setup](/webanalytics/features/basic/)** : provide a basic setup for web analytics.
 *   **[Providers](/webanalytics/features/providers/)** :
