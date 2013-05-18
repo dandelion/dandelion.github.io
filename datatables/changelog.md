@@ -6,6 +6,39 @@ level1: changelog
 
 ### Changelog
 
+#### 0.8.13 (05-18-2013)
+
+##### Core
+
+ * More tests
+
+ 	More unit tests and integration tests have been added.
+ 	
+ * AJAX sources
+ 
+    From this release, you have to configure yourself the URL used to populate your AJAX-enabled tables (the context path won't be prepended any longer).
+    	 	
+##### JSP implementation
+
+ * New `dom` table attribute, allowing you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page.
+ * New `selector` column attribute, which is a jQuery selector used to populate a placeholder with a filtering widgets (e.g. useful if you want externalized search form)
+ 
+##### Thymeleaf implementation
+
+ * New `dt:dom` table attribute.
+ * New `dt:selector` th attribute.
+
+##### Issues
+    
+ * [issue #100](https://github.com/dandelion/issues/issues/100) (Fix base.url configuration point)
+ * [issue #101](https://github.com/dandelion/issues/issues/101) (Add support for cssStyle and cssClass when using AJAX source)
+ * [issue #102](https://github.com/dandelion/issues/issues/102) (`TypeError: oColumn is undefined` on DOM when data is a empty list )
+ * [issue #103](https://github.com/dandelion/issues/issues/103) (Support dynamic value for the column's "visible" attribute)
+ * [issue #105](https://github.com/dandelion/issues/issues/105) (Not all existing properties did appear as "valid" )
+ * [issue #106](https://github.com/dandelion/issues/issues/106) (Add support for sDom parameter)
+ * [issue #107](https://github.com/dandelion/issues/issues/107) (Add support for sSelector parameter of the ColumnFilter plugin)
+ * [issue #109](https://github.com/dandelion/issues/issues/109) (Conflict between the Bootstrap2 theme and basic features enablement)
+
 #### 0.8.12 (05-03-2013)
 
 ##### Core
