@@ -2,8 +2,6 @@
 # Jekyll configuration
 #
 permalink: /blog/:year/:month/:day/:title 
-auto: true
-pygments: true
 
 #
 # Site configuration
@@ -43,7 +41,7 @@ dandelion :
       sources: dandelion
     datatables:
       name: datatables
-      version: 0.8.12
+      version: 0.8.13
       url: datatables
       breadcrumb: Dandelion-Datatables
       sources: dandelion-datatables
