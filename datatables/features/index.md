@@ -88,6 +88,12 @@ You can find below the full list of features supported by **Dandelion-Datatables
       <td colspan="3"></td>
     </tr>
     <tr>
+      <td>DOM positionning</td>
+      <td><a href="/datatables/ref/jsp/table.html#dom">dom</a></td>
+      <td><a href="/datatables/ref/thymeleaf/table.html#dt:dom">dt:dom</a></td>
+      <td><a href="/datatables/features/basics/changingdisplay.html" class="btn btn-mini btn-info">More details »</a></td>    
+    </tr>
+    <tr>
       <td>Changing the display length</td>
       <td><a href="/datatables/ref/jsp/table.html#displayLength">displayLength</a></td>
       <td><a href="/datatables/ref/thymeleaf/table.html#dt:displaylength">dt:displaylength</a></td>

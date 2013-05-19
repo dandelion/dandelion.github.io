@@ -15,6 +15,45 @@ level3:
 Some options are available to adapt the table's display. 
 
 <br />
+#### DOM positionning
+The `dom` / `dt:dom` (JSP / Thymeleaf) attributes allow you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page (for example you might want the pagination controls at the top of the table). DIV elements (with or without a custom class) can also be added to aid styling.
+
+##### Using JSP 
+In the following example, the global filtering input has been removed.
+
+    <datatables:table id="myTableId" data="${persons}" dom="lrtip">
+        <datatables:column title="Id" property="id" />
+        <datatables:column title="FirstName" property="firstName" />
+        <datatables:column title="LastName" property="lastName" />
+        <datatables:column title="City" property="address.town.name" />
+        <datatables:column title="Mail" property="mail" />
+    </datatables:table>
+
+##### Using Thymeleaf
+With Thymeleaf, use the `dt:dom` attribute instead.
+
+    <table id="myTableId" dt:table="true" dt:dom="lrtip">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>City</th>
+                <th>Mail</th>
+            </tr>
+        </thead>
+        <tbody th:remove="all-but-first">
+            <tr th:each="person : ${persons}">
+                <td th:text="${person.id}">1</td>
+                <td th:text="${person.firstName}">John</td>
+                <td th:text="${person.lastName}">Doe</td>
+                <td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !</td>
+                <td th:text="${person.mail}">john@doe.com</td>
+            </tr>
+        </tbody>
+    </table>
+
+<br />
 #### Changing the display length
 
 ##### Using JSP 
