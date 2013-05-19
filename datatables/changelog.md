@@ -16,7 +16,7 @@ level1: changelog
  	
  * AJAX sources
  
-    From this release, you have to configure yourself the URL used to populate your AJAX-enabled tables (the context path won't be prepended any longer).
+    From this release, you have to configure yourself the URL used to populate your AJAX-enabled tables (the context path won't be prepended any longer). All existing tutorials have been updated accordingly.
     	 	
 ##### JSP implementation
 
@@ -32,7 +32,7 @@ level1: changelog
     
  * [issue #100](https://github.com/dandelion/issues/issues/100) (Fix base.url configuration point)
  * [issue #101](https://github.com/dandelion/issues/issues/101) (Add support for cssStyle and cssClass when using AJAX source)
- * [issue #102](https://github.com/dandelion/issues/issues/102) (`TypeError: oColumn is undefined` on DOM when data is a empty list )
+ * [issue #102](https://github.com/dandelion/issues/issues/102) ("TypeError: oColumn is undefined" on DOM when data is a empty list )
  * [issue #103](https://github.com/dandelion/issues/issues/103) (Support dynamic value for the column's "visible" attribute)
  * [issue #105](https://github.com/dandelion/issues/issues/105) (Not all existing properties did appear as "valid" )
  * [issue #106](https://github.com/dandelion/issues/issues/106) (Add support for sDom parameter)
