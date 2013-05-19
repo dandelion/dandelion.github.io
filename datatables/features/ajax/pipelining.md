@@ -22,7 +22,8 @@ You might over-come this by modifying the request set to the server to retrieve 
 Just set the `pipelining` table attribute to `true`.
 You can also set the pipe size using the `pipeSize` attribute (which is defaults set to 5).
 
-	<datatables:table id="myTableId" url="/persons2" serverSide="true" processing="true" pipelining="true" pipeSize="6">
+    <c:url var="datasource" value="/persons" />
+	<datatables:table id="myTableId" url="${datasource}" serverSide="true" processing="true" pipelining="true" pipeSize="6">
 	   <datatables:column title="Id" property="id" />
 	   <datatables:column title="FirstName" property="firstName" />
 	   <datatables:column title="LastName" property="lastName" />
@@ -35,7 +36,7 @@ You can also set the pipe size using the `pipeSize` attribute (which is defaults
 Just set the `dt:pipelinin` to `true`.
 The pipe size can be set using the `dt:pipesize` attribute. 
 
-	<table id="myTableId" dt:table="true" dt:url="'/persons2'" dt:serverside="true" dt:pipelining="true" dt:pipesize="6">
+	<table id="myTableId" dt:table="true" dt:url="@{/persons2}" dt:serverside="true" dt:pipelining="true" dt:pipesize="6">
 	   <thead>
 	      <tr>
 	         <th dt:property="'id'">Id</th>

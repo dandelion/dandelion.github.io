@@ -33,7 +33,8 @@ First, ensure your function is present before the table.
 
 Then, just use the `renderFunction` column attribute and pass the name of the previous Javascript function.
 
-	<datatables:table id="myTableId" url="/persons1" serverSide="true" processing="true">
+    <c:url var="datasource" value="/persons" />
+	<datatables:table id="myTableId" url="${datasource}" serverSide="true" processing="true">
         <datatables:column title="Id" property="id" />
         <datatables:column title="FirstName" property="firstName" />
         <datatables:column title="LastName" property="lastName" />
@@ -51,7 +52,8 @@ Then, just use the `renderFunction` column attribute and pass the name of the pr
 You can use the same mechanism to add an extra "Action" column.
 Let's add an sixth column which will contain some links.
 
-    <datatables:table id="myTableId" url="/persons1" serverSide="true" processing="true">
+    <c:url var="datasource" value="/persons" />
+    <datatables:table id="myTableId" url="${datasource}" serverSide="true" processing="true">
         <datatables:column title="Id" property="id" />
         <datatables:column title="FirstName" property="firstName" />
         <datatables:column title="LastName" property="lastName" />
@@ -77,7 +79,7 @@ Then you just need to generate HTML code in the function as follows:
 #### Using Thymeleaf
 Using Thymeleaf, you can use the `dt:renderFunction` th attribute in the same manner.
 
-    <table id="myTableId" dt:table="true" dt:url="'/persons1'" dt:serverSide="true">
+    <table id="myTableId" dt:table="true" dt:url="@{/persons1}" dt:serverSide="true">
         <thead>
             <tr>
                 <th dt:property="'id'">Id</th>

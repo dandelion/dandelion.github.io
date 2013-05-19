@@ -42,7 +42,8 @@ Obviously, server-side processing requires a bit more work than client-side one.
 <br />
 #### Using JSP
 
-    <datatables:table id="myTableId" url="/persons1" serverSide="true" processing="true">
+    <c:url var="datasource" value="/persons" />
+    <datatables:table id="myTableId" url="${datasource}" serverSide="true" processing="true">
         <datatables:column title="Id" property="id" />
         <datatables:column title="FirstName" property="firstName" />
         <datatables:column title="LastName" property="lastName" />
@@ -53,7 +54,7 @@ Obviously, server-side processing requires a bit more work than client-side one.
 <br />
 #### Using Thymeleaf
 
-	<table id="myTableId" dt:table="true" dt:url="'/persons1'" dt:serverside="true" dt:processing="true">
+	<table id="myTableId" dt:table="true" dt:url="@{/persons1}" dt:serverside="true" dt:processing="true">
 	   <thead>
 	      <tr>
 	         <th dt:property="'id'">Id</th>

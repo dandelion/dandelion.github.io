@@ -32,7 +32,8 @@ Moreover:
 
 <br />
 
-	<datatables:table id="myTableId" url="/persons" row="person">
+    <c:url var="datasource" value="/persons" />
+	<datatables:table id="myTableId" url="${datasource}" row="person">
 		<datatables:column title="Id" property="id" />
 		<datatables:column title="FirstName" property="firstName" />
 		<datatables:column title="LastName" property="lastName" />
@@ -46,7 +47,7 @@ Using Thymeleaf, you have to fill in the `dt:url` table attribute. The same rule
 
 Moreover, you have to tell <strong>Dandelion-datatables</strong> which property must be read from the JSON source for each column using the `dt:property` attribute.
 
-    <table id="myTableId" dt:table="true" dt:url="/persons">
+    <table id="myTableId" dt:table="true" dt:url="@{/persons}">
         <thead>
             <tr>
                 <th dt:property="'id'">Id</th>

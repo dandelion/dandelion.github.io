@@ -48,7 +48,8 @@ As you can see, it's just the Spring equivalent of `DatatablesCriterias.getFromR
 <br /> 
 #### Using JSP
 	
-	<datatables:table id="myTableId" url="/persons2" serverSide="true" processing="true">
+	<c:url var="datasource" value="/persons" />
+	<datatables:table id="myTableId" url="${datasource}" serverSide="true" processing="true">
 	    <datatables:column title="Id" property="id" />
 	    <datatables:column title="FirstName" property="firstName" />
 	    <datatables:column title="LastName" property="lastName" />
@@ -59,7 +60,7 @@ As you can see, it's just the Spring equivalent of `DatatablesCriterias.getFromR
 <br /> 
 #### Using Thymeleaf
    
-	<table id="myTableId" dt:table="true" dt:url="'/persons2'" dt:serverside="true" dt:processing="true">
+	<table id="myTableId" dt:table="true" dt:url="@{/persons2}" dt:serverside="true" dt:processing="true">
 	   <thead>
 	      <tr>
 	         <th dt:property="'id'">Id</th>

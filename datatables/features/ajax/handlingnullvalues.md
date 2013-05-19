@@ -19,7 +19,8 @@ This section deals with the case where the bean you\'re trying to display in the
 Using JSP with AJAX sources, null values are handled in the same way than for DOM sources. 
 By default, an empty string will be displayed. You can also use the `default` column attribute to replace the empty string by any string you want.
 
-	<datatables:table id="myTableId" url="/persons">
+    <c:url var="datasource" value="/persons" />
+	<datatables:table id="myTableId" url="${datasource}">
 	    <datatables:column title="Id" property="id" />
 	    <datatables:column title="FirstName" property="firstName" />
 	    <datatables:column title="LastName" property="lastName" />
@@ -31,7 +32,7 @@ By default, an empty string will be displayed. You can also use the `default` co
 #### Using Thymeleaf      
 Using Thymeleaf, this is quite similar. Just use the `dt:default` TH attribute to override the default empty string.
 
-	<table id="myTableId" dt:table="true" dt:url="'/persons'">
+	<table id="myTableId" dt:table="true" dt:url="@{/persons}">
 	   <thead>
 	      <tr>
 	         <th dt:property="'id'">Id</th>
