@@ -6,15 +6,15 @@ author: 'Thibault Duchateau'
 ---
 {% include setup %}
 
-**Dandelion-Datatables v0.8.13 has been released in [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Cdandelion).**
+**Dandelion-Datatables v0.8.13 has been released in [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Cdandelion)** and the **v0.8.14 as well**, because of a shameful omission :-/
 
 This is mainly a bugfixing version.
 
-However, a major change has been added. The inner workings of the `url`/`dt:url` attributes (JSP/Thymeleaf), which are used to set the data source URL when using AJAX-enabled table, has changed. 
+However, a major change has been added. The inner workings of the `url` / `dt:url` attributes (JSP/Thymeleaf), which are used to set the data source URL when using AJAX-enabled table, has changed. 
 
 Actually, we wanted to make developer's life as easy as possible, automatically prepending the domain host and the context path to the provided URI, but it's finally too confusing because a part of the URL is provided by the framework and another one must be provided by the developer. Moreover, it will be even more confusing when JSONP support will be added.
 
-Starting from the v0.8.13, nothing will be prepended to the value you set in those attributes. Which means you have to entirely deal with it.
+Starting from the v0.8.13, nothing will be prepended to the value you set in those attributes. Which means you have to deal integrally with it.
 
 For example, using JSP, you can build the data source URL using the `<c:url>` JSTL tag :
 
