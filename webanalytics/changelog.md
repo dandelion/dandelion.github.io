@@ -6,6 +6,10 @@ level1: changelog
 
 ### Changelog
 
+#### 0.2.1 (06-06-2013)
+
+Fix the wrong configuration of *Dandelion* version.
+
 #### 0.2.0 (18-05-2013)
 
 ##### Core
