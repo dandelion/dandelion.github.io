@@ -41,3 +41,34 @@ Just use the [tracker attributes](/webanalytics/ref/thymeleaf/tracker.html) ever
 ##### You use an unknown provider? No problem!
 See in the [Providers section](/webanalytics/features/providers/) how to configure your specific provider.
 
+#### How to setup globally your webanalytics provider?
+If
+* your provider is the same on all your pages?
+* your token is the same on all yours pages?
+
+You can add the [webanalytics configuration](/webanalytics/ref/configuration/) on [dandelion configuration](/dandelion/ref/configuration/).
+After that, you don't need to fill the `provider` or `token` attributes in your JSP taglib or Thymeleaf Dialect.
+
+##### In your JSP
+
+      <webanalytics:tracker provider="google" token="UA-33818546-8"/>
+
+Became
+
+    <webanalytics:tracker/>
+
+Or, if you have only setup the global provider configuration
+
+      <webanalytics:tracker token="UA-33818546-8"/>
+
+##### In your Thymeleaf pages
+
+    <html wa:provider="google" wa:token="UA-33818546-8">
+
+Became
+
+    <html wa:tracker="all" >
+
+Or, if you have only setup the global provider configuration
+
+    <html wa:tracker="token" wa:token="UA-33818546-8">
