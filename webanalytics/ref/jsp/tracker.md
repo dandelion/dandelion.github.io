@@ -17,13 +17,16 @@ Describes how the `tracker` tag should setup your web analytics provider.
 
 #### Usage
 
-
+	<%@ taglib prefix="webanalytics" uri="http://github.com/dandelion/webanalytics" %>
+    ...
     <webanalytics:tracker provider="google" token="UA-33818546-8"/>
     ...
     <dandelion:assets />
 
 or
 
+	<%@ taglib prefix="webanalytics" uri="http://github.com/dandelion/webanalytics" %>
+    ...
     <webanalytics:tracker />
     ...
     <dandelion:assets />

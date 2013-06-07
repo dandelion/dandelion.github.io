@@ -18,6 +18,7 @@ Describes how the Assets feature should generate the assets.
 #### Usage
 
 
+	<%@ taglib prefix="dandelion" uri="http://github.com/dandelion" %>
     <dandelion:assets
                 renderer="false"
                 scopes="scope1,scope2,..."

@@ -20,7 +20,8 @@ Don\'t forget to add the prefix <code>ddl:</code> before each attribute.
 
 <h4>Usage on any HTML element</h4>
 
-    <html ddl:assets-scopes="scope1,scope2">
+    <html xmlns:ddl="http://github.com/dandelion"
+            ddl:assets-scopes="scope1,scope2">
         <head>
             <link href="asset1.css" ddl:assets-excludedAssets="asset1" rel="stylesheet">
         </head>
@@ -32,7 +33,8 @@ Don\'t forget to add the prefix <code>ddl:</code> before each attribute.
 
 The minimal usage of this dialect is
 
-    <html ddl:assets-stack="enabled">
+    <html xmlns:ddl="http://github.com/dandelion"
+            ddl:assets-stack="enabled">
        ...
     </html>
 
