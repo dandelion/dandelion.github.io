@@ -17,6 +17,7 @@ Describes how the `tracker` tag should setup your web analytics provider.
 
 #### Usage
 
+	<%@ taglib prefix="dandelion" uri="http://github.com/dandelion" %>
 	<%@ taglib prefix="webanalytics" uri="http://github.com/dandelion/webanalytics" %>
     ...
     <webanalytics:tracker provider="google" token="UA-33818546-8"/>
@@ -25,11 +26,18 @@ Describes how the `tracker` tag should setup your web analytics provider.
 
 or
 
+	<%@ taglib prefix="dandelion" uri="http://github.com/dandelion" %>
 	<%@ taglib prefix="webanalytics" uri="http://github.com/dandelion/webanalytics" %>
     ...
     <webanalytics:tracker />
     ...
     <dandelion:assets />
+
+or
+
+	<%@ taglib prefix="webanalytics" uri="http://github.com/dandelion/webanalytics" %>
+    ...
+    <webanalytics:tracker provider="google" token="UA-33818546-8" useAssets="false"/>
 
 #### Reference
 
@@ -47,13 +55,19 @@ or
     <td>provider</td>
     <td><strong>(optional)</strong> name of the provider</td>
     <td><a href="/webanalytics/features/providers/">a provider key</a></td>
-    <td></td>
+    <td>google</td>
   </tr>
   <tr>
     <td>token</td>
     <td><strong>(optional)</strong> a valid token depending on your provider</td>
     <td>String</td>
     <td></td>
+  </tr>
+  <tr>
+    <td>useAssets</td>
+    <td><strong>(optional)</strong> set to 'false' to switch to the standalone version for assets rendering</td>
+    <td>boolean</td>
+    <td>true</td>
   </tr>
   </tbody>
 </table>

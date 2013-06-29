@@ -12,7 +12,6 @@ This is not a formal roadmap, more a priority list which evolves with time.
 <br />
 <h4>High priority</h4>
 
- * Add more configuration points for the provider and the token
  * Add more configuration points for the Built-in providers
 
 

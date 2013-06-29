@@ -23,13 +23,19 @@ level2:
 	<td>webanalytics.provider</td>
 	<td>Define the provider for all pages</td>
 	<td><a href="/webanalytics/features/providers/">a provider key</a></td>
-	<td></td>
+	<td>google</td>
       </tr>
       <tr>
 	<td>webanalytics.token</td>
 	<td>Define the provider token for all pages</td>
 	<td>String</td>
 	<td></td>
+      </tr>
+      <tr>
+	<td>webanalytics.use_assets</td>
+	<td>Define the 'dandelion assets' mode for all pages</td>
+	<td>boolean</td>
+	<td>true</td>
       </tr>
   </tbody>
 </table>

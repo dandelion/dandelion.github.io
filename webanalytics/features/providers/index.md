@@ -21,7 +21,7 @@ level2:
   </thead>
   <tbody>
       <tr>
-        <td>Google Analytics</td>
+        <td>Google Analytics (default)</td>
         <td>google</td>
         <td><a href="http://www.google.com/analytics/">http://www.google.com/analytics/</a></td>
       </tr>

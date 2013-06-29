@@ -6,6 +6,14 @@ level1: changelog
 
 ### Changelog
 
+#### 0.2.2 (29-06-2013)
+
+##### Core
+* [issue #127](https://github.com/dandelion/issues/issues/127) (consider using google analytics as a default provider)
+
+##### JSP implementation
+* [issue #126](https://github.com/dandelion/issues/issues/126) (add a standalone version (which does not rely on dandelion:assets))
+
 #### 0.2.1 (06-06-2013)
 
 Fix the wrong configuration of *Dandelion* version.

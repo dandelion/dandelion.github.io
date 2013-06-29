@@ -47,7 +47,7 @@ dandelion :
       sources: dandelion-datatables
     webanalytics:
       name: webanalytics
-      version: 0.2.1
+      version: 0.2.2
       url: webanalytics
       breadcrumb: Dandelion-Webanalytics
       sources: dandelion-webanalytics

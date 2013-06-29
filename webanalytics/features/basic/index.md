@@ -18,15 +18,25 @@ You can easily setup your webanalytics provider with a [built-in provider](/weba
 ##### In your JSP
 Just use the [tracker tag](/webanalytics/ref/jsp/tracker.html) everywhere in your web pages and finalize the configuration with the [dandelion assets tag](/dandelion/features/assets/).
 
+	<%@ taglib prefix="dandelion" uri="http://github.com/dandelion" %>
 	<%@ taglib prefix="webanalytics" uri="http://github.com/dandelion/webanalytics" %>
     <html>
         <head>
-            ...
         </head>
         <body>
-            ...
             <webanalytics:tracker provider="google" token="UA-33818546-8"/>
             <dandelion:assets />
+        </body>
+    </html>
+
+Or in Standalone version
+
+	<%@ taglib prefix="webanalytics" uri="http://github.com/dandelion/webanalytics" %>
+    <html>
+        <head>
+        </head>
+        <body>
+            <webanalytics:tracker provider="google" token="UA-33818546-8" useAssets="false"/>
         </body>
     </html>
 

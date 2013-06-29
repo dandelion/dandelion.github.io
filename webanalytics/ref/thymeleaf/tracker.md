@@ -53,7 +53,7 @@ or
     <td>wa:provider</td>
     <td><strong>(optional)</strong> name of the provider</td>
     <td><a href="/webanalytics/features/providers/">a provider key</a></td>
-    <td></td>
+    <td>google</td>
   </tr>
   <tr>
     <td>wa:token</td>
