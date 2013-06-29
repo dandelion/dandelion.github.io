@@ -45,6 +45,12 @@ dandelion :
       url: datatables
       breadcrumb: Dandelion-Datatables
       sources: dandelion-datatables
+    icons:
+      name: icons
+      version: 0.1.0-SNAPSHOT
+      url: icons
+      breadcrumb: Dandelion-Icons
+      sources: dandelion-icons
     webanalytics:
       name: webanalytics
       version: 0.2.2
