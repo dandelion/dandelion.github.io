@@ -1,5 +1,6 @@
 var _gaq = _gaq || [];
 _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+_gaq.push(['_setCookiePath', '/{{site.dandelion.components.[page.module].url}}']);
 _gaq.push([ '_trackPageview' ]);
 (function() {
 	var ga = document.createElement('script');
