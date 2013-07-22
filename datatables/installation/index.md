@@ -8,8 +8,12 @@ level1: installation
 
 #### Prerequisites
 ​
-Java 6 or higher
+Server-side:
+ * Java 6 or higher
 
+Client-side:
+ * jQuery v1.10.1 max (v2.x is not compatible with the supported DataTables version)
+ 
 <br />
 ####Notes
 **Dandelion-DataTables** takes advantage of the [Servlet API 3.x](http://jcp.org/en/jsr/detail?id=315) to ease its required configuration. In return, however, you have to use a Servlet container compatible with this API.
