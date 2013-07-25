@@ -121,7 +121,7 @@ http://dandelion.github.io/datatables/ref/thymeleaf/td.html
 http://dandelion.github.io/datatables/ref/thymeleaf/th.html
 http://dandelion.github.io/datatables/ref/thymeleaf/thead.html
 http://dandelion.github.io/datatables/roadmap.html
-http://dandelion.github.io/icons/index.html
+http://dandelion.github.io/glyph/index.html
 http://dandelion.github.io/index.html
 http://dandelion.github.io/releases/index.html
 http://dandelion.github.io/team/index.html

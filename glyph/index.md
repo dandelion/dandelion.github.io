@@ -1,5 +1,5 @@
 ---
-layout: icons
+layout: glyph
 menu: home
 ---
 
