@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dandelion Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="java, web, component, library, assets, datatables">
+<meta name="author" content="Dandelion">
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
+<link href="/assets/css/component.css" rel="stylesheet">
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+<!--[if IE 7]>
+      <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
+      <![endif]-->
+<!--[if lt IE 9]>
+      <script src="/assets/js/html5shiv.js"></script>
+      <![endif]-->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+<link rel="shortcut icon" href="/assets/images/dandelion_square.png">
+
+<script>
+      var _gaq = _gaq || [];
+      _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+      _gaq.push([ '_setCookiePath', '/datatables/' ]);
+      _gaq.push([ '_trackPageview' ]);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+      			: 'http://www')
+      			+ '.google-analytics.com/ga.js';
+      	var s = document.getElementsByTagName('script')[0];
+      	s.parentNode.insertBefore(ga, s);
+      })();
+</script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+   <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+         <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a href="/datatables">
+               <div id="logo_container">
+                   <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
+                   <p id="logo_text">
+                       datatables
+                   </p>
+               </div>
+            </a>
+            <div class="nav-collapse collapse">
+               <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
+                  <li class="text-center"><a href="/"><i class="icon-home"></i> Home</a></li>
+                  <li class="text-center"><a href="/blog"><i class="icon-comment"></i> Blog</a></li>
+                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-github"></i> Issues</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/dandelion-datatables"><i class="icon-github-sign"></i> Sources</a></li>
+               </ul>
+               <ul class="nav pull-right" style="clear:right;">
+                  <form class="navbar-search" action="http://google.com/search" method="get" style="margin-right:15px;">
+                     <input type="hidden" name="q" value="site:dandelion.github.io/datatables" />
+                     <input type="text" class="search search-query" name="q" results="0" placeholder="Search"/>
+                  </form>
+               </ul>
+            </div>
+            <!--/.nav-collapse -->
+         </div>
+      </div>
+   </div>
+   <div class="container-fluid">
+      <div class="row-fluid">
+         <div class="span2">
+   <div class="well sidebar-nav">
+      <ul class="nav nav-list">
+         
+         <li class="nav-header">Overview</li>
+         <li >
+            <a href="/datatables"><i class="icon-home"></i> Home</a>
+         </li>
+         <li >
+            <a href="/datatables/features/" title="Features"><i class="icon-th-list"></i> Features</a>
+         </li>
+         <li >
+            <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
+         </li>
+         
+         <li class="nav-header">Documentation</li>
+         <li >
+            <a href="/datatables/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+         </li>
+         <li >
+            <a href="/datatables/changelog.html" title="Changelog"> <i class="icon-info-sign"></i> Changelog</a>
+         </li>
+         <li >
+            <a href="/datatables/roadmap.html" title="Roadmap"><i class="icon-road"></i> Roadmap</a>
+         </li>
+         <li >
+            <a href="/datatables/migration.html" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+         </li>
+         <li >
+            <a href="/datatables/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
+         </li>
+         
+         <li class="nav-header">Reference</li>
+         <li >
+            <a href="/datatables/ref/jsp/" title="JSP taglib"> JSP taglib</a>
+         </li>
+         <li >
+            <a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect</a>
+         </li>
+         <li >
+            <a href="/datatables/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration</a>
+         </li>
+         <li >
+            <a href="/datatables/ref/javadoc"> <i class="none"></i>Javadoc</a>
+         </li>
+         
+         <li class="nav-header">Tutorials</li>
+         <li  class="active">
+            <a href="/datatables/features/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+         </li>
+         <li >
+            <a href="/datatables/features/advanced/" title="Advanced"> <i class="icon-fire"></i> Advanced</a>
+         </li>
+         <li >
+            <a href="/datatables/features/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+         </li>
+         <li >
+            <a href="/datatables/features/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+         </li>
+         <li >
+            <a href="/datatables/features/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+         </li>
+         <li >
+            <a href="/datatables/features/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+         </li>
+      </ul>
+   </div>
+</div>
+<div class="span10">
+   <div class="row-fluid">
+      <ul class="breadcrumb hidden-phone">
+   <li><a href="/"><i class="icon-home"></i></a></li>
+   <li><span class="divider">|</span><a href="/datatables">Dandelion-Datatables</a></li>
+     
+   
+   <li> <span class="divider">|</span><a href="/datatables/features">Features</a></li>
+   
+     
+   
+   <li> <span class="divider">|</span><a href="/datatables/features/basics">Basics</a></li>
+   
+     
+   
+   <li> <span class="divider">|</span><a href="/datatables/features/basics/changingdisplay.html">Changing the display</a></li>
+   
+   
+   <li class="pull-right">
+      Latest release: <a href="/datatables/changelog.html">0.8.14</a>
+   </li>
+</ul>
+      <div id="datatablesbasics" class="row-fluid">
+   <div class="span10"><h3 id='basics__changing_tables_display'>Basics :: Changing table&#39;s display</h3>
+
+<p>Some options are available to adapt the table&#8217;s display.</p>
+<br />
+<h4 id='dom_positionning'>DOM positionning</h4>
+
+<p>The <code>dom</code> / <code>dt:dom</code> (JSP / Thymeleaf) attributes allow you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page (for example you might want the pagination controls at the top of the table). DIV elements (with or without a custom class) can also be added to aid styling.</p>
+
+<h5 id='using_jsp'>Using JSP</h5>
+
+<p>In the following example, the global filtering input has been removed.</p>
+
+<pre><code>&lt;datatables:table id=&quot;myTableId&quot; data=&quot;${persons}&quot; dom=&quot;lrtip&quot;&gt;
+    &lt;datatables:column title=&quot;Id&quot; property=&quot;id&quot; /&gt;
+    &lt;datatables:column title=&quot;FirstName&quot; property=&quot;firstName&quot; /&gt;
+    &lt;datatables:column title=&quot;LastName&quot; property=&quot;lastName&quot; /&gt;
+    &lt;datatables:column title=&quot;City&quot; property=&quot;address.town.name&quot; /&gt;
+    &lt;datatables:column title=&quot;Mail&quot; property=&quot;mail&quot; /&gt;
+&lt;/datatables:table&gt;</code></pre>
+
+<h5 id='using_thymeleaf'>Using Thymeleaf</h5>
+
+<p>With Thymeleaf, use the <code>dt:dom</code> attribute instead.</p>
+
+<pre><code>&lt;table id=&quot;myTableId&quot; dt:table=&quot;true&quot; dt:dom=&quot;lrtip&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Id&lt;/th&gt;
+            &lt;th&gt;Firstname&lt;/th&gt;
+            &lt;th&gt;Lastname&lt;/th&gt;
+            &lt;th&gt;City&lt;/th&gt;
+            &lt;th&gt;Mail&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody th:remove=&quot;all-but-first&quot;&gt;
+        &lt;tr th:each=&quot;person : ${persons}&quot;&gt;
+            &lt;td th:text=&quot;${person.id}&quot;&gt;1&lt;/td&gt;
+            &lt;td th:text=&quot;${person.firstName}&quot;&gt;John&lt;/td&gt;
+            &lt;td th:text=&quot;${person.lastName}&quot;&gt;Doe&lt;/td&gt;
+            &lt;td th:text=&quot;${person.address != null and person.address.town != null} ? ${person.address.town.name} : &#39;&#39;&quot;&gt;Nobody knows !&lt;/td&gt;
+            &lt;td th:text=&quot;${person.mail}&quot;&gt;john@doe.com&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+<br />
+<h4 id='changing_the_display_length'>Changing the display length</h4>
+
+<h5 id='using_jsp'>Using JSP</h5>
+
+<p>By default, <strong>Datatables</strong> displays 10 rows when using pagination. You can change this value using the <code>displayLength</code> table attribute.</p>
+
+<pre><code>&lt;datatables:table id=&quot;myTableId&quot; data=&quot;${persons}&quot; displayLength=&quot;40&quot;&gt;
+    &lt;datatables:column title=&quot;Id&quot; property=&quot;id&quot; /&gt;
+    &lt;datatables:column title=&quot;FirstName&quot; property=&quot;firstName&quot; /&gt;
+    &lt;datatables:column title=&quot;LastName&quot; property=&quot;lastName&quot; /&gt;
+    &lt;datatables:column title=&quot;City&quot; property=&quot;address.town.name&quot; /&gt;
+    &lt;datatables:column title=&quot;Mail&quot; property=&quot;mail&quot; /&gt;
+&lt;/datatables:table&gt;</code></pre>
+
+<h5 id='using_thymeleaf'>Using Thymeleaf</h5>
+
+<p>Using Thymeleaf, you can change the number of rows displayed using the <code>dt:displaylength</code> table attribute.</p>
+
+<pre><code>&lt;table id=&quot;myTableId&quot; dt:table=&quot;true&quot; dt:displaylength=&quot;45&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Id&lt;/th&gt;
+            &lt;th&gt;Firstname&lt;/th&gt;
+            &lt;th&gt;Lastname&lt;/th&gt;
+            &lt;th&gt;City&lt;/th&gt;
+            &lt;th&gt;Mail&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody th:remove=&quot;all-but-first&quot;&gt;
+        &lt;tr th:each=&quot;person : ${persons}&quot;&gt;
+            &lt;td th:text=&quot;${person.id}&quot;&gt;1&lt;/td&gt;
+            &lt;td th:text=&quot;${person.firstName}&quot;&gt;John&lt;/td&gt;
+            &lt;td th:text=&quot;${person.lastName}&quot;&gt;Doe&lt;/td&gt;
+            &lt;td th:text=&quot;${person.address != null and person.address.town != null} ? ${person.address.town.name} : &#39;&#39;&quot;&gt;Nobody knows !&lt;/td&gt;
+            &lt;td th:text=&quot;${person.mail}&quot;&gt;john@doe.com&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+<br />
+<h4 id='using_scroll_options'>Using scroll options</h4>
+
+<p>When vertical (y) scrolling is enabled, <strong>DataTables</strong> will force the height of the table&#8217;s viewport to the given height at all times (useful for layout). However, this can look odd when filtering data down to a small data set, and the footer is left &#8220;floating&#8221; further down.</p>
+
+<h5 id='using_jsp'>Using JSP</h5>
+
+<p>To avoid this, you can use the <code>scrollCollapse</code> table attribute. This will cause <strong>DataTables</strong> to collapse the table&#8217;s viewport down when the result set will fit within the given Y height.</p>
+
+<pre><code>&lt;datatables:table id=&quot;myTableId&quot; data=&quot;${persons}&quot; scrollY=&quot;1000px&quot; scrollCollapse=&quot;false&quot;&gt;
+    &lt;datatables:column title=&quot;Id&quot; property=&quot;id&quot; /&gt;
+    &lt;datatables:column title=&quot;FirstName&quot; property=&quot;firstName&quot; /&gt;
+    &lt;datatables:column title=&quot;LastName&quot; property=&quot;lastName&quot; /&gt;
+    &lt;datatables:column title=&quot;City&quot; property=&quot;address.town.name&quot; /&gt;
+    &lt;datatables:column title=&quot;Mail&quot; property=&quot;mail&quot; /&gt;
+&lt;/datatables:table&gt;</code></pre>
+
+<h5 id='using_thymeleaf'>Using Thymeleaf</h5>
+
+<p>Using Thymeleaf, you can use the <code>dt:scrollcollapse</code>.</p>
+
+<pre><code>&lt;table id=&quot;myTableId&quot; dt:table=&quot;true&quot; dt:scrolly=&quot;&#39;1000px&#39;&quot; dt:scrollcollapse=&quot;false&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Id&lt;/th&gt;
+            &lt;th&gt;Firstname&lt;/th&gt;
+            &lt;th&gt;Lastname&lt;/th&gt;
+            &lt;th&gt;City&lt;/th&gt;
+            &lt;th&gt;Mail&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody th:remove=&quot;all-but-first&quot;&gt;
+        &lt;tr th:each=&quot;person : ${persons}&quot;&gt;
+            &lt;td th:text=&quot;${person.id}&quot;&gt;1&lt;/td&gt;
+            &lt;td th:text=&quot;${person.firstName}&quot;&gt;John&lt;/td&gt;
+            &lt;td th:text=&quot;${person.lastName}&quot;&gt;Doe&lt;/td&gt;
+            &lt;td th:text=&quot;${person.address != null and person.address.town != null} ? ${person.address.town.name} : &#39;&#39;&quot;&gt;Nobody knows !&lt;/td&gt;
+            &lt;td th:text=&quot;${person.mail}&quot;&gt;john@doe.com&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+<br />
+<h4 id='hide_column'>Hide column</h4>
+
+<p>It can be useful to hide column. <strong>Dandelion-Datatables</strong> allows you to hide column. Note that a hidden column is automatically unsearchable.</p>
+
+<h5 id='using_jsp'>Using JSP</h5>
+
+<p>You can use the <code>visible</code> column attribute.</p>
+
+<pre><code>&lt;datatables:table id=&quot;myTableId&quot; data=&quot;${persons}&quot;&gt;
+    &lt;datatables:column title=&quot;Id&quot; property=&quot;id&quot; /&gt;
+    &lt;datatables:column title=&quot;FirstName&quot; property=&quot;firstName&quot; /&gt;
+    &lt;datatables:column title=&quot;LastName&quot; property=&quot;lastName&quot; /&gt;
+    &lt;datatables:column title=&quot;City&quot; property=&quot;address.town.name&quot; /&gt;
+    &lt;datatables:column title=&quot;Mail&quot; property=&quot;mail&quot; visible=&quot;false&quot; /&gt;
+&lt;/datatables:table&gt;</code></pre>
+
+<h5 id='using_thymeleaf'>Using Thymeleaf</h5>
+
+<p>Using Thymeleaf, you can use the <code>dt:visible</code> TH attribute.</p>
+
+<pre><code>&lt;table id=&quot;myTableId&quot; dt:table=&quot;true&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Id&lt;/th&gt;
+            &lt;th&gt;Firstname&lt;/th&gt;
+            &lt;th&gt;Lastname&lt;/th&gt;
+            &lt;th&gt;City&lt;/th&gt;
+            &lt;th dt:visible=&quot;false&quot;&gt;Mail&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody th:remove=&quot;all-but-first&quot;&gt;
+        &lt;tr th:each=&quot;person : ${persons}&quot;&gt;
+            &lt;td th:text=&quot;${person.id}&quot;&gt;1&lt;/td&gt;
+            &lt;td th:text=&quot;${person.firstName}&quot;&gt;John&lt;/td&gt;
+            &lt;td th:text=&quot;${person.lastName}&quot;&gt;Doe&lt;/td&gt;
+            &lt;td th:text=&quot;${person.address != null and person.address.town != null} ? ${person.address.town.name} : &#39;&#39;&quot;&gt;Nobody knows !&lt;/td&gt;
+            &lt;td th:text=&quot;${person.mail}&quot;&gt;john@doe.com&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre></div>
+   <div class="span2 hidden-phone">
+      <ul class="nav nav-tabs nav-stacked pull-right hidden-phone" data-spy="affix" data-offset-top="60">
+         <li ><a href="/datatables/features/basics/featurenablement.html"> Feature enablement</a></li>
+         <li ><a href="/datatables/features/basics/sorting.html" title="Sorting data"> Sorting data</a></li>
+         <li ><a href="/datatables/features/basics/filtering.html" title="Filtering data"> Filtering data</a></li>
+         <li ><a href="/datatables/features/basics/defaultvalues.html" title="Handling null/default values"> Handling null/default values</a></li>
+         <li ><a href="/datatables/features/basics/cdn.html" title="Using CDN"> Using CDN</a></li>
+         <li  class="active"><a href="/datatables/features/basics/changingdisplay.html" title="Changing table's display"> Changing table's display</a></li>
+         <li ><a href="/datatables/features/basics/changingappearing.html" title="Changing table's appearing"> Changing table's appearing</a></li>
+         <li ><a href="/datatables/features/basics/paging.html" title="Changing pagination type"> Changing pagination type</a></li>
+         <li ><a href="/datatables/features/basics/multiple.html" title="Multiple tables"> Multiple tables</a></li>
+         <li ><a href="/datatables/features/basics/implicit.html" title="Using implicit object"> Using implicit object</a></li>
+         <li ><a href="/datatables/features/basics/customcontent.html" title="Specific column's content"> Specific column's content</a></li>
+         <li ><a href="/datatables/features/basics/customhead.html" title="Specific column's head"> Specific column's head</a></li>
+      </ul>
+   </div>
+</div>
+
+<script>
+$(document).ready(function () {
+   if($('#datatablesbasics ul.nav').is(":hidden")){
+      $('#datatablesbasics div:eq(0)').removeClass('span10');
+      $('#datatablesbasics div:eq(0)').addClass('span12');
+   }
+});   
+</script>
+   </div>
+</div>
+      </div>
+      <hr>
+      <footer>
+         <p>
+            Copyright © The <a href="/team">Dandelion Team</a> | <a href="/acknowledgments.html">Acknowledgments</a>
+            <span style="float:right;"><script src="http://www.ohloh.net/p/633354/widgets/project_thin_badge.js"></script></span>
+         </p>
+      </footer>
+   </div>
+</body>
+</html>

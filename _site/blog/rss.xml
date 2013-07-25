@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+   <channel>
+      <title>Dandelion Project</title>
+      <description>Dandelion Project - Dandelion Team</description>
+      <link>http://dandelion.github.io/blog/rss.xml</link>
+      <link>http://dandelion.github.io</link>
+      <lastBuildDate>2013-07-25T14:41:47+02:00</lastBuildDate>
+      <pubDate>2013-07-25T14:41:47+02:00</pubDate>
+      <ttl>1800</ttl>
+      
+         <item>
+            <title>Dandelion Webanalytics 0.2.2 Release</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion-Webanalytics v0.2.2 has been released in &lt;a href=&#39;http://search.maven.org/#search%7Cga%7C1%7Cdandelion-webanalytics&#39;&gt;Maven Central&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You can see the full changelog &lt;a href=&#39;/webanalytics/changelog.html&#39;&gt;here&lt;/a&gt; and as usual, your thoughts and feedback are very welcome. :-)&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/06/29/dandelion-webanalytics-0.2.2-release</link>
+            <guid>http://dandelion.github.io/blog/2013/06/29/dandelion-webanalytics-0.2.2-release</guid>
+            <pubDate>2013-06-29T00:00:00+02:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Dandelion Webanalytics 0.2.1 Release</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion-Webanalytics v0.2.1 has been released in &lt;a href=&#39;http://search.maven.org/#search%7Cga%7C1%7Cdandelion-webanalytics&#39;&gt;Maven Central&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is mainly a bugfixing version.&lt;/p&gt;
+
+&lt;p&gt;You can see the full changelog &lt;a href=&#39;/webanalytics/changelog.html&#39;&gt;here&lt;/a&gt; and as usual, your thoughts and feedback are very welcome. :-)&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/06/06/dandelion-webanalytics-0.2.1-release</link>
+            <guid>http://dandelion.github.io/blog/2013/06/06/dandelion-webanalytics-0.2.1-release</guid>
+            <pubDate>2013-06-06T00:00:00+02:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Dandelion Datatables 0.8.13 And 0.8.14 Releases</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion-Datatables v0.8.13 has been released in &lt;a href=&#39;http://search.maven.org/#search%7Cga%7C1%7Cdandelion&#39;&gt;Maven Central&lt;/a&gt;&lt;/strong&gt; and the &lt;strong&gt;v0.8.14 as well&lt;/strong&gt;, because of a shameful omission :-/&lt;/p&gt;
+
+&lt;p&gt;This is mainly a bugfixing version.&lt;/p&gt;
+
+&lt;p&gt;However, a major change has been added. The inner workings of the &lt;code&gt;url&lt;/code&gt; / &lt;code&gt;dt:url&lt;/code&gt; attributes (JSP/Thymeleaf), which are used to set the data source URL when using AJAX-enabled table, has changed.&lt;/p&gt;
+
+&lt;p&gt;Actually, we wanted to make developer&amp;#8217;s life as easy as possible, automatically prepending the domain host and the context path to the provided URI, but it&amp;#8217;s finally too confusing because a part of the URL is provided by the framework and another one must be provided by the developer. Moreover, it will be even more confusing when JSONP support will be added.&lt;/p&gt;
+
+&lt;p&gt;Starting from the v0.8.13, nothing will be prepended to the value you set in those attributes. Which means you have to deal integrally with it.&lt;/p&gt;
+
+&lt;p&gt;For example, using JSP, you can build the data source URL using the &lt;code&gt;&amp;lt;c:url&amp;gt;&lt;/code&gt; JSTL tag :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;c:url var=&amp;quot;datasource&amp;quot; value=&amp;quot;/persons&amp;quot; /&amp;gt;
+
+&amp;lt;datatables:table id=&amp;quot;myTableId&amp;quot; url=&amp;quot;${datasource}&amp;quot;&amp;gt;
+    &amp;lt;datatables:column title=&amp;quot;Id&amp;quot; property=&amp;quot;id&amp;quot; /&amp;gt;
+    &amp;lt;datatables:column title=&amp;quot;FirstName&amp;quot; property=&amp;quot;firstName&amp;quot; /&amp;gt;
+    &amp;lt;datatables:column title=&amp;quot;LastName&amp;quot; property=&amp;quot;lastName&amp;quot; /&amp;gt;
+    &amp;lt;datatables:column title=&amp;quot;City&amp;quot; property=&amp;quot;address.town.name&amp;quot; /&amp;gt;
+    &amp;lt;datatables:column title=&amp;quot;Mail&amp;quot; property=&amp;quot;mail&amp;quot; /&amp;gt;
+&amp;lt;/datatables:table&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Or if you use Thymeleaf instead, you can use the &amp;#8220;at&amp;#8221; syntax of the standard expressions: &lt;code&gt;@{...}&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;table id=&amp;quot;myTableId&amp;quot; dt:table=&amp;quot;true&amp;quot; dt:url=&amp;quot;@{/persons}&amp;quot;&amp;gt;
+   &amp;lt;thead&amp;gt;
+      &amp;lt;tr&amp;gt;
+         &amp;lt;th dt:property=&amp;quot;&amp;#39;id&amp;#39;&amp;quot;&amp;gt;Id&amp;lt;/th&amp;gt;
+         &amp;lt;th dt:property=&amp;quot;&amp;#39;firstName&amp;#39;&amp;quot;&amp;gt;Firstname&amp;lt;/th&amp;gt;
+         &amp;lt;th dt:property=&amp;quot;&amp;#39;lastName&amp;#39;&amp;quot;&amp;gt;Lastname&amp;lt;/th&amp;gt;
+         &amp;lt;th dt:property=&amp;quot;&amp;#39;address.town.name&amp;#39;&amp;quot;&amp;gt;City&amp;lt;/th&amp;gt;
+         &amp;lt;th dt:property=&amp;quot;&amp;#39;mail&amp;#39;&amp;quot;&amp;gt;Mail&amp;lt;/th&amp;gt;
+      &amp;lt;/tr&amp;gt;
+   &amp;lt;/thead&amp;gt;
+&amp;lt;/table&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As usual, you can see the full changelog &lt;a href=&#39;/datatables/changelog.html&#39;&gt;here&lt;/a&gt; and as usual, your thoughts and feedback are very welcome. :-)&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/05/19/dandelion-datatables-0.8.13-and-0.8.14-releases</link>
+            <guid>http://dandelion.github.io/blog/2013/05/19/dandelion-datatables-0.8.13-and-0.8.14-releases</guid>
+            <pubDate>2013-05-19T00:00:00+02:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Dandelion Webanalytics 0.2.0 Release</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion-Webanalytics v0.2.0 has been released in &lt;a href=&#39;http://search.maven.org/#search%7Cga%7C1%7Cdandelion&#39;&gt;Maven Central&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You can see the full changelog &lt;a href=&#39;/webanalytics/changelog.html&#39;&gt;here&lt;/a&gt; and as usual, your thoughts and feedback are very welcome. :-)&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/05/18/dandelion-webanalytics-0.2.0-release</link>
+            <guid>http://dandelion.github.io/blog/2013/05/18/dandelion-webanalytics-0.2.0-release</guid>
+            <pubDate>2013-05-18T00:00:00+02:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Dandelion 0.2.0 Release</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion v0.2.0 has been released in &lt;a href=&#39;http://search.maven.org/#search%7Cga%7C1%7Cdandelion&#39;&gt;Maven Central&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You can see the full changelog &lt;a href=&#39;/dandelion/changelog.html&#39;&gt;here&lt;/a&gt; and as usual, your thoughts and feedback are very welcome. :-)&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/05/18/dandelion-0.2.0-release</link>
+            <guid>http://dandelion.github.io/blog/2013/05/18/dandelion-0.2.0-release</guid>
+            <pubDate>2013-05-18T00:00:00+02:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Dandelion Datatables 0.8.12 Release</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion-Datatables v0.8.12 has been released in &lt;a href=&#39;http://search.maven.org/#search%7Cga%7C1%7Cdandelion&#39;&gt;Maven Central&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is mainly a bugfixing version, even if some new features has been added (e.g. hiding column).&lt;/p&gt;
+
+&lt;p&gt;You can see the full changelog &lt;a href=&#39;/datatables/changelog.html&#39;&gt;here&lt;/a&gt; and as usual, your thoughts and feedback are very welcome. :-)&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/05/03/dandelion-datatables-0.8.12-release</link>
+            <guid>http://dandelion.github.io/blog/2013/05/03/dandelion-datatables-0.8.12-release</guid>
+            <pubDate>2013-05-03T00:00:00+02:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Integrating Dandelion Datatables In The Spring Petclinic App</title>
+            <description>&lt;p&gt;Petclinic is one of the sample applications created by &lt;a href=&#39;http://www.springsource.org/&#39;&gt;SpringSource&lt;/a&gt; to demonstrate the key features of the &lt;a href=&#39;http://www.springsource.org/spring-framework&#39;&gt;Spring Framework&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We recently had the opportunity to integrate &lt;a href=&#39;http://dandelion.github.io/datatables&#39;&gt;Dandelion-Datatables&lt;/a&gt; into this app. Here is a tutorial describing how it has been done, step by step.&lt;/p&gt;
+&lt;p class=&#39;text-center&#39;&gt;
+&lt;img class=&#39;blog_img&#39; src=&#39;/assets/images/blog/petclinic01.png&#39; /&gt;
+&lt;/p&gt;
+&lt;p&gt;Technically speaking, we’ll focus on the view layer, i.e. where &lt;a href=&#39;http://dandelion.github.io/datatables&#39;&gt;Dandelion-Datatables&lt;/a&gt; mainly comes into action in this use case.&lt;/p&gt;
+&lt;p class=&#39;text-center&#39;&gt;
+&lt;img class=&#39;blog_img&#39; src=&#39;/assets/images/blog/petclinic02.png&#39; /&gt;
+&lt;/p&gt;
+&lt;p&gt;Before starting, note that :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the source code is &lt;a href=&#39;https://github.com/SpringSource/spring-petclinic/&#39;&gt;available on GitHub&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;you can access the live demo on &lt;a href=&#39;http://spring-petclinic.cloudfoundry.com/&#39;&gt;Cloudfoundry&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://twitter.com/michaelisvy&#39;&gt;Michael Isvy&lt;/a&gt; from SpringSource has written an article about the &lt;a href=&#39;http://blog.springsource.org/2013/03/21/spring-petclinic-is-on-github/&#39;&gt;new Spring PetClinic app in the SpringSource blog&lt;/a&gt; and has made available &lt;a href=&#39;https://speakerdeck.com/michaelisvy&#39;&gt;some slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;h4 id=&#39;step_1__collecting_information&#39;&gt;Step 1 : collecting information&lt;/h4&gt;
+
+&lt;p&gt;The first thing to do is to gather information in order to know what dependencies will be needed.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;what template engine is being used?&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Dandelion-Datatables provides a JSP taglib and a Thymeleaf dialect, allowing you to use both template engines.&lt;/p&gt;
+
+&lt;p&gt;In our case, the Petclinic app is based on plain old JSP.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;what version of the servlet API is being used?&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;By default, Dandelion-Datatables takes advantage of one of the key features added in the Servlet 3.x API (&lt;a href=&#39;http://jcp.org/en/jsr/detail?id=315&#39;&gt;JSR 315&lt;/a&gt;) : configuration through annotations, allowing us to qualify some classes as a Servlet or a Filter. This way, no need to manually update the deployment descriptor ( &lt;code&gt;web.xml&lt;/code&gt; ) any longer.&lt;/p&gt;
+
+&lt;p&gt;Note that currently, the Servlet 3.x API is supported by almost all application servers in their latest version. For example &lt;a href=&#39;http://tomcat.apache.org/tomcat-7.0-doc/&#39;&gt;Tomcat 7.x&lt;/a&gt; or &lt;a href=&#39;https://docs.jboss.org/author/display/AS7/Getting+Started+Guide&#39;&gt;JBoss AS 7&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In our case, in order to keep a backward compatibility with a large majority of legacy app servers, we’ll use the &lt;a href=&#39;https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-servlet2&#39;&gt;datatables-servlet2&lt;/a&gt; extra.&lt;/p&gt;
+&lt;br /&gt;
+&lt;h4 id=&#39;step_2__updating_the_dependencies&#39;&gt;Step 2 : updating the dependencies&lt;/h4&gt;
+
+&lt;p&gt;Since the build of the Petclinic app is based on Maven, let’s add the needed dependencies in the &lt;code&gt;pom.xml&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#39;prettyprint&#39;&gt;
+&amp;lt;dependency&gt;
+    &amp;lt;groupId&gt;com.github.dandelion&amp;lt;/groupId&gt;
+    &amp;lt;artifactId&gt;datatables-jsp&amp;lt;/artifactId&gt;
+    &amp;lt;version&gt;0.8.11&amp;lt;/version&gt;
+&amp;lt;/dependency&gt;
+&amp;lt;dependency&gt;
+    &amp;lt;groupId&gt;com.github.dandelion&amp;lt;/groupId&gt;
+    &amp;lt;artifactId&gt;datatables-servlet2&amp;lt;/artifactId&gt;
+    &amp;lt;version&gt;0.8.11&amp;lt;/version&gt;
+&amp;lt;/dependency&gt;
+&lt;/pre&gt;&lt;br /&gt;
+&lt;h4 id=&#39;step_3__updating_the_deployment_descriptor&#39;&gt;Step 3 : updating the deployment descriptor&lt;/h4&gt;
+
+&lt;p&gt;Since we want to keep backward compatibility with legacy app servers, we need to update the &lt;code&gt;web.xml&lt;/code&gt; by adding the Datatables’ servlet definition.&lt;/p&gt;
+&lt;pre class=&#39;prettyprint&#39;&gt;
+&amp;lt;!-- Dandelion-Datatables servlet definition --&gt;
+&amp;lt;servlet&gt;
+    &amp;lt;servlet-name&gt;datatablesController&amp;lt;/servlet-name&gt;
+    &amp;lt;servlet-class&gt;com.github.dandelion.datatables.extras.servlet2.servlet.DatatablesServlet&amp;lt;/servlet-class&gt;
+&amp;lt;/servlet&gt;
+&amp;lt;servlet-mapping&gt;
+    &amp;lt;servlet-name&gt;datatablesController&amp;lt;/servlet-name&gt;
+    &amp;lt;url-pattern&gt;/datatablesController/*&amp;lt;/url-pattern&gt;
+&amp;lt;/servlet-mapping&gt;
+&lt;/pre&gt;&lt;br /&gt;
+&lt;h4 id=&#39;step_4__replacing_plain_old_html_tables_with_datatables&#39;&gt;Step 4 : replacing plain old HTML tables with DataTables&lt;/h4&gt;
+
+&lt;p&gt;At this point, we’re done regarding the Dandelion-Datatables configuration. Now we just have to update the JSPs that use the plain old table and use the Dandelion-Datatables taglib instead.&lt;/p&gt;
+
+&lt;p&gt;In the Petclinic app, there are two contenders : the list of owners (&lt;a href=&#39;https://github.com/SpringSource/spring-petclinic/blob/14f882221f9f12de71331ce3eac44c297150c373/src/main/webapp/WEB-INF/jsp/owners/ownersList.jsp#L16-44&#39;&gt;ownersList.jsp&lt;/a&gt;) and the list of vets (&lt;a href=&#39;https://github.com/SpringSource/spring-petclinic/blob/14f882221f9f12de71331ce3eac44c297150c373/src/main/webapp/WEB-INF/jsp/vets/vetList.jsp#L17-37&#39;&gt;vetList.jsp&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Let’s start by the easiest one : the list of vets.&lt;/p&gt;
+&lt;br /&gt;
+&lt;h5 id=&#39;vetlistjsp&#39;&gt;vetList.jsp&lt;/h5&gt;
+
+&lt;p&gt;The JSP currently uses the typical JSTL &lt;code&gt;c:forEach&lt;/code&gt; tag to iterate over a collection of vets and generate HTML &lt;code&gt;tr&lt;/code&gt; tags.&lt;/p&gt;
+&lt;pre class=&#39;prettyprint&#39;&gt;
+&amp;lt;table class=&quot;table table-stripped&quot; style=&quot;width:600px;&quot;&gt;
+    &amp;lt;thead&gt;
+        &amp;lt;tr&gt;
+            &amp;lt;th&gt;Name&amp;lt;/th&gt;
+            &amp;lt;th&gt;Specialties&amp;lt;/th&gt;
+        &amp;lt;/tr&gt;
+    &amp;lt;/thead&gt;
+    &amp;lt;tbody&gt;
+    &amp;lt;c:forEach var=&quot;vet&quot; items=&quot;${vets.vetList}&quot;&gt;
+        &amp;lt;tr&gt;
+            &amp;lt;td&gt;&amp;lt;c:out value=&quot;${vet.firstName} ${vet.lastName}&quot;/&gt;&amp;lt;/td&gt;
+            &amp;lt;td&gt;
+                &amp;lt;c:forEach var=&quot;specialty&quot; items=&quot;${vet.specialties}&quot;&gt;
+                    &amp;lt;c:out value=&quot;${specialty.name}&quot;/&gt;
+                &amp;lt;/c:forEach&gt;
+                &amp;lt;c:if test=&quot;${vet.nrOfSpecialties == 0}&quot;&gt;none&amp;lt;/c:if&gt;
+            &amp;lt;/td&gt;
+        &amp;lt;/tr&gt;
+    &amp;lt;/c:forEach&gt;
+    &amp;lt;/tbody&gt;
+&amp;lt;/table&gt;
+&lt;/pre&gt;
+&lt;p&gt;Before adapting the above table, note some items :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the table looks pretty nice thanks to the awesome &lt;a href=&#39;http://twitter.github.io/bootstrap/&#39;&gt;Bootstrap&lt;/a&gt; library&lt;/li&gt;
+
+&lt;li&gt;a CSS style is directly set using the HTML &lt;code&gt;style&lt;/code&gt; attribute&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Now, let’s use Dandelion-Datatables!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The first thing to do, as for any other taglib, is to import the TLD using the &lt;code&gt;taglib&lt;/code&gt; directive&lt;/p&gt;
+&lt;pre class=&#39;prettyprint&#39;&gt;
+&amp;lt;%@ taglib prefix=&quot;datatables&quot; uri=&quot;http://github.com/dandelion/datatables&quot; %&gt;
+&lt;/pre&gt;
+&lt;p&gt;Then, let’s update the markup :&lt;/p&gt;
+&lt;pre class=&#39;prettyprint&#39;&gt;
+&amp;lt;datatables:table id=&quot;vets&quot; data=&quot;${vets.vetList}&quot; cdn=&quot;true&quot; row=&quot;vet&quot; theme=&quot;bootstrap2&quot; cssClass=&quot;table table-striped&quot;&gt;
+    &amp;lt;datatables:column title=&quot;Name&quot;&gt;
+        &amp;lt;c:out value=&quot;${vet.firstName} ${vet.lastName}&quot;&gt;&amp;lt;/c:out&gt;
+    &amp;lt;/datatables:column&gt;
+    &amp;lt;datatables:column title=&quot;Specialties&quot;&gt;
+        &amp;lt;c:forEach var=&quot;specialty&quot; items=&quot;${vet.specialties}&quot;&gt;
+            &amp;lt;c:out value=&quot;${specialty.name}&quot;/&gt;
+        &amp;lt;/c:forEach&gt;
+        &amp;lt;c:if test=&quot;${vet.nrOfSpecialties == 0}&quot;&gt;none&amp;lt;/c:if&gt;
+    &amp;lt;/datatables:column&gt;
+&amp;lt;/datatables:table&gt;
+&lt;/pre&gt;
+&lt;p&gt;Let’s comment a bit the &lt;code&gt;datatables:table&lt;/code&gt; tag and its attributes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;With Dandelion-Datatables, you don’t need to use the native HTML &lt;code&gt;table&lt;/code&gt; tag any longer. All the HTML markup will be generated by the taglib thanks to the &lt;code&gt;datatables:table&lt;/code&gt; tag&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;id&lt;/code&gt; and &lt;code&gt;data&lt;/code&gt; attributes are mandatory here.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;id&lt;/code&gt; is just a HTML pass through attribute&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;data&lt;/code&gt; is the data source used to populate the table. We use Expression Language here to access the collection previously set in the request.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;row&lt;/code&gt; attribute is quite important here: this attribute tells Dandelion-Datatables to set a variable (page-scoped) that will be available during the iteration through the name it was assigned (&amp;#8220;vet&amp;#8221; here). This way, you will be able to use this variable and so access all the bean’s properties in the columns.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;We use the &lt;code&gt;cdn&lt;/code&gt; attribute here to tell Dandelion-Datatables to grab the needed static resources from a compatible CDN (the Microsoft’s one today). This way, all JS and CSS needed by DataTables will be automatically loaded in the page&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;We also use one of the the cool features of Dandelion-Datatables : theming. Today, &lt;a href=&#39;http://dandelion.github.io/datatables/features/styling/bootstrap2.html&#39;&gt;Bootstrap 2&lt;/a&gt; and &lt;a href=&#39;http://dandelion.github.io/datatables/features/styling/jqueryui.html&#39;&gt;jQuery UI ThemeRoller&lt;/a&gt; are supported. Just use the &lt;code&gt;theme&lt;/code&gt; attribute to activate the theme you want. Note that the static resources needed by those themes must be added manually before using the taglib.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cssClass&lt;/code&gt; is, as for &lt;code&gt;id&lt;/code&gt;, a HTML pass through attribute&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now let’s comment a bit the &lt;code&gt;datatables:column&lt;/code&gt; tag and its attributes :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Since no property is directly displayed in a column, we can’t use the &lt;code&gt;property&lt;/code&gt; attribute but instead, we set a body to the &lt;code&gt;datatables:column&lt;/code&gt; tag. This will allows us to use anything we need inside (JSTL, Expression Language, plain HTML, &amp;#8230;)&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;title&lt;/code&gt; attribute is used to fill the &lt;code&gt;th&lt;/code&gt; cells&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;At this point, the taglib will generate the needed DataTables configuration (composed of Javascript and potentially CSS) and the table will be rendered using DataTables. Pretty cool right? :-)&lt;/p&gt;
+&lt;p class=&#39;text-center&#39;&gt;
+&lt;img class=&#39;blog_img&#39; src=&#39;/assets/images/blog/petclinic03.png&#39; /&gt;
+&lt;/p&gt;&lt;br /&gt;
+&lt;h5 id=&#39;ownerslistjsp&#39;&gt;ownersList.jsp&lt;/h5&gt;
+
+&lt;p&gt;Let’s adapt the other JSP. This time, we also use the JSTL &lt;code&gt;c:forEach&lt;/code&gt; tag to iterate over a collection of owners.&lt;/p&gt;
+&lt;pre class=&#39;prettyprint&#39;&gt;
+&amp;lt;table class=&quot;table table-striped&quot;&gt;
+    &amp;lt;thead&gt;
+        &amp;lt;tr&gt;
+            &amp;lt;th style=&quot;width: 150px;&quot;&gt;Name&amp;lt;/th&gt;
+            &amp;lt;th style=&quot;width: 200px;&quot;&gt;Address&amp;lt;/th&gt;
+            &amp;lt;th&gt;City&amp;lt;/th&gt;
+            &amp;lt;th&gt;Telephone&amp;lt;/th&gt;
+            &amp;lt;th style=&quot;width: 100px;&quot;&gt;Pets&amp;lt;/th&gt;
+        &amp;lt;/tr&gt;
+    &amp;lt;/thead&gt;
+    &amp;lt;c:forEach var=&quot;owner&quot; items=&quot;${selections}&quot;&gt;
+        &amp;lt;tr&gt;
+            &amp;lt;td&gt;
+                &amp;lt;spring:url value=&quot;owners/{ownerId}.html&quot; var=&quot;ownerUrl&quot;&gt;
+                    &amp;lt;spring:param name=&quot;ownerId&quot; value=&quot;${owner.id}&quot;/&gt;
+                &amp;lt;/spring:url&gt;
+                &amp;lt;a href=&quot;${fn:escapeXml(ownerUrl)}&quot;&gt;&amp;lt;c:out value=&quot;${owner.firstName} ${owner.lastName}&quot;/&gt;&amp;lt;/a&gt;
+            &amp;lt;/td&gt;
+            &amp;lt;td&gt;&amp;lt;c:out value=&quot;${owner.address}&quot;/&gt;&amp;lt;/td&gt;
+            &amp;lt;td&gt;&amp;lt;c:out value=&quot;${owner.city}&quot;/&gt;&amp;lt;/td&gt;
+            &amp;lt;td&gt;&amp;lt;c:out value=&quot;${owner.telephone}&quot;/&gt;&amp;lt;/td&gt;
+            &amp;lt;td&gt;
+                &amp;lt;c:forEach var=&quot;pet&quot; items=&quot;${owner.pets}&quot;&gt;
+                    &amp;lt;c:out value=&quot;${pet.name}&quot;/&gt;
+                &amp;lt;/c:forEach&gt;
+            &amp;lt;/td&gt;
+        &amp;lt;/tr&gt;
+    &amp;lt;/c:forEach&gt;
+&amp;lt;/table&gt;
+&lt;/pre&gt;
+&lt;p&gt;Now, using Dandelion-Datatables:&lt;/p&gt;
+&lt;pre class=&#39;prettyprint&#39;&gt;
+&amp;lt;datatables:table id=&quot;owners&quot; data=&quot;${selections}&quot; cdn=&quot;true&quot; row=&quot;owner&quot; theme=&quot;bootstrap2&quot; cssClass=&quot;table table-striped&quot;&gt;
+    &amp;lt;datatables:column title=&quot;Name&quot; cssStyle=&quot;width: 150px;&quot;&gt;
+        &amp;lt;spring:url value=&quot;owners/{ownerId}.html&quot; var=&quot;ownerUrl&quot;&gt;
+            &amp;lt;spring:param name=&quot;ownerId&quot; value=&quot;${owner.id}&quot;/&gt;
+        &amp;lt;/spring:url&gt;
+        &amp;lt;a href=&quot;${fn:escapeXml(ownerUrl)}&quot;&gt;&amp;lt;c:out value=&quot;${owner.firstName} ${owner.lastName}&quot;/&gt;&amp;lt;/a&gt;
+    &amp;lt;/datatables:column&gt;
+    &amp;lt;datatables:column title=&quot;Address&quot; property=&quot;address&quot; cssStyle=&quot;width: 200px;&quot;/&gt;
+    &amp;lt;datatables:column title=&quot;City&quot; property=&quot;city&quot;/&gt;
+    &amp;lt;datatables:column title=&quot;Telephone&quot; property=&quot;telephone&quot;/&gt;
+    &amp;lt;datatables:column title=&quot;Pets&quot; cssStyle=&quot;width: 100px;&quot;&gt;
+        &amp;lt;c:forEach var=&quot;pet&quot; items=&quot;${owner.pets}&quot;&gt;
+            &amp;lt;c:out value=&quot;${pet.name}&quot;/&gt;
+        &amp;lt;/c:forEach&gt;
+    &amp;lt;/datatables:column&gt;
+&amp;lt;/datatables:table&gt;
+&lt;/pre&gt;
+&lt;p&gt;Note here that:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;You can use anything you want inside a &lt;code&gt;datatables:column&lt;/code&gt; tag: plain HTML, Expression Language, JSTL, Spring taglibs, &amp;#8230;&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;In the &amp;#8220;Address&amp;#8221;, &amp;#8220;City&amp;#8221; and &amp;#8220;Telephone&amp;#8221; columns, we just display a bean’s property. For this purpose, you can use the &lt;code&gt;property&lt;/code&gt; attribute where you just need to pass the name of the property.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;At this point, we have achieved our initial goal. The main tables of the application are now displayed using DataTables.&lt;/p&gt;
+&lt;p class=&#39;text-center&#39;&gt;
+&lt;img class=&#39;blog_img&#39; src=&#39;/assets/images/blog/petclinic04.png&#39; /&gt;
+&lt;/p&gt;
+&lt;p&gt;Also note that both tables have additional features:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;You can sort on any column&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;A search box appeared on the top-right, allowing you to filter data on every column very quickly&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;h4 id=&#39;bonus_step__adding_pdf_export&#39;&gt;Bonus step : adding PDF export&lt;/h4&gt;
+
+&lt;p&gt;In order to show another cool feature of &lt;a href=&#39;http://dandelion.github.io/datatables&#39;&gt;Dandelion-Datatables&lt;/a&gt;, we decided to add a PDF export. Well, let’s do this!&lt;/p&gt;
+
+&lt;p&gt;Some extras already exist and provide some utilities to deal with export. In this use case, since we want to export in PDF format, we will use the &lt;a href=&#39;https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-itext&#39;&gt;datatables-export-itext&lt;/a&gt; that contains :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;the &lt;a href=&#39;http://itextpdf.com/&#39;&gt;iText library&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;an &lt;a href=&#39;https://github.com/dandelion/dandelion-datatables/blob/master/datatables-extras/datatables-export-itext/src/main/java/com/github/dandelion/datatables/extras/export/itext/PdfExport.java&#39;&gt;export class&lt;/a&gt; that Dandelion-Datatables will use &lt;a href=&#39;https://github.com/dandelion/dandelion-datatables/blob/master/datatables-core/src/main/resources/config/datatables-default.properties#L35&#39;&gt;by default&lt;/a&gt; when exporting data&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;First, let’s update the &lt;code&gt;pom.xml&lt;/code&gt; to add the new dependency :&lt;/p&gt;
+&lt;pre class=&#39;prettyprint&#39;&gt;
+&amp;lt;dependency&gt;
+    &amp;lt;groupId&gt;com.github.dandelion&amp;lt;/groupId&gt;
+    &amp;lt;artifactId&gt;datatables-export-itext&amp;lt;/artifactId&gt;
+    &amp;lt;version&gt;0.8.11&amp;lt;/version&gt;
+&amp;lt;/dependency&gt;
+&lt;/pre&gt;
+&lt;p&gt;Second step, since we’re keeping backward compatibility with the Servlet 2.x API, we need to update the deployment descriptor again (&lt;code&gt;web.xml&lt;/code&gt;) by adding the Datatables filter :&lt;/p&gt;
+&lt;pre class=&#39;prettyprint&#39;&gt;
+&amp;lt;!-- Dandelion-Datatables filter definition (used for export) --&gt;
+&amp;lt;filter&gt;
+    &amp;lt;filter-name&gt;datatablesFilter&amp;lt;/filter-name&gt;
+    &amp;lt;filter-class&gt;com.github.dandelion.datatables.extras.servlet2.filter.DatatablesFilter&amp;lt;/filter-class&gt;
+&amp;lt;/filter&gt;
+&amp;lt;filter-mapping&gt;
+    &amp;lt;filter-name&gt;datatablesFilter&amp;lt;/filter-name&gt;
+    &amp;lt;url-pattern&gt;/*&amp;lt;/url-pattern&gt;
+&amp;lt;/filter-mapping&gt;
+&lt;/pre&gt;&lt;div class=&#39;alert alert-info&#39;&gt;&lt;strong&gt;Info!&lt;/strong&gt;&lt;br /&gt;
+Note that the above filter configuration is automatically done using a Servlet 3.x compatible container, so that you don’t need to add anything in the &lt;code&gt;web.xml&lt;/code&gt; file.
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Let&amp;#8217;s adapt the markup now.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Enabling export is quite easy. Just set the &lt;code&gt;export&lt;/code&gt; table attribute to the type of export you want (&lt;code&gt;pdf&lt;/code&gt; here). Remember that Dandelion-Datatables will use the &lt;a href=&#39;https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-itext&#39;&gt;datatables-export-itext&lt;/a&gt; extra by default (based on the &lt;a href=&#39;http://itextpdf.com/&#39;&gt;iText library&lt;/a&gt;).&lt;/p&gt;
+&lt;pre class=&#39;prettyprint&#39;&gt;
+&amp;lt;datatables:table id=&quot;owners&quot; data=&quot;${selections}&quot; ... &lt;span style=&#39;color:red;font-weight:bold;&#39;&gt;export=&quot;pdf&quot;&lt;/span&gt;&gt;
+...
+&amp;lt;/datatables:table&gt;
+&lt;/pre&gt;
+&lt;p&gt;As a consequence, you will see an export link appearing at the top-right of the table.&lt;/p&gt;
+&lt;p class=&#39;text-center&#39;&gt;
+&lt;img class=&#39;blog_img&#39; src=&#39;/assets/images/blog/petclinic05.png&#39; /&gt;
+&lt;/p&gt;
+&lt;p&gt;Let’s click and see!&lt;/p&gt;
+&lt;p class=&#39;text-center&#39;&gt;
+&lt;img class=&#39;blog_img&#39; src=&#39;/assets/images/blog/petclinic06.png&#39; /&gt;
+&lt;/p&gt;
+&lt;p&gt;Two problems here.&lt;/p&gt;
+
+&lt;p&gt;1. First, the export link is a bit ugly.&lt;/p&gt;
+
+&lt;p&gt;Indeed, &lt;a href=&#39;http://dandelion.github.io/datatables&#39;&gt;Dandelion-Datatables&lt;/a&gt; generates unstyled links by default, in order to be as flexible as possible. You can however adapt the link to fit your need using the &lt;code&gt;datatables:export&lt;/code&gt; tag.&lt;/p&gt;
+
+&lt;p&gt;Just add a &lt;code&gt;datatables:export&lt;/code&gt; tag as follows:&lt;/p&gt;
+&lt;pre class=&#39;prettyprint&#39;&gt;
+&amp;lt;datatables:table id=&quot;owners&quot; data=&quot;${selections}&quot; ... &lt;span style=&#39;color:red;font-weight:bold;&#39;&gt;export=&quot;pdf&quot;&lt;/span&gt;&gt;
+    ...
+    &lt;span style=&#39;color:red;font-weight:bold;&#39;&gt;&amp;lt;datatables:export type=&quot;pdf&quot; cssClass=&quot;btn btn-small&quot; /&gt;&lt;/span&gt;
+&amp;lt;/datatables:table&gt;
+&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;datatables:export&lt;/code&gt; tag allows you to &lt;a href=&#39;http://dandelion.github.io/datatables/ref/jsp/export.html&#39;&gt;configure all exports&lt;/a&gt; that are currently enabled in the table.&lt;/p&gt;
+
+&lt;p&gt;You need to bind the tag using the &lt;code&gt;type&lt;/code&gt; attribute and then add all the configuration you need (css classes to apply, the export file name, header inclusion/exclusion, &amp;#8230;). In our case, we just add the Bootstrap classes as we did before on buttons using the &lt;code&gt;cssClass&lt;/code&gt; attribute.&lt;/p&gt;
+
+&lt;p&gt;2. Second, more important, HTML markup appears in the PDF export.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, you can also configure the column’s content in each export. Let’s see how to do this. Actually, you want two different types of display, one for the HTML (containing the HTML markup, links, formatting, &amp;#8230;) and another one for the PDF, without any HTML markup.&lt;/p&gt;
+
+&lt;p&gt;For this purpose, you can use the &lt;code&gt;display&lt;/code&gt; attribute of the &lt;code&gt;datatables:column&lt;/code&gt; tag as follows :&lt;/p&gt;
+&lt;pre class=&#39;prettyprint&#39;&gt;
+&amp;lt;datatables:table id=&quot;owners&quot; data=&quot;${selections}&quot; ... &lt;span style=&#39;color:red;font-weight:bold;&#39;&gt;export=&quot;pdf&quot;&lt;/span&gt;&gt;
+    &amp;lt;datatables:column &lt;span style=&#39;color:red;font-weight:bold;&#39;&gt;title=&quot;Name&quot; display=&quot;html&quot;&lt;/span&gt; cssStyle=&quot;width: 150px;&quot;&gt;
+        &amp;lt;spring:url value=&quot;owners/{ownerId}.html&quot; var=&quot;ownerUrl&quot;&gt;
+            &amp;lt;spring:param name=&quot;ownerId&quot; value=&quot;${owner.id}&quot;/&gt;
+        &amp;lt;/spring:url&gt;
+        &amp;lt;a href=&quot;${fn:escapeXml(ownerUrl)}&quot;&gt;&amp;lt;c:out value=&quot;${owner.firstName} ${owner.lastName}&quot;/&gt;&amp;lt;/a&gt;
+    &amp;lt;/datatables:column&gt;
+    &amp;lt;datatables:column &lt;span style=&#39;color:red;font-weight:bold;&#39;&gt;title=&quot;Name&quot; display=&quot;pdf&quot;&lt;/span&gt;&gt;
+        &amp;lt;c:out value=&quot;${owner.firstName} ${owner.lastName}&quot;/&gt;
+    &amp;lt;/datatables:column&gt;
+    ...
+    &amp;lt;datatables:export type=&quot;pdf&quot; cssClass=&quot;btn btn-small&quot; /&gt;
+&amp;lt;/datatables:table&gt;
+&lt;/pre&gt;
+&lt;p&gt;You’ve noticed that two columns have been added here, with the same title, but not with the same value in the &lt;code&gt;display&lt;/code&gt; attribute. It just means that :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;the first one (with “html” as a value) will only be rendered in the HTML source, nowhere else.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;the second one (with “pdf” as a value) will only be rendered in the PDF export, nowhere else.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As a result, let’s look at both the HTML page and the PDF export:&lt;/p&gt;
+&lt;p class=&#39;text-center&#39;&gt;
+&lt;img class=&#39;blog_img&#39; src=&#39;/assets/images/blog/petclinic07.png&#39; /&gt;
+&lt;/p&gt;&lt;p class=&#39;text-center&#39;&gt;
+&lt;img class=&#39;blog_img&#39; src=&#39;/assets/images/blog/petclinic08.png&#39; /&gt;
+&lt;/p&gt;
+&lt;p&gt;Both issues are now fixed. :-)&lt;/p&gt;
+&lt;br /&gt;
+&lt;h4 id=&#39;conclusion&#39;&gt;Conclusion&lt;/h4&gt;
+
+&lt;p&gt;We’ve seen in this tutorial how to integrate Dandelion-Datatables in a classic web app whose view layer is based on JSP.&lt;/p&gt;
+
+&lt;p&gt;Note that &lt;a href=&#39;http://dandelion.github.io/datatables/&#39;&gt;Dandelion-Datatables&lt;/a&gt; has lots of other features : &lt;a href=&#39;http://dandelion.github.io/datatables/ref/thymeleaf/&#39;&gt;Thymeleaf&lt;/a&gt; support, &lt;a href=&#39;http://datatables.net/extras/&#39;&gt;DataTables plugins&lt;/a&gt; support, AJAX sources, server-side processing, &amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;If you have any question, feel free to contact us using the &lt;a href=&#39;http://dandelion.48353.n6.nabble.com/&#39;&gt;forum&lt;/a&gt;, filling out a &lt;a href=&#39;https://github.com/dandelion/issues/issues&#39;&gt;new issue&lt;/a&gt; or using the comments below.&lt;/p&gt;
+&lt;br /&gt;
+&lt;h4 id=&#39;references&#39;&gt;References&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#39;http://dandelion.github.io/datatables/&#39;&gt;Dandelion-Datatables site&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#39;https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application&#39;&gt;Full presentation of the Spring Petclinic app&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#39;https://github.com/SpringSource/spring-petclinic&#39;&gt;Spring Petclinic on GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#39;http://spring-petclinic.cloudfoundry.com/&#39;&gt;Spring Petclinic on CloudFoundry&lt;/a&gt;&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/04/24/Integrating-Dandelion-DataTables-in-the-Spring-Petclinic-app</link>
+            <guid>http://dandelion.github.io/blog/2013/04/24/Integrating-Dandelion-DataTables-in-the-Spring-Petclinic-app</guid>
+            <pubDate>2013-04-24T00:00:00+02:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Dandelion Webanalytics 0.1.0 Release</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion-Webanalytics v0.1.0 has been released in &lt;a href=&#39;http://search.maven.org/#search%7Cga%7C1%7Cdandelion&#39;&gt;Maven Central&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the first version of Dandelion-Webanalytics.&lt;/p&gt;
+
+&lt;p&gt;You can see the full changelog &lt;a href=&#39;/webanalytics/changelog.html&#39;&gt;here&lt;/a&gt; and as usual, your thoughts and feedback are very welcome. :-)&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/04/22/dandelion-webanalytics-0.1.0-release</link>
+            <guid>http://dandelion.github.io/blog/2013/04/22/dandelion-webanalytics-0.1.0-release</guid>
+            <pubDate>2013-04-22T00:00:00+02:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Dandelion 0.1.0 Release</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion v0.1.0 has been released in &lt;a href=&#39;http://search.maven.org/#search%7Cga%7C1%7Cdandelion&#39;&gt;Maven Central&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the first version of Dandelion.&lt;/p&gt;
+
+&lt;p&gt;You can see the full changelog &lt;a href=&#39;/dandelion/changelog.html&#39;&gt;here&lt;/a&gt; and as usual, your thoughts and feedback are very welcome. :-)&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/04/22/dandelion-0.1.0-release</link>
+            <guid>http://dandelion.github.io/blog/2013/04/22/dandelion-0.1.0-release</guid>
+            <pubDate>2013-04-22T00:00:00+02:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Dandelion Datatables 0.8.11 Release</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion-Datatables v0.8.11 has been released in Maven Central.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This new version really looks like a major version but we reserved the release of the v0.9.0 for the &lt;a href=&#39;https://github.com/dandelion/issues/issues/54&#39;&gt;connection between Dandelion-Datatables and Dandelion&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Well, let&amp;#8217;s see some changes.&lt;/p&gt;
+&lt;br /&gt;
+&lt;h4 id=&#39;core&#39;&gt;Core&lt;/h4&gt;
+
+&lt;p&gt;First of all, we really moved forward regarding the stability of the framework. Indeed, we added lots of unit and integration tests. I&amp;#8217;ll soon write another blog to explain how tests are written in the particular case of a framework.&lt;/p&gt;
+
+&lt;p&gt;We also refactored the way callbacks are added because some conflicts were added using e.g. an AJAX-enabled table (where the &lt;code&gt;fnAdjustColumnSizing(true)&lt;/code&gt; function is automatically called in a &lt;code&gt;fnInitComplete&lt;/code&gt;) with a manual callback (e.g. the &lt;code&gt;&amp;lt;datatables:callback&amp;gt;&lt;/code&gt; tag or the &lt;code&gt;dt:cbk:init&lt;/code&gt; attribute. Well, to be short, no more conflict&amp;#8230; :-)&lt;/p&gt;
+&lt;br /&gt;
+&lt;h4 id=&#39;jsp_implementation&#39;&gt;JSP implementation&lt;/h4&gt;
+
+&lt;p&gt;Some enhancements have been added in the JSP implementation.&lt;/p&gt;
+
+&lt;p&gt;One of them is for example the row index that is now available inside the &lt;code&gt;&amp;lt;datatables:table&amp;gt;&lt;/code&gt; tag. You need to use the &lt;code&gt;row&lt;/code&gt; table attribute and append &lt;code&gt;_rowIndex&lt;/code&gt; as follows :&lt;/p&gt;
+&lt;pre class=&#39;prettyprint&#39;&gt;
+&amp;lt;datatables:table id=&quot;myTableId&quot; data=&quot;${persons}&quot; row=&quot;person&quot;&gt;
+   &amp;lt;datatables:column title=&quot;Id&quot; property=&quot;id&quot; /&gt;
+   &amp;lt;datatables:column title=&quot;FirstName&quot; property=&quot;firstName&quot; /&gt;
+   &amp;lt;datatables:column title=&quot;LastName&quot; property=&quot;lastName&quot; /&gt;
+   &amp;lt;datatables:column title=&quot;City&quot; property=&quot;address.town.name&quot; /&gt;
+   &amp;lt;datatables:column title=&quot;Mail&quot;&gt;
+      &amp;lt;c:out value=&quot;${person_rowIndex}&quot; /&gt;
+   &amp;lt;/datatables:column&gt;
+&amp;lt;/datatables:table&gt;
+&lt;/pre&gt;
+&lt;p&gt;Another one is the support for &lt;a href=&#39;http://docs.oracle.com/javase/1.4.2/docs/api/java/text/MessageFormat.html&#39;&gt;MessageFormat pattern&lt;/a&gt;. You can now use both the &lt;code&gt;property&lt;/code&gt; and the &lt;code&gt;format&lt;/code&gt; attributes to format columns as you need. Note that this formatting only apply on table that use DOM sources.&lt;/p&gt;
+&lt;pre class=&#39;prettyprint&#39;&gt;
+&amp;lt;datatables:table id=&quot;myTableId&quot; data=&quot;${persons}&quot;&gt;
+   &amp;lt;datatables:column title=&quot;Id&quot; property=&quot;id&quot; /&gt;
+   &amp;lt;datatables:column title=&quot;FirstName&quot; property=&quot;firstName&quot; /&gt;
+   &amp;lt;datatables:column title=&quot;LastName&quot; property=&quot;lastName&quot; /&gt;
+   &amp;lt;datatables:column title=&quot;City&quot; property=&quot;address.town.name&quot; /&gt;
+   &amp;lt;datatables:column title=&quot;Mail&quot; property=&quot;mail&quot; format=&quot;&amp;lt;a href=&#39;&#39;mailto:{0}&#39;&#39;&gt;{0}&amp;lt;/a&gt;&quot; /&gt;
+   &amp;lt;datatables:column title=&quot;Date of birth&quot; property=&quot;birthdate&quot; format=&quot;{0,date,dd-MM-yyyy}&quot; /&gt;
+&amp;lt;/datatables:table&gt;
+&lt;/pre&gt;&lt;br /&gt;
+&lt;h4 id=&#39;thymeleaf_implementation&#39;&gt;Thymeleaf implementation&lt;/h4&gt;
+
+&lt;p&gt;One the most significant change is that almost all attributes of the DataTables&amp;#8217; dialect are now evaluated using the &lt;a href=&#39;http://www.thymeleaf.org/standarddialect5minutes.html&#39;&gt;Standard Thymeleaf expressions&lt;/a&gt;. As a consequence, you have to wrap those attributes&amp;#8217; value with single quotes. Here is an example :&lt;/p&gt;
+&lt;pre class=&#39;prettyprint&#39;&gt;
+&amp;lt;table id=&quot;myTableId&quot; dt:table=&quot;true&quot; dt:url=&quot;&#39;/persons&#39;&quot;&gt;
+   &amp;lt;thead&gt;
+      &amp;lt;tr&gt;
+         &amp;lt;th dt:property=&quot;&#39;id&#39;&quot;&gt;Id&amp;lt;/th&gt;
+         &amp;lt;th dt:property=&quot;&#39;firstName&#39;&quot;&gt;Firstname&amp;lt;/th&gt;
+         &amp;lt;th dt:property=&quot;&#39;lastName&#39;&quot;&gt;Lastname&amp;lt;/th&gt;
+         &amp;lt;th dt:property=&quot;&#39;address.town.name&#39;&quot;&gt;City&amp;lt;/th&gt;
+         &amp;lt;th dt:property=&quot;&#39;mail&#39;&quot;&gt;Mail&amp;lt;/th&gt;
+      &amp;lt;/tr&gt;
+   &amp;lt;/thead&gt;
+&amp;lt;/table&gt;
+&lt;/pre&gt;
+&lt;p&gt;However, in order to keep the dialect as simple as possible, you can still use plain text (that won&amp;#8217;t be evaluated) in some attributes (&lt;code&gt;dt:theme=&amp;quot;bootstrap2&amp;quot;&lt;/code&gt;, &lt;code&gt;dt:sortinit=&amp;quot;asc&amp;quot;&lt;/code&gt;, &amp;#8230;). Thanks to &lt;a href=&#39;/team&#39;&gt;Pavel Janecka&lt;/a&gt; for his new contributions in this new feature.&lt;/p&gt;
+&lt;br /&gt;
+&lt;h4 id=&#39;documentation&#39;&gt;Documentation&lt;/h4&gt;
+
+&lt;p&gt;Of course all the documentation has been updated.&lt;/p&gt;
+
+&lt;p&gt;Please note that we also added a new column in all tag references, to indicate the compatibility of the feature with the type of data source you use.&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;As usual, you can see the full changelog &lt;a href=&#39;/datatables/changelog.html&#39;&gt;here&lt;/a&gt; and as usual, your thoughts and feedback are very welcome. :-)&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/04/20/dandelion-datatables-0.8.11-release</link>
+            <guid>http://dandelion.github.io/blog/2013/04/20/dandelion-datatables-0.8.11-release</guid>
+            <pubDate>2013-04-20T00:00:00+02:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Some Interesting Statistics</title>
+            <description>&lt;p&gt;I recently looked at download the stats in Maven Central and &amp;#8230; was pleasantly surprised! So I decided to make a quick review of the first seven months, since the beginning of the project (previously called DataTables4j).&lt;/p&gt;
+
+&lt;p&gt;Here are some figures:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#39;http://dandelion.github.io/datatables/changelog.html&#39;&gt;16 releases&lt;/a&gt;, from the v0.0.0-SNAPSHOT (DataTables4j) to the current v0.8.10 (Dandelion-Datatables)&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://github.com/dandelion&#39;&gt;5 pull-requests merged&lt;/a&gt; (all repos)&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://www.ohloh.net/p/dandelion&#39;&gt;418 commits&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://www.ohloh.net/p/dandelion&#39;&gt;4 contributors&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://www.ohloh.net/p/dandelion&#39;&gt;60,030 lines of code&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://github.com/dandelion&#39;&gt;46 GitHub stars&lt;/a&gt; (all repos)&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://www.google.fr/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=1&amp;amp;cad=rja&amp;amp;ved=0CDQQFjAA&amp;amp;url=https%3A%2F%2Ftwitter.com%2Fdandelion_proj&amp;amp;ei=Cd9vUcGjJs2-PcTxgYAH&amp;amp;usg=AFQjCNEIcv124Id_Pr4wXYVvc8unHdwZ-A&amp;amp;sig2=-EWv1xt2LUY9RjE0HSm3LA&amp;amp;bvm=bv.45368065,d.d2k&#39;&gt;29 Twitter followers&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;http://dandelion-forum.48353.x6.nabble.com/&#39;&gt;75 topics in the forum&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;http://dandelion-forum.48353.x6.nabble.com/&#39;&gt;376 replies in the forum&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;http://dandelion-forum.48353.x6.nabble.com/&#39;&gt;1371 views in the forum&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here are some download stats:&lt;/p&gt;
+&lt;p class=&#39;text-center&#39;&gt;
+&lt;img class=&#39;blog_img&#39; src=&#39;/assets/images/blog/downloads_12_months.jpg&#39; /&gt;
+&lt;/p&gt;&lt;p class=&#39;text-center&#39;&gt;
+&lt;img class=&#39;blog_img&#39; src=&#39;/assets/images/blog/downloads_details_12_months.jpg&#39; /&gt;
+&lt;/p&gt;
+&lt;p&gt;Interesting figures! We call already draw some conclusions :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the JSP template engine is still far ahead of Thymeleaf, which yet deserves to be known&lt;/li&gt;
+
+&lt;li&gt;it seems you still massively use the 2.x Servlet API&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We find all these statistics pretty amazing, especially because 99% of the project is coded on our free time (yes, we sometimes answer questions during work hours&amp;#8230;), in the evenings and on weekends. To be honest, we weren&amp;#8217;t expecting such results!&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;Well, the conclusion is pretty simple : &lt;p class=&#39;text-center&#39;&gt;
+&lt;img class=&#39;blog_img&#39; height=&#39;300px&#39; src=&#39;/assets/images/blog/cool-thanks-guys.jpg&#39; width=&#39;300px&#39; /&gt;
+&lt;/p&gt;&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/04/18/some-interesting-statistics</link>
+            <guid>http://dandelion.github.io/blog/2013/04/18/some-interesting-statistics</guid>
+            <pubDate>2013-04-18T00:00:00+02:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Dandelion Datatables 0.8.10 Release</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion-Datatables v0.8.10 has been released in Maven Central.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The new release contains lots of new features, for both JSP and Thymeleaf. See the &lt;a href=&#39;/datatables/changelog.html&#39;&gt;changelog&lt;/a&gt; for more details.&lt;/p&gt;
+
+&lt;p&gt;The other thing to mention is that we tried to integrate the awesome new design made by &lt;a href=&#39;/acknowledgments.html&#39;&gt;Gianni Polito&lt;/a&gt;. For now, only &lt;a href=&#39;/datatables&#39;&gt;Dandelion-Datatables&lt;/a&gt; has been re-designed. Feel free to share any feedback in the forum!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;For more information, see the dandelion-datatables&amp;#8217; &lt;a href=&#39;/datatables/changelog.html&#39;&gt;changelog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;As usual, there is a &lt;a href=&#39;http://dandelion-forum.48353.n6.nabble.com/Dandelion-Datatables-v0-8-10-has-been-released-td297.html&#39;&gt;forum discussion&lt;/a&gt; for this blog post. As usual, your thoughts and feedback are very welcome.&lt;/em&gt; :-)&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/03/27/dandelion-datatables-0.8.10-release</link>
+            <guid>http://dandelion.github.io/blog/2013/03/27/dandelion-datatables-0.8.10-release</guid>
+            <pubDate>2013-03-27T00:00:00+01:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Dandelion Datatables 0.8.8 Release</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion-Datatables v0.8.8 has been released in Maven Central.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The new release contains 2 major changes :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;integration tests have been significantly improved&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;the export feature has been improved for the Thymeleaf implementation&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#39;integration_tests&#39;&gt;Integration tests&lt;/h4&gt;
+
+&lt;p&gt;More and more features are covered by integration tests at the moment. That&amp;#8217;s cool! And the technical stack we choose is not for nothing.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#39;http://junit.org/&#39;&gt;JUnit&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://code.google.com/p/fest/&#39;&gt;FestAssert&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://github.com/FluentLenium/FluentLenium&#39;&gt;FluentLenium&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://github.com/detro/ghostdriver&#39;&gt;GhostDriver&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;http://www.eclipse.org/jetty/&#39;&gt;Jetty&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Writing integration tests with Selenium becomes really easy with this stack! We&amp;#8217;ll probably write a new post for that.&lt;/p&gt;
+
+&lt;h4 id=&#39;export_feature&#39;&gt;Export feature&lt;/h4&gt;
+
+&lt;p&gt;The Thymeleaf implementation of &lt;strong&gt;Dandelion-Datatables&lt;/strong&gt; was lacking some important features like adapting export content, customizing export links, &amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;Well, you can now configure your export in a less verbose manner than in the JSP implementation :-) The documentation will be updated in the day.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;For more information, see the dandelion-datatables&amp;#8217; &lt;a href=&#39;/datatables/changelog.html&#39;&gt;changelog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;There is a &lt;a href=&#39;http://dandelion-forum.48353.n6.nabble.com/NEWS-Dandelion-Datatables-v0-8-8-has-been-released-td263.html&#39;&gt;forum discussion&lt;/a&gt; for this blog post. As usual, your thoughts and feedback are very welcome. :-)&lt;/em&gt;&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/03/20/dandelion-datatables-0.8.8-release</link>
+            <guid>http://dandelion.github.io/blog/2013/03/20/dandelion-datatables-0.8.8-release</guid>
+            <pubDate>2013-03-20T00:00:00+01:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Dandelion Datatables 0.8.7 Release</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion-Datatables v0.8.7 has been released in Maven Central.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The important thing to mention for this new release is that it embeds the first pull-request!! Thanks to &lt;a href=&#39;https://github.com/Sorceror&#39;&gt;Pavel Janecka&lt;/a&gt;, you can now add a Javascript rendering function in AJAX-populated tables. Many thanks to him!&lt;/p&gt;
+
+&lt;p&gt;For the rest, the 0.8.7 contains mainly bugfixes.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;For more information, see the dandelion-datatables&amp;#8217; &lt;a href=&#39;/datatables/changelog.html&#39;&gt;changelog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;There is a &lt;a href=&#39;http://dandelion-forum.48353.n6.nabble.com/Dandelion-Datatables-v0-8-7-has-been-released-td253.html&#39;&gt;forum discussion&lt;/a&gt; for this blog post. As usual, your thoughts and feedback are very welcome. :-)&lt;/em&gt;&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/03/15/dandelion-datatables-0.8.7-release</link>
+            <guid>http://dandelion.github.io/blog/2013/03/15/dandelion-datatables-0.8.7-release</guid>
+            <pubDate>2013-03-15T00:00:00+01:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Documentation Update</title>
+            <description>&lt;h4 id=&#39;fresh_documentation_available&#39;&gt;Fresh documentation available!&lt;/h4&gt;
+
+&lt;p&gt;The new documentation has been published! From now, we&amp;#8217;ll use &lt;a href=&#39;http://pages.github.com/&#39;&gt;Github Pages&lt;/a&gt; for the whole documentation generation and publication process.&lt;/p&gt;
+
+&lt;p&gt;All the informations are now centralized in &lt;a href=&#39;http://dandelion.github.com&#39;&gt;http://dandelion.github.com&lt;/a&gt; (documentation, blog, &amp;#8230;). We tried to make the site as user friendly as possible.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#39;http://dandelion.github.com/datatables&#39;&gt;http://dandelion.github.com/datatables&lt;/a&gt; : for the Dandelion-DataTables&amp;#8217; documentation&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;http://dandelion.github.com/dandelion&#39;&gt;http://dandelion.github.com/dandelion&lt;/a&gt; : for the Dandelion core documentation&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;http://dandelion.github.com/webanalytics&#39;&gt;http://dandelion.github.com/webanalytics&lt;/a&gt; : for the Dandelion-webAnalytics&amp;#8217; documentation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Technically speaking, we now use &lt;a href=&#39;https://github.com/mojombo/jekyll&#39;&gt;Jekyll&lt;/a&gt; to generate the site and the famous &lt;a href=&#39;http://twitter.github.com/bootstrap&#39;&gt;Bootstrap framework&lt;/a&gt; to have a clear and responsive site.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;We hope that this huge refreshment will make the documentation much user friendly and informative.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Any reaction or comments? Please use the &lt;a href=&#39;http://dandelion-forum.48353.n6.nabble.com/New-documentation-td240.html&#39;&gt;corresponding topic&lt;/a&gt;!&lt;/em&gt;&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/03/11/documentation-update</link>
+            <guid>http://dandelion.github.io/blog/2013/03/11/documentation-update</guid>
+            <pubDate>2013-03-11T00:00:00+01:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Dandelion Datatables 0.8.6 Release</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion-Datatables v0.8.6 has been released in Maven Central.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&#39;major_changes&#39;&gt;Major Changes&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;New release management&lt;/strong&gt; : now, all JARs (core and extras) have the same version number. This will be much clearer and simpler for both developers and users.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;New cache system&lt;/strong&gt; : a huge &lt;a href=&#39;http://github.com/dandelion/issues/issues/34&#39;&gt;performance issue&lt;/a&gt; has been raised by &lt;a href=&#39;https://github.com/jdubois&#39;&gt;Julien Dubois&lt;/a&gt; during his stress test of the &lt;a href=&#39;https://github.com/SpringSource/spring-petclinic&#39;&gt;Spring-petclinic app&lt;/a&gt;. It has been fixed setting up a basic cache system (a static Map at the moment) that stores the generated web resources (js, css) per request URI and per table DOM id. This way, the DataTables configuration (and other needed assets) are generated only once and then are stored in the &lt;a href=&#39;http://github.com/dandelion/dandelion-datatables/blob/master/datatables-core/src/main/java/com/github/dandelion/datatables/core/cache/AssetCache.java&#39;&gt;AssetCache&lt;/a&gt;. So no need to use the ServletContext any longer, which was decreasing performance.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#39;minor_changes&#39;&gt;Minor Changes&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Added a new &lt;code&gt;searchable&lt;/code&gt; / &lt;code&gt;dt:searchable&lt;/code&gt; attributes (JSP/Thymeleaf) to exclude column from searching&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#39;issues&#39;&gt;Issues&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#39;https://github.com/dandelion/issues/issues/30&#39;&gt;issue #30&lt;/a&gt; - Export links generation&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://github.com/dandelion/issues/issues/32&#39;&gt;issue #32&lt;/a&gt; - Exclude column from searching&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://github.com/dandelion/issues/issues/34&#39;&gt;issue #34&lt;/a&gt; - Memory leak&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://github.com/dandelion/issues/issues/35&#39;&gt;issue #35&lt;/a&gt; - Wrong use of EVAL_PAGE in the doStartTag method of the ColumnTag&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://github.com/dandelion/issues/issues/36&#39;&gt;issue #36&lt;/a&gt; - Problem with tld file on JBoss 6&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;for more information, see the dandelion-datatables&amp;#8217; &lt;a href=&#39;http://dandelion.github.com/datatables/changelog.html&#39;&gt;changelog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/03/05/dandelion-datatables-0.8.6-release</link>
+            <guid>http://dandelion.github.io/blog/2013/03/05/dandelion-datatables-0.8.6-release</guid>
+            <pubDate>2013-03-05T00:00:00+01:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Dandelion Datatables 0.8.5 Release</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion-Datatables v0.8.5 has been released in Maven Central.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&#39;issues&#39;&gt;Issues&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#39;https://github.com/dandelion/issues/issues/19&#39;&gt;issue #19&lt;/a&gt; - Shift in the first row if a columnTag has a body&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://github.com/dandelion/issues/issues/20&#39;&gt;issue #20&lt;/a&gt; - ExportLink position issue when Bootstrap2 theme enabled&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;for more information, see the dandelion-datatables&amp;#8217; &lt;a href=&#39;http://dandelion.github.com/datatables/changelog.html&#39;&gt;changelog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/02/23/dandelion-datatables-0.8.5-release</link>
+            <guid>http://dandelion.github.io/blog/2013/02/23/dandelion-datatables-0.8.5-release</guid>
+            <pubDate>2013-02-23T00:00:00+01:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Dandelion Datatables 0.8.4 Release</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion-Datatables v0.8.4 has been released in Maven Central.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&#39;changes&#39;&gt;Changes&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DataTables4j&lt;/strong&gt; has became &lt;strong&gt;Dandelion-datatables&lt;/strong&gt;! See the &lt;a href=&#39;http://dandelion.github.com/datatables/migration.html&#39;&gt;migration guide&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#39;issues&#39;&gt;Issues&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#39;https://github.com/dandelion/issues/issues/16&#39;&gt;issue #16&lt;/a&gt; - Dynamic value for table&amp;#8217;s id&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;https://github.com/dandelion/issues/issues/17&#39;&gt;issue #17&lt;/a&gt; - Table display issue&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;for more information, see the dandelion-datatables&amp;#8217; &lt;a href=&#39;http://dandelion.github.com/datatables/changelog.html&#39;&gt;changelog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/02/21/dandelion-datatables-0.8.4-release</link>
+            <guid>http://dandelion.github.io/blog/2013/02/21/dandelion-datatables-0.8.4-release</guid>
+            <pubDate>2013-02-21T00:00:00+01:00</pubDate>
+         </item>
+      
+         <item>
+            <title>Announcement</title>
+            <description>&lt;p&gt;&lt;strong&gt;Hi all!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Along with the &lt;a href=&#39;https://github.com/datatables4j&#39;&gt;DataTables4j&lt;/a&gt; development, Romain and I have been working on a new project for several weeks. Its name? Dandelion!&lt;/p&gt;
+
+&lt;p&gt;A brand new doc site is coming, with lots of explanations, but to be succinct, here are the main guidelines of Dandelion :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Simplications in web assets management (js, css, &amp;#8230;), you&amp;#8217;ll see how a bit later&lt;/li&gt;
+
+&lt;li&gt;Rich and easily expandable component library for easier web development&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You may ask yourself what kind of component?&lt;/p&gt;
+
+&lt;p&gt;Well, the first one will be, guess what, &lt;a href=&#39;https://github.com/dandelion/datatables&#39;&gt;Dandelion-datatables&lt;/a&gt;! :-)&lt;/p&gt;
+
+&lt;p&gt;The goal is indeed to provide multiples components, that you will be able to use in your webapp, still with JSP and Thymeleaf support.&lt;/p&gt;
+
+&lt;p&gt;So, DataTables4j will become the first Dandelion web component!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;More technically speaking now.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To avoid complicated and cumbersome migration from DataTables4j to Dandelion-datatables, we decided to switch to Dandelion relatively early, that&amp;#8217;s why we&amp;#8217;re going to operate the change in the v0.8.4.&lt;/p&gt;
+
+&lt;p&gt;Basically, the main changes consist in simple renaming but a migration guide will still be prepared.&lt;/p&gt;
+
+&lt;p&gt;DataTables4j development, enhancements and bug fixes will be moved to Dandelion-datatables.&lt;/p&gt;
+
+&lt;p&gt;Current DataTables4j source repositories, issues, documentation, forum and demos will remain available, except we&amp;#8217;ll add some (discrete) announcements to invite you to switch to Dandelion. ;-)&lt;/p&gt;
+
+&lt;p&gt;Current support, through this forum, won&amp;#8217;t be stopped but all the questions/bugs that need code update will be done in the new Github repo (Dandelion-datatables).&lt;/p&gt;
+
+&lt;p&gt;Finally, all current opened issues have already been copied to the &lt;a href=&#39;http://github.com/dandelion/issues/issues&#39;&gt;new issues repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We&amp;#8217;ll keep you updated!&lt;/p&gt;
+
+&lt;p&gt;Regards,&lt;/p&gt;
+
+&lt;p&gt;Romain and Thibault&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/02/16/announcement</link>
+            <guid>http://dandelion.github.io/blog/2013/02/16/announcement</guid>
+            <pubDate>2013-02-16T00:00:00+01:00</pubDate>
+         </item>
+      
+   </channel>
+</rss>

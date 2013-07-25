@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dandelion Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="java, web, component, library, assets, datatables">
+<meta name="author" content="Dandelion">
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
+<link href="/assets/css/component.css" rel="stylesheet">
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+<!--[if IE 7]>
+      <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
+      <![endif]-->
+<!--[if lt IE 9]>
+      <script src="/assets/js/html5shiv.js"></script>
+      <![endif]-->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+<link rel="shortcut icon" href="/assets/images/dandelion_square.png">
+
+<script>
+      var _gaq = _gaq || [];
+      _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+      _gaq.push([ '_setCookiePath', '/datatables/' ]);
+      _gaq.push([ '_trackPageview' ]);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+      			: 'http://www')
+      			+ '.google-analytics.com/ga.js';
+      	var s = document.getElementsByTagName('script')[0];
+      	s.parentNode.insertBefore(ga, s);
+      })();
+</script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+   <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+         <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a href="/datatables">
+               <div id="logo_container">
+                   <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
+                   <p id="logo_text">
+                       datatables
+                   </p>
+               </div>
+            </a>
+            <div class="nav-collapse collapse">
+               <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
+                  <li class="text-center"><a href="/"><i class="icon-home"></i> Home</a></li>
+                  <li class="text-center"><a href="/blog"><i class="icon-comment"></i> Blog</a></li>
+                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-github"></i> Issues</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/dandelion-datatables"><i class="icon-github-sign"></i> Sources</a></li>
+               </ul>
+               <ul class="nav pull-right" style="clear:right;">
+                  <form class="navbar-search" action="http://google.com/search" method="get" style="margin-right:15px;">
+                     <input type="hidden" name="q" value="site:dandelion.github.io/datatables" />
+                     <input type="text" class="search search-query" name="q" results="0" placeholder="Search"/>
+                  </form>
+               </ul>
+            </div>
+            <!--/.nav-collapse -->
+         </div>
+      </div>
+   </div>
+   <div class="container-fluid">
+      <div class="row-fluid">
+         <div class="span2">
+   <div class="well sidebar-nav">
+      <ul class="nav nav-list">
+         
+         <li class="nav-header">Overview</li>
+         <li >
+            <a href="/datatables"><i class="icon-home"></i> Home</a>
+         </li>
+         <li >
+            <a href="/datatables/features/" title="Features"><i class="icon-th-list"></i> Features</a>
+         </li>
+         <li >
+            <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
+         </li>
+         
+         <li class="nav-header">Documentation</li>
+         <li  class="active">
+            <a href="/datatables/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+         </li>
+         <li >
+            <a href="/datatables/changelog.html" title="Changelog"> <i class="icon-info-sign"></i> Changelog</a>
+         </li>
+         <li >
+            <a href="/datatables/roadmap.html" title="Roadmap"><i class="icon-road"></i> Roadmap</a>
+         </li>
+         <li >
+            <a href="/datatables/migration.html" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+         </li>
+         <li >
+            <a href="/datatables/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
+         </li>
+         
+         <li class="nav-header">Reference</li>
+         <li >
+            <a href="/datatables/ref/jsp/" title="JSP taglib"> JSP taglib</a>
+         </li>
+         <li >
+            <a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect</a>
+         </li>
+         <li >
+            <a href="/datatables/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration</a>
+         </li>
+         <li >
+            <a href="/datatables/ref/javadoc"> <i class="none"></i>Javadoc</a>
+         </li>
+         
+         <li class="nav-header">Tutorials</li>
+         <li >
+            <a href="/datatables/features/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+         </li>
+         <li >
+            <a href="/datatables/features/advanced/" title="Advanced"> <i class="icon-fire"></i> Advanced</a>
+         </li>
+         <li >
+            <a href="/datatables/features/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+         </li>
+         <li >
+            <a href="/datatables/features/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+         </li>
+         <li >
+            <a href="/datatables/features/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+         </li>
+         <li >
+            <a href="/datatables/features/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+         </li>
+      </ul>
+   </div>
+</div>
+<div class="span10">
+   <div class="row-fluid">
+      <ul class="breadcrumb hidden-phone">
+   <li><a href="/"><i class="icon-home"></i></a></li>
+   <li><span class="divider">|</span><a href="/datatables">Dandelion-Datatables</a></li>
+     
+   
+   <li> <span class="divider">|</span><a href="/datatables/installation">Installation</a></li>
+   
+     
+   
+   <li> <span class="divider">|</span><a href="/datatables/installation/thymeleaf">Thymeleaf</a></li>
+   
+     
+   
+   
+   <li class="pull-right">
+      Latest release: <a href="/datatables/changelog.html">0.8.14</a>
+   </li>
+</ul>
+      <a href='http://www.thymeleaf.org'><img height='90px' src='/assets/images/logo_thymeleaflogonamesmall.png' style='float:right; margin-right: 10px;' width='400px' /></a><h3>Installation guide with Thymeleaf</h3><hr /><h4>With Servlet 3.x compatible containers</h4><h5>Step 1 : Install the Dandelion-DataTables JARs</h5><h6>Manually</h6>
+<p>Download the JARs (see <a href='../download.html'>here</a>) and make sure that they are all made available via the application classpath. (Usually in <strong>WEB-INF/lib</strong>)</p>
+<h6>Using Maven (or Maven-compatible dependency managers)</h6>
+<p>Just add the following dependency :</p>
+
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.github.dandelion&lt;/groupId&gt;
+    &lt;artifactId&gt;datatables-thymeleaf&lt;/artifactId&gt;
+    &lt;version&gt;0.8.14&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+<h5>Step 2 : Declare the Dandelion-DataTables dialect</h5>
+<p>If you&#39;re using Spring / Spring MVC, update the SpringTemplateEngine bean :</p>
+
+<pre><code>&lt;bean id=&quot;templateEngine&quot; class=&quot;org.thymeleaf.spring3.SpringTemplateEngine&quot;&gt;
+    &lt;property name=&quot;templateResolver&quot; ref=&quot;templateResolver&quot; /&gt;
+    &lt;property name=&quot;additionalDialects&quot;&gt;
+        &lt;set&gt;
+            &lt;bean class=&quot;com.github.dandelion.datatables.thymeleaf.dialect.DataTablesDialect&quot; /&gt;
+        &lt;/set&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;</code></pre>
+
+<p>If not, add the DataTablesDialect to your existing Thymeleaf template engine :</p>
+
+<pre><code>ServletContextTemplateResolver templateresolver = new ServletContextTemplateResolver();
+templateresolver.setTemplateMode(&quot;HTML5&quot;);
+
+templateengine = new TemplateEngine();
+templateengine.setTemplateResolver(templateresolver);
+templateengine.addDialect(new DataTablesDialect());</code></pre>
+<h5>Step 3 : Add the namespace declaration</h5>
+<p>Everywhere you want to display a table using <strong>Dandelion-DataTables</strong>, you need to add the following namespace declaration :</p>
+
+<pre><code>&lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot; xmlns:dt=&quot;http://github.com/dandelion/datatables&quot;&gt;</code></pre>
+<h5>Step 4 : Include client-side dependencies</h5>
+<p>By default, the Javascript libraries are not embedded in <strong>Dandelion-DataTables</strong>. So ensure you declared somewhere in your pages those <tt>script</tt> and <tt>link</tt> tags :</p>
+
+<pre><code>&lt;!-- DataTables --&gt;
+&lt;link href=&quot;pathToCss/jquery.dataTables.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;script src=&quot;pathToJs/jquery.dataTables.min.js&quot;&gt;&lt;/script&gt; 
+
+&lt;!-- jQuery --&gt;
+&lt;script src=&quot;pathToJs/jquery-1.8.3.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p class='alert alert-info'><strong>Info !</strong><br /> Actually, you can bypass the DataTables script and link tags using the <a href='./ref.tmltable.html'>cdn</a> attribute of the table tag.</p>
+<h5 id='step_5__dev_mode'>Step 5 : Dev mode</h5>
+
+<p>By default, <strong>Dandelion-DataTables</strong> generates the web assets (js, css) that are needed by DataTables. Once generated, all files are then stored in a cache for better performance.</p>
+
+<p>Of course, you are advised to disable the cache during the development. This way, all the configuration is generated each time you access a page that uses <strong>Dandelion-DataTables</strong>. For that purpose, just set the following system property in your server launch configuration :</p>
+
+<pre><code>-Ddandelion.dev.mode=true</code></pre>
+
+<p>You can now begin using the DataTablesDialect ! :-)</p>
+<br />
+<h4 id='with_servlet_2x_compatible_containers'>With Servlet 2.x compatible containers</h4>
+<h5>Steps 1/2/3/4</h5>
+<p>You need to follow the first four steps described above.</p>
+<h5>Step 5 : Add the following additionnal dependency</h5>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.github.dandelion&lt;/groupId&gt;
+    &lt;artifactId&gt;datatables-servlet2&lt;/artifactId&gt;
+    &lt;version&gt;0.8.14&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+<h5>Step 6 : Add the DataTables4j servlet and filter definitions</h5>
+<p>Add the following configuration to your <tt>web.xml</tt> :</p>
+
+<pre><code>&lt;!-- Dandelion-Datatables servlet definition --&gt;
+&lt;servlet&gt;
+    &lt;servlet-name&gt;datatablesController&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;com.github.dandelion.datatables.extras.servlet2.servlet.DatatablesServlet&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+
+&lt;!-- Dandelion-Datatables servlet mapping --&gt;
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;datatablesController&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/datatablesController/*&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+
+&lt;!-- Dandelion-Datatables filter definition --&gt;
+&lt;filter&gt;
+    &lt;filter-name&gt;datatablesFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;com.github.dandelion.datatables.extras.servlet2.filter.DatatablesFilter&lt;/filter-class&gt;
+&lt;/filter&gt;
+
+&lt;!-- Dandelion-Datatables filter mapping --&gt;
+&lt;filter-mapping&gt;
+    &lt;filter-name&gt;datatablesFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;</code></pre>
+<br /><h4>Optional step : Add a Dandelion-DataTables custom configuration file</h4>
+<p>See the <a href='/datatables/ref/configuration'>properties reference</a> to see more details !</p>
+   </div>
+</div>
+      </div>
+      <hr>
+      <footer>
+         <p>
+            Copyright © The <a href="/team">Dandelion Team</a> | <a href="/acknowledgments.html">Acknowledgments</a>
+            <span style="float:right;"><script src="http://www.ohloh.net/p/633354/widgets/project_thin_badge.js"></script></span>
+         </p>
+      </footer>
+   </div>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dandelion Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="java, web, component, library, assets, datatables">
+<meta name="author" content="Dandelion">
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
+<link href="/assets/css/component.css" rel="stylesheet">
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+<!--[if IE 7]>
+      <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
+      <![endif]-->
+<!--[if lt IE 9]>
+      <script src="/assets/js/html5shiv.js"></script>
+      <![endif]-->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+<link rel="shortcut icon" href="/assets/images/dandelion_square.png">
+
+<script>
+      var _gaq = _gaq || [];
+      _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+      _gaq.push([ '_setCookiePath', '/datatables/' ]);
+      _gaq.push([ '_trackPageview' ]);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+      			: 'http://www')
+      			+ '.google-analytics.com/ga.js';
+      	var s = document.getElementsByTagName('script')[0];
+      	s.parentNode.insertBefore(ga, s);
+      })();
+</script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+   <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+         <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a href="/datatables">
+               <div id="logo_container">
+                   <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
+                   <p id="logo_text">
+                       datatables
+                   </p>
+               </div>
+            </a>
+            <div class="nav-collapse collapse">
+               <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
+                  <li class="text-center"><a href="/"><i class="icon-home"></i> Home</a></li>
+                  <li class="text-center"><a href="/blog"><i class="icon-comment"></i> Blog</a></li>
+                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-github"></i> Issues</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/dandelion-datatables"><i class="icon-github-sign"></i> Sources</a></li>
+               </ul>
+               <ul class="nav pull-right" style="clear:right;">
+                  <form class="navbar-search" action="http://google.com/search" method="get" style="margin-right:15px;">
+                     <input type="hidden" name="q" value="site:dandelion.github.io/datatables" />
+                     <input type="text" class="search search-query" name="q" results="0" placeholder="Search"/>
+                  </form>
+               </ul>
+            </div>
+            <!--/.nav-collapse -->
+         </div>
+      </div>
+   </div>
+   <div class="container-fluid">
+      <div class="row-fluid">
+         <div class="span2">
+   <div class="well sidebar-nav">
+      <ul class="nav nav-list">
+         
+         <li class="nav-header">Overview</li>
+         <li >
+            <a href="/datatables"><i class="icon-home"></i> Home</a>
+         </li>
+         <li >
+            <a href="/datatables/features/" title="Features"><i class="icon-th-list"></i> Features</a>
+         </li>
+         <li >
+            <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
+         </li>
+         
+         <li class="nav-header">Documentation</li>
+         <li >
+            <a href="/datatables/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+         </li>
+         <li >
+            <a href="/datatables/changelog.html" title="Changelog"> <i class="icon-info-sign"></i> Changelog</a>
+         </li>
+         <li >
+            <a href="/datatables/roadmap.html" title="Roadmap"><i class="icon-road"></i> Roadmap</a>
+         </li>
+         <li  class="active">
+            <a href="/datatables/migration.html" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+         </li>
+         <li >
+            <a href="/datatables/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
+         </li>
+         
+         <li class="nav-header">Reference</li>
+         <li >
+            <a href="/datatables/ref/jsp/" title="JSP taglib"> JSP taglib</a>
+         </li>
+         <li >
+            <a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect</a>
+         </li>
+         <li >
+            <a href="/datatables/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration</a>
+         </li>
+         <li >
+            <a href="/datatables/ref/javadoc"> <i class="none"></i>Javadoc</a>
+         </li>
+         
+         <li class="nav-header">Tutorials</li>
+         <li >
+            <a href="/datatables/features/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+         </li>
+         <li >
+            <a href="/datatables/features/advanced/" title="Advanced"> <i class="icon-fire"></i> Advanced</a>
+         </li>
+         <li >
+            <a href="/datatables/features/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+         </li>
+         <li >
+            <a href="/datatables/features/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+         </li>
+         <li >
+            <a href="/datatables/features/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+         </li>
+         <li >
+            <a href="/datatables/features/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+         </li>
+      </ul>
+   </div>
+</div>
+<div class="span10">
+   <div class="row-fluid">
+      <ul class="breadcrumb hidden-phone">
+   <li><a href="/"><i class="icon-home"></i></a></li>
+   <li><span class="divider">|</span><a href="/datatables">Dandelion-Datatables</a></li>
+     
+   
+   <li> <span class="divider">|</span><a href="/datatables/migration">Migration</a></li>
+   
+     
+   
+     
+   
+   
+   <li class="pull-right">
+      Latest release: <a href="/datatables/changelog.html">0.8.14</a>
+   </li>
+</ul>
+      <h3 id='migrating_from_datatables4j_to_dandeliondatatables'>Migrating from DataTables4j to Dandelion-datatables</h3>
+
+<p><strong>Dandelion-datatables</strong> is a continuation of the previous <a href='http://datatables4j.github.com/docs'>DataTables4j</a> project. For now, it&#8217;s just a simple renaming (and also internal and transparent structure simplifications) but in a near future, we will inform you of features and services connected with Dandelion!</p>
+
+<p>At the moment, we just ask you to start migrating your apps from <strong>DataTables4j</strong> to <strong>Dandelion-datatables</strong>. As you will see in the following section, the workload is quite limited! :-)</p>
+<br />
+<h4 id='step_1__update_all_your_dependencies'>Step 1 : update all your dependencies</h4>
+
+<p>The following table lists the old and new dependencies.</p>
+<table class='table table-striped'>
+  <thead>
+  	<tr>
+  	  <th>Description</th>
+  	  <th>Maven</th>
+  	  <th>Old</th>
+  	  <th>New</th>
+  	</tr>  
+  </thead>
+  <tbody>
+  	<tr>
+  	  <td>Project groupId</td>
+  	  <td>groupId</td>
+  	  <td>com.github.datatables4j</td>
+  	  <td>com.github.dandelion</td>
+  	</tr>
+  	<tr>
+  	  <td>JSP implementation</td>
+  	  <td>artifactId</td>
+  	  <td>datatables4j-core-jsp</td>
+  	  <td>datatables-jsp</td>
+  	</tr>
+  	<tr>
+  	  <td>Thymeleaf implementation</td>
+  	  <td>artifactId</td>
+  	  <td>datatables4j-core-thymeleaf</td>
+  	  <td>datatables-thymeleaf</td>
+  	</tr>
+  	<tr>
+  	  <td>Servlet2.x backward compatibility extra</td>
+  	  <td>artifactId</td>
+  	  <td>datatables4j-servlet2</td>
+  	  <td>datatables-servlet2</td>
+  	</tr>
+  	<tr>
+  	  <td>Spring3 extra</td>
+  	  <td>artifactId</td>
+  	  <td>datatables4j-spring3</td>
+  	  <td>datatables-spring3</td>
+  	</tr>
+  </tbody>
+</table><p class='alert alert-warn'><strong>Warning !</strong><br />Ensure to delete all <strong>DataTables4j</strong> dependencies to avoid classpath conflicts.</p><br />
+<h4 id='step_2_jsp_update_the_taglib_uri'>Step 2 (JSP): update the taglib URI</h4>
+
+<p>From:</p>
+
+<pre><code>&lt;%@ taglib prefix=&quot;datatables&quot; uri=&quot;http://github.com/datatables4j&quot; %&gt;</code></pre>
+
+<p>To:</p>
+
+<pre><code>&lt;%@ taglib prefix=&quot;datatables&quot; uri=&quot;http://github.com/dandelion/datatables&quot; %&gt;</code></pre>
+<br />
+<h4 id='step_2_thymeleaf_update_the_dialect_namespace'>Step 2 (Thymeleaf): update the dialect namespace</h4>
+
+<p>From:</p>
+
+<pre><code>&lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot; xmlns:dt=&quot;http://github.com/datatables4j/thymeleaf&quot;&gt;</code></pre>
+
+<p>To:</p>
+
+<pre><code>&lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot; xmlns:dt=&quot;http://github.com/dandelion/datatables&quot;&gt;</code></pre>
+<br />
+<h4 id='step_3__update_properties_in_new__file'>Step 3 : update properties in new <code>datatables.properties</code> file</h4>
+
+<p>The following table lists the old and new properties.</p>
+<table class='table table-striped'>
+  <thead>
+  	<tr>
+  	  <th>Property</th>
+  	  <th>Old</th>
+  	  <th>New</th>
+  	</tr>  
+  </thead>
+  <tbody>
+  	<tr>
+  	  <td>compressor.class</td>
+  	  <td>com.github.datatables4j.plugins.compression.YuiResourceCompressor</td>
+  	  <td>com.github.dandelion.datatables.extras.compression.YuiResourceCompressor</td>
+  	</tr>
+  	<tr>
+  	  <td>export.csv.default.class</td>
+  	  <td>com.github.datatables4j.core.base.export.CsvExport</td>
+  	  <td>com.github.dandelion.datatables.core.export.CsvExport</td>
+  	</tr>
+  	<tr>
+  	  <td>export.xml.default.class</td>
+  	  <td>com.github.datatables4j.core.base.export.XmlExport</td>
+  	  <td>com.github.dandelion.datatables.core.export.XmlExport</td>
+  	</tr>
+  	<tr>
+  	  <td>export.xls.default.class</td>
+  	  <td>com.github.datatables4j.plugins.export.poi.XlsExport</td>
+  	  <td>com.github.dandelion.datatables.extras.export.poi.XlsExport</td>
+  	</tr>
+  	<tr>
+  	  <td>export.xlsx.default.class</td>
+  	  <td>com.github.datatables4j.plugins.export.poi.XlsxExport</td>
+  	  <td>com.github.dandelion.datatables.extras.export.poi.XlsxExport</td>
+  	</tr>
+  	<tr>
+  	  <td>export.pdf.default.class</td>
+  	  <td>com.github.datatables4j.plugins.export.itext.PdfExport</td>
+  	  <td>com.github.dandelion.datatables.extras.export.itext.PdfExport</td>
+  	</tr>
+  </tbody>
+</table><br />
+<h4 id='step_4_optional__servlet_2x'>Step 4 (optional) : servlet 2.x</h4>
+
+<p>If you were using the <a href='https://github.com/datatables4j/datatables4j-backward-servlet2.x'>Servlet2 compatibility module</a>, first ensure to update the corresponding dependency (see above).</p>
+
+<p>Then, ensure to update the qualified class names in <code>web.xml</code> :</p>
+
+<pre><code>&lt;!-- Dandelion-datatables servlet definition --&gt;
+&lt;servlet&gt;
+   &lt;servlet-name&gt;datatablesController&lt;/servlet-name&gt;
+   &lt;servlet-class&gt;com.github.dandelion.datatables.extras.servlet2.servlet.DatatablesServlet&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+
+&lt;!-- Dandelion-datatables servlet mapping --&gt;
+&lt;servlet-mapping&gt;
+   &lt;servlet-name&gt;datatablesController&lt;/servlet-name&gt;
+   &lt;url-pattern&gt;/datatablesController/*&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+
+&lt;!-- Dandelion-datatables filter definition (export feature) --&gt;
+&lt;filter&gt;
+   &lt;filter-name&gt;datatablesFilter&lt;/filter-name&gt;
+   &lt;filter-class&gt;com.github.dandelion.datatables.extras.servlet2.filter.DatatablesFilter&lt;/filter-class&gt;
+&lt;/filter&gt;
+
+&lt;!-- Dandelion-datatables filter mapping (export feature) --&gt;
+&lt;filter-mapping&gt;
+   &lt;filter-name&gt;datatablesFilter&lt;/filter-name&gt;
+   &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;</code></pre>
+<br />
+<h4 id='step_5_optional__spring_3'>Step 5 (optional) : Spring 3</h4>
+
+<p>If you were using the <a href='https://github.com/datatables4j/datatables4j-core-parent/tree/master/datatables4j-spring3'>Spring 3 extra module</a>(used in server-side processing), first ensure to update the corresponding dependency (see above).</p>
+
+<p>Then, ensure to update the qualified class name in you Spring MVC configuration:</p>
+
+<pre><code>&lt;mvc:annotation-driven&gt;
+    &lt;mvc:argument-resolvers&gt;
+        &lt;bean class=&quot;com.github.dandelion.datatables.extras.spring3.ajax.DatatablesCriteriasResolver&quot; /&gt;
+    &lt;/mvc:argument-resolvers&gt;
+&lt;/mvc:annotation-driven&gt;</code></pre>
+<br />
+<h4 id='step_6__disable_caching_during_development'>Step 6 : Disable caching during development</h4>
+
+<p>The latest release of <strong>Dandelion-DataTables</strong> (0.8.14) includes a basic caching system which is enabled by default.</p>
+
+<p>Take care to disable it during development thanks to the following system property :</p>
+
+<pre><code>-Ddandelion.dev.mode=true</code></pre>
+   </div>
+</div>
+      </div>
+      <hr>
+      <footer>
+         <p>
+            Copyright © The <a href="/team">Dandelion Team</a> | <a href="/acknowledgments.html">Acknowledgments</a>
+            <span style="float:right;"><script src="http://www.ohloh.net/p/633354/widgets/project_thin_badge.js"></script></span>
+         </p>
+      </footer>
+   </div>
+</body>
+</html>

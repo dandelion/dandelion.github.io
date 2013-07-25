@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dandelion Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="java, web, component, library, assets, datatables">
+<meta name="author" content="Dandelion">
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
+<link href="/assets/css/component.css" rel="stylesheet">
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+<!--[if IE 7]>
+      <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
+      <![endif]-->
+<!--[if lt IE 9]>
+      <script src="/assets/js/html5shiv.js"></script>
+      <![endif]-->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+<link rel="shortcut icon" href="/assets/images/dandelion_square.png">
+
+<script>
+      var _gaq = _gaq || [];
+      _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+      _gaq.push([ '_setCookiePath', '/datatables/' ]);
+      _gaq.push([ '_trackPageview' ]);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+      			: 'http://www')
+      			+ '.google-analytics.com/ga.js';
+      	var s = document.getElementsByTagName('script')[0];
+      	s.parentNode.insertBefore(ga, s);
+      })();
+</script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+   <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+         <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a href="/datatables">
+               <div id="logo_container">
+                   <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
+                   <p id="logo_text">
+                       datatables
+                   </p>
+               </div>
+            </a>
+            <div class="nav-collapse collapse">
+               <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
+                  <li class="text-center"><a href="/"><i class="icon-home"></i> Home</a></li>
+                  <li class="text-center"><a href="/blog"><i class="icon-comment"></i> Blog</a></li>
+                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-github"></i> Issues</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/dandelion-datatables"><i class="icon-github-sign"></i> Sources</a></li>
+               </ul>
+               <ul class="nav pull-right" style="clear:right;">
+                  <form class="navbar-search" action="http://google.com/search" method="get" style="margin-right:15px;">
+                     <input type="hidden" name="q" value="site:dandelion.github.io/datatables" />
+                     <input type="text" class="search search-query" name="q" results="0" placeholder="Search"/>
+                  </form>
+               </ul>
+            </div>
+            <!--/.nav-collapse -->
+         </div>
+      </div>
+   </div>
+   <div class="container-fluid">
+      <div class="row-fluid">
+         <div class="span2">
+   <div class="well sidebar-nav">
+      <ul class="nav nav-list">
+         
+         <li class="nav-header">Overview</li>
+         <li >
+            <a href="/datatables"><i class="icon-home"></i> Home</a>
+         </li>
+         <li >
+            <a href="/datatables/features/" title="Features"><i class="icon-th-list"></i> Features</a>
+         </li>
+         <li >
+            <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
+         </li>
+         
+         <li class="nav-header">Documentation</li>
+         <li >
+            <a href="/datatables/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+         </li>
+         <li >
+            <a href="/datatables/changelog.html" title="Changelog"> <i class="icon-info-sign"></i> Changelog</a>
+         </li>
+         <li >
+            <a href="/datatables/roadmap.html" title="Roadmap"><i class="icon-road"></i> Roadmap</a>
+         </li>
+         <li >
+            <a href="/datatables/migration.html" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+         </li>
+         <li >
+            <a href="/datatables/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
+         </li>
+         
+         <li class="nav-header">Reference</li>
+         <li >
+            <a href="/datatables/ref/jsp/" title="JSP taglib"> JSP taglib</a>
+         </li>
+         <li >
+            <a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect</a>
+         </li>
+         <li >
+            <a href="/datatables/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration</a>
+         </li>
+         <li >
+            <a href="/datatables/ref/javadoc"> <i class="none"></i>Javadoc</a>
+         </li>
+         
+         <li class="nav-header">Tutorials</li>
+         <li >
+            <a href="/datatables/features/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+         </li>
+         <li >
+            <a href="/datatables/features/advanced/" title="Advanced"> <i class="icon-fire"></i> Advanced</a>
+         </li>
+         <li >
+            <a href="/datatables/features/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+         </li>
+         <li >
+            <a href="/datatables/features/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+         </li>
+         <li  class="active">
+            <a href="/datatables/features/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+         </li>
+         <li >
+            <a href="/datatables/features/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+         </li>
+      </ul>
+   </div>
+</div>
+<div class="span10">
+   <div class="row-fluid">
+      <ul class="breadcrumb hidden-phone">
+   <li><a href="/"><i class="icon-home"></i></a></li>
+   <li><span class="divider">|</span><a href="/datatables">Dandelion-Datatables</a></li>
+     
+   
+   <li> <span class="divider">|</span><a href="/datatables/features">Features</a></li>
+   
+     
+   
+   <li> <span class="divider">|</span><a href="/datatables/features/ajax">AJAX</a></li>
+   
+     
+   
+   <li> <span class="divider">|</span><a href="/datatables/features/ajax/springmvc.html">Spring MVC integration</a></li>
+   
+   
+   <li class="pull-right">
+      Latest release: <a href="/datatables/changelog.html">0.8.14</a>
+   </li>
+</ul>
+      <div id="datatablesajax" class="row-fluid">
+   <div class="span10"><h3 id='ajax__spring_mvc_integration'>AJAX :: Spring MVC integration</h3>
+
+<h4 id='introduction'>Introduction</h4>
+
+<p>Since 0.8.2, a Spring3 module has been added to <strong>Dandelion-datatables</strong>. It&#8217;s a bit light at the moment but you can already use it if you need server-side processing.</p>
+
+<p>Indeed, a custom annotation has been added in order to automatically map the DataTables request parameter (sent when server-side processing is enabled) in the <code>DatatablesCriterias</code> bean : <code>@DatatablesParams</code>.</p>
+<br />
+<h4 id='how_to_use_it_'>How to use it ?</h4>
+
+<p>First, add the new dependency :</p>
+
+<pre><code>&lt;dependency&gt;
+   &lt;groupId&gt;com.github.dandelion&lt;/groupId&gt;
+   &lt;artifactId&gt;datatables-spring3&lt;/artifactId&gt;
+   &lt;version&gt;0.8.14&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+
+<p>Moreover, you need to register a new custom WebArgumentResolvers as follows :</p>
+
+<pre><code>&lt;mvc:annotation-driven&gt;
+   &lt;mvc:argument-resolvers&gt;
+      &lt;bean class=&quot;com.github.dandelion.datatables.extras.spring3.ajax.DatatablesCriteriasResolver&quot; /&gt;
+   &lt;/mvc:argument-resolvers&gt;
+&lt;/mvc:annotation-driven&gt;</code></pre>
+
+<p>Once the dependency added, just update your Spring MVC controller as follows :</p>
+
+<pre><code>@RequestMapping(value = &quot;/persons2&quot;)
+public @ResponseBody DatatablesResponse&lt;Person&gt; getCustomers1(@DatatablesParams DatatablesCriterias criterias) {
+   DataSet&lt;Person&gt; dataSet = personService.findPersonsWithDatatablesCriterias(criterias);
+   return DatatablesResponse.build(dataSet, criterias);
+}</code></pre>
+
+<p>As you can see, it&#8217;s just the Spring equivalent of <code>DatatablesCriterias.getFromRequest(HttpServletRequest request)</code></p>
+<br />
+<h4 id='using_jsp'>Using JSP</h4>
+
+<pre><code>&lt;c:url var=&quot;datasource&quot; value=&quot;/persons&quot; /&gt;
+&lt;datatables:table id=&quot;myTableId&quot; url=&quot;${datasource}&quot; serverSide=&quot;true&quot; processing=&quot;true&quot;&gt;
+    &lt;datatables:column title=&quot;Id&quot; property=&quot;id&quot; /&gt;
+    &lt;datatables:column title=&quot;FirstName&quot; property=&quot;firstName&quot; /&gt;
+    &lt;datatables:column title=&quot;LastName&quot; property=&quot;lastName&quot; /&gt;
+    &lt;datatables:column title=&quot;City&quot; property=&quot;address.town.name&quot; /&gt;
+    &lt;datatables:column title=&quot;Mail&quot; property=&quot;mail&quot; /&gt;
+&lt;/datatables:table&gt;</code></pre>
+<br />
+<h4 id='using_thymeleaf'>Using Thymeleaf</h4>
+
+<pre><code>&lt;table id=&quot;myTableId&quot; dt:table=&quot;true&quot; dt:url=&quot;@{/persons2}&quot; dt:serverside=&quot;true&quot; dt:processing=&quot;true&quot;&gt;
+   &lt;thead&gt;
+      &lt;tr&gt;
+         &lt;th dt:property=&quot;&#39;id&#39;&quot;&gt;Id&lt;/th&gt;
+         &lt;th dt:property=&quot;&#39;firstName&#39;&quot;&gt;Firstname&lt;/th&gt;
+         &lt;th dt:property=&quot;&#39;lastName&#39;&quot;&gt;Lastname&lt;/th&gt;
+         &lt;th dt:property=&quot;&#39;address.town.name&#39;&quot;&gt;City&lt;/th&gt;
+         &lt;th dt:property=&quot;&#39;mail&#39;&quot;&gt;Mail&lt;/th&gt;
+      &lt;/tr&gt;
+   &lt;/thead&gt;
+&lt;/table&gt;</code></pre></div>
+   <div class="span2 hidden-phone">
+      <ul>
+      </ul>
+      <ul class="nav nav-tabs nav-stacked pull-right hidden-phone" data-spy="affix" data-offset-top="60">
+         <li ><a href="/datatables/features/ajax/ajaxsource.html">How to use AJAX source</a></li>
+         <li ><a href="/datatables/features/ajax/handlingnullvalues.html">Handling null/default values</a></li>
+         <li ><a href="/datatables/features/ajax/customcontent.html">Customed column’s content</a></li>
+         <li ><a href="/datatables/features/ajax/serverside.html">Server-side processing</a></li>
+         <li  class="active"><a href="/datatables/features/ajax/springmvc.html">Spring MVC integration</a></li>
+         <li ><a href="/datatables/features/ajax/pipelining.html">Pipelining data</a></li>
+         <li ><a href="/datatables/features/ajax/customrequest.html">Customed AJAX request</a></li>
+         <li ><a href="/datatables/features/ajax/extrarequestparam.html">Extra AJAX request parameters</a></li>
+      </ul>
+   </div>
+</div>
+
+<script>
+$(document).ready(function () {
+   if($('#datatablesajax ul.nav').is(":hidden")){
+      $('#datatablesajax div:eq(0)').removeClass('span10');
+      $('#datatablesajax div:eq(0)').addClass('span12');
+   }
+});   
+</script>
+   </div>
+</div>
+      </div>
+      <hr>
+      <footer>
+         <p>
+            Copyright © The <a href="/team">Dandelion Team</a> | <a href="/acknowledgments.html">Acknowledgments</a>
+            <span style="float:right;"><script src="http://www.ohloh.net/p/633354/widgets/project_thin_badge.js"></script></span>
+         </p>
+      </footer>
+   </div>
+</body>
+</html>
