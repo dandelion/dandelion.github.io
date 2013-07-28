@@ -5,9 +5,27 @@
       <description>Dandelion Project - Dandelion Team</description>
       <link>http://dandelion.github.io/blog/rss.xml</link>
       <link>http://dandelion.github.io</link>
-      <lastBuildDate>2013-07-28T18:32:05+02:00</lastBuildDate>
-      <pubDate>2013-07-28T18:32:05+02:00</pubDate>
+      <lastBuildDate>2013-07-28T19:23:20+02:00</lastBuildDate>
+      <pubDate>2013-07-28T19:23:20+02:00</pubDate>
       <ttl>1800</ttl>
+      
+         <item>
+            <title>Dandelion 0.2.1 Release</title>
+            <description>&lt;p&gt;&lt;strong&gt;Dandelion v0.2.1 has been released in &lt;a href=&#39;http://search.maven.org/#search%7Cga%7C1%7Cdandelion&#39;&gt;Maven Central&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;the assets stack now support&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;async&lt;/code&gt; and &lt;code&gt;defer&lt;/code&gt; attributes for scripts,&lt;/li&gt;
+
+&lt;li&gt;dom positionning : &lt;code&gt;head&lt;/code&gt; or &lt;code&gt;body&lt;/code&gt; (Only for Thymeleaf)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can see the full changelog &lt;a href=&#39;/dandelion/changelog.html&#39;&gt;here&lt;/a&gt; and as usual, your thoughts and feedback are very welcome. :-)&lt;/p&gt;</description>
+            <link>http://dandelion.github.io/blog/2013/07/28/dandelion-0.2.1-release</link>
+            <guid>http://dandelion.github.io/blog/2013/07/28/dandelion-0.2.1-release</guid>
+            <pubDate>2013-07-28T00:00:00+02:00</pubDate>
+         </item>
       
          <item>
             <title>Dandelion Webanalytics 0.2.2 Release</title>

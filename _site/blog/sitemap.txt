@@ -141,6 +141,7 @@ http://dandelion.github.io/webanalytics/ref/thymeleaf/index.html
 http://dandelion.github.io/webanalytics/ref/thymeleaf/tracker.html
 http://dandelion.github.io/webanalytics/roadmap.html
 
+http://dandelion.github.io/blog/2013/07/28/dandelion-0.2.1-release
 http://dandelion.github.io/blog/2013/06/29/dandelion-webanalytics-0.2.2-release
 http://dandelion.github.io/blog/2013/06/06/dandelion-webanalytics-0.2.1-release
 http://dandelion.github.io/blog/2013/05/19/dandelion-datatables-0.8.13-and-0.8.14-releases

@@ -3,13 +3,31 @@
    <title>Dandelion Project</title>
    <link href="http://dandelion.github.io//blog/atom.xml" rel="self"/>
    <link href="http://dandelion.github.io"/>
-   <updated>2013-07-28T18:32:05+02:00</updated>
+   <updated>2013-07-28T19:23:20+02:00</updated>
    <id>http://dandelion.github.io</id>
    <author>
       <name>Dandelion Team</name>
       <email>dandelion-devteam@googlegroups.com</email>
    </author>
    
+   
+   <entry>
+      <title>Dandelion 0.2.1 Release</title>
+      <link href="http://dandelion.github.io/blog/2013/07/28/dandelion-0.2.1-release"/>
+      <updated>2013-07-28T00:00:00+02:00</updated>
+      <id>http://dandelion.github.io/blog/2013/07/28/dandelion-0.2.1-release</id>
+      <content type="html">&lt;p&gt;&lt;strong&gt;Dandelion v0.2.1 has been released in &lt;a href=&#39;http://search.maven.org/#search%7Cga%7C1%7Cdandelion&#39;&gt;Maven Central&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;the assets stack now support&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;async&lt;/code&gt; and &lt;code&gt;defer&lt;/code&gt; attributes for scripts,&lt;/li&gt;
+
+&lt;li&gt;dom positionning : &lt;code&gt;head&lt;/code&gt; or &lt;code&gt;body&lt;/code&gt; (Only for Thymeleaf)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can see the full changelog &lt;a href=&#39;/dandelion/changelog.html&#39;&gt;here&lt;/a&gt; and as usual, your thoughts and feedback are very welcome. :-)&lt;/p&gt;</content>
+   </entry>
    
    <entry>
       <title>Dandelion Webanalytics 0.2.2 Release</title>
