@@ -6,6 +6,18 @@ level1: changelog
 
 ### Changelog
 
+#### 0.2.1 (28-07-2013)
+
+#### Core
+the assets stack now support
+* `async` and `defer` attributes for scripts ([more info](/dandelion/features/assets/loaders.html)),
+* [dom positionning](/dandelion/features/assets/loaders.html) : `head` or `body` (Only for Thymeleaf)
+
+For Dandelion Module Developpers, you can [setup your own loader with the property](/dandelion/features/assets/plumbing.html) : `assets.loader.for.<module>`. This way, your loader will be always loaded.
+
+#### Issues
+* Fix the internal storage of resources who don't take in account the possibility of multiple folder paths.
+
 #### 0.2.0 (18-05-2013)
 
 ##### Core
