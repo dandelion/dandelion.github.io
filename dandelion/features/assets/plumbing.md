@@ -66,6 +66,9 @@ The [AssetsConfigurator](/dandelion/ref/javadoc/dandelion-core/com/github/dandel
 An [AssetsLoader](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLoader.html) is an interface to load a set of assets from a source.
 Some [implementations](/dandelion/features/assets/loaders.html) are available : AssetsJsonLoader (default), AssetsNopLoader.
 
+For Dandelion Module Developpers, you can setup your own loader with the property : `assets.loader.for.<module>`.
+This way, your loader will be always loaded.
+
 ### Dandelion Assets Location Wrapper
 An [AssetsLocationWrapper](/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLocationWrapper.html) is an interface which wraps a location before retrieving it from **Assets.getAssetLocation(...)**.
 Some [implementations](/dandelion/features/assets/wrappers.html) are available for location keys : classpath, delegate, template, webapp, webjars (extras).

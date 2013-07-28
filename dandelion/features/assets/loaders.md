@@ -29,7 +29,10 @@ To add an asset, you can create a new JSON file like this :
 			{
 				“name”: “assetName”,
 				“version”: “assetVersion”,
-				“type”: “typeOfAsset”,
+				“type”: “typeOfAsset”, // js or css
+				“dom”: “domPositionning”, // head or body
+				“async”: “asyncFlag”, // true or false (only for js)
+				“defer”: “deferFlag”, // true or false (only for js)
 				“locations”: {
 					“remote”: ”assetLocationForRemoteKey”,
 					“local”: “assetLocationForLocalKey”
