@@ -35,7 +35,7 @@ dandelion :
   components:
     core:
       name: core
-      version: 0.2.0
+      version: 0.2.1
       url: dandelion
       breadcrumb: Dandelion
       sources: dandelion
