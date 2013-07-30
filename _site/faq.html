@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dandelion Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="web, component, library, assets, datatables">
+<meta name="author" content="Dandelion">
+
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="/assets/css/app.css" rel="stylesheet">
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+<!--[if IE 7]>
+<link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="/assets/js/html5shiv.js"></script>
+<![endif]-->
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+<link rel="shortcut icon" href="/assets/images/dandelion_square.png">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@dandelion_proj">
+<meta name="twitter:creator" content="@dandelion_proj">
+<meta name="twitter:url" content="http://dandelion.github.com">
+<meta name="twitter:title" content="Dandelion Project">
+<meta name="twitter:description" content="Extensible web library for funnier web development">
+<meta name="twitter:image" content="http://dandelion.github.com/dandelion_square.png">
+
+<script>
+      var _gaq = _gaq || [];
+      _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+      _gaq.push([ '_trackPageview' ]);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+            ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+      			: 'http://www')
+      			+ '.google-analytics.com/ga.js';
+      	var s = document.getElementsByTagName('script')[0];
+      	s.parentNode.insertBefore(ga, s);
+      })();
+</script>
+</head>
+
+<body>
+   
+   <div class="container">
+
+         <div class="masthead">
+           <h3 class="muted">Dandelion Project</h3>
+           <div class="navbar">
+             <div class="navbar-inner">
+               <div class="container">
+                 <ul class="nav">
+                   <li ><a href="/"><i class="icon-home"></i><span class="hidden-phone">Home</span></a></li>
+                   <li><a href="/blog/"><i class="icon-comment-alt"></i><span class="hidden-phone">Blog</span></a></li>
+                   <li><a href="http://dandelion.48353.n6.nabble.com/"><i class="icon-comments-alt"></i><span class="hidden-phone">Forum</span></a></li>
+                   <li><a href="https://github.com/dandelion" target="_blank"><i class="icon-github"></i><span class="hidden-phone">Github</span></a></li>
+                   <li><a href="https://twitter.com/dandelion_proj" target="_blank"><i class="icon-twitter"></i><span class="hidden-phone">Twitter</span></a></li>
+                   <li><a href="mailto:dandelion-devteam@googlegroups.com"><i class="icon-envelope"></i><span class="hidden-phone">Contact</span></a></li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+         </div>
+
+         <h3 id='faq'>FAQ</h3>
+<ul>
+   <li>
+      <h4>General</h4>
+      <ul>
+         <li><a href='#snapshot'>How to use a SNAPSHOT version of a Dandelion module?</a></li>
+		 <li><a href='#contributing'>How can I contribute to Dandelion?</a></li>
+      </ul>
+   </li>
+</ul>
+<h3 id='general'>General</h3>
+<h3 id='snapshot'>How to use a SNAPSHOT version of a Dandelion module?</h3>
+<p>Whichever module is being developed, a <strong>snapshot release</strong> is always built as soon as a commit is pushed in its GitHub repository. You can of course use it, for testing purposes. It will allow you to try new features or specific bug fixes.</p>
+
+<p>In order to use snapshot releases, you need to add the Sonatype OSS Snapshots repository in your Maven pom.xml file, as follows:</p>
+
+<pre><code>&lt;repositories&gt;
+   &lt;repository&gt;
+      &lt;id&gt;sonatype-nexus-snapshots&lt;/id&gt;
+      &lt;name&gt;Sonatype Nexus Snapshots&lt;/name&gt;
+      &lt;url&gt;https://oss.sonatype.org/content/repositories/snapshots&lt;/url&gt;
+      &lt;snapshots&gt;
+         &lt;enabled&gt;true&lt;/enabled&gt;
+      &lt;/snapshots&gt;
+   &lt;/repository&gt;
+&lt;/repositories&gt;</code></pre>
+
+<p>Also, you will have to update the dependencies. If the version under development is the 0.9.0, you will have to modify the versions like this:</p>
+
+<pre><code>&lt;dependency&gt;
+   &lt;groupId&gt;com.github.dandelion&lt;/groupId&gt;
+   &lt;artifactId&gt;datatables-jsp&lt;/artifactId&gt;
+   &lt;version&gt;0.9.0-SNAPSHOT&lt;/version&gt;
+&lt;/dependency&gt;         
+&lt;dependency&gt;
+   &lt;groupId&gt;com.github.dandelion&lt;/groupId&gt;
+   &lt;artifactId&gt;datatables-servlet2&lt;/artifactId&gt;
+   &lt;version&gt;0.9.0-SNAPSHOT&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+<h3 id='contributing'>How can I contribute to Dandelion?</h3>
+<p>In many ways actually:</p>
+
+<ul>
+<li>feel free to get in touch with the <a href='/team'>team</a> to propose your idea(s), e.g. using the <a href=''>forum</a> or our <a href=''>Twitter</a>.</li>
+
+<li>you can make pull requests (but please contact the team before, in order to guide you through the process)</li>
+
+<li>you can write articles, tutorials, blog posts, reviews or anything else about Dandelion.</li>
+
+<li>you can promote Dandelion in your company or among your (nerdy) friends/colleagues</li>
+</ul>
+
+         <hr>
+
+         <div class="footer">
+            <div style="float:right;"><script src="http://www.ohloh.net/p/633354/widgets/project_thin_badge.js"></script></div>
+            <div>Copyright © The <a href="/team">Dandelion Team</a> | <a href="/acknowledgments.html">Acknowledgments</a></div>
+            
+         </div>
+
+       </div>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>

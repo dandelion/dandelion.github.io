@@ -8,7 +8,7 @@
 <meta name="author" content="Dandelion">
 
 <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
-<link href="/assets/css/app.css" rel="stylesheet">
+<!-- <link href="/assets/css/app.css" rel="stylesheet"> -->
 <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
 <!--[if IE 7]>
 <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
@@ -30,7 +30,57 @@
 <meta name="twitter:title" content="Dandelion Project">
 <meta name="twitter:description" content="Extensible web library for funnier web development">
 <meta name="twitter:image" content="http://dandelion.github.com/dandelion_square.png">
+<style>
+body{
+   margin: 0;
+   padding: 0;
+   color: white;
+}
+.dandelion-jumbotron {
+	background-image: -moz-linear-gradient(top, #65c22f, #5aae2a);
+	background-image: -ms-linear-gradient(top, #65c22f, #5aae2a);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#65c22f),to(#5aae2a) );
+	background-image: -webkit-linear-gradient(top, #65c22f, #5aae2a);
+	background-image: -o-linear-gradient(top, #65c22f, #5aae2a);
+	background-image: linear-gradient(top, #65c22f, #5aae2a);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#65c22f',
+		endColorstr='#5aae2a', GradientType=0 );
+    margin: 0;
+    text-align: center;
+    padding-bottom : 20px;
+}
 
+.area-component{
+   background-image: -moz-linear-gradient(top, #e3e3e3, #e3e3e3);
+   background-image: -ms-linear-gradient(top, #e3e3e3, #e3e3e3);
+   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e3e3e3),to(#e3e3e3) );
+   background-image: -webkit-linear-gradient(top, #e3e3e3, #e3e3e3);
+   background-image: -o-linear-gradient(top, #e3e3e3, #e3e3e3);
+   background-image: linear-gradient(top, #e3e3e3, #e3e3e3);
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3e3e3',
+      endColorstr='#e3e3e3', GradientType=0 );
+    margin: 0;
+    height: 140px;
+    color: black;
+    text-align: center;
+}
+.area-component h2 {
+   margin-bottom: 30px;
+}
+footer{
+   color: white;
+   background-color: #5f5f5f;
+}
+footer a {
+   color : #00bfff;
+}
+footer a:hover, a:focus {
+   text-decoration: underline;
+}
+ul {
+   list-style-type: none;
+}
+</style>
 <script>
       var _gaq = _gaq || [];
       _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
@@ -40,62 +90,113 @@
         ga.type = 'text/javascript';
             ga.async = true;
          ga.src = ('https:' == document.location.protocol ? 'https://ssl'
-      			: 'http://www')
-      			+ '.google-analytics.com/ga.js';
-      	var s = document.getElementsByTagName('script')[0];
-      	s.parentNode.insertBefore(ga, s);
+               : 'http://www')
+               + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0];
+         s.parentNode.insertBefore(ga, s);
       })();
 </script>
 </head>
 
 <body>
-   
-   <div class="container">
-
-         <div class="masthead">
-           <h3 class="muted">Dandelion Project</h3>
-           <div class="navbar">
-             <div class="navbar-inner">
-               <div class="container">
-                 <ul class="nav">
-                   <li ><a href="/"><i class="icon-home"></i><span class="hidden-phone">Home</span></a></li>
-                   <li><a href="/blog/"><i class="icon-comment-alt"></i><span class="hidden-phone">Blog</span></a></li>
-                   <li><a href="http://dandelion.48353.n6.nabble.com/"><i class="icon-comments-alt"></i><span class="hidden-phone">Forum</span></a></li>
-                   <li><a href="https://github.com/dandelion" target="_blank"><i class="icon-github"></i><span class="hidden-phone">Github</span></a></li>
-                   <li><a href="https://twitter.com/dandelion_proj" target="_blank"><i class="icon-twitter"></i><span class="hidden-phone">Twitter</span></a></li>
-                   <li><a href="mailto:dandelion-devteam@googlegroups.com"><i class="icon-envelope"></i><span class="hidden-phone">Contact</span></a></li>
-                 </ul>
-               </div>
-             </div>
-           </div>
+   <div class="container-fluid" style="height: 400px; padding: 0; margin: 0;">
+      <div class="jumbotron dandelion-jumbotron">
+         <p>
+            <img src="/assets/images/logo-dandelion_02-blanc.png" alt="Dandelion">
+         	<h2>Extensible web framework for funnier web development</h2>
+         </p>
+         <p style="padding:10px;">
+            <a href="/get-started" class="btn btn-warning btn-large">Get started »</a>
+         </p>
+         
+         <!-- 
+         <a class="btn btn-large btn-success" href="/datatables/">Get started with Dandelion-DataTables</a>
+         <p>
+            You can also use <a href="/dandelion">Dandelion Core</a>, <a href="/webanalytics">Dandelion Webanalytics</a> or <a href="/glyph">Dandelion Glyph</a>.
+         </p>
+          -->
+          
+      </div>
+      <div class="row-fluid area-component">
+         <div class="span4">
+            <h2>Dandelion</h2>
+            <a href="/dandelion" class="btn btn-warning">Get started »</a>
          </div>
-
-         <div class="jumbotron">
-  <h1><img src="/assets/images/dandelion_black.png" alt="Dandelion"></h1>
-  <p class="lead">Extensible web library for funnier web development</p>
-  <a class="btn btn-large btn-success" href="/datatables/">Get started with Dandelion-DataTables</a>
-  <p>You can also use <a href="/dandelion">Dandelion Core</a>, <a href="/webanalytics">Dandelion Webanalytics</a> or <a href="/glyph">Dandelion Glyph</a>.</p>
-</div>
-
-<div class="row-fluid">
-  <div class="offset3 span6">
-   <a class="twitter-timeline" href="https://twitter.com/dandelion_proj" data-widget-id="306779829204828161">Tweets de @dandelion_proj</a>
-   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-  </div>
-</div>
-
-
+         <div class="span4">
+            <h2>Datatables</h2>
+            <a href="/datatables" class="btn btn-warning">Get started »</a>
+         </div>
+         <div class="span4">
+            <h2>Webanalytics</h2>
+            <a href="/webanalytics" class="btn btn-warning">Get started »</a>
+         </div>
+      </div>
+      <div class="row-fluid" style="color: black;">
+         <div class="span4 offset2">
+            <h3>Latest news</h3>
+            <p>
+               News 1
+            </p>
+            <p>
+               News 2
+            </p>
+         </div>
+         <div class="span4">
+            <h3>Social</h3>
+            <div>
+            <a class="twitter-timeline" height="300" href="https://twitter.com/dandelion_proj" data-widget-id="306779829204828161" data-chrome="nofooter transparent noscrollbar nofooter">Tweets de @dandelion_proj</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+         </div>
+      </div>
+      <footer class="footer">
          <hr>
-
-         <div class="footer">
-            <div style="float:right;"><script src="http://www.ohloh.net/p/633354/widgets/project_thin_badge.js"></script></div>
-            <div>Copyright © The <a href="/team">Dandelion Team</a> | <a href="/acknowledgments.html">Acknowledgments</a></div>
-            
+         <div class="container">
+            <div class="row">
+               <div class="span3">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="/team"><i class="icon-group"></i> Team</a></li>
+                     <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>
+                     <li><a href="/"><i class="icon-comments-alt"></i> Forum</a></li>
+                     <li><a href="/acknowledgments.html"><i class="icon-info"></i>&nbsp;&nbsp; Acknowledgments</a></li>
+                     <li><a href="mailto:dandelion-devteam@googlegroups.com"><i class="icon-envelope"></i> Contact</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Modules</h3>
+                  <ul>
+                     <li><a href="/dandelion">Dandelion Core</a></li>
+                     <li><a href="/datatables">Dandelion Datatables</a></li>
+                     <li><a href="/webanalytics">Dandelion Webanalytics</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Get started</h3>
+                  <ul>
+                     <li><a href="/documentation"> <i class="icon-book"></i> Documentation</a></li>
+                     <li><a href="/samples"><i class="icon-code"></i> Samples</a></li>
+                     <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Get involved</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="icon-github"></i> Source repository</a></li>
+                     <li><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug"></i> Issue tracker</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div style="float: right;">
+               <script src="http://www.ohloh.net/p/633354/widgets/project_thin_badge.js"></script>
+            </div>
+            <div>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </div>
          </div>
-
-       </div>
-
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+      </footer>
+   </div>
+   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+   <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
 </body>
 </html>

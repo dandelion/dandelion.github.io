@@ -90,6 +90,9 @@ http://dandelion.github.io/datatables/index.html
 http://dandelion.github.io/datatables/installation/index.html
 http://dandelion.github.io/datatables/installation/jsp.html
 http://dandelion.github.io/datatables/installation/thymeleaf.html
+http://dandelion.github.io/datatables/migration/from_0.8.x_to_0.9.x.html
+http://dandelion.github.io/datatables/migration/from_datatables4j_to_dandelion-datatables.html
+http://dandelion.github.io/datatables/migration/index.html
 http://dandelion.github.io/datatables/migration.html
 http://dandelion.github.io/datatables/ref/configuration/index.html
 http://dandelion.github.io/datatables/ref/index.html
@@ -121,6 +124,7 @@ http://dandelion.github.io/datatables/ref/thymeleaf/td.html
 http://dandelion.github.io/datatables/ref/thymeleaf/th.html
 http://dandelion.github.io/datatables/ref/thymeleaf/thead.html
 http://dandelion.github.io/datatables/roadmap.html
+http://dandelion.github.io/faq.html
 http://dandelion.github.io/glyph/index.html
 http://dandelion.github.io/index.html
 http://dandelion.github.io/releases/index.html
