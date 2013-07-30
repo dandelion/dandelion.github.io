@@ -86,6 +86,7 @@ http://dandelion.github.io/datatables/features/styling/basicstyling.html
 http://dandelion.github.io/datatables/features/styling/bootstrap2.html
 http://dandelion.github.io/datatables/features/styling/index.html
 http://dandelion.github.io/datatables/features/styling/jqueryui.html
+http://dandelion.github.io/datatables/get-started.html
 http://dandelion.github.io/datatables/index.html
 http://dandelion.github.io/datatables/installation/index.html
 http://dandelion.github.io/datatables/installation/jsp.html

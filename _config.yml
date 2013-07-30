@@ -30,6 +30,8 @@ tags_path : /blog/tags.html
 #
 # Dandelion data
 #
+forum : http://dandelion-forum.48353.x6.nabble.com/
+contact : dandelion-devteam@googlegroups.com
 dandelion :
   team: "Dandelion Team 2013"
   components:
