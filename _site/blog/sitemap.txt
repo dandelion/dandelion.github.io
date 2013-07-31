@@ -29,7 +29,6 @@ http://dandelion.github.io/dandelion/ref/jsp/index.html
 http://dandelion.github.io/dandelion/ref/thymeleaf/assets.html
 http://dandelion.github.io/dandelion/ref/thymeleaf/index.html
 http://dandelion.github.io/dandelion/roadmap.html
-http://dandelion.github.io/datatables/acknowledgments.html
 http://dandelion.github.io/datatables/architecture/browser.html
 http://dandelion.github.io/datatables/architecture/caching.html
 http://dandelion.github.io/datatables/architecture/dandelion.html
