@@ -8,7 +8,7 @@
 <meta name="author" content="Dandelion">
 
 <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
-<link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
+<!-- <link href="/assets/css/bootstrap_custom1.css" rel="stylesheet"> -->
 <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
 <!--[if IE 7]>
       <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
@@ -16,7 +16,10 @@
 <!--[if lt IE 9]>
       <script src="/assets/js/html5shiv.js"></script>
       <![endif]-->
-<link href="/assets/css/home.css" rel="stylesheet">
+<!-- <link href="/assets/css/site-home.css" rel="stylesheet"> -->
+<link href="/assets/css/site-main.css" rel="stylesheet">
+<link href="/assets/css/site-marketing.css" rel="stylesheet">
+<!-- <link href="//fonts.googleapis.com/css?family=Lato:300italic" rel="stylesheet"> -->
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
@@ -40,6 +43,11 @@
       	s.parentNode.insertBefore(ga, s);
       })();
 </script>
+<style>
+   body{
+      font-family: 'Lato', sans-serif;
+   }
+</style>
 
 </head>
 <body>
@@ -52,9 +60,6 @@
             <a href="/">
                <div id="logo_container">
                    <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
-                   <p id="logo_text">
-                       
-                   </p>
                </div>
             </a>
             <!-- 
@@ -79,64 +84,83 @@
       </div>
    </div>
    
-   <h3 id='team'>Team</h3>
-
-<p>To contact the developers, please use the appropriate <a href='mailto:dandelion-devteam@googlegroups.com'>mailing list</a> or <a href='http://dandelion-forum.48353.n6.nabble.com/'>forum</a>.</p>
-
-<h4 id='members'>Members</h4>
-<table class='table table-striped'>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>User ID</th>
-			<th>Location</th>
-			<th>Email</th>
-			<th>Role</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Thibault Duchateau</td>
-			<td>tduchateau</td>
-			<td>France</td>
-			<td>thibault.duchateau@gmail.com</td>
-			<td>Lead developer (project co-founder)</td>
-		</tr>
-		<tr>
-			<td>Romain Lespinasse</td>
-			<td>rlespinasse</td>
-			<td>France</td>
-			<td>romain.lespinasse@gmail.com</td>
-			<td>Lead developer (project co-founder)</td>
-		</tr>
-		<tr>
-			<td>Gautier Dhordain</td>
-			<td>Jdourd</td>
-			<td>France</td>
-			<td>g.dhordain@gmail.com</td>
-			<td>Dandelion-Datatables developer</td>
-		</tr>
-	</tbody>
-</table>
-<h4 id='contributors'>Contributors</h4>
-<table class='table table-striped'>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>User ID</th>
-			<th>Location</th>
-			<th>Email</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Pavel Janecka</td>
-			<td>Sorceror</td>
-			<td>Czech Republic</td>
-			<td>janecka.pavel@gmail.com</td>
-		</tr>
-	</tbody>
-</table>
+   <div class="container-fluid">
+   <div class="container" style="padding-top:20px;padding-bottom:20px;">  
+      
+      <div class="row">
+         <div class="span12">
+            <h2>Dandelion team</h2>
+            <p>
+               To contact the developers, please use the <a href="http://dandelion-forum.48353.x6.nabble.com/">forum</a> preferably. Nevertheless, you can find below all members and contributors information.
+            </p>
+         </div>
+      </div>
+      
+      <div class="row">
+         <div class="span12">
+            <h3 class="section-title">Members</h3>
+            <table class="table table-striped">
+               <thead>
+                  <tr>
+                     <th>Name</th>
+                     <th>User ID</th>
+                     <th>Location</th>
+                     <th>Email</th>
+                     <th>Role</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Thibault Duchateau</td>
+                     <td>tduchateau</td>
+                     <td>France</td>
+                     <td>thibault.duchateau@gmail.com</td>
+                     <td>Lead developer (project co-founder)</td>
+                  </tr>
+                  <tr>
+                     <td>Romain Lespinasse</td>
+                     <td>rlespinasse</td>
+                     <td>France</td>
+                     <td>romain.lespinasse@gmail.com</td>
+                     <td>Lead developer (project co-founder)</td>
+                  </tr>
+                  <tr>
+                     <td>Gautier Dhordain</td>
+                     <td>Jdourd</td>
+                     <td>France</td>
+                     <td>g.dhordain@gmail.com</td>
+                     <td>Dandelion-Datatables developer</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      
+      <div class="row">
+         <div class="span12">
+            <h3 class="section-title">Contributors</h3>
+            <table class="table table-striped">
+               <thead>
+                  <tr>
+                     <th>Name</th>
+                     <th>User ID</th>
+                     <th>Location</th>
+                     <th>Email</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Pavel Janecka</td>
+                     <td>Sorceror</td>
+                     <td>Czech Republic</td>
+                     <td>janecka.pavel@gmail.com</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+</div>
    
    <div class="container-fluid area-footer">     
       <footer class="footer">

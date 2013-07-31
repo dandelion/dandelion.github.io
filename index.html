@@ -19,7 +19,9 @@ layout: home
 <!--[if lt IE 9]>
 <script src="/assets/js/html5shiv.js"></script>
 <![endif]-->
-<link href="/assets/css/home.css" rel="stylesheet">
+<link href="/assets/css/site-main.css" rel="stylesheet">
+<link href="/assets/css/site-home.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Lato:300italic" rel="stylesheet">
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
@@ -112,7 +114,7 @@ layout: home
       <div class="container">
          <div class="row">
             <div class="span6" style="overflow:hidden; ">
-               <h3 class="area-title">Latest news</h3>
+               <h3 class="section-title">Latest news</h3>
                <ul>
                {% for post in site.posts limit:4 %}
                   <li>
@@ -129,7 +131,7 @@ layout: home
                </ul>
             </div>
             <div class="span6 hidden-phone">
-               <h3 class="area-title">Social</h3>
+               <h3 class="section-title">Social</h3>
                <div>
                   <a class="twitter-timeline" height="400" href="https://twitter.com/dandelion_proj" data-widget-id="306779829204828161" data-chrome="noheader transparent noscrollbar nofooter">Tweets de @dandelion_proj</a>
                   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

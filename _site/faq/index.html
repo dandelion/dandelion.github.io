@@ -8,7 +8,7 @@
 <meta name="author" content="Dandelion">
 
 <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
-<link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
+<!-- <link href="/assets/css/bootstrap_custom1.css" rel="stylesheet"> -->
 <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
 <!--[if IE 7]>
       <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
@@ -16,7 +16,10 @@
 <!--[if lt IE 9]>
       <script src="/assets/js/html5shiv.js"></script>
       <![endif]-->
-<link href="/assets/css/home.css" rel="stylesheet">
+<!-- <link href="/assets/css/site-home.css" rel="stylesheet"> -->
+<link href="/assets/css/site-main.css" rel="stylesheet">
+<link href="/assets/css/site-marketing.css" rel="stylesheet">
+<!-- <link href="//fonts.googleapis.com/css?family=Lato:300italic" rel="stylesheet"> -->
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
@@ -40,6 +43,11 @@
       	s.parentNode.insertBefore(ga, s);
       })();
 </script>
+<style>
+   body{
+      font-family: 'Lato', sans-serif;
+   }
+</style>
 
 </head>
 <body>
@@ -52,9 +60,6 @@
             <a href="/">
                <div id="logo_container">
                    <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
-                   <p id="logo_text">
-                       
-                   </p>
                </div>
             </a>
             <!-- 
@@ -112,7 +117,7 @@
                </p>
                <p>
                   In order to use snapshot releases, you need to add the Sonatype OSS Snapshots repository in your Maven <code>pom.xml</code> file, as follows:
-<pre>&lt;repositories>
+<pre class="prettyprint linenums">&lt;repositories>
    &lt;repository>
       &lt;id>sonatype-nexus-snapshots&lt;/id>
       &lt;name>Sonatype Nexus Snapshots&lt;/name>
@@ -125,7 +130,7 @@
                </p>
                <p>
                   Also, you will have to update the dependencies. If the version under development is the 0.9.0, you will have to modify the versions like this:
-<pre>&lt;dependency>
+<pre class="prettyprint linenums">&lt;dependency>
    &lt;groupId>com.github.dandelion&lt;/groupId>
    &lt;artifactId>datatables-jsp&lt;/artifactId>
    &lt;version>0.9.0-SNAPSHOT&lt;/version>
