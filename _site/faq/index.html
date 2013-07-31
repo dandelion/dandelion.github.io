@@ -79,10 +79,81 @@
       </div>
    </div>
    
-   ### Documentation
-
-TODO
-
+   <div class="container-fluid">
+   <div class="container">  
+      <div class="row">
+         <div class="span12">
+            <h3 class="area-title">FAQ</h3>
+         </div>      
+      </div>
+      
+      <div class="row">
+         <div class="span12">
+            <div class="hero-unit" style="padding: 15px;">
+               <ul>
+                  <li>
+                     <h4>General</h4>
+                     <ul>
+                        <li><a href="#snapshot">How to use a SNAPSHOT version of a Dandelion module?</a></li>
+                      <li><a href="#contributing">How can I contribute to Dandelion?</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      
+      <div class="row">
+         <div class="span12">
+            <section>
+               <h3 id="snapshot">How to use a SNAPSHOT version of a Dandelion module?</h3>
+               <p>
+                  Whichever module is being developed, a <strong>snapshot release</strong> is always built as soon as a commit is pushed in its GitHub repository. You can of course use it, for testing purposes. It will allow you to try new features or specific bug fixes.
+               </p>
+               <p>
+                  In order to use snapshot releases, you need to add the Sonatype OSS Snapshots repository in your Maven <code>pom.xml</code> file, as follows:
+<pre>&lt;repositories>
+   &lt;repository>
+      &lt;id>sonatype-nexus-snapshots&lt;/id>
+      &lt;name>Sonatype Nexus Snapshots&lt;/name>
+      &lt;url>https://oss.sonatype.org/content/repositories/snapshots&lt;/url>
+      &lt;snapshots>
+         &lt;enabled>true&lt;/enabled>
+      &lt;/snapshots>
+   &lt;/repository>
+&lt;/repositories></pre>
+               </p>
+               <p>
+                  Also, you will have to update the dependencies. If the version under development is the 0.9.0, you will have to modify the versions like this:
+<pre>&lt;dependency>
+   &lt;groupId>com.github.dandelion&lt;/groupId>
+   &lt;artifactId>datatables-jsp&lt;/artifactId>
+   &lt;version>0.9.0-SNAPSHOT&lt;/version>
+&lt;/dependency>         
+&lt;dependency>
+   &lt;groupId>com.github.dandelion&lt;/groupId>
+   &lt;artifactId>datatables-servlet2&lt;/artifactId>
+   &lt;version>0.9.0-SNAPSHOT&lt;/version>
+&lt;/dependency></pre>
+               </p>
+            </section>
+            
+            <section>
+               <h3 id="contributing">How can I contribute to Dandelion?</h3>
+               <p>
+                  In many ways actually:
+                  <ul>
+                     <li>feel free to get in touch with the <a href="/team">team</a> to propose your idea(s), e.g. using the <a href="http://dandelion-forum.48353.x6.nabble.com/">forum</a> or our <a href="">Twitter</a>.</li>
+                     <li>you can make pull requests (but please contact the team before, in order to guide you through the process)</li>
+                     <li>you can write articles, tutorials, blog posts, reviews or anything else about Dandelion</li>
+                     <li>you can promote Dandelion in your company or among your (nerdy) friends/colleagues</li>
+                  </ul>
+               </p>
+            </section>
+         </div>
+      </div>
+   </div>
+</div>
    
    <div class="container-fluid area-footer">     
       <footer class="footer">

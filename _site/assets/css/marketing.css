@@ -118,3 +118,32 @@ p.addthis_toolbox {
 	width: 500px;
 	margin: 0 auto;
 }
+
+
+#logo_container{
+	width: 331px;
+	height: 100px;
+	position: relative;
+	float: left;
+}
+#logo_image{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#logo_text{
+	z-index:100;
+    position:absolute;    
+    color:white;
+    font-size:24px;
+    left:30px;
+    top:70px;
+}
+
+.navbar .nav>li>a {
+float: none;
+padding: 10px 15px 10px;
+color: #ffffff;
+text-decoration: none;
+text-shadow: none;
+}
