@@ -1,6 +1,6 @@
 ---
 layout: marketing
-menu: acknowledgments
+menu: faq
 ---
 
 ### FAQ

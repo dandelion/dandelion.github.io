@@ -45,52 +45,47 @@ body {
 }
 
 .area-component {
-	background-image: -moz-linear-gradient(top, #e3e3e3, #e3e3e3);
-	background-image: -ms-linear-gradient(top, #e3e3e3, #e3e3e3);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e3e3e3),
-		to(#e3e3e3) );
-	background-image: -webkit-linear-gradient(top, #e3e3e3, #e3e3e3);
-	background-image: -o-linear-gradient(top, #e3e3e3, #e3e3e3);
-	background-image: linear-gradient(top, #e3e3e3, #e3e3e3);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3e3e3',
-		endColorstr='#e3e3e3', GradientType=0 );
+/* 	background-color: #d6d6d6; */
+	background-color: #ffffff;
 	margin: 0;
-	height: 140px;
+	padding: 20px;
+	height: 200px;
 	color: black;
-	text-align: center;
+/* 	text-align: center; */
 }
 
 .area-social {
-	background-image: -moz-linear-gradient(top, #e3e3e3, #e3e3e3);
-	background-image: -ms-linear-gradient(top, #e3e3e3, #e3e3e3);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e3e3e3),
-		to(#e3e3e3) );
-	background-image: -webkit-linear-gradient(top, #e3e3e3, #e3e3e3);
-	background-image: -o-linear-gradient(top, #e3e3e3, #e3e3e3);
-	background-image: linear-gradient(top, #e3e3e3, #e3e3e3);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3e3e3',
-		endColorstr='#e3e3e3', GradientType=0 );
+/* 	background-color: #e3e3e3; */
+	background-color: #ffffff;
+	margin: 0;
+	padding: 10px;
 	color: black;
 	height: 520px;
 }
 
 .area-share {
-	background-image: -moz-linear-gradient(top, #e3e3e3, #e3e3e3);
-	background-image: -ms-linear-gradient(top, #e3e3e3, #e3e3e3);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e3e3e3),
-		to(#e3e3e3) );
-	background-image: -webkit-linear-gradient(top, #e3e3e3, #e3e3e3);
-	background-image: -o-linear-gradient(top, #e3e3e3, #e3e3e3);
-	background-image: linear-gradient(top, #e3e3e3, #e3e3e3);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3e3e3',
-		endColorstr='#e3e3e3', GradientType=0 );
-	color: black;
+/* 	background-color: #e3e3e3; */
+/* 	color: black; */
+/* 	text-align: center; */
+	padding: 22px 0 17px;
 	text-align: center;
+	background-color: #f5f5f5;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #ddd;
+
 }
 
-footer {
-	color: white;
+.area-footer {
 	background-color: #5f5f5f;
+	color: #d6d6d6;
+	margin: 0;
+	padding: 10px;
+}
+
+.area-title {
+	padding-bottom: 9px;
+	margin: 20px 0 30px;
+	border-bottom: 1px solid #eeeeee;
 }
 
 footer a {
@@ -115,6 +110,6 @@ hr {
 }
 
 p.addthis_toolbox {
-	width: 500px;
+	width: 700px;
 	margin: 0 auto;
 }

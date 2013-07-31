@@ -86,7 +86,6 @@ http://dandelion.github.io/datatables/features/styling/basicstyling.html
 http://dandelion.github.io/datatables/features/styling/bootstrap2.html
 http://dandelion.github.io/datatables/features/styling/index.html
 http://dandelion.github.io/datatables/features/styling/jqueryui.html
-http://dandelion.github.io/datatables/get-started.html
 http://dandelion.github.io/datatables/index.html
 http://dandelion.github.io/datatables/installation/index.html
 http://dandelion.github.io/datatables/installation/jsp.html
@@ -125,7 +124,9 @@ http://dandelion.github.io/datatables/ref/thymeleaf/td.html
 http://dandelion.github.io/datatables/ref/thymeleaf/th.html
 http://dandelion.github.io/datatables/ref/thymeleaf/thead.html
 http://dandelion.github.io/datatables/roadmap.html
+http://dandelion.github.io/documentation/index.html
 http://dandelion.github.io/faq.html
+http://dandelion.github.io/get-started/index.html
 http://dandelion.github.io/glyph/index.html
 http://dandelion.github.io/index.html
 http://dandelion.github.io/releases/index.html

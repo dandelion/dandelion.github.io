@@ -77,57 +77,10 @@
    
    <div class="container-fluid" style="padding: 0; margin: 0;">
       <div class="row-fluid">
-         <h3 id='faq'>FAQ</h3>
-<ul>
-   <li>
-      <h4>General</h4>
-      <ul>
-         <li><a href='#snapshot'>How to use a SNAPSHOT version of a Dandelion module?</a></li>
-		 <li><a href='#contributing'>How can I contribute to Dandelion?</a></li>
-      </ul>
-   </li>
-</ul>
-<h3 id='general'>General</h3>
-<h3 id='snapshot'>How to use a SNAPSHOT version of a Dandelion module?</h3>
-<p>Whichever module is being developed, a <strong>snapshot release</strong> is always built as soon as a commit is pushed in its GitHub repository. You can of course use it, for testing purposes. It will allow you to try new features or specific bug fixes.</p>
+         ### Documentation
 
-<p>In order to use snapshot releases, you need to add the Sonatype OSS Snapshots repository in your Maven pom.xml file, as follows:</p>
+TODO
 
-<pre><code>&lt;repositories&gt;
-   &lt;repository&gt;
-      &lt;id&gt;sonatype-nexus-snapshots&lt;/id&gt;
-      &lt;name&gt;Sonatype Nexus Snapshots&lt;/name&gt;
-      &lt;url&gt;https://oss.sonatype.org/content/repositories/snapshots&lt;/url&gt;
-      &lt;snapshots&gt;
-         &lt;enabled&gt;true&lt;/enabled&gt;
-      &lt;/snapshots&gt;
-   &lt;/repository&gt;
-&lt;/repositories&gt;</code></pre>
-
-<p>Also, you will have to update the dependencies. If the version under development is the 0.9.0, you will have to modify the versions like this:</p>
-
-<pre><code>&lt;dependency&gt;
-   &lt;groupId&gt;com.github.dandelion&lt;/groupId&gt;
-   &lt;artifactId&gt;datatables-jsp&lt;/artifactId&gt;
-   &lt;version&gt;0.9.0-SNAPSHOT&lt;/version&gt;
-&lt;/dependency&gt;         
-&lt;dependency&gt;
-   &lt;groupId&gt;com.github.dandelion&lt;/groupId&gt;
-   &lt;artifactId&gt;datatables-servlet2&lt;/artifactId&gt;
-   &lt;version&gt;0.9.0-SNAPSHOT&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
-<h3 id='contributing'>How can I contribute to Dandelion?</h3>
-<p>In many ways actually:</p>
-
-<ul>
-<li>feel free to get in touch with the <a href='/team'>team</a> to propose your idea(s), e.g. using the <a href='http://dandelion-forum.48353.x6.nabble.com/'>forum</a> or our <a href=''>Twitter</a>.</li>
-
-<li>you can make pull requests (but please contact the team before, in order to guide you through the process)</li>
-
-<li>you can write articles, tutorials, blog posts, reviews or anything else about Dandelion.</li>
-
-<li>you can promote Dandelion in your company or among your (nerdy) friends/colleagues</li>
-</ul>
       </div>
       <hr>
       <footer class="footer">
