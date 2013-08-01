@@ -6,6 +6,13 @@
 => faq
 ************************************/
 
+/* Links */
+a {
+	color: #65c22f;
+}
+
+/* End Links */
+
 /* Navbar marketing */
 .navbar .nav>li>a {
 	float: none;
@@ -16,13 +23,15 @@
 }
 
 .navbar-inner {
-  background-image: -moz-linear-gradient(top, #65c22f, #65c22f);
-  background-image: -ms-linear-gradient(top, #65c22f, #65c22f);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#65c22f), to(#65c22f));
-  background-image: -webkit-linear-gradient(top, #65c22f, #65c22f);
-  background-image: -o-linear-gradient(top, #65c22f, #65c22f);
-  background-image: linear-gradient(top, #65c22f, #65c22f);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#65c22f', endColorstr='#65c22f', GradientType=0);
+	background-image: -moz-linear-gradient(top, #65c22f, #65c22f);
+	background-image: -ms-linear-gradient(top, #65c22f, #65c22f);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#65c22f),
+		to(#65c22f) );
+	background-image: -webkit-linear-gradient(top, #65c22f, #65c22f);
+	background-image: -o-linear-gradient(top, #65c22f, #65c22f);
+	background-image: linear-gradient(top, #65c22f, #65c22f);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#65c22f',
+		endColorstr='#65c22f', GradientType=0 );
 }
 
 .navbar .brand {
@@ -78,13 +87,15 @@
 }
 /* End Navbar marketing */
 
-/* Links */
-a {
-	color: #65c22f;
+.container-marketing {
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
-a:hover {
-	color: #65c22f;
-	text-decoration: underline;
+h2.marketing {
+	background:
+		url(/assets/images/dandelion/github-dandelion-logo-twitter-50px.png)
+		no-repeat left center;
+	padding-left: 55px;
+	border-bottom: 1px solid #a0cd70;
 }
-/* End Links */

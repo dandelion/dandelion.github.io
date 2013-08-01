@@ -4,39 +4,40 @@ menu: faq
 ---
 
 <div class="container-fluid">
-   <div class="container">  
+   <div class="container container-marketing">  
       <div class="row">
          <div class="span12">
-            <h3 class="area-title">FAQ</h3>
+            <h2 class="marketing">Frequently Asked Questions</h2>
          </div>      
       </div>
       
       <div class="row">
          <div class="span12">
-            <div class="hero-unit" style="padding: 15px;">
+            <h3 class="section-title">Questions</h3>
+            <p>
                <ul>
                   <li>
                      <h4>General</h4>
                      <ul>
                         <li><a href="#snapshot">How to use a SNAPSHOT version of a Dandelion module?</a></li>
-                      <li><a href="#contributing">How can I contribute to Dandelion?</a></li>
+                        <li><a href="#contributing">How can I contribute to Dandelion?</a></li>
                      </ul>
                   </li>
                </ul>
-            </div>
+            </p>
          </div>
       </div>
       
       <div class="row">
          <div class="span12">
             <section>
-               <h3 id="snapshot">How to use a SNAPSHOT version of a Dandelion module?</h3>
+               <h3 id="snapshot" class="section-title">How to use a SNAPSHOT version of a Dandelion module?</h3>
                <p>
                   Whichever module is being developed, a <strong>snapshot release</strong> is always built as soon as a commit is pushed in its GitHub repository. You can of course use it, for testing purposes. It will allow you to try new features or specific bug fixes.
                </p>
                <p>
                   In order to use snapshot releases, you need to add the Sonatype OSS Snapshots repository in your Maven <code>pom.xml</code> file, as follows:
-<pre class="prettyprint linenums">&lt;repositories>
+<pre class="prettyprint">&lt;repositories>
    &lt;repository>
       &lt;id>sonatype-nexus-snapshots&lt;/id>
       &lt;name>Sonatype Nexus Snapshots&lt;/name>
@@ -49,7 +50,7 @@ menu: faq
                </p>
                <p>
                   Also, you will have to update the dependencies. If the version under development is the 0.9.0, you will have to modify the versions like this:
-<pre class="prettyprint linenums">&lt;dependency>
+<pre class="prettyprint">&lt;dependency>
    &lt;groupId>com.github.dandelion&lt;/groupId>
    &lt;artifactId>datatables-jsp&lt;/artifactId>
    &lt;version>0.9.0-SNAPSHOT&lt;/version>
@@ -63,7 +64,7 @@ menu: faq
             </section>
             
             <section>
-               <h3 id="contributing">How can I contribute to Dandelion?</h3>
+               <h3 id="contributing" class="section-title">How can I contribute to Dandelion?</h3>
                <p>
                   In many ways actually:
                   <ul>

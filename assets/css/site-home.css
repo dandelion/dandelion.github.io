@@ -9,6 +9,9 @@ body {
 	color: black;
 	font-family: Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+ul {
+	list-style-type: none;
+}
 
 .dandelion-jumbotron {
 	background-image: -moz-linear-gradient(top, #65c22f, #5aae2a);
@@ -58,11 +61,6 @@ body {
 	line-height: 20px;
 }
 
-a:hover,a:focus {
-	color: #00bfff;
-	text-decoration: underline;
-}
-
 .version {
 	font-size: 17px;
 	color: #777777;
@@ -73,3 +71,4 @@ p.addthis_toolbox {
 	width: 700px;
 	margin: 0 auto;
 }
+/* End AddThis configuration */
