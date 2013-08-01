@@ -4,7 +4,7 @@ menu: features
 level1: features
 ---
 
-### Available features
+<h3 class="section-title">Available features</h3>
 
 You can find below the full list of features supported by **Dandelion-Datatables** and the correspondence between the JSP Taglib attributes and the Thymeleaf dialect ones.
 

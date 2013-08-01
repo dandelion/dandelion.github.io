@@ -100,6 +100,7 @@
                   <li>
                      <h4>General</h4>
                      <ul>
+                        <li><a href="#dandelion">Where does Dandelion come from?</a></li>
                         <li><a href="#snapshot">How to use a SNAPSHOT version of a Dandelion module?</a></li>
                         <li><a href="#contributing">How can I contribute to Dandelion?</a></li>
                      </ul>
@@ -111,6 +112,26 @@
       
       <div class="row">
          <div class="span12">
+            <section>
+               <h3 id="dandelion" class="section-title">Where does Dandelion come from?</h3>
+               <p>
+                  Dandelion is an after-dinner project which comes first from <a
+                     href="http://tduchateau.github.com/DataTables-taglib/">Datatables-taglib</a>, a first attempt to write a JSP taglib allowing to generate HTML tables improved by <a href="http://datatables.net/">DataTables</a>.
+               </p>
+               <p>
+                  Then the project evolved to become <a href="https://github.com/datatables4j">DataTables4j</a>, a second attempt to write a more featured library, but this time almost capable of
+                  competing with <a href="http://www.displaytag.org/">Displaytag</a>, the reference for displaying HTML tables in Java-based web application.
+               </p>
+               <p> 
+                  The project has continued to evolve but with the a recurring observation: the web asset management (js, css, ...) can often become a hell of a job in web apps. That's why we took those 3 decisions:
+                  <ul>
+                     <li>create something capable of simplifying the web asset management</li>
+                     <li>enlarge the area, from HTML tables to other components or even wider issues still related to the web environment, like web analytics</li>
+                     <li>rename the project to Dandelion, a more generic name, allowing us to start developing a real Java web framework</li>                  
+                  </ul>
+               </p>
+            </section>
+            
             <section>
                <h3 id="snapshot" class="section-title">How to use a SNAPSHOT version of a Dandelion module?</h3>
                <p>
@@ -131,16 +152,20 @@
                </p>
                <p>
                   Also, you will have to update the dependencies. If the version under development is the 0.9.0, you will have to modify the versions like this:
-<pre class="prettyprint">&lt;dependency>
-   &lt;groupId>com.github.dandelion&lt;/groupId>
-   &lt;artifactId>datatables-jsp&lt;/artifactId>
-   &lt;version>0.9.0-SNAPSHOT&lt;/version>
-&lt;/dependency>         
-&lt;dependency>
-   &lt;groupId>com.github.dandelion&lt;/groupId>
-   &lt;artifactId>datatables-servlet2&lt;/artifactId>
-   &lt;version>0.9.0-SNAPSHOT&lt;/version>
-&lt;/dependency></pre>
+<pre class="prettyprint">&lt;dependencies>
+   ...
+   &lt;dependency>
+      &lt;groupId>com.github.dandelion&lt;/groupId>
+      &lt;artifactId>datatables-jsp&lt;/artifactId>
+      &lt;version>0.9.0-SNAPSHOT&lt;/version>
+   &lt;/dependency>         
+   &lt;dependency>
+      &lt;groupId>com.github.dandelion&lt;/groupId>
+      &lt;artifactId>datatables-servlet2&lt;/artifactId>
+      &lt;version>0.9.0-SNAPSHOT&lt;/version>
+   &lt;/dependency>
+   ...
+&lt;/dependencies></pre>
                </p>
             </section>
             
@@ -149,10 +174,16 @@
                <p>
                   In many ways actually:
                   <ul>
-                     <li>feel free to get in touch with the <a href="/team">team</a> to propose your idea(s), e.g. using the <a href="http://dandelion-forum.48353.x6.nabble.com/">forum</a> or our <a href="https://twitter.com/dandelion_proj">Twitter</a>.</li>
-                     <li>you can make pull requests (but please contact the team before, in order to guide you through the process)</li>
+                     <li>feel free to get in touch with the <a href="/team">team</a> to propose your idea(s), e.g. using the <a href="http://dandelion-forum.48353.x6.nabble.com/">forum</a></li>
+                     <li>you can make pull requests but before:
+                        <ul>
+                           <li>please contact the team before, in order to guide you through the process</li>
+                           <li>please read and accept the <a href="https://github.com/dandelion/dandelion/blob/master/CONTRIBUTING.md">terms of contributing</a></li>
+                        </ul>
+                     </li>
                      <li>you can write articles, tutorials, blog posts, reviews or anything else about Dandelion</li>
                      <li>you can promote Dandelion in your company or among your (nerdy) friends/colleagues</li>
+                     <li>you can follow us on <a href="https://twitter.com/dandelion_proj">Twitter</a></li>
                   </ul>
                </p>
             </section>
@@ -174,7 +205,8 @@
                      <li><a href="https://github.com/dandelion"><i class="icon-github"></i> Source repository</a></li>
                      <li><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug"></i> Issue tracker</a></li>
                      <li><a href="/team"><i class="icon-group"></i> Team</a></li>
-                     <li><a href="/acknowledgements.html"><i class="icon-info-sign"></i>&nbsp;&nbsp; Acknowledgements</a></li>
+                     <li><a href="/roadmap"><i class="icon-road"></i> Roadmap</a></li>
+                     <li><a href="/acknowledgements/"><i class="icon-info-sign"></i> Acknowledgements</a></li>
                   </ul>
                </div>
                <div class="span4">
@@ -200,6 +232,13 @@
             <p class="text-right" style="margin-top:10px;">
                <a href="/"><img src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
                Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="span12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components, are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
             </p>
          </div>
       </div>

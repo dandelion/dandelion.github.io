@@ -1,4 +1,4 @@
 $(document).ready(function () {
-	$('#exampleTable').removeClass('table table-striped');
+//	$('#exampleTable').removeClass('table table-striped');
 	var oTable = $('#exampleTable').dataTable();	
 });

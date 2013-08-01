@@ -1,5 +1,5 @@
 
-http://dandelion.github.io/acknowledgments.html
+http://dandelion.github.io/acknowledgements/index.html
 http://dandelion.github.io/blog/archive.html
 http://dandelion.github.io/blog/atom.xml
 http://dandelion.github.io/blog/categories.html
@@ -123,12 +123,11 @@ http://dandelion.github.io/datatables/ref/thymeleaf/td.html
 http://dandelion.github.io/datatables/ref/thymeleaf/th.html
 http://dandelion.github.io/datatables/ref/thymeleaf/thead.html
 http://dandelion.github.io/datatables/roadmap.html
-http://dandelion.github.io/documentation/index.html
 http://dandelion.github.io/faq/index.html
-http://dandelion.github.io/get-started/index.html
 http://dandelion.github.io/glyph/index.html
 http://dandelion.github.io/index.html
 http://dandelion.github.io/releases/index.html
+http://dandelion.github.io/roadmap/index.html
 http://dandelion.github.io/team/index.html
 http://dandelion.github.io/webanalytics/changelog.html
 http://dandelion.github.io/webanalytics/features/basic/index.html

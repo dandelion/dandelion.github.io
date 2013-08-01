@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dandelion Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="java, web, component, library, assets, datatables">
+<meta name="author" content="Dandelion">
+
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+<!-- <link href="/assets/css/bootstrap_custom1.css" rel="stylesheet"> -->
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+<!--[if IE 7]>
+      <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
+      <![endif]-->
+<!--[if lt IE 9]>
+      <script src="/assets/js/html5shiv.js"></script>
+      <![endif]-->
+<!-- <link href="/assets/css/site-home.css" rel="stylesheet"> -->
+<link href="/assets/css/site-main.css" rel="stylesheet">
+<link href="/assets/css/site-marketing.css" rel="stylesheet">
+<!-- <link href="//fonts.googleapis.com/css?family=Lato:300italic" rel="stylesheet"> -->
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+<link rel="shortcut icon" href="/assets/images/dandelion_square.png">
+
+<script>
+      var _gaq = _gaq || [];
+      _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+      _gaq.push([ '_setCookiePath', '//' ]);
+      _gaq.push([ '_trackPageview' ]);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+      			: 'http://www')
+      			+ '.google-analytics.com/ga.js';
+      	var s = document.getElementsByTagName('script')[0];
+      	s.parentNode.insertBefore(ga, s);
+      })();
+</script>
+<style>
+   body{
+      font-family: 'Lato', sans-serif;
+   }
+</style>
+
+</head>
+<body>
+   <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+         <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a href="/">
+               <div id="logo_container">
+                   <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
+               </div>
+            </a>
+            <!-- 
+            <div class="nav-collapse collapse">
+               <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
+                  <li class="text-center"><a href="/"><i class="icon-home"></i> Home</a></li>
+                  <li class="text-center"><a href="/blog"><i class="icon-comment"></i> Blog</a></li>
+                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-github"></i> Issues</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/"><i class="icon-github-sign"></i> Sources</a></li>
+               </ul>
+               <ul class="nav pull-right" style="clear:right;">
+                  <form class="navbar-search" action="http://google.com/search" method="get" style="margin-right:15px;">
+                     <input type="hidden" name="q" value="site:dandelion.github.io/" />
+                     <input type="text" class="search search-query" name="q" results="0" placeholder="Search"/>
+                  </form>
+               </ul>
+            </div>
+             -->
+            <!--/.nav-collapse -->
+         </div>
+      </div>
+   </div>
+   
+   <div class="container-fluid">
+   <div class="container container-marketing">  
+      <div class="row">
+         <div class="span12">
+            <h2 class="marketing">Roadmap</h2>
+            <p>
+               Note that this is not a formal roadmap, more a priority list which evolves with time. 
+            </p>
+         </div>      
+      </div>
+      
+      <div class="row">
+         <div class="span12">
+            <h3 class="section-title">Dandelion</h3>
+            <p>
+               <ul>
+                  <li>
+                     <h4>v0.3.0</h4>
+                     <ul>
+                        <li>Assets compression</li>
+                        <li>Assets aggregation</li>
+                        <li>Template scopes</li>
+                        <li>New @Scope annotation allowing to activate a scope request-wide</li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h4>v0.4.0</h4>
+                     <ul>
+                        <li>Conditional assets (IE7+, IE8+, ...)</li>
+                        <li>Assets exotiquess</li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h4>Later</h4>
+                     <ul>
+                        <li>Web configurator</li>
+                        <li>Extractor Maven plugin</li>
+                        <li><a href="http://yeoman.io/">Yeoman</a> integration</li>
+                     </ul>
+                  </li>
+               </ul>
+            </p>
+         </div>
+      </div>
+      
+      <div class="row">
+         <div class="span12">
+            <h3 class="section-title">Dandelion Datatables</h3>
+            <p>
+               <ul>
+                  <li>
+                     <h4>v0.9.1</h4>
+                     <ul>
+                        <li>Support for Bootstrap 3 and other Bootstrap themes (see <a href="http://tableclothjs.com/">Tablecloth</a>)</li>
+                        <li>0.9.0 fixes</li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h4>v0.10.0</h4>
+                     <ul>
+                        <li>Websocket support for continuously-updating table</li>
+                        <li>Assets exotiquess</li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h4>v0.11.0</h4>
+                     <ul>
+                        <li>We've planned to make the connection between <strong>Dandelion-Datatables</strong> and <strong>Dandelion</strong> (core module) in this release</li>
+                        <li>Add support for Spring Data REST (server-side processing)</li>
+                        <li>Assets exotiquess</li>
+                     </ul>
+                  </li>
+                  <li>
+                     <h4>v0.12.0</h4>
+                     <ul>
+                        <li>Add support for live-editing table</li>
+                     </ul>
+                  </li>
+               </ul>
+            </p>
+         </div>
+      </div>
+      
+      <div class="row">
+         <div class="span12">
+            <h3 class="section-title">Dandelion Webanalytics</h3>
+            <p>
+               <ul>
+                  <li>
+                     <h4>v0.3.0</h4>
+                     <ul>
+                        <li>???</li>
+                        <li>???</li>
+                     </ul>
+                  </li>
+               </ul>
+            </p>
+         </div>
+      </div>
+      
+      <div class="row">
+         <div class="span12">
+            <h3 class="section-title">New components</h3>
+            <p>
+               We've planned to develop new components, such as:
+               <ul>
+                  <li>Dandelion Glyph</li>
+                  <li>Dandelion Forms</li>
+                  <li>If you have any suggestion, feel free to <a href="http://dandelion-forum.48353.x6.nabble.com/">contact us</a>!</li>
+               </ul>
+            </p>
+         </div>
+      </div>
+   </div>
+</div>
+   
+   <div class="container-fluid area-footer">     
+      <footer class="footer">
+   <div class="container">
+      <div class="row">
+         <div class="span8">
+            
+            <div class="row-fluid">
+               <div class="span4">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="icon-github"></i> Source repository</a></li>
+                     <li><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug"></i> Issue tracker</a></li>
+                     <li><a href="/team"><i class="icon-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="icon-road"></i> Roadmap</a></li>
+                     <li><a href="/acknowledgements/"><i class="icon-info-sign"></i> Acknowledgements</a></li>
+                  </ul>
+               </div>
+               <div class="span4">
+                  <h3>Get started</h3>
+                  <ul>
+                     <li><a href="/faq"> <i class="icon-book"></i> FAQ</a></li>
+                     <li><a href="/samples"><i class="icon-code"></i> Samples</a></li>
+                     <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
+                  </ul>
+               </div>
+               <div class="span4">
+                  <h3>Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>
+                     <li><a href="http://dandelion-forum.48353.x6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="icon-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="span4">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="span12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components, are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+   </div>
+   
+   <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+   <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</body>
+</html>

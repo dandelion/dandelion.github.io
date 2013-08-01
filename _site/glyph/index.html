@@ -6,9 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="java, web, component, library, assets, datatables">
 <meta name="author" content="Dandelion">
+
 <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
 <link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
-<link href="/assets/css/component.css" rel="stylesheet">
+<!-- <link href="/assets/css/component.css" rel="stylesheet"> -->
 <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
 <!--[if IE 7]>
       <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
@@ -16,6 +17,9 @@
 <!--[if lt IE 9]>
       <script src="/assets/js/html5shiv.js"></script>
       <![endif]-->
+<link href="/assets/css/site-main.css" rel="stylesheet">
+<link href="/assets/css/site-component.css" rel="stylesheet">
+      
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
@@ -38,11 +42,11 @@
       	s.parentNode.insertBefore(ga, s);
       })();
 </script>
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-   <div class="navbar navbar-fixed-top">
+   <div class="navbar navbar-static-top">
       <div class="navbar-inner">
          <div class="container-fluid">
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -75,9 +79,8 @@
          </div>
       </div>
    </div>
-   <div class="container-fluid">
-      <div class="row-fluid">
-         <!--
+
+   <!--
   ~ [The "BSD licence"]
   ~ Copyright (c) 2013 Dandelion
   ~ All rights reserved.
@@ -137,14 +140,61 @@
         <p>In progress</p>
     </div>
 </div>
+   
+   <div class="container-fluid area-footer">     
+      <footer class="footer">
+   <div class="container">
+      <div class="row">
+         <div class="span8">
+            
+            <div class="row-fluid">
+               <div class="span4">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="icon-github"></i> Source repository</a></li>
+                     <li><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug"></i> Issue tracker</a></li>
+                     <li><a href="/team"><i class="icon-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="icon-road"></i> Roadmap</a></li>
+                     <li><a href="/acknowledgements/"><i class="icon-info-sign"></i> Acknowledgements</a></li>
+                  </ul>
+               </div>
+               <div class="span4">
+                  <h3>Get started</h3>
+                  <ul>
+                     <li><a href="/faq"> <i class="icon-book"></i> FAQ</a></li>
+                     <li><a href="/samples"><i class="icon-code"></i> Samples</a></li>
+                     <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
+                  </ul>
+               </div>
+               <div class="span4">
+                  <h3>Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>
+                     <li><a href="http://dandelion-forum.48353.x6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="icon-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="span4">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
       </div>
-      <hr>
-      <footer>
-         <p>
-            Copyright © The <a href="/team">Dandelion Team</a> | <a href="/acknowledgments.html">Acknowledgments</a>
-            <span style="float:right;"><script src="http://www.ohloh.net/p/633354/widgets/project_thin_badge.js"></script></span>
-         </p>
-      </footer>
+      <div class="row" style="padding-top:10px;">
+         <div class="span12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components, are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
    </div>
+</footer>
+   </div>
+   
+   <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 </body>
 </html>
