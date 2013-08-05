@@ -1,0 +1,122 @@
+---
+layout: datatables
+menu: ajax
+level1: tutorials
+level2:
+  url: ajax
+  name: AJAX
+level3:
+  url: ajaxsource
+  name: Using AJAX sources
+---
+
+<h2 class="page-title">Using AJAX sources
+   <div class="pull-right">
+      <span class="badge badge-success compatibility" title="Compatible with JSP">JSP</span>
+      <span class="badge badge-success compatibility" title="Compatible with Thymeleaf">Thymeleaf</span>
+   </div>
+</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   It can be useful to populate a table using an AJAX source, e.g. using a web service that returns a list of objects.
+</p>
+<p>
+   Since v0.8.2, <strong>Dandelion-datatables</strong> support AJAX sources. But be aware, even if the data is obtained from the server via an AJAX call, DataTables will process it client-side, as for
+   classic DOM sources. So this may be not suitable for large data sets. In this latter case, you should consider using the
+   <a href="serverside.html">server-side processing</a> instead.
+</p>
+<p>Note that depending on the data source type (DOM, AJAX), some attributes of the JSP taglib or the Thymeleaf dialect may be available or not. That's why you can see a particular column called "Data
+   source compatibility" in all tag references.
+</p>
+
+<p class="alert alert-info">
+   <strong><i class="icon-info-sign icon-2x"></i></strong> 
+   At the moment, DataTables only consumes JSON format so take care to convert data in this format.
+</p>
+
+<h3 class="section-title" id="htuaas">How to use an AJAX source</h3>
+<h4>Using JSP</h4>
+<p>
+   Instead of using the {% refjsp table data %} table attribute (used for DOM sources), use the {% refjsp table url %} table attribute instead. 
+</p>
+<p>
+   Note that you need to build the URL by yourself, e.g. using the <code>&lt;c:url&gt;</code> JSTL tag.
+</p>
+<p>
+<pre class="prettyprint">
+&lt;c:url var="datasource" value="/persons" />
+&lt;datatables:table id="myTableId" url="${datasource}" row="person">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
+</p>
+<h4>Using Thymeleaf</h4>
+<p>
+   Using Thymeleaf, you have to fill in the {% reftl table dt:url %} table attribute. The same rules apply as for JSP regarding the value you set.
+</p>
+<p>
+   Moreover, you have to tell <strong>Dandelion-datatables</strong> which property must be read from the JSON source for each column using the {% reftl th dt:property %} attribute.
+</p>
+<p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true" dt:url="@{/persons}">
+   &lt;thead>
+      &lt;tr>
+         &lt;th dt:property="'id'">Id&lt;/th>
+         &lt;th dt:property="'firstName'">Firstname&lt;/th>
+         &lt;th dt:property="'lastName'">Lastname&lt;/th>
+         &lt;th dt:property="'address.town.name'">City&lt;/th>
+         &lt;th dt:property="'mail'">Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+&lt;/table>
+</pre>
+</p>
+<p>
+   Note that almost all attribute are processed using the Thymeleaf <a
+      href="http://www.thymeleaf.org/standarddialect5minutes.html">Standard expressions</a>. That's why to need to wrap the value with single quotes.
+</p>
+<p class="alert alert-warn">
+   <strong><i class="icon-warning-sign icon-2x"></i></strong> 
+   Cross-domain requests are not supported yet!
+</p>
+
+<h3 class="section-title" id="eus">Example, using Spring</h3>
+<p>
+   You can see an example of AJAX source in the <a href="https://github.com/dandelion/dandelion-samples/tree/master/datatables-jsp">JSP demo application</a>.
+</p>
+<p>
+   The bellowing Spring controller contains a RESTful method
+   <code>findAll</code>
+   that returns a list of
+   <code>Person</code>
+   as raw data using the
+   <code>@ResponseBody</code>
+   annotation.
+</p>
+<p>
+<pre class="prettyprint">
+@Controller
+@RequestMapping(method = RequestMethod.GET)
+public class SpringMvcAjaxController {
+
+   @Autowired
+   private PersonService personService;
+
+   @RequestMapping(value = "/persons")
+   public @ResponseBody
+   List&lt;Person> findAll(HttpServletRequest request) {
+      return personService.findAll();
+   }
+}
+</pre>
+</p>
+<p>
+   Note that since Spring defaultly performs the JSON serialization using the Jackson JSON processor, so make sure to have the
+   <a href="http://search.maven.org/#search%7Cga%7C1%7Cjackson-mapper-asl">Jackson JARs</a> in your classpath to make it work.
+</p>

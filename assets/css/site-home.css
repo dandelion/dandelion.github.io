@@ -1,7 +1,5 @@
 /***********************************
-
               HOME PAGE
-
 ************************************/
 body {
 	margin: 0;
@@ -64,6 +62,10 @@ ul {
 .version {
 	font-size: 17px;
 	color: #777777;
+}
+
+.incubating {
+	font-size 12px;
 }
 
 /* AddThis configuration */

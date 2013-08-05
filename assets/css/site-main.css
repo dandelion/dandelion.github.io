@@ -1,13 +1,28 @@
 /***********************************
-
          CSS USED SITE-WIDE
-
 ************************************/
-
+.page-title {
+	background:
+		url(/assets/images/dandelion/github-dandelion-logo-twitter-50px.png)
+		no-repeat left center;
+	padding-left: 55px;
+	border-bottom: 1px solid #a0cd70;
+	margin-bottom: 25px;
+}
 a:hover, a:focus {
 	text-decoration: underline;
 }
+/* 2nd level */
+.nav-list .nav-list > li > a {
+  padding-left: 30px;
+  font-size: 12px;
+}
 
+.nav-list .nav-list > li > a,
+.nav-list .nav-list .nav-header {
+  margin-left:  -30px;
+  margin-right: -30px;
+}
 /*
 Footer configuration
 */
@@ -29,7 +44,7 @@ footer ul {
 /* Section configuration*/
 .section-title {
 	padding-bottom: 5px;
-	margin: 20px 0 20px;
+	margin: 10px 0 15px;
 	border-bottom: 1px solid #eeeeee;
 }
 /* End Section configuration*/

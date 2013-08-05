@@ -2,6 +2,7 @@
 # Jekyll configuration
 #
 permalink: /blog/:year/:month/:day/:title 
+pygments: true
 
 #
 # Site configuration

@@ -1,7 +1,5 @@
 /***********************************
-
               COMPONENT
-
 => datatables
 => dandelion
 => webanalytics
@@ -10,11 +8,32 @@ body {
 	margin: 0;
 	padding: 0;
 	color: black;
-	font-family: Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 a {
 	color: #65c22f;
 }
+
+table thead th {
+	border-bottom: 0px;
+}
+
+.release-date{
+	float: right;
+	color: #626262;
+	font-size: 15px;
+}
+
+.attribute-na {
+	background-color: #c4c4c4;
+}
+
+/* Alert customization */
+.alert i {
+	padding-right: 10px;
+}
+/* End Alert customization */
 
 /* Navbar marketing */
 .navbar .nav>li>a {
@@ -66,7 +85,7 @@ a {
 	color: #ffffff;
 	text-decoration: none;
 }
-
+/* End marketing */
 #logo_container {
 	width: 331px;
 	height: 100px;
@@ -89,11 +108,14 @@ a {
 	top: 70px;
 }
 /* End Navbar marketing */
-.container-marketing {
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
 
+/* Bootstrap affix plugin custom */
+.affix {
+	position: fixed;
+	top: 20px;
+	margin-right: 20px;
+}
+/* End Bootstrap affix plugin custom */
 h2.marketing {
 	background:
 		url(/assets/images/dandelion/github-dandelion-logo-twitter-50px.png)
@@ -102,7 +124,14 @@ h2.marketing {
 	border-bottom: 1px solid #a0cd70;
 }
 
-/* /* Large desktop */ */
+.container-component {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+/* /* Large desktop */
+*
+/
 /* @media ( min-width : 1200px) { */
 /* 	body { */
 /* 		padding-top: 120px; */
@@ -110,21 +139,42 @@ h2.marketing {
 /* 	} */
 /* } */
 
-/* /* Portrait tablet to landscape and desktop */ */
+/* /* Portrait tablet to landscape and desktop */
+
+
+ 
+
+
+*
+/
 /* @media ( min-width : 768px) and (max-width: 979px) { */
 /* 	body { */
 /* 		padding-bottom: 60px; */
 /* 	} */
 /* } */
 
-/* /* Landscape phone to portrait tablet */ */
+/* /* Landscape phone to portrait tablet */
+
+
+ 
+
+
+*
+/
 /* @media ( max-width : 767px) { */
 /* 	body { */
 /* 		padding-bottom: 60px; */
 /* 	} */
 /* } */
 
-/* /* Landscape phones and down */ */
+/* /* Landscape phones and down */
+
+
+ 
+
+
+*
+/
 /* @media ( max-width : 480px) { */
 /* 	body { */
 /* 		padding-bottom: 60px; */
@@ -160,13 +210,27 @@ h2.marketing {
 /* 	} */
 /* } */
 
-/* /* Breadcrumb custom */ */
+/* /* Breadcrumb custom */
+
+
+ 
+
+
+*
+/
 /* .breadcrumb { */
 /* 	padding: 4px 15px; */
 /* 	font-size: 11px; */
 /* } */
 
-/* /* Bootstrap affix plugin custom */ */
+/* /* Bootstrap affix plugin custom */
+
+
+ 
+
+
+*
+/
 /* .affix { */
 /* 	position: fixed; */
 /* 	top: 120px; */

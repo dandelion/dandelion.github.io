@@ -1,0 +1,190 @@
+---
+layout: datatables
+menu: ajax
+level1: tutorials
+level2:
+  url: ajax
+  name: AJAX
+level3:
+  url: customized-column-content
+  name: Customized column content
+---
+
+<h2 class="page-title">Customized column content
+   <div class="pull-right">
+      <span class="badge badge-success compatibility" title="Compatible with JSP">JSP</span>
+      <span class="badge badge-success compatibility" title="Compatible with Thymeleaf">Thymeleaf</span>
+   </div>
+</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   Since the v0.8.7, you can add customized column content using AJAX sources. It can be very useful for instance to display an "actions" column or if you need to display a bit more than just the raw data (e.g. a mailto link).
+</p>
+<p>Using DOM sources, you can use the {%refjsp table row %} table attribute but using AJAX source, the table's build if fully delegated to DataTables. So the only way to customize the column content
+   is to do it client-side, passing a particular Javascript function.
+</p>
+<p>
+   So, you have to:
+   <ul>
+      <li>
+         <p>
+            Step 1: write a Javascript function that will be internally used by DataTables
+<pre class="prettyprint">
+function yourFunction(data, type, full) {
+   return '&lt;a href="' + data + '">Download&lt;/a>';
+}
+</pre>
+         </p>
+         <p>
+            The Javascript function takes 3 parameters :
+            <ul>
+               <li>{array|object} The data source for the row (based on mData)</li>
+               <li>{string} The type call data requested - this will be 'filter', 'display', 'type' or 'sort'.</li>
+               <li>{array|object} The full data source for the row (not based on mData)</li>
+            </ul>
+         </p>
+         <p class="alert alert-info">
+            <strong><i class="icon-info-sign icon-2x"></i></strong> You can use the first parameter (data) of the function if you already use the {% refjsp column property %} (JSP) or {% reftl th dt:property %} (Thymeleaf) attribute because it internally generates a
+            <a href="http://datatables.net/ref#mdata">mData</a> parameter that you can reuse.
+         </p>
+      </li>
+      <li>
+         Step 2: tell <strong>Dandelion-Datatables</strong> you want to use a custom rendering function for a particular column using either the {% refjsp column renderFunction %} (JSP) or the {% reftl th dt:renderFunction %} column attribute. 
+      </li>
+   </ul>
+</p>
+
+<br />      
+<h3 class="section-title" id="eusamf">Example, using a mailify function</h3>
+<p>
+   This example shows how to generate a <i>mailto</i> link inside a column.
+</p>
+<h4>Using JSP</h4>
+<p>
+   First, ensure your function is present <strong>before</strong> the table.
+<pre class="prettyprint">
+function mailify(data, type, full) {
+   return '&lt;a href="mailto:' + data + '">' + data + '&lt;/a>';
+}
+</pre>
+</p>
+<p>
+   Then, just use the {% refjsp column renderFunction %} column attribute and pass the name of the previous Javascript function.
+<pre class="prettyprint">
+   &lt;c:url var="datasource" value="/persons" />
+   &lt;datatables:table id="myTableId" url="${datasource}" serverSide="true" processing="true">
+      &lt;datatables:column title="Id" property="id" />
+      &lt;datatables:column title="FirstName" property="firstName" />
+      &lt;datatables:column title="LastName" property="lastName" />
+      &lt;datatables:column title="City" property="address.town.name" />
+      &lt;datatables:column title="Mail" property="mail" renderFunction="mailify" />
+   &lt;/datatables:table>
+</pre>
+</p>
+
+<h3 class="section-title" id="aefaac">Another example for an "Actions" column</h3>
+<p>
+   You can use the same mechanism to add an extra "Actions" column.
+   For example, let's add another column which will contain some links.
+</p>
+<h4>Using JSP</h4>
+<p>
+<pre class="prettyprint">
+   &lt;c:url var="datasource" value="/persons" />
+   &lt;datatables:table id="myTableId" url="${datasource}" serverSide="true" processing="true">
+      &lt;datatables:column title="Id" property="id" />
+      &lt;datatables:column title="FirstName" property="firstName" />
+      &lt;datatables:column title="LastName" property="lastName" />
+      &lt;datatables:column title="City" property="address.town.name" />
+      &lt;datatables:column title="Mail" property="mail" />
+      &lt;datatables:column title="Actions" renderFunction="actions" />
+   &lt;/datatables:table>
+</pre>
+</p>
+<p>
+   Then you just need to generate HTML code in the function as follows:
+<pre class="prettyprint">
+function actions(data, type, full) {
+   return '&lt;a class="btn btn-mini" href="/delete/' + full.id + '">Delete data&lt;/a>'
+            + '&lt;a class="btn btn-mini" href="/edit/' + full.id + '">Edit data&lt;/a>';
+}
+</pre>
+</p>
+
+<p class="alert alert-info">
+   <strong><i class="icon-info-sign icon-2x"></i></strong> 
+   This time, the "Actions" column doesn't use any property of the iterated bean. That's why you should use the third parameter (full) of the Javascript function, which holds the full data source for the row exposed as a JSON object.
+</p>
+         
+<h4>Using Thymeleaf</h4>
+<p>
+   Using Thymeleaf, you can use the {% reftl th dt:renderFunction %} th attribute in the same manner.
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true" dt:url="@{/persons1}" dt:serverSide="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th dt:property="'id'">Id&lt;/th>
+         &lt;th dt:property="'firstName'">Firstname&lt;/th>
+         &lt;th dt:property="'lastName'">Lastname&lt;/th>
+         &lt;th dt:property="'address.town.name'">City&lt;/th>
+         &lt;th dt:property="'mail'" dt:renderFunction="'mailify'">Mail&lt;/th>
+      &lt;/tr>
+  &lt;/thead>
+&lt;/table>
+</pre>            
+</p>
+<p>
+   Note that if you want to add the Javascript directly in your page, you'll have to use the script inlining capabilities:
+<pre class="prettyprint">
+&lt;script th:inline="javascript">
+/*&lt;![CDATA[*/
+   function actions(data, type, full) {
+      return '&lt;a class="btn btn-mini" href="/delete/' + full.id + '">Delete data&lt;/a>'
+               + '&lt;a class="btn btn-mini" href="/edit/' + full.id + '">Edit data&lt;/a>';
+   }
+/*]]>*/
+&lt;/script>
+</pre>
+You can find more details <a href="http://www.thymeleaf.org/doc/Tutorial%20-%20Using%20Thymeleaf%2020120517.pdf">here</a>.
+</p>
+
+<h3 class="section-title" id="hnadv">Handling null and default values</h3>
+<p>
+   This section deals with the case where the bean you're trying to display in the table has null properties.
+</p>
+<h4>Using JSP</h4>
+<p>
+   Using JSP with AJAX sources, null values are handled in the same way than for DOM sources. 
+   By default, an empty string will be displayed.
+</p>
+<p>
+   You can also use the {% refjsp column default %} column attribute to replace the empty string by anything you want.
+<pre class="prettyprint">
+&lt;c:url var="datasource" value="/persons" />
+&lt;datatables:table id="myTableId" url="${datasource}">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" default="My default value !" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
+</p>
+
+<h4>Using Thymeleaf</h4>
+<p>
+   Using Thymeleaf, this is quite similar. Just use the {% reftl th dt:default %} th attribute to override the default empty string.
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true" dt:url="@{/persons}">
+   &lt;thead>
+      &lt;tr>
+         &lt;th dt:property="'id'">Id&lt;/th>
+         &lt;th dt:property="'firstName'">Firstname&lt;/th>
+         &lt;th dt:property="'lastName'">Lastname&lt;/th>
+         &lt;th dt:property="'address.town.name'" dt:default="'My default value !'">City&lt;/th>
+         &lt;th dt:property="'mail'">Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+&lt;/table>
+</pre>

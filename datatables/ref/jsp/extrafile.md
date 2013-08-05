@@ -1,5 +1,5 @@
 ---
-layout: datatables-jsp
+layout: datatables
 menu: jsp
 level1: ref
 level2:

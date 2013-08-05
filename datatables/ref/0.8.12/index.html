@@ -1,0 +1,58 @@
+---
+layout: datatables
+menu: releases
+level1: ref
+level2:
+  url: 0.8.12
+  name: 0.8.12
+---
+
+<h2 class="page-title">Dandelion-Datatables 0.8.12 <span class="release-date">05-03-2013</span></h2>
+
+<h3 class="section-title">Change log</h3>
+<p>
+   <h4>Core</h4>
+   <p>
+      <ul>
+         <li>`dandelion.dev.mode` enabled by default
+            <p>Now you don't need to set the dandelion.dev.mode system property to `true` to disable caching. Caching is disabled by default, which means the DataTables configuration is computed
+         each time you access a page.
+            </p>
+         </li>
+         <li>Performance improvement
+            <p>
+               The `DisplayType` object, used in export, is now instantiated much less time than before.
+            </p>
+         </li>
+      </ul>
+   </p>
+
+   <h4>JSP implementation</h4>     
+   <p>
+      <ul>
+         <li>New {% refjsp column visible %} column attribute, allowing you to hide column. Note that a hidden column is automatically unsearchable</li>
+      </ul>
+   </p>
+    
+   <h4>Thymeleaf implementation</h4>
+   <p>
+      <ul>
+         <li>{% reftl table dt:export %}, {% reftl table dt:exportLinks%} and {% reftl table dt:filterType %} attributes don't expect a Thymeleaf expression any longer. Actually you can use both header-coded values and Thymeleaf Standard expressions</li>
+         <li>New {% reftl table dt:visible %} column attribute, allowing you to hide column. Note that a hidden column is automatically unsearchable</li>
+      </ul>
+   </p>
+   
+   <h4>Issues</h4>
+   <p>
+      <ul>
+         <li>{% issue 87 %}: 'rel' attribute is missing in link tags</li>
+         <li>{% issue 86 %}: Enable the dev mode by default</li>
+         <li>{% issue 85 %}: Improve tag's values validation</li>
+         <li>{% issue 83 %}: Exclude dt:export/dt:exportLinks from being processed by Thymeleaf Standard Expression</li>
+         <li>{% issue 82 %}: Make the dt:filtertype values unnecessary to process</li>
+         <li>{% issue 76 %}: Add support for hidden columns</li>
+         <li>{% issue 49 %}: Performance : improve DisplayType feature</li>
+         <li>{% issue 31 %}: Error when the table's id is generated with the "th:id" processor</li>
+      </ul>
+   </p>
+</p>

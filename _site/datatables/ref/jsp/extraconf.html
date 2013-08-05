@@ -44,6 +44,7 @@
 </script>
 <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+<script src="/assets/js/site-component.js"></script>
 </head>
 <body>
    <div class="navbar navbar-static-top">
@@ -80,13 +81,13 @@
       </div>
    </div>
 
-   <div class="container-fluid" style="padding-top:15px;">
+   <div class="container-fluid container-component">
    <div class="row-fluid">
       <div class="span2">
          <div class="well sidebar-nav">
             <ul class="nav nav-list">
                
-               <li class="nav-header">Overview</li>
+               <h5>Overview</h5>
                <li >
                   <a href="/datatables"><i class="icon-home"></i> Home</a>
                </li>
@@ -97,55 +98,89 @@
                   <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
                </li>
                
-               <li class="nav-header">Documentation</li>
+               <h5>Documentation</h5>
                <li >
                   <a href="/datatables/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+                  
                </li>
                <li >
-                  <a href="/datatables/changelog.html" title="Changelog"> <i class="icon-info-sign"></i> Changelog</a>
-               </li>
-               <li >
-                  <a href="/datatables/roadmap.html" title="Roadmap"><i class="icon-road"></i> Roadmap</a>
-               </li>
-               <li >
-                  <a href="/datatables/migration.html" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+                  <a href="/datatables/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
                </li>
                <li >
                   <a href="/datatables/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
                </li>
                
-               <li class="nav-header">Reference</li>
+               <h5>Reference</h5>
+               <li >
+                  <a href="/datatables/ref/" title="Releases"> Releases</a>
+               </li>
                <li  class="active">
                   <a href="/datatables/ref/jsp/" title="JSP taglib"> JSP taglib</a>
+                  
+                  <ul class="nav nav-list">
+                     <li >
+                        <a href="/datatables/ref/jsp/table.html"><i class="icon-double-angle-right"></i> Table tag</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/ref/jsp/column.html"><i class="icon-double-angle-right"></i> Column tag</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/ref/jsp/columnhead.html"><i class="icon-double-angle-right"></i> ColumnHead tag</a>
+                     </li>
+                     <li class="active">
+                        <a href="/datatables/ref/jsp/extraconf.html"><i class="icon-double-angle-right"></i> ExtraConf tag</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/ref/jsp/extrafile.html"><i class="icon-double-angle-right"></i> ExtraFile tag</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/ref/jsp/prop.html"><i class="icon-double-angle-right"></i> Prop tag</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/ref/jsp/export.html"><i class="icon-double-angle-right"></i> Export tag</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/ref/jsp/callback.html"><i class="icon-double-angle-right"></i> Callback tag</a>
+                     </li>
+                  </ul>
+                  
                </li>
                <li >
                   <a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect</a>
+                  
                </li>
                <li >
                   <a href="/datatables/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration</a>
-               </li>
-               <li >
-                  <a href="/datatables/ref/javadoc"> <i class="none"></i>Javadoc</a>
+                  
                </li>
                
-               <li class="nav-header">Tutorials</li>
+               <h5>Tutorials</h5>
                <li >
-                  <a href="/datatables/features/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+                  <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
                </li>
                <li >
-                  <a href="/datatables/features/advanced/" title="Advanced"> <i class="icon-fire"></i> Advanced</a>
+                  <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
                </li>
                <li >
-                  <a href="/datatables/features/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+                  <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
                </li>
                <li >
-                  <a href="/datatables/features/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+                  <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
                </li>
                <li >
-                  <a href="/datatables/features/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+                  <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+                  
                </li>
                <li >
-                  <a href="/datatables/features/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-flag-checkered"></i> I18n</a>
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  
                </li>
             </ul>
          </div>
@@ -157,24 +192,22 @@
    <li><span class="divider">|</span><a href="/datatables">Dandelion-Datatables</a></li>
      
    
-   <li> <span class="divider">|</span><a href="/datatables/ref">Ref</a></li>
+   <li><span class="divider">|</span><a href="/datatables/ref">Ref</a></li>
    
      
    
-   <li> <span class="divider">|</span><a href="/datatables/ref/jsp">JSP</a></li>
+   <li><span class="divider">|</span><a href="/datatables/ref/jsp">JSP</a></li>
    
      
    
-   <li> <span class="divider">|</span><a href="/datatables/ref/jsp/extraconf.html">ExtraConf tag</a></li>
+   <li><span class="divider">|</span><a href="/datatables/ref/jsp/extraconf.html">ExtraConf tag</a></li>
    
    
    <li class="pull-right">
-      Latest release: <a href="/datatables/changelog.html">0.9.0</a>
+      Latest release: <a href="/datatables/ref/0.9.0/">0.9.0</a>
    </li>
 </ul>
-            <div id="layoutjsp" class="row-fluid">
-   <div class="span10">
-      <h3 id='extraconf_tag'>ExtraConf Tag</h3>
+            <h3 id='extraconf_tag'>ExtraConf Tag</h3>
 <br />
 <h4 id='description'>Description</h4>
 <br />
@@ -211,30 +244,6 @@
 </table><link href='//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css' rel='stylesheet' /><script src='http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js'>
 </script><script src='/assets/js/site_reference.js'>
 </script>
-   </div>
-   <div class="span2 hidden-phone">
-      <ul class="nav nav-tabs nav-stacked pull-right" data-spy="affix" data-offset-top="60">
-         <li ><a href="/datatables/ref/jsp/table.html">Table tag</a></li>
-         <li ><a href="/datatables/ref/jsp/column.html">Column tag</a></li>
-         <li ><a href="/datatables/ref/jsp/columnhead.html">ColumnHead tag</a></li>
-         <li  class="active"><a href="/datatables/ref/jsp/extraconf.html">ExtraConf tag</a></li>
-         <li ><a href="/datatables/ref/jsp/extrafile.html">ExtraFile tag</a></li>
-         <li ><a href="/datatables/ref/jsp/prop.html">Prop tag</a></li>
-         <li ><a href="/datatables/ref/jsp/export.html">Export tag</a></li>
-         <li ><a href="/datatables/ref/jsp/callback.html">Callback tag</a></li>
-      </ul>
-   </div>
-</div>
-
-<script>
-$(document).ready(function () {
-	if($('#layoutjsp ul.nav').is(":hidden")){
-		$('#layoutjsp div:eq(0)').removeClass('span10');
-		$('#layoutjsp div:eq(0)').addClass('span12');
-	}
-});	
-</script>
-
          </div>
       </div>
    </div>

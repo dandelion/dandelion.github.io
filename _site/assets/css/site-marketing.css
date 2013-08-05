@@ -1,11 +1,13 @@
 /***********************************
-
               MARKETING
-
 => team
 => faq
 ************************************/
-
+.nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+	background-color: #73c730;
+}
 a {
 	color: #65c22f;
 }
@@ -87,12 +89,4 @@ a {
 .container-marketing {
 	padding-top: 20px;
 	padding-bottom: 20px;
-}
-
-h2.marketing {
-	background:
-		url(/assets/images/dandelion/github-dandelion-logo-twitter-50px.png)
-		no-repeat left center;
-	padding-left: 55px;
-	border-bottom: 1px solid #a0cd70;
 }

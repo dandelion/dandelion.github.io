@@ -44,6 +44,7 @@
 </script>
 <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+<script src="/assets/js/site-component.js"></script>
 </head>
 <body>
    <div class="navbar navbar-static-top">
@@ -80,13 +81,13 @@
       </div>
    </div>
 
-   <div class="container-fluid" style="padding-top:15px;">
+   <div class="container-fluid container-component">
    <div class="row-fluid">
       <div class="span2">
          <div class="well sidebar-nav">
             <ul class="nav nav-list">
                
-               <li class="nav-header">Overview</li>
+               <h5>Overview</h5>
                <li >
                   <a href="/datatables"><i class="icon-home"></i> Home</a>
                </li>
@@ -97,55 +98,62 @@
                   <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
                </li>
                
-               <li class="nav-header">Documentation</li>
+               <h5>Documentation</h5>
                <li >
                   <a href="/datatables/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+                  
                </li>
                <li >
-                  <a href="/datatables/changelog.html" title="Changelog"> <i class="icon-info-sign"></i> Changelog</a>
-               </li>
-               <li >
-                  <a href="/datatables/roadmap.html" title="Roadmap"><i class="icon-road"></i> Roadmap</a>
-               </li>
-               <li >
-                  <a href="/datatables/migration.html" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+                  <a href="/datatables/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
                </li>
                <li  class="active">
                   <a href="/datatables/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
                </li>
                
-               <li class="nav-header">Reference</li>
+               <h5>Reference</h5>
+               <li >
+                  <a href="/datatables/ref/" title="Releases"> Releases</a>
+               </li>
                <li >
                   <a href="/datatables/ref/jsp/" title="JSP taglib"> JSP taglib</a>
+                  
                </li>
                <li >
                   <a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect</a>
+                  
                </li>
                <li >
                   <a href="/datatables/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration</a>
-               </li>
-               <li >
-                  <a href="/datatables/ref/javadoc"> <i class="none"></i>Javadoc</a>
+                  
                </li>
                
-               <li class="nav-header">Tutorials</li>
+               <h5>Tutorials</h5>
                <li >
-                  <a href="/datatables/features/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+                  <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
                </li>
                <li >
-                  <a href="/datatables/features/advanced/" title="Advanced"> <i class="icon-fire"></i> Advanced</a>
+                  <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
                </li>
                <li >
-                  <a href="/datatables/features/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+                  <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
                </li>
                <li >
-                  <a href="/datatables/features/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+                  <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
                </li>
                <li >
-                  <a href="/datatables/features/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+                  <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+                  
                </li>
                <li >
-                  <a href="/datatables/features/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-flag-checkered"></i> I18n</a>
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  
                </li>
             </ul>
          </div>
@@ -157,51 +165,45 @@
    <li><span class="divider">|</span><a href="/datatables">Dandelion-Datatables</a></li>
      
    
-   <li> <span class="divider">|</span><a href="/datatables/architecture">Architecture</a></li>
+   <li><span class="divider">|</span><a href="/datatables/architecture">Architecture</a></li>
    
      
    
-   <li> <span class="divider">|</span><a href="/datatables/architecture/general">Index</a></li>
+   <li><span class="divider">|</span><a href="/datatables/architecture/general">Index</a></li>
    
      
    
    
    <li class="pull-right">
-      Latest release: <a href="/datatables/changelog.html">0.9.0</a>
+      Latest release: <a href="/datatables/ref/0.9.0/">0.9.0</a>
    </li>
 </ul>
-            <div id="datatablesarchitecture" class="row-fluid">
-   <div class="span10"><h3 id='architecture'>Architecture</h3>
-<br />
+            <h2 class='page-title'>Architecture</h2><br />
 <p>You can find below a diagram that shows how <strong>Dandelion-Datatables</strong> is structured. <br /></p>
 <p class='text-center'>
 <img class='blog_img' height='500px' src='/assets/images/datatables/architecture.png' width='600px' />
-</p><br />
-<h4 id='core_modules'>Core modules</h4>
-
-<h5 id='datatablescore'>datatables-core</h5>
+</p><br /><h3 class='section-title'>Core modules</h3>
+<h4 id='datatablescore'>datatables-core</h4>
 
 <p>The <em>datatables-core</em> module is the fundation. It contains all base classes used by all other modules: generators, servlet, filter, themes, features, utilities&#8230;</p>
 
-<h5 id='datatablesjsp'>datatables-jsp</h5>
+<h4 id='datatablesjsp'>datatables-jsp</h4>
 
 <p>This is the JSP implementation of <strong>Dandelion-Datatables</strong> that contains the JSP taglib. If your view layer is based on JSP, you&#8217;ll need this module.</p>
 
-<h5 id='datatablesjsp'>datatables-jsp</h5>
+<h4 id='datatablesjsp'>datatables-jsp</h4>
 
 <p>This is the Thymeleaf implementation of <strong>Dandelion-Datatables</strong>, which is an awesome alternative to JSP. This module contains the Thymeleaf dialect.</p>
-<br />
-<h4 id='extra_modules'>Extra modules</h4>
-
-<h5 id='datatablesservlet2'>datatables-servlet2</h5>
+<br /><h3 class='section-title'>Extra modules</h3>
+<h4 id='datatablesservlet2'>datatables-servlet2</h4>
 
 <p>This extra contains servlet and filter classes you&#8217;ll have to use if you deploy on Servlet 2.x compatible containers, such as Tomcat 6.x. You can see the additional installation step required in this case <a href='/datatables/installation/jsp.html#with_servlet_2x_compatible_containers'>here</a> (JSP) or <a href='/datatables/installation/thymeleaf.html#with_servlet_2x_compatible_containers'>here</a> (Thymeleaf).</p>
 
-<h5 id='datatablesspring3'>datatables-spring3</h5>
+<h4 id='datatablesspring3'>datatables-spring3</h4>
 
 <p>This extra contains some utilities when dealing with server-side processing. You can see more details <a href='/datatables/features/ajax/springmvc.html'>here</a>.</p>
 
-<h5 id='datatablesexportitext'>datatables-export-itext</h5>
+<h4 id='datatablesexportitext'>datatables-export-itext</h4>
 
 <p>This extra provides:</p>
 
@@ -217,7 +219,7 @@
 
 <p>It means that if you add this module in your classpath and activate the export (using the <a href='/datatables/ref/jsp/table.html#export'>export</a>/<a href='/datatables/ref/thymeleaf/table.html#dt:export'>dt:export</a> attributes and <code>pdf</code> as a value), <strong>Dandelion-Datatables</strong> will export using iText and the above class.</p>
 
-<h5 id='datatablesexportpoi'>datatables-export-poi</h5>
+<h4 id='datatablesexportpoi'>datatables-export-poi</h4>
 
 <p>This extra provides:</p>
 
@@ -233,7 +235,7 @@
 
 <p>It means that if you add this module in your classpath and activate the export (using the <a href='/datatables/ref/jsp/table.html#export'>export</a>/<a href='/datatables/ref/thymeleaf/table.html#dt:export'>dt:export</a> attributes and <code>xls</code> as a value), <strong>Dandelion-Datatables</strong> will export using Apache POI and the above class.</p>
 
-<h5 id='datatablesexportpoiooxml'>datatables-export-poi-ooxml</h5>
+<h4 id='datatablesexportpoiooxml'>datatables-export-poi-ooxml</h4>
 
 <p>This extra provides:</p>
 
@@ -249,34 +251,13 @@
 
 <p>It means that if you add this module in your classpath and activate the export (using the <a href='/datatables/ref/jsp/table.html#export'>export</a>/<a href='/datatables/ref/thymeleaf/table.html#dt:export'>dt:export</a> attributes and <code>xlsx</code> as a value), <strong>Dandelion-Datatables</strong> will export using Apache POI and the above class.</p>
 
-<h5 id='datatablescompressionyui'>datatables-compression-yui</h5>
+<h4 id='datatablescompressionyui'>datatables-compression-yui</h4>
 
 <p>This extra is used to compress the generated static resources using the <a href='http://yui.github.io/yuicompressor/'>YUI Compressor</a> library.</p>
 
-<h5 id='datatablesatmosphere'>datatables-atmosphere</h5>
+<h4 id='datatablesatmosphere'>datatables-atmosphere</h4>
 
-<p>This extra is about to be released. It will allow you to have continuously-updating tables in your web application.</p></div>
-   <div class="span2 hidden-phone">
-      <ul class="nav nav-tabs nav-stacked pull-right hidden-phone" data-spy="affix" data-offset-top="60">
-         <li  class="active"><a href="/datatables/architecture/">Index</a></li>
-         <li ><a href="/datatables/architecture/logging.html">Logging</a></li>
-         <li ><a href="/datatables/architecture/caching.html">Caching</a></li>
-         <li ><a href="/datatables/architecture/dandelion.html">Integrating with Dandelion</a></li>
-         <li ><a href="/datatables/architecture/integration.html">Integrating with others</a></li>
-         <li ><a href="/datatables/architecture/server.html">Server support</a></li>
-         <li ><a href="/datatables/architecture/browser.html">Browser support</a></li>
-      </ul>
-   </div>
-</div>
-
-<script>
-$(document).ready(function () {
-   if($('#datatablesarchitecture ul.nav').is(":hidden")){
-      $('#datatablesarchitecture div:eq(0)').removeClass('span10');
-      $('#datatablesarchitecture div:eq(0)').addClass('span12');
-   }
-});   
-</script>
+<p>This extra is about to be released. It will allow you to have continuously-updating tables in your web application, using Websockets.</p>
          </div>
       </div>
    </div>

@@ -44,6 +44,7 @@
 </script>
 <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+<script src="/assets/js/site-component.js"></script>
 </head>
 <body>
    <div class="navbar navbar-static-top">
@@ -80,13 +81,13 @@
       </div>
    </div>
 
-   <div class="container-fluid" style="padding-top:15px;">
+   <div class="container-fluid container-component">
    <div class="row-fluid">
       <div class="span2">
          <div class="well sidebar-nav">
             <ul class="nav nav-list">
                
-               <li class="nav-header">Overview</li>
+               <h5>Overview</h5>
                <li >
                   <a href="/datatables"><i class="icon-home"></i> Home</a>
                </li>
@@ -97,55 +98,92 @@
                   <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
                </li>
                
-               <li class="nav-header">Documentation</li>
+               <h5>Documentation</h5>
                <li >
                   <a href="/datatables/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+                  
                </li>
                <li >
-                  <a href="/datatables/changelog.html" title="Changelog"> <i class="icon-info-sign"></i> Changelog</a>
-               </li>
-               <li >
-                  <a href="/datatables/roadmap.html" title="Roadmap"><i class="icon-road"></i> Roadmap</a>
-               </li>
-               <li >
-                  <a href="/datatables/migration.html" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+                  <a href="/datatables/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
                </li>
                <li >
                   <a href="/datatables/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
                </li>
                
-               <li class="nav-header">Reference</li>
+               <h5>Reference</h5>
+               <li >
+                  <a href="/datatables/ref/" title="Releases"> Releases</a>
+               </li>
                <li >
                   <a href="/datatables/ref/jsp/" title="JSP taglib"> JSP taglib</a>
+                  
                </li>
                <li >
                   <a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect</a>
+                  
                </li>
                <li  class="active">
                   <a href="/datatables/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration</a>
-               </li>
-               <li >
-                  <a href="/datatables/ref/javadoc"> <i class="none"></i>Javadoc</a>
+                  
+                  <ul class="nav nav-list">
+                     <li >
+                        <a href="/datatables/ref/configuration/#main-configuration"><i class="icon-double-angle-right"></i> Main</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/ref/configuration/#css-configuration"><i class="icon-double-angle-right"></i> CSS</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/ref/configuration/#features-configuration"><i class="icon-double-angle-right"></i> Features</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/ref/configuration/#plugins-configuration"><i class="icon-double-angle-right"></i> Plugins</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/ref/configuration/#extras-configuration"><i class="icon-double-angle-right"></i> Extras</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/ref/configuration/#ajax-configuration"><i class="icon-double-angle-right"></i> AJAX</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/ref/configuration/#export-configuration"><i class="icon-double-angle-right"></i> Export</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/ref/configuration/#i18n-configuration"><i class="icon-double-angle-right"></i> I18n</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/ref/configuration/#css-configuration"><i class="icon-double-angle-right"></i> CSS</a>
+                     </li>
+                  </ul>
+                  
                </li>
                
-               <li class="nav-header">Tutorials</li>
+               <h5>Tutorials</h5>
                <li >
-                  <a href="/datatables/features/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+                  <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
                </li>
                <li >
-                  <a href="/datatables/features/advanced/" title="Advanced"> <i class="icon-fire"></i> Advanced</a>
+                  <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
                </li>
                <li >
-                  <a href="/datatables/features/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+                  <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
                </li>
                <li >
-                  <a href="/datatables/features/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+                  <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
                </li>
                <li >
-                  <a href="/datatables/features/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+                  <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+                  
                </li>
                <li >
-                  <a href="/datatables/features/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-flag-checkered"></i> I18n</a>
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  
                </li>
             </ul>
          </div>
@@ -157,150 +195,733 @@
    <li><span class="divider">|</span><a href="/datatables">Dandelion-Datatables</a></li>
      
    
-   <li> <span class="divider">|</span><a href="/datatables/ref">Ref</a></li>
+   <li><span class="divider">|</span><a href="/datatables/ref">Ref</a></li>
    
      
    
-   <li> <span class="divider">|</span><a href="/datatables/ref/configuration">Configuration</a></li>
+   <li><span class="divider">|</span><a href="/datatables/ref/configuration">Configuration</a></li>
    
      
    
    
    <li class="pull-right">
-      Latest release: <a href="/datatables/changelog.html">0.9.0</a>
+      Latest release: <a href="/datatables/ref/0.9.0/">0.9.0</a>
    </li>
 </ul>
-            <h3 id='configuration_properties'>Configuration properties</h3>
-<hr />
-<h4 id='description'>Description</h4>
-<br />
-<p><strong>Dandelion-DataTables</strong> internally uses a configuration file which contains properties that affect all the table of your application.</p>
+            <h2 class="page-title">Configuration properties</h2>
+<p>
+   The bellowing tables list all the configurable properties.
+</p>
 
-<p>But you can of course override the default configuration using :</p>
+<h3 class="section-title" id="main-configuration">Main configuration properties</h3>
+<p>
+<table class="table table-striped table-bordered table-condensed table-hover">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+         <th>Value(s)</th>
+         <th>Default</th>
+         <th>Groupable</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>i18n.locale.resolver</td>
+         <td></td>
+         <td>Any class implementing com.github.dandelion.datatables.core.i18n.LocaleResolver</td>
+         <td>com. github. dandelion. datatables. core. i18n. StandardLocaleResolver</td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>i18n.message.resolver</td>
+         <td></td>
+         <td>Any class implementing com. github. dandelion. datatables. core. i18n. MessageResolver</td>
+         <td>com. github. dandelion. datatables. jsp. i18n. JstlMessageResolver if the JSTL Jar is present in the classpath</td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>main.base.package</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>Yes</td>
+      </tr>
+      <tr>
+         <td>main.base.url</td>
+         <td>String that will override the default URL (get from the current request) used in all URLs generated by Dandelion-DataTables</td>
+         <td></td>
+         <td></td>
+         <td>Yes</td>
+      </tr>
+      <tr>
+         <td>main.compressor.enable</td>
+         <td>Enable or disable the web resources compression</td>
+         <td>true|false</td>
+         <td>false</td>
+         <td>Yes</td>
+      </tr>
+      <tr>
+         <td>main.compressor.mode</td>
+         <td>Mode used for compression. ALL : JS and CSS, JS : only JS are compressed, CSS : only CSS are compressed</td>
+         <td>ALL|JS|CSS</td>
+         <td>ALL</td>
+         <td>Yes</td>
+      </tr>
+      <tr>
+         <td>main.compressor.class</td>
+         <td>Java class name for the compressor implementation. By default, Dandelion-DataTables uses the YuiCompressor library but if the class is not found in the application classpath, compression is disabled</td>
+         <td>com. github. dandelion. datatables. extras. compression. YuiResourceCompressor</td>
+         <td>com. github. dandelion. datatables. extras. compression. YuiResourceCompressor</td>
+         <td>Yes</td>
+      </tr>
+      <tr>
+         <td>main.compressor.munge</td>
+         <td>Whether the compressor must obfuscate the Javascript and CSS code or not</td>
+         <td>true|false</td>
+         <td>true</td>
+         <td>Yes</td>
+      </tr>
+      <tr>
+         <td>main.compressor.preservesemi</td>
+         <td>Whether the compressor must preserve semi-colons, even if it's not necessary (if the next character is a right-curly), or not</td>
+         <td>true|false</td>
+         <td>false</td>
+         <td>Yes</td>
+      </tr>
+      <tr>
+         <td>main.compressor.disableopti</td>
+         <td>Whether the compressor must disable the micro optimizations or not. Micro optimizations concern :
+            <ul>
+               <li>object member access : Transforms obj["foo"] into obj.foo whenever possible, saving 3 bytes</li>
+               <li>object litteral member declaration : Transforms 'foo': ... into foo: ... whenever possible, saving 2 bytes</li>
+            </ul>
+         </td>
+         <td>ture|false</td>
+         <td>false</td>
+         <td>Yes</td>
+      </tr>
+      <tr>
+         <td>main.aggregator.enable</td>
+         <td>Enable or disable the web resources aggregation</td>
+         <td>true|false</td>
+         <td>false</td>
+         <td>Yes</td>
+      </tr>
+      <tr>
+         <td>main.aggregator.mode</td>
+         <td>Specify the aggregation mode</td>
+         <td>ALL|PLUGINS_JS|PLUGINS_CSS</td>
+         <td>ALL</td>
+         <td>Yes</td>
+      </tr>
+   </tbody>
+</table>
+</p>
 
-<ul>
-<li>either your own configuration file, which will affect all tables too. Just override the property you need and for others, Dandelion-DataTables will use the default ones</li>
+<h3 class="section-title" id="css-configuration">CSS configuration</h3>
+<p>
+<table class="table table-striped table-bordered table-condensed table-hover">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+         <th>Value(s)</th>
+         <th>Default</th>
+         <th>Groupable</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>css.class</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td>css.style</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td>css.stripeClasses</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+   </tbody>
+</table>
+</p>
 
-<li>or the <a href='./ref-taglib/tagprop.html'>Prop tag</a>, which allow you to locally override the table configuration</li>
-</ul>
+<h3 class="section-title" id="features-configuration">Features configuration</h3>
+<p>
+<table class="table table-striped table-bordered table-condensed table-hover">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+         <th>Value(s)</th>
+         <th>Default</th>
+         <th>Groupable</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>feature.info</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.autoWidth</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.filterable</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.filterplaceholder</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.paginate</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.paginationType</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.lengthChange</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.sort</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.stateSave</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.jqueryUi</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.lengthMenu</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.displayLength</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.dom</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.scrollX</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.scrollXInner</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.scrollY</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>feature.scrollCollapse</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+   </tbody>
+</table>
+</p>
 
-<p>If you decide to create your own configuration file, just ensure that :</p>
+<h3 class="section-title" id="plugins-configuration">Plugins configuration</h3>
+<p>
+<table class="table table-striped table-bordered table-condensed table-hover">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+         <th>Value(s)</th>
+         <th>Default</th>
+         <th>Groupable</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>plugin.fixedHeader</td>
+         <td></td>
+         <td></td>
+         <td>false</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>plugin.fixedPosition</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>plugin.fixedOffsetTop</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>plugin.scroller</td>
+         <td></td>
+         <td></td>
+         <td>false</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>plugin.colReorder</td>
+         <td></td>
+         <td></td>
+         <td>false</td>
+         <td>yes</td>
+      </tr>
+   </tbody>
+</table>
+</p>
 
-<ul>
-<li>The file has the name <strong>datatables.properties</strong></li>
+<h3 class="section-title" id="extras-configuration">Extras configuration</h3>
+<p>
+<table class="table table-striped table-bordered table-condensed table-hover">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+         <th>Value(s)</th>
+         <th>Default</th>
+         <th>Groupable</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>extra.theme</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>extra.themeOption</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>extra.customExtensions</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>extra.cdb</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>extra.cdn.css</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>extra.cdn.js</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>extra.appear</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>extra.appearDuration</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>extra.labels</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+   </tbody>
+</table>
 
-<li>The file is located at the root of the application classpath (e.g. under <code>src/main/resources</code> if you use Maven)</li>
-</ul>
-<br /><h4>Reference</h4><table class='table table-striped table-bordered' id='tableReference'>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Value(s)</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>compressor.enable</td>
-    <td>Enable or disable the web resources compression</td>
-    <td>true|false</td>
-    <td>false</td>
-  </tr>
-  <tr>
-    <td>compressor.mode</td>
-    <td>Mode used for compression. ALL : JS and CSS, JS : only JS are compressed, CSS : only CSS are compressed</td>
-    <td>ALL|JS|CSS</td>
-    <td>ALL</td>
-  </tr>
-  <tr>
-    <td>compressor.class</td>
-    <td>Java class name for the compressor implementation. By default, Dandelion-DataTables uses the YuiCompressor library but if the class is not found in the application classpath, compression is disabled.</td>
-    <td />
-    <td style='font-size: 12px;'>com.github.dandelion.datatables.extras.compression.YuiResourceCompressor</td>
-  </tr>
-  <tr>
-    <td>compressor.munge</td>
-    <td>Whether the compressor must obfuscate the Javascript and CSS code or not.</td>
-    <td>true|false</td>
-    <td>true</td>
-  </tr>
-  <tr>
-    <td>compressor.preserveSemiColons</td>
-    <td>Whether the compressor must preserve semi-colons, even if it's not necessary (if the next character is a right-curly), or not</td>
-    <td>true|false</td>
-    <td>false</td>
-  </tr>
-  <tr>
-    <td>compressor.disableOptimizations</td>
-    <td>Whether the compressor must disable the micro optimizations or not. Micro optimizations concern : <ul>
-	 <li>object member access : Transforms obj["foo"] into obj.foo whenever
-	 possible, saving 3 bytes</li>
-	 <li>object litteral member declaration : Transforms 'foo': ... into foo:
-	 ... whenever possible, saving 2 bytes</li>
-	 </ul></td>
-    <td>true|false</td>
-    <td>false</td>
-  </tr>
-  <tr>
-    <td>aggregator.enable</td>
-    <td>Enable or disable the web resources aggregation</td>
-    <td>true|false</td>
-    <td>false</td>
-  </tr>
-  <tr>
-    <td>aggregator.mode</td>
-    <td>Specify the aggregation mode.</td>
-    <td>ALL|
-    PLUGINS_JS|
-    PLUGINS_CSS</td>
-    <td>ALL</td>
-  </tr>
-  <tr>
-    <td>export.types</td>
-    <td>Comma-separated list of allowed export types</td>
-    <td>csv|xml|pdf|xls|xlsx</td>
-    <td>xml,csv,pdf,xls,xlsx</td>
-  </tr>
-  <tr>
-    <td>export.csv.class</td>
-    <td>Java class name to use for the CSV export</td>
-    <td />
-    <td style='font-size: 12px;'>com.github.dandelion.datatables.core.export.CsvExport</td>
-  </tr>
-  <tr>
-    <td>export.xml.class</td>
-    <td>Java class name to use for the XML export</td>
-    <td />
-    <td style='font-size: 12px;'>com.github.dandelion.datatables.core.export.XmlExport</td>
-  </tr>
-  <tr>
-    <td>export.xls.class</td>
-    <td>Java class name to use for the XLS export.  <span class='label label-warning'>Warning :</span> don't forget the additional dependency !</td>
-    <td />
-    <td style='font-size: 12px;'>com.github.dandelion.datatables.extras.export.poi.XlsExport</td>
-  </tr>
-  <tr>
-    <td>export.xlsx.class</td>
-    <td>Java class name to use for the XLSX export.  <span class='label label-warning'>Warning :</span> don't forget the additional dependency !</td>
-    <td />
-    <td style='font-size: 12px;'>com.github.dandelion.datatables.extras.export.poi.XlsxExport</td>
-  </tr>
-  <tr>
-    <td>export.pdf.class</td>
-    <td>Java class name to use for the PDF export. <span class='label label-warning'>Warning :</span> don't forget the additional dependency !</td>
-    <td />
-    <td style='font-size: 12px;'>com.github.dandelion.datatables.extras.export.itext.PdfExport</td>
-  </tr>
-  <tr>
-    <td>url.base</td>
-    <td>String that will override the default URL (get from the current request) used in all URLs generated by Dandelion-DataTables</td>
-    <td />
-    <td />
-  </tr>
-  </tbody>
-</table><link href='//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css' rel='stylesheet' /><script src='http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js'>
-</script><script src='/assets/js/site_reference.js'>
+<h3 class="section-title" id="ajax-configuration">AJAX configuration</h3>
+<p>
+<table class="table table-striped table-bordered table-condensed table-hover">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+         <th>Value(s)</th>
+         <th>Default</th>
+         <th>Groupable</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>ajax.processing</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>ajax.deferRender</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>ajax.serverSide</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>ajax.pipelining</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>ajax.pipeSize</td>
+         <td></td>
+         <td></td>
+         <td>5</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>ajax.serverData</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>ajax.serverParam</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>ajax.serverMethod</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+   </tbody>
+</table>
+
+<h3 class="section-title" id="export-configuration">Export configuration</h3>
+<p>
+<table class="table table-striped table-bordered table-condensed table-hover">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+         <th>Value(s)</th>
+         <th>Default</th>
+         <th>Groupable</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>export.types</td>
+         <td>Comma-separated list of allowed export types</td>
+         <td>csv|xml|pdf|xls|xlsx</td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>export.links</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>export.csv.class</td>
+         <td>Java class name to use for the CSV export</td>
+         <td></td>
+         <td>com.github.dandelion.datatables.core.export.CsvExport</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>export.xml.class</td>
+         <td>Java class name to use for the XML export</td>
+         <td></td>
+         <td>com.github.dandelion.datatables.core.export.XmlExport</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>export.xls.class</td>
+         <td>Java class name to use for the XLS export</td>
+         <td></td>
+         <td>com.github.dandelion.datatables.extras.export.poi.XlsExport<br />
+         <span class="label label-warning">Warning :</span> don't forget the additional dependency!
+         </td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>export.xlsx.class</td>
+         <td>Java class name to use for the XLSX export</td>
+         <td></td>
+         <td>com.github.dandelion.datatables.extras.export.poi.XlsxExport<br />
+         <span class="label label-warning">Warning :</span> don't forget the additional dependency!
+         </td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>export.pdf.class</td>
+         <td>Java class name to use for the PDF export<br />
+         <span class="label label-warning">Warning :</span> don't forget the additional dependency!
+         </td>
+         <td></td>
+         <td>com.github.dandelion.datatables.extras.export.itext.PdfExport</td>
+         <td>yes</td>
+      </tr>
+   </tbody>
+</table>
+
+<h3 class="section-title" id="i18n-configuration">I18n configuration</h3>
+<p>
+<table class="table table-striped table-bordered table-condensed table-hover">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+         <th>Value(s)</th>
+         <th>Default</th>
+         <th>Groupable</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>msg.processing</td>
+         <td>Text which is displayed when the table is processing a user action (usually a sort command or similar)</td>
+         <td></td>
+         <td>"Processing..."</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>msg.search</td>
+         <td>Details the actions that will be taken when the user types into the filtering input text box. The variable "INPUT", if used in the string, is replaced with the HTML text box for the filtering input allowing control over where it appears in the string. If "INPUT" is not given then the input box is appended to the string automatically</td>
+         <td></td>
+         <td>"Search:"</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>msg.lengthMenu</td>
+         <td>Detail the action that will be taken when the drop down menu for the pagination length option is changed. The 'MENU' variable is replaced with a default select list of 10, 25, 50 and 100, and can be replaced with a custom select box if required</td>
+         <td></td>
+         <td>"Show _MENU_ entries"</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>msg.info</td>
+         <td>This string gives information to the end user about the information that is current on display on the page. The START, END and TOTAL variables are all dynamically replaced as the table display updates, and can be freely moved or removed as the language requirements change</td>
+         <td></td>
+         <td>"Showing _START_ to _END_ of _TOTAL_ entries"</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>msg.info.empty</td>
+         <td>Display information string for when the table is empty. Typically the format of this string should match sInfo</td>
+         <td></td>
+         <td>"Showing 0 to 0 of 0 entries"</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>msg.info.filtered</td>
+         <td>When a user filters the information in a table, this string is appended to the information (sInfo) to give an idea of how strong the filtering is. The variable MAX is dynamically updated</td>
+         <td></td>
+         <td>"(filtered from _MAX_ total entries)"</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>msg.info.postfix</td>
+         <td>If can be useful to append extra information to the info string at times, and this variable does exactly that. This information will be appended to the sInfo (<code>msg.info.empty</code> and <code>msg.info.filtered</code> in whatever combination they are being used) at all times</td>
+         <td></td>
+         <td>""</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>msg.loadingrecords</td>
+         <td>When using Ajax sourced data and during the first draw when DataTables is gathering the data, this message is shown in an empty row in the table to indicate to the end user the data is being loaded. Note that this parameter is not used when loading data by server-side processing, just Ajax sourced data with client-side processing</td>
+         <td></td>
+         <td>"Loading..."</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>msg.zerorecords</td>
+         <td>Text shown inside the table records when the is no information to be displayed after filtering. sEmptyTable is shown when there is simply no information in the table at all (regardless of filtering)</td>
+         <td></td>
+         <td>"No matching records found"</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>msg.emptytable</td>
+         <td>This string is shown in preference to <code>msg.zerorecords</code> when the table is empty of data (regardless of filtering). Note that this is an optional parameter - if it is not given, the value of <code>msg.zerorecords</code> will be used instead (either the default or given value)</td>
+         <td></td>
+         <td>"No data available in table"</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>msg.paginate.first</td>
+         <td>Text to use when using the 'full_numbers' type of pagination for the button to take the user to the first page</td>
+         <td></td>
+         <td>"First" </td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>msg.paginate.previous</td>
+         <td>Text to use for the 'previous' pagination button (to take the user to the previous page)</td>
+         <td></td>
+         <td>"Previous"</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>msg.paginate.next</td>
+         <td>Text to use for the 'next' pagination button (to take the user to the next page)</td>
+         <td></td>
+         <td>"Next"</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>msg.paginate.last</td>
+         <td>Text to use when using the 'full_numbers' type of pagination for the button to take the user to the last page</td>
+         <td></td>
+         <td>"Last"</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>msg.aria.sortasc</td>
+         <td>ARIA label that is added to the table headers when the column may be sorted ascending by activing the column (click or return when focused). Note that the column header is prefixed to this string</td>
+         <td></td>
+         <td>": activate to sort column ascending"</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>msg.aria.sortdesc</td>
+         <td>ARIA label that is added to the table headers when the column may be sorted descending by activing the column (click or return when focused). Note that the column header is prefixed to this string</td>
+         <td></td>
+         <td>": activate to sort column ascending"</td>
+         <td>yes</td>
+      </tr>
+   </tbody>
+</table>
+   
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready(function () {
+	$('.table').dataTable( {
+		"sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+		"bInfo" : false,
+		"bFilter" : true,
+		"bPaginate": false,
+		"bLengthChange" : false,
+		"bSortClasses": false,
+		"aaSorting": [[1,'asc']],
+		"oLanguage": {
+		      "sSearch": ""
+	    },
+		"fnInitComplete": function () {
+			this.fnAdjustColumnSizing();
+			
+// 			$('.dataTables_filter').css({"float" : "right", "margin-top" : "10px"}).appendTo('#main-configuration');
+// 			$('#DataTables_Table_0_filter').css({"float" : "right", "margin-top" : "10px"}).appendTo('#main-configuration');
+		}
+	});
+	
+	$('.dataTables_filter').each(function(i){
+		$(this).css({"float" : "right", "margin-top" : "10px"});
+		//.appendTo($(this).closest('h3'));
+	});
+});
 </script>
          </div>
       </div>

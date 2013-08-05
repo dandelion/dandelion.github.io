@@ -44,6 +44,7 @@
 </script>
 <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+<script src="/assets/js/site-component.js"></script>
 </head>
 <body>
    <div class="navbar navbar-static-top">
@@ -80,13 +81,13 @@
       </div>
    </div>
 
-   <div class="container-fluid" style="padding-top:15px;">
+   <div class="container-fluid container-component">
    <div class="row-fluid">
       <div class="span2">
          <div class="well sidebar-nav">
             <ul class="nav nav-list">
                
-               <li class="nav-header">Overview</li>
+               <h5>Overview</h5>
                <li >
                   <a href="/datatables"><i class="icon-home"></i> Home</a>
                </li>
@@ -97,55 +98,62 @@
                   <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
                </li>
                
-               <li class="nav-header">Documentation</li>
+               <h5>Documentation</h5>
                <li >
                   <a href="/datatables/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
-               </li>
-               <li  class="active">
-                  <a href="/datatables/changelog.html" title="Changelog"> <i class="icon-info-sign"></i> Changelog</a>
+                  
                </li>
                <li >
-                  <a href="/datatables/roadmap.html" title="Roadmap"><i class="icon-road"></i> Roadmap</a>
-               </li>
-               <li >
-                  <a href="/datatables/migration.html" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+                  <a href="/datatables/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
                </li>
                <li >
                   <a href="/datatables/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
                </li>
                
-               <li class="nav-header">Reference</li>
+               <h5>Reference</h5>
+               <li >
+                  <a href="/datatables/ref/" title="Releases"> Releases</a>
+               </li>
                <li >
                   <a href="/datatables/ref/jsp/" title="JSP taglib"> JSP taglib</a>
+                  
                </li>
                <li >
                   <a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect</a>
+                  
                </li>
                <li >
                   <a href="/datatables/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration</a>
-               </li>
-               <li >
-                  <a href="/datatables/ref/javadoc"> <i class="none"></i>Javadoc</a>
+                  
                </li>
                
-               <li class="nav-header">Tutorials</li>
+               <h5>Tutorials</h5>
                <li >
-                  <a href="/datatables/features/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+                  <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
                </li>
                <li >
-                  <a href="/datatables/features/advanced/" title="Advanced"> <i class="icon-fire"></i> Advanced</a>
+                  <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
                </li>
                <li >
-                  <a href="/datatables/features/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+                  <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
                </li>
                <li >
-                  <a href="/datatables/features/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+                  <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
                </li>
                <li >
-                  <a href="/datatables/features/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+                  <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+                  
                </li>
                <li >
-                  <a href="/datatables/features/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-flag-checkered"></i> I18n</a>
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  
                </li>
             </ul>
          </div>
@@ -157,7 +165,7 @@
    <li><span class="divider">|</span><a href="/datatables">Dandelion-Datatables</a></li>
      
    
-   <li> <span class="divider">|</span><a href="/datatables/changelog">Changelog</a></li>
+   <li><span class="divider">|</span><a href="/datatables/changelog">Changelog</a></li>
    
      
    
@@ -165,11 +173,119 @@
    
    
    <li class="pull-right">
-      Latest release: <a href="/datatables/changelog.html">0.9.0</a>
+      Latest release: <a href="/datatables/ref/0.9.0/">0.9.0</a>
    </li>
 </ul>
-            <h3 id='changelog'>Changelog</h3>
+            <h3 class='page-title'>Changelog</h3><h4 class='section-title'>0.9.0 (??-??-2013)</h4>
+<h5 id='core'>Core</h5>
 
+<ul>
+<li>
+<p>Added support for Java-based i18n</p>
+
+<p>Provided built-in integration with JSTL and Spring Extension point allowing to plug any other locale and message resolvers</p>
+</li>
+
+<li>
+<p>Added support for global table configuration</p>
+</li>
+
+<li>
+<p>Added support for configuration groups</p>
+</li>
+
+<li>
+<p>Added an extension point allowing users to write their own extension (feature, plugin, theme). Extensions will be scanned at runtime.</p>
+</li>
+
+<li>
+<p>Improved sorting and filtering features</p>
+
+<p>Any kind of sort can be enabled thanks to the new sortType/dt:sortType attributes: currency, natural sort, filesize, “anti-the”, … Individual column sorting can be configured in different locations: after the thead, before the thead, in the tfoot or in an external form</p>
+</li>
+
+<li>
+<p>Added support for AJAX exports using a new fluent API for building table from a data source</p>
+</li>
+
+<li>
+<p>Improved DOM-based exports</p>
+</li>
+
+<li>
+<p>Improved CDN support: it&#39;s now fully configurable through properties</p>
+</li>
+
+<li>
+<p>Reduced needed dependencies (commons-lang removed)</p>
+</li>
+
+<li>
+<p>More tests</p>
+
+<p>More unit tests and integration tests have been added.</p>
+</li>
+</ul>
+
+<h5 id='jsp_implementation'>JSP implementation</h5>
+
+<ul>
+<li>Added support for runtime expressions inside all attributes</li>
+
+<li>Added support for dynamic attributes in <code>&lt;datatables:table&gt;</code> and <code>&lt;datatables:column&gt;</code></li>
+
+<li>Improved JSP tags composition, allowing to use JSTL tags around Dandelion-Datatables&#39; ones</li>
+
+<li>New <a href='/datatables/ref/jsp/table.html#dom'><code>dom</code></a> table attribute, allowing you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page.</li>
+
+<li>New <a href='/datatables/ref/jsp/column.html#selector'><code>selector</code></a> column attribute, which is a jQuery selector used to populate a placeholder with a filtering widgets (e.g. useful if you want externalized search form)</li>
+</ul>
+
+<h5 id='thymeleaf_implementation'>Thymeleaf implementation</h5>
+
+<ul>
+<li>New <a href='/datatables/ref/thymeleaf/table.html#dt:dom'><code>dt:dom</code></a> table attribute.</li>
+
+<li>New <a href='/datatables/ref/thymeleaf/th.html#dt:selector'><code>dt:selector</code></a> th attribute.</li>
+</ul>
+
+<h5 id='issues'>Issues</h5>
+<ul>
+    <li><a href='https://github.com/dandelion/issues/issues/157'>Issue 157</a>: Improve dependency management</li>
+	<li><a href='https://github.com/dandelion/issues/issues/155'>Issue 155</a>: Improve Javadoc for the Spring DatatablesCriteriasResolver</li>
+	<li><a href='https://github.com/dandelion/issues/issues/154'>Issue 154</a>: Improve DatatablesCriterias#getFromRequest method</li>
+	<li><a href='https://github.com/dandelion/issues/issues/152'>Issue 152</a>: Erroneous regex match in Utils.java</li>
+	<li><a href='https://github.com/dandelion/issues/issues/151'>Issue 151</a>: Attributes duplicated in dandelion-datatables.tld</li>
+	<li><a href='https://github.com/dandelion/issues/issues/150'>Issue 150</a>: Datatables-spring3 criteria resolver does not work with spring 3.1+ if using RequestMappingHandlerMethodAdapter</li>
+	<li><a href='https://github.com/dandelion/issues/issues/149'>Issue 149</a>: Bug when displaying native tables and tables with Dandelion-Datatables on the same page</li>
+	<li><a href='https://github.com/dandelion/issues/issues/146'>Issue 146</a>: Add Tag support for EL expressions at attribute's values</li>
+	<li><a href='https://github.com/dandelion/issues/issues/144'>Issue 144</a>: Customize the values used in the filtering combo box</li>
+	<li><a href='https://github.com/dandelion/issues/issues/143'>Issue 143</a>: CDN should be entirely configurable through configuration</li>
+	<li><a href='https://github.com/dandelion/issues/issues/140'>Issue 140</a>: StringIndexOutOfBoundsException in StandardConfigurationLoader</li>
+	<li><a href='https://github.com/dandelion/issues/issues/139'>Issue 139</a>: ConfigurationStore.getPrototype() fails with "global" group</li>
+	<li><a href='https://github.com/dandelion/issues/issues/138'>Issue 138</a>: Replace getParent() by findAncestorWithClass() method</li>
+	<li><a href='https://github.com/dandelion/issues/issues/137'>Issue 137</a>: StandardConfigurationLoader doesn't resolve 'global' group</li>
+	<li><a href='https://github.com/dandelion/issues/issues/133'>Issue 133</a>: Dandelion_dataTables_export layer is inside dataTables_scrollBody layer</li>
+	<li><a href='https://github.com/dandelion/issues/issues/132'>Issue 132</a>: Reduce dependencies using home made utility methods</li>
+	<li><a href='https://github.com/dandelion/issues/issues/131'>Issue 131</a>: Improve export when using DOM sources</li>
+	<li><a href='https://github.com/dandelion/issues/issues/130'>Issue 130</a>: Optimize link and script tags positions</li>
+	<li><a href='https://github.com/dandelion/issues/issues/128'>Issue 128</a>: DisplayLength attribute does not accept expressions</li>
+	<li><a href='https://github.com/dandelion/issues/issues/125'>Issue 125</a>: Fix issue with repeated content when using the ColumnHead tag</li>
+	<li><a href='https://github.com/dandelion/issues/issues/118'>Issue 118</a>: Remove the Logback dependency from datatables-jsp and datatables-thymeleaf</li>
+	<li><a href='https://github.com/dandelion/issues/issues/117'>Issue 117</a>: Bug serverside processing [Thymeleaf]</li>
+	<li><a href='https://github.com/dandelion/issues/issues/116'>Issue 116</a>: Add support for more placeholders when using the filtering feature</li>
+	<li><a href='https://github.com/dandelion/issues/issues/115'>Issue 115</a>: Make the table's footer optional when using custom filtering form</li>
+	<li><a href='https://github.com/dandelion/issues/issues/113'>Issue 113</a>: Add support for global configuration for all tables</li>
+	<li><a href='https://github.com/dandelion/issues/issues/111'>Issue 111</a>: dt:filterType="'select'" not working with ajaxsource</li>
+	<li><a href='https://github.com/dandelion/issues/issues/108'>Issue 108</a>: Add an extension point allowing users to write and activate their own extensions</li>
+	<li><a href='https://github.com/dandelion/issues/issues/94'>Issue 94</a>: Add support for horizontal scrolling</li>
+	<li><a href='https://github.com/dandelion/issues/issues/80'>Issue 80</a>: Add the export feature using AJAX sources</li>
+	<li><a href='https://github.com/dandelion/issues/issues/57'>Issue 57</a>: Add new FilterTypes in column filtering</li>
+	<li><a href='https://github.com/dandelion/issues/issues/53'>Issue 53</a>: Improve sorting</li>
+	<li><a href='https://github.com/dandelion/issues/issues/21'>Issue 21</a>: ExportLink not displayed when paging, filtering or info are disabled</li>
+	<li><a href='https://github.com/dandelion/issues/issues/4'>Issue 4</a>: Improve i18n support</li>
+	<li><a href='https://github.com/dandelion/issues/issues/1'>Issue 1</a>: Add support for more native HTML attributes</li>
+</ul>
 <h4 id='0813_05182013'>0.8.13 (05-18-2013)</h4>
 
 <h5 id='core'>Core</h5>
@@ -191,17 +307,17 @@
 <h5 id='jsp_implementation'>JSP implementation</h5>
 
 <ul>
-<li>New <code>dom</code> table attribute, allowing you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page.</li>
+<li>New <a href='/datatables/ref/jsp/table.html#dom'><code>dom</code></a> table attribute, allowing you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page.</li>
 
-<li>New <code>selector</code> column attribute, which is a jQuery selector used to populate a placeholder with a filtering widgets (e.g. useful if you want externalized search form)</li>
+<li>New <a href='/datatables/ref/jsp/column.html#selector'><code>selector</code></a> column attribute, which is a jQuery selector used to populate a placeholder with a filtering widgets (e.g. useful if you want externalized search form)</li>
 </ul>
 
 <h5 id='thymeleaf_implementation'>Thymeleaf implementation</h5>
 
 <ul>
-<li>New <code>dt:dom</code> table attribute.</li>
+<li>New <a href='/datatables/ref/thymeleaf/table.html#dt:dom'><code>dt:dom</code></a> table attribute.</li>
 
-<li>New <code>dt:selector</code> th attribute.</li>
+<li>New <a href='/datatables/ref/thymeleaf/th.html#dt:selector'><code>dt:selector</code></a> th attribute.</li>
 </ul>
 
 <h5 id='issues'>Issues</h5>

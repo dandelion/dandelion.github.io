@@ -1,5 +1,5 @@
 ---
-layout: datatables-thymeleaf
+layout: datatables
 menu: thymeleaf
 level1: ref
 level2:

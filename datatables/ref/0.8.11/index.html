@@ -1,0 +1,67 @@
+---
+layout: datatables
+menu: releases
+level1: ref
+level2:
+  url: 0.8.11
+  name: 0.8.11
+---
+
+<h2 class="page-title">Dandelion-Datatables 0.8.11 <span class="release-date">04-21-2013</span></h2>
+
+<h3 class="section-title">Change log</h3>
+<p>
+   <h4>Core</h4>
+   <p>
+      <ul>
+         <li>Lots of unit and integration tests added</li>
+         <li>Export links are now added in the `fnInitComplete` callback</li>
+         <li>Callbacks have been refactored to avoid conflict between features that use the same callback</li>
+         <li>Features that was already avaible using DOM sources are available using AJAX sources (sortInit, sortDirection, cssClass, cssStyle, ...)</li>
+         <li>All StringBuffer have been replaced by StringBuilder, for performance concern</li>
+      </ul>
+   </p>
+
+   <h4>JSP implementation</h4>     
+   <p>
+      <ul>
+         <li>New {% refjsp table cssStripes %} table attribute</li>
+         <li>New {% refjsp column format %}`format` column attribute allowing you to use <a href="http://docs.oracle.com/javase/1.4.2/docs/api/java/text/MessageFormat.html">MessageFormat patterns</a></li>
+         <li>New {% refjsp table displayLength %} table attribute</li>
+         <li>New {% refjsp table scrollCollapse %} table attribute</li>
+         <li>New {% refjsp table scrollY %} table attribute</li>
+         <li>New implicit object available inside the <code>&lt;datatables:table></code> tag : rowIndex</li>
+         <li>New {% refjsp table lengthChange %} table attribute</li>
+      </ul>
+   </p>
+    
+   <h4>Thymeleaf implementation</h4>
+   <p>
+      <ul>
+         <li>New {% reftl table dt:stripesclasses %} table attribute</li>
+         <li>New {% reftl table dt:displaylength %} table attribute</li>
+         <li>New {% reftl table scrollcollapse %} table attribute</li>
+         <li>New {% reftl table scrolly %} table attribute</li>
+         <li>All attributes are now processed using the Thymeleaf Standard expression</li>
+         <li>New {% reftl table lengthchange %} table attribute</li>
+      </ul>
+   </p>
+   
+   <h4>Issues</h4>
+   <p>
+      <ul>
+         <li>{% issue 81 %}: Fix the internal callbacks conflict</li>
+         <li>{% issue 79 %}: Column display is ignored in HTML in Ajax table</li>
+         <li>{% issue 77 %}: column.cssStyle and column.cssClass ignored on AJAX mode</li>
+         <li>{% issue 74 %}: Problems with how export links are added to the table</li>
+         <li>{% issue 71 %}: NPE in DataCriterias.getFromRequest(request) when request hasn't iSortingCols parameter</li>
+         <li>{% issue 70 %}: Add support for lengthChange enhancement</li>
+         <li>{% issue 66 %}: The data:url attribute must be processed using the Standard Expressions</li>
+         <li>{% issue 64 %}: Make the rowIndex available as a variable in the page scope</li>
+         <li>{% issue 62 %}: Add support for bScrollCollapse</li>
+         <li>{% issue 61 %}: Add support for iDisplayLength</li>
+         <li>{% issue 56 %}: Add Support for Column Formatting with MessageFormat patterns</li>
+         <li>{% issue 27 %}: Add support for asStripeClasses parameter enhancement JSP</li>
+      </ul>
+   </p>
+</p>
