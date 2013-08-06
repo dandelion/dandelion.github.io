@@ -11,9 +11,14 @@
 	padding-top: 10px;
 }
 
-a:hover,a:focus {
+a {
+	color: #65c22f;
+}
+a:hover, a:focus {
+	color: #65c22f;
 	text-decoration: underline;
 }
+
 /* 2nd level */
 .nav-list .nav-list>li>a {
 	padding-left: 30px;
@@ -36,6 +41,11 @@ Footer configuration
 
 footer a {
 	color: #00bfff;
+}
+
+footer a:hover, footer a:focus {
+	color: #00bfff;
+	text-decoration: underline;
 }
 
 footer ul {
