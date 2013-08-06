@@ -18,118 +18,113 @@ module: datatables
                <li {% if page.menu == 'download' %} class="active"{% endif %}>
                   <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
                </li>
+               <li {% if page.menu == 'releases' %} class="active"{% endif %}>
+                  <a href="/datatables/releases/" title="Download"> <i class="icon-tags"></i> Releases</a>
+               </li>
                
                <h5>Documentation</h5>
                <li {% if page.menu == 'installation' %} class="active"{% endif %}>
-                  <a href="/datatables/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+                  <a href="/datatables/docs/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
                   {% if page.menu == 'installation' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains 'jsp' %}class="active"{% endif %}>
-                        <a href="/datatables/installation/jsp.html"><i class="icon-double-angle-right"></i> JSP</a>
+                        <a href="/datatables/docs/installation/jsp.html"><i class="icon-double-angle-right"></i> JSP</a>
                      </li>
                      <li {% if page.url contains 'thymeleaf' %}class="active"{% endif %}>
-                        <a href="/datatables/installation/thymeleaf.html"><i class="icon-double-angle-right"></i> Thymeleaf</a>
+                        <a href="/datatables/docs/installation/thymeleaf.html"><i class="icon-double-angle-right"></i> Thymeleaf</a>
                      </li>
                   </ul>
                   {% endif %}
                </li>
-               <li {% if page.menu == 'migration' %} class="active"{% endif %}>
-                  <a href="/datatables/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
-               </li>
-               <li {% if page.menu == 'architecture' %} class="active"{% endif %}>
-                  <a href="/datatables/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
-               </li>
-               
-               <h5>Reference</h5>
-               <li {% if page.menu == 'releases' %} class="active"{% endif %}>
-                  <a href="/datatables/ref/" title="Releases"> Releases</a>
-               </li>
                <li {% if page.menu == 'jsp' %} class="active"{% endif %}>
-                  <a href="/datatables/ref/jsp/" title="JSP taglib"> JSP taglib</a>
+                  <a href="/datatables/docs/ref/jsp/" title="JSP taglib"><i class="icon-book"></i> JSP taglib</a>
                   {% if page.menu == 'jsp' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains '/jsp/table.html' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/jsp/table.html"><i class="icon-double-angle-right"></i> Table tag</a>
+                        <a href="/datatables/docs/ref/jsp/table.html"><i class="icon-double-angle-right"></i> Table tag</a>
                      </li>
                      <li {% if page.url contains '/jsp/column.html' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/jsp/column.html"><i class="icon-double-angle-right"></i> Column tag</a>
+                        <a href="/datatables/docs/ref/jsp/column.html"><i class="icon-double-angle-right"></i> Column tag</a>
                      </li>
                      <li {% if page.url contains '/jsp/columnhead.html' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/jsp/columnhead.html"><i class="icon-double-angle-right"></i> ColumnHead tag</a>
+                        <a href="/datatables/docs/ref/jsp/columnhead.html"><i class="icon-double-angle-right"></i> ColumnHead tag</a>
                      </li>
                      <li {% if page.url contains '/jsp/extraconf.html' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/jsp/extraconf.html"><i class="icon-double-angle-right"></i> ExtraConf tag</a>
+                        <a href="/datatables/docs/ref/jsp/extraconf.html"><i class="icon-double-angle-right"></i> ExtraConf tag</a>
                      </li>
                      <li {% if page.url contains '/jsp/extrafile.html' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/jsp/extrafile.html"><i class="icon-double-angle-right"></i> ExtraFile tag</a>
+                        <a href="/datatables/docs/ref/jsp/extrafile.html"><i class="icon-double-angle-right"></i> ExtraFile tag</a>
                      </li>
                      <li {% if page.url contains '/jsp/prop.html' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/jsp/prop.html"><i class="icon-double-angle-right"></i> Prop tag</a>
+                        <a href="/datatables/docs/ref/jsp/prop.html"><i class="icon-double-angle-right"></i> Prop tag</a>
                      </li>
                      <li {% if page.url contains '/jsp/export.html' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/jsp/export.html"><i class="icon-double-angle-right"></i> Export tag</a>
+                        <a href="/datatables/docs/ref/jsp/export.html"><i class="icon-double-angle-right"></i> Export tag</a>
                      </li>
                      <li {% if page.url contains '/jsp/callback.html' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/jsp/callback.html"><i class="icon-double-angle-right"></i> Callback tag</a>
+                        <a href="/datatables/docs/ref/jsp/callback.html"><i class="icon-double-angle-right"></i> Callback tag</a>
                      </li>
                   </ul>
                   {% endif %}
                </li>
                <li {% if page.menu == 'thymeleaf' %} class="active"{% endif %}>
-                  <a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect</a>
+                  <a href="/datatables/docs/ref/thymeleaf/" title="Thymeleaf dialect"><i class="icon-book"></i> Thymeleaf dialect</a>
                   {% if page.menu == 'thymeleaf' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains '/thymeleaf/table.html' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/thymeleaf/table.html"><i class="icon-double-angle-right"></i> Table attributes</a>
+                        <a href="/datatables/docs/ref/thymeleaf/table.html"><i class="icon-double-angle-right"></i> Table attributes</a>
                      </li>
                      <li {% if page.url contains '/thymeleaf/thead.html' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/thymeleaf/thead.html"><i class="icon-double-angle-right"></i> Thead attributes</a>
+                        <a href="/datatables/docs/ref/thymeleaf/thead.html"><i class="icon-double-angle-right"></i> Thead attributes</a>
                      </li>
                      <li {% if page.url contains 'thymeleaf/tbody.html' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/thymeleaf/tbody.html"><i class="icon-double-angle-right"></i> Tbody attributes</a>
+                        <a href="/datatables/docs/ref/thymeleaf/tbody.html"><i class="icon-double-angle-right"></i> Tbody attributes</a>
                      </li>
                      <li {% if page.url contains '/thymeleaf/th.html' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/thymeleaf/th.html"><i class="icon-double-angle-right"></i> Th attributes</a>
+                        <a href="/datatables/docs/ref/thymeleaf/th.html"><i class="icon-double-angle-right"></i> Th attributes</a>
                      </li>
                      <li {% if page.url contains '/thymeleaf/td.html' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/thymeleaf/td.html"><i class="icon-double-angle-right"></i> Td attributes</a>
+                        <a href="/datatables/docs/ref/thymeleaf/td.html"><i class="icon-double-angle-right"></i> Td attributes</a>
                      </li>
                   </ul>
                   {% endif %}
                </li>
                <li {% if page.menu == 'properties' %} class="active"{% endif %}>
-                  <a href="/datatables/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration</a>
+                  <a href="/datatables/docs/ref/configuration/" title="Configuration"><i class="icon-book"></i> Configuration</a>
                   {% if page.menu == 'properties' %}
                   <ul class="nav nav-list">
-                     <li {% if page.url contains '/ref/configuration/#main-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/configuration/#main-configuration"><i class="icon-double-angle-right"></i> Main</a>
+                     <li {% if page.url contains '/docs/ref/configuration#main-configuration' %}class="active"{% endif %}>
+                        <a href="/datatables/docs/ref/configuration#main-configuration"><i class="icon-double-angle-right"></i> Main</a>
                      </li>
-                     <li {% if page.url contains '/ref/configuration/#css-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/configuration/#css-configuration"><i class="icon-double-angle-right"></i> CSS</a>
+                     <li {% if page.url contains '/docs/ref/configuration#css-configuration' %}class="active"{% endif %}>
+                        <a href="/datatables/docs/ref/configuration#css-configuration"><i class="icon-double-angle-right"></i> CSS</a>
                      </li>
-                     <li {% if page.url contains '/ref/configuration/#features-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/configuration/#features-configuration"><i class="icon-double-angle-right"></i> Features</a>
+                     <li {% if page.url contains '/docs/ref/configuration#features-configuration' %}class="active"{% endif %}>
+                        <a href="/datatables/docs/ref/configuration#features-configuration"><i class="icon-double-angle-right"></i> Features</a>
                      </li>
-                     <li {% if page.url contains '/ref/configuration/#plugins-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/configuration/#plugins-configuration"><i class="icon-double-angle-right"></i> Plugins</a>
+                     <li {% if page.url contains '/docs/ref/configuration#plugins-configuration' %}class="active"{% endif %}>
+                        <a href="/datatables/docs/ref/configuration#plugins-configuration"><i class="icon-double-angle-right"></i> Plugins</a>
                      </li>
-                     <li {% if page.url contains '/ref/configuration/#extras-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/configuration/#extras-configuration"><i class="icon-double-angle-right"></i> Extras</a>
+                     <li {% if page.url contains '/docs/ref/configuration#extras-configuration' %}class="active"{% endif %}>
+                        <a href="/datatables/docs/ref/configuration#extras-configuration"><i class="icon-double-angle-right"></i> Extras</a>
                      </li>
-                     <li {% if page.url contains '/ref/configuration/#ajax-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/configuration/#ajax-configuration"><i class="icon-double-angle-right"></i> AJAX</a>
+                     <li {% if page.url contains '/docs/ref/configuration#ajax-configuration' %}class="active"{% endif %}>
+                        <a href="/datatables/docs/ref/configuration#ajax-configuration"><i class="icon-double-angle-right"></i> AJAX</a>
                      </li>
-                     <li {% if page.url contains '/ref/configuration/#export-configuration' %}class="active"{% endif %}>
+                     <li {% if page.url contains '/docs/ref/configuration#export-configuration' %}class="active"{% endif %}>
                         <a href="/datatables/ref/configuration/#export-configuration"><i class="icon-double-angle-right"></i> Export</a>
                      </li>
-                     <li {% if page.url contains '/ref/configuration/#i18n-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/configuration/#i18n-configuration"><i class="icon-double-angle-right"></i> I18n</a>
-                     </li>
-                     <li {% if page.url contains '/ref/configuration/#css-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/configuration/#css-configuration"><i class="icon-double-angle-right"></i> CSS</a>
+                     <li {% if page.url contains '/docs/ref/configuration/#i18n-configuration' %}class="active"{% endif %}>
+                        <a href="/datatables/docs/ref/configuration/#i18n-configuration"><i class="icon-double-angle-right"></i> I18n</a>
                      </li>
                   </ul>
                   {% endif %}
+               </li>
+               <li {% if page.menu == 'migration' %} class="active"{% endif %}>
+                  <a href="/datatables/docs/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+               </li>
+               <li {% if page.menu == 'architecture' %} class="active"{% endif %}>
+                  <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
                </li>
                
                <h5>Tutorials</h5>

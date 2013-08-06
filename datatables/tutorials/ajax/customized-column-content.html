@@ -21,7 +21,7 @@ level3:
 <p>
    Since the v0.8.7, you can add customized column content using AJAX sources. It can be very useful for instance to display an "actions" column or if you need to display a bit more than just the raw data (e.g. a mailto link).
 </p>
-<p>Using DOM sources, you can use the {%refjsp table row %} table attribute but using AJAX source, the table's build if fully delegated to DataTables. So the only way to customize the column content
+<p>Using DOM sources, you can use the {% refjsp dt table row %} table attribute but using AJAX source, the table's build if fully delegated to DataTables. So the only way to customize the column content
    is to do it client-side, passing a particular Javascript function.
 </p>
 <p>
@@ -45,12 +45,12 @@ function yourFunction(data, type, full) {
             </ul>
          </p>
          <p class="alert alert-info">
-            <strong><i class="icon-info-sign icon-2x"></i></strong> You can use the first parameter (data) of the function if you already use the {% refjsp column property %} (JSP) or {% reftl th dt:property %} (Thymeleaf) attribute because it internally generates a
+            <strong><i class="icon-info-sign icon-2x"></i></strong> You can use the first parameter (data) of the function if you already use the {% refjsp dt column property %} (JSP) or {% reftl dt th dt:property %} (Thymeleaf) attribute because it internally generates a
             <a href="http://datatables.net/ref#mdata">mData</a> parameter that you can reuse.
          </p>
       </li>
       <li>
-         Step 2: tell <strong>Dandelion-Datatables</strong> you want to use a custom rendering function for a particular column using either the {% refjsp column renderFunction %} (JSP) or the {% reftl th dt:renderFunction %} column attribute. 
+         Step 2: tell <strong>Dandelion-Datatables</strong> you want to use a custom rendering function for a particular column using either the {% refjsp dt column renderFunction %} (JSP) or the {% reftl dt th dt:renderFunction %} column attribute. 
       </li>
    </ul>
 </p>
@@ -70,7 +70,7 @@ function mailify(data, type, full) {
 </pre>
 </p>
 <p>
-   Then, just use the {% refjsp column renderFunction %} column attribute and pass the name of the previous Javascript function.
+   Then, just use the {% refjsp dt column renderFunction %} column attribute and pass the name of the previous Javascript function.
 <pre class="prettyprint">
    &lt;c:url var="datasource" value="/persons" />
    &lt;datatables:table id="myTableId" url="${datasource}" serverSide="true" processing="true">
@@ -119,7 +119,7 @@ function actions(data, type, full) {
          
 <h4>Using Thymeleaf</h4>
 <p>
-   Using Thymeleaf, you can use the {% reftl th dt:renderFunction %} th attribute in the same manner.
+   Using Thymeleaf, you can use the {% reftl dt th dt:renderFunction %} th attribute in the same manner.
 <pre class="prettyprint">
 &lt;table id="myTableId" dt:table="true" dt:url="@{/persons1}" dt:serverSide="true">
    &lt;thead>
@@ -159,7 +159,7 @@ You can find more details <a href="http://www.thymeleaf.org/doc/Tutorial%20-%20U
    By default, an empty string will be displayed.
 </p>
 <p>
-   You can also use the {% refjsp column default %} column attribute to replace the empty string by anything you want.
+   You can also use the {% refjsp dt column default %} column attribute to replace the empty string by anything you want.
 <pre class="prettyprint">
 &lt;c:url var="datasource" value="/persons" />
 &lt;datatables:table id="myTableId" url="${datasource}">
@@ -174,7 +174,7 @@ You can find more details <a href="http://www.thymeleaf.org/doc/Tutorial%20-%20U
 
 <h4>Using Thymeleaf</h4>
 <p>
-   Using Thymeleaf, this is quite similar. Just use the {% reftl th dt:default %} th attribute to override the default empty string.
+   Using Thymeleaf, this is quite similar. Just use the {% reftl dt th dt:default %} th attribute to override the default empty string.
 <pre class="prettyprint">
 &lt;table id="myTableId" dt:table="true" dt:url="@{/persons}">
    &lt;thead>

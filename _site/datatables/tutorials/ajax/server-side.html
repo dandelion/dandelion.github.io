@@ -63,17 +63,11 @@
             </a>
             <div class="nav-collapse collapse">
                <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
-                  <li class="text-center"><a href="/"><i class="icon-home"></i> Home</a></li>
-                  <li class="text-center"><a href="/blog"><i class="icon-comment"></i> Blog</a></li>
-                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
-                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-github"></i> Issues</a></li>
-                  <li class="text-center"><a href="https://github.com/dandelion/dandelion-datatables"><i class="icon-github-sign"></i> Sources</a></li>
-               </ul>
-               <ul class="nav pull-right" style="clear:right;">
-                  <form class="navbar-search" action="http://google.com/search" method="get" style="margin-right:15px;">
-                     <input type="hidden" name="q" value="site:dandelion.github.io/datatables" />
-                     <input type="text" class="search search-query" name="q" results="0" placeholder="Search"/>
-                  </form>
+                  <li class="text-center"><a href="/"><i class="icon-home icon-3x"></i><br/>Home</a></li>
+                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt icon-3x"></i><br />Forum</a></li>
+                  <li class="text-center"><a href="/blog"><i class="icon-comment-alt icon-3x"></i><br />Blog</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug icon-3x"></i><br />Issues</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/dandelion-datatables" alt="Dandelion-Datatables sources"><i class="icon-github icon-3x"></i><br />Sources</a></li>
                </ul>
             </div>
             <!--/.nav-collapse -->
@@ -97,34 +91,32 @@
                <li >
                   <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
                </li>
+               <li >
+                  <a href="/datatables/releases/" title="Download"> <i class="icon-tags"></i> Releases</a>
+               </li>
                
                <h5>Documentation</h5>
                <li >
-                  <a href="/datatables/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+                  <a href="/datatables/docs/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
                   
                </li>
                <li >
-                  <a href="/datatables/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
-               </li>
-               <li >
-                  <a href="/datatables/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
-               </li>
-               
-               <h5>Reference</h5>
-               <li >
-                  <a href="/datatables/ref/" title="Releases"> Releases</a>
-               </li>
-               <li >
-                  <a href="/datatables/ref/jsp/" title="JSP taglib"> JSP taglib</a>
+                  <a href="/datatables/docs/ref/jsp/" title="JSP taglib"><i class="icon-book"></i> JSP taglib</a>
                   
                </li>
                <li >
-                  <a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect</a>
+                  <a href="/datatables/docs/ref/thymeleaf/" title="Thymeleaf dialect"><i class="icon-book"></i> Thymeleaf dialect</a>
                   
                </li>
                <li >
-                  <a href="/datatables/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration</a>
+                  <a href="/datatables/docs/ref/configuration/" title="Configuration"><i class="icon-book"></i> Configuration</a>
                   
+               </li>
+               <li >
+                  <a href="/datatables/docs/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+               </li>
+               <li >
+                  <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
                </li>
                
                <h5>Tutorials</h5>
@@ -211,9 +203,17 @@
 </p>
 <p>
    Since the v0.8.2, <strong>Dandelion-datatables</strong> supports server-side processing by providing some utility classes that should help you to set this up.
+</p>
 
-<br />
+<h3 class="section-title">How does it work?</h3>
+
+
+
+
+
+
 #### What is server-side processing using Dandelion-datatables ?
+
 
 Actually, the following steps are performed :
 
@@ -223,15 +223,20 @@ Actually, the following steps are performed :
  - A `DatatablesResponse` is built using the returned `DataSet` and sent back to DataTables in the right format (JSON), allowing the table to be refreshed !
 
 <br />         
-#### What do I need to do ?
-Obviously, server-side processing requires a bit more work than client-side one. Here are the needed steps to set this up.
+
+<h3 class="section-title">What do I need to do?</h3>
+<p>
+   Obviously, server-side processing requires a bit more work than client-side one. Here are the needed steps to set this up.
 
  * Prepare the needed SQL queries using your favorite ORM framework<br />Waiting for other implementations are added, you can browse the following example that uses [the Hibernate implementation of JPA](https://github.com/Dandelion/dandelion-samples/blob/master/datatables-jsp/src/main/java/com/github/dandelion/datatables/dao/PersonDao.java).
  * Adapt existing or create new [business services](https://github.com/Dandelion/dandelion-samples/blob/master/datatables-jsp/src/main/java/com/github/dandelion/datatables/service/impl/PersonServiceJpaImpl.java) using the **Dandelion-datatables** utility classes
  * Create the web service that will be used by DataTables to perform the AJAX request using the <strong>Dandelion-datatables</strong> utility classes<br /> The following example uses [AJAX-enabled Spring controllers](https://github.com/Dandelion/dandelion-samples/blob/master/datatables-jsp/src/main/java/com/github/dandelion/datatables/ajax/SpringMvcAjaxController.java).
  * Use the right DataTables4j markup to activate server-side processing. Take a look just below !
 
-<h3 class="section-title">Example</h3>
+
+
+
+<h3 class="section-title">Activating server-side processing</h3>
 
 <br />
 #### Using JSP
@@ -311,7 +316,7 @@ The pipe size can be set using the `dt:pipesize` attribute.
          <div class="span8">
             
             <div class="row-fluid">
-               <div class="span4">
+               <div class="span3">
                   <h3>Dandelion</h3>
                   <ul>
                      <li><a href="https://github.com/dandelion"><i class="icon-github"></i> Source repository</a></li>
@@ -321,7 +326,15 @@ The pipe size can be set using the `dt:pipesize` attribute.
                      <li><a href="/acknowledgements/"><i class="icon-info-sign"></i> Acknowledgements</a></li>
                   </ul>
                </div>
-               <div class="span4">
+               <div class="span3">
+                  <h3>Components</h3>
+                  <ul>
+                     <li><a href="/dandelion">Dandelion</a></li>
+                     <li><a href="/datatables">Datatables</a></li>
+                     <li><a href="/webanalytics">Webanalytics</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
                   <h3>Get started</h3>
                   <ul>
                      <li><a href="/faq"> <i class="icon-book"></i> FAQ</a></li>
@@ -329,7 +342,7 @@ The pipe size can be set using the `dt:pipesize` attribute.
                      <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
                   </ul>
                </div>
-               <div class="span4">
+               <div cl3ss="span3">
                   <h3>Community</h3>
                   <ul>
                      <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>

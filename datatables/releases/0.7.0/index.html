@@ -1,0 +1,50 @@
+---
+layout: datatables
+menu: releases
+level1: releases
+level2:
+  url: 0.7.0
+  name: 0.7.0
+---
+
+<h2 class="page-title">Dandelion-Datatables 0.7.0 change log (formerly DataTables4j)<span class="release-date">11-30-2012</span></h2>
+
+<h3 class="section-title">Core</h3>
+<p>
+   <ul>
+      <li>Servlet 3.0 support (Warning : <a href="./install.html">install section</a> has been updated)</li>
+      <li>Jackson mapper dependency replaced by Google json-simple one (lighter)</li>
+      <li>Basic export functionality (for now CSV and XML are supported) with customizable output filename, export link position, ... See <a href="./features.export.html">more details</a></li>
+      <li>New <tt>export</tt> and <tt>exportLinks</tt> table attributes (to enable export and set one or several links positions)</li>
+      <li>New Export tag (to configure one export\'s type)</li>
+      <li>Javascript and JSON configuration are now pretty printed (as much as possible :-))</li>
+      <li>More documentation (Javadoc et web site)</li>
+      <li>DataTables4j now released under the BSD 3-Clause licence</li>
+   </ul>
+</p>
+
+<h3 class="section-title">Modules</h3>
+<p>
+   <ul>
+      <li>New backward compatibility module for Servlet 2.x</li>
+      <li>YUI Compression module : compression option (munge, preserve semi-colons, disable optimizations) are now externalized in the DataTables4j properties file</li>
+   </ul>
+</p>
+
+<h3 class="section-title">Demo app</h3>
+<p>
+   <ul>
+      <li>The main demo is now deployed in a Tomcat 7 container (Servlet 3.0)</li>
+      <li>New <strong>Features > Export</strong> examples</li>
+      <li><strong>Features > Aggregation</strong> section updated</li>
+      <li>New demo using the backward compatibility module for Servlet 2.x deployed to CloudBees</li>
+   </ul>
+</p>
+
+<h3 class="section-title">Closed issues</h3>
+<p>
+   <ul>
+      <li>Fix for <a href="https://github.com/datatables4j/issues/issues/1">issue #1</a> (The prop tag affects all tables, not just the current one)</li>
+      <li>Fix for <a href="https://github.com/datatables4j/issues/issues/3">issue #3</a> (EL in title attribute of the column tag)</li>
+   </ul>
+</p>

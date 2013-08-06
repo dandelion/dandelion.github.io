@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dandelion Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="java, web, component, library, assets, datatables">
+<meta name="author" content="Dandelion">
+
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
+<!-- <link href="/assets/css/component.css" rel="stylesheet"> -->
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+<!--[if IE 7]>
+      <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
+      <![endif]-->
+<!--[if lt IE 9]>
+      <script src="/assets/js/html5shiv.js"></script>
+      <![endif]-->
+<link href="/assets/css/site-main.css" rel="stylesheet">
+<link href="/assets/css/site-component.css" rel="stylesheet">
+      
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+<link rel="shortcut icon" href="/assets/images/dandelion_square.png">
+
+<script>
+      var _gaq = _gaq || [];
+      _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+      _gaq.push([ '_setCookiePath', '/datatables/' ]);
+      _gaq.push([ '_trackPageview' ]);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+      			: 'http://www')
+      			+ '.google-analytics.com/ga.js';
+      	var s = document.getElementsByTagName('script')[0];
+      	s.parentNode.insertBefore(ga, s);
+      })();
+</script>
+<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+<script src="/assets/js/site-component.js"></script>
+</head>
+<body>
+   <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+         <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a href="/datatables">
+               <div id="logo_container">
+                   <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
+                   <p id="logo_text">
+                       datatables
+                   </p>
+               </div>
+            </a>
+            <div class="nav-collapse collapse">
+               <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
+                  <li class="text-center"><a href="/"><i class="icon-home icon-3x"></i><br/>Home</a></li>
+                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt icon-3x"></i><br />Forum</a></li>
+                  <li class="text-center"><a href="/blog"><i class="icon-comment-alt icon-3x"></i><br />Blog</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug icon-3x"></i><br />Issues</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/dandelion-datatables" alt="Dandelion-Datatables sources"><i class="icon-github icon-3x"></i><br />Sources</a></li>
+               </ul>
+            </div>
+            <!--/.nav-collapse -->
+         </div>
+      </div>
+   </div>
+
+   <div class="container-fluid container-component">
+   <div class="row-fluid">
+      <div class="span2">
+         <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+               
+               <h5>Overview</h5>
+               <li >
+                  <a href="/datatables"><i class="icon-home"></i> Home</a>
+               </li>
+               <li >
+                  <a href="/datatables/features/" title="Features"><i class="icon-th-list"></i> Features</a>
+               </li>
+               <li >
+                  <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
+               </li>
+               <li >
+                  <a href="/datatables/releases/" title="Download"> <i class="icon-tags"></i> Releases</a>
+               </li>
+               
+               <h5>Documentation</h5>
+               <li >
+                  <a href="/datatables/docs/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/ref/jsp/" title="JSP taglib"><i class="icon-book"></i> JSP taglib</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/ref/thymeleaf/" title="Thymeleaf dialect"><i class="icon-book"></i> Thymeleaf dialect</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/ref/configuration/" title="Configuration"><i class="icon-book"></i> Configuration</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+               </li>
+               <li  class="active">
+                  <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
+               </li>
+               
+               <h5>Tutorials</h5>
+               <li >
+                  <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-flag-checkered"></i> I18n</a>
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="span10">
+         <div class="row-fluid">
+            <ul class="breadcrumb hidden-phone">
+   <li><a href="/"><i class="icon-home"></i></a></li>
+   <li><span class="divider">|</span><a href="/datatables">Dandelion-Datatables</a></li>
+     
+   
+   <li><span class="divider">|</span><a href="/datatables/architecture">Architecture</a></li>
+   
+     
+   
+   <li><span class="divider">|</span><a href="/datatables/architecture/general">Index</a></li>
+   
+     
+   
+   
+   <li class="pull-right">
+      Latest release: <a href="/datatables/ref/0.9.0/">0.9.0</a>
+   </li>
+</ul>
+            <h2 class='page-title'>Architecture</h2><br />
+<p>You can find below a diagram that shows how <strong>Dandelion-Datatables</strong> is structured. <br /></p>
+<p class='text-center'>
+<img class='blog_img' height='500px' src='/assets/images/datatables/architecture.png' width='600px' />
+</p><br /><h3 class='section-title'>Core modules</h3>
+<h4 id='datatablescore'>datatables-core</h4>
+
+<p>The <em>datatables-core</em> module is the fundation. It contains all base classes used by all other modules: generators, servlet, filter, themes, features, utilities&#8230;</p>
+
+<h4 id='datatablesjsp'>datatables-jsp</h4>
+
+<p>This is the JSP implementation of <strong>Dandelion-Datatables</strong> that contains the JSP taglib. If your view layer is based on JSP, you&#8217;ll need this module.</p>
+
+<h4 id='datatablesjsp'>datatables-jsp</h4>
+
+<p>This is the Thymeleaf implementation of <strong>Dandelion-Datatables</strong>, which is an awesome alternative to JSP. This module contains the Thymeleaf dialect.</p>
+<br /><h3 class='section-title'>Extra modules</h3>
+<h4 id='datatablesservlet2'>datatables-servlet2</h4>
+
+<p>This extra contains servlet and filter classes you&#8217;ll have to use if you deploy on Servlet 2.x compatible containers, such as Tomcat 6.x. You can see the additional installation step required in this case <a href='/datatables/installation/jsp.html#with_servlet_2x_compatible_containers'>here</a> (JSP) or <a href='/datatables/installation/thymeleaf.html#with_servlet_2x_compatible_containers'>here</a> (Thymeleaf).</p>
+
+<h4 id='datatablesspring3'>datatables-spring3</h4>
+
+<p>This extra contains some utilities when dealing with server-side processing. You can see more details <a href='/datatables/features/ajax/springmvc.html'>here</a>.</p>
+
+<h4 id='datatablesexportitext'>datatables-export-itext</h4>
+
+<p>This extra provides:</p>
+
+<ul>
+<li>
+<p>the <a href='http://itextpdf.com/'>iText</a> library as a new dependency</p>
+</li>
+
+<li>
+<p>an <a href='https://github.com/dandelion/dandelion-datatables/blob/master/datatables-extras/datatables-export-itext/src/main/java/com/github/dandelion/datatables/extras/export/itext/PdfExport.java'>export class</a> that Dandelion-Datatables will use <a href='https://github.com/dandelion/dandelion-datatables/blob/master/datatables-core/src/main/resources/config/datatables-default.properties#L35'>by default</a> when exporting data</p>
+</li>
+</ul>
+
+<p>It means that if you add this module in your classpath and activate the export (using the <a href='/datatables/ref/jsp/table.html#export'>export</a>/<a href='/datatables/ref/thymeleaf/table.html#dt:export'>dt:export</a> attributes and <code>pdf</code> as a value), <strong>Dandelion-Datatables</strong> will export using iText and the above class.</p>
+
+<h4 id='datatablesexportpoi'>datatables-export-poi</h4>
+
+<p>This extra provides:</p>
+
+<ul>
+<li>
+<p>the <a href='http://poi.apache.org/'>Apache POI</a> library as a new dependency</p>
+</li>
+
+<li>
+<p>an <a href='https://github.com/dandelion/dandelion-datatables/blob/master/datatables-extras/datatables-export-poi/src/main/java/com/github/dandelion/datatables/extras/export/poi/XlsExport.java'>export class</a> that Dandelion-Datatables will use <a href='https://github.com/dandelion/dandelion-datatables/blob/master/datatables-core/src/main/resources/config/datatables-default.properties#L33'>by default</a> when exporting data</p>
+</li>
+</ul>
+
+<p>It means that if you add this module in your classpath and activate the export (using the <a href='/datatables/ref/jsp/table.html#export'>export</a>/<a href='/datatables/ref/thymeleaf/table.html#dt:export'>dt:export</a> attributes and <code>xls</code> as a value), <strong>Dandelion-Datatables</strong> will export using Apache POI and the above class.</p>
+
+<h4 id='datatablesexportpoiooxml'>datatables-export-poi-ooxml</h4>
+
+<p>This extra provides:</p>
+
+<ul>
+<li>
+<p>the OO-XML version of the <a href='http://poi.apache.org/'>Apache POI</a> library as a new dependency</p>
+</li>
+
+<li>
+<p>an <a href='https://github.com/dandelion/dandelion-datatables/blob/master/datatables-extras/datatables-export-poi-ooxml/src/main/java/com/github/dandelion/datatables/extras/export/poi/XlsxExport.java'>export class</a> that Dandelion-Datatables will use <a href='https://github.com/dandelion/dandelion-datatables/blob/master/datatables-core/src/main/resources/config/datatables-default.properties#L34'>by default</a> when exporting data</p>
+</li>
+</ul>
+
+<p>It means that if you add this module in your classpath and activate the export (using the <a href='/datatables/ref/jsp/table.html#export'>export</a>/<a href='/datatables/ref/thymeleaf/table.html#dt:export'>dt:export</a> attributes and <code>xlsx</code> as a value), <strong>Dandelion-Datatables</strong> will export using Apache POI and the above class.</p>
+
+<h4 id='datatablescompressionyui'>datatables-compression-yui</h4>
+
+<p>This extra is used to compress the generated static resources using the <a href='http://yui.github.io/yuicompressor/'>YUI Compressor</a> library.</p>
+
+<h4 id='datatablesatmosphere'>datatables-atmosphere</h4>
+
+<p>This extra is about to be released. It will allow you to have continuously-updating tables in your web application, using Websockets.</p>
+         </div>
+      </div>
+   </div>
+</div>
+   
+   <div class="container-fluid area-footer">     
+      <footer class="footer">
+   <div class="container">
+      <div class="row">
+         <div class="span8">
+            
+            <div class="row-fluid">
+               <div class="span3">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="icon-github"></i> Source repository</a></li>
+                     <li><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug"></i> Issue tracker</a></li>
+                     <li><a href="/team"><i class="icon-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="icon-road"></i> Roadmap</a></li>
+                     <li><a href="/acknowledgements/"><i class="icon-info-sign"></i> Acknowledgements</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Components</h3>
+                  <ul>
+                     <li><a href="/dandelion">Dandelion</a></li>
+                     <li><a href="/datatables">Datatables</a></li>
+                     <li><a href="/webanalytics">Webanalytics</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Get started</h3>
+                  <ul>
+                     <li><a href="/faq"> <i class="icon-book"></i> FAQ</a></li>
+                     <li><a href="/samples"><i class="icon-code"></i> Samples</a></li>
+                     <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
+                  </ul>
+               </div>
+               <div cl3ss="span3">
+                  <h3>Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>
+                     <li><a href="http://dandelion-forum.48353.x6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="icon-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="span4">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="span12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components, are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+   </div>
+   
+   <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</body>
+</html>

@@ -38,7 +38,7 @@ level3:
 <h3 class="section-title" id="htuaas">How to use an AJAX source</h3>
 <h4>Using JSP</h4>
 <p>
-   Instead of using the {% refjsp table data %} table attribute (used for DOM sources), use the {% refjsp table url %} table attribute instead. 
+   Instead of using the {% refjsp dt table data %} table attribute (used for DOM sources), use the {% refjsp dt table url %} table attribute instead. 
 </p>
 <p>
    Note that you need to build the URL by yourself, e.g. using the <code>&lt;c:url&gt;</code> JSTL tag.
@@ -57,10 +57,10 @@ level3:
 </p>
 <h4>Using Thymeleaf</h4>
 <p>
-   Using Thymeleaf, you have to fill in the {% reftl table dt:url %} table attribute. The same rules apply as for JSP regarding the value you set.
+   Using Thymeleaf, you have to fill in the {% reftl dt table dt:url %} table attribute. The same rules apply as for JSP regarding the value you set.
 </p>
 <p>
-   Moreover, you have to tell <strong>Dandelion-datatables</strong> which property must be read from the JSON source for each column using the {% reftl th dt:property %} attribute.
+   Moreover, you have to tell <strong>Dandelion-datatables</strong> which property must be read from the JSON source for each column using the {% reftl dt  th dt:property %} attribute.
 </p>
 <p>
 <pre class="prettyprint">

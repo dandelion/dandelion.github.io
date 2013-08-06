@@ -1,0 +1,27 @@
+<div class="navbar navbar-static-top">
+   <div class="navbar-inner">
+      <div class="container-fluid">
+         <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+         </button>
+         <a href="/{{ site.dandelion.components.[page.module].url }}">
+            <div id="logo_container">
+                <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
+                <p id="logo_text">
+                    {{ site.dandelion.components.[page.module].name }}
+                </p>
+            </div>
+         </a>
+         <div class="nav-collapse collapse">
+            <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
+               <li class="text-center"><a href="/"><i class="icon-home icon-3x"></i><br/>Home</a></li>
+               <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt icon-3x"></i><br />Forum</a></li>
+               <li class="text-center"><a href="/blog"><i class="icon-comment-alt icon-3x"></i><br />Blog</a></li>
+               <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug icon-3x"></i><br />Issues</a></li>
+               <li class="text-center"><a href="https://github.com/dandelion/{{ site.dandelion.components.[page.module].sources }}" alt="{{ site.dandelion.components.[page.module].breadcrumb}} sources"><i class="icon-github icon-3x"></i><br />Sources</a></li>
+            </ul>
+         </div>
+         <!--/.nav-collapse -->
+      </div>
+   </div>
+</div>

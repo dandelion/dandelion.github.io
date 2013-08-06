@@ -35,7 +35,8 @@ table thead th {
 }
 /* End Alert customization */
 
-/* Navbar marketing */
+/* Navbar marketing 
+
 .navbar .nav>li>a {
 	float: none;
 	padding: 10px 15px 10px;
@@ -109,13 +110,6 @@ table thead th {
 }
 /* End Navbar marketing */
 
-/* Bootstrap affix plugin custom */
-.affix {
-	position: fixed;
-	top: 20px;
-	margin-right: 20px;
-}
-/* End Bootstrap affix plugin custom */
 h2.marketing {
 	background:
 		url(/assets/images/dandelion/github-dandelion-logo-twitter-50px.png)

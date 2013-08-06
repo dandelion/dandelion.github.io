@@ -1,0 +1,45 @@
+---
+layout: datatables
+menu: releases
+level1: releases
+level2:
+  url: 0.8.1
+  name: 0.8.1
+---
+
+<h2 class="page-title">Dandelion-Datatables 0.8.1 change log (formerly DataTables4j)<span class="release-date">01-20-2013</span></h2>
+
+<h3 class="section-title">Core</h3>
+<p>
+   <ul>
+      <li><a href="http://www.thymeleaf.org">Thymeleaf</a> support ! (Even if lots of features still need to be supported...)</li>
+      <li>Concept of "theme" added, new <tt>theme</tt> and <tt>themeOption</tt> table attributes</li>
+      <li>New themes based on Bootstrap2 and jQuery UI ThemeRoller</li>
+      <li>New <tt>display</tt> column attribute : you can now choose which column(s) you want to appear (only in a particular export, only in HTML, or both)</li>
+      <li>New <tt>autoSize</tt> export attribute (only for Excel exports)</li>
+      <li>Export classes have been updated to handle binary exports (like XLS or PDF)</li>
+      <li>Using custom classes for export is now possible</li>
+      <li>New values available for <tt>paginationType</tt> table attribute : four_button, bootstrap, scrolling, input, listbox, extJs</li>
+      <li><a href="http://code.google.com/p/jquery-datatables-column-filter/">DataTables Column Filter Add-on by Jovan Popovic</a> added (for now, only <tt>filterType</tt> is supported, with INPUT and SELECT values)</li>
+      <li>Lots of code duplication removed</li>
+   </ul>
+</p>
+
+<h3 class="section-title">Modules</h3>
+<p>
+   <ul>
+      <li>New Excel (XLS) Export module using Apache POI</li>
+      <li>New Excel (XLSX) Export module using Apache POI (OOXML)</li>
+      <li>New PDF Export module using iText</li>
+   </ul>
+</p>
+
+<h3 class="section-title">Closed issues</h3>
+<p>
+   <ul>
+      <li><a href="https://github.com/datatables4j/issues/issues/5">issue #5</a> (Custom header column)</li>
+      <li><a href="https://github.com/datatables4j/issues/issues/9">issue #9</a> (Thymeleaf integration)</li>
+      <li><a href="https://github.com/datatables4j/issues/issues/10">issue #10</a> (FixedColumns plugin integration)</li>
+      <li><a href="https://github.com/datatables4j/issues/issues/11">issue #11</a> (CDN attribute in https context)</li>
+   </ul>
+</p>

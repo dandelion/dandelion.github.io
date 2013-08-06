@@ -19,7 +19,7 @@ level3:
 
 <h3 class="section-title">Preamble</h3>
 <p>
-   Starting from the v0.9.0, almost all available attributes of the {% refjsp table %} and {% reftl table %} tags can be configured in the configuration file (
+   Starting from the v0.9.0, almost all available attributes of the {% refjsp dt table %} and {% reftl dt table %} tags can be configured in the configuration file (
    <i>datatables.properties</i>
    ) to be applied application-wide, i.e. on all tables in your application.
 </p>
@@ -47,7 +47,7 @@ level3:
    Let's imagine you want to apply the Bootstrap2 theme everywhere in your application.
 </p>
 <p>
-   Before, you had to add the {% refjsp table theme %} attribute and add custom CSS classes in the {% refjsp table cssClass %} attribute, like this:
+   Before, you had to add the {% refjsp dt table theme %} attribute and add custom CSS classes in the {% refjsp dt table cssClass %} attribute, like this:
 <pre class="prettyprint">
 &lt;datatables:table id="myTableId" data="${persons}" cssClass="table table-striped table-bordered table-condensed" theme="bootstrap2">
    &lt;datatables:column title="Id" property="id" />

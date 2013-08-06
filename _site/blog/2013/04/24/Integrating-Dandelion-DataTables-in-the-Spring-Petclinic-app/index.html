@@ -9,15 +9,18 @@
 <link href="/blog/atom.xml" rel="alternate" title="Dandelion Project Blog" type="application/atom+xml" />
 <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
 <link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
-<link href="/assets/css/component.css" rel="stylesheet">
 <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
-<link href="/assets/css/blog.css" rel="stylesheet">
+<!-- <link href="/assets/css/blog.css" rel="stylesheet"> -->
 <!--[if IE 7]>
       <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
       <![endif]-->
 <!--[if lt IE 9]>
       <script src="/assets/js/html5shiv.js"></script>
       <![endif]-->
+<link href="/assets/css/site-main.css" rel="stylesheet">
+<link href="/assets/css/site-marketing.css" rel="stylesheet">
+<link href="/assets/css/site-blog.css" rel="stylesheet">
+
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
@@ -45,46 +48,38 @@
 </script>
 </head>
 <body>
-   <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-         <div class="container-fluid">
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-               <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a href="/blog">
+   <div class="navbar navbar-static-top">
+   <div class="navbar-inner">
+      <div class="container-fluid">
+         <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+         </button>
+         <a href="/">
             <div id="logo_container">
                 <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
                 <p id="logo_text">
-                    blog
+                    
                 </p>
             </div>
-            </a>
-            <!-- <span style="background-image: url('/assets/images/dandelion/github-01.png'); display:block; background-repeat:no-repeat; height:100px; ">Test</span> -->
-            <!-- <a class="brand" href="/datatables"><img src="/assets/images/dandelion/github-01.png" /></a> -->
-            <div class="nav-collapse collapse">
-               <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
-                  <li class="text-center"><a href="http://dandelion.48353.n6.nabble.com/"><i class="icon-comments-alt"></i><span class="hidden-phone">Forum</span></a></li>
-                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align:center;"><i class="icon-leaf"></i> Components <i class="icon-caret-down icon-white icon-large"></i></a>
-                     <ul class="dropdown-menu">
-                        <li style="background-color: #ffffff;"><a href="/datatables">Dandelion-Datatables</a></li>
-                     </ul>
-                  </li>
-                  <li class="text-center"><a href="/"><i class="icon-home"></i><span class="hidden-phone">Home</span></a></li>
-               </ul>
-               <ul class="nav pull-right" style="clear:right;">
-                  <form class="navbar-search" action="http://google.com/search" method="get" style="margin-right:15px;">
-                     <input type="hidden" name="q" value="site:dandelion.github.io/blog" />
-                     <input type="text" class="search search-query" name="q" results="0" placeholder="Search"/>
-                  </form>
-               </ul>
-            </div>
-            <!--/.nav-collapse -->
+         </a>
+         <div class="nav-collapse collapse">
+            <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
+               <li class="text-center"><a href="/"><i class="icon-home icon-3x"></i><br/>Home</a></li>
+               <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt icon-3x"></i><br />Forum</a></li>
+               <li class="text-center"><a href="/blog"><i class="icon-comment-alt icon-3x"></i><br />Blog</a></li>
+               <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug icon-3x"></i><br />Issues</a></li>
+               <li class="text-center"><a href="https://github.com/dandelion/" alt=" sources"><i class="icon-github icon-3x"></i><br />Sources</a></li>
+            </ul>
          </div>
+         <!--/.nav-collapse -->
       </div>
    </div>
+</div>
+   
    <div class="container-fluid">
       <div class="row-fluid">
-         <div class="span9"><div class="row-fluid">
+         <div class="span9">
+            <div class="row-fluid">
    <div class="span2">
       <!-- AddThis Button BEGIN -->
       <div class="addthis_toolbox addthis_floating_style addthis_counter_style" style="left:30px;top:187px;">
@@ -577,7 +572,8 @@ Note that the above filter configuration is automatically done using a Servlet 3
          </ul>
       </div>
    </div>
-</div></div>
+</div>
+         </div>
          <div class="span3">
             
             <div class="row-fluid">
@@ -675,13 +671,68 @@ Note that the above filter configuration is automatically done using a Servlet 3
             </div>         
          </div>
       </div>
-      <hr>
-      <footer>
-         <p>
-            Copyright © The <a href="/team">Dandelion Team</a> | <a href="/acknowledgments.html">Acknowledgments</a> <span style="float: right;"><script
-                  src="http://www.ohloh.net/p/633354/widgets/project_thin_badge.js"></script></span>
-         </p>
-      </footer>
+   </div>
+      
+   <div class="container-fluid area-footer">     
+      <footer class="footer">
+   <div class="container">
+      <div class="row">
+         <div class="span8">
+            
+            <div class="row-fluid">
+               <div class="span3">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="icon-github"></i> Source repository</a></li>
+                     <li><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug"></i> Issue tracker</a></li>
+                     <li><a href="/team"><i class="icon-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="icon-road"></i> Roadmap</a></li>
+                     <li><a href="/acknowledgements/"><i class="icon-info-sign"></i> Acknowledgements</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Components</h3>
+                  <ul>
+                     <li><a href="/dandelion">Dandelion</a></li>
+                     <li><a href="/datatables">Datatables</a></li>
+                     <li><a href="/webanalytics">Webanalytics</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Get started</h3>
+                  <ul>
+                     <li><a href="/faq"> <i class="icon-book"></i> FAQ</a></li>
+                     <li><a href="/samples"><i class="icon-code"></i> Samples</a></li>
+                     <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
+                  </ul>
+               </div>
+               <div cl3ss="span3">
+                  <h3>Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>
+                     <li><a href="http://dandelion-forum.48353.x6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="icon-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="span4">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="span12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components, are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
    </div>
 </body>
 </html>

@@ -26,7 +26,7 @@ $(document).ready(function () {
 		"bPaginate": false,
 		"bLengthChange" : false,
 		"bSortClasses": false,
-		"aaSorting": [[1,'asc']],
+		"aaSorting": [[0,'asc']],
 		"oSearch": { "sSearch": search },
 		"fnInitComplete": function () {
 			this.fnAdjustColumnSizing();

@@ -63,17 +63,11 @@
             </a>
             <div class="nav-collapse collapse">
                <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
-                  <li class="text-center"><a href="/"><i class="icon-home"></i> Home</a></li>
-                  <li class="text-center"><a href="/blog"><i class="icon-comment"></i> Blog</a></li>
-                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
-                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-github"></i> Issues</a></li>
-                  <li class="text-center"><a href="https://github.com/dandelion/dandelion-datatables"><i class="icon-github-sign"></i> Sources</a></li>
-               </ul>
-               <ul class="nav pull-right" style="clear:right;">
-                  <form class="navbar-search" action="http://google.com/search" method="get" style="margin-right:15px;">
-                     <input type="hidden" name="q" value="site:dandelion.github.io/datatables" />
-                     <input type="text" class="search search-query" name="q" results="0" placeholder="Search"/>
-                  </form>
+                  <li class="text-center"><a href="/"><i class="icon-home icon-3x"></i><br/>Home</a></li>
+                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt icon-3x"></i><br />Forum</a></li>
+                  <li class="text-center"><a href="/blog"><i class="icon-comment-alt icon-3x"></i><br />Blog</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug icon-3x"></i><br />Issues</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/dandelion-datatables" alt="Dandelion-Datatables sources"><i class="icon-github icon-3x"></i><br />Sources</a></li>
                </ul>
             </div>
             <!--/.nav-collapse -->
@@ -97,34 +91,32 @@
                <li >
                   <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
                </li>
+               <li >
+                  <a href="/datatables/releases/" title="Download"> <i class="icon-tags"></i> Releases</a>
+               </li>
                
                <h5>Documentation</h5>
                <li >
-                  <a href="/datatables/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+                  <a href="/datatables/docs/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
                   
                </li>
                <li >
-                  <a href="/datatables/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
-               </li>
-               <li >
-                  <a href="/datatables/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
-               </li>
-               
-               <h5>Reference</h5>
-               <li >
-                  <a href="/datatables/ref/" title="Releases"> Releases</a>
-               </li>
-               <li >
-                  <a href="/datatables/ref/jsp/" title="JSP taglib"> JSP taglib</a>
+                  <a href="/datatables/docs/ref/jsp/" title="JSP taglib"><i class="icon-book"></i> JSP taglib</a>
                   
                </li>
                <li >
-                  <a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect</a>
+                  <a href="/datatables/docs/ref/thymeleaf/" title="Thymeleaf dialect"><i class="icon-book"></i> Thymeleaf dialect</a>
                   
                </li>
                <li >
-                  <a href="/datatables/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration</a>
+                  <a href="/datatables/docs/ref/configuration/" title="Configuration"><i class="icon-book"></i> Configuration</a>
                   
+               </li>
+               <li >
+                  <a href="/datatables/docs/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+               </li>
+               <li >
+                  <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
                </li>
                
                <h5>Tutorials</h5>
@@ -216,7 +208,7 @@
          <div class="span8">
             
             <div class="row-fluid">
-               <div class="span4">
+               <div class="span3">
                   <h3>Dandelion</h3>
                   <ul>
                      <li><a href="https://github.com/dandelion"><i class="icon-github"></i> Source repository</a></li>
@@ -226,7 +218,15 @@
                      <li><a href="/acknowledgements/"><i class="icon-info-sign"></i> Acknowledgements</a></li>
                   </ul>
                </div>
-               <div class="span4">
+               <div class="span3">
+                  <h3>Components</h3>
+                  <ul>
+                     <li><a href="/dandelion">Dandelion</a></li>
+                     <li><a href="/datatables">Datatables</a></li>
+                     <li><a href="/webanalytics">Webanalytics</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
                   <h3>Get started</h3>
                   <ul>
                      <li><a href="/faq"> <i class="icon-book"></i> FAQ</a></li>
@@ -234,7 +234,7 @@
                      <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
                   </ul>
                </div>
-               <div class="span4">
+               <div cl3ss="span3">
                   <h3>Community</h3>
                   <ul>
                      <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>

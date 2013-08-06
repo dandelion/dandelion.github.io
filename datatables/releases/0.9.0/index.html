@@ -1,0 +1,56 @@
+---
+layout: datatables
+menu: releases
+level1: releases
+level2:
+  url: 0.9.0
+  name: 0.9.0
+---
+
+<h2 class="page-title">Dandelion-Datatables 0.9.0 change log<span class="release-date">??-??-2013</span></h2>
+
+<h3 class="section-title">Core</h3>
+<p>
+   <ul>
+      <li>AJAX sources
+         <p>From this release, you have to configure yourself the URL used to populate your AJAX-enabled tables (the context path won't be prepended any longer). All existing tutorials have been
+      updated accordingly.
+         </p>
+      </li>
+      <li>More tests
+         <p>
+            More unit tests and integration tests have been added.
+         </p>
+      </li>
+   </ul>
+</p>
+
+<h3 class="section-title">JSP implementation</h3>
+<p>
+   <ul>
+      <li>New {% refjsp dt table titleKey %} table attribute, allowing to use a resource key used to lookup the title value of a column.</li>
+      <li>Removed the labels table attribute (nouvelle gestion de l'i18n)
+   </ul>
+</p>
+ 
+<h3 class="section-title">Thymeleaf implementation</h3>
+<p>
+   <ul>
+      <li>New {% reftl dt table dt:dom %} table attribute</li>
+      <li>New {% reftl dt th dt:selector %} th attribute</li>
+   </ul>
+</p>
+
+<h3 class="section-title">Closed issues</h3>
+<p>
+   <ul>
+      <li>{% issue 100 %}: Fix base.url configuration point</li>
+      <li>{% issue 101 %}: Add support for cssStyle and cssClass when using AJAX source</li>
+      <li>{% issue 102 %}: "TypeError: oColumn is undefined" on DOM when data is a empty list</li>
+      <li>{% issue 103 %}: Support dynamic value for the column's "visible" attribute</li>
+      <li>{% issue 105 %}: Not all existing properties did appear as "valid"</li>
+      <li>{% issue 106 %}: Add support for sDom parameter</li>
+      <li>{% issue 107 %}: Add support for sSelector parameter of the ColumnFilter plugin</li>
+      <li>{% issue 109 %}: Conflict between the Bootstrap2 theme and basic features enablement</li>
+   </ul>
+</p>

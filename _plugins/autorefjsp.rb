@@ -1,6 +1,6 @@
 module Jekyll
   class RenderReferenceLinkJspTag < Liquid::Tag
-	
+  
     def initialize(tag_name, params, tokens)
       super
       @params = params
@@ -9,15 +9,43 @@ module Jekyll
     def render(context)
       
       args = @params.split(" ").map(&:strip)
+            
+      @module = args[0].downcase
+      case @module
+      when "dt"
+        
+        case args.length
+        when 3
+          @reftag = args[1].downcase
+          @refparam = args[2]
+          "<a href=\"/datatables/docs/ref/jsp/#{@reftag}.html##{@refparam}\"><code>#{@refparam}</code></a>"
+        when 2
+          @reftag = args[1].downcase
+          "<a href=\"/datatables/docs/ref/jsp/#{@reftag}.html\"><code>datatables:#{@reftag}</code></a>"
+        end
       
-      if args.length == 2
-        @reftag = args[0].downcase
-        @refparam = args[1]
-        "<a href=\"/datatables/ref/jsp/#{@reftag}.html##{@refparam}\"><code>#{@refparam}</code></a>"
-      else 
-        if args.length == 1
-          @reftag = args[0].downcase
-          "<a href=\"/datatables/ref/jsp/#{@reftag}.html\"><code>datatables:#{@reftag}</code></a>"
+      when "ddl"
+        
+        case args.length
+        when 3
+          @reftag = args[1].downcase
+          @refparam = args[2]
+          "<a href=\"/dandelion/docs/ref/jsp/#{@reftag}.html##{@refparam}\"><code>#{@refparam}</code></a>"
+        when 2
+          @reftag = args[1].downcase
+          "<a href=\"/dandelion/docs/ref/jsp/#{@reftag}.html\"><code>dandelion:#{@reftag}</code></a>"
+        end
+      
+      when "wa"
+        
+        case args.length
+        when 3
+          @reftag = args[1].downcase
+          @refparam = args[2]
+          "<a href=\"/webanalytics/docs/ref/jsp/#{@reftag}.html##{@refparam}\"><code>#{@refparam}</code></a>"
+        when 2
+          @reftag = args[1].downcase
+          "<a href=\"/webanalytics/docs/ref/jsp/#{@reftag}.html\"><code>webanalytics:#{@reftag}</code></a>"
         end
       end
     end
