@@ -1,0 +1,70 @@
+---
+layout: datatables
+menu: configuration
+level1: features
+level2:
+  url: configuration
+  name: Configuration
+level3:
+  url: configuration-loading
+  name: Configuration loading
+---
+
+<h2 class="page-title">
+   Configuration loading
+   <div class="pull-right">
+      <span class="badge badge-success compatibility" title="Compatible with JSP">JSP</span>
+      <span class="badge badge-success compatibility" title="Compatible with Thymeleaf">Thymeleaf</span>
+   </div>
+</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   By default, <strong>Dandelion-Datatables</strong> internally uses a properties file, containing some configuration properties.
+</p>
+<p>
+   But you can of course override those configuration properties by providing some properties files (resource bundle).
+</p>
+
+<h3 class="section-title">Loading strategy</h3>
+<p>
+   The configuration loading algorithm is defined as follows:
+   <ol>
+      <li>
+         <p>First, check if the <strong>dandelion.datatables.configuration</strong> system property is defined.</p>
+         <p>If it is, Dandelion-Datatables attempts to convert the value to a URL and tries to load a bundle called <i>datatables.properties</i> with it</p>
+      </li>
+      <li>
+         <p>If no system property is defined, Dandelion-Datatables tries to load a bundle still called <i>datatables.properties</i> from the root of the classpath</p>
+      </li>
+   </ol>
+</p>
+
+<h3 class="section-title">Example using externalized configuration</h3>
+<p>
+   Let's say you have the following files:
+<pre class="prettyprint">
+   C:
+   |__ Documents
+      |__ MyApp
+         |__ datatables.properties
+         |__ datatables_FR.properties
+         |__ datatables_ES.properties
+</pre>   
+   You just need to add <code>-Ddandelion.datatables.configuration="C:\Documents\MyApp\"</code> to the command that starts the server.
+</p>
+
+<h3 class="section-title">Example using classpath configuration</h3>
+<p>
+   Let's say you're developing a project and building it with Maven. You should have the following structure:
+<pre class="prettyprint">
+   MyApp
+   |__ src
+      |__ main
+         |__ java
+         |__ resources
+            |__ datatables.properties
+            |__ datatables_FR.properties
+            |__ datatables_ES.properties
+</pre>   
+</p>

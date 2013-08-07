@@ -21,7 +21,7 @@ module Jekyll
           "<a href=\"/datatables/docs/ref/thymeleaf/#{@reftag}.html##{@refparam}\"><code>#{@refparam}</code></a>"
         when 2
           @reftag = args[1].downcase
-          "<a href=\"/datatables/docs/ref/thymeleaf/#{@reftag}.html\"><code>datatables:#{@reftag}</code></a>"
+          "<a href=\"/datatables/docs/ref/thymeleaf/#{@reftag}.html\"><code>#{@reftag}</code></a>"
         end
       
       when "ddl"
@@ -33,7 +33,7 @@ module Jekyll
           "<a href=\"/dandelion/docs/ref/thymeleaf/#{@reftag}.html##{@refparam}\"><code>#{@refparam}</code></a>"
         when 2
           @reftag = args[1].downcase
-          "<a href=\"/dandelion/docs/ref/thymeleaf/#{@reftag}.html\"><code>datatables:#{@reftag}</code></a>"
+          "<a href=\"/dandelion/docs/ref/thymeleaf/#{@reftag}.html\"><code>#{@reftag}</code></a>"
         end
       
       when "wa"
@@ -45,7 +45,7 @@ module Jekyll
           "<a href=\"/webanalytics/docs/ref/thymeleaf/#{@reftag}.html##{@refparam}\"><code>#{@refparam}</code></a>"
         when 2
           @reftag = args[1].downcase
-          "<a href=\"/webanalytics/docs/ref/thymeleaf/#{@reftag}.html\"><code>datatables:#{@reftag}</code></a>"
+          "<a href=\"/webanalytics/docs/ref/thymeleaf/#{@reftag}.html\"><code>#{@reftag}</code></a>"
         end
       end
     end

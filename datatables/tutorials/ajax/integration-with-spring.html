@@ -1,0 +1,114 @@
+---
+layout: datatables
+menu: ajax
+level1: tutorials
+level2:
+  url: ajax
+  name: AJAX
+level3:
+  url: integration-with-spring
+  name: Integration with Spring
+---
+
+<h2 class="page-title">Integration with Spring
+   <div class="pull-right">
+      <span class="badge badge-success compatibility" title="Compatible with JSP">JSP</span>
+      <span class="badge badge-success compatibility" title="Compatible with Thymeleaf">Thymeleaf</span>
+   </div>
+</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   Wether you use client-side or server-side processing, the Spring extra provides some utility classes to work with AJAX sources.
+<p>
+
+<h3 class="section-title">Installing the Spring extra</h3>
+<p>
+   You need to add the following dependency in the <tt>dependencies</tt> section of your <tt>pom.xml</tt>:
+<pre class="prettyprint">
+&lt;dependency>
+   &lt;groupId>com.github.dandelion&lt;/groupId>
+   &lt;artifactId>datatables-spring3&lt;/artifactId>
+   &lt;version>{{ site.dandelion.components.datatables.version }}&lt;/version>
+&lt;/dependency>
+</pre>
+   <p class="alert alert-info">
+      <strong><i class="icon-info-sign icon-2x"></i></strong> 
+      If you use another build system or want to download the JAR manually, go <a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-spring3%7C{{ site.dandelion.components.datatables.version }}%7Cjar">here</a>.
+   </p>
+</p>
+
+<h3 class="section-title">Custom method argument resolver for {% javadoc dt datatables-core DatatablesCriterias %}</h3>
+<p>
+   This custom resolver can be used to map the DataTables' attributes obtained from the
+   <code>HttpServletRequest</code> to a {% javadoc dt datatables-core DatatablesCriterias %} object annotated with {% javadoc dt datatables-spring3 DatatablesParam %}.
+</p>
+
+<h4>Working with Spring 3.0 and earlier</h4>
+<p>
+   You can use the <code>com.github.dandelion.datatables.extras.spring3.ajax.DatatablesCriteriasResolver</code> by carrying out the following steps:
+</p>
+<p>
+   <ol>
+      <li>
+         Register the custom  WebArgumentResolver with the following XML configuration:
+<pre class="prettyprint">
+&lt;mvc:annotation-driven&gt;
+   &lt;mvc:argument-resolvers&gt;
+      &lt;bean class="com.github.dandelion.datatables.extras.spring3.ajax.DatatablesCriteriasResolver" /&gt;
+   &lt;/mvc:argument-resolvers&gt;
+&lt;/mvc:annotation-driven&gt;
+</pre>
+      </li>
+      <li>
+         You can then use it in any Spring controller like this:
+<pre class="prettyprint">
+@RequestMapping(value = "/persons")
+public @ResponseBody DatatablesResponse<Person> findAll(@DatatablesParams DatatablesCriterias criterias) {
+   DataSet<Person> dataSet = personService.findPersonsWithDatatablesCriterias(criterias);
+   return DatatablesResponse.build(dataSet, criterias);
+}
+</pre>         
+      </li>
+   </ol>
+</p>
+
+<h4>Working with Spring 3.1 and greater</h4>
+<p>
+   You can use a the <code>com.github.dandelion.datatables.extras.spring3.ajax.DatatablesCriteriasMethodArgumentResolver</code> by carrying out the following steps:
+</p>
+<p>
+   <ol>
+      <li>
+         Register the custom method argument resolver, either using XML configuration...
+<pre class="prettyprint">
+&lt;mvc:annotation-driven&gt;
+   &lt;mvc:argument-resolvers&gt;
+      &lt;bean class="com.github.dandelion.datatables.extras.spring3.ajax.DatatablesCriteriasMethodArgumentResolver" /&gt;
+   &lt;/mvc:argument-resolvers&gt;
+&lt;/mvc:annotation-driven&gt;
+</pre>         
+         ... or using Javaconfig:
+<pre class="prettyprint">
+&#064;Configuration
+&#064;EnableWebMvc
+public class MyWebConfig extends WebMvcConfigurerAdapter {
+   &#064;Override
+   public void addArgumentResolvers(List&lt;HandlerMethodArgumentResolver&gt; argumentResolvers) {
+      argumentResolvers.add(new DatatablesCriteriasMethodArgumentResolver());
+   }
+}
+</pre>
+      </li>
+      <li>
+         You can then use it in any Spring controller like this:
+<pre class="prettyprint">
+@RequestMapping(value = "/persons")
+public @ResponseBody DatatablesResponse<Person> findAll(@DatatablesParams DatatablesCriterias criterias) {
+   DataSet<Person> dataSet = personService.findPersonsWithDatatablesCriterias(criterias);
+   return DatatablesResponse.build(dataSet, criterias);
+}
+</pre>
+      </li>
+   </ol>
+</p>

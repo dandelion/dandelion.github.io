@@ -1,0 +1,145 @@
+---
+layout: datatables
+menu: ajax
+submenu: serverside
+level1: tutorials
+level2:
+  url: ajax
+  name: AJAX
+level3:
+  url: server-side
+  name: Server-side processing
+---
+
+<h2 class="page-title">Server-side processing
+   <div class="pull-right">
+      <span class="badge badge-success compatibility" title="Compatible with JSP">JSP</span>
+      <span class="badge badge-success compatibility" title="Compatible with Thymeleaf">Thymeleaf</span>
+   </div>
+</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   If you are working with seriously large databases, you might want to consider using the server-side options that DataTables provides and that Dandelion-Datatables supports. 
+</p>
+
+<h3 class="section-title">How does it work?</h3>
+<p>
+   When using server-side processing, DataTables will make an XHR request to the server for each draw of the information on the page (i.e. when paging, sorting, filtering etc). DataTables will send a
+   number of variables to the server to allow it to perform the required processing, and then return the data in the format required by DataTables.
+</p>
+<p>
+   Dandelion-Datatables can help you during this process by providing you some utility classes:
+   <ul>
+      <li>
+        {% javadoc dt datatables-core DatatablesCriterias %}
+        <p>
+            This class mainly contains a <code>getFromRequest(HttpServletRequest request)</code> method that maps all the DataTables parameters into itself, allowing you to use it in your data access layer.
+        </p>
+      </li>
+      <li>
+         {% javadoc dt datatables-core DataSet %}
+         <p>
+            All the results returned from you data access layer should be wrapped in this class in order to build a <strong>DataTablesResponse</strong>.
+         </p>
+      </li>
+      <li>
+         {% javadoc dt datatables-core DatatablesResponse %}
+         <p>
+            This class contains a builder that helps you to return the data in the format required by DataTables. Ensure this object is converted to JSON before displaying the table.
+         </p>
+      </li>
+   </ul>
+</p>
+
+<p class="alert alert-info">
+   <strong><i class="icon-info-sign icon-2x"></i></strong> 
+   Note that an integration with Spring has been developed. More details <a href="/datatables/tutorials/ajax/integration-with-spring.html">here</a>...
+</p>
+
+<h3 class="section-title">Preparing the ground...</h3>
+<p>
+   As you may expect, server-side processing requires a bit more work than client-side one. Here are the needed steps to set this up.
+</p>
+<p>
+   <ul>
+      <li>
+         <h5>Prepare the needed SQL queries using your favorite ORM framework</h5>
+         <p>
+            Whether you use Hibernate or any other ORM framework, you need to write some methods, knowing you can use an instance of {% javadoc dt datatables-core DatatablesCriterias %} to help building the queries.
+         </p>
+         <p>
+            Waiting for other implementations are added, you can browse the following example from the demo application that uses
+            <a href="https://github.com/Dandelion/dandelion-samples/blob/master/datatables-jsp/src/main/java/com/github/dandelion/datatables/dao/PersonDao.java">the Hibernate implementation of JPA</a>.
+         </p>
+      </li>
+      <li>
+         <h5>Create (or adapt) a business service</h5>
+         <p>
+            Create or adapt a business service with a method that returns a <code>DataSet</code> object.
+         </p>
+         <p>
+            You can see an example of <a href="https://github.com/Dandelion/dandelion-samples/blob/master/datatables-jsp/src/main/java/com/github/dandelion/datatables/service/impl/PersonServiceJpaImpl.java">business service</a> in the demo application.
+         </p>
+      </li>
+      <li>
+         <h5>Write a JSON web service</h5>
+         <p>
+            Create a web service that will be used by DataTables to perform the AJAX request. Note that it must produce JSON only.
+         </p> 
+         <p>
+            The demo application uses a <a
+            href="https://github.com/Dandelion/dandelion-samples/blob/master/datatables-jsp/src/main/java/com/github/dandelion/datatables/ajax/SpringMvcAjaxController.java">AJAX-enabled Spring
+            controllers</a>
+          </p>
+      </li>
+      <li>
+         <h5>Update your views</h5>
+         <p>
+            You need to update your views in order to activate server-side processing. Take a look just below!
+         </p>
+      </li>
+   </ul>
+</p>
+
+<h3 class="section-title">Activating server-side processing</h3>
+<h4>Using JSP</h4>
+<p>
+   Just use the {% refjsp dt table serverSide %} table attribute as follows. You can also use the {% refjsp dt table processing %} table attribute to display a message during the loading.
+</p>
+<p>
+<pre class="prettyprint">
+&lt;c:url var="datasource" value="/persons" />
+&lt;datatables:table id="myTableId" url="${datasource}" serverSide="true" processing="true">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
+</p>
+
+<h4>Using Thymeleaf</h4>
+<p>
+   This is quite similar. You can use the {% reftl dt table dt:serverside %} and {% reftl dt table dt:processing %} table attributes.
+</p>
+<p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true" dt:url="@{/persons}" dt:serverside="true" dt:processing="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th dt:property="'id'">Id&lt;/th>
+         &lt;th dt:property="'firstName'">Firstname&lt;/th>
+         &lt;th dt:property="'lastName'">Lastname&lt;/th>
+         &lt;th dt:property="'address.town.name'">City&lt;/th>
+         &lt;th dt:property="'mail'">Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+&lt;/table>
+</pre>
+
+<p class="alert alert-info">
+   <strong><i class="icon-info-sign icon-2x"></i></strong> 
+   Note that you can also reduce AJAX calls for paging by pipelinig data. See more details <a href="/datatables/tutorials/ajax/server-side/pipelining-data.html">here</a>...
+</p>

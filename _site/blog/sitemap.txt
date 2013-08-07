@@ -39,6 +39,7 @@ http://dandelion.github.io/datatables/docs/architecture/server.html
 http://dandelion.github.io/datatables/docs/installation/index.html
 http://dandelion.github.io/datatables/docs/installation/jsp.html
 http://dandelion.github.io/datatables/docs/installation/thymeleaf.html
+http://dandelion.github.io/datatables/docs/integration/index.html
 http://dandelion.github.io/datatables/docs/migration/from_0.8.x_to_0.9.x.html
 http://dandelion.github.io/datatables/docs/migration/from_datatables4j_to_dandelion-datatables.html
 http://dandelion.github.io/datatables/docs/migration/index.html
@@ -94,10 +95,13 @@ http://dandelion.github.io/datatables/tutorials/advanced/extrafile.html
 http://dandelion.github.io/datatables/tutorials/advanced/index.html
 http://dandelion.github.io/datatables/tutorials/advanced/nested-tags.html
 http://dandelion.github.io/datatables/tutorials/advanced/rowid.html
+http://dandelion.github.io/datatables/tutorials/advanced/writing-your-own-extension.html
 http://dandelion.github.io/datatables/tutorials/ajax/customized-ajax-calls.html
 http://dandelion.github.io/datatables/tutorials/ajax/customized-column-content.html
 http://dandelion.github.io/datatables/tutorials/ajax/index.html
-http://dandelion.github.io/datatables/tutorials/ajax/server-side.html
+http://dandelion.github.io/datatables/tutorials/ajax/integration-with-spring.html
+http://dandelion.github.io/datatables/tutorials/ajax/server-side/index.html
+http://dandelion.github.io/datatables/tutorials/ajax/server-side/pipelining-data.html
 http://dandelion.github.io/datatables/tutorials/ajax/springmvc.html
 http://dandelion.github.io/datatables/tutorials/ajax/using-ajax-sources.html
 http://dandelion.github.io/datatables/tutorials/basics/cdn.html
@@ -114,6 +118,8 @@ http://dandelion.github.io/datatables/tutorials/basics/multiple.html
 http://dandelion.github.io/datatables/tutorials/basics/paging.html
 http://dandelion.github.io/datatables/tutorials/basics/sorting.html
 http://dandelion.github.io/datatables/tutorials/configuration/configuration-groups.html
+http://dandelion.github.io/datatables/tutorials/configuration/configuration-loading.html
+http://dandelion.github.io/datatables/tutorials/configuration/custom-configuration-loader.html
 http://dandelion.github.io/datatables/tutorials/configuration/global-configuration.html
 http://dandelion.github.io/datatables/tutorials/configuration/index.html
 http://dandelion.github.io/datatables/tutorials/configuration/override-conf.html
@@ -126,6 +132,10 @@ http://dandelion.github.io/datatables/tutorials/export/multiple.html
 http://dandelion.github.io/datatables/tutorials/export/ownclass.html
 http://dandelion.github.io/datatables/tutorials/i18n/i18n.html
 http://dandelion.github.io/datatables/tutorials/i18n/index.html
+http://dandelion.github.io/datatables/tutorials/i18n/integration-with-other-projects.html
+http://dandelion.github.io/datatables/tutorials/i18n/internationalization.html
+http://dandelion.github.io/datatables/tutorials/i18n/pluging-a-custom-localeresolver.html
+http://dandelion.github.io/datatables/tutorials/i18n/pluging-a-custom-messageresolver.html
 http://dandelion.github.io/datatables/tutorials/index.html
 http://dandelion.github.io/datatables/tutorials/plugins/colreorder.html
 http://dandelion.github.io/datatables/tutorials/plugins/fixedheader.html

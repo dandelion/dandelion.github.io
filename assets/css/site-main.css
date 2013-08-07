@@ -11,6 +11,14 @@
 	padding-top: 10px;
 }
 
+code {
+	padding: 2px 4px;
+	color: #080;
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+	white-space: nowrap;
+}
+
 a {
 	color: #65c22f;
 }
@@ -57,9 +65,15 @@ End Footer configuration
 
 /* Section configuration*/
 .section-title {
+	padding-top: 15px;
 	padding-bottom: 5px;
 	margin: 10px 0 15px;
 	border-bottom: 1px solid #eeeeee;
+}
+.section-index {
+}
+.section-index ul {
+	list-style-type: none;
 }
 /* End Section configuration*/
 

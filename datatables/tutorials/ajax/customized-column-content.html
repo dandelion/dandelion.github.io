@@ -54,6 +54,10 @@ function yourFunction(data, type, full) {
       </li>
    </ul>
 </p>
+<p class="alert alert-warn">
+   <strong><i class="icon-warning-sign icon-2x"></i></strong> 
+   Note that you can't use the {% refjsp dt column format%} column attribute of the JSP taglib when using an AJAX source!
+</p>
 
 <br />      
 <h3 class="section-title" id="eusamf">Example, using a mailify function</h3>
@@ -151,7 +155,7 @@ You can find more details <a href="http://www.thymeleaf.org/doc/Tutorial%20-%20U
 
 <h3 class="section-title" id="hnadv">Handling null and default values</h3>
 <p>
-   This section deals with the case where the bean you're trying to display in the table has null properties.
+   This section deals with the case where the bean you're iterating on contains some properties that are null.
 </p>
 <h4>Using JSP</h4>
 <p>

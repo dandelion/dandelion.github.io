@@ -153,14 +153,40 @@ module: datatables
                      <li {% if page.url contains '/ajax/customized-column-content.html' %}class="active"{% endif %}>
                         <a href="/datatables/tutorials/ajax/customized-column-content.html"><i class="icon-double-angle-right"></i> Customized column content</a>
                      </li>
-                     <li {% if page.url contains '/ajax/server-side.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/ajax/server-side.html"><i class="icon-double-angle-right"></i> Server-side processing</a>
+                     <li {% if page.url contains '/ajax/server-side/' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/ajax/server-side/index.html"><i class="icon-double-angle-right"></i> Server-side processing</a>
+                     </li>
+                     {% if page.submenu == 'serverside' %}
+                     <ul class="nav nav-list">
+                        <li {% if page.url contains '/ajax/server-side/pipelining-data.html' %}class="active"{% endif %}>
+                           <a href="/datatables/tutorials/ajax/server-side/pipelining-data.html"><i class="icon-double-angle-right"></i> Pipelining data</a>
+                        </li>
+                     </ul>
+                     {% endif %}
+                     <li {% if page.url contains '/ajax/integration-with-spring.html' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/ajax/integration-with-spring.html"><i class="icon-double-angle-right"></i> Integration with Spring</a>
                      </li>
                   </ul>
                   {% endif %}
                </li>
                <li {% if page.menu == 'i18n' %} class="active"{% endif %}>
-                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-flag-checkered"></i> I18n</a>
+                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-globe"></i> I18n</a>
+                  {% if page.menu == 'i18n' %}
+                  <ul class="nav nav-list">
+                     <li {% if page.url contains '/i18n/internationalization.html' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/i18n/internationalization.html"><i class="icon-double-angle-right"></i> Internationalization</a>
+                     </li>
+                     <li {% if page.url contains '/i18n/integration-with-other-projects.html' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/i18n/integration-with-other-projects.html"><i class="icon-double-angle-right"></i> Integration with other projects</a>
+                     </li>
+                     <li {% if page.url contains '/i18n/pluging-a-custom-localeresolver.html' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/i18n/pluging-a-custom-localeresolver.html"><i class="icon-double-angle-right"></i> Pluging a custom locale resolver</a>
+                     </li>
+                     <li {% if page.url contains '/i18n/pluging-a-custom-messageresolver.html' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/i18n/pluging-a-custom-messageresolver.html"><i class="icon-double-angle-right"></i> Pluging a custom message resolver</a>
+                     </li>
+                  </ul>
+                  {% endif %}
                </li>
                <li {% if page.menu == 'plugins' %} class="active"{% endif %}>
                   <a href="/datatables/tutorials/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
@@ -182,14 +208,20 @@ module: datatables
                   <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
                   {% if page.menu == 'configuration' %}
                   <ul class="nav nav-list">
-                     <li {% if page.url contains 'global-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/configuration/global-configuration.html"><i class="icon-double-angle-right"></i> Using global configuration</a>
+                     <li {% if page.url contains 'configuration/configuration-loading' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/configuration/configuration-loading.html"><i class="icon-double-angle-right"></i> Configuration loading</a>
                      </li>
                      <li {% if page.url contains 'override-conf' %}class="active"{% endif %}>
                         <a href="/datatables/tutorials/configuration/override-conf.html"><i class="icon-double-angle-right"></i> Overriding default configuration</a>
                      </li>
+                     <li {% if page.url contains 'global-configuration' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/configuration/global-configuration.html"><i class="icon-double-angle-right"></i> Using global configuration</a>
+                     </li>
                      <li {% if page.url contains 'configuration-groups' %}class="active"{% endif %}>
                         <a href="/datatables/tutorials/configuration/configuration-groups.html"><i class="icon-double-angle-right"></i> Using configuration groups</a>
+                     </li>
+                     <li {% if page.url contains 'configuration/custom-configuration-loader' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/configuration/custom-configuration-loader.html"><i class="icon-double-angle-right"></i> Using a custom configuration loader</a>
                      </li>
                   </ul>
                   {% endif %}

@@ -8,14 +8,7 @@ module Jekyll
     end
 
     def render(context)
-      puts "@params"
-      puts @params
-      puts @params.length
-      puts "@params.split"
       args = @params.split("|")
-      args.each do |arg|
-        puts arg
-      end
 #      args = @params.split(/\s+/).map(&:strip)
       
 #      if(args.length != 3)
@@ -27,9 +20,6 @@ module Jekyll
       
       "<h2 class=\"page-title\">#{@title}"
       "<div class=\"pull-right\">"
-      puts @title
-puts @jspstate
-puts  @tlstate
       case @jspstate
       when "ok"
         "<span data-toggle=\"tooltip\" class=\"badge badge-success\" title=\"Compatible with JSP\">JSP</span>"

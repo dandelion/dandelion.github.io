@@ -1,0 +1,70 @@
+---
+layout: datatables
+menu: i18n
+level1: tutorials
+level2:
+  url: i18n
+  name: I18n
+level3:
+  url: internationalization
+  name: Internationalization
+---
+
+<h2 class="page-title">Internationalization
+   <div class="pull-right">
+      <span class="badge badge-success compatibility" title="Compatible with JSP">JSP</span>
+      <span class="badge badge-success compatibility" title="Compatible with Thymeleaf">Thymeleaf</span>
+   </div>
+</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   Since the v0.9.0, <strong>Dandelion-Datatables</strong> has now full support for internationalization of column titles and surrounding information.
+</p>
+
+<h3 class="section-title">Translating DataTables' information</h3>
+<p>
+   All the i18n configuration takes place in the <i>datatables.properties</i> file. Lots of keys exist and allow you to configure the language information displayed by DataTables.
+</p>
+<p>
+   You can see the full reference <a href="/datatables/docs/ref/configuration/#i18n-configuration">here</a>.
+</p>
+<p>
+   In order to support other languages, you can add any number of additional files names <i>datatables_LANGUAGE.properties</i> in the same place as the main <i>datatables.properties</i> file. For
+   example, if your application needs to support both English and French, you could have the following files:
+   <ul>
+      <li>
+         <i>datatables.properties</i>: the main configuration file, containing non-translatable properties
+<pre class="prettyprint">
+global.css.class=table table-striped table-bordered table-condensed
+global.extra.theme=bootstrap2
+</pre>      
+      </li>
+      <li>
+         <i>datatables_EN.properties</i>: the file containing all english translations 
+<pre class="prettyprint">
+global.msg.processing=Processing...
+global.msg.search=Search :
+global.msg.info=Showing _START_ to _END_ of _TOTAL_ entries
+</pre>
+         </li>
+      <li>
+         <i>datatables_FR.properties</i>: the file containing all french translations 
+<pre class="prettyprint">
+global.msg.processing=Traitement en cours...
+global.msg.search=Rechercher :
+global.msg.info=Affichage de l'élément _START_ à _END_ sur _TOTAL_ éléments
+</pre>
+      </li>
+   </ul>
+</p>
+
+<p class="alert alert-info">
+   <strong><i class="icon-info-sign icon-2x"></i></strong> Note that you don't need to copy all the properties in all internationalized file because lots of them are also configuration properties
+   which don't need to be translated at all.
+</p>
+
+<h3 class="section-title">Transalating column headers</h3>
+
+
+<h3 class="section-title"></h3>

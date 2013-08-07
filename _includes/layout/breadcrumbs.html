@@ -10,11 +10,17 @@
    <li><span class="divider">|</span><a href="/{{ site.dandelion.components.[page.module].url }}/{{ page.level1 | downcase }}/{{ page.level2.url | downcase }}">{{ page.level2.name }}</a></li>
    {% endif %}
      
-   {% if page.level3 | size >= 0 %}
+   {% if page.level3 | size >= 0 and page.level4 | size == 0 %}
    <li><span class="divider">|</span><a href="/{{ site.dandelion.components.[page.module].url }}/{{ page.level1 | downcase }}/{{ page.level2.url | downcase }}/{{ page.level3.url | downcase }}.html">{{ page.level3.name }}</a></li>
+   {% else %}
+   <li><span class="divider">|</span><a href="/{{ site.dandelion.components.[page.module].url }}/{{ page.level1 | downcase }}/{{ page.level2.url | downcase }}/{{ page.level3.url | downcase }}">{{ page.level3.name }}</a></li>
+   {% endif %}
+   
+   {% if page.level4 | size >= 0 %}
+   <li><span class="divider">|</span><a href="/{{ site.dandelion.components.[page.module].url }}/{{ page.level1 | downcase }}/{{ page.level2.url | downcase }}/{{ page.level3.url | downcase }}/{{ page.level4.url | downcase }}.html">{{ page.level4.name }}</a></li>
    {% endif %}
    
    <li class="pull-right">
-      Latest release: <a href="/{{ site.dandelion.components.[page.module].url }}/ref/{{ site.dandelion.components.[page.module].version }}/">{{ site.dandelion.components.[page.module].version }}</a>
+      Latest release: <a href="/{{ site.dandelion.components.[page.module].url }}/releases/{{ site.dandelion.components.[page.module].version }}/">{{ site.dandelion.components.[page.module].version }}</a>
    </li>
 </ul>

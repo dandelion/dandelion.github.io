@@ -137,7 +137,8 @@
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-flag-checkered"></i> I18n</a>
+                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-globe"></i> I18n</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
@@ -148,13 +149,19 @@
                   
                   <ul class="nav nav-list">
                      <li >
-                        <a href="/datatables/tutorials/configuration/global-configuration.html"><i class="icon-double-angle-right"></i> Using global configuration</a>
+                        <a href="/datatables/tutorials/configuration/configuration-loading.html"><i class="icon-double-angle-right"></i> Configuration loading</a>
                      </li>
                      <li class="active">
                         <a href="/datatables/tutorials/configuration/override-conf.html"><i class="icon-double-angle-right"></i> Overriding default configuration</a>
                      </li>
                      <li >
+                        <a href="/datatables/tutorials/configuration/global-configuration.html"><i class="icon-double-angle-right"></i> Using global configuration</a>
+                     </li>
+                     <li >
                         <a href="/datatables/tutorials/configuration/configuration-groups.html"><i class="icon-double-angle-right"></i> Using configuration groups</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/configuration/custom-configuration-loader.html"><i class="icon-double-angle-right"></i> Using a custom configuration loader</a>
                      </li>
                   </ul>
                   
@@ -177,11 +184,13 @@
    
      
    
-   <li><span class="divider">|</span><a href="/datatables/features/configuration/overrideconf.html">Overriding default configuration</a></li>
+   <li><span class="divider">|</span><a href="/datatables/features/configuration/overrideconf">Overriding default configuration</a></li>
+   
+   
    
    
    <li class="pull-right">
-      Latest release: <a href="/datatables/ref/0.9.0/">0.9.0</a>
+      Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a>
    </li>
 </ul>
             <h2 class="page-title">
@@ -206,12 +215,17 @@
    </ul>
 </p>
 
+<p class="alert alert-warn">
+   <strong><i class="icon-warning-sign icon-2x"></i></strong> 
+   Note that configuration overriding is not supported yet when using Thymeleaf
+</p>
+
 <h3 class="section-title">Example</h3>
 <p>
    For instance, the compression feature is disabled by default. Thanks to the <a href="/datatables/docs/ref/jsp/prop.html"><code>datatables:prop</code></a> tag, you can enable it locally, just for the current table.
 </p>
+<h4>Using JSP</h4>
 <p>
-   Using JSP:
 <pre class="prettyprint">
 &lt;datatables:table id="myTableId" data="${persons}">
    &lt;datatables:column title="Id" property="id" />

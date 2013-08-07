@@ -1,0 +1,90 @@
+---
+layout: datatables
+menu: advanced
+level1: features
+level2:
+  url: advanced
+  name: Advanced
+level3:
+  url: writing-your-own-extension
+  name: Writing your own extension
+---
+
+<h2 class="page-title">
+   Writing your own extension
+   <div class="pull-right">
+      <span class="badge badge-success compatibility" title="Compatible with JSP">JSP</span> <span class="badge badge-success compatibility" title="Compatible with Thymeleaf">Thymeleaf</span>
+   </div>
+</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   Since the earliest version of Dandelion-Datatables, we've been trying to develop the framework in a modular manner. That's why if you dig into the source code, you'll see lots of already existing extensions as AjaxFeature, ServerSideFeature, Bootstrap2Theme, ...
+</p>
+<p>
+   Starting from the v0.9.0, you can now write and plug your own custom extensions in any of your tables.
+</p>
+
+<h3 class="section-title">What is an extension?</h3>
+<p>
+   An extension you make will fall into one of three categories:
+   <ul>
+      <li><strong>Theme</strong>: extension used to theme a table (e.g. {% javadoc dt datatables-core Bootstrap2Theme %})</li>
+      <li><strong>Plugin</strong>: extension used to wrap a DataTables' native plugin (e.g. {% javadoc dt datatables-core ScrollerPlugin %})</li>
+      <li><strong>Feature</strong>: all other extensions (e.g. {% javadoc dt datatables-core ServerSideFeature %})</li>
+   </ul>
+</p>
+<p>
+   Basically, 
+</p>
+
+<h3 class="section-title">Scope of an extension</h3>
+<p>An extension can be composed of:
+<ul>
+   <li>one or more {% javadoc dt datatables-core JsResource %}, i.e. Javascript code externalized in a file</li>
+   <li>one or more {% javadoc dt datatables-core CssResource %}, i.e. CSS code externalized in a file</li>
+   <li>one or more {% javadoc dt datatables-core Parameter %}, i.e. one or more specific DataTables parameters that will be used during the DataTables initialization</li>
+   <li>an {% javadoc dt datatables-core AbstractConfigurationGenerator %} if the extension needs its own configuration generator. The one used for the main DataTables configuration is the {% javadoc dt datatables-core MainGenerator %}. You can also take
+      a look at the {% javadoc dt datatables-core ColumnFilteringGenerator %} to see the configuration generated for the Column Filtering add-on.</li>
+   <li>a potential Javascript function name that will be called after DataTables initialization. <br> Example : columnFilter
+<pre class="prettyprint">
+oTable_myTableId = $('#myTableId').dataTable(oTable_myTableId_params).columnFilter({...});
+</pre>
+   </li>
+   <li>specific Javascript snippets to add in the main JS resource, i.e. the resource that contains the DataTables initilization Javascript code. You can add snippet at multiple locations in this
+      file thanks to the following attributes :
+      <ul>
+         <li>beforeAll</li>
+         <li>beforeStartDocumentReady</li>
+         <li>afterStartDocumentReady</li>
+         <li>beforeEndDocumentReady</li>
+         <li>afterAll</li>
+      </ul> These attributes can be visualized in the following Javascript snippet :
+<pre class="prettyprint">
+// <b>BEFOREALL</b>
+var oTable_tableId;
+var oTable_tableId_params = {...};
+// <b>BEFORESTARTDOCUMENTREADY</b>
+$(document).ready(function(){
+   // <b>AFTERSTARTDOCUMENTREADY</b>
+   oTable_myTableId = $('#myTableId').dataTable(oTable_myTableId_params);
+   // <b>BEFOREENDDOCUMENTREADY</b>
+});
+// <b>AFTERALL</b>
+</pre>
+   </li>
+</ul>
+</p>
+<p>
+ 
+<h3 class="section-title">Activating you own extensions</h3>
+<p>
+   
+
+</p>
+=> ext / dt:ext
+=> via .properties
+=> base.package à renseigner
+
+
+<h3 class="section-title">Example: </h3>

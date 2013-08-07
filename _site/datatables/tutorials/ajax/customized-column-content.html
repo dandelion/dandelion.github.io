@@ -146,13 +146,18 @@
                         <a href="/datatables/tutorials/ajax/customized-column-content.html"><i class="icon-double-angle-right"></i> Customized column content</a>
                      </li>
                      <li >
-                        <a href="/datatables/tutorials/ajax/server-side.html"><i class="icon-double-angle-right"></i> Server-side processing</a>
+                        <a href="/datatables/tutorials/ajax/server-side/index.html"><i class="icon-double-angle-right"></i> Server-side processing</a>
+                     </li>
+                     
+                     <li >
+                        <a href="/datatables/tutorials/ajax/integration-with-spring.html"><i class="icon-double-angle-right"></i> Integration with Spring</a>
                      </li>
                   </ul>
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-flag-checkered"></i> I18n</a>
+                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-globe"></i> I18n</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
@@ -180,11 +185,13 @@
    
      
    
-   <li><span class="divider">|</span><a href="/datatables/tutorials/ajax/customized-column-content.html">Customized column content</a></li>
+   <li><span class="divider">|</span><a href="/datatables/tutorials/ajax/customized-column-content">Customized column content</a></li>
+   
+   
    
    
    <li class="pull-right">
-      Latest release: <a href="/datatables/ref/0.9.0/">0.9.0</a>
+      Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a>
    </li>
 </ul>
             <h2 class="page-title">Customized column content
@@ -230,6 +237,10 @@ function yourFunction(data, type, full) {
          Step 2: tell <strong>Dandelion-Datatables</strong> you want to use a custom rendering function for a particular column using either the <a href="/datatables/docs/ref/jsp/column.html#renderFunction"><code>renderFunction</code></a> (JSP) or the <a href="/datatables/docs/ref/thymeleaf/th.html#dt:renderFunction"><code>dt:renderFunction</code></a> column attribute. 
       </li>
    </ul>
+</p>
+<p class="alert alert-warn">
+   <strong><i class="icon-warning-sign icon-2x"></i></strong> 
+   Note that you can't use the <a href="/datatables/docs/ref/jsp/column.html#format"><code>format</code></a> column attribute of the JSP taglib when using an AJAX source!
 </p>
 
 <br />      
@@ -328,7 +339,7 @@ You can find more details <a href="http://www.thymeleaf.org/doc/Tutorial%20-%20U
 
 <h3 class="section-title" id="hnadv">Handling null and default values</h3>
 <p>
-   This section deals with the case where the bean you're trying to display in the table has null properties.
+   This section deals with the case where the bean you're iterating on contains some properties that are null.
 </p>
 <h4>Using JSP</h4>
 <p>
