@@ -130,7 +130,6 @@ http://dandelion.github.io/datatables/tutorials/export/exportoptions.html
 http://dandelion.github.io/datatables/tutorials/export/index.html
 http://dandelion.github.io/datatables/tutorials/export/multiple.html
 http://dandelion.github.io/datatables/tutorials/export/ownclass.html
-http://dandelion.github.io/datatables/tutorials/i18n/i18n.html
 http://dandelion.github.io/datatables/tutorials/i18n/index.html
 http://dandelion.github.io/datatables/tutorials/i18n/integration-with-other-projects.html
 http://dandelion.github.io/datatables/tutorials/i18n/internationalization.html

@@ -45,7 +45,7 @@ Or you can set a body and put anything you want inside (HTML, other tags\...). S
   </thead>
   <tbody>
   <tr>
-    <td>uid</td>
+    <td>title</td>
     <td>Column title</td>
     <td></td>
     <td></td>

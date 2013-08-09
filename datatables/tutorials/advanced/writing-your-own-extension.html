@@ -43,10 +43,10 @@ level3:
 <ul>
    <li>one or more {% javadoc dt datatables-core JsResource %}, i.e. Javascript code externalized in a file</li>
    <li>one or more {% javadoc dt datatables-core CssResource %}, i.e. CSS code externalized in a file</li>
-   <li>one or more {% javadoc dt datatables-core Parameter %}, i.e. one or more specific DataTables parameters that will be used during the DataTables initialization</li>
+   <li>one or more {% javadoc dt datatables-core Parameter %}, i.e. one or more specific DataTables parameters used to initialize DataTables</li>
    <li>an {% javadoc dt datatables-core AbstractConfigurationGenerator %} if the extension needs its own configuration generator. The one used for the main DataTables configuration is the {% javadoc dt datatables-core MainGenerator %}. You can also take
       a look at the {% javadoc dt datatables-core ColumnFilteringGenerator %} to see the configuration generated for the Column Filtering add-on.</li>
-   <li>a potential Javascript function name that will be called after DataTables initialization. <br> Example : columnFilter
+   <li>a Javascript function that should be called after DataTables initialization. <br> Example : columnFilter
 <pre class="prettyprint">
 oTable_myTableId = $('#myTableId').dataTable(oTable_myTableId_params).columnFilter({...});
 </pre>
@@ -59,7 +59,7 @@ oTable_myTableId = $('#myTableId').dataTable(oTable_myTableId_params).columnFilt
          <li>afterStartDocumentReady</li>
          <li>beforeEndDocumentReady</li>
          <li>afterAll</li>
-      </ul> These attributes can be visualized in the following Javascript snippet :
+      </ul> These attributes can be visualized in the following code snippet :
 <pre class="prettyprint">
 // <b>BEFOREALL</b>
 var oTable_tableId;
@@ -76,11 +76,21 @@ $(document).ready(function(){
 </ul>
 </p>
 <p>
+   To sum it up, the scope is quite large and lots of example are already available.
+</p>
  
 <h3 class="section-title">Activating you own extensions</h3>
 <p>
-   
-
+   First of all, your custom extensions must be detected by Dandelion-Datatables. To do so, you must define the
+   <code>global.main.base.package</code>
+   property in the configuration file. This property needs a package name where to scan.
+</p>
+<p>
+   Then, it depends on your template engine.
+</p>
+<h4>Using JSP</h4>
+<p>
+   You can use the {% refjsp dt table ext%} table attribute => nomp de la feature
 </p>
 => ext / dt:ext
 => via .properties

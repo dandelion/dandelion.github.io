@@ -12,10 +12,13 @@ module Jekyll
       @params = params
       @args = params.split(" ").map(&:strip)
       @module = @args[0].downcase
-      
+    end
+
+    def render(context)
+      config = context.registers[:site].config
       case @module
         when "ddl"
-          path = Jekyll.configuration({})['source'] + "/dandelion/_definitions.html"
+          path = config['source'] + "/dandelion/_definitions.html"
           if File.exists?(path)
             File.open(path, "r").each_line do |line|
               @@ddl_definitions[line.split("=")[0]] = line.split("=")[1]
@@ -23,7 +26,7 @@ module Jekyll
           end
         
         when "dt"
-          path = Jekyll.configuration({})['source'] + "/datatables/_definitions.html"
+          path = config['source'] + "/datatables/_definitions.html"
           if File.exists?(path)
             File.open(path, "r").each_line do |line|
               @@dt_definitions[line.split("=")[0]] = line.split("=")[1]
@@ -31,17 +34,14 @@ module Jekyll
           end 
         
         when "wa"
-          path = Jekyll.configuration({})['source'] + "/webanalytics/_definitions.html"
+          path = config['source'] + "/webanalytics/_definitions.html"
           if File.exists?(path)
             File.open(path, "r").each_line do |line|
               @@wa_definitions[line.split("=")[0]] = line.split("=")[1]
             end
           end    
       end
-    end
-
-    def render(context)
-      
+            
       case @args.length
         when 2
           key = @args[1]

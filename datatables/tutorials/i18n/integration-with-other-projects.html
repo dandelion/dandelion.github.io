@@ -10,7 +10,7 @@ level3:
   name: Integration with other projects
 ---
 
-<h2 class="page-title">Internationalization
+<h2 class="page-title">Integration with other projects
    <div class="pull-right">
       <span class="badge badge-success compatibility" title="Compatible with JSP">JSP</span>
       <span class="badge badge-success compatibility" title="Compatible with Thymeleaf">Thymeleaf</span>
@@ -18,147 +18,79 @@ level3:
 </h2>
 <h3 class="section-title">Preamble</h3>
 <p>
-   You may need some additional request parameters to call your AJAX source or even a fully customized call. Well, whether or not you use server-side processing, you can completely override the default AJAX request which obtains the data from the
-   server to something more suitable for your application.
+   Dandelion will probably be used in an application where content is already internationalized using a specific framework, which should provide a way to resolve the current locale and to lookup properties in a resource bundle.
+</p>
+<p>
+   This section lists all ready-to-use adapters that allows you to use the same i18n support you are using in your application.
 </p>
 
-<h3 class="section-title" id="erq">Extra request parameters</h3>
+<h3 class="section-title" id="lr">Locale resolution</h3>
 <p>
-   You can send extra information to the server when making an AJAX request. For that, you'll have to:
-   <ul>
-      <li>
-         <p>Step 1: write a Javascript function that will be internally called by the DataTables configuration
+   Today, there exists two ready-to-use implementations of the {% javadoc dt datatables-core LocaleResolver %} interface:
+</p>
+<ul>
+   <li>
+      for <strong>Spring</strong> with the {% javadoc dt datatables-spring3 SpringLocaleResolver %} class
+      <p>
+         The resolver will use the <code>RequestContextUtils.getLocale()</code> method for locale resolution (which will in turn delegate to the Spring locale resolver)
+      </p>
+      <p>
+         To use it globally in your application, just add the following line in your <i>datatables.properties</i> file:
 <pre class="prettyprint">
-function getExtraParams( aoData ) {
-   aoData.push( { "name": "more_data", "value": "my_value" } );
-}
+i18n.locale.resolver=com.github.dandelion.datatables.extras.spring3.i18n.SpringLocaleResolver
 </pre>
-         </p>
-         <p>
-            This Javascript function takes 1 parameter :
-            <ul>
-               <li>{array}: Data array (array of objects which are name/value pairs) that has been constructed by DataTables and will be sent to the server.</li>
-            </ul>
-         </p>
-      </li>
-      <li>
-         Step 2: tell <strong>Dandelion-Datatables</strong> you need extra parameters using either the {% refjsp dt table serverParams %} (JSP) or the {% reftl dt table dt:serverParams %} table attribute.
-      </li>
-   </ul>
-</p>
-
-<h4>Using JSP</h4>
-<p>
-   Use the {% refjsp dt table serverParams%} table attribute and set the name of the previous Javascript function. Ensure that the function is loaded <strong>before</strong> using the taglib.
-</p>
-<p>
+      </p>
+   </li>
+   <li>
+      for <strong>JSTL</strong> with the {% javadoc dt datatables-jsp JstlLocaleResolver %} class
+      <p>
+         The resolver will first try to get the locale from the <code>Config.FMT_LOCALE</code> key first from the request and then from the session.
+      </p>
+      <p>
+         To use it globally in your application, just add the following line in your <i>datatables.properties</i> file:
 <pre class="prettyprint">
-&lt;c:url var="datasource" value="/persons" />
-&lt;datatables:table id="myTableId" url="${datasource}" serverSide="true" serverParams="getExtraParams" processing="true">
-   &lt;datatables:column title="Id" property="id" />
-   &lt;datatables:column title="FirstName" property="firstName" />
-   &lt;datatables:column title="LastName" property="lastName" />
-   &lt;datatables:column title="City" property="address.town.name" />
-   &lt;datatables:column title="Mail" property="mail" />
-&lt;/datatables:table>
+i18n.locale.resolver.resolver=com.github.dandelion.datatables.jsp.i18n.JstlLocaleResolver
 </pre>
+      </p>
+   </li>
+</ul>
+<p>
+   Note that by default, the {% javadoc dt datatables-core StandardLocaleResolver %} is used and retrieves the Locale from the <code>HttpServletRequest</code>.
 </p>
 
-<h4>Using Thymeleaf</h4>
+<h3 class="section-title" id="mr">Message resolution</h3>
 <p>
-   Using Thymeleaf, you can use the {% reftl dt table dt:serverParams%} table attribute. It works the same way than with JSP. Pass the name of the previous Javascript function.
+   Other than resolving the currently used locale, your framework will probably provide a standard way to store i18n resources. Just like for the locale resolution, Dandelion will allow you to plug in different implementations.
 </p>
 <p>
+   You will find below the existing ready-to-use implementations of the {% javadoc dt datatables-core MessageResolver %} interface:
+</p>
+<ul>
+   <li>
+      for <strong>Spring</strong> with the {% javadoc dt datatables-spring3 SpringMessageResolver %} class
+      <p>
+         The resolver will look for the message inside the configured MessageSource bean
+      </p>
+      <p>
+         To use it globally in your application, just add the following line in your <i>datatables.properties</i> file:
 <pre class="prettyprint">
-&lt;table id="myTableId" dt:table="true" dt:url="@{/persons3}" dt:serverside="true" dt:serverparams="'getExtraParams'">
-   &lt;thead>
-      &lt;tr>
-         &lt;th dt:property="'id'">Id&lt;/th>
-         &lt;th dt:property="'firstName'">Firstname&lt;/th>
-         &lt;th dt:property="'lastName'">Lastname&lt;/th>
-         &lt;th dt:property="'address.town.name'">City&lt;/th>
-         &lt;th dt:property="'mail'">Mail&lt;/th>
-      &lt;/tr>
-  &lt;/thead>
-&lt;/table>
+global.i18n.message.resolver=com.github.dandelion.datatables.extras.spring3.i18n.SpringMessageResolver
 </pre>
-</p>
-
-<h3 class="section-title" id=cthm"">Change the HTTP method</h3>
-<p>
-   You may also need to change the HTTP method that is used to make the AJAX call (server-side processing or AJAX sourced data).
-</p>
-<p>For that you can use either the {% refjsp dt table serverMethod %} (JSP) or the {% reftl dt table dt:serverMethod %} (Thymeleaf) and pass "POST" if you need a POST instead of the default GET.</p>
-
-<h3 class="section-title" id="fcac">Fully customized AJAX call</h3>
-<p>
-   As a last resort, if the above tricks are not enough, you can use a fully customized AJAX call.
-</p>
-<p>
-   For that, you will need:
-   <ul>
-      <li>
-         <p>Step 1: to write a Javascript function that will be internally called by the DataTables configuration
+      </p>
+   </li>
+   <li>
+      for <strong>JSTL</strong> with the {% javadoc dt datatables-jsp JstlMessageResolver %} class
+      <p>
+         The resolver will look for the message as the <code>&lt;fmt:message&gt;</code> does.
+      </p>
+      <p>
+         To use it globally in your application, just add the following line in your <i>datatables.properties</i> file:
 <pre class="prettyprint">
-function myAjaxRequest ( sSource, aoData, fnCallback, oSettings ) {
-   oSettings.jqXHR = $.ajax( {
-      "dataType": 'json',
-      "type": "POST",
-      "url": sSource,
-      "data": aoData,
-      "success": fnCallback
-   });
-}
+global.i18n.message.resolver=com.github.dandelion.datatables.jsp.i18n.JstlMessageResolver
 </pre>
-         </p>
-         <p>
-            This Javascript function takes 4 parameters :
-            <ul>
-               <li>{string}: HTTP source to obtain the data from (sAjaxSource)</li>
-               <li>{array}: A key/value pair object containing the data to send to the server</li>
-               <li>{function}: to be called on completion of the data get process that will draw the data on the page
-               <li>{object}: DataTables settings object</li>
-            </ul>
-         </p>
-      </li>
-      <li>
-         Step 2: tell <strong>Dandelion-Datatables</strong> you need to override the AJAX call using either the {% refjsp dt table serverData %} (JSP) or the {% reftl dt table dt:serverData %} table attribute.
-      </li>
-   </ul>
+      </p>
+   </li>
+</ul>
+<p>
+   Note that by default, no message resolver is configured.
 </p>
-<br />
-
-<h4>Using JSP</h4>
-<p>
-   Use the {% refjsp dt table serverData %} table attribute and set the name of the previous Javascript function. Ensure that the function is loaded <strong>before</strong> using the taglib.
-</p>
-<p>
-<pre class="prettyprint">
-&lt;c:url var="datasource" value="/persons" />
-&lt;datatables:table id="myTableId" url="${datasource}" serverSide="true" serverData="myAjaxRequest" processing="true">
-   &lt;datatables:column title="Id" property="id" />
-   &lt;datatables:column title="FirstName" property="firstName" />
-   &lt;datatables:column title="LastName" property="lastName" />
-   &lt;datatables:column title="City" property="address.town.name" />
-   &lt;datatables:column title="Mail" property="mail" />
-&lt;/datatables:table>
-</pre>
-
-<h4>Using Thymeleaf</h4>
-<p>
-   Using Thymeleaf, you can use the {% reftl dt table dt:serverdata %} table attribute. It works the same way than with JSP. Pass the name of the previous Javascript function.
-</p>
-<p>
-<pre class="prettyprint">
-&lt;table id="myTableId" dt:table="true" dt:url="@{/persons}" dt:serverside="true" dt:serverdata="'myAjaxRequest'">
-   &lt;thead>
-      &lt;tr>
-         &lt;th dt:property="'id'">Id&lt;/th>
-         &lt;th dt:property="'firstName'">Firstname&lt;/th>
-         &lt;th dt:property="'lastName'">Lastname&lt;/th>
-         &lt;th dt:property="'address.town.name'">City&lt;/th>
-         &lt;th dt:property="'mail'">Mail&lt;/th>
-      &lt;/tr>
-  &lt;/thead>
-&lt;/table>
-</pre>
