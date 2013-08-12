@@ -1,0 +1,58 @@
+<ul class="nav nav-tabs" id="build-tools-tab-{{ artifact }}">
+   <li class="active"><a href="#maven-{{ artifact }}">Maven</a></li>
+   <li><a href="#gradle-{{ artifact }}">Gradle</a></li>
+   <li><a href="#grails-{{ artifact }}">Grails</a></li>
+   <li><a href="#ivy-{{ artifact }}">Ivy</a></li>
+   <li><a href="#grape-{{ artifact }}">Grape</a></li>
+   <li><a href="#buildr-{{ artifact }}">Buildr</a></li>
+   <li><a href="#sbt-{{ artifact }}">SBT</a></li>
+</ul>
+<div class="tab-content">
+   <div class="tab-pane active" id="maven-{{ artifact }}">
+<pre class="prettyprint">
+&lt;dependency>
+    &lt;groupId>com.github.dandelion&lt;/groupId>
+    &lt;artifactId>{{ artifact }}&lt;/artifactId>
+    &lt;version>{{ site.dandelion.components.datatables.version }}&lt;/version>
+&lt;/dependency>
+</pre>
+   </div>
+   <div class="tab-pane" id="gradle-{{ artifact }}">
+<pre class="prettyprint">
+'com.github.dandelion:{{ artifact }}:{{ site.dandelion.components.datatables.version }}'
+</pre>   
+   </div>
+   <div class="tab-pane" id="ivy-{{ artifact }}">
+<pre class="prettyprint">
+&lt;dependency org="com.github.dandelion" name="{{ artifact }}" rev="{{ site.dandelion.components.datatables.version }}" />
+</pre>      
+   </div>
+   <div class="tab-pane" id="grape-{{ artifact }}">
+<pre class="prettyprint">
+@Grapes( 
+   @Grab(group='com.github.dandelion', module='{{ artifact }}', version='{{ site.dandelion.components.datatables.version }}') 
+)
+</pre>      
+   </div>
+   <div class="tab-pane" id="buildr-{{ artifact }}">
+<pre class="prettyprint">
+'com.github.dandelion:{{ artifact }}:jar:{{ site.dandelion.components.datatables.version }}'
+</pre>      
+   </div>
+   <div class="tab-pane" id="sbt-{{ artifact }}">
+<pre class="prettyprint">
+libraryDependencies += "com.github.dandelion" % "{{ artifact }}" % "{{ site.dandelion.components.datatables.version }}"
+</pre>      
+   </div>
+   <div class="tab-pane" id="grails-{{ artifact }}">
+<pre class="prettyprint">
+compile 'com.github.dandelion:{{ artifact }}:{{ site.dandelion.components.datatables.version }}'
+</pre>      
+   </div>
+</div>
+<script>
+	$('#build-tools-tab-{{ artifact }} a').click(function(e) {
+		e.preventDefault();
+		$(this).tab('show');
+	})
+</script>

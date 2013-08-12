@@ -1,0 +1,56 @@
+---
+layout: datatables
+menu: advanced
+level1: tutorials
+level2:
+  url: advanced
+  name: Advanced usage
+level3:
+  url: aggregation
+  name: Using asset aggregation
+---
+
+<h2 class="page-title">Using asset aggregation
+   <div class="pull-right">
+      <span class="badge badge-success compatibility" title="Compatible with JSP">JSP</span>
+      <span class="badge badge-success compatibility" title="Compatible with Thymeleaf">Thymeleaf</span>
+   </div>
+</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>In some situations, you may end up having lots of assets to gather before initializing your table. The aggregation has been introduced to optimize performance during your
+   page loading, aggregating all assets into one file, one for each asset type, allowing to reduce the number of HTTP requests.
+</p>
+
+<h3 class="section-title">Activating asset aggregation</h3>
+<p>
+   You'll have to tell Dandelion-Datatables you want to aggregate assets. There are multiple ways for that:
+   <ul>
+      <li>
+         Setting up the {% refjsp dt configuration main main.aggregator.enable %} property to <code>true</code> in your <i>datatables.properties</i> configuration file. Aggregation will be turned on in all your application.
+      </li>
+      <li>
+         Using the {% refjsp dt prop %} JSP tag locally, in a particular table.
+      </li>
+   </ul>
+</p>
+
+<h4>Using JSP</h4>
+<p>
+   Here is an example using the {% refjsp dt prop %} tag:
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+   &lt;datatables:prop name="main.compressor.enable" value="true" />
+&lt;/datatables:table>
+</pre>
+
+<h4>Using Thymeleaf</h4>
+<p>
+   For now, the only way to aggregate assets with Thymeleaf is to use the {% refjsp dt configuration main main.aggregator.enable %} property in your <i>datatables.properties</i> file. 
+</p>

@@ -139,6 +139,37 @@ module: datatables
                </li>
                <li {% if page.menu == 'advanced' %} class="active"{% endif %}>
                   <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
+                  {% if page.menu == 'advanced' %}
+                  <ul class="nav nav-list">
+                     <li {% if page.url contains '/advanced/generating-row-ids.html' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/advanced/generating-row-ids.html"><i class="icon-double-angle-right"></i> Generating row id</a>
+                     </li>
+                     <li {% if page.url contains '/advanced/multiple-tables.html' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/advanced/multiple-tables.html"><i class="icon-double-angle-right"></i> Displaying multiple tables</a>
+                     </li>
+                     <li {% if page.url contains '/advanced/using-extra-files.html' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/advanced/using-extra-files.html"><i class="icon-double-angle-right"></i> Using extra Javascript files</a>
+                     </li>
+                     <li {% if page.url contains '/advanced/using-extra-conf.html' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/advanced/using-extra-conf.html"><i class="icon-double-angle-right"></i> Using extra DataTables configuration</a>
+                     </li>
+                     <li {% if page.url contains '/advanced/using-asset-compression.html' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/advanced/using-asset-compression.html"><i class="icon-double-angle-right"></i> Using assets compression</a>
+                     </li>
+                     <li {% if page.url contains '/advanced/using-asset-aggregation.html' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/advanced/using-asset-aggregation.html"><i class="icon-double-angle-right"></i> Using assets aggregation</a>
+                     </li>
+                     <li {% if page.url contains '/advanced/using-callbacks.html' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/advanced/using-callbacks.html"><i class="icon-double-angle-right"></i> Using callbacks</a>
+                     </li>
+                     <li {% if page.url contains '/advanced/nesting-jsp-tags.html' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/advanced/nesting-jsp-tags.html"><i class="icon-double-angle-right"></i> Nesting JSP tags</a>
+                     </li>
+                     <li {% if page.url contains '/advanced/writing-your-own-extension.html' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/advanced/writing-your-own-extension.html"><i class="icon-double-angle-right"></i> Writing your own extension</a>
+                     </li>
+                  </ul>
+                  {% endif %}
                </li>
                <li {% if page.menu == 'ajax' %} class="active"{% endif %}>
                   <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>

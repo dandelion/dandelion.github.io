@@ -6,19 +6,21 @@ level2:
   url: configuration
   name: Configuration
 ---
+<link rel="stylesheet" href="/assets/css/site-reference.css" />
 
 <h2 class="page-title">Configuration properties</h2>
 <p>
-   The bellowing tables list all the configurable properties.
+   The bellowing tables list all the configurable properties that you can use in the <i>datatables.properties</i>.
 </p>
 
 <h3 class="section-title" id="main-configuration">
    Main configuration properties
-   <div class="pull-right" id="main-configuration-search">
+   <div class="pull-right">
+      <input id="inputMain" type="text" placeholder="Search configuration...">
    </div>
 </h3>
 <p>
-<table class="table table-striped table-bordered table-condensed table-hover">
+<table id="tableMain" class="table table-striped table-bordered table-hover">
    <thead>
       <tr>
          <th>Name</th>
@@ -30,25 +32,39 @@ level2:
    </thead>
    <tbody>
       <tr>
-         <td>i18n.locale.resolver</td>
-         <td></td>
-         <td>Any class implementing com.github.dandelion.datatables.core.i18n.LocaleResolver</td>
-         <td>com. github. dandelion. datatables. core. i18n. StandardLocaleResolver</td>
+         <td>main.extension.package</td>
+         <td>{% def dt main.extension.package %}</td>
+         <td>{% def dt main.extension.package val %}</td>
+         <td>{% def dt main.extension.package def %}</td>
          <td>Yes</td>
       </tr>
       <tr>
-         <td>i18n.message.resolver</td>
-         <td></td>
-         <td>Any class implementing com. github. dandelion. datatables. core. i18n. MessageResolver</td>
-         <td>com. github. dandelion. datatables. jsp. i18n. JstlMessageResolver if the JSTL Jar is present in the classpath</td>
-         <td>No</td>
+         <td>main.extension.names</td>
+         <td>{% def dt main.extension.names %}</td>
+         <td>{% def dt main.extension.names val %}</td>
+         <td>{% def dt main.extension.names def %}</td>
+         <td>yes</td>
       </tr>
       <tr>
-         <td>main.base.package</td>
-         <td>{% def dt main.base.package %}</td>
-         <td>{% def dt main.base.package val %}</td>
-         <td>{% def dt main.base.package def %}</td>
-         <td>Yes</td>
+         <td>main.cdn</td>
+         <td>{% def dt main.cdn %}</td>
+         <td>{% def dt main.cdn val %}</td>
+         <td>{% def dt main.cdn def %}</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>main.cdn.css</td>
+         <td>{% def dt main.cdn.css %}</td>
+         <td>{% def dt main.cdn.css val %}</td>
+         <td>{% def dt main.cdn.css def %}</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>main.cdn.js</td>
+         <td>{% def dt main.cdn.js %}</td>
+         <td>{% def dt main.cdn.js val %}</td>
+         <td>{% def dt main.cdn.js def %}</td>
+         <td>yes</td>
       </tr>
       <tr>
          <td>main.base.url</td>
@@ -117,9 +133,14 @@ level2:
 </table>
 </p>
 
-<h3 class="section-title" id="css-configuration">CSS configuration</h3>
+<h3 class="section-title" id="css-configuration">
+   CSS configuration
+   <div class="pull-right">
+      <input id="inputCss" type="text" placeholder="Search configuration...">
+   </div>
+</h3>
 <p>
-<table class="table table-striped table-bordered table-condensed table-hover">
+<table id="tableCss" class="table table-striped table-bordered table-hover">
    <thead>
       <tr>
          <th>Name</th>
@@ -151,13 +172,32 @@ level2:
          <td>{% def dt css.stripeClasses def %}</td>
          <td>yes</td>
       </tr>
+      <tr>
+         <td>css.theme</td>
+         <td>{% def dt css.theme %}</td>
+         <td>{% def dt css.theme val %}</td>
+         <td>{% def dt css.theme def %}</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>css.themeOption</td>
+         <td>{% def dt css.themeOption %}</td>
+         <td>{% def dt css.themeOption val %}</td>
+         <td>{% def dt css.themeOption def %}</td>
+         <td>yes</td>
+      </tr>
    </tbody>
 </table>
 </p>
 
-<h3 class="section-title" id="features-configuration">Features configuration</h3>
+<h3 class="section-title" id="features-configuration">
+   Features configuration
+   <div class="pull-right">
+      <input id="inputFeatures" type="text" placeholder="Search configuration...">
+   </div>
+</h3>
 <p>
-<table class="table table-striped table-bordered table-condensed table-hover">
+<table id="tableFeatures" class="table table-striped table-bordered table-hover">
    <thead>
       <tr>
          <th>Name</th>
@@ -183,10 +223,10 @@ level2:
          <td>yes</td>
       </tr>
       <tr>
-         <td>feature.filterable</td>
-         <td>{% def dt feature.filterable %}</td>
-         <td>{% def dt feature.filterable val %}</td>
-         <td>{% def dt feature.filterable def %}</td>
+         <td>feature.filter</td>
+         <td>{% def dt feature.filter %}</td>
+         <td>{% def dt feature.filter val %}</td>
+         <td>{% def dt feature.filter def %}</td>
          <td>yes</td>
       </tr>
       <tr>
@@ -287,13 +327,25 @@ level2:
          <td>{% def dt feature.scrollCollapse def %}</td>
          <td>yes</td>
       </tr>
+      <tr>
+         <td>feature.appear</td>
+         <td>{% def dt feature.appear %}</td>
+         <td>{% def dt feature.appear val %}</td>
+         <td>{% def dt feature.appear def %}</td>
+         <td>yes</td>
+      </tr>
    </tbody>
 </table>
 </p>
 
-<h3 class="section-title" id="plugins-configuration">Plugins configuration</h3>
+<h3 class="section-title" id="plugins-configuration">
+   Plugins configuration
+   <div class="pull-right">
+      <input id="inputPlugins" type="text" placeholder="Search configuration...">
+   </div>
+</h3>
 <p>
-<table class="table table-striped table-bordered table-condensed table-hover">
+<table id="tablePlugins" class="table table-striped table-bordered table-hover">
    <thead>
       <tr>
          <th>Name</th>
@@ -343,88 +395,14 @@ level2:
 </table>
 </p>
 
-<h3 class="section-title" id="extras-configuration">Extras configuration</h3>
+<h3 class="section-title" id="ajax-configuration">
+   AJAX configuration
+   <div class="pull-right">
+      <input id="inputAjax" type="text" placeholder="Search configuration...">
+   </div>
+</h3>
 <p>
-<table class="table table-striped table-bordered table-condensed table-hover">
-   <thead>
-      <tr>
-         <th>Name</th>
-         <th>Description</th>
-         <th>Value(s)</th>
-         <th>Default</th>
-         <th>Groupable</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td>extra.theme</td>
-         <td>{% def dt extra.theme %}</td>
-         <td>{% def dt extra.theme val %}</td>
-         <td>{% def dt extra.theme def %}</td>
-         <td>yes</td>
-      </tr>
-      <tr>
-         <td>extra.themeOption</td>
-         <td>{% def dt extra.themeOption %}</td>
-         <td>{% def dt extra.themeOption val %}</td>
-         <td>{% def dt extra.themeOption def %}</td>
-         <td>yes</td>
-      </tr>
-      <tr>
-         <td>extra.customExtensions</td>
-         <td>{% def dt extra.customExtensions %}</td>
-         <td>{% def dt extra.customExtensions val %}</td>
-         <td>{% def dt extra.customExtensions def %}</td>
-         <td>yes</td>
-      </tr>
-      <tr>
-         <td>extra.cdn</td>
-         <td>{% def dt extra.cdn %}</td>
-         <td>{% def dt extra.cdn val %}</td>
-         <td>{% def dt extra.cdn def %}</td>
-         <td>yes</td>
-      </tr>
-      <tr>
-         <td>extra.cdn.css</td>
-         <td>{% def dt extra.cdn.css %}</td>
-         <td>{% def dt extra.cdn.css val %}</td>
-         <td>{% def dt extra.cdn.css def %}</td>
-         <td>yes</td>
-      </tr>
-      <tr>
-         <td>extra.cdn.js</td>
-         <td>{% def dt extra.cdn.js %}</td>
-         <td>{% def dt extra.cdn.js val %}</td>
-         <td>{% def dt extra.cdn.js def %}</td>
-         <td>yes</td>
-      </tr>
-      <tr>
-         <td>extra.appear</td>
-         <td>{% def dt extra.appear %}</td>
-         <td>{% def dt extra.appear val %}</td>
-         <td>{% def dt extra.appear def %}</td>
-         <td>yes</td>
-      </tr>
-      <tr>
-         <td>extra.appearDuration</td>
-         <td>{% def dt extra.appearDuration %}</td>
-         <td>{% def dt extra.appearDuration val %}</td>
-         <td>{% def dt extra.appearDuration def %}</td>
-         <td>yes</td>
-      </tr>
-      <tr>
-         <td>extra.labels</td>
-         <td>{% def dt extra.labels %}</td>
-         <td>{% def dt extra.labels val %}</td>
-         <td>{% def dt extra.labels def %}</td>
-         <td>yes</td>
-      </tr>
-   </tbody>
-</table>
-
-<h3 class="section-title" id="ajax-configuration">AJAX configuration</h3>
-<p>
-<table class="table table-striped table-bordered table-condensed table-hover">
+<table id="tableAjax" class="table table-striped table-bordered table-hover">
    <thead>
       <tr>
          <th>Name</th>
@@ -494,9 +472,14 @@ level2:
    </tbody>
 </table>
 
-<h3 class="section-title" id="export-configuration">Export configuration</h3>
+<h3 class="section-title" id="exports-configuration">
+   Export configuration
+   <div class="pull-right">
+      <input id="inputExports" type="text" placeholder="Search configuration...">
+   </div>
+</h3>
 <p>
-<table class="table table-striped table-bordered table-condensed table-hover">
+<table id="tableExports" class="table table-striped table-bordered table-hover">
    <thead>
       <tr>
          <th>Name</th>
@@ -559,9 +542,14 @@ level2:
    </tbody>
 </table>
 
-<h3 class="section-title" id="i18n-configuration">I18n configuration</h3>
+<h3 class="section-title" id="i18n-configuration">
+   I18n configuration
+   <div class="pull-right">
+      <input id="inputI18n" type="text" placeholder="Search configuration...">
+   </div>
+</h3>
 <p>
-<table class="table table-striped table-bordered table-condensed table-hover">
+<table id="tableI18n" class="table table-striped table-bordered table-hover">
    <thead>
       <tr>
          <th>Name</th>
@@ -571,6 +559,18 @@ level2:
       </tr>
    </thead>
    <tbody>
+      <tr>
+         <td>i18n.locale.resolver</td>
+         <td>Any class implementing com.github.dandelion.datatables.core.i18n.LocaleResolver</td>
+         <td>com. github. dandelion. datatables. core. i18n. StandardLocaleResolver</td>
+         <td>Yes</td>
+      </tr>
+      <tr>
+         <td>i18n.message.resolver</td>
+         <td>Any class implementing com. github. dandelion. datatables. core. i18n. MessageResolver</td>
+         <td>com. github. dandelion. datatables. jsp. i18n. JstlMessageResolver if the JSTL Jar is present in the classpath</td>
+         <td>No</td>
+      </tr>
       <tr>
          <td>msg.processing</td>
          <td>{% def dt msg.processing %}</td>
@@ -672,43 +672,63 @@ level2:
    
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
 <script>
+var dtConf = {
+	"sDom": "t",
+	"bSortClasses": false,
+	"bPaginate": false,
+	"aaSorting": [[0,'asc']],
+	"fnInitComplete": function () {
+		this.fnAdjustColumnSizing();
+	}
+}
+
 $(document).ready(function () {
-	$('.table').dataTable( {
-		"sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
-		"bInfo" : false,
-		"bFilter" : true,
-		"bPaginate": false,
-		"bLengthChange" : false,
-		"bSortClasses": false,
-		"aaSorting": [[1,'asc']],
-		"oLanguage": {
-		      "sSearch": ""
-	    },
-		"fnInitComplete": function () {
-			this.fnAdjustColumnSizing();
-			
-// 			$('.dataTables_filter').css({"float" : "right", "margin-top" : "10px"}).appendTo('#main-configuration');
-// 			$('#DataTables_Table_0_filter').css({"float" : "right", "margin-top" : "10px"}).appendTo('#main-configuration');
-		}
-	});
 	
+	var tables = {};
+	tables['main'] = $('#tableMain').dataTable(dtConf);
+	tables['features'] = $('#tableFeatures').dataTable(dtConf);
+	tables['plugins'] = $('#tablePlugins').dataTable(dtConf);
+	tables['ajax'] = $('#tableAjax').dataTable(dtConf);
+	tables['i18n'] = $('#tableI18n').dataTable(dtConf);
+	tables['css'] = $('#tableCss').dataTable(dtConf);
+	tables['exports'] = $('#tableExports').dataTable(dtConf);
 	
-	$("h3.section-title").each(function(i){
-		console.log($(this).find("div.dataTables_filter").first());
-		console.log($(this).find('div.pull-right').first());
-		$(this).find("div.dataTables_filter").first().appendTo($(this).find('div.pull-right').first());
+   	$('#inputMain').keyup(function(){
+   		tables['main'].fnFilter($(this).val(), 0);
 	});
-	
-	/*
-	$('.dataTables_filter').each(function(i){
-		$(this).css({"float" : "right", "margin-top" : "10px"});
-		var h3s = $("h3.section-title");
-		console.log(h3s);
-		var h3 = $(this).closest('h3').find('div.pull-right');
-		console.log(h3);
-		$(this).appendTo(h3);
-		//.appendTo($(this).closest('h3'));
+   	$('#inputFeatures').keyup(function(){
+   		tables['features'].fnFilter($(this).val(), 0);
 	});
-	*/
+   	$('#inputPlugins').keyup(function(){
+   		tables['plugins'].fnFilter($(this).val(), 0);
+	});
+   	$('#inputAjax').keyup(function(){
+   		tables['ajax'].fnFilter($(this).val(), 0);
+	});
+   	$('#inputI18n').keyup(function(){
+   		tables['i18n'].fnFilter($(this).val(), 0);
+	});
+   	$('#inputCss').keyup(function(){
+   		tables['css'].fnFilter($(this).val(), 0);
+	});
+   	$('#inputExports').keyup(function(){
+   		tables['exports'].fnFilter($(this).val(), 0);
+	});
+   	
+	var search = "";
+	if ( window.location.hash !== "" ) {
+		var searchType = window.location.hash.substring( 1 ).split("-")[0];
+		var searchValue = window.location.hash.substring( 1 ).split("-")[1];
+		
+		// Update and focus input
+		$('#input' + searchType.charAt(0).toUpperCase() + searchType.slice(1)).val(searchValue);
+		$('#input' + searchType.charAt(0).toUpperCase() + searchType.slice(1)).focus();
+		
+		// Apply filter 
+		tables[searchType].fnFilter(searchValue, 0);
+		
+		// Move window to the right section
+		$('html, body').animate({scrollTop: $('#' + searchType + '-configuration').offset().top}, 1500);
+	}
 });
 </script>

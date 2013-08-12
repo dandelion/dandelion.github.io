@@ -1,0 +1,64 @@
+---
+layout: datatables
+menu: download
+level1: download
+---
+<h2 class="page-title">Download</h2>
+
+<h3 class="section-title">Using a build tool</h3>
+
+<h4>JSP implementation</h4>
+
+{% assign artifact = 'datatables-jsp' %}
+{% include datatables/build-tools.html %}
+
+<h4>Thymeleaf implementation</h4>
+
+{% assign artifact = 'datatables-thymeleaf' %}
+{% include datatables/build-tools.html %}
+
+<h3 class="section-title">Manually</h3>
+
+<h4>Core and dependencies</h4>
+<ul>
+   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-core%7C{{ site.dandelion.components.datatables.version }}%7Cjar">datatables-core</a></li>
+   <li><a href="http://search.maven.org/#artifactdetails%7Corg.slf4j%7Cslf4j-api%7C1.6.4%7Cjar">slf4j-api 1.6.4</a></li>
+   <li><a href="http://search.maven.org/#artifactdetails%7Ccommons-beanutils%7Ccommons-beanutils%7C1.8.3%7Cjar">Commons Beanutils 1.8.3</a></li>
+   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.googlecode.json-simple%7Cjson-simple%7C1.1.1%7Cbundle">JSON Simple 1.1.1</a></li>
+</ul>
+
+<h4>JSP implementation</h4>
+<ul>
+   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-jsp%7C{{ site.dandelion.components.datatables.version }}%7Cjar">datatables-jsp</a></li>
+</ul>
+
+<h4>Thymeleaf implementation</h4>
+<ul>
+   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-thymeleaf%7C{{ site.dandelion.components.datatables.version }}%7Cjar">datatables-thymeleaf</a></li>
+</ul>
+
+<h4>Extras</h4>
+<h5>Servlet 2</h5>
+<ul>
+   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-servlet2%7C{{ site.dandelion.components.datatables.version }}%7Cjar">datatables-servlet2</a></li>
+</ul>
+
+<h5>Spring 3</h5>
+<ul>
+   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-spring3%7C{{ site.dandelion.components.datatables.version }}%7Cjar">datatables-spring3</a></li>
+</ul>
+
+<h5>Export POI (XLS)</h5>
+<ul>
+   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-export-poi%7C{{ site.dandelion.components.datatables.version }}%7Cjar">datatables-export-poi</a></li>
+</ul>
+
+<h5>Export POI OOXML (XLSX)</h5>
+<ul>
+   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-export-poi-ooxml%7C{{ site.dandelion.components.datatables.version }}%7Cjar">datatables-export-poi-ooxml</a></li>
+</ul>
+
+<h5>Export iText (PDF)</h5>
+<ul>
+   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-export-itext%7C{{ site.dandelion.components.datatables.version }}%7Cjar">datatables-export-itext</a></li>
+</ul>

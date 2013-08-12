@@ -7,6 +7,7 @@
 <meta name="description" content="java, web, component, library, assets, datatables">
 <meta name="author" content="Dandelion">
 
+<link href="/assets/css/prettify.css" rel="stylesheet">
 <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
 <link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
 <!-- <link href="/assets/css/component.css" rel="stylesheet"> -->
@@ -149,6 +150,7 @@
                </li>
                <li >
                   <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
@@ -193,22 +195,34 @@
       Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a>
    </li>
 </ul>
-            <h3>Td attributes</h3><hr /><h4>Description</h4><br />
-<p>The <code>&lt;tbody&gt;</code> attributes allow you to configure the export.</p>
-<br /><h4>Usage</h4>
-<pre><code>&lt;table dt:table=&quot;true&quot; ...&gt;
-    ...
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            ...
-            &lt;td dt:csv=&quot;${bean.mail}&quot;&gt;
-                &lt;a th:href=&quot;${&#39;mailto:&#39; + bean.mail}&quot; th:text=&quot;${bean.mail}&quot;&gt;john@doe.com&lt;/a&gt;
-            &lt;/td&gt;
-            ...
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-<br /><h4>Reference</h4><table class='table table-striped table-bordered' id='tableReference'>
+            <h3>Td attributes</h3>
+<hr />
+
+<h4>Description</h4>
+<br />
+
+The <code>&lt;tbody&gt;</code> attributes allow you to configure the export.
+
+<br />
+<h4>Usage</h4>
+
+    <table dt:table="true" ...>
+        ...
+        <tbody>
+            <tr>
+                ...
+                <td dt:csv="${bean.mail}">
+                    <a th:href="${'mailto:' + bean.mail}" th:text="${bean.mail}">john@doe.com</a>
+                </td>
+                ...
+            </tr>
+        </tbody>
+    </table>
+
+<br />
+<h4>Reference</h4>
+
+<table id="tableReference" class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Name</th>
@@ -222,41 +236,45 @@
   <tr>
     <td>dt:csv</td>
     <td>Processed Thymeleaf expression that will appear in the CSV export</td>
-    <td />
-    <td />
+    <td></td>
+    <td></td>
     <td>DOM</td>
   </tr>
   <tr>
     <td>dt:xml</td>
     <td>Processed Thymeleaf expression that will appear in the XML export</td>
-    <td />
-    <td />
+    <td></td>
+    <td></td>
     <td>DOM</td>
   </tr>
   <tr>
     <td>dt:pdf</td>
     <td>Processed Thymeleaf expression that will appear in the PDF export</td>
-    <td />
-    <td />
+    <td></td>
+    <td></td>
     <td>DOM</td>
   </tr>
   <tr>
     <td>dt:xls</td>
     <td>Processed Thymeleaf expression that will appear in the XLS export</td>
-    <td />
-    <td />
+    <td></td>
+    <td></td>
     <td>DOM</td>
   </tr>
   <tr>
     <td>dt:xlsx</td>
     <td>Processed Thymeleaf expression that will appear in the XLSX export</td>
-    <td />
-    <td />
+    <td></td>
+    <td></td>
     <td>DOM</td>
   </tr>
   </tbody>
-</table><link href='//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css' rel='stylesheet' /><script src='http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js'>
-</script><script src='/assets/js/site_reference.js'>
+</table>
+
+<link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" />
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
+</script>
+<script src="/assets/js/site_reference.js">
 </script>
          </div>
       </div>
@@ -317,7 +335,7 @@
       <div class="row" style="padding-top:10px;">
          <div class="span12">
             <p class="text-center">
-               <strong>Dandelion</strong> and all its components, are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
             </p>
          </div>
       </div>
@@ -325,6 +343,7 @@
 </footer>
    </div>
    
-   <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+   <script src="/assets/js/prettify.js"></script>
+   <script src="/assets/js/site-main.js"></script>
 </body>
 </html>

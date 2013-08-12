@@ -7,8 +7,9 @@
 		no-repeat left center;
 	padding-left: 55px;
 	border-bottom: 1px solid #a0cd70;
-	margin-bottom: 25px;
 	padding-top: 10px;
+	margin-bottom: 5px;
+	margin-bottom: 15px;
 }
 
 code {
@@ -65,12 +66,13 @@ End Footer configuration
 
 /* Section configuration*/
 .section-title {
-	padding-top: 15px;
+	padding-top: 10px;
 	padding-bottom: 5px;
 	margin: 10px 0 15px;
 	border-bottom: 1px solid #eeeeee;
 }
-.section-index {
+.section-index li{
+	padding: 5px;
 }
 .section-index ul {
 	list-style-type: none;
@@ -132,3 +134,10 @@ End Footer configuration
 	top: 70px;
 }
 /* End Customized navbar */
+
+/* Google prettify customization */
+pre.prettyprint {
+	padding: 10px;
+	margin: 10px;
+}
+/* End Google prettify customization */

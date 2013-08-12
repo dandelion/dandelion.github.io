@@ -7,6 +7,7 @@
 <meta name="description" content="java, web, component, library, assets, datatables">
 <meta name="author" content="Dandelion">
 
+<link href="/assets/css/prettify.css" rel="stylesheet">
 <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
 <link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
 <!-- <link href="/assets/css/component.css" rel="stylesheet"> -->
@@ -140,6 +141,7 @@
                </li>
                <li >
                   <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
@@ -184,97 +186,127 @@
       Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a>
    </li>
 </ul>
-            <a href='http://www.thymeleaf.org'><img height='90px' src='/assets/images/logo_thymeleaflogonamesmall.png' style='float:right; margin-right: 10px;' width='400px' /></a><h3>Installation guide with Thymeleaf</h3><hr /><h4>With Servlet 3.x compatible containers</h4><h5>Step 1 : Install the Dandelion-DataTables JARs</h5><h6>Manually</h6>
-<p>Download the JARs (see <a href='../download.html'>here</a>) and make sure that they are all made available via the application classpath. (Usually in <strong>WEB-INF/lib</strong>)</p>
+            <a href="http://www.thymeleaf.org"><img src="/assets/images/logo_thymeleaflogonamesmall.png" style="float:right; margin-right: 10px;" width="400px" height="90px" /></a>
+<h3>Installation guide with Thymeleaf</h3>
+<hr />
+
+<h4>With Servlet 3.x compatible containers</h4>
+
+<h5>Step 1 : Install the Dandelion-DataTables JARs</h5>
+
+<h6>Manually</h6>
+
+Download the JARs (see [here](../download.html)) and make sure that they are all made available via the application classpath. (Usually in **WEB-INF/lib**)
+
 <h6>Using Maven (or Maven-compatible dependency managers)</h6>
-<p>Just add the following dependency :</p>
+ 
+Just add the following dependency :
 
-<pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;com.github.dandelion&lt;/groupId&gt;
-    &lt;artifactId&gt;datatables-thymeleaf&lt;/artifactId&gt;
-    &lt;version&gt;0.9.0&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
+    <dependency>
+        <groupId>com.github.dandelion</groupId>
+        <artifactId>datatables-thymeleaf</artifactId>
+        <version>0.9.0</version>
+    </dependency>
+
 <h5>Step 2 : Declare the Dandelion-DataTables dialect</h5>
-<p>If you&#39;re using Spring / Spring MVC, update the SpringTemplateEngine bean :</p>
 
-<pre><code>&lt;bean id=&quot;templateEngine&quot; class=&quot;org.thymeleaf.spring3.SpringTemplateEngine&quot;&gt;
-    &lt;property name=&quot;templateResolver&quot; ref=&quot;templateResolver&quot; /&gt;
-    &lt;property name=&quot;additionalDialects&quot;&gt;
-        &lt;set&gt;
-            &lt;bean class=&quot;com.github.dandelion.datatables.thymeleaf.dialect.DataTablesDialect&quot; /&gt;
-        &lt;/set&gt;
-    &lt;/property&gt;
-&lt;/bean&gt;</code></pre>
+If you\'re using Spring / Spring MVC, update the SpringTemplateEngine bean :
 
-<p>If not, add the DataTablesDialect to your existing Thymeleaf template engine :</p>
+    <bean id="templateEngine" class="org.thymeleaf.spring3.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver" />
+        <property name="additionalDialects">
+            <set>
+                <bean class="com.github.dandelion.datatables.thymeleaf.dialect.DataTablesDialect" />
+            </set>
+        </property>
+    </bean>
 
-<pre><code>ServletContextTemplateResolver templateresolver = new ServletContextTemplateResolver();
-templateresolver.setTemplateMode(&quot;HTML5&quot;);
+If not, add the DataTablesDialect to your existing Thymeleaf template engine :
 
-templateengine = new TemplateEngine();
-templateengine.setTemplateResolver(templateresolver);
-templateengine.addDialect(new DataTablesDialect());</code></pre>
+    ServletContextTemplateResolver templateresolver = new ServletContextTemplateResolver();
+    templateresolver.setTemplateMode("HTML5");
+
+    templateengine = new TemplateEngine();
+    templateengine.setTemplateResolver(templateresolver);
+    templateengine.addDialect(new DataTablesDialect());
+
 <h5>Step 3 : Add the namespace declaration</h5>
-<p>Everywhere you want to display a table using <strong>Dandelion-DataTables</strong>, you need to add the following namespace declaration :</p>
 
-<pre><code>&lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot; xmlns:dt=&quot;http://github.com/dandelion/datatables&quot;&gt;</code></pre>
+Everywhere you want to display a table using <strong>Dandelion-DataTables</strong>, you need to add the following namespace declaration :
+
+    <html xmlns:th="http://www.thymeleaf.org" xmlns:dt="http://github.com/dandelion/datatables">
+	
 <h5>Step 4 : Include client-side dependencies</h5>
-<p>By default, the Javascript libraries are not embedded in <strong>Dandelion-DataTables</strong>. So ensure you declared somewhere in your pages those <tt>script</tt> and <tt>link</tt> tags :</p>
 
-<pre><code>&lt;!-- DataTables --&gt;
-&lt;link href=&quot;pathToCss/jquery.dataTables.css&quot; rel=&quot;stylesheet&quot;&gt;
-&lt;script src=&quot;pathToJs/jquery.dataTables.min.js&quot;&gt;&lt;/script&gt; 
+By default, the Javascript libraries are not embedded in <strong>Dandelion-DataTables</strong>. So ensure you declared somewhere in your pages those <tt>script</tt> and <tt>link</tt> tags :
 
-&lt;!-- jQuery --&gt;
-&lt;script src=&quot;pathToJs/jquery-1.8.3.min.js&quot;&gt;&lt;/script&gt;</code></pre>
-<p class='alert alert-info'><strong>Info !</strong><br /> Actually, you can bypass the DataTables script and link tags using the <a href='./ref.tmltable.html'>cdn</a> attribute of the table tag.</p>
-<h5 id='step_5__dev_mode'>Step 5 : Dev mode</h5>
+    <!-- DataTables -->
+    <link href="pathToCss/jquery.dataTables.css" rel="stylesheet">
+    <script src="pathToJs/jquery.dataTables.min.js"></script> 
+	
+	<!-- jQuery -->
+	<script src="pathToJs/jquery-1.8.3.min.js"></script>
 
-<p>By default, <strong>Dandelion-DataTables</strong> generates the web assets (js, css) that are needed by DataTables. Once generated, all files are then stored in a cache for better performance.</p>
+<p class="alert alert-info"><strong>Info !</strong><br /> Actually, you can bypass the DataTables script and link tags using the <a href="./ref.tmltable.html">cdn</a> attribute of the table tag.</p>
 
-<p>Of course, you are advised to disable the cache during the development. This way, all the configuration is generated each time you access a page that uses <strong>Dandelion-DataTables</strong>. For that purpose, just set the following system property in your server launch configuration :</p>
+##### Step 5 : Dev mode
 
-<pre><code>-Ddandelion.dev.mode=true</code></pre>
+By default, **Dandelion-DataTables** generates the web assets (js, css) that are needed by DataTables. Once generated, all files are then stored in a cache for better performance.
 
-<p>You can now begin using the DataTablesDialect ! :-)</p>
+Of course, you are advised to disable the cache during the development. This way, all the configuration is generated each time you access a page that uses **Dandelion-DataTables**.
+For that purpose, just set the following system property in your server launch configuration : 
+
+	-Ddandelion.dev.mode=true
+
+
+You can now begin using the DataTablesDialect ! :-)
+
 <br />
-<h4 id='with_servlet_2x_compatible_containers'>With Servlet 2.x compatible containers</h4>
+#### With Servlet 2.x compatible containers
+
 <h5>Steps 1/2/3/4</h5>
-<p>You need to follow the first four steps described above.</p>
+You need to follow the first four steps described above.
+
 <h5>Step 5 : Add the following additionnal dependency</h5>
-<pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;com.github.dandelion&lt;/groupId&gt;
-    &lt;artifactId&gt;datatables-servlet2&lt;/artifactId&gt;
-    &lt;version&gt;0.9.0&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
+
+    <dependency>
+        <groupId>com.github.dandelion</groupId>
+        <artifactId>datatables-servlet2</artifactId>
+        <version>0.9.0</version>
+    </dependency>
+    
 <h5>Step 6 : Add the DataTables4j servlet and filter definitions</h5>
-<p>Add the following configuration to your <tt>web.xml</tt> :</p>
 
-<pre><code>&lt;!-- Dandelion-Datatables servlet definition --&gt;
-&lt;servlet&gt;
-    &lt;servlet-name&gt;datatablesController&lt;/servlet-name&gt;
-    &lt;servlet-class&gt;com.github.dandelion.datatables.extras.servlet2.servlet.DatatablesServlet&lt;/servlet-class&gt;
-&lt;/servlet&gt;
+Add the following configuration to your <tt>web.xml</tt> :
 
-&lt;!-- Dandelion-Datatables servlet mapping --&gt;
-&lt;servlet-mapping&gt;
-    &lt;servlet-name&gt;datatablesController&lt;/servlet-name&gt;
-    &lt;url-pattern&gt;/datatablesController/*&lt;/url-pattern&gt;
-&lt;/servlet-mapping&gt;
+    <!-- Dandelion-Datatables servlet definition -->
+    <servlet>
+        <servlet-name>datatablesController</servlet-name>
+        <servlet-class>com.github.dandelion.datatables.extras.servlet2.servlet.DatatablesServlet</servlet-class>
+    </servlet>
 
-&lt;!-- Dandelion-Datatables filter definition --&gt;
-&lt;filter&gt;
-    &lt;filter-name&gt;datatablesFilter&lt;/filter-name&gt;
-    &lt;filter-class&gt;com.github.dandelion.datatables.extras.servlet2.filter.DatatablesFilter&lt;/filter-class&gt;
-&lt;/filter&gt;
+    <!-- Dandelion-Datatables servlet mapping -->
+    <servlet-mapping>
+        <servlet-name>datatablesController</servlet-name>
+        <url-pattern>/datatablesController/*</url-pattern>
+    </servlet-mapping>
 
-&lt;!-- Dandelion-Datatables filter mapping --&gt;
-&lt;filter-mapping&gt;
-    &lt;filter-name&gt;datatablesFilter&lt;/filter-name&gt;
-    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
-&lt;/filter-mapping&gt;</code></pre>
-<br /><h4>Optional step : Add a Dandelion-DataTables custom configuration file</h4>
-<p>See the <a href='/datatables/ref/configuration'>properties reference</a> to see more details !</p>
+    <!-- Dandelion-Datatables filter definition -->
+    <filter>
+        <filter-name>datatablesFilter</filter-name>
+        <filter-class>com.github.dandelion.datatables.extras.servlet2.filter.DatatablesFilter</filter-class>
+    </filter>
+
+    <!-- Dandelion-Datatables filter mapping -->
+    <filter-mapping>
+        <filter-name>datatablesFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+<br />
+<h4>Optional step : Add a Dandelion-DataTables custom configuration file</h4>
+
+See the [properties reference](/datatables/ref/configuration) to see more details !
          </div>
       </div>
    </div>
@@ -334,7 +366,7 @@ templateengine.addDialect(new DataTablesDialect());</code></pre>
       <div class="row" style="padding-top:10px;">
          <div class="span12">
             <p class="text-center">
-               <strong>Dandelion</strong> and all its components, are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
             </p>
          </div>
       </div>
@@ -342,6 +374,7 @@ templateengine.addDialect(new DataTablesDialect());</code></pre>
 </footer>
    </div>
    
-   <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+   <script src="/assets/js/prettify.js"></script>
+   <script src="/assets/js/site-main.js"></script>
 </body>
 </html>

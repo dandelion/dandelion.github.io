@@ -7,6 +7,7 @@
 <meta name="description" content="java, web, component, library, assets, datatables">
 <meta name="author" content="Dandelion">
 
+<link href="/assets/css/prettify.css" rel="stylesheet">
 <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
 <link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
 <!-- <link href="/assets/css/component.css" rel="stylesheet"> -->
@@ -149,6 +150,7 @@
                </li>
                <li >
                   <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
@@ -193,15 +195,27 @@
       Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a>
    </li>
 </ul>
-            <h3>Table attributes</h3><hr /><h4>Description</h4><br />
-<p>The <code>&lt;table&gt;</code> attributes allow to set the main options for the table, ie sorting, filtering, theme activation, &#8230;</p>
+            <h3>Table attributes</h3>
+<hr />
 
-<p>Don&#39;t forget to add the prefix <code>dt:</code> before each attribute.</p>
-<br /><h4>Usage</h4>
-<pre><code>&lt;table dt:table=&quot;true&quot; ...&gt;
-   ...
-&lt;/table&gt;</code></pre>
-<br /><h4>Reference</h4><table class='table table-striped table-bordered' id='tableReference'>
+<h4>Description</h4>
+<br />
+
+The <code>&lt;table&gt;</code> attributes allow to set the main options for the table, ie sorting, filtering, theme activation, \...
+
+Don\'t forget to add the prefix <code>dt:</code> before each attribute.
+
+<br />
+<h4>Usage</h4>
+
+    <table dt:table="true" ...>
+       ...
+    </table>
+
+<br />
+<h4>Reference</h4>
+
+<table id="tableReference" class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Name</th>
@@ -216,21 +230,21 @@
     <td>dt:table</td>
     <td><strong>(required)</strong> Enables DataTables4j in a Thymeleaf template. The value must be <code>true</code></td>
     <td>true|false</td>
-    <td />
+    <td></td>
     <td>DOM/AJAX</td>
   </tr>
   <tr>
     <td>dt:url</td>
     <td>Web service URL used to populate the table</td>
-    <td />
-    <td />
+    <td></td>
+    <td></td>
     <td>AJAX</td>
   </tr>
   <tr>
     <td>dt:appear</td>
     <td>Display mode used when the table has finished loading and must appear in the page. A duration can be set (in milliseconds) if the display mode is set to "fadein"</td>
     <td>block|fadein[,duration]</td>
-    <td />
+    <td></td>
     <td>DOM/AJAX</td>
   </tr>
   <tr>
@@ -278,14 +292,14 @@
   <tr>
     <td>dt:displaylength</td>
     <td>Number of rows to display on a single page when using pagination</td>
-    <td />
+    <td></td>
     <td>10</td>
     <th>DOM/AJAX</th>
   </tr>
   <tr>
     <td>dt:paginationtype</td>
     <td>Choice between the different built-in pagination interaction methods which present different page controls to the end user</td>
-    <td>two_button|<br />full_numbers|<br />four_button|<br />bootstrap|<br />scrolling|<br />input|<br />listbox|<br />extJs</td>
+    <td>two_button|<br/>full_numbers|<br/>four_button|<br/>bootstrap|<br/>scrolling|<br/>input|<br/>listbox|<br/>extJs</td>
     <td>two_button</td>
     <td>DOM/AJAX</td>
   </tr>
@@ -300,21 +314,21 @@
     <td>dt:theme</td>
     <td>Name of a theme to activate for the current table</td>
     <td>bootstrap2|jqueryui</td>
-    <td />
+    <td></td>
     <td>DOM/AJAX</td>
   </tr>
   <tr>
     <td>dt:themeOption</td>
     <td>Name of an option to activate in relation to the current activated theme.</td>
-    <td />
-    <td />
+    <td></td>
+    <td></td>
     <td>DOM/AJAX</td>
   </tr>
   <tr>
     <td>dt:labels</td>
     <td>Relative URL of an AJAX loaded file which contains all the labels used in tables.</td>
-    <td />
-    <td />
+    <td></td>
+    <td></td>
     <td>DOM/AJAX</td>
   </tr>
   <tr>
@@ -334,7 +348,7 @@
   <tr>
     <td>dt:pipesize</td>
     <td>Pipe size used when pipelining is enabled, i.e. times that the user can page before a request must be made of the server.</td>
-    <td />
+    <td></td>
     <td>5</td>
     <td>AJAX</td>
   </tr>
@@ -348,42 +362,42 @@
   <tr>
     <td>dt:exportLinks</td>
     <td>Comma-separated list of positions where the export links will be generated</td>
-    <td>top_left|<br />top_middle|<br />top_right|<br />bottom_left|<br />bottom_middle|<br />bottom_right</td>
+    <td>top_left|<br/>top_middle|<br/>top_right|<br/>bottom_left|<br/>bottom_middle|<br/>bottom_right</td>
     <td>top_right</td>
     <td>DOM</td>
   </tr>
   <tr>
     <td>dt:lengthmenu</td>
     <td>Specify the entries in the length drop down menu that DataTables show when pagination is enabled.</td>
-    <td />
-    <td />
+    <td></td>
+    <td></td>
     <td>DOM/AJAX</td>
   </tr>
   <tr>
     <td>dt:serverdata</td>
     <td>This parameter allows you to override the default function which obtains the data from the server ($.getJSON) so something more suitable for your application</td>
-    <td />
-    <td />
+    <td></td>
+    <td></td>
     <td>AJAX</td>
   </tr>
   <tr>
     <td>dt:serverparams</td>
     <td>Allows you to send extra information to the server when using AJAX source</td>
-    <td />
-    <td />
+    <td></td>
+    <td></td>
     <td>AJAX</td>
   </tr>
   <tr>
     <td>dt:stripeclasses</td>
     <td>Comma-separated list of CSS classes that should be applied to displayed rows. This sequence of CSS classes may be of any length, and DataTables will apply each class sequentially, looping when required.</td>
-    <td />
-    <td />
+    <td></td>
+    <td></td>
     <td>DOM/AJAX</td>
   </tr>
   <tr>
     <td>dt:scrolly</td>
     <td>(scroller) Table's height to display in scrolling mode.</td>
-    <td />
+    <td></td>
     <td>300px</td>
     <th>DOM/AJAX</th>
   </tr>
@@ -404,13 +418,17 @@
   <tr>
     <td>dt:dom</td>
     <td>Allows you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page (for example you might want the pagination controls at the top of the table). DIV elements (with or without a custom class) can also be added to aid styling.</td>
-    <td />
+    <td></td>
     <td>lfrtip</td>
     <td>DOM/AJAX</td>
   </tr>
   </tbody>
-</table><link href='//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css' rel='stylesheet' /><script src='http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js'>
-</script><script src='/assets/js/site_reference.js'>
+</table>
+
+<link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" />
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
+</script>
+<script src="/assets/js/site_reference.js">
 </script>
          </div>
       </div>
@@ -471,7 +489,7 @@
       <div class="row" style="padding-top:10px;">
          <div class="span12">
             <p class="text-center">
-               <strong>Dandelion</strong> and all its components, are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
             </p>
          </div>
       </div>
@@ -479,6 +497,7 @@
 </footer>
    </div>
    
-   <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+   <script src="/assets/js/prettify.js"></script>
+   <script src="/assets/js/site-main.js"></script>
 </body>
 </html>

@@ -1,0 +1,108 @@
+---
+layout: datatables
+menu: installation
+level1: installation
+level2:
+  url: jsp
+  name: JSP
+---
+<h2 class="page-title">Installation guide with JSP</h2>
+
+<h3 class="section-title">With Servlet 3.x compatible containers</h3>
+
+<h4>Step 1: Install the Dandelion-DataTables JARs</h4>
+
+<h5>Manually</h5>
+<p>
+   <a href="/datatables/download.html">Download</a> the JAR and make sure that they are all made available via the application classpath.
+</p>
+
+<h5>Using Maven or another build tool</h5>
+<p>
+   {% include datatables/build-tools.html %}
+</p>
+
+<h4>Step 2: Declare the taglib definition</h4>
+<p>
+   Everywhere you want to display a table using Dandelion-DataTables, you need to add the taglib definition in your JSP:
+</p>
+<pre class="prettyprint">
+<%@ taglib prefix="datatables" uri="http://github.com/dandelion/datatables" %>
+</pre>
+
+<h4>Step 3: Include client-side dependencies</h4>
+<p> 
+   By default, the Javascript libraries are not embedded in Dandelion-DataTables. So ensure you declared somewhere in your pages those <tt>script</tt> and <tt>link</tt> tags:
+</p>
+<pre class="prettyprint">
+&lt;!-- jQuery -->
+&lt;script src="pathToJs/jquery-1.8.3.min.js">&lt;/script>
+
+&lt;!-- DataTables -->
+&lt;link href="pathToCss/jquery.dataTables.css" rel="stylesheet">
+&lt;script src="pathToJs/jquery.dataTables.min.js">&lt;/script> 
+</pre>
+
+<p class="alert alert-info">
+   <strong><i class="icon-info-sign icon-2x"></i></strong> 
+   Actually, you can bypass the DataTables script and link tags using the <a href="./ref.tagtable.html">cdn</a> attribute of the table tag.
+</p>
+
+<h4>Step 4: Dev mode</h4>
+<p>
+   By default, Dandelion-DataTables generates the web assets (js, css) that are needed by DataTables. Once generated, all files are then stored in a cache for better performance.
+</p>
+<p>
+   Of course, you are advised to disable the cache during the development. This way, all the configuration is generated each time you access a page that uses Dandelion-DataTables.
+   For that purpose, just set the following system property in your server launch configuration: 
+</p>
+<pre class="prettyprint">
+-Ddandelion.dev.mode=true
+</pre>
+
+<p>
+   You can now begin using the taglib! :-)
+</p>
+
+<h3 class="section-title">With Servlet 2.x compatible containers</h3>
+
+<h4>Steps 1/2/3/4</h4>
+<p>
+   You need to follow the first four steps described above.
+</p>
+
+<h4>Step 5: Add the backward compatibility dependency</h4>
+<pre class="prettyprint">
+&lt;dependency>
+   &lt;groupId>com.github.dandelion&lt;/groupId>
+   &lt;artifactId>datatables-servlet2&lt;/artifactId>
+   &lt;version>{{ site.dandelion.components.datatables.version }}&lt;/version>
+&lt;/dependency>
+</pre>
+    
+<h4>Step 6: Add the Dandelion-DataTables servlet and filter definitions</h4>
+<p>
+   Add the following configuration to your <tt>web.xml</tt>:
+</p>
+<pre class="prettyprint">
+&lt;!-- Dandelion-Datatables servlet definition -->
+&lt;servlet>
+   &lt;servlet-name>datatablesController&lt;/servlet-name>
+   &lt;servlet-class>com.github.dandelion.datatables.extras.servlet2.servlet.DatatablesServlet&lt;/servlet-class>
+&lt;/servlet>
+
+&lt;!-- Dandelion-Datatables servlet mapping -->
+&lt;servlet-mapping>
+   &lt;servlet-name>datatablesController&lt;/servlet-name>
+   &lt;url-pattern>/datatablesController/*&lt;/url-pattern>
+&lt;/servlet-mapping>
+</pre>
+
+<p>
+   You can now begin using the taglib! :-)
+</p>
+
+<h3 class="section-title">Optional step : Add a Dandelion-DataTables custom configuration file</h3>
+<p>
+   See <a href="/datatables/tutorials/configuration/configuration-loading.html">here for more details</a>!
+</p>

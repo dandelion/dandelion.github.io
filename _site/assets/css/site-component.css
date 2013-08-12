@@ -15,7 +15,14 @@ table thead th {
 	border-bottom: 0px;
 }
 
-.release-date{
+h4 {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 10px 0 15px;
+	border-bottom: 1px dashed #eeeeee;
+}
+
+.release-date {
 	float: right;
 	color: #626262;
 	font-size: 15px;
@@ -105,7 +112,6 @@ table thead th {
 	top: 70px;
 }
 /* End Navbar marketing */
-
 h2.marketing {
 	background:
 		url(/assets/images/dandelion/github-dandelion-logo-twitter-50px.png)
@@ -132,7 +138,9 @@ h2.marketing {
 /* /* Portrait tablet to landscape and desktop */
 
 
+
  
+
 
 
 *
@@ -146,7 +154,9 @@ h2.marketing {
 /* /* Landscape phone to portrait tablet */
 
 
+
  
+
 
 
 *
@@ -160,7 +170,9 @@ h2.marketing {
 /* /* Landscape phones and down */
 
 
+
  
+
 
 
 *
@@ -203,7 +215,9 @@ h2.marketing {
 /* /* Breadcrumb custom */
 
 
+
  
+
 
 
 *
@@ -216,7 +230,9 @@ h2.marketing {
 /* /* Bootstrap affix plugin custom */
 
 
+
  
+
 
 
 *

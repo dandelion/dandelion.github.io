@@ -1,0 +1,255 @@
+---
+layout: datatables
+menu: advanced
+level1: tutorials
+level2:
+  url: advanced
+  name: Advanced usage
+level3:
+  url: callbacks
+  name: Using callbacks
+---
+<h2 class="page-title">Using callbacks
+   <div class="pull-right">
+      <span class="badge badge-success compatibility" title="Compatible with JSP">JSP</span>
+      <span class="badge badge-success compatibility" title="Compatible with Thymeleaf">Thymeleaf</span>
+   </div>
+</h2>
+<h3 class="section-title">Preamble</h3>
+<p>
+   During your use and integration of DataTables into your own software, there might be times when you wish to know when a certain event has occurred, allowing you to take appropriate action for that event. This might include modifying a table row/cell, or simply updating an information display every time the table is redrawn.
+<p>
+<p>
+   Since v0.8.9, Dandelion-DataTables provides support for almost all callbacks.
+</p>
+
+<h3 class="section-title">Using JSP</h3>
+<p>
+   You need to use the {% refjsp dt callback %} tag.
+</p>
+<p>
+   You need to declare:
+   <ul>
+      <li>the callback's type using the {% refjsp dt callback type %} attribute
+      <li>the Javascript function to execute as a callback in the {% refjsp dt callback function %} attribute</li>
+   </ul>
+</p>
+<p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="Firstname" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" sortable="false" />
+   &lt;datatables:column title="Mail" property="mail" />
+   &lt;datatables:callback type="createdrow" function="callbackCreatedRow" />
+&lt;/datatables:table>
+</pre>
+<p>
+   Now you just have to write the <code>callbackCreateRow</code> function as follows:
+<pre class="prettyprint">
+function callbackCreatedRow(nRow, aData, iDataIndex) {
+   $('td:eq(4)', nRow).css({ 'font-weight': 'bold' });
+}
+</pre>
+</p>
+<p>
+   Ensure to declare the Javascript function before the {% refjsp dt table %} tag.
+</p>
+
+<h3 class="section-title">Using Thymeleaf</h3>
+<p>
+   All callbacks are declared using the {% reftl dt tbody %} tag.
+</p>
+<p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody dt:cbk:createdrow="'callbackCreateRow'">
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+  &lt;/tbody>
+&lt;/table>
+</pre>
+</p>
+
+<h3 class="section-title" id="loac">List of available callbacks</h3>
+<p>
+   All callbacks don't have the same parameters. Take care to use the right ones!
+</p>
+
+<h4>Cookie callback</h4> 
+<p>
+   This callback allows you to customise the cookie and / or the parameters being stored when using DataTables with state saving enabled. This function is called whenever the cookie is modified, and it expects a fully formed cookie string to be returned. Note that the data object passed in is a Javascript object which must be converted to a string (JSON.stringify for example).
+<pre class="prettyprint">
+function cookieCallback(sName, oData, sExpires, sPath) {
+   // Customise oData or sName or whatever else here
+   return sName + "="+JSON.stringify(oData)+"; expires=" + sExpires +"; path=" + sPath;
+}
+</pre>
+</p>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="cookie" function="cookieCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:cookie="cookieCallback"></code></li>
+</ul>
+
+<h4>CreatedRow callback</h4>
+<p>
+   This callback is called when a TR element is created (and all TD child elements have been inserted), or registered if using a DOM source, allowing manipulation of the TR element (adding classes etc).
+</p>
+<pre class="prettyprint"> 
+function createdRowCallback(nRow, aData, iDataIndex){
+   // Make the fifth column bold
+   $('td:eq(4)', nRow).css({ 'font-weight': 'bold' });
+}
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="createdRow" function="createdRowCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:createdrow="createdRowCallback"></code></li>
+</ul>
+
+<h4>Draw callback</h4>
+<p>
+   This callback is called on every 'draw' event, and allows you to dynamically modify any aspect you want about the created DOM.
+</p>
+<pre class="prettyprint">
+function drawCallback(nRow, aData, iDataIndex){
+   alert( 'DataTables has redrawn the table' );
+}
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="draw" function="drawCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:draw="drawCallback"></code></li>
+</ul>
+
+<h4>Footer callback</h4>
+<p>
+   This function is called on every 'draw' event, and allows you to dynamically modify the footer row. This can be used to calculate and display useful information about the table. 
+</p>
+<pre class="prettyprint">
+    function footerCallback(nFoot, aData, iStart, iEnd, aiDisplay) {
+      nFoot.getElementsByTagName('th')[0].innerHTML = "Starting index is "+iStart;
+    }
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="footer" function="footerCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:footer="footerCallback"></code></li>
+</ul>
+
+<h4>FormatNumber callback</h4>
+<p>
+   When rendering large numbers in the information element for the table (i.e. "Showing 1 to 10 of 57 entries") DataTables will render large numbers to have a comma separator for the 'thousands' units (e.g. 1 million is rendered as "1,000,000") to help readability for the end user. This function will override the default method DataTables uses.
+</p>
+<pre class="prettyprint"> 
+function formatNumberCallback(iIn) {
+   if ( iIn < 1000 ) {
+      return iIn;
+   } 
+   else {
+      var
+      s=(iIn+""),
+      a=s.split(""), out="",
+      iLen=s.length;
+   
+      for ( var i=0 ; i&lt;iLen ; i++ ) {
+         if ( i%3 === 0 && i !== 0 ) {
+             out = "'"+out;
+         }
+         out = a[iLen-i-1]+out;
+      }
+   }
+   return out;
+};
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="format" function="formatNumberCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:format="formatNumberCallback"></code></li>
+</ul>
+
+<h4>Header callback</h4>
+<p>
+   This function is called on every 'draw' event, and allows you to dynamically modify the header row. This can be used to calculate and display useful information about the table.
+</p>
+<pre class="prettyprint">
+function headerCallback(nHead, aData, iStart, iEnd, aiDisplay) {
+   nHead.getElementsByTagName('th')[0].innerHTML = "Displaying "+(iEnd-iStart)+" records";
+}
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="header" function="headerCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:header="headerCallback"></code></li>
+</ul>
+
+<h4>Info callback</h4>
+<p>
+   The information element can be used to convey information about the current state of the table. Although the internationalisation options presented by DataTables are quite capable of dealing with most customisations, there may be times where you wish to customise the string further. This callback allows you to do exactly that.
+</p>
+<pre class="prettyprint">
+function infoCallback (oSettings, iStart, iEnd, iMax, iTotal, sPre) {
+   return iStart +" to "+ iEnd;
+}
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="info" function="infoCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:info="infoCallback"></code></li>
+</ul>
+
+<h4>InitComplete callback</h4>
+<p>
+   Called when the table has been initialised. Normally DataTables will initialise sequentially and there will be no need for this function, however, this does not hold true when using external language information since that is obtained using an async XHR call.
+</p>
+<pre class="prettyprint">
+function initCompleteCallback(oSettings, json) {
+   alert( 'DataTables has finished its initialisation.' );
+}
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="init" function="initCompleteCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:init="initCompleteCallback"></code></li>
+</ul>
+
+<h4>PreDraw callback</h4>
+<p>
+   Called at the very start of each table draw and can be used to cancel the draw by returning false, any other return (including undefined) results in the full draw occurring).
+</p>
+<pre class="prettyprint">
+function preDrawCallback( oSettings ) {
+   if ( $('#test').val() == 1 ) {
+      return false;
+   }
+}
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="predraw" function="preDrawCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:predraw="preDrawCallback"></code></li>
+</ul>
+
+<h4>Row callback</h4>
+<p>
+   This function allows you to 'post process' each row after it have been generated for each table draw, but before it is rendered on screen. This function might be used for setting the row class name etc.
+</p>
+<pre class="prettyprint">
+function rowCallback( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
+   // Bold the grade for all 'A' grade browsers
+   if ( aData[4] == "A" ) {
+      $('td:eq(4)', nRow).html( '<b>A</b>' );
+   }
+}
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="row" function="rowCallback" /></code><:
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:row="rowCallback"></code></li>
+</ul
