@@ -1,0 +1,141 @@
+---
+layout: dandelion-assets
+menu: assets
+level1: features
+level2:
+  url: assets
+  name: Assets Stack
+level3:
+  url: glossary
+  name: Glossary
+---
+
+<h3>Glossary</h3>
+
+<table id="tableReference" class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<th style="width: 17%">Name</th>
+			<th style="width: 40%">Description</th>
+			<th style="width: 43%">Samples</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><span class="hidden">select.asset</span>Asset</td>
+			<td>An Asset define a web resources by
+<ul>
+	<li>his name,</li>
+	<li>his version number,</li>
+	<li>his type,</li>
+	<li>these various locations (remote, locale, generate, ...)</li>
+</ul></td>
+			<td><pre>{
+  "name": "jquery",
+  "version": "1.9.1",
+  "type": "js",
+  "locations": [
+    "remote": "http://code.jquery.com/jquery-1.9.1.js",
+    "local": "/assets/libs/jquery-1.9.1.js"
+  ]
+}</pre></td>
+		</tr>
+		<tr>
+			<td><span class="hidden">select.scope</span>Scope</td>
+			<td>A Scope define a group of assets.<br/>The order in the assets define the display order </td>
+			<td><pre>{
+  "scope": "datatables",
+  "assets": [
+    {"name": "jquery", "type": "js", ...},
+    {"name": "datatables", "type": "js", ...},
+    {"name": "datatables", "type": "css", ...}
+  ]
+}</pre>
+<b>jQuery</b> asset is before <b>DataTables</b> assets.
+</td>
+		</tr>
+		<tr>
+			<td><span class="hidden">select.parent</span>Scopes Hierarchy</td>
+			<td>Scopes can be define by using a parenthood hierarchy (start by <b>default</b>).<br/>The parent scope is always display first</td>
+			<td><pre>{ "scope": "jquery" },
+{ "scope": "datatables", "parent": "jquery" }</pre>
+<b>DataTables</b> assets have <b>jQuery</b> assets for parent.
+</td>
+		</tr>
+		<tr>
+			<td><span class="hidden">select.default</span>Scope Parent : <b>default</b></td>
+			<td>The first parent is <b>default</b>.<br/>This scope is always display.<br/>The default scope as parent is optional</td>
+			<td><pre>{ "scope": "jquery" },
+{ "scope": "jquery", "parent": "default" }</pre>
+Thoses 2 samples define the same scope/parent link.
+</td>
+		</tr>
+		<tr>
+			<td><span class="hidden">select.none</span>Scope Parent : <b>none</b></td>
+			<td>It's a Detached scope, to start a specific hierachy without <b>default</b> assets.<br/>The detached scope can only use as Scope parent.</td>
+			<td>Good Usage :<pre>{ "scope": "jquery", "parent": "none" }</pre>
+Bad Usage :<pre>{ "scope": "none" }</pre></td>
+		</tr>
+		<tr>
+			<td><span class="hidden">select.override.child</span>Asset Override on child scope</td>
+			<td>Asset Override provide you the ability to change a asset in a scope by extend this scope and change the asset.</td>
+			<td><pre>{
+  "scope": "datatables",
+  "assets": [
+    {"name": "jquery", "version": "1.9.1", ...},
+    {"name": "datatables", "type": "js", ...},
+    {"name": "datatables", "type": "css", ...}
+  ]
+}</pre>
+We change the version of <b>jQuery</b> asset :
+<pre>{
+  "scope": "my_datatables",
+  "assets": [
+    {"name": "jquery", "version": "2.0", ...}
+  ]
+}</pre>
+Only the version is change, not the display order, <b>jQuery</b> is still the first asset to be display.</td>
+		</tr>
+	<tr>
+	    <td><span class="hidden">select.override.same</span>Asset Override on same scope</td>
+	    <td>Asset Override provide you the ability to change a asset in a scope by override the complete assets list.</td>
+	    <td><pre>{
+  "scope": "datatables",
+  "assets": [
+    {"name": "jquery", "version": "1.9.1", ...},
+    {"name": "datatables", "type": "js", ...},
+    {"name": "datatables", "type": "css", ...}
+  ]
+}</pre>
+		We change the version of <b>jQuery</b> asset :
+<pre>{
+  "scope": "datatables",
+  "override": true,
+  "assets": [
+    {"name": "jquery", "version": "2.0", ...},
+    {"name": "datatables", "type": "js", ...},
+    {"name": "datatables", "type": "css", ...}
+  ]
+}</pre>
+	</tr>
+		<tr>
+			<td><span class="hidden">select.locationOverride.add</span>Asset Location Override<br/>(Add)</td>
+			<td>Asset Location Override provide you the ability to <b>add</b> a location in a asset.</td>
+			<td>You can add a location to an asset using the same scope or using the <b>Asset Override</b> with same definition (name, type, version)</td>
+		</tr>
+		<tr>
+			<td><span class="hidden">select.locationOverride.change</span>Asset Location Override<br/>(Change)</td>
+			<td>Asset Location Override provide you the ability to <b>change</b> a location in a asset.</td>
+			<td>You can change a location to an asset using the <b>Asset Override</b> with same definition (name, type, version)</td>
+		</tr>
+	</tbody>
+</table>
+
+<link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" />
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="/assets/js/site_reference.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	$('#tableReference_filter').hide();
+    });
+</script>
