@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dandelion Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="java, web, component, library, assets, datatables">
+<meta name="author" content="Dandelion">
+
+<link href="/assets/css/prettify.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
+<!-- <link href="/assets/css/component.css" rel="stylesheet"> -->
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+<!--[if IE 7]>
+      <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
+      <![endif]-->
+<!--[if lt IE 9]>
+      <script src="/assets/js/html5shiv.js"></script>
+      <![endif]-->
+<link href="/assets/css/site-main.css" rel="stylesheet">
+<link href="/assets/css/site-component.css" rel="stylesheet">
+      
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+<link rel="shortcut icon" href="/assets/images/dandelion_square.png">
+
+<script>
+      var _gaq = _gaq || [];
+      _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+      _gaq.push([ '_setCookiePath', '/datatables/' ]);
+      _gaq.push([ '_trackPageview' ]);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+      			: 'http://www')
+      			+ '.google-analytics.com/ga.js';
+      	var s = document.getElementsByTagName('script')[0];
+      	s.parentNode.insertBefore(ga, s);
+      })();
+</script>
+<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+<script src="/assets/js/site-component.js"></script>
+</head>
+<body>
+   <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+         <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a href="/datatables">
+               <div id="logo_container">
+                   <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
+                   <p id="logo_text">
+                       datatables
+                   </p>
+               </div>
+            </a>
+            <div class="nav-collapse collapse">
+               <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
+                  <li class="text-center"><a href="/"><i class="icon-home icon-3x"></i><br/>Home</a></li>
+                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt icon-3x"></i><br />Forum</a></li>
+                  <li class="text-center"><a href="/blog"><i class="icon-comment-alt icon-3x"></i><br />Blog</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug icon-3x"></i><br />Issues</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/dandelion-datatables" alt="Dandelion-Datatables sources"><i class="icon-github icon-3x"></i><br />Sources</a></li>
+               </ul>
+            </div>
+            <!--/.nav-collapse -->
+         </div>
+      </div>
+   </div>
+
+   <div class="container-fluid container-component">
+   <div class="row-fluid">
+      <div class="span2">
+         <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+               
+               <h5>Overview</h5>
+               <li >
+                  <a href="/datatables"><i class="icon-home"></i> Home</a>
+               </li>
+               <li >
+                  <a href="/datatables/features/" title="Features"><i class="icon-th-list"></i> Features</a>
+               </li>
+               <li >
+                  <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
+               </li>
+               <li >
+                  <a href="/datatables/releases/" title="Download"> <i class="icon-tags"></i> Releases</a>
+               </li>
+               
+               <h5>Documentation</h5>
+               <li >
+                  <a href="/datatables/docs/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/ref/jsp/" title="JSP taglib"><i class="icon-book"></i> JSP taglib</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/ref/thymeleaf/" title="Thymeleaf dialect"><i class="icon-book"></i> Thymeleaf dialect</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/ref/configuration/" title="Configuration"><i class="icon-book"></i> Configuration</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+               </li>
+               <li >
+                  <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
+               </li>
+               
+               <h5>Tutorials</h5>
+               <li >
+                  <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+               </li>
+               <li  class="active">
+                  <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
+                  
+                  <ul class="nav nav-list">
+                     <li >
+                        <a href="/datatables/tutorials/advanced/generating-row-ids.html"><i class="icon-double-angle-right"></i> Generating row id</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/using-extra-files.html"><i class="icon-double-angle-right"></i> Using extra Javascript files</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/using-extra-conf.html"><i class="icon-double-angle-right"></i> Using extra DataTables configuration</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/using-asset-compression.html"><i class="icon-double-angle-right"></i> Using assets compression</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/using-asset-aggregation.html"><i class="icon-double-angle-right"></i> Using assets aggregation</a>
+                     </li>
+                     <li class="active">
+                        <a href="/datatables/tutorials/advanced/using-callbacks.html"><i class="icon-double-angle-right"></i> Using callbacks</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/nesting-jsp-tags.html"><i class="icon-double-angle-right"></i> Nesting JSP tags</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/writing-your-own-extension.html"><i class="icon-double-angle-right"></i> Writing your own extension</a>
+                     </li>
+                  </ul>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-globe"></i> I18n</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="span10">
+         <div class="row-fluid">
+            <ul class="breadcrumb hidden-phone">
+   <li><a href="/"><i class="icon-home"></i></a></li>
+   <li><span class="divider">|</span><a href="/datatables">Dandelion-Datatables</a></li>
+     
+   
+   <li><span class="divider">|</span><a href="/datatables/tutorials">Tutorials</a></li>
+   
+     
+   
+   <li><span class="divider">|</span><a href="/datatables/tutorials/advanced">Advanced usage</a></li>
+   
+     
+   
+   <li><span class="divider">|</span><a href="/datatables/tutorials/advanced/callbacks">Using callbacks</a></li>
+   
+   
+   
+   
+   <li class="pull-right">
+      Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a>
+   </li>
+</ul>
+            <h2 class="page-title">Using callbacks
+   <div class="pull-right">
+      <span class="badge badge-success compatibility" title="Compatible with JSP">JSP</span>
+      <span class="badge badge-success compatibility" title="Compatible with Thymeleaf">Thymeleaf</span>
+   </div>
+</h2>
+<h3 class="section-title">Preamble</h3>
+<p>
+   During your use and integration of DataTables into your own software, there might be times when you wish to know when a certain event has occurred, allowing you to take appropriate action for that event. This might include modifying a table row/cell, or simply updating an information display every time the table is redrawn.
+<p>
+<p>
+   Since v0.8.9, Dandelion-DataTables provides support for almost all callbacks.
+</p>
+
+<h3 class="section-title">Using JSP</h3>
+<p>
+   You need to use the <a href="/datatables/docs/ref/jsp/callback.html"><code>&lt;datatables:callback&gt;</code></a> tag.
+</p>
+<p>
+   You need to declare:
+   <ul>
+      <li>the callback's type using the <a href="/datatables/docs/ref/jsp/callback.html#type"><code>type</code></a> attribute
+      <li>the Javascript function to execute as a callback in the <a href="/datatables/docs/ref/jsp/callback.html#function"><code>function</code></a> attribute</li>
+   </ul>
+</p>
+<p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="Firstname" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" sortable="false" />
+   &lt;datatables:column title="Mail" property="mail" />
+   &lt;datatables:callback type="createdrow" function="callbackCreatedRow" />
+&lt;/datatables:table>
+</pre>
+<p>
+   Now you just have to write the <code>callbackCreateRow</code> function as follows:
+<pre class="prettyprint">
+function callbackCreatedRow(nRow, aData, iDataIndex) {
+   $('td:eq(4)', nRow).css({ 'font-weight': 'bold' });
+}
+</pre>
+</p>
+<p>
+   Ensure to declare the Javascript function before the <a href="/datatables/docs/ref/jsp/table.html"><code>&lt;datatables:table&gt;</code></a> tag.
+</p>
+
+<h3 class="section-title">Using Thymeleaf</h3>
+<p>
+   All callbacks are declared using the <a href="/datatables/docs/ref/thymeleaf/tbody.html"><code>tbody</code></a> tag.
+</p>
+<p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody dt:cbk:createdrow="'callbackCreateRow'">
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+  &lt;/tbody>
+&lt;/table>
+</pre>
+</p>
+
+<h3 class="section-title" id="loac">List of available callbacks</h3>
+<p>
+   All callbacks don't have the same parameters. Take care to use the right ones!
+</p>
+
+<h4>Cookie callback</h4> 
+<p>
+   This callback allows you to customise the cookie and / or the parameters being stored when using DataTables with state saving enabled. This function is called whenever the cookie is modified, and it expects a fully formed cookie string to be returned. Note that the data object passed in is a Javascript object which must be converted to a string (JSON.stringify for example).
+<pre class="prettyprint">
+function cookieCallback(sName, oData, sExpires, sPath) {
+   // Customise oData or sName or whatever else here
+   return sName + "="+JSON.stringify(oData)+"; expires=" + sExpires +"; path=" + sPath;
+}
+</pre>
+</p>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="cookie" function="cookieCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:cookie="cookieCallback"></code></li>
+</ul>
+
+<h4>CreatedRow callback</h4>
+<p>
+   This callback is called when a TR element is created (and all TD child elements have been inserted), or registered if using a DOM source, allowing manipulation of the TR element (adding classes etc).
+</p>
+<pre class="prettyprint"> 
+function createdRowCallback(nRow, aData, iDataIndex){
+   // Make the fifth column bold
+   $('td:eq(4)', nRow).css({ 'font-weight': 'bold' });
+}
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="createdRow" function="createdRowCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:createdrow="createdRowCallback"></code></li>
+</ul>
+
+<h4>Draw callback</h4>
+<p>
+   This callback is called on every 'draw' event, and allows you to dynamically modify any aspect you want about the created DOM.
+</p>
+<pre class="prettyprint">
+function drawCallback(nRow, aData, iDataIndex){
+   alert( 'DataTables has redrawn the table' );
+}
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="draw" function="drawCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:draw="drawCallback"></code></li>
+</ul>
+
+<h4>Footer callback</h4>
+<p>
+   This function is called on every 'draw' event, and allows you to dynamically modify the footer row. This can be used to calculate and display useful information about the table. 
+</p>
+<pre class="prettyprint">
+    function footerCallback(nFoot, aData, iStart, iEnd, aiDisplay) {
+      nFoot.getElementsByTagName('th')[0].innerHTML = "Starting index is "+iStart;
+    }
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="footer" function="footerCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:footer="footerCallback"></code></li>
+</ul>
+
+<h4>FormatNumber callback</h4>
+<p>
+   When rendering large numbers in the information element for the table (i.e. "Showing 1 to 10 of 57 entries") DataTables will render large numbers to have a comma separator for the 'thousands' units (e.g. 1 million is rendered as "1,000,000") to help readability for the end user. This function will override the default method DataTables uses.
+</p>
+<pre class="prettyprint"> 
+function formatNumberCallback(iIn) {
+   if ( iIn < 1000 ) {
+      return iIn;
+   } 
+   else {
+      var
+      s=(iIn+""),
+      a=s.split(""), out="",
+      iLen=s.length;
+   
+      for ( var i=0 ; i&lt;iLen ; i++ ) {
+         if ( i%3 === 0 && i !== 0 ) {
+             out = "'"+out;
+         }
+         out = a[iLen-i-1]+out;
+      }
+   }
+   return out;
+};
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="format" function="formatNumberCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:format="formatNumberCallback"></code></li>
+</ul>
+
+<h4>Header callback</h4>
+<p>
+   This function is called on every 'draw' event, and allows you to dynamically modify the header row. This can be used to calculate and display useful information about the table.
+</p>
+<pre class="prettyprint">
+function headerCallback(nHead, aData, iStart, iEnd, aiDisplay) {
+   nHead.getElementsByTagName('th')[0].innerHTML = "Displaying "+(iEnd-iStart)+" records";
+}
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="header" function="headerCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:header="headerCallback"></code></li>
+</ul>
+
+<h4>Info callback</h4>
+<p>
+   The information element can be used to convey information about the current state of the table. Although the internationalisation options presented by DataTables are quite capable of dealing with most customisations, there may be times where you wish to customise the string further. This callback allows you to do exactly that.
+</p>
+<pre class="prettyprint">
+function infoCallback (oSettings, iStart, iEnd, iMax, iTotal, sPre) {
+   return iStart +" to "+ iEnd;
+}
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="info" function="infoCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:info="infoCallback"></code></li>
+</ul>
+
+<h4>InitComplete callback</h4>
+<p>
+   Called when the table has been initialised. Normally DataTables will initialise sequentially and there will be no need for this function, however, this does not hold true when using external language information since that is obtained using an async XHR call.
+</p>
+<pre class="prettyprint">
+function initCompleteCallback(oSettings, json) {
+   alert( 'DataTables has finished its initialisation.' );
+}
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="init" function="initCompleteCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:init="initCompleteCallback"></code></li>
+</ul>
+
+<h4>PreDraw callback</h4>
+<p>
+   Called at the very start of each table draw and can be used to cancel the draw by returning false, any other return (including undefined) results in the full draw occurring).
+</p>
+<pre class="prettyprint">
+function preDrawCallback( oSettings ) {
+   if ( $('#test').val() == 1 ) {
+      return false;
+   }
+}
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="predraw" function="preDrawCallback" /></code></li>
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:predraw="preDrawCallback"></code></li>
+</ul>
+
+<h4>Row callback</h4>
+<p>
+   This function allows you to 'post process' each row after it have been generated for each table draw, but before it is rendered on screen. This function might be used for setting the row class name etc.
+</p>
+<pre class="prettyprint">
+function rowCallback( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
+   // Bold the grade for all 'A' grade browsers
+   if ( aData[4] == "A" ) {
+      $('td:eq(4)', nRow).html( '<b>A</b>' );
+   }
+}
+</pre>
+<ul>
+   <li>JSP usage: <code>&lt;datatables:callback type="row" function="rowCallback" /></code><:
+   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:row="rowCallback"></code></li>
+</ul
+         </div>
+      </div>
+   </div>
+</div>
+   
+   <div class="container-fluid area-footer">     
+      <footer class="footer">
+   <div class="container">
+      <div class="row">
+         <div class="span8">
+            
+            <div class="row-fluid">
+               <div class="span3">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="icon-github"></i> Source repository</a></li>
+                     <li><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug"></i> Issue tracker</a></li>
+                     <li><a href="/team"><i class="icon-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="icon-road"></i> Roadmap</a></li>
+                     <li><a href="/acknowledgements/"><i class="icon-info-sign"></i> Acknowledgements</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Components</h3>
+                  <ul>
+                     <li><a href="/dandelion">Dandelion</a></li>
+                     <li><a href="/datatables">Datatables</a></li>
+                     <li><a href="/webanalytics">Webanalytics</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Get started</h3>
+                  <ul>
+                     <li><a href="/faq"> <i class="icon-book"></i> FAQ</a></li>
+                     <li><a href="/samples"><i class="icon-code"></i> Samples</a></li>
+                     <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>
+                     <li><a href="http://dandelion-forum.48353.x6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="icon-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="span4">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="span12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+   </div>
+   
+   <script src="/assets/js/prettify.js"></script>
+   <script src="/assets/js/site-main.js"></script>
+</body>
+</html>

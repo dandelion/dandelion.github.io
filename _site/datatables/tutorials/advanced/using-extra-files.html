@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dandelion Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="java, web, component, library, assets, datatables">
+<meta name="author" content="Dandelion">
+
+<link href="/assets/css/prettify.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
+<!-- <link href="/assets/css/component.css" rel="stylesheet"> -->
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+<!--[if IE 7]>
+      <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
+      <![endif]-->
+<!--[if lt IE 9]>
+      <script src="/assets/js/html5shiv.js"></script>
+      <![endif]-->
+<link href="/assets/css/site-main.css" rel="stylesheet">
+<link href="/assets/css/site-component.css" rel="stylesheet">
+      
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+<link rel="shortcut icon" href="/assets/images/dandelion_square.png">
+
+<script>
+      var _gaq = _gaq || [];
+      _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+      _gaq.push([ '_setCookiePath', '/datatables/' ]);
+      _gaq.push([ '_trackPageview' ]);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+      			: 'http://www')
+      			+ '.google-analytics.com/ga.js';
+      	var s = document.getElementsByTagName('script')[0];
+      	s.parentNode.insertBefore(ga, s);
+      })();
+</script>
+<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+<script src="/assets/js/site-component.js"></script>
+</head>
+<body>
+   <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+         <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a href="/datatables">
+               <div id="logo_container">
+                   <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
+                   <p id="logo_text">
+                       datatables
+                   </p>
+               </div>
+            </a>
+            <div class="nav-collapse collapse">
+               <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
+                  <li class="text-center"><a href="/"><i class="icon-home icon-3x"></i><br/>Home</a></li>
+                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt icon-3x"></i><br />Forum</a></li>
+                  <li class="text-center"><a href="/blog"><i class="icon-comment-alt icon-3x"></i><br />Blog</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug icon-3x"></i><br />Issues</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/dandelion-datatables" alt="Dandelion-Datatables sources"><i class="icon-github icon-3x"></i><br />Sources</a></li>
+               </ul>
+            </div>
+            <!--/.nav-collapse -->
+         </div>
+      </div>
+   </div>
+
+   <div class="container-fluid container-component">
+   <div class="row-fluid">
+      <div class="span2">
+         <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+               
+               <h5>Overview</h5>
+               <li >
+                  <a href="/datatables"><i class="icon-home"></i> Home</a>
+               </li>
+               <li >
+                  <a href="/datatables/features/" title="Features"><i class="icon-th-list"></i> Features</a>
+               </li>
+               <li >
+                  <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
+               </li>
+               <li >
+                  <a href="/datatables/releases/" title="Download"> <i class="icon-tags"></i> Releases</a>
+               </li>
+               
+               <h5>Documentation</h5>
+               <li >
+                  <a href="/datatables/docs/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/ref/jsp/" title="JSP taglib"><i class="icon-book"></i> JSP taglib</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/ref/thymeleaf/" title="Thymeleaf dialect"><i class="icon-book"></i> Thymeleaf dialect</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/ref/configuration/" title="Configuration"><i class="icon-book"></i> Configuration</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+               </li>
+               <li >
+                  <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
+               </li>
+               
+               <h5>Tutorials</h5>
+               <li >
+                  <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+               </li>
+               <li  class="active">
+                  <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
+                  
+                  <ul class="nav nav-list">
+                     <li >
+                        <a href="/datatables/tutorials/advanced/generating-row-ids.html"><i class="icon-double-angle-right"></i> Generating row id</a>
+                     </li>
+                     <li class="active">
+                        <a href="/datatables/tutorials/advanced/using-extra-files.html"><i class="icon-double-angle-right"></i> Using extra Javascript files</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/using-extra-conf.html"><i class="icon-double-angle-right"></i> Using extra DataTables configuration</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/using-asset-compression.html"><i class="icon-double-angle-right"></i> Using assets compression</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/using-asset-aggregation.html"><i class="icon-double-angle-right"></i> Using assets aggregation</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/using-callbacks.html"><i class="icon-double-angle-right"></i> Using callbacks</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/nesting-jsp-tags.html"><i class="icon-double-angle-right"></i> Nesting JSP tags</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/writing-your-own-extension.html"><i class="icon-double-angle-right"></i> Writing your own extension</a>
+                     </li>
+                  </ul>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-globe"></i> I18n</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="span10">
+         <div class="row-fluid">
+            <ul class="breadcrumb hidden-phone">
+   <li><a href="/"><i class="icon-home"></i></a></li>
+   <li><span class="divider">|</span><a href="/datatables">Dandelion-Datatables</a></li>
+     
+   
+   <li><span class="divider">|</span><a href="/datatables/tutorials">Tutorials</a></li>
+   
+     
+   
+   <li><span class="divider">|</span><a href="/datatables/tutorials/advanced">Advanced usage</a></li>
+   
+     
+   
+   <li><span class="divider">|</span><a href="/datatables/tutorials/advanced/extrafile">Using extra Javascript files (only JSP)</a></li>
+   
+   
+   
+   
+   <li class="pull-right">
+      Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a>
+   </li>
+</ul>
+            ### Advanced :: Using extra file (only JSP)
+
+There are so many possibilities with [DataTables](http://datatables.net/) it would be too bad to limit its configuration with the taglib attributes.
+
+That\'s why `datatables:extraFile` and `datatables:extraConf` tags exist and provide extension points. Let\'s focus on extra file here.
+
+The `datatables:extraFile` tag allows you to specify the location of a file containing Javascript code, which will be simply appended in the main generated Javascript file. 
+Depending on what you need to do, the code can be inserted at different locations, using the `insert` extraFile attribute.
+
+
+#### Using extra file
+A classic use case is an external drop down list which can filter the table\'s data.
+
+In the following example, an external drop down list is added to filter the \"lastName\" column of the table.
+	
+	<p>
+	   Lastname filter<br /> 
+	   <select class="input-medium" id="lastNameChoice">
+	      <option value="All">All</option>
+	      <option value="Carpenter">Carpenter</option>
+	      <option value="Holloway">Holloway</option>
+	      <option value="Peck">Peck</option>
+	      <option value="Pena">Pena</option>
+	      <option value="Wilder">Wilder</option>
+	   </select>
+	</p>
+	
+The **DataTables** initialization code must be then placed in a file that is accessible by your webapp. In the example, the file is located in `/assets/js/datatables.extraFile.js` and contains the following Javascript code :
+
+	$.fn.dataTableExt.afnFiltering.push(
+	   function( oSettings, aData, iDataIndex ) {
+	      var chosenName = $("#lastNameChoice").val(); // Grab selected item in the dropdown list
+	      var nameInColumn = aData[2]; // 2 is the index (begins from 0) of the column I want to sort
+	       
+	      // If nothing or "All" is selected, don't filter
+	      if ( chosenName == "" || chosenName == "All")
+	      {
+	         return true;
+	      }
+	      // Filtering on the city name
+	      else if ( chosenName == nameInColumn)
+	      {
+	         return true;
+	      }
+	      return false;
+	   }
+	);
+	 
+	// Redraw the table as soon as the selected item changes
+	// Important : the DataTable is accessible through the taglib with the name : oTable_[HTML table id]
+	$("#lastNameChoice").change( function() { oTable_myTableId.fnDraw(); });
+
+<p class="alert alert-info"><strong>Info!</strong><br />Note that the global Javascript variable containing the table is accessible in a global scope with the name : <strong>oTable_[HTML table id]</strong>. That's why you can access the table in the script.</p>
+
+Finally, you can add an `datatables:extraFile` tag in your table declaration as follows :
+
+	<datatables:table id="myTableId" data="${persons}">
+	   <datatables:column title="Id" property="id" />
+	   <datatables:column title="Firstname" property="firstName" />
+	   <datatables:column title="LastName" property="lastName" />
+	   <datatables:column title="City" property="address.town.name" sortable="false" />
+	   <datatables:column title="Mail" property="mail" />
+	   <datatables:extraFile src="/assets/js/datatables.extraFile.js" />
+	</datatables:table>
+
+#### Insert mode
+The `datatables:extraFile` tag has an `insert` attribute that is used to determine where the content of the external Javascript file will be inserted in the main generated Javascript file (datatables-XXXXX.js).
+
+<img src="/assets/images/img_extraFile.png" width="500px" height="1300px" style="float:left;"/>
+The `insert` attribute can take 4 different values :
+
+ * `BEFOREALL` : the Javascript code will be inserted before all existing generated code 
+ * `AFTERSTARTDOCUMENTREADY` : the Javascript code will be inserted just after the start of the jQuery `ready()` method
+ * `BEFOREENDDOCUMENTREADY` : the Javascript code will be inserted just before the end of the jQuery `ready()` method
+ * `AFTERALL` : the Javascript code will be inserted after all existing generated code
+
+
+         </div>
+      </div>
+   </div>
+</div>
+   
+   <div class="container-fluid area-footer">     
+      <footer class="footer">
+   <div class="container">
+      <div class="row">
+         <div class="span8">
+            
+            <div class="row-fluid">
+               <div class="span3">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="icon-github"></i> Source repository</a></li>
+                     <li><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug"></i> Issue tracker</a></li>
+                     <li><a href="/team"><i class="icon-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="icon-road"></i> Roadmap</a></li>
+                     <li><a href="/acknowledgements/"><i class="icon-info-sign"></i> Acknowledgements</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Components</h3>
+                  <ul>
+                     <li><a href="/dandelion">Dandelion</a></li>
+                     <li><a href="/datatables">Datatables</a></li>
+                     <li><a href="/webanalytics">Webanalytics</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Get started</h3>
+                  <ul>
+                     <li><a href="/faq"> <i class="icon-book"></i> FAQ</a></li>
+                     <li><a href="/samples"><i class="icon-code"></i> Samples</a></li>
+                     <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>
+                     <li><a href="http://dandelion-forum.48353.x6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="icon-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="span4">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="span12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+   </div>
+   
+   <script src="/assets/js/prettify.js"></script>
+   <script src="/assets/js/site-main.js"></script>
+</body>
+</html>
