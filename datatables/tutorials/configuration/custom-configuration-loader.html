@@ -7,11 +7,11 @@ level2:
   name: Configuration
 level3:
   url: custom-configuration-loader
-  name: Using a custom configuration loader
+  name: Pluging a custom configuration loader
 ---
 
 <h2 class="page-title">
-   Using a custom configuration loader (TODO)
+   Pluging a custom configuration loader
    <div class="pull-right">
       <span class="badge badge-success compatibility" title="Compatible with JSP">JSP</span>
       <span class="badge badge-success compatibility" title="Compatible with Thymeleaf">Thymeleaf</span>
@@ -20,32 +20,53 @@ level3:
 
 <h3 class="section-title">Preamble</h3>
 <p>
-   By default, <strong>Dandelion-Datatables</strong> internally uses a properties file, containing some configurations.
-</p>
-<p>
-   But you can of course override it in multiple ways:
-   <ul>
-      <li>First, you can add a file called <i>datatables.properties</i> at the root of the classpath, allowing you to redefine every property you need. Your custom global configuration will then be
-         merged with the default one.
-      </li>
-      <li>Or you can locally override properties using the {% refjsp dt prop %} tag. Just define the property's name and value.</li>
-   </ul>
+   Dandelion-Datatables loads configuration files using a default strategy but you can optionnaly change it to fit your needs.
 </p>
 
-<h3 class="section-title">Example</h3>
+<h3 class="section-title">Writing your own configuration loader</h3>
 <p>
-   For instance, the compression feature is disabled by default. Thanks to the {% refjsp dt prop %} tag, you can enable it locally, just for the current table.
+   First, your custom configuration loader must implements the {% javadoc dt datatables-core ConfigurationLoader %} interface.
 </p>
-<h4>Using JSP</h4>
-<p>
 <pre class="prettyprint">
-&lt;datatables:table id="myTableId" data="${persons}">
-   &lt;datatables:column title="Id" property="id" />
-   &lt;datatables:column title="FirstName" property="firstName" />
-   &lt;datatables:column title="LastName" property="lastName" />
-   &lt;datatables:column title="City" property="address.town.name" />
-   &lt;datatables:column title="Mail" property="mail" />
-   &lt;datatables:prop name="compressor.enable" value="true" />
-&lt;/datatables:table>
+package my.package;
+
+public class MyConfigurationLoader implements ConfigurationLoader {
+
+   @Override
+   public Properties loadDefaultConfiguration() throws ConfigurationLoadingException {
+      // ...
+   }
+
+   @Override
+   public Properties loadUserConfiguration(Locale locale) {
+      // ...
+   }
+
+   @Override
+   public Set<String> resolveGroups(Locale locale) {
+      // ...
+   }
+
+   @Override
+   public void resolveConfigurations(Map<String, TableConfiguration> map, Locale locale, HttpServletRequest request) {
+      // ...
+   }
+}
 </pre>
+<p>
+   Note that you can get inspired by the {% javadoc dt datatables-core StandardConfigurationLoader %}.
+</p>
+
+<h3 class="section-title">Activating your own configuration loader</h3>
+<p>
+   The value of the <strong>dandelion.datatables.confloader.class</strong> system property is taken as the fully qualified class name of your custom loader.
+</p>
+<p>
+   If no system property is used, Dandelion-Datatables will defaultly use the {% javadoc dt datatables-core StandardConfigurationLoader %}.
+</p>
+<p>
+   To continue the above example, you should add the system property as follows:
+<pre class="prettyprint">
+-Ddandelion.datatables.confloader.class=my.package.MyConfigurationLoader
+</pre>   
 </p>

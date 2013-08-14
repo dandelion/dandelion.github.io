@@ -225,7 +225,7 @@
          <th>Description</th>
          <th>Value(s)</th>
          <th>Default</th>
-         <th>Groupable</th>
+         <th width="8%">Groupable</th>
       </tr>
    </thead>
    <tbody>
@@ -271,7 +271,7 @@
       </tr>
       <tr>
          <td>main.cdn.js</td>
-         <td> 
+         <td>
 </td>
          <td>
 </td>
@@ -383,8 +383,8 @@
          <th>Name</th>
          <th>Description</th>
          <th>Value(s)</th>
-         <th>Default</th>
-         <th>Groupable</th>
+         <th width="6%">Default</th>
+         <th width="8%">Groupable</th>
       </tr>
    </thead>
    <tbody>
@@ -422,7 +422,7 @@
          <td>css.theme</td>
          <td>Name of a theme to activate for the current table 
 </td>
-         <td>bootstrap2|jqueryui
+         <td>bootstrap2 | jqueryui
 </td>
          <td>
 </td>
@@ -432,7 +432,8 @@
          <td>css.themeOption</td>
          <td>Name of an option to activate in relation to the current activated theme. 
 </td>
-         <td><a href</td>
+         <td>See the <a href="#themeoptions">full list</a>
+</td>
          <td>
 </td>
          <td>yes</td>
@@ -455,7 +456,7 @@
          <th>Description</th>
          <th>Value(s)</th>
          <th>Default</th>
-         <th>Groupable</th>
+         <th width="8%">Groupable</th>
       </tr>
    </thead>
    <tbody>
@@ -657,7 +658,7 @@
          <th>Description</th>
          <th>Value(s)</th>
          <th>Default</th>
-         <th>Groupable</th>
+         <th width="8%">Groupable</th>
       </tr>
    </thead>
    <tbody>
@@ -727,9 +728,9 @@
       <tr>
          <th>Name</th>
          <th>Description</th>
-         <th>Value(s)</th>
-         <th>Default</th>
-         <th>Groupable</th>
+         <th width="7%">Value(s)</th>
+         <th width="6%">Default</th>
+         <th width="8%">Groupable</th>
       </tr>
    </thead>
    <tbody>
@@ -827,7 +828,7 @@
          <th>Description</th>
          <th>Value(s)</th>
          <th>Default</th>
-         <th>Groupable</th>
+         <th width="8%">Groupable</th>
       </tr>
    </thead>
    <tbody>
@@ -875,7 +876,8 @@
          <td>export.xls.class</td>
          <td>Java class name to use for the XLS export
 </td>
-         <td>com.github.dandelion.datatables.extras.export.poi.XlsExport<br /><span class</td>
+         <td>com.github.dandelion.datatables.extras.export.poi.XlsExport<br /><span class="label label-warning">Warning :</span> don't forget the additional dependency!
+</td>
          <td>
 </td>
          <td>yes</td>
@@ -884,7 +886,8 @@
          <td>export.xlsx.class</td>
          <td>Java class name to use for the XLSX export
 </td>
-         <td>com.github.dandelion.datatables.extras.export.poi.XlsxExport<br /><span class</td>
+         <td>com.github.dandelion.datatables.extras.export.poi.XlsxExport<br /><span class="label label-warning">Warning :</span> don't forget the additional dependency!
+</td>
          <td>
 </td>
          <td>yes</td>
@@ -893,7 +896,8 @@
          <td>export.pdf.class</td>
          <td>Java class name to use for the PDF export
 </td>
-         <td>com.github.dandelion.datatables.extras.export.itext.PdfExport<br /><span class</td>
+         <td>com.github.dandelion.datatables.extras.export.itext.PdfExport<br /><span class="label label-warning">Warning :</span> don't forget the additional dependency!
+</td>
          <td>
 </td>
          <td>yes</td>
@@ -914,7 +918,7 @@
          <th>Name</th>
          <th>Description</th>
          <th>Default</th>
-         <th>Groupable</th>
+         <th width="8%">Groupable</th>
       </tr>
    </thead>
    <tbody>
@@ -932,7 +936,7 @@
       </tr>
       <tr>
          <td>msg.processing</td>
-         <td> Text which is displayed when the table is processing a user action (usually a sort command or similar) 
+         <td>Text which is displayed when the table is processing a user action (usually a sort command or similar) 
 </td>
          <td>"Processing..."
 </td>
@@ -956,7 +960,7 @@
       </tr>
       <tr>
          <td>msg.info</td>
-         <td> This string gives information to the end user about the information that is current on display on the page. The START, END and TOTAL variables are all dynamically replaced as the table display updates, and can be freely moved or removed as the language requirements change
+         <td>This string gives information to the end user about the information that is current on display on the page. The START, END and TOTAL variables are all dynamically replaced as the table display updates, and can be freely moved or removed as the language requirements change
 </td>
          <td>"Showing _START_ to _END_ of _TOTAL_ entries"
 </td>
@@ -972,7 +976,7 @@
       </tr>
       <tr>
          <td>msg.info.filtered</td>
-         <td> When a user filters the information in a table, this string is appended to the information (sInfo) to give an idea of how strong the filtering is. The variable MAX is dynamically updated
+         <td>When a user filters the information in a table, this string is appended to the information (sInfo) to give an idea of how strong the filtering is. The variable MAX is dynamically updated
 </td>
          <td>"(filtered from _MAX_ total entries)"
 </td>
@@ -988,7 +992,7 @@
       </tr>
       <tr>
          <td>msg.loadingrecords</td>
-         <td>   When using Ajax sourced data and during the first draw when DataTables is gathering the data, this message is shown in an empty row in the table to indicate to the end user the data is being loaded. Note that this parameter is not used when loading data by server-side processing, just Ajax sourced data with client-side processing
+         <td>When using Ajax sourced data and during the first draw when DataTables is gathering the data, this message is shown in an empty row in the table to indicate to the end user the data is being loaded. Note that this parameter is not used when loading data by server-side processing, just Ajax sourced data with client-side processing
 </td>
          <td>"Loading..."
 </td>
@@ -996,7 +1000,7 @@
       </tr>
       <tr>
          <td>msg.zerorecords</td>
-         <td>  Text shown inside the table records when the is no information to be displayed after filtering. sEmptyTable is shown when there is simply no information in the table at all (regardless of filtering)   
+         <td>Text shown inside the table records when the is no information to be displayed after filtering. sEmptyTable is shown when there is simply no information in the table at all (regardless of filtering)   
 </td>
          <td>"No matching records found"
 </td>
@@ -1004,7 +1008,7 @@
       </tr>
       <tr>
          <td>msg.emptytable</td>
-         <td> This string is shown in preference to msg.zerorecords when the table is empty of data (regardless of filtering). Note that this is an optional parameter - if it is not given, the value of msg.zerorecords will be used instead (either the default or given value)
+         <td>This string is shown in preference to msg.zerorecords when the table is empty of data (regardless of filtering). Note that this is an optional parameter - if it is not given, the value of msg.zerorecords will be used instead (either the default or given value)
 </td>
          <td>"No data available in table"
 </td>
@@ -1012,7 +1016,7 @@
       </tr>
       <tr>
          <td>msg.paginate.first</td>
-         <td>   Text to use when using the 'full_numbers' type of pagination for the button to take the user to the first page
+         <td>Text to use when using the 'full_numbers' type of pagination for the button to take the user to the first page
 </td>
          <td>"First"
 </td>
@@ -1020,7 +1024,7 @@
       </tr>
       <tr>
          <td>msg.paginate.previous</td>
-         <td>   Text to use for the 'previous' pagination button (to take the user to the previous page)  
+         <td>Text to use for the 'previous' pagination button (to take the user to the previous page)  
 </td>
          <td>"Previous"
 </td>
@@ -1028,7 +1032,7 @@
       </tr>
       <tr>
          <td>msg.paginate.next</td>
-         <td> Text to use for the 'next' pagination button (to take the user to the next page) 
+         <td>Text to use for the 'next' pagination button (to take the user to the next page) 
 </td>
          <td>"Next"
 </td>
@@ -1036,7 +1040,7 @@
       </tr>
       <tr>
          <td>msg.paginate.last</td>
-         <td> Text to use when using the 'full_numbers' type of pagination for the button to take the user to the last page
+         <td>Text to use when using the 'full_numbers' type of pagination for the button to take the user to the last page
 </td>
          <td>"Last"
 </td>
@@ -1106,7 +1110,6 @@ $(document).ready(function () {
    		tables['exports'].fnFilter($(this).val(), 0);
 	});
    	
-	var search = "";
 	if ( window.location.hash !== "" ) {
 		var searchType = window.location.hash.substring( 1 ).split("-")[0];
 		var searchValue = window.location.hash.substring( 1 ).split("-")[1];
@@ -1161,7 +1164,7 @@ $(document).ready(function () {
                      <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
                   </ul>
                </div>
-               <div cl3ss="span3">
+               <div class="span3">
                   <h3>Community</h3>
                   <ul>
                      <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>

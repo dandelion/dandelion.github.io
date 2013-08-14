@@ -14,11 +14,12 @@ level2:
 
 <h5>Manually</h5>
 <p>
-   <a href="/datatables/download.html">Download</a> the JAR and make sure that they are all made available via the application classpath.
+   <a href="/datatables/download.html">Download</a> the needed JARs and make sure that they are all made available via the application classpath.
 </p>
 
 <h5>Using Maven or another build tool</h5>
 <p>
+   {% assign artifact = 'datatables-jsp' %}
    {% include datatables/build-tools.html %}
 </p>
 
@@ -66,21 +67,24 @@ level2:
 
 <h3 class="section-title">With Servlet 2.x compatible containers</h3>
 
-<h4>Steps 1/2/3/4</h4>
+<h4>Steps 1-4</h4>
 <p>
    You need to follow the first four steps described above.
 </p>
 
 <h4>Step 5: Add the backward compatibility dependency</h4>
-<pre class="prettyprint">
-&lt;dependency>
-   &lt;groupId>com.github.dandelion&lt;/groupId>
-   &lt;artifactId>datatables-servlet2&lt;/artifactId>
-   &lt;version>{{ site.dandelion.components.datatables.version }}&lt;/version>
-&lt;/dependency>
-</pre>
+<h5>Manually</h5>
+<p>
+   <a href="/datatables/download.html">Download</a> the <strong>datatables-servlet2</strong> JAR and add it to your classpath.
+</p>
+
+<h5>Using Maven or another build tool</h5>
+<p>
+   {% assign artifact = 'datatables-servlet2' %}
+   {% include datatables/build-tools.html %}
+</p>
     
-<h4>Step 6: Add the Dandelion-DataTables servlet and filter definitions</h4>
+<h4>Step 6: Add the Dandelion-DataTables servlet</h4>
 <p>
    Add the following configuration to your <tt>web.xml</tt>:
 </p>
@@ -102,7 +106,7 @@ level2:
    You can now begin using the taglib! :-)
 </p>
 
-<h3 class="section-title">Optional step : Add a Dandelion-DataTables custom configuration file</h3>
+<h3 class="section-title">Optional step : Add a custom configuration file</h3>
 <p>
    See <a href="/datatables/tutorials/configuration/configuration-loading.html">here for more details</a>!
 </p>

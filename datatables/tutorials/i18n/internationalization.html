@@ -69,7 +69,7 @@ global.msg.info=Affichage de l'élément _START_ à _END_ sur _TOTAL_ éléments
    </ul>
 </div>
 
-<h3 class="section-title">Translating column headers</h3>
+<h3 class="section-title" id="tch">Translating column headers</h3>
 <p>
    It behaves in different ways depending on the template engine used in your application.
 </p>
@@ -123,7 +123,7 @@ global.msg.info=Affichage de l'élément _START_ à _END_ sur _TOTAL_ éléments
 &lt;/table>
 </pre>
 
-<h3 class="section-title">Locale and message default resolution</h3>
+<h3 class="section-title" id="lamdr">Locale and message default resolution</h3>
 <p>
    By default, Dandelion-Datatables uses the {% javadoc dt datatables-core StandardLocaleResolver %} to resolve the locale from the
    <code>HttpServletRequest</code>
@@ -153,7 +153,7 @@ global.msg.info=Affichage de l'élément _START_ à _END_ sur _TOTAL_ éléments
    </ul>
 </p>
 
-<h3 class="section-title">Playing with configuration groups</h3>
+<h3 class="section-title" id="pwcg">Playing with configuration groups</h3>
 <p>
    Since i18n properties are located in the configuration file and since those properties are groupable, you can well imagine making several
    <a href="/datatables/tutorials/configuration/configuration-groups.html">configuration groups</a>.

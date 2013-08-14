@@ -27,7 +27,7 @@ level2:
          <th>Description</th>
          <th>Value(s)</th>
          <th>Default</th>
-         <th>Groupable</th>
+         <th width="8%">Groupable</th>
       </tr>
    </thead>
    <tbody>
@@ -146,8 +146,8 @@ level2:
          <th>Name</th>
          <th>Description</th>
          <th>Value(s)</th>
-         <th>Default</th>
-         <th>Groupable</th>
+         <th width="6%">Default</th>
+         <th width="8%">Groupable</th>
       </tr>
    </thead>
    <tbody>
@@ -204,7 +204,7 @@ level2:
          <th>Description</th>
          <th>Value(s)</th>
          <th>Default</th>
-         <th>Groupable</th>
+         <th width="8%">Groupable</th>
       </tr>
    </thead>
    <tbody>
@@ -352,7 +352,7 @@ level2:
          <th>Description</th>
          <th>Value(s)</th>
          <th>Default</th>
-         <th>Groupable</th>
+         <th width="8%">Groupable</th>
       </tr>
    </thead>
    <tbody>
@@ -407,9 +407,9 @@ level2:
       <tr>
          <th>Name</th>
          <th>Description</th>
-         <th>Value(s)</th>
-         <th>Default</th>
-         <th>Groupable</th>
+         <th width="7%">Value(s)</th>
+         <th width="6%">Default</th>
+         <th width="8%">Groupable</th>
       </tr>
    </thead>
    <tbody>
@@ -486,7 +486,7 @@ level2:
          <th>Description</th>
          <th>Value(s)</th>
          <th>Default</th>
-         <th>Groupable</th>
+         <th width="8%">Groupable</th>
       </tr>
    </thead>
    <tbody>
@@ -555,7 +555,7 @@ level2:
          <th>Name</th>
          <th>Description</th>
          <th>Default</th>
-         <th>Groupable</th>
+         <th width="8%">Groupable</th>
       </tr>
    </thead>
    <tbody>
@@ -715,7 +715,6 @@ $(document).ready(function () {
    		tables['exports'].fnFilter($(this).val(), 0);
 	});
    	
-	var search = "";
 	if ( window.location.hash !== "" ) {
 		var searchType = window.location.hash.substring( 1 ).split("-")[0];
 		var searchValue = window.location.hash.substring( 1 ).split("-")[1];

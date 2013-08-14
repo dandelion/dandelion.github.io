@@ -194,65 +194,66 @@
 
 <h5>Manually</h5>
 <p>
-   <a href="/datatables/download.html">Download</a> the JAR and make sure that they are all made available via the application classpath.
+   <a href="/datatables/download.html">Download</a> the needed JARs and make sure that they are all made available via the application classpath.
 </p>
 
 <h5>Using Maven or another build tool</h5>
 <p>
-   <ul class="nav nav-tabs" id="build-tools-tab-">
-   <li class="active"><a href="#maven-">Maven</a></li>
-   <li><a href="#gradle-">Gradle</a></li>
-   <li><a href="#grails-">Grails</a></li>
-   <li><a href="#ivy-">Ivy</a></li>
-   <li><a href="#grape-">Grape</a></li>
-   <li><a href="#buildr-">Buildr</a></li>
-   <li><a href="#sbt-">SBT</a></li>
+   
+   <ul class="nav nav-tabs" id="build-tools-tab-datatables-jsp">
+   <li class="active"><a href="#maven-datatables-jsp">Maven</a></li>
+   <li><a href="#gradle-datatables-jsp">Gradle</a></li>
+   <li><a href="#grails-datatables-jsp">Grails</a></li>
+   <li><a href="#ivy-datatables-jsp">Ivy</a></li>
+   <li><a href="#grape-datatables-jsp">Grape</a></li>
+   <li><a href="#buildr-datatables-jsp">Buildr</a></li>
+   <li><a href="#sbt-datatables-jsp">SBT</a></li>
 </ul>
 <div class="tab-content">
-   <div class="tab-pane active" id="maven-">
+   <div class="tab-pane active" id="maven-datatables-jsp">
 <pre class="prettyprint">
 &lt;dependency>
     &lt;groupId>com.github.dandelion&lt;/groupId>
-    &lt;artifactId>&lt;/artifactId>
+    &lt;artifactId>datatables-jsp&lt;/artifactId>
     &lt;version>0.9.0&lt;/version>
 &lt;/dependency>
 </pre>
    </div>
-   <div class="tab-pane" id="gradle-">
+   <div class="tab-pane" id="gradle-datatables-jsp">
 <pre class="prettyprint">
-'com.github.dandelion::0.9.0'
+'com.github.dandelion:datatables-jsp:0.9.0'
 </pre>   
    </div>
-   <div class="tab-pane" id="ivy-">
+   <div class="tab-pane" id="ivy-datatables-jsp">
 <pre class="prettyprint">
-&lt;dependency org="com.github.dandelion" name="" rev="0.9.0" />
+&lt;dependency org="com.github.dandelion" name="datatables-jsp" rev="0.9.0" />
 </pre>      
    </div>
-   <div class="tab-pane" id="grape-">
+   <div class="tab-pane" id="grape-datatables-jsp">
 <pre class="prettyprint">
 @Grapes( 
-   @Grab(group='com.github.dandelion', module='', version='0.9.0') 
+   @Grab(group='com.github.dandelion', module='datatables-jsp', version='0.9.0') 
 )
 </pre>      
    </div>
-   <div class="tab-pane" id="buildr-">
+   <div class="tab-pane" id="buildr-datatables-jsp">
 <pre class="prettyprint">
-'com.github.dandelion::jar:0.9.0'
+'com.github.dandelion:datatables-jsp:jar:0.9.0'
 </pre>      
    </div>
-   <div class="tab-pane" id="sbt-">
+   <div class="tab-pane" id="sbt-datatables-jsp">
 <pre class="prettyprint">
-libraryDependencies += "com.github.dandelion" % "" % "0.9.0"
+libraryDependencies += "com.github.dandelion" % "datatables-jsp" % "0.9.0"
 </pre>      
    </div>
-   <div class="tab-pane" id="grails-">
+   <div class="tab-pane" id="grails-datatables-jsp">
 <pre class="prettyprint">
-compile 'com.github.dandelion::0.9.0'
+compile 'com.github.dandelion:datatables-jsp:0.9.0'
 </pre>      
    </div>
 </div>
 <script>
-	$('#build-tools-tab- a').click(function(e) {
+	$('#build-tools-tab-datatables-jsp a').click(function(e) {
 		e.preventDefault();
 		$(this).tab('show');
 	})
@@ -303,21 +304,81 @@ compile 'com.github.dandelion::0.9.0'
 
 <h3 class="section-title">With Servlet 2.x compatible containers</h3>
 
-<h4>Steps 1/2/3/4</h4>
+<h4>Steps 1-4</h4>
 <p>
    You need to follow the first four steps described above.
 </p>
 
 <h4>Step 5: Add the backward compatibility dependency</h4>
+<h5>Manually</h5>
+<p>
+   <a href="/datatables/download.html">Download</a> the <strong>datatables-servlet2</strong> JAR and add it to your classpath.
+</p>
+
+<h5>Using Maven or another build tool</h5>
+<p>
+   
+   <ul class="nav nav-tabs" id="build-tools-tab-datatables-servlet2">
+   <li class="active"><a href="#maven-datatables-servlet2">Maven</a></li>
+   <li><a href="#gradle-datatables-servlet2">Gradle</a></li>
+   <li><a href="#grails-datatables-servlet2">Grails</a></li>
+   <li><a href="#ivy-datatables-servlet2">Ivy</a></li>
+   <li><a href="#grape-datatables-servlet2">Grape</a></li>
+   <li><a href="#buildr-datatables-servlet2">Buildr</a></li>
+   <li><a href="#sbt-datatables-servlet2">SBT</a></li>
+</ul>
+<div class="tab-content">
+   <div class="tab-pane active" id="maven-datatables-servlet2">
 <pre class="prettyprint">
 &lt;dependency>
-   &lt;groupId>com.github.dandelion&lt;/groupId>
-   &lt;artifactId>datatables-servlet2&lt;/artifactId>
-   &lt;version>0.9.0&lt;/version>
+    &lt;groupId>com.github.dandelion&lt;/groupId>
+    &lt;artifactId>datatables-servlet2&lt;/artifactId>
+    &lt;version>0.9.0&lt;/version>
 &lt;/dependency>
 </pre>
+   </div>
+   <div class="tab-pane" id="gradle-datatables-servlet2">
+<pre class="prettyprint">
+'com.github.dandelion:datatables-servlet2:0.9.0'
+</pre>   
+   </div>
+   <div class="tab-pane" id="ivy-datatables-servlet2">
+<pre class="prettyprint">
+&lt;dependency org="com.github.dandelion" name="datatables-servlet2" rev="0.9.0" />
+</pre>      
+   </div>
+   <div class="tab-pane" id="grape-datatables-servlet2">
+<pre class="prettyprint">
+@Grapes( 
+   @Grab(group='com.github.dandelion', module='datatables-servlet2', version='0.9.0') 
+)
+</pre>      
+   </div>
+   <div class="tab-pane" id="buildr-datatables-servlet2">
+<pre class="prettyprint">
+'com.github.dandelion:datatables-servlet2:jar:0.9.0'
+</pre>      
+   </div>
+   <div class="tab-pane" id="sbt-datatables-servlet2">
+<pre class="prettyprint">
+libraryDependencies += "com.github.dandelion" % "datatables-servlet2" % "0.9.0"
+</pre>      
+   </div>
+   <div class="tab-pane" id="grails-datatables-servlet2">
+<pre class="prettyprint">
+compile 'com.github.dandelion:datatables-servlet2:0.9.0'
+</pre>      
+   </div>
+</div>
+<script>
+	$('#build-tools-tab-datatables-servlet2 a').click(function(e) {
+		e.preventDefault();
+		$(this).tab('show');
+	})
+</script>
+</p>
     
-<h4>Step 6: Add the Dandelion-DataTables servlet and filter definitions</h4>
+<h4>Step 6: Add the Dandelion-DataTables servlet</h4>
 <p>
    Add the following configuration to your <tt>web.xml</tt>:
 </p>
@@ -339,7 +400,7 @@ compile 'com.github.dandelion::0.9.0'
    You can now begin using the taglib! :-)
 </p>
 
-<h3 class="section-title">Optional step : Add a Dandelion-DataTables custom configuration file</h3>
+<h3 class="section-title">Optional step : Add a custom configuration file</h3>
 <p>
    See <a href="/datatables/tutorials/configuration/configuration-loading.html">here for more details</a>!
 </p>
@@ -381,7 +442,7 @@ compile 'com.github.dandelion::0.9.0'
                      <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
                   </ul>
                </div>
-               <div cl3ss="span3">
+               <div class="span3">
                   <h3>Community</h3>
                   <ul>
                      <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>

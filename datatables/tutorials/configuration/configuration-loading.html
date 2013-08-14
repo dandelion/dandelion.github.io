@@ -20,7 +20,7 @@ level3:
 
 <h3 class="section-title">Preamble</h3>
 <p>
-   By default, Dandelion-Datatables internally uses a configuration file (<i>datatables-default.properties</i>), containing configuration properties.
+   Dandelion-Datatables internally uses a configuration file (<i>datatables-default.properties</i>), containing configuration properties that are used by default.
 </p>
 <p>
    Those configuration properties can be overriden in multiple ways. This section decribes how.
@@ -28,16 +28,23 @@ level3:
 
 <h3 class="section-title">Loading strategy</h3>
 <p>
-   The configuration loading algorithm is defined as follows:
-   <ol>
-      <li>
-         <p>First, check if the <strong>dandelion.datatables.configuration</strong> system property is defined.</p>
-         <p>If it is, Dandelion-Datatables attempts to convert the value to a URL and tries to load a bundle called <i>datatables.properties</i> with it</p>
-      </li>
-      <li>
-         <p>If no system property is defined, Dandelion-Datatables tries to load a bundle still called <i>datatables.properties</i> from the root of the classpath</p>
-      </li>
-   </ol>
+   You can override the default configuration using a file named <i>datatables.properties</i>. Dandelion-Datatables will load it thanks to the ResourceBundle mechanism and using the following
+   strategy:
+</p>
+<ul>
+   <li>
+      <p>First, check if the <strong>dandelion.datatables.configuration</strong> system property is defined.</p>
+      <p>If it exists, Dandelion-Datatables attempts to convert the value to a URL and use it to load a resource bundle called <i>datatables.properties</i></p>
+   </li>
+   <li>
+      <p>If no system property is defined, Dandelion-Datatables tries to load a resource bundle still called <i>datatables.properties</i> from the root of the classpath</p>
+   </li>
+   <li>
+      If no <i>datatables.properties</i> is found, only the default configuration will be used.
+   </li>
+</ul>
+<p>
+   Note that this strategy can be overriden by <a href="custom-configuration-loader.html">pluging a custom configuration loader</a>.
 </p>
 
 <h3 class="section-title">Example using externalized configuration</h3>
@@ -56,7 +63,7 @@ level3:
 
 <h3 class="section-title">Example using classpath configuration</h3>
 <p>
-   Let's say you're developing a project and building it with Maven. You should have the following structure:
+   Let's say you use Maven to build your project. You should have the following structure:
 <pre class="prettyprint">
    MyApp
    |__ src

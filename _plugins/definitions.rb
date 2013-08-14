@@ -21,7 +21,7 @@ module Jekyll
           path = config['source'] + "/dandelion/_definitions.html"
           if File.exists?(path)
             File.open(path, "r").each_line do |line|
-              @@ddl_definitions[line.split("=")[0]] = line.split("=")[1]
+              @@ddl_definitions[line.split("==")[0]] = line.split("==")[1]
             end
           end
         
@@ -29,7 +29,7 @@ module Jekyll
           path = config['source'] + "/datatables/_definitions.html"
           if File.exists?(path)
             File.open(path, "r").each_line do |line|
-              @@dt_definitions[line.split("=")[0]] = line.split("=")[1]
+              @@dt_definitions[line.split("==")[0]] = line.split("==")[1]
             end
           end 
         
@@ -37,7 +37,7 @@ module Jekyll
           path = config['source'] + "/webanalytics/_definitions.html"
           if File.exists?(path)
             File.open(path, "r").each_line do |line|
-              @@wa_definitions[line.split("=")[0]] = line.split("=")[1]
+              @@wa_definitions[line.split("==")[0]] = line.split("==")[1]
             end
           end    
       end

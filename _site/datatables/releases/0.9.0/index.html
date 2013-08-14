@@ -180,50 +180,104 @@
             <h2 class="page-title">Dandelion-Datatables 0.9.0 change log<span class="release-date">??-??-2013</span></h2>
 
 <h3 class="section-title">Core</h3>
-<p>
-   <ul>
-      <li>AJAX sources
-         <p>From this release, you have to configure yourself the URL used to populate your AJAX-enabled tables (the context path won't be prepended any longer). All existing tutorials have been
-      updated accordingly.
-         </p>
-      </li>
-      <li>More tests
-         <p>
-            More unit tests and integration tests have been added.
-         </p>
-      </li>
-   </ul>
-</p>
+<ul>
+   <li>Added support for <a href="http://localhost:4000/datatables/tutorials/i18n/internationalization.html">Java-based i18n</a> (resource bundle) and provided <a href="http://localhost:4000/datatables/tutorials/i18n/integration-with-other-projects.html">ready-to-use integration with JSTL and Spring</a>. Also added and extension point allowing to plug any other locale and message
+      resolvers
+   </li>
+   <li>Added support for <a href="/datatables/tutorials/configuration/global-configuration.html">global configuration</a> and <a href="/datatables/tutorials/configuration/configuration-groups.html">configuration groups</a>, allowing:
+      <ul>
+         <li>to join together in one properties file a configuration which will be applied on all tables in the application</li>
+         <li>to put together table configurations inside multiple groups that can be then activated locally using tag attributes</li>
+      </ul>
+   </li>
+   <li>
+      Added an extension point for <a href="/datatables/tutorials/advanced/writing-your-own-extension.html">custom extensions</a> (feature, plugin, theme) scanned at runtime
+   </li>
+   <li>
+      Improved sorting and filtering features
+      <ul>
+         <li>Any kind of sort can be enabled thanks to the new <a href="/datatables/docs/ref/jsp/column.html#sortType"><code>sortType</code></a> / <a href="/datatables/docs/ref/thymeleaf/th.html#dt:sortType"><code>dt:sortType</code></a> attributes: currency, natural sort, filesize, "anti-the",...</li>
+         <li>Individual column sorting can be configured in different locations: after the thead, before the thead, in the tfoot or in an external form</li>
+      </ul>
+   </li>
+   <li>
+      Added support for AJAX exports using a new fluent API for building table from a data source
+   </li>
+   <li>
+      Improved DOM-based exports
+   </li>
+   <li>
+      Improved CDN support: it’s now fully configurable <a href="/datatables/docs/ref/configuration/#main-main.cdn">through properties</a> (enablement, css link, js link)
+   </li>
+   <li>
+      Added support for horizontal scrolling
+   </li>
+   <li>
+      Reduced needed third-party libraries (commons-lang removed)
+   </li>
+</ul>
 
 <h3 class="section-title">JSP implementation</h3>
-<p>
-   <ul>
-      <li>New <a href="/datatables/docs/ref/jsp/table.html#titleKey"><code>titleKey</code></a> table attribute, allowing to use a resource key used to lookup the title value of a column.</li>
-      <li>Removed the labels table attribute (nouvelle gestion de l'i18n)
-   </ul>
-</p>
+<ul>
+   <li>Added support for dynamic attributes in <a href="/datatables/docs/ref/jsp/table.html"><code>&lt;datatables:table&gt;</code></a> and <a href="/datatables/docs/ref/jsp/column.html"><code>&lt;datatables:column&gt;</code></a> tags, allowing for example to use any of the native HTML table attributes like border</li>
+   <li>Improved JSP tags composition, allowing e.g. to nest Dandelion-Datatables and JSTL tags</li>
+   <li>Added support for runtime expressions in all attributes of the JSP taglib</li> 
+</ul>
  
 <h3 class="section-title">Thymeleaf implementation</h3>
-<p>
-   <ul>
-      <li>New <a href="/datatables/docs/ref/thymeleaf/table.html#dt:dom"><code>dt:dom</code></a> table attribute</li>
-      <li>New <a href="/datatables/docs/ref/thymeleaf/th.html#dt:selector"><code>dt:selector</code></a> th attribute</li>
-   </ul>
-</p>
+<ul>
+   <li><code>&lt;script></code> and <code>&lt;link></code> generation is now optimized using Thymeleaf</li>
+</ul>
+
+<h3 class="section-title">Spring3 extra</h3>
+<ul>
+   <li>New <a href="/datatables/docs/ref/thymeleaf/table.html#dt:dom"><code>dt:dom</code></a> table attribute</li>
+</ul>
+
+<h3 class="section-title">Spring3 extra</h3>
+<ul>
+   <li>New <a href="/datatables/docs/ref/thymeleaf/table.html#dt:dom"><code>dt:dom</code></a> table attribute</li>
+</ul>
 
 <h3 class="section-title">Closed issues</h3>
-<p>
-   <ul>
-      <li><a href="https://github.com/dandelion/issues/issues/100">Issue 100</a>: Fix base.url configuration point</li>
-      <li><a href="https://github.com/dandelion/issues/issues/101">Issue 101</a>: Add support for cssStyle and cssClass when using AJAX source</li>
-      <li><a href="https://github.com/dandelion/issues/issues/102">Issue 102</a>: "TypeError: oColumn is undefined" on DOM when data is a empty list</li>
-      <li><a href="https://github.com/dandelion/issues/issues/103">Issue 103</a>: Support dynamic value for the column's "visible" attribute</li>
-      <li><a href="https://github.com/dandelion/issues/issues/105">Issue 105</a>: Not all existing properties did appear as "valid"</li>
-      <li><a href="https://github.com/dandelion/issues/issues/106">Issue 106</a>: Add support for sDom parameter</li>
-      <li><a href="https://github.com/dandelion/issues/issues/107">Issue 107</a>: Add support for sSelector parameter of the ColumnFilter plugin</li>
-      <li><a href="https://github.com/dandelion/issues/issues/109">Issue 109</a>: Conflict between the Bootstrap2 theme and basic features enablement</li>
-   </ul>
-</p>
+<ul>
+   <li><a href="https://github.com/dandelion/issues/issues/164">Issue 164</a>: Thymeleaf AJAX handling of URLs ending with json</li>
+   <li><a href="https://github.com/dandelion/issues/issues/162">Issue 162</a>: IOException when using the itext module and an empty table </li>
+   <li><a href="https://github.com/dandelion/issues/issues/157">Issue 157</a>: Improve dependency management</li>
+   <li><a href="https://github.com/dandelion/issues/issues/155">Issue 155</a>: Improve Javadoc for the Spring DatatablesCriteriasResolver</li>
+   <li><a href="https://github.com/dandelion/issues/issues/154">Issue 154</a>: Improve DatatablesCriterias#getFromRequest method</li>
+   <li><a href="https://github.com/dandelion/issues/issues/152">Issue 152</a>: Erroneous regex match in Utils.java</li>
+   <li><a href="https://github.com/dandelion/issues/issues/151">Issue 151</a>: Attributes duplicated in dandelion-datatables.tld</li>
+   <li><a href="https://github.com/dandelion/issues/issues/150">Issue 150</a>: datatables-spring3 criteria resolver does not work with spring 3.1+ if using RequestMappingHandlerMethodAdapter</li>
+   <li><a href="https://github.com/dandelion/issues/issues/149">Issue 149</a>: Bug when displaying native tables and tables with Dandelion-Datatables on the same page</li>
+   <li><a href="https://github.com/dandelion/issues/issues/146">Issue 146</a>: Add Tag support for EL expressions at attribute's values</li>
+   <li><a href="https://github.com/dandelion/issues/issues/144">Issue 144</a>: Customize the values used in the filtering combo box</li>
+   <li><a href="https://github.com/dandelion/issues/issues/143">Issue 143</a>: CDN should be entirely configurable through configuration</li>
+   <li><a href="https://github.com/dandelion/issues/issues/140">Issue 140</a>: StringIndexOutOfBoundsException in StandardConfigurationLoader</li>
+   <li><a href="https://github.com/dandelion/issues/issues/139">Issue 139</a>: ConfigurationStore.getPrototype() fails with "global" group</li>
+   <li><a href="https://github.com/dandelion/issues/issues/138">Issue 138</a>: Replace getParent() by findAncestorWithClass() method</li>
+   <li><a href="https://github.com/dandelion/issues/issues/137">Issue 137</a>: StandardConfigurationLoader doesn't resolve 'global' group</li>
+   <li><a href="https://github.com/dandelion/issues/issues/133">Issue 133</a>: dandelion_dataTables_export layer is inside dataTables_scrollBody layer</li>
+   <li><a href="https://github.com/dandelion/issues/issues/132">Issue 132</a>: Reduce dependencies using home made utility methods</li>
+   <li><a href="https://github.com/dandelion/issues/issues/131">Issue 131</a>: Improve export when using DOM sources</li>
+   <li><a href="https://github.com/dandelion/issues/issues/130">Issue 130</a>: Optimize link and script tags positions</li>
+   <li><a href="https://github.com/dandelion/issues/issues/128">Issue 128</a>: displayLength attribute does not accept expressions</li>
+   <li><a href="https://github.com/dandelion/issues/issues/125">Issue 125</a>: Fix issue with repeated content when using the ColumnHead tag </li>
+   <li><a href="https://github.com/dandelion/issues/issues/118">Issue 118</a>: Remove the Logback dependency from datatables-jsp and datatables-thymeleaf</li>
+   <li><a href="https://github.com/dandelion/issues/issues/117">Issue 117</a>: Bug serverside processing [Thymeleaf]</li>
+   <li><a href="https://github.com/dandelion/issues/issues/116">Issue 116</a>: Add support for more placeholders when using the filtering feature</li>
+   <li><a href="https://github.com/dandelion/issues/issues/115">Issue 115</a>: Make the table's footer optional when using custom filtering form</li>
+   <li><a href="https://github.com/dandelion/issues/issues/113">Issue 113</a>: Add support for global configuration for all tables</li>
+   <li><a href="https://github.com/dandelion/issues/issues/111">Issue 111</a>: dt:filterType="'select'" not working with ajaxsource</li>
+   <li><a href="https://github.com/dandelion/issues/issues/108">Issue 108</a>: Add an extension point allowing users to write and activate their own extensions</li>
+   <li><a href="https://github.com/dandelion/issues/issues/94">Issue 94</a>: Add support for horizontal scrolling</li>
+   <li><a href="https://github.com/dandelion/issues/issues/80">Issue 80</a>: Add the export feature using AJAX sources</li>
+   <li><a href="https://github.com/dandelion/issues/issues/57">Issue 57</a>: Add new FilterTypes in column filtering</li>
+   <li><a href="https://github.com/dandelion/issues/issues/53">Issue 53</a>: Improve sorting</li>
+   <li><a href="https://github.com/dandelion/issues/issues/21">Issue 21</a>: ExportLink not displayed when paging, filtering or info are disabled</li>
+   <li><a href="https://github.com/dandelion/issues/issues/4">Issue 4</a>: Improve i18n support</li>
+   <li><a href="https://github.com/dandelion/issues/issues/1">Issue 1</a>: Add support for more native HTML attributes</li>
+</ul>
 
          </div>
       </div>
@@ -263,7 +317,7 @@
                      <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
                   </ul>
                </div>
-               <div cl3ss="span3">
+               <div class="span3">
                   <h3>Community</h3>
                   <ul>
                      <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>

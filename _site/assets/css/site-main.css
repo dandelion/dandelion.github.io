@@ -23,7 +23,8 @@ code {
 a {
 	color: #65c22f;
 }
-a:hover, a:focus {
+
+a:hover,a:focus {
 	color: #65c22f;
 	text-decoration: underline;
 }
@@ -52,7 +53,7 @@ footer a {
 	color: #00bfff;
 }
 
-footer a:hover, footer a:focus {
+footer a:hover,footer a:focus {
 	color: #00bfff;
 	text-decoration: underline;
 }
@@ -71,9 +72,11 @@ End Footer configuration
 	margin: 10px 0 15px;
 	border-bottom: 1px solid #eeeeee;
 }
-.section-index li{
+
+.section-index li {
 	padding: 5px;
 }
+
 .section-index ul {
 	list-style-type: none;
 }
@@ -98,6 +101,7 @@ End Footer configuration
 	color: #ffffff;
 	text-decoration: none;
 	text-shadow: none;
+	width: 50px;
 }
 
 .navbar .nav>li>a:hover {
