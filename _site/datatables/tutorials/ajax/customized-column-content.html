@@ -231,12 +231,12 @@ function yourFunction(data, type, full) {
             </ul>
          </p>
          <p class="alert alert-info">
-            <strong><i class="icon-info-sign icon-2x"></i></strong> You can use the first parameter (data) of the function if you already use the <a href="/datatables/docs/ref/jsp/column.html#property"><code>property</code></a> (JSP) or <a href="/datatables/docs/ref/thymeleaf/th.html#dt:property"><code>dt:property</code></a> (Thymeleaf) attribute because it internally generates a
+            <strong><i class="icon-info-sign icon-2x"></i></strong> You can use the first parameter (data) of the function if you already use the <a href="/datatables/docs/ref/jsp/column.html#property"><code>property</code></a> (JSP) or  (Thymeleaf) attribute because it internally generates a
             <a href="http://datatables.net/ref#mdata">mData</a> parameter that you can reuse.
          </p>
       </li>
       <li>
-         Step 2: tell <strong>Dandelion-Datatables</strong> you want to use a custom rendering function for a particular column using either the <a href="/datatables/docs/ref/jsp/column.html#renderFunction"><code>renderFunction</code></a> (JSP) or the <a href="/datatables/docs/ref/thymeleaf/th.html#dt:renderFunction"><code>dt:renderFunction</code></a> column attribute. 
+         Step 2: tell <strong>Dandelion-Datatables</strong> you want to use a custom rendering function for a particular column using either the <a href="/datatables/docs/ref/jsp/column.html#renderFunction"><code>renderFunction</code></a> (JSP) or the  column attribute. 
       </li>
    </ul>
 </p>
@@ -309,7 +309,7 @@ function actions(data, type, full) {
          
 <h4>Using Thymeleaf</h4>
 <p>
-   Using Thymeleaf, you can use the <a href="/datatables/docs/ref/thymeleaf/th.html#dt:renderFunction"><code>dt:renderFunction</code></a> th attribute in the same manner.
+   Using Thymeleaf, you can use the  th attribute in the same manner.
 <pre class="prettyprint">
 &lt;table id="myTableId" dt:table="true" dt:url="@{/persons1}" dt:serverSide="true">
    &lt;thead>
@@ -364,7 +364,7 @@ You can find more details <a href="http://www.thymeleaf.org/doc/Tutorial%20-%20U
 
 <h4>Using Thymeleaf</h4>
 <p>
-   Using Thymeleaf, this is quite similar. Just use the <a href="/datatables/docs/ref/thymeleaf/th.html#dt:default"><code>dt:default</code></a> th attribute to override the default empty string.
+   Using Thymeleaf, this is quite similar. Just use the  th attribute to override the default empty string.
 <pre class="prettyprint">
 &lt;table id="myTableId" dt:table="true" dt:url="@{/persons}">
    &lt;thead>

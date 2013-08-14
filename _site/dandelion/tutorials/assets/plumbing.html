@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dandelion Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="java, web, component, library, assets, datatables">
+<meta name="author" content="Dandelion">
+
+<link href="/assets/css/prettify.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
+<!-- <link href="/assets/css/component.css" rel="stylesheet"> -->
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+<!--[if IE 7]>
+      <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
+      <![endif]-->
+<!--[if lt IE 9]>
+      <script src="/assets/js/html5shiv.js"></script>
+      <![endif]-->
+<link href="/assets/css/site-main.css" rel="stylesheet">
+<link href="/assets/css/site-component.css" rel="stylesheet">
+      
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+<link rel="shortcut icon" href="/assets/images/dandelion_square.png">
+
+<script>
+      var _gaq = _gaq || [];
+      _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+      _gaq.push([ '_setCookiePath', '/dandelion/' ]);
+      _gaq.push([ '_trackPageview' ]);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+      			: 'http://www')
+      			+ '.google-analytics.com/ga.js';
+      	var s = document.getElementsByTagName('script')[0];
+      	s.parentNode.insertBefore(ga, s);
+      })();
+</script>
+<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+<script src="/assets/js/site-component.js"></script>
+</head>
+<body>
+   <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+         <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a href="/dandelion">
+               <div id="logo_container">
+                   <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
+                   <p id="logo_text">
+                       core
+                   </p>
+               </div>
+            </a>
+            <div class="nav-collapse collapse">
+               <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
+                  <li class="text-center"><a href="/"><i class="icon-home icon-3x"></i><br/>Home</a></li>
+                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt icon-3x"></i><br />Forum</a></li>
+                  <li class="text-center"><a href="/blog"><i class="icon-comment-alt icon-3x"></i><br />Blog</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug icon-3x"></i><br />Issues</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/dandelion" alt="Dandelion sources"><i class="icon-github icon-3x"></i><br />Sources</a></li>
+               </ul>
+            </div>
+            <!--/.nav-collapse -->
+         </div>
+      </div>
+   </div>
+
+   <div class="container-fluid container-component">
+    <div class="row-fluid">
+	<div class="span2">
+	    <div class="well sidebar-nav">
+		<ul class="nav nav-list">
+
+		    <li class="nav-header">Overview</li>
+		    <li >
+		    <a href="/dandelion"><i class="icon-home"></i> Home</a>
+		    </li>
+		    <li >
+		    <a href="/dandelion/features/" title="Features"><i class="icon-th-list"></i> Features</a>
+		    </li>
+		    <li >
+		    <a href="/dandelion/docs/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+		    </li>
+		    <li >
+		    <a href="/dandelion/releases/" title="Releases"> <i class="icon-tags"></i> Releases</a>
+		    </li>
+
+		    <li class="nav-header">Reference</li>
+		    <li ><a href="/dandelion/docs/ref/jsp/" title="JSP taglib"> JSP taglib
+		</a></li>
+		    <li ><a href="/dandelion/docs/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect
+		</a></li>
+		    <li >
+		    <a href="/dandelion/docs/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration
+		</a></li>
+
+		    <li class="nav-header">Tutorials</li>
+		    <li  class="active">
+		    <a href="/dandelion/tutorials/assets/" title="Assets Stack"> <i class="icon-th"></i> Assets Stack</a>
+		    </li>
+		</ul>
+	    </div>
+	</div>
+	<div class="span10">
+	    <div class="row-fluid">
+		<ul class="breadcrumb hidden-phone">
+   <li><a href="/"><i class="icon-home"></i></a></li>
+   <li><span class="divider">|</span><a href="/dandelion">Dandelion</a></li>
+     
+   
+   <li><span class="divider">|</span><a href="/dandelion/features">Features</a></li>
+   
+     
+   
+   <li><span class="divider">|</span><a href="/dandelion/features/assets">Assets Stack</a></li>
+   
+     
+   
+   <li><span class="divider">|</span><a href="/dandelion/features/assets/storage">Assets Plumbing</a></li>
+   
+   
+   
+   
+   <li class="pull-right">
+      Latest release: <a href="/dandelion/releases/0.2.1/">0.2.1</a>
+   </li>
+</ul>
+		<!--
+  ~ [The "BSD licence"]
+  ~ Copyright (c) 2013 Dandelion
+  ~ All rights reserved.
+  ~
+  ~ Redistribution and use in source and binary forms, with or without
+  ~ modification, are permitted provided that the following conditions
+  ~ are met:
+  ~
+  ~ 1. Redistributions of source code must retain the above copyright
+  ~ notice, this list of conditions and the following disclaimer.
+  ~ 2. Redistributions in binary form must reproduce the above copyright
+  ~ notice, this list of conditions and the following disclaimer in the
+  ~ documentation and/or other materials provided with the distribution.
+  ~ 3. Neither the name of Dandelion nor the names of its contributors
+  ~ may be used to endorse or promote products derived from this software
+  ~ without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+  ~ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+  ~ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+  ~ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+  ~ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+  ~ NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  ~ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  ~ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  ~ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+  ~ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<div id="dandelionassets" class="row-fluid visible-desktop">
+   <div class="span10"><h3 id='dandelion_assets_storage'>Dandelion Assets Storage</h3>
+
+<p>In <strong>Dandelion</strong>, the assets management is based on a <a href='/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorage.html'>Storage Component</a> which provides an API with <em>storage rules</em>.</p>
+
+<h4 id='assetsstorage_public_api'><strong>AssetsStorage</strong> Public API</h4>
+<table class='table table-bordered'>
+	<thead>
+		<tr>
+			<th style='width: 40%'>Method</th>
+			<th style='width: 60%'>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>store (Asset)</td>
+			<td>Store an asset in the <b>default scope</b></td>
+		</tr>
+		<tr>
+			<td>store (Asset, Scope)</td>
+			<td>Store an asset on his scope under <b>Default Parent Scope</b></td>
+		</tr>
+		<tr>
+			<td>store (Asset, Scope, Parent Scope)</td>
+			<td>Store an asset on his scope under his parent scope</td>
+		</tr>
+		<tr>
+		    <td>assetsFor(Array of Scope)</td>
+		    <td>Retrieve all assets for scopes in parameters</td>
+		</tr>
+	</tbody>
+</table>
+<h4 id='assetsstorage_rules'><strong>AssetsStorage</strong> Rules</h4>
+
+<h5 id='store_rules'><strong>Store</strong> Rules</h5>
+
+<ul>
+<li><a href='/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#ASSET_ALREADY_EXISTS_IN_SCOPE'>An asset can&#8217;t be added twice in the same scope</a></li>
+
+<li><a href='/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#ASSET_LOCATION_ALREADY_EXISTS_IN_SCOPE'>A location can&#8217;t be used twice in the same scope by an similar asset</a></li>
+
+<li><a href='/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#UNDEFINED_PARENT_SCOPE'>An asset can&#8217;t have a parent scope which doesn&#8217;t already exist</a></li>
+
+<li><a href='/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#PARENT_SCOPE_INCOMPATIBILITY'>An asset can&#8217;t have a couple of Scope/Parent Scope when its scope is already associated to another parent scope</a></li>
+
+<li><a href='/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsStorageError.html#DETACHED_SCOPE_NOT_ALLOWED'>An asset can&#8217;t use the Detached Scope as his scope, the Detached Scope is only allowed as a Parent Scope</a></li>
+</ul>
+
+<h5 id='access_rules'><strong>Access</strong> Rules</h5>
+
+<p>All assets returned by <strong>assetsFor(&#8230;)</strong> have the following characteristics :</p>
+
+<ul>
+<li><strong>All assets</strong> are returned sorted from the oldest scope to the youngest scope,</li>
+
+<li><strong>Versions</strong> returned are those in the youngest scopes (but always keeping the order of their origin scopes in the case of a change)</li>
+
+<li><strong>Locations</strong> are merged during the course if and only if the version is identical to an asset</li>
+</ul>
+
+<h3 id='dandelion_assets_configurator'>Dandelion Assets Configurator</h3>
+
+<p>The <a href='/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsConfigurator.html'>AssetsConfigurator</a> uses the <a href='/dandelion/ref/configuration/'>assets properties</a> load by <a href='/dandelion/ref/configuration/'>Dandelion Configuration</a>.</p>
+
+<h3 id='dandelion_assets_loader'>Dandelion Assets Loader</h3>
+
+<p>An <a href='/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLoader.html'>AssetsLoader</a> is an interface to load a set of assets from a source. Some <a href='/dandelion/features/assets/loaders.html'>implementations</a> are available : AssetsJsonLoader (default), AssetsNopLoader.</p>
+
+<p>For Dandelion Module Developpers, you can setup your own loader with the property : <code>assets.loader.for.&lt;module&gt;</code>. This way, your loader will be always loaded.</p>
+
+<h3 id='dandelion_assets_location_wrapper'>Dandelion Assets Location Wrapper</h3>
+
+<p>An <a href='/dandelion/ref/javadoc/dandelion-core/com/github/dandelion/core/asset/AssetsLocationWrapper.html'>AssetsLocationWrapper</a> is an interface which wraps a location before retrieving it from <strong>Assets.getAssetLocation(&#8230;)</strong>. Some <a href='/dandelion/features/assets/wrappers.html'>implementations</a> are available for location keys : classpath, delegate, template, webapp, webjars (extras).</p>
+
+<h3 id='dandelion_assets_cache'>Dandelion Assets Cache</h3>
+
+<p>An <a href='/dandelion/features/assets/cache.html'>AssetsCache</a> is an interface to store and distribute the generated content from <strong>cacheable</strong> wrappers.</p></div>
+   <div class="span2">
+      <ul class="nav nav-tabs nav-stacked pull-right hidden-phone" data-spy="affix" data-offset-top="60">
+          <li ><a href="/dandelion/features/assets/index.html">Assets stack</a></li>
+          <li ><a href="/dandelion/features/assets/glossary.html">Glossary</a></li>
+          <li ><a href="/dandelion/features/assets/usages.html">Usages</a></li>
+          <li ><a href="/dandelion/ref/configuration">Configuration</a></li>
+          <li ><a href="/dandelion/features/assets/plumbing.html">Plumbing</a></li>
+          <li ><a href="/dandelion/features/assets/loaders.html">Loaders implementations</a></li>
+          <li ><a href="/dandelion/features/assets/wrappers.html">Wrappers implementations</a></li>
+	  <li ><a href="/dandelion/features/assets/cache.html">Cache System</a></li>
+      </ul>
+   </div>
+</div>
+
+<script>
+$(document).ready(function () {
+   if($('#dandelionassets ul.nav').is(":hidden")){
+      $('#dandelionassets div:eq(0)').removeClass('span10');
+      $('#dandelionassets div:eq(0)').addClass('span12');
+   }
+});   
+</script>
+	    </div>
+	</div>
+    </div>
+</div>
+   
+   <div class="container-fluid area-footer">     
+      <footer class="footer">
+   <div class="container">
+      <div class="row">
+         <div class="span8">
+            
+            <div class="row-fluid">
+               <div class="span3">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="icon-github"></i> Source repository</a></li>
+                     <li><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug"></i> Issue tracker</a></li>
+                     <li><a href="/team"><i class="icon-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="icon-road"></i> Roadmap</a></li>
+                     <li><a href="/acknowledgements/"><i class="icon-info-sign"></i> Acknowledgements</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Components</h3>
+                  <ul>
+                     <li><a href="/dandelion">Dandelion</a></li>
+                     <li><a href="/datatables">Datatables</a></li>
+                     <li><a href="/webanalytics">Webanalytics</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Get started</h3>
+                  <ul>
+                     <li><a href="/faq"> <i class="icon-book"></i> FAQ</a></li>
+                     <li><a href="/samples"><i class="icon-code"></i> Samples</a></li>
+                     <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>
+                     <li><a href="http://dandelion-forum.48353.x6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="icon-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="span4">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="span12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+   </div>
+   
+   <script src="/assets/js/prettify.js"></script>
+   <script src="/assets/js/site-main.js"></script>
+</body>
+</html>

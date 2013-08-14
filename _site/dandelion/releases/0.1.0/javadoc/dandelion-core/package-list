@@ -1,0 +1,10 @@
+com.github.dandelion.core
+com.github.dandelion.core.asset
+com.github.dandelion.core.asset.classpath
+com.github.dandelion.core.asset.delegate
+com.github.dandelion.core.asset.loader
+com.github.dandelion.core.asset.template
+com.github.dandelion.core.asset.web
+com.github.dandelion.core.config
+com.github.dandelion.core.html
+com.github.dandelion.core.utils
