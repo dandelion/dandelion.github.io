@@ -33,7 +33,7 @@ h4 {
 }
 
 /* Alert customization */
-.alert i {
+p.alert i.icon-2x {
 	padding-right: 10px;
 }
 /* End Alert customization */

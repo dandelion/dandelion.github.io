@@ -1,0 +1,83 @@
+---
+layout: datatables
+menu: export
+level1: tutorials
+level2:
+  url: export
+  name: Export
+level3:
+  url: filter-based-exports
+  name: Filter-based exports
+---
+
+<h2 class="page-title">Filter-based exports</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>The export feature was initially designed to work with a servlet
+   filter. The principle is simple: once you click on an export link,
+   the configured servlet filter intercepts the request, retrieve the
+   table and renders it in the format you chose, instead of displaying
+   it in a view. 
+</p>
+<p>
+   This is the fastest way to make exports work. But in return, you
+   won't be able to customize a lot the output file. For example, all data will be
+   rendered, whether the table is paged or not. The same applies for filtering and sorting.
+</p>
+<p>
+   Here follows the guide to set up the filter.   
+</p>
+<p class="alert alert-info">
+   <strong><i class="icon-info-sign icon-2x"></i></strong> 
+   Note that filter-based exports should become deprecated in future versions.
+</p>
+
+<h3 class="section-title" id="sutsf">Setting up the servlet filter</h3>
+<h4>Using Servlet 3.x compatible containers</h4>
+<p>
+   Such as Tomcat 7+, Jetty 8.x+ or JBoss 7.x+, the filter is automatically declared, no other configuration is required. However, ensure that you use the 3.x version of the servlet API in your <code>web.xml</code> file:
+</p>
+<pre class="prettyprint">
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/<strong>web-app_3_0.xsd</strong>" version="<strong>3.0</strong>">
+   ...
+&lt;/web-app>
+</pre>
+
+<h4>Using Servlet 2.x compatible containers</h4>
+<p>
+   Such as Tomcat 6, some configuration is needed.
+</p>
+<p>
+   First, you need to add an extra dependency to your classpath:
+</p>
+<p>
+   {% assign artifact = 'datatables-servlet2' %}
+   {% include datatables/build-tools.html %}
+</p>
+<p>
+   Then, you need to declare the Datatables servlet filter in you <code>web.xml</code> file as follows :
+</p>
+<pre class="prettyprint">
+&lt;!-- Dandelion-Datatables filter definition -->
+&lt;filter>
+   &lt;filter-name>datatablesFilter&lt;/filter-name>
+   &lt;filter-class>com.github.dandelion.datatables.extras.servlet2.filter.DatatablesFilter&lt;/filter-class>
+&lt;/filter>
+
+&lt;!-- Dandelion-Datatables filter mapping -->
+&lt;filter-mapping>
+   &lt;filter-name>datatablesFilter&lt;/filter-name>
+   &lt;url-pattern>/*&lt;/url-pattern>
+&lt;/filter-mapping> 
+</pre>
+
+<p class="alert alert-warn">
+   <strong><i class="icon-warning-sign icon-2x"></i></strong> 
+   Ensure to declare the Datatables servlet filter <strong>after any other filter</strong> that is used to encode your data, as the typical <strong>org.springframework.web.filter.CharacterEncodingFilter</strong>
+</p>
+
+<p>
+   You are now ready to use the JSP taglib or the Thymeleaf dialect to <a href="activating-export.html">activate export</a> in your table.
+</p>

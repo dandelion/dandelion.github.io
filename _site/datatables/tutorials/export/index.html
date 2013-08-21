@@ -123,12 +123,42 @@
                <h5>Tutorials</h5>
                <li >
                   <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+                  
                </li>
                <li  class="active">
                   <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+                  
+                  <ul class="nav nav-list">
+                     <li >
+                        <a href="/datatables/tutorials/export/available-export-formats.html"><i class="icon-double-angle-right"></i> Available export formats</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/export/filter-based-exports.html"><i class="icon-double-angle-right"></i> Filter-based exports</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/export/controller-based-exports.html"><i class="icon-double-angle-right"></i> Controller-based exports</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/export/activating-export.html"><i class="icon-double-angle-right"></i> Activating export</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/export/customizing-export-content.html"><i class="icon-double-angle-right"></i> Customizing export content</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/export/customizing-export-links.html"><i class="icon-double-angle-right"></i> Customizing export links</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/export/customizing-export-url.html"><i class="icon-double-angle-right"></i> Customizing export URL</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/export/configuring-export-classes.html"><i class="icon-double-angle-right"></i> Configuring export classes</a>
+                     </li>
+                  </ul>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
@@ -160,15 +190,15 @@
    <li><span class="divider">|</span><a href="/datatables">Dandelion-Datatables</a></li>
      
    
-   <li><span class="divider">|</span><a href="/datatables/features">Features</a></li>
+   <li><span class="divider">|</span><a href="/datatables/tutorials">Tutorials</a></li>
    
      
    
-   <li><span class="divider">|</span><a href="/datatables/features/export">Export</a></li>
+   <li><span class="divider">|</span><a href="/datatables/tutorials/export">Export</a></li>
    
      
    
-   <li><span class="divider">|</span><a href="/datatables/features/export/"></a></li>
+   <li><span class="divider">|</span><a href="/datatables/tutorials/export/"></a></li>
    
    
    
@@ -177,20 +207,52 @@
       Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a>
    </li>
 </ul>
-            <h3 class='page-title'>Export</h3>
+            <h2 class="page-title">Export</h2>
+<p>
+   Dandelion-Datatables provides two ways to handle table export:
+</p>
 <ul>
-<li><a href='activateexport.html'>Exporting data</a></li>
-
-<li><a href='multiple.html'>Multiple export formats</a></li>
-
-<li><a href='customlink.html'>Adapting export links</a></li>
-
-<li><a href='exportoptions.html'>Export options</a></li>
-
-<li><a href='adaptcontent.html'>Adapt export&#8217;s content</a></li>
-
-<li><a href='ownclass.html'>Write your own export classes</a></li>
+   <li>
+      Either using a servlet filter: fast to set up but not very
+      configurable and only compatible with DOM sources. Use it for
+      basic exports only.
+   </li>
+   <li>
+      Or using a controller: this one offers you a full control over
+      what is exported but requires a bit more work to set up.
+      Compatible with DOM and AJAX sources.
+   </li>
 </ul>
+
+<p>All tutorials in this section: </p>
+<div class="section-index">
+   <ul>
+      <li>
+         <a href="/datatables/tutorials/export/available-export-formats.html"><i class="icon-double-angle-right"></i> Available export formats</a>
+      </li>
+      <li>
+         <a href="/datatables/tutorials/export/filter-based-exports.html"><i class="icon-double-angle-right"></i> Filter-based exports</a>
+      </li>
+      <li>
+         <a href="/datatables/tutorials/export/controller-based-exports.html"><i class="icon-double-angle-right"></i> Controller-based exports</a>
+      </li>
+      <li>
+         <a href="/datatables/tutorials/export/activating-export.html"><i class="icon-double-angle-right"></i> Activating export</a>
+      </li>
+      <li>
+         <a href="/datatables/tutorials/export/customizing-export-content.html"><i class="icon-double-angle-right"></i> Customizing export content</a>
+      </li>
+      <li>
+         <a href="/datatables/tutorials/export/customizing-export-links.html"><i class="icon-double-angle-right"></i> Customizing export links</a>
+      </li>
+      <li>
+         <a href="/datatables/tutorials/export/customizing-export-url.html"><i class="icon-double-angle-right"></i> Customizing export URL</a>
+      </li>
+      <li>
+         <a href="/datatables/tutorials/export/configuring-export-classes.html"><i class="icon-double-angle-right"></i> Configuring export classes</a>
+      </li>
+   </ul>
+</div>
          </div>
       </div>
    </div>

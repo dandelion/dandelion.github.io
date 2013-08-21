@@ -13,10 +13,10 @@ level2:
    The bellowing tables list all the configurable properties that you can use in the <i>datatables.properties</i>.
 </p>
 
-<h3 class="section-title" id="main-configuration">
+<h3 class="section-title" id="mainconfiguration">
    Main configuration properties
    <div class="pull-right">
-      <input id="inputMain" type="text" placeholder="Search configuration...">
+      <input id="inputMain" type="text" placeholder="Search for a configuration......">
    </div>
 </h3>
 <p>
@@ -133,10 +133,10 @@ level2:
 </table>
 </p>
 
-<h3 class="section-title" id="css-configuration">
+<h3 class="section-title" id="cssconfiguration">
    CSS configuration
    <div class="pull-right">
-      <input id="inputCss" type="text" placeholder="Search configuration...">
+      <input id="inputCss" type="text" placeholder="Search for a configuration......">
    </div>
 </h3>
 <p>
@@ -189,11 +189,64 @@ level2:
    </tbody>
 </table>
 </p>
+<p id="themeoptions">
+   Available values for the
+   <code>css.themeOption</code>
+   configuration:
+   <code>blacktie</code>
+   ,
+   <code>blitzer</code>
+   ,
+   <code>cupertino</code>
+   ,
+   <code>darkhive</code>
+   ,
+   <code>dotluv</code>
+   ,
+   <code>eggplant</code>
+   ,
+   <code>excitebike</code>
+   ,
+   <code>flick</code>
+   ,
+   <code>hotsneaks</code>
+   ,
+   <code>humanity</code>
+   ,
+   <code>lefrog</code>
+   ,
+   <code>mintchoc</code>
+   ,
+   <code>overcast</code>
+   ,
+   <code>peppergrinder</code>
+   ,
+   <code>redmond</code>
+   ,
+   <code>smoothness</code>
+   ,
+   <code>southstreet</code>
+   ,
+   <code>start</code>
+   ,
+   <code>sunny</code>
+   ,
+   <code>swankypurse</code>
+   ,
+   <code>trontastic</code>
+   ,
+   <code>uidarkness</code>
+   ,
+   <code>uilightness</code>
+   , and
+   <code>vader</code>
+   .
+</p>
 
-<h3 class="section-title" id="features-configuration">
+<h3 class="section-title" id="featuresconfiguration">
    Features configuration
    <div class="pull-right">
-      <input id="inputFeatures" type="text" placeholder="Search configuration...">
+      <input id="inputFeatures" type="text" placeholder="Search for a configuration......">
    </div>
 </h3>
 <p>
@@ -338,10 +391,10 @@ level2:
 </table>
 </p>
 
-<h3 class="section-title" id="plugins-configuration">
+<h3 class="section-title" id="pluginsconfiguration">
    Plugins configuration
    <div class="pull-right">
-      <input id="inputPlugins" type="text" placeholder="Search configuration...">
+      <input id="inputPlugins" type="text" placeholder="Search for a configuration......">
    </div>
 </h3>
 <p>
@@ -395,10 +448,10 @@ level2:
 </table>
 </p>
 
-<h3 class="section-title" id="ajax-configuration">
+<h3 class="section-title" id="ajaxconfiguration">
    AJAX configuration
    <div class="pull-right">
-      <input id="inputAjax" type="text" placeholder="Search configuration...">
+      <input id="inputAjax" type="text" placeholder="Search for a configuration......">
    </div>
 </h3>
 <p>
@@ -472,10 +525,10 @@ level2:
    </tbody>
 </table>
 
-<h3 class="section-title" id="exports-configuration">
+<h3 class="section-title" id="exportsconfiguration">
    Export configuration
    <div class="pull-right">
-      <input id="inputExports" type="text" placeholder="Search configuration...">
+      <input id="inputExports" type="text" placeholder="Search for a configuration......">
    </div>
 </h3>
 <p>
@@ -493,59 +546,59 @@ level2:
       <tr>
          <td>export.types</td>
          <td>{% def dt export.types %}</td>
-         <td>{% def dt export.types def %}</td>
          <td>{% def dt export.types val %}</td>
+         <td>{% def dt export.types def %}</td>
          <td>yes</td>
       </tr>
       <tr>
          <td>export.links</td>
          <td>{% def dt export.links %}</td>
-         <td>{% def dt export.links def %}</td>
          <td>{% def dt export.links val %}</td>
+         <td>{% def dt export.links def %}</td>
          <td>yes</td>
       </tr>
       <tr>
          <td>export.csv.class</td>
          <td>{% def dt export.csv.class %}</td>
-         <td>{% def dt export.csv.class def %}</td>
          <td>{% def dt export.csv.class val %}</td>
+         <td>{% def dt export.csv.class def %}</td>
          <td>yes</td>
       </tr>
       <tr>
          <td>export.xml.class</td>
          <td>{% def dt export.xml.class %}</td>
-         <td>{% def dt export.xml.class def %}</td>
          <td>{% def dt export.xml.class val %}</td>
+         <td>{% def dt export.xml.class def %}</td>
          <td>yes</td>
       </tr>
       <tr>
          <td>export.xls.class</td>
          <td>{% def dt export.xls.class %}</td>
-         <td>{% def dt export.xls.class def %}</td>
          <td>{% def dt export.xls.class val %}</td>
+         <td>{% def dt export.xls.class def %}</td>
          <td>yes</td>
       </tr>
       <tr>
          <td>export.xlsx.class</td>
          <td>{% def dt export.xlsx.class %}</td>
-         <td>{% def dt export.xlsx.class def %}</td>
          <td>{% def dt export.xlsx.class val %}</td>
+         <td>{% def dt export.xlsx.class def %}</td>
          <td>yes</td>
       </tr>
       <tr>
          <td>export.pdf.class</td>
          <td>{% def dt export.pdf.class %}</td>
-         <td>{% def dt export.pdf.class def %}</td>
          <td>{% def dt export.pdf.class val %}</td>
+         <td>{% def dt export.pdf.class def %}</td>
          <td>yes</td>
       </tr>
    </tbody>
 </table>
 
-<h3 class="section-title" id="i18n-configuration">
+<h3 class="section-title" id="i18nconfiguration">
    I18n configuration
    <div class="pull-right">
-      <input id="inputI18n" type="text" placeholder="Search configuration...">
+      <input id="inputI18n" type="text" placeholder="Search for a configuration......">
    </div>
 </h3>
 <p>
@@ -715,7 +768,7 @@ $(document).ready(function () {
    		tables['exports'].fnFilter($(this).val(), 0);
 	});
    	
-	if ( window.location.hash !== "" ) {
+	if ( window.location.hash !== "" && window.location.hash.indexOf("-") != -1 ) {
 		var searchType = window.location.hash.substring( 1 ).split("-")[0];
 		var searchValue = window.location.hash.substring( 1 ).split("-")[1];
 		
@@ -727,7 +780,7 @@ $(document).ready(function () {
 		tables[searchType].fnFilter(searchValue, 0);
 		
 		// Move window to the right section
-		$('html, body').animate({scrollTop: $('#' + searchType + '-configuration').offset().top}, 1500);
+		$('html, body').animate({scrollTop: $('#' + searchType + 'configuration').offset().top}, 1500);
 	}
 });
 </script>

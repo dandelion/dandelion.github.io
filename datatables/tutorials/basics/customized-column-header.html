@@ -1,0 +1,74 @@
+---
+layout: datatables
+menu: basics
+level1: tutorials
+level2:
+  url: basics
+  name: Basics
+level3:
+  url: customized-column-header
+  name: Customized column header
+---
+
+<h2 class="page-title">Customized column header</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   At times it can be useful to have some HTML code in a column header. A classic use case is the <i>master checkbox</i>.
+</p>
+
+<h3 class="section-title">Using JSP</h3>
+<p>
+   This can be done using the {% refjsp dt columnHead %} tag, which works hand-in-hand with the {% refjsp dt column %} tag.
+</p>
+<p>
+   As soon as you need to customize a column header, you will have to write an unique value in the <code>uid</code> attribute both in the {% refjsp dt columnHead %} tag and in the corresponding {% refjsp dt column %} tag, in order to "link" them together. 
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}" row="person">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+   &lt;datatables:columnHead uid="actionColumn">
+      &lt;input type="checkbox" onclick="$('#myTableId').find(':checkbox').attr('checked', this.checked);" />
+   &lt;/datatables:columnHead>
+   &lt;datatables:column uid="actionColumn" sortable="false" cssCellStyle="text-align:center;">
+      &lt;input type="checkbox" value="${person.id}" />
+   &lt;/datatables:column>
+&lt;/datatables:table>
+</pre>
+
+<h3 class="section-title">Using Thymeleaf</h3>
+<p>
+   Nothing's specific is needed with Thymeleaf since you have full control over the <code>thead</code> section of the table.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+         &lt;th dt:sortable="false">
+            &lt;input type="checkbox" onclick="$('#myTableId').find(':checkbox').attr('checked', this.checked);" />
+         &lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+         &lt;td style="text-align: center;">
+            &lt;input type="checkbox" th:value="${person.id}" />
+         &lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>

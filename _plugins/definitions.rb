@@ -39,7 +39,7 @@ module Jekyll
             File.open(path, "r").each_line do |line|
               @@wa_definitions[line.split("==")[0]] = line.split("==")[1]
             end
-          end    
+          end     
       end
             
       case @args.length
@@ -58,8 +58,9 @@ module Jekyll
           @@ddl_definitions[key + "#" + property]
             
         when "dt" 
-          @@dt_definitions[key + "#" + property]
-                    
+          @teste = Liquid::Template.parse(@@dt_definitions[key + "#" + property])
+          @teste.render
+
         when "wa" 
           @@wa_definitions[key + "#" + property]
       end

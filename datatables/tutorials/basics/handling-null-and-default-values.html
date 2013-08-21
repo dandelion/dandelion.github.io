@@ -1,0 +1,83 @@
+---
+layout: datatables
+menu: basics
+level1: tutorials
+level2:
+  url: basics
+  name: Basics
+level3:
+  url: handling-null-and-default-values
+  name: Handling null/default values
+---
+
+<h2 class="page-title">Handling null/default values</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   There are times when you might want to display a property that is actually null. There are multiple ways to handle this.
+</p>
+
+<h3 class="section-title">Using JSP</h3>
+<p>
+   By default, Dandelion-Datatables displays an empty string when the
+   property of the bean is null. But you can override the empty string
+   using the {% refjsp dt column default %} column attribute.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" default="Nothing to display!" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
+
+<p>
+   Of course, you can still decide to use the {% refjsp dt column %} tag with a body.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City">
+      &lt;c:choose>
+         &lt;c:when test="${address ne null and address.town ne null and address.town.name ne ''}">
+            &lt;c:out value="${address.town.name}" />
+         &lt;/c:when>
+         &lt;c:otherwise>
+            Nothing to display!
+         &lt;/c:otherwise>
+      &lt;/c:choose>
+   &lt;/datatables:column>
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
+
+<h3 class="section-title">Using Thymeleaf</h3>
+<p>
+   Dandelion-Datatables doesn't bring anything here. Just use a native conditionnal operator. :-)
+</p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody th:remove="all-but-first">
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : 'Nothing to display !'">Nobody knows !&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>

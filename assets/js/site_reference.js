@@ -9,10 +9,11 @@ $(document).ready(function () {
 		"sDom": "t",
 		"bSortClasses": false,
 		"bPaginate": false,
-		"aaSorting": [[0,'asc']],
+		"aaSorting": [[0,'asc']]
+		/*,
 		"fnInitComplete": function () {
 			this.fnAdjustColumnSizing();
-		}
+		}*/
 	});
 	
 	if($('#customFilter')){

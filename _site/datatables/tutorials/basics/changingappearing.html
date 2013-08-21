@@ -123,12 +123,55 @@
                <h5>Tutorials</h5>
                <li  class="active">
                   <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+                  
+                  <ul class="nav nav-list">
+                     <li >
+                        <a href="/datatables/tutorials/basics/feature-enablement.html"><i class="icon-double-angle-right"></i> Feature enablement</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/basics/dom-positionning.html"><i class="icon-double-angle-right"></i> DOM positionning</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/basics/using-implicit-objects.html"><i class="icon-double-angle-right"></i> Using implicit objects</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/basics/sorting/"><i class="icon-double-angle-right"></i> Sorting data</a>
+                     </li>
+                     
+                     <li >
+                        <a href="/datatables/tutorials/basics/filtering/"><i class="icon-double-angle-right"></i> Filtering data</a>
+                     </li>
+                     
+                     <li >
+                        <a href="/datatables/tutorials/basics/paging/"><i class="icon-double-angle-right"></i> Paging data</a>
+                     </li>
+                     
+                        
+                     <li >
+                        <a href="/datatables/tutorials/basics/scrolling.html"><i class="icon-double-angle-right"></i> Scrolling</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/basics/displaying-multiple-tables.html"><i class="icon-double-angle-right"></i> Displaying multiple tables</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/basics/handling-null-and-default-values.html"><i class="icon-double-angle-right"></i> Handling null and default values</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/basics/using-a-cdn.html"><i class="icon-double-angle-right"></i> Using a CDN</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/basics/customized-column-header.html"><i class="icon-double-angle-right"></i> Customized column header</a>
+                     </li>
+                  </ul>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
@@ -177,46 +220,47 @@
       Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a>
    </li>
 </ul>
-            <h3 id='basics__changing_tables_appearing'>Basics :: Changing table&#39;s appearing</h3>
+            ### Basics :: Changing table\'s appearing
 
-<p>By default, the table is displayed during the HTML markup and the server-side Javascript generation, sometimes resulting in a ugly display for some milliseconds, depending on browsers.</p>
+By default, the table is displayed during the HTML markup and the server-side Javascript generation, sometimes resulting in a ugly display for some milliseconds, depending on browsers. 
 
-<p>This behaviour can be changed using the <code>appear</code> / <code>dt:appear</code> table attribute (JSP/Thymeleaf).</p>
+This behaviour can be changed using the `appear` / `dt:appear` table attribute (JSP/Thymeleaf).
 
-<p>In the following example, a duration of 1500 milliseconds has been set to the fadeIn animation instead of the default 400 milliseconds but you cal also set the <code>block</code> value to trigger the jQuery show() function.</p>
+In the following example, a duration of 1500 milliseconds has been set to the fadeIn animation instead of the default 400 milliseconds but you cal also set the `block` value to trigger the jQuery show() function.
+
 <br />
-<h4 id='using_jsp'>Using JSP</h4>
+#### Using JSP
 
-<pre><code>&lt;datatables:table id=&quot;myTableId&quot; data=&quot;${persons}&quot; appear=&quot;fadein,1500&quot;&gt;
-   &lt;datatables:column title=&quot;Id&quot; property=&quot;id&quot; /&gt;
-   &lt;datatables:column title=&quot;FirstName&quot; property=&quot;firstName&quot; /&gt;
-   &lt;datatables:column title=&quot;LastName&quot; property=&quot;lastName&quot; /&gt;
-   &lt;datatables:column title=&quot;City&quot; property=&quot;address.town.name&quot; /&gt;
-   &lt;datatables:column title=&quot;Mail&quot; property=&quot;mail&quot; /&gt;
-&lt;/datatables:table&gt;</code></pre>
+	<datatables:table id="myTableId" data="${persons}" appear="fadein,1500">
+	   <datatables:column title="Id" property="id" />
+	   <datatables:column title="FirstName" property="firstName" />
+	   <datatables:column title="LastName" property="lastName" />
+	   <datatables:column title="City" property="address.town.name" />
+	   <datatables:column title="Mail" property="mail" />
+	</datatables:table>
 
-<h4 id='using_thymeleaf'>Using Thymeleaf</h4>
+#### Using Thymeleaf
 
-<pre><code>&lt;table id=&quot;myTable&quot; dt:table=&quot;true&quot; dt:appear=&quot;&#39;fadein,1500&#39;&quot;&gt;
-   &lt;thead&gt;
-      &lt;tr&gt;
-         &lt;th&gt;Id&lt;/th&gt;
-         &lt;th&gt;Firstname&lt;/th&gt;
-         &lt;th&gt;Lastname&lt;/th&gt;
-         &lt;th&gt;City&lt;/th&gt;
-         &lt;th&gt;Mail&lt;/th&gt;
-      &lt;/tr&gt;
-   &lt;/thead&gt;
-   &lt;tbody&gt;
-      &lt;tr th:each=&quot;person : ${persons}&quot;&gt;
-         &lt;td th:text=&quot;${person.id}&quot;&gt;1&lt;/td&gt;
-         &lt;td th:text=&quot;${person.firstName}&quot;&gt;John&lt;/td&gt;
-         &lt;td th:text=&quot;${person.lastName}&quot;&gt;Doe&lt;/td&gt;
-         &lt;td th:text=&quot;${person.address.town.name}&quot;&gt;Nobody knows !&lt;/td&gt;
-         &lt;td th:text=&quot;${person.mail}&quot;&gt;john@doe.com&lt;/td&gt;
-      &lt;/tr&gt;
-   &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
+	<table id="myTable" dt:table="true" dt:appear="'fadein,1500'">
+	   <thead>
+	      <tr>
+	         <th>Id</th>
+	         <th>Firstname</th>
+	         <th>Lastname</th>
+	         <th>City</th>
+	         <th>Mail</th>
+	      </tr>
+	   </thead>
+	   <tbody>
+	      <tr th:each="person : ${persons}">
+	         <td th:text="${person.id}">1</td>
+	         <td th:text="${person.firstName}">John</td>
+	         <td th:text="${person.lastName}">Doe</td>
+	         <td th:text="${person.address.town.name}">Nobody knows !</td>
+	         <td th:text="${person.mail}">john@doe.com</td>
+	      </tr>
+	   </tbody>
+	</table>
          </div>
       </div>
    </div>

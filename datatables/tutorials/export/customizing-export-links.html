@@ -1,0 +1,140 @@
+---
+layout: datatables
+menu: export
+level1: tutorials
+level2:
+  url: export
+  name: Export
+level3:
+  url: customizing-export-links
+  name: Customizing export links
+---
+
+<h2 class="page-title">Customizing export links</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   By defaut, export links are a bit ugly but you can of course customize them to fit your needs.
+</p>
+
+<h3 class="section-title">Styling the links</h3>
+<h4>Using JSP</h4>
+<p>
+   You can use the {% refjsp dt export %} tag to customize the export links. This tag allows you to configure one type of export at a time.
+</p>
+<p>
+   Using this tag, you can for instance add CSS classes to the links or change the link's label.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}" export="csv,xml">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+   &lt;datatables:export type="csv" cssClass="btn btn-success" />
+   &lt;datatables:export type="xml" cssClass="btn btn-info" label="XML export" />
+&lt;/datatables:table>
+</pre>
+
+<h4>Using Thymeleaf</h4>
+<p>
+   Several Thymeleaf attributes are available, allowing you to adapt the CSS style or label of the export links.
+</p>
+<p>
+   To adapt the CSS style of export links, you can use the following <code>tbody</code> attributes:
+</p>
+<ul>
+   <li>{% reftl dt tbody dt:csv:style %} and {% reftl dt tbody dt:csv:class %}: allowing you to set the style or class HTML attributes of the CSV export link</li>
+   <li>{% reftl dt tbody dt:xml:style %} and {% reftl dt tbody dt:xml:class %}: allowing you to set the style or class HTML attributes of the XML export link</li>
+   <li>{% reftl dt tbody dt:pdf:style %} and {% reftl dt tbody dt:pdf:class %}: allowing you to set the style or class HTML attributes of the PDF export link</li>
+   <li>{% reftl dt tbody dt:xls:style %} and {% reftl dt tbody dt:xls:class %}: allowing you to set the style or class HTML attributes of the XLS export link</li>
+   <li>{% reftl dt tbody dt:xlsx:style %} and {% reftl dt tbody dt:xlxs:class %}: allowing you to set the style or class HTML attributes of the XLSX export link</li>
+</ul>
+<p>
+   To adapt the label's link, you can use the following <code>tbody</code> attributes:
+</p>  
+<ul>
+   <li>{% reftl dt tbody dt:csv:label %}: allowing you to set a label for the CSV export link</li>
+   <li>{% reftl dt tbody dt:xml:label %}: allowing you to set a label for the XML export link</li>
+   <li>{% reftl dt tbody dt:pdf:label %}: allowing you to set a label for the PDF export link</li>
+   <li>{% reftl dt tbody dt:xls:label %}: allowing you to set a label for the XLS export link</li>
+   <li>{% reftl dt tbody dt:xlsx:label %}: allowing you to set a label for the XLSX export link</li>
+</ul>
+ 
+<p>
+   In the following example, CSV and XLS links have been customed.
+</p> 
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true" dt:export="xls,csv">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody dt:csv:class="'btn'" dt:xls:class="'btn'" dt:csv:label="'custom label for CSV'" dt:xls:label="'custom label for XLS'">
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !&lt;/td>
+         &lt;td dt:csv="'csv' + ${person.mail}" dt:xls="'xls' + ${person.mail}">
+            &lt;a th:href="${'mailto:' + person.mail}" th:text="${person.mail}">john@doe.com&lt;/a>
+         &lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>
+
+<h3 class="section-title">Adapting links position</h3>
+<h4>Using JSP</h4>
+<p>
+   Depending on your needs, you may want to move links around the table. You can do it using the {% refjsp dt table exportLinks %} table attribute.
+</p>
+<p>
+   Just set on or more values (comma-separated) among <code>top_left</code>, <code>top_middle</code>, <code>top_right</code>, <code>bottom_left</code>, <code>bottom_middle</code> and <code>bottom_right</code>.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="mySecondTableId" data="${persons}" export="csv,xml" exportLinks="top_right,bottom_right">
+    &lt;datatables:column title="Id" property="id" />
+    &lt;datatables:column title="FirstName" property="firstName" />
+    &lt;datatables:column title="LastName" property="lastName" />
+    &lt;datatables:column title="City" property="address.town.name" />
+    &lt;datatables:column title="Mail" property="mail" />
+    &lt;datatables:export type="csv" cssClass="btn btn-info" />
+    &lt;datatables:export type="xml" cssClass="btn btn-info" />
+&lt;/datatables:table>
+</pre>
+
+<h4>Using Thymeleaf</h4>
+<p>
+   Since 0.8.8, you can use the {% reftl dt tbody dt:exportLinks %} table attribute.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTable" dt:table="true" dt:export="pdf,xls,csv" dt:exportLinks="top_right,bottom_right">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody dt:csv:class="'btn btn-success'" dt:xls:class="'btn btn-info'" dt:pdf:class="'btn btn-warning'">
+  	  &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !&lt;/td>
+         &lt;td dt:csv="'csv' + ${person.mail}" dt:xls="'xls' + ${person.mail}">
+            &lt;a th:href="${'mailto:' + person.mail}" th:text="${person.mail}">john@doe.com&lt;/a>
+         &lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>

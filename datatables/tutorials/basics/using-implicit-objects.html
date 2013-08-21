@@ -1,0 +1,135 @@
+---
+layout: datatables
+menu: basics
+level1: tutorials
+level2:
+  url: basics
+  name: Basics
+level3:
+  url: using-implicit-objects
+  name: Using implicit objects
+---
+
+<h2 class="page-title">Using implicit objects</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   Dandelion-Datatables make some implicit objects available in the page scope. Let us look at these.
+</p>
+
+<h3 class="section-title" id="atobio">Accessing the object being iterated on</h3>
+<p>
+   It can be handy if you need to decorate the object to display.
+</p>
+
+<h4>Using JSP</h4>
+<p>
+   You will be able to access the object being iterated on thanks to the {% refjsp dt table row %} table attribute. Just give a name under which you will refer the object in column bodies.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}" row="person">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail">
+      &lt;a href="mailto:${person.mail}">${person.mail}&lt;/a>
+   &lt;/datatables:column>
+&lt;/datatables:table>
+</pre>
+
+<h4>Using Thymeleaf</h4>
+<p>
+   Actually, Dandelion-Datatables brings nothing here. Thymeleaf already allows you to access the object being iterated on thanks to the <code>th:each</code> attribute. See the <a href="http://www.thymeleaf.org/usingthymeleaf.html">documentation</a> for more details.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
+         &lt;td>&lt;a th:href="${'mailto:' + person.mail}" th:text="${person.mail}">john@doe.com&lt;/a>&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>
+
+<h3 class="section-title" id="atcri">Accessing the current row index</h3>
+<p>
+   There are times when you might need to access the row index.
+</p>
+
+<h4>Using JSP</h4>
+<p>
+   Dandelion-Datatables makes available the row index through the {% refjsp dt table row %} table attribute. The object accessed thanks to this attribute has a property called <code>_rowIndex</code>. Just use it as follows:
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}" row="person">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Row index">
+      Row index : &lt;c:out value="${person_rowIndex}" />
+   &lt;/datatables:column>
+&lt;/datatables:table>
+</pre>
+
+<h4>Using Thymeleaf</h4>
+<p>
+   Once again, Dandelion-Datatables adds nothing here. Thymeleaf already offers a mechanism useful for keeping track of the status of the iteration. See <a href="http://www.thymeleaf.org/doc/html/Using-Thymeleaf.html#keeping-iteration-status">more details here</a>.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Row index&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person,iterStat : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
+         &lt;td th:text="${iterStat.index}">0&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>
+
+<h3 class="section-title" id="atcd">Accessing the created DataTable</h3>
+<p>
+   The last object made accessible by Dandelion-Datatables is finally a Javascript object: the DataTable.
+</p>
+<p>
+   Indeed, when you use the JSP taglib or the Thymeleaf dialect, Dandelion-Datatables generates the DataTable configuration using the table's id as follows:
+</p>
+<pre class="prettyprint">
+var oTable_[tableId];
+var oTable_[tableId]_params = {...};
+$(document).ready(function(){
+   oTable_[tableId] = $('#[tableId]').dataTable(oTable_[tableId]_params);
+});
+</pre>
+<p>
+   This means you can access the created DataTable object through the name <code>oTable_[tableId]</code>.
+</p>
+<p>
+   See the tutorial about <a href="/datatables/tutorials/advanced/using-extra-files.html">extra Javascript files</a> for example usage.
+</p>

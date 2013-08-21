@@ -114,28 +114,25 @@
                   
                   <ul class="nav nav-list">
                      <li >
-                        <a href="/datatables/docs/ref/configuration#main-configuration"><i class="icon-double-angle-right"></i> Main</a>
+                        <a href="/datatables/docs/ref/configuration#mainconfiguration"><i class="icon-double-angle-right"></i> Main</a>
                      </li>
                      <li >
-                        <a href="/datatables/docs/ref/configuration#css-configuration"><i class="icon-double-angle-right"></i> CSS</a>
+                        <a href="/datatables/docs/ref/configuration#cssconfiguration"><i class="icon-double-angle-right"></i> CSS</a>
                      </li>
                      <li >
-                        <a href="/datatables/docs/ref/configuration#features-configuration"><i class="icon-double-angle-right"></i> Features</a>
+                        <a href="/datatables/docs/ref/configuration#featuresconfiguration"><i class="icon-double-angle-right"></i> Features</a>
                      </li>
                      <li >
-                        <a href="/datatables/docs/ref/configuration#plugins-configuration"><i class="icon-double-angle-right"></i> Plugins</a>
+                        <a href="/datatables/docs/ref/configuration#pluginsconfiguration"><i class="icon-double-angle-right"></i> Plugins</a>
                      </li>
                      <li >
-                        <a href="/datatables/docs/ref/configuration#extras-configuration"><i class="icon-double-angle-right"></i> Extras</a>
+                        <a href="/datatables/docs/ref/configuration#ajaxconfiguration"><i class="icon-double-angle-right"></i> AJAX</a>
                      </li>
                      <li >
-                        <a href="/datatables/docs/ref/configuration#ajax-configuration"><i class="icon-double-angle-right"></i> AJAX</a>
+                        <a href="/datatables/ref/configuration/#exportconfiguration"><i class="icon-double-angle-right"></i> Export</a>
                      </li>
                      <li >
-                        <a href="/datatables/ref/configuration/#export-configuration"><i class="icon-double-angle-right"></i> Export</a>
-                     </li>
-                     <li >
-                        <a href="/datatables/docs/ref/configuration/#i18n-configuration"><i class="icon-double-angle-right"></i> I18n</a>
+                        <a href="/datatables/docs/ref/configuration/#i18nconfiguration"><i class="icon-double-angle-right"></i> I18n</a>
                      </li>
                   </ul>
                   
@@ -150,12 +147,15 @@
                <h5>Tutorials</h5>
                <li >
                   <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
@@ -211,10 +211,10 @@
    The bellowing tables list all the configurable properties that you can use in the <i>datatables.properties</i>.
 </p>
 
-<h3 class="section-title" id="main-configuration">
+<h3 class="section-title" id="mainconfiguration">
    Main configuration properties
    <div class="pull-right">
-      <input id="inputMain" type="text" placeholder="Search configuration...">
+      <input id="inputMain" type="text" placeholder="Search for a configuration......">
    </div>
 </h3>
 <p>
@@ -231,7 +231,7 @@
    <tbody>
       <tr>
          <td>main.extension.package</td>
-         <td>
+         <td>Common parent package for all custom extensions
 </td>
          <td>
 </td>
@@ -241,7 +241,7 @@
       </tr>
       <tr>
          <td>main.extension.names</td>
-         <td>Comma-separated list of custom extensions to register in the current. Note that the extensions must be scanned using the base.package configuration.
+         <td>Comma-separated list of names of custom extensions to register in the current table. Note that the extensions must be scanned using the <a href="/datatables/docs/ref/configuration/#main-main.extension.package"><code>main.extension.package</code></a> configuration.
 </td>
          <td>
 </td>
@@ -370,10 +370,10 @@
 </table>
 </p>
 
-<h3 class="section-title" id="css-configuration">
+<h3 class="section-title" id="cssconfiguration">
    CSS configuration
    <div class="pull-right">
-      <input id="inputCss" type="text" placeholder="Search configuration...">
+      <input id="inputCss" type="text" placeholder="Search for a configuration......">
    </div>
 </h3>
 <p>
@@ -432,7 +432,7 @@
          <td>css.themeOption</td>
          <td>Name of an option to activate in relation to the current activated theme. 
 </td>
-         <td>See the <a href="#themeoptions">full list</a>
+         <td>See the <a href="/datatables/docs/ref/configuration/#themeoptions">full list</a>
 </td>
          <td>
 </td>
@@ -441,11 +441,64 @@
    </tbody>
 </table>
 </p>
+<p id="themeoptions">
+   Available values for the
+   <code>css.themeOption</code>
+   configuration:
+   <code>blacktie</code>
+   ,
+   <code>blitzer</code>
+   ,
+   <code>cupertino</code>
+   ,
+   <code>darkhive</code>
+   ,
+   <code>dotluv</code>
+   ,
+   <code>eggplant</code>
+   ,
+   <code>excitebike</code>
+   ,
+   <code>flick</code>
+   ,
+   <code>hotsneaks</code>
+   ,
+   <code>humanity</code>
+   ,
+   <code>lefrog</code>
+   ,
+   <code>mintchoc</code>
+   ,
+   <code>overcast</code>
+   ,
+   <code>peppergrinder</code>
+   ,
+   <code>redmond</code>
+   ,
+   <code>smoothness</code>
+   ,
+   <code>southstreet</code>
+   ,
+   <code>start</code>
+   ,
+   <code>sunny</code>
+   ,
+   <code>swankypurse</code>
+   ,
+   <code>trontastic</code>
+   ,
+   <code>uidarkness</code>
+   ,
+   <code>uilightness</code>
+   , and
+   <code>vader</code>
+   .
+</p>
 
-<h3 class="section-title" id="features-configuration">
+<h3 class="section-title" id="featuresconfiguration">
    Features configuration
    <div class="pull-right">
-      <input id="inputFeatures" type="text" placeholder="Search configuration...">
+      <input id="inputFeatures" type="text" placeholder="Search for a configuration......">
    </div>
 </h3>
 <p>
@@ -496,7 +549,7 @@
 </td>
          <td>head_before|head_after|foot|none
 </td>
-         <td>
+         <td>foot
 </td>
          <td>yes</td>
       </tr>
@@ -644,10 +697,10 @@
 </table>
 </p>
 
-<h3 class="section-title" id="plugins-configuration">
+<h3 class="section-title" id="pluginsconfiguration">
    Plugins configuration
    <div class="pull-right">
-      <input id="inputPlugins" type="text" placeholder="Search configuration...">
+      <input id="inputPlugins" type="text" placeholder="Search for a configuration......">
    </div>
 </h3>
 <p>
@@ -716,10 +769,10 @@
 </table>
 </p>
 
-<h3 class="section-title" id="ajax-configuration">
+<h3 class="section-title" id="ajaxconfiguration">
    AJAX configuration
    <div class="pull-right">
-      <input id="inputAjax" type="text" placeholder="Search configuration...">
+      <input id="inputAjax" type="text" placeholder="Search for a configuration......">
    </div>
 </h3>
 <p>
@@ -814,10 +867,10 @@
    </tbody>
 </table>
 
-<h3 class="section-title" id="exports-configuration">
+<h3 class="section-title" id="exportsconfiguration">
    Export configuration
    <div class="pull-right">
-      <input id="inputExports" type="text" placeholder="Search configuration...">
+      <input id="inputExports" type="text" placeholder="Search for a configuration......">
    </div>
 </h3>
 <p>
@@ -836,9 +889,9 @@
          <td>export.types</td>
          <td>Comma-separated list of allowed export types
 </td>
-         <td>
-</td>
          <td>csv|xml|pdf|xls|xlsx
+</td>
+         <td>
 </td>
          <td>yes</td>
       </tr>
@@ -846,69 +899,69 @@
          <td>export.links</td>
          <td>Comma-separated list of positions where the export links will be generated
 </td>
-         <td>top_right
-</td>
          <td>top_left| top_middle| top_right| bottom_left| bottom_middle| bottom_right
+</td>
+         <td>top_right
 </td>
          <td>yes</td>
       </tr>
       <tr>
          <td>export.csv.class</td>
-         <td>Java class name to use for the CSV export
+         <td>Java class name used to export in the CSV format
+</td>
+         <td>Any class that implements Liquid error: undefined method `config' for nil:NilClass
 </td>
          <td>com.github.dandelion.datatables.core.export.CsvExport
-</td>
-         <td>
 </td>
          <td>yes</td>
       </tr>
       <tr>
          <td>export.xml.class</td>
-         <td>Java class name to use for the XML export
+         <td>Java class name used to export in the XML format
+</td>
+         <td>Any class that implements Liquid error: undefined method `config' for nil:NilClass
 </td>
          <td>com.github.dandelion.datatables.core.export.XmlExport
-</td>
-         <td>
 </td>
          <td>yes</td>
       </tr>
       <tr>
          <td>export.xls.class</td>
-         <td>Java class name to use for the XLS export
+         <td>Java class name used to export in the XLS format
 </td>
-         <td>com.github.dandelion.datatables.extras.export.poi.XlsExport<br /><span class="label label-warning">Warning :</span> don't forget the additional dependency!
+         <td>Any class that implements Liquid error: undefined method `config' for nil:NilClass
 </td>
-         <td>
+         <td>com.github.dandelion.datatables.extras.export.poi.XlsExport<br /><span class="label label-warning">Warning!</span> don't forget the additional dependency!
 </td>
          <td>yes</td>
       </tr>
       <tr>
          <td>export.xlsx.class</td>
-         <td>Java class name to use for the XLSX export
+         <td>Java class name used to export in the XLSX format
 </td>
-         <td>com.github.dandelion.datatables.extras.export.poi.XlsxExport<br /><span class="label label-warning">Warning :</span> don't forget the additional dependency!
+         <td>Any class that implements Liquid error: undefined method `config' for nil:NilClass
 </td>
-         <td>
+         <td>com.github.dandelion.datatables.extras.export.poi.XlsxExport<br /><span class="label label-warning">Warning!</span> don't forget the additional dependency!
 </td>
          <td>yes</td>
       </tr>
       <tr>
          <td>export.pdf.class</td>
-         <td>Java class name to use for the PDF export
+         <td>Java class name used to export in the PDF format
 </td>
-         <td>com.github.dandelion.datatables.extras.export.itext.PdfExport<br /><span class="label label-warning">Warning :</span> don't forget the additional dependency!
+         <td>Any class that implements Liquid error: undefined method `config' for nil:NilClass
 </td>
-         <td>
+         <td>com.github.dandelion.datatables.extras.export.itext.PdfExport<br /><span class="label label-warning">Warning!</span> don't forget the additional dependency!
 </td>
          <td>yes</td>
       </tr>
    </tbody>
 </table>
 
-<h3 class="section-title" id="i18n-configuration">
+<h3 class="section-title" id="i18nconfiguration">
    I18n configuration
    <div class="pull-right">
-      <input id="inputI18n" type="text" placeholder="Search configuration...">
+      <input id="inputI18n" type="text" placeholder="Search for a configuration......">
    </div>
 </h3>
 <p>
@@ -1110,7 +1163,7 @@ $(document).ready(function () {
    		tables['exports'].fnFilter($(this).val(), 0);
 	});
    	
-	if ( window.location.hash !== "" ) {
+	if ( window.location.hash !== "" && window.location.hash.indexOf("-") != -1 ) {
 		var searchType = window.location.hash.substring( 1 ).split("-")[0];
 		var searchValue = window.location.hash.substring( 1 ).split("-")[1];
 		
@@ -1122,7 +1175,7 @@ $(document).ready(function () {
 		tables[searchType].fnFilter(searchValue, 0);
 		
 		// Move window to the right section
-		$('html, body').animate({scrollTop: $('#' + searchType + '-configuration').offset().top}, 1500);
+		$('html, body').animate({scrollTop: $('#' + searchType + 'configuration').offset().top}, 1500);
 	}
 });
 </script>

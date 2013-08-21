@@ -23,10 +23,14 @@ menu: faq
                         <li><a href="#snapshot">How to use a SNAPSHOT version of a Dandelion module?</a></li>
                         <li><a href="#contributing">How can I contribute to Dandelion?</a></li>
                         <li><a href="#bug">I have found a bug, where can I report it? (TODO)</a></li>
+                        <li><a href="#productionready">Is it stable? Can it be considered production-ready?</a></li>
                      </ul>
+                  </li>
+                  <li>
                      <h4>Dandelion Datatables</h4>
                      <ul>
-                        <li><a href="#domajax">Can I use the exact same configuration with DOM and AJAX sources? (TODO)</a></li>
+                        <li><a href="#domajax">Can I use the exact same configuration with DOM and AJAX sources?</a></li>
+                        <li><a href="#thymeleafquote">When do I need to wrap the value of a Thymeleaf attribute in single quotes?</a></li>
                      </ul>
                   </li>
                </ul>
@@ -108,7 +112,77 @@ menu: faq
                      <li>you can write articles, tutorials, blog posts, reviews or anything else about Dandelion</li>
                      <li>you can promote Dandelion in your company or among your (nerdy) friends/colleagues</li>
                      <li>you can follow us on <a href="{{ site.twitter }}">Twitter</a></li>
+                     <li>French people are known for their catastrophic skills in foreign languages: you can also help us fixing typos in the whole documentation :-)</li>
                   </ul>
+               </p>
+            </section>
+            
+            <section>
+               <h3 id="productionready" class="section-title">Is it stable? Can it be considered production-ready?</h3>
+               <p>
+                  Not yet. You may consider Dandelion (and any of its component) as production-ready as soon as a v1.0.0 is released.
+               </p>
+            </section>
+            
+            <section>
+               <h3 id="domajax" class="section-title">Can I use the exact same configuration with DOM and AJAX sources?</h3>
+               <p>
+                  No you can't. With DOM sources (i.e. when you set some
+                  collection in the page scope), the creation of the
+                  <code>table</code>
+                  HTML tag and all its content is entirely managed by
+                  Dandelion-Datatables.
+               </p>
+               <p>Whereas when using AJAX sources, Dandelion-Datatables
+                  is limited to the thead section of the table. The
+                  creation of the tbody section of the table is
+                  delegated to DataTables. 
+               </p>
+               <p>All the tag references display a "Data source
+                  compatibility" column, helping you to choose the right
+                  attribute, depending on the data source you use.</p>
+            </section>
+            
+            <section>
+               <h3 id="thymeleafquote" class="section-title">When do I need to wrap the value of a Thymeleaf attribute in single quotes?</h3>
+               <p>
+                  You may already have encountered the following error when using the Dandelion-Datatables' dialect in one of your Thymeleaf template:
+               </p>
+<pre class="prettyprint">
+org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "some-expression" (your-template:linenum)
+</pre>
+               <p>
+                  This error is typically raised when you try to use a
+                  string in a Thymeleaf attribute which is processed by
+                  the Thymeleaf standard expression processor. The
+                  solution is simple: wrap the value in single quotes.
+               </p>  
+               <p>
+                  But why no error is raised in the following example because of the <code>dt:sortdir</code> attribute?
+               </p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th dt:sortdir="desc,asc">Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   ...
+&lt;/table>
+</pre>
+               <p>
+                  The reason is simple. All attributes which need a
+                  predefined value (e.g. coming from a Java enumeration)
+                  don't need to be processed by Thymeleaf. They're
+                  evaluted as such. This means you can either use a
+                  Thymeleaf expression or a plain String.
+               </p>
+               <p>
+                  The same applies if a Thymeleaf attribute can hold a comma-separated set of predefined values.
                </p>
             </section>
          </div>

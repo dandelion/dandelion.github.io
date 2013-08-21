@@ -14,22 +14,22 @@ level3:
 
 <h2 class="page-title">ColumnHead tag</h2>
 <h3 class="section-title">Usage</h3>
-<p>The ColumnHead tag allows you to fill in a column header with a more complex content thant a simple title.</p> 
+<p>The ColumnHead tag allows you to fill in a column header with a more complex content than a simple title.</p> 
 <p>Here are the steps you need to follow to use this tag:</p>
 <ol>
    <li>
-      Write anything inside the <code>ColumnHead</code> tag but remember to set the {% refjsp dt columnhead uid %} attribute, which is an arbitrary id for the column.
+      Write anything inside the <code>ColumnHead</code> tag but remember to set the {% refjsp dt columnhead uid %} attribute, which is an arbitrary unique id for the column.
 <pre class="prettyprint">
 &lt;datatables:columnHead uid="anyStringHere">
-   &lt;%-- Anything you want here ! (e.g. a master checkbox) --%>
+   &lt;%-- Anything you want here! (e.g. a master checkbox) --%>
 &lt;/datatables:columnHead>
 </pre>
    </li>
    <li>
-      In the associated column, don't forget to set the <code>uid</code> again, with the <strong>same value</strong> you previously chose.
+      In the associated column, don't forget to set the <code>uid</code> again, with the <strong>same value</strong> you previously set in the <code>uid</code> attribute of the <code>ColumnHead</code> tag.
 <pre class="prettyprint">
 &lt;datatables:column uid="anyStringHere">
-   &lt;%-- Anything you want here ! (e.g. a checkbox) --%>
+   &lt;%-- Anything you want here! (e.g. a checkbox) --%>
 &lt;/datatables:column>
 </pre>
    </li>
@@ -38,7 +38,7 @@ level3:
 <h3 class="section-title">
    Reference
    <div class="custom-filter" style="float:right;">
-      <input id="customFilter" type="text" placeholder="Search attribute...">
+      <input id="customFilter" type="text" placeholder="Search for an attribute...">
    </div>
 </h3>
 
@@ -63,5 +63,5 @@ level3:
   </tbody>
 </table>
 
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
 <script src="/assets/js/site_reference.js"></script>

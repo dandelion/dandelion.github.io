@@ -1,13 +1,15 @@
+---
+---
 i18n.locale.resolver#desc==
 i18n.locale.resolver#val==Any class implementing com.github.dandelion.datatables.core.i18n.LocaleResolver
 i18n.locale.resolver#def==com. github. dandelion. datatables. core. i18n. StandardLocaleResolver
 i18n.message.resolver#desc==
 i18n.message.resolver#val==Any class implementing com. github. dandelion. datatables. core. i18n. MessageResolver
 i18n.message.resolver#def==com. github. dandelion. datatables. jsp. i18n. JstlMessageResolver if the JSTL Jar is present in the classpath
-main.extension.package#desc==
+main.extension.package#desc==Common parent package for all custom extensions
 main.extension.package#val==
 main.extension.package#def==
-main.extension.names#desc==Comma-separated list of custom extensions to register in the current. Note that the extensions must be scanned using the base.package configuration.
+main.extension.names#desc==Comma-separated list of names of custom extensions to register in the current table. Note that the extensions must be scanned using the <a href="/datatables/docs/ref/configuration/#main-main.extension.package"><code>main.extension.package</code></a> configuration.
 main.extension.names#val==
 main.extension.names#def==
 main.aggregator.enable#desc==Enable or disable the web resources aggregation  
@@ -59,7 +61,7 @@ css.theme#desc==Name of a theme to activate for the current table
 css.theme#val==bootstrap2 | jqueryui
 css.theme#def==
 css.themeOption#desc==Name of an option to activate in relation to the current activated theme. 
-css.themeOption#val==See the <a href="#themeoptions">full list</a>
+css.themeOption#val==See the <a href="/datatables/docs/ref/configuration/#themeoptions">full list</a>
 css.themeOption#def==
 feature.info#desc==Enable or disable the table information display. This shows information about the data that is currently visible on the page, including information about filtered data if that action is being performed
 feature.info#val==true|false
@@ -72,7 +74,7 @@ feature.filter#val==true|false
 feature.filter#def==true
 feature.filterplaceholder#desc==Placeholder used to hold the individual column filtering elements
 feature.filterplaceholder#val==head_before|head_after|foot|none
-feature.filterplaceholder#def==
+feature.filterplaceholder#def==foot
 feature.paginate#desc==Enable or disable pagination
 feature.paginate#val==true|false
 feature.paginate#def==true
@@ -160,20 +162,20 @@ export.links#def==top_right
 export.types#desc==Comma-separated list of allowed export types
 export.types#val==csv|xml|pdf|xls|xlsx
 export.types#def==
-export.csv.class#desc==Java class name to use for the CSV export
-export.csv.class#val==
+export.csv.class#desc==Java class name used to export in the CSV format
+export.csv.class#val==Any class that implements {% javadoc dt datatables-core DatatablesExport %}
 export.csv.class#def==com.github.dandelion.datatables.core.export.CsvExport
-export.pdf.class#desc==Java class name to use for the PDF export
-export.pdf.class#val==
-export.pdf.class#def==com.github.dandelion.datatables.extras.export.itext.PdfExport<br /><span class="label label-warning">Warning :</span> don't forget the additional dependency!
-export.xls.class#desc==Java class name to use for the XLS export
-export.xls.class#val==
-export.xls.class#def==com.github.dandelion.datatables.extras.export.poi.XlsExport<br /><span class="label label-warning">Warning :</span> don't forget the additional dependency!
-export.xlsx.class#desc==Java class name to use for the XLSX export
-export.xlsx.class#val==
-export.xlsx.class#def==com.github.dandelion.datatables.extras.export.poi.XlsxExport<br /><span class="label label-warning">Warning :</span> don't forget the additional dependency!
-export.xml.class#desc==Java class name to use for the XML export
-export.xml.class#val==
+export.pdf.class#desc==Java class name used to export in the PDF format
+export.pdf.class#val==Any class that implements {% javadoc dt datatables-core DatatablesExport %}
+export.pdf.class#def==com.github.dandelion.datatables.extras.export.itext.PdfExport<br /><span class="label label-warning">Warning!</span> don't forget the additional dependency!
+export.xls.class#desc==Java class name used to export in the XLS format
+export.xls.class#val==Any class that implements {% javadoc dt datatables-core DatatablesExport %}
+export.xls.class#def==com.github.dandelion.datatables.extras.export.poi.XlsExport<br /><span class="label label-warning">Warning!</span> don't forget the additional dependency!
+export.xlsx.class#desc==Java class name used to export in the XLSX format
+export.xlsx.class#val==Any class that implements {% javadoc dt datatables-core DatatablesExport %}
+export.xlsx.class#def==com.github.dandelion.datatables.extras.export.poi.XlsxExport<br /><span class="label label-warning">Warning!</span> don't forget the additional dependency!
+export.xml.class#desc==Java class name used to export in the XML format
+export.xml.class#val==Any class that implements {% javadoc dt datatables-core DatatablesExport %}
 export.xml.class#def==com.github.dandelion.datatables.core.export.XmlExport
 msg.aria.sortasc#desc==ARIA label that is added to the table headers when the column may be sorted ascending by activing the column (click or return when focused). Note that the column header is prefixed to this string
 msg.aria.sortasc#val==

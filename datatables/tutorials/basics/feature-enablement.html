@@ -1,0 +1,103 @@
+---
+layout: datatables
+menu: basics
+level1: tutorials
+level2:
+  url: basics
+  name: Basics
+level3:
+  url: feature-enablement
+  name: Feature enablement
+---
+
+<h2 class="page-title">Feature enablement</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   Basic features such as sorting, paging, or filtering can be easily enabled/disabled using the corresponding table attributes.
+</p>
+<p>
+   You can see bellow all the features you can enable/disable by setting its value to <code>true</code> / <code>false</code>.
+</p>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>JSP attribute</th>
+      <th>Thymeleaf attribute</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sorting</td>
+      <td>{% refjsp dt table sort %}</td>
+      <td>{% reftl dt table dt:sort %}</td>
+    </tr>
+    <tr>
+      <td>Filtering (Global top right input field)</td>
+      <td>{% refjsp dt table filter %}</td>
+      <td>{% reftl dt table dt:filter %}</td>
+    </tr>
+    <tr>
+      <td>Paging</td>
+      <td>{% refjsp dt table paginate %}</td>
+      <td>{% reftl dt table dt:paginate %}</td>
+    </tr>
+    <tr>
+      <td>Info ("Showing 1 to 10 of 200 entries")</td>
+      <td>{% refjsp dt table info %}</td>
+      <td>{% reftl dt table dt:info %}</td>
+    </tr>
+    <tr>
+      <td>Length change (top left drop down list)</td>
+      <td>{% refjsp dt table lengthChange %}</td>
+      <td>{% reftl dt table dt:lengthchange %}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="alert alert-info">
+   <strong><i class="icon-info-sign icon-2x"></i></strong> 
+   Note that all above features are enabled by default.
+</p>
+
+<h3 class="section-title">Using JSP</h3>
+<p>
+   For instance, using JSP, you can set the {% refjsp dt table sort %} table attribute to <code>false</code> to disable sorting.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}" sort="false">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table></pre>
+
+<h3 class="section-title">Using Thymeleaf</h3>
+<p>
+   Using Thymeleaf, set the {% reftl dt table dt:sort %} table attribute to <code>false</code>.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTable" dt:table="true" dt:sort="false">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>

@@ -26,7 +26,7 @@ level3:
    Starting from the v0.9.0, you can now write and plug your own custom extensions in any of your tables.
 </p>
 
-<h3 class="section-title">What is an extension?</h3>
+<h3 class="section-title" id="wiae">What is an extension?</h3>
 <p>
    Any extension will generally fall into one of three categories:
    <ul>
@@ -78,7 +78,87 @@ $(document).ready(function(){
    Tu summarize, you have here a great extension point in situations where all ready-to-use extensions don't fit your needs.
 </p>
 
-<h3 class="section-title">Example: the Bootstrap2 theme</h3>
+<h3 class="section-title" id="waayoe">Writing and activating your own extension</h3>
+<p>In order to write your own extension, follow these steps:</p>
+<ol>
+   <li>
+      <p>
+         First, create a class that extends the {% javadoc dt datatables-core AbstractExtension %} class as follows:
+<pre class="prettyprint">
+package my.package;
+
+public class MyCustomExtension extends AbstractExtension {
+
+   public String getName() {
+      return "myAwesomeExtension";
+   }
+
+   public void setup(HtmlTable table) throws ExtensionLoadingException {
+      // some stuff...
+   }
+}
+</pre>
+      </p>
+      <p>
+         You can access the {% javadoc dt datatables-core HtmlTable %} class, allowing you to change anything you want: activated DataTables' options, columns, etc.... See the <a href="#atetc">below section</a> to find out more.
+      </p>
+   </li>
+   <li>
+      <p>
+         Then, note that your custom extensions must be detected by Dandelion-Datatables. To do so, you must define the
+         <code>global.main.base.package</code>
+         property in the configuration file. This property needs a package name where to scan.
+      </p>
+      <p>
+         Following the above extension, you will need to add this line in your <i>datatables.properties</i> file:
+<pre class="prettyprint">
+global.main.base.package=my.package
+</pre>         
+      </p>
+   </li>
+   <li>
+      <p>
+         Then, it depends on your template engine.
+      </p>
+      <h4>Using JSP</h4>
+      <p>
+         You can use the {% refjsp dt table ext %} table attribute and set one or more extension name separated by a comma.
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}" ext="myAwesomeExtension">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
+         Note that <code>myAwesomeExtension</code> if the name of the extension you set in the <code>getName()</code> method.
+      </p>
+      <h4>Using Thymeleaf</h4>
+      <p>
+         You can use the {% reftl dt table dt:ext %} in the same way as for JSP. Don't forget to wrap the attribute's value in single quotes.
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true" dt:ext="'myAwesomeExtension'">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   ...
+&lt;/table>
+</pre>
+      </p>
+   </li>
+</ol>
+<p>
+   And that's all! Your extension(s) will be loaded as any other extension before displaying the table.
+</p>
+
+<h3 class="section-title" id="etbt">Example: the Bootstrap2 theme</h3>
 <p>
    As an example, let's look at the {% javadoc dt datatables-core Bootstrap2Theme %}.
 </p>
@@ -136,82 +216,55 @@ public class Bootstrap2Theme extends AbstractExtension {
    </li>
 </ul>
 
-<h3 class="section-title">Writing and activating your own extension</h3>
-<p>In order to write your own extension, follow these steps:</p>
-<ol>
-   <li>
-      <p>
-         First, create a class that extends the {% javadoc dt datatables-core AbstractExtension %} class as follows:
+<h3 class="section-title" id="atetc">Accessing the entire table configuration</h3>
+<p>
+   The extension loading is the last step before the JSON generation (DataTables initialization). This means anything you write inside an extension will override the property configuration (<i>datatables.properties</i>) or the view configuration (JSP taglib/Thymeleaf dialect). 
+</p>
+<p>
+   Moreover, note that you can actually access the entire table configuration.
+</p>
+<h4>Accessing the table configuration</h4>
+<p>
+   Just use the following syntax to have access to the {% javadoc dt datatables-core TableConfiguration %} instance attached to the current table.
+</p>
 <pre class="prettyprint">
 package my.package;
 
 public class MyCustomExtension extends AbstractExtension {
 
-   public String getName() {
-      return "myAwesomeExtension";
-   }
+   ...
 
    public void setup(HtmlTable table) throws ExtensionLoadingException {
+      
+      TableConfiguration tc = table.getTableConfiguration();
+      
       // some stuff...
    }
 }
 </pre>
-      </p>
-      <p>
-         You can access the {% javadoc dt datatables-core HtmlTable %} class, allowing you to change anything you want: activated DataTables' options, columns, etc...
-      </p>
-   </li>
-   <li>
-      <p>
-         Then, note that your custom extensions must be detected by Dandelion-Datatables. To do so, you must define the
-         <code>global.main.base.package</code>
-         property in the configuration file. This property needs a package name where to scan.
-      </p>
-      <p>
-         Following the above extension, you will need to add this line in your <i>datatables.properties</i> file:
-<pre class="prettyprint">
-global.main.base.package=my.package
-</pre>         
-      </p>
-   </li>
-   <li>
-      <p>
-         Then, it depends on your template engine.
-      </p>
-      <h4>Using JSP</h4>
-      <p>
-         You can use the {% refjsp dt table ext %} table attribute and set one or more extension name separated by a comma.
-<pre class="prettyprint">
-&lt;datatables:table id="myTableId" data="${persons}" ext="myAwesomeExtension">
-   &lt;datatables:column title="Id" property="id" />
-   &lt;datatables:column title="FirstName" property="firstName" />
-   &lt;datatables:column title="LastName" property="lastName" />
-   &lt;datatables:column title="City" property="address.town.name" />
-   &lt;datatables:column title="Mail" property="mail" />
-&lt;/datatables:table>
-</pre>
-         Note that <code>myAwesomeExtension</code> if the name of the extension you set in the <code>getName()</code> method.
-      </p>
-      <h4>Using Thymeleaf</h4>
-      <p>
-         You can use the {% reftl dt table dt:ext %} in the same way as for JSP. Don't forget to wrap the attribute's value in single quotes.
-<pre class="prettyprint">
-&lt;table id="myTableId" dt:table="true" dt:ext="'myAwesomeExtension'">
-   &lt;thead>
-      &lt;tr>
-         &lt;th>Id&lt;/th>
-         &lt;th>Firstname&lt;/th>
-         &lt;th>Lastname&lt;/th>
-         &lt;th>City&lt;/th>
-         &lt;th>Mail&lt;/th>
-      &lt;/tr>
-   &lt;/thead>
-   ...
-&lt;/table>
-</pre>
-      </p>
-   </li>
-</ol>
+
+<h4>Accessing the column configuration</h4>
 <p>
-   And that's all! Your extension(s) will be loaded as any other extension before displaying the table.
+   Column configurations are stored in a {% javadoc dt datatables-core ColumnConfiguration %} instance attached in each header column of the table.
 </p>
+<p>
+   You can access the header column with the following syntax:
+</p>
+<pre class="prettyprint">
+package my.package;
+
+public class MyCustomExtension extends AbstractExtension {
+
+   ...
+
+   public void setup(HtmlTable table) throws ExtensionLoadingException {
+      
+      for (HtmlColumn column : table.getHeadRow().getColumns()) {
+         // do something with the column configuration
+         column.getColumnConfiguration();
+      }
+      
+      // some stuff...
+   }
+}
+</pre>

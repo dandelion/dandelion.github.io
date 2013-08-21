@@ -52,7 +52,7 @@ level3:
 <h3 class="section-title">
    Reference
    <div class="custom-filter" style="float:right;">
-      <input id="customFilter" type="text" placeholder="Search attribute...">
+      <input id="customFilter" type="text" placeholder="Search for an attribute...">
    </div>
 </h3>
 <p>
@@ -94,7 +94,7 @@ level3:
       </tr>
       <tr>
          <td>row</td>
-         <td>Name under with the object representing the current row is added to the pageContext, allowing you to access the object in the body of a {% refjsp dt column %} tag. If data must be
+         <td>Name under which the object representing the current row is added to the pageContext, allowing you to access the object in the body of a {% refjsp dt column %} tag. If data must be
             displayed without any decoration, use the {% refjsp dt column property %} attribute of the column tag
          </td>
          <td></td>
@@ -432,11 +432,11 @@ level3:
       </tr>
       <tr>
          <td>ext</td>
-         <td>{% def dt extra.customExtensions %}</td>
-         <td>{% def dt extra.customExtensions val %}</td>
-         <td>{% def dt extra.customExtensions def %}</td>
+         <td>{% def dt main.extension.names %}</td>
+         <td>{% def main.extension.names val %}</td>
+         <td>{% def main.extension.names def %}</td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-         <td>extra.customExtensions</td>
+         <td>main.extension.names</td>
       </tr>
       <tr>
          <td>confGroup</td>
@@ -449,59 +449,6 @@ level3:
    </tbody>
 </table>
 </p>
-<p id="themeoptions">
-   Available values of the
-   <code>themeOption</code>
-   attribute:
-   <code>blacktie</code>
-   ,
-   <code>blitzer</code>
-   ,
-   <code>cupertino</code>
-   ,
-   <code>darkhive</code>
-   ,
-   <code>dotluv</code>
-   ,
-   <code>eggplant</code>
-   ,
-   <code>excitebike</code>
-   ,
-   <code>flick</code>
-   ,
-   <code>hotsneaks</code>
-   ,
-   <code>humanity</code>
-   ,
-   <code>lefrog</code>
-   ,
-   <code>mintchoc</code>
-   ,
-   <code>overcast</code>
-   ,
-   <code>peppergrinder</code>
-   ,
-   <code>redmond</code>
-   ,
-   <code>smoothness</code>
-   ,
-   <code>southstreet</code>
-   ,
-   <code>start</code>
-   ,
-   <code>sunny</code>
-   ,
-   <code>swankypurse</code>
-   ,
-   <code>trontastic</code>
-   ,
-   <code>uidarkness</code>
-   ,
-   <code>uilightness</code>
-   , and
-   <code>vader</code>
-   .
-</p>
 
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
 <script src="/assets/js/site_reference.js"></script>

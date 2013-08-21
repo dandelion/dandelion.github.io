@@ -1,0 +1,64 @@
+---
+layout: datatables
+menu: basics
+submenu: sorting
+level1: tutorials
+level2:
+  url: basics
+  name: Basics
+level3:
+  url: sorting
+  name: Sorting data
+level4:
+  url: sorting-initialization
+  name: Sorting initialization
+---
+
+<h2 class="page-title">Sorting initialization</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   You can see in this tutorial how to initialize sorting on a individual column.
+</p>
+
+<h3 class="section-title">Using JSP</h3>
+<p>
+   You can also initialise the column sorting direction using the {% refjsp dt column sortInit %} column attribute.
+   Just set it to <code>asc</code> or <code>desc</code> on each column you want sorting to be initialized.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}">
+   &lt;datatables:column title="Id" property="id" sortable="false" />
+   &lt;datatables:column title="FirstName" property="firstName" sortInit="desc" />
+   &lt;datatables:column title="LastName" property="lastName" sortInit="desc" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" sortable="false" />
+&lt;/datatables:table>
+</pre>
+
+<h3 class="section-title">Using Thymeleaf</h3>
+<p>
+   Use the {% reftl dt th dt:sortinit %} in the same manner.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th >Id&lt;/th>
+         &lt;th dt:sortinit="desc">Firstname&lt;/th>
+         &lt;th dt:sortinit="desc">Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>

@@ -1,0 +1,80 @@
+---
+layout: datatables
+menu: basics
+submenu: paging
+level1: features
+level2:
+  url: basics
+  name: Basics
+level3:
+  url: paging
+  name: Paging data
+level4:
+  url: changing-pagination-style
+  name: Changing pagination style
+---
+
+<h2 class="page-title">Changing pagination style</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   Dandelion-Datatables uses the extensible pagination mechanism of
+   DataTables to offer different pagination style in an easy way. You'll
+   see in this tutorial how to change the pagination style.
+</p>
+
+<h3 class="section-title">Available pagination styles</h3>
+<p>
+   Dandelion-Datatables supports the following pagination styles:
+</p>
+<ul>
+   <li>two_button</li>
+   <li>full_numbers</li>
+   <li>four_button</li>
+   <li>bootstrap</li>
+   <li>scrolling</li>
+   <li>input</li>
+   <li>listbox</li>
+   <li>extJs</li>
+</ul>
+
+<h3 class="section-title">Using JSP</h3>
+<p>
+   You can use the {% refjsp dt table paginationType %} table attribute.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}" paginationType="full_numbers">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
+
+<h3 class="section-title">Using Thymeleaf</h3>
+<p>
+   You can use the {% reftl dt table dt:paginationType %} table attribute.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true" dt:paginationtype="full_numbers">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody th:remove="all-but-first">
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+  &lt;/tbody>
+&lt;/table>
+</pre>

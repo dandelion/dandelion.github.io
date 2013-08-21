@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dandelion Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="java, web, component, library, assets, datatables">
+<meta name="author" content="Dandelion">
+
+<link href="/assets/css/prettify.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
+<!-- <link href="/assets/css/component.css" rel="stylesheet"> -->
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+<!--[if IE 7]>
+      <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css">
+      <![endif]-->
+<!--[if lt IE 9]>
+      <script src="/assets/js/html5shiv.js"></script>
+      <![endif]-->
+<link href="/assets/css/site-main.css" rel="stylesheet">
+<link href="/assets/css/site-component.css" rel="stylesheet">
+      
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+<link rel="shortcut icon" href="/assets/images/dandelion_square.png">
+
+<script>
+      var _gaq = _gaq || [];
+      _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+      _gaq.push([ '_setCookiePath', '/datatables/' ]);
+      _gaq.push([ '_trackPageview' ]);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+      			: 'http://www')
+      			+ '.google-analytics.com/ga.js';
+      	var s = document.getElementsByTagName('script')[0];
+      	s.parentNode.insertBefore(ga, s);
+      })();
+</script>
+<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+<script src="/assets/js/site-component.js"></script>
+</head>
+<body>
+   <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+         <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a href="/datatables">
+               <div id="logo_container">
+                   <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
+                   <p id="logo_text">
+                       datatables
+                   </p>
+               </div>
+            </a>
+            <div class="nav-collapse collapse">
+               <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
+                  <li class="text-center"><a href="/"><i class="icon-home icon-3x"></i><br/>Home</a></li>
+                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt icon-3x"></i><br />Forum</a></li>
+                  <li class="text-center"><a href="/blog"><i class="icon-comment-alt icon-3x"></i><br />Blog</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug icon-3x"></i><br />Issues</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/dandelion-datatables" alt="Dandelion-Datatables sources"><i class="icon-github icon-3x"></i><br />Sources</a></li>
+               </ul>
+            </div>
+            <!--/.nav-collapse -->
+         </div>
+      </div>
+   </div>
+
+   <div class="container-fluid container-component">
+   <div class="row-fluid">
+      <div class="span2">
+         <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+               
+               <h5>Overview</h5>
+               <li >
+                  <a href="/datatables"><i class="icon-home"></i> Home</a>
+               </li>
+               <li >
+                  <a href="/datatables/features/" title="Features"><i class="icon-th-list"></i> Features</a>
+               </li>
+               <li >
+                  <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
+               </li>
+               <li >
+                  <a href="/datatables/releases/" title="Download"> <i class="icon-tags"></i> Releases</a>
+               </li>
+               
+               <h5>Documentation</h5>
+               <li >
+                  <a href="/datatables/docs/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/ref/jsp/" title="JSP taglib"><i class="icon-book"></i> JSP taglib</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/ref/thymeleaf/" title="Thymeleaf dialect"><i class="icon-book"></i> Thymeleaf dialect</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/ref/configuration/" title="Configuration"><i class="icon-book"></i> Configuration</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/docs/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+               </li>
+               <li >
+                  <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
+               </li>
+               
+               <h5>Tutorials</h5>
+               <li  class="active">
+                  <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+                  
+                  <ul class="nav nav-list">
+                     <li >
+                        <a href="/datatables/tutorials/basics/feature-enablement.html"><i class="icon-double-angle-right"></i> Feature enablement</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/basics/dom-positionning.html"><i class="icon-double-angle-right"></i> DOM positionning</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/basics/using-implicit-objects.html"><i class="icon-double-angle-right"></i> Using implicit objects</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/basics/sorting/"><i class="icon-double-angle-right"></i> Sorting data</a>
+                     </li>
+                     
+                     <li class="active">
+                        <a href="/datatables/tutorials/basics/filtering/"><i class="icon-double-angle-right"></i> Filtering data</a>
+                     </li>
+                     
+                     <ul class="nav nav-list">
+                        <li >
+                           <a href="/datatables/tutorials/basics/filtering/filtering-with-inputs.html"><i class="icon-double-angle-right"></i> Filtering with inputs</a>
+                        </li>
+                        <!-- 
+                        <li class="active">
+                           <a href="/datatables/tutorials/basics/filtering/filtering-with-number-range.html"><i class="icon-double-angle-right"></i> Filtering with number range</a>
+                        </li>
+                         -->
+                        <li >
+                           <a href="/datatables/tutorials/basics/filtering/filtering-with-drop-down-lists.html"><i class="icon-double-angle-right"></i> Filtering with drop-down lists</a>
+                        </li>
+                        <li >
+                           <a href="/datatables/tutorials/basics/filtering/filtering-placeholders.html"><i class="icon-double-angle-right"></i> Filtering placeholders</a>
+                        </li>
+                        <li >
+                           <a href="/datatables/tutorials/basics/filtering/using-an-external-form.html"><i class="icon-double-angle-right"></i> Using an external form</a>
+                        </li>
+                        <li >
+                           <a href="/datatables/tutorials/basics/filtering/exclude-columns-from-global-filtering.html"><i class="icon-double-angle-right"></i> Exclude columns from global filtering</a>
+                        </li>
+                     </ul>
+                     
+                     <li >
+                        <a href="/datatables/tutorials/basics/paging/"><i class="icon-double-angle-right"></i> Paging data</a>
+                     </li>
+                     
+                        
+                     <li >
+                        <a href="/datatables/tutorials/basics/scrolling.html"><i class="icon-double-angle-right"></i> Scrolling</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/basics/displaying-multiple-tables.html"><i class="icon-double-angle-right"></i> Displaying multiple tables</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/basics/handling-null-and-default-values.html"><i class="icon-double-angle-right"></i> Handling null and default values</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/basics/using-a-cdn.html"><i class="icon-double-angle-right"></i> Using a CDN</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/basics/customized-column-header.html"><i class="icon-double-angle-right"></i> Customized column header</a>
+                     </li>
+                  </ul>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-globe"></i> I18n</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+                  
+               </li>
+               <li >
+                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="span10">
+         <div class="row-fluid">
+            <ul class="breadcrumb hidden-phone">
+   <li><a href="/"><i class="icon-home"></i></a></li>
+   <li><span class="divider">|</span><a href="/datatables">Dandelion-Datatables</a></li>
+     
+   
+   <li><span class="divider">|</span><a href="/datatables/tutorials">Tutorials</a></li>
+   
+     
+   
+   <li><span class="divider">|</span><a href="/datatables/tutorials/basics">Basics</a></li>
+   
+     
+   
+   <li><span class="divider">|</span><a href="/datatables/tutorials/basics/filtering.html">Filtering data</a></li>
+   
+   
+   
+   <li><span class="divider">|</span><a href="/datatables/tutorials/basics/filtering/using-an-extra-form.html">Using an extra form</a></li>
+   
+   
+   <li class="pull-right">
+      Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a>
+   </li>
+</ul>
+            <h2 class="page-title">Using an extra form</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   Dandelion-Datatables uses a <a
+      href="http://datatables.net/development/sorting#type_based">type
+      based column sorting</a> among the <a
+      href="http://datatables.net/development/sorting">available
+      DataTables APIs</a>. It means the default sorting functions will be
+   used in all columns unless you specify a specific sorting function
+   name to apply on a particular column.
+</p>
+
+<h3 class="section-title" id="ics">Available sorting functions</h3>
+<p>
+   Since the v0.9.0, Dandelion-Datatables supports the following sorting functions:
+</p>
+<table class="table table-striped table-hover">
+   <thead>
+      <tr>
+         <th>Sorting function</th>
+         <th>Description</th>
+         <th>JSP syntax</th>
+         <th>Thymeleaf syntax</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>Natural sorting</td>
+         <td>
+            DataTables implementation of the <a
+            href="https://github.com/overset/javascript-natural-sort">naturalSort()</a>
+            function by Jim Palmer. With this one, you can sort on
+            simple numerics, floats, filenames, dates, currency, ...
+            Long story short, this sorting function should cover the
+            majority of your needs.
+         </td>
+         <td><code>sortType="natural"</code></td>
+         <td><code>dt:sortType="natural"</code></td>
+      </tr>
+      <tr>
+         <td>Anti-"the"</td>
+         <td>
+            Often a list of data which has titles in it (books, albums
+            etc) will have the word "the" at the start of some
+            individual titles, which you don't want to include in your
+            sorting order. This sorting function will strip the word "the" from
+            the start of a string and sort on what is left.
+         </td>
+         <td><code>sortType="anti_the"</code></td>
+         <td><code>dt:sortType="anti_the"</code></td>
+      </tr>
+      <tr>
+         <td>Alt string</td>
+         <td>
+            Sort on the 'alt' tag of images in a column. This is
+            particularly useful if you have a column of images (ticks
+            and crosses for example) and you want to control the sorting
+            using the alt tag.
+         </td>
+         <td><code>sortType="alt_string"</code></td>
+         <td><code>dt:sortType="alt_string"</code></td>
+      </tr>
+      <tr>
+         <td>Currency</td>
+         <td>
+            This sorting function will provide numeric sorting for currency
+            columns while taking account
+            of the currency symbol ($ or £ by default).
+         </td>
+         <td><code>sortType="currency"</code></td>
+         <td><code>dt:sortType="currency"</code></td>
+      </tr>
+      <tr>
+         <td>Filesize</td>
+         <td>
+            When dealing with computer file sizes, it is common to
+            append a post fix such as KB, MB or GB to a string in order
+            to easily denote the order of magnitude of the file size.
+            This sorting function allows sorting to take these indicates of size
+            into account.
+         </td>
+         <td><code>sortType="filesize"</code></td>
+         <td><code>dt:sortType="filesize"</code></td>
+      </tr>
+      <tr>
+         <td>Formatted numbers</td>
+         <td>
+            This sorting function will provide numeric sorting for numeric
+            columns which have extra formatting, such as thousands
+            seperators, currency symobols or any other non-numeric data.
+         </td>
+         <td><code>sortType="formatted_numbers"</code></td>
+         <td><code>dt:sortType="formatted_numbers"</code></td>
+      </tr>
+   </tbody>
+</table>
+
+<h3 class="section-title" id="examples">Examples</h3>
+
+<h4>Using JSP</h4>
+<p>
+   You can activate a sorting function on a column using the <a href="/datatables/docs/ref/jsp/column.html#sortType"><code>sortType</code></a> column attribute.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}" row="person">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" sortType="natural">
+      &lt;a href="mailto:${person.mail}">${person.mail}&lt;/a>
+   &lt;/datatables:column>
+   &lt;datatables:column title="Birthdate" property="birthDate" format="{0,date,dd/MM/yyyy}" sortType="date" />
+   &lt;datatables:column title="Pocket money" sortType="natural">
+      ${person.pocketMoney}€
+   &lt;/datatables:column>
+   &lt;datatables:column title="Company" property="company.name" />
+&lt;/datatables:table>
+</pre>
+
+<h4>Using Thymeleaf</h4>
+<p>
+   You can activate a sorting function on a column using the <a href="/datatables/docs/ref/thymeleaf/th.html#dt:sortType"><code>dt:sortType</code></a> th attribute.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>FirstName&lt;/th>
+         &lt;th>LastName&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th dt:sortType="natural">Mail&lt;/th>
+         &lt;th dt:sortType="natural">Birthdate&lt;/th>
+         &lt;th dt:sortType="natural">Pocket money&lt;/th>
+         &lt;th>Company&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+         &lt;td th:text="${#dates.format(person.birthDate, 'dd/MM/yyyy')}">12/12/2012&lt;/td>
+         &lt;td th:text="${person.pocketMoney + '&euro;'}">1000€&lt;/td>
+         &lt;td th:text="${person.company.name}">Company&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>
+
+         </div>
+      </div>
+   </div>
+</div>
+   
+   <div class="container-fluid area-footer">     
+      <footer class="footer">
+   <div class="container">
+      <div class="row">
+         <div class="span8">
+            
+            <div class="row-fluid">
+               <div class="span3">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="icon-github"></i> Source repository</a></li>
+                     <li><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug"></i> Issue tracker</a></li>
+                     <li><a href="/team"><i class="icon-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="icon-road"></i> Roadmap</a></li>
+                     <li><a href="/acknowledgements/"><i class="icon-info-sign"></i> Acknowledgements</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Components</h3>
+                  <ul>
+                     <li><a href="/dandelion">Dandelion</a></li>
+                     <li><a href="/datatables">Datatables</a></li>
+                     <li><a href="/webanalytics">Webanalytics</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Get started</h3>
+                  <ul>
+                     <li><a href="/faq"> <i class="icon-book"></i> FAQ</a></li>
+                     <li><a href="/samples"><i class="icon-code"></i> Samples</a></li>
+                     <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
+                  <h3>Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>
+                     <li><a href="http://dandelion-forum.48353.x6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="icon-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="span4">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="span12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+   </div>
+   
+   <script src="/assets/js/prettify.js"></script>
+   <script src="/assets/js/site-main.js"></script>
+</body>
+</html>

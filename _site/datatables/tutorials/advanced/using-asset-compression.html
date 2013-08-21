@@ -123,12 +123,15 @@
                <h5>Tutorials</h5>
                <li >
                   <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+                  
                </li>
                <li  class="active">
                   <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
@@ -213,49 +216,172 @@
 
 <h3 class="section-title">Preamble</h3>
 <p>
-   Dandelion-Datatables allows you to have all your web resources minimified. A compression module has been written, based on YUI Compressor, allowing you to compress both Javascript and CSS code. If you don't want to use YUI Compressor, you can also write your own compression module, using the compressor you want.
+   Dandelion-Datatables allows you to have all your web resources
+   minimified. A compression extra has been written, based on <a href="http://yui.github.io/yuicompressor/">YUI
+   Compressor</a>, allowing you to compress both Javascript and CSS.
 </p>
 
-<h3 class="section-title">Activating asset compression</h3>
+<h3 class="section-title" id="aac">Activating asset compression</h3>
 <p>
    Two things are needed to enable compression:
 </p>
+<ul>
+   <li>
+      <p>
+         First, tell Dandelion-Datatables you want to use compress all the generated assets:
+      </p>
+      <p>
+         <ul>
+            <li>
+               <p>
+                  Setting up the <a href="/datatables/docs/ref/configuration/#main-main.compressor.enable"><code>main.compressor.enable</code></a> property to <code>true</code> in your <i>datatables.properties</i> configuration file. Compression will be turned on in all your application
+               </p>
+            </li>
+            <li>
+               <p>
+                  Using the <a href="/datatables/docs/ref/jsp/prop.html"><code>&lt;datatables:prop&gt;</code></a> JSP tag locally, in a particular table
+               </p>
+            </li>
+         </ul>
+      </p>
+   </li>
+   <li>
+      <p>
+         Add the YUI Compressor extra to your classpath
+      </p>
+      <ul>
+         <li>
+            Either manually:
+            <p>
+               <a href="/datatables/download.html">Download</a> the needed JARs and make sure that they are all made available via the application classpath.
+            </p>
+         </li>
+         <li>
+            Or using Maven or another build tool:
+            <p>
+               
+               <ul class="nav nav-tabs" id="build-tools-tab-datatables-compression-yui" style="margin-bottom:0;">
+   <li class="active"><a href="#maven-datatables-compression-yui">Maven</a></li>
+   <li><a href="#gradle-datatables-compression-yui">Gradle</a></li>
+   <li><a href="#grails-datatables-compression-yui">Grails</a></li>
+   <li><a href="#ivy-datatables-compression-yui">Ivy</a></li>
+   <li><a href="#grape-datatables-compression-yui">Grape</a></li>
+   <li><a href="#buildr-datatables-compression-yui">Buildr</a></li>
+   <li><a href="#sbt-datatables-compression-yui">SBT</a></li>
+</ul>
+<div class="tab-content">
+   <div class="tab-pane active" id="maven-datatables-compression-yui">
+<pre class="prettyprint">
+&lt;dependency>
+    &lt;groupId>com.github.dandelion&lt;/groupId>
+    &lt;artifactId>datatables-compression-yui&lt;/artifactId>
+    &lt;version>0.9.0&lt;/version>
+&lt;/dependency>
+</pre>
+   </div>
+   <div class="tab-pane" id="gradle-datatables-compression-yui">
+<pre class="prettyprint">
+'com.github.dandelion:datatables-compression-yui:0.9.0'
+</pre>   
+   </div>
+   <div class="tab-pane" id="ivy-datatables-compression-yui">
+<pre class="prettyprint">
+&lt;dependency org="com.github.dandelion" name="datatables-compression-yui" rev="0.9.0" />
+</pre>      
+   </div>
+   <div class="tab-pane" id="grape-datatables-compression-yui">
+<pre class="prettyprint">
+@Grapes( 
+   @Grab(group='com.github.dandelion', module='datatables-compression-yui', version='0.9.0') 
+)
+</pre>      
+   </div>
+   <div class="tab-pane" id="buildr-datatables-compression-yui">
+<pre class="prettyprint">
+'com.github.dandelion:datatables-compression-yui:jar:0.9.0'
+</pre>      
+   </div>
+   <div class="tab-pane" id="sbt-datatables-compression-yui">
+<pre class="prettyprint">
+libraryDependencies += "com.github.dandelion" % "datatables-compression-yui" % "0.9.0"
+</pre>      
+   </div>
+   <div class="tab-pane" id="grails-datatables-compression-yui">
+<pre class="prettyprint">
+compile 'com.github.dandelion:datatables-compression-yui:0.9.0'
+</pre>      
+   </div>
+</div>
+<script>
+	$('#build-tools-tab-datatables-compression-yui a').click(function(e) {
+		e.preventDefault();
+		$(this).tab('show');
+	})
+</script>
+            </p>
+         </li>
+      </ul>
+   </li>
+</ul>
 
- * Tell **Dandelion-Datatables** you want to use compression :
-	
-	* Either you want all the tables in your application to be affected, so just set the property `compressor.enable` of your custom properties file to `true`
-	
-	* Or you want to activate compression in a few pages only, so locally override the default configuration. See how [here](overrideconf.html).
+<h4>Using JSP</h4>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+   &lt;datatables:prop name="main.compressor.enable" value="true" />
+&lt;/datatables:table>
+</pre>
 
+<h4>Using Thymeleaf</h4>
+<p>
+   For now, the only way to compress assets with Thymeleaf is to use the <a href="/datatables/docs/ref/configuration/#main-main.compressor.enable"><code>main.compressor.enable</code></a> property in your <i>datatables.properties</i> file. 
+</p>
 
- * Add the YUI Compressor module to your classpath :
- 
-	*	Using Maven or Maven-compatible dependency manager, just add the following dependency to your POM :
+<h3 class="section-title" id="ctc">Configuring the compression</h3>
+<p>
+   Some options are available, allowing you to configure the
+   compression. Just look at the
+   <a href="/datatables/docs/ref/configuration/#main-main.compressor">configuration
+      reference</a> to see what you can do with it.
+</p>
 
-        	<dependency>
-	        	<groupId>com.github.dandelion</groupId>
-            	<artifactId>datatables-compression-yui</artifactId>
-            	<version>0.9.0</version>
-        	</dependency>
+<h3 class="section-title" id="uyowm">Using your own compression module</h3>
+<p>
+   By default, Dandelion-Datatables will use the <code>YuiResourceCompressor <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-compression-yui/src/main/java/com/github/dandelion/datatables/extras/compression/YuiResourceCompressor.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-compression-yui/com/github/dandelion/datatables/extras/compression/YuiResourceCompressor.html"><i class="icon-book"></i></a></code> of the
+   <a href="">datatables-compression-yui</a> module but you can also
+   write your own compression module. Here are the needed steps.
+</p>
+<ol>
+   <li>
+      Begin writing a class that that implements the <code>WebResourceCompressor <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/compressor/WebResourceCompressor.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/compressor/WebResourceCompressor.html"><i class="icon-book"></i></a></code> interface.
+<pre class="prettyprint">
+package my.package;
 
-	*	Manually, just grab the latest version of the module [here](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22datatables-compression-yui%22) and all needed dependencies.
+public class MyResourceCompressor implements WebResourceCompressor {
 
-<br />
-#### Using JSP
+   public String getCompressedJavascript(HtmlTable table, String input) throws CompressionException {
+      // some stuff...
+   }
 
-	<datatables:table id="myTableId" data="${persons}">
-	   <datatables:column title="Id" property="id" />
-	   <datatables:column title="FirstName" property="firstName" />
-	   <datatables:column title="LastName" property="lastName" />
-	   <datatables:column title="City" property="address.town.name" />
-	   <datatables:column title="Mail" property="mail" />
-	   <datatables:prop name="compressor.enable" value="true" />
-	</datatables:table>
+   public String getCompressedCss(String input) throws CompressionException {
+      // some stuff...
+   }
+}
+</pre>
+   </li>
+   <li>
+      To activate your own compression module globally, just add the following line in your <i>datatables.properties</i> file:
+<pre class="prettyprint">
+global.main.compressor.class=my.package.MyResourceCompressor
+</pre>
+   </li>
+</ol>
 
-<br />
-#### Using Thymeleaf
-<p class="alert alert-error"><strong>:-(</strong><br /> Not supported yet</p>
-
+That's all! :-)
          </div>
       </div>
    </div>

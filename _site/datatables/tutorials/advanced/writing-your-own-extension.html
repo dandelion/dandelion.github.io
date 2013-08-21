@@ -123,12 +123,15 @@
                <h5>Tutorials</h5>
                <li >
                   <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+                  
                </li>
                <li  class="active">
                   <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
@@ -220,7 +223,7 @@
    Starting from the v0.9.0, you can now write and plug your own custom extensions in any of your tables.
 </p>
 
-<h3 class="section-title">What is an extension?</h3>
+<h3 class="section-title" id="wiae">What is an extension?</h3>
 <p>
    Any extension will generally fall into one of three categories:
    <ul>
@@ -272,7 +275,87 @@ $(document).ready(function(){
    Tu summarize, you have here a great extension point in situations where all ready-to-use extensions don't fit your needs.
 </p>
 
-<h3 class="section-title">Example: the Bootstrap2 theme</h3>
+<h3 class="section-title" id="waayoe">Writing and activating your own extension</h3>
+<p>In order to write your own extension, follow these steps:</p>
+<ol>
+   <li>
+      <p>
+         First, create a class that extends the <code>AbstractExtension <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/extension/AbstractExtension.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/extension/AbstractExtension.html"><i class="icon-book"></i></a></code> class as follows:
+<pre class="prettyprint">
+package my.package;
+
+public class MyCustomExtension extends AbstractExtension {
+
+   public String getName() {
+      return "myAwesomeExtension";
+   }
+
+   public void setup(HtmlTable table) throws ExtensionLoadingException {
+      // some stuff...
+   }
+}
+</pre>
+      </p>
+      <p>
+         You can access the <code>HtmlTable <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/html/HtmlTable.Builder.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/html/HtmlTable.Builder.html"><i class="icon-book"></i></a></code> class, allowing you to change anything you want: activated DataTables' options, columns, etc.... See the <a href="#atetc">below section</a> to find out more.
+      </p>
+   </li>
+   <li>
+      <p>
+         Then, note that your custom extensions must be detected by Dandelion-Datatables. To do so, you must define the
+         <code>global.main.base.package</code>
+         property in the configuration file. This property needs a package name where to scan.
+      </p>
+      <p>
+         Following the above extension, you will need to add this line in your <i>datatables.properties</i> file:
+<pre class="prettyprint">
+global.main.base.package=my.package
+</pre>         
+      </p>
+   </li>
+   <li>
+      <p>
+         Then, it depends on your template engine.
+      </p>
+      <h4>Using JSP</h4>
+      <p>
+         You can use the <a href="/datatables/docs/ref/jsp/table.html#ext"><code>ext</code></a> table attribute and set one or more extension name separated by a comma.
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}" ext="myAwesomeExtension">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
+         Note that <code>myAwesomeExtension</code> if the name of the extension you set in the <code>getName()</code> method.
+      </p>
+      <h4>Using Thymeleaf</h4>
+      <p>
+         You can use the <a href="/datatables/docs/ref/thymeleaf/table.html#dt:ext"><code>dt:ext</code></a> in the same way as for JSP. Don't forget to wrap the attribute's value in single quotes.
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true" dt:ext="'myAwesomeExtension'">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   ...
+&lt;/table>
+</pre>
+      </p>
+   </li>
+</ol>
+<p>
+   And that's all! Your extension(s) will be loaded as any other extension before displaying the table.
+</p>
+
+<h3 class="section-title" id="etbt">Example: the Bootstrap2 theme</h3>
 <p>
    As an example, let's look at the <code>Bootstrap2Theme <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/theme/Bootstrap2Theme.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/theme/Bootstrap2Theme.html"><i class="icon-book"></i></a></code>.
 </p>
@@ -330,85 +413,59 @@ public class Bootstrap2Theme extends AbstractExtension {
    </li>
 </ul>
 
-<h3 class="section-title">Writing and activating your own extension</h3>
-<p>In order to write your own extension, follow these steps:</p>
-<ol>
-   <li>
-      <p>
-         First, create a class that extends the <code>AbstractExtension <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/extension/AbstractExtension.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/extension/AbstractExtension.html"><i class="icon-book"></i></a></code> class as follows:
+<h3 class="section-title" id="atetc">Accessing the entire table configuration</h3>
+<p>
+   The extension loading is the last step before the JSON generation (DataTables initialization). This means anything you write inside an extension will override the property configuration (<i>datatables.properties</i>) or the view configuration (JSP taglib/Thymeleaf dialect). 
+</p>
+<p>
+   Moreover, note that you can actually access the entire table configuration.
+</p>
+<h4>Accessing the table configuration</h4>
+<p>
+   Just use the following syntax to have access to the <code>TableConfiguration <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> instance attached to the current table.
+</p>
 <pre class="prettyprint">
 package my.package;
 
 public class MyCustomExtension extends AbstractExtension {
 
-   public String getName() {
-      return "myAwesomeExtension";
-   }
+   ...
 
    public void setup(HtmlTable table) throws ExtensionLoadingException {
+      
+      TableConfiguration tc = table.getTableConfiguration();
+      
       // some stuff...
    }
 }
 </pre>
-      </p>
-      <p>
-         You can access the <code>HtmlTable <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/html/HtmlTable.Builder.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/html/HtmlTable.Builder.html"><i class="icon-book"></i></a></code> class, allowing you to change anything you want: activated DataTables' options, columns, etc...
-      </p>
-   </li>
-   <li>
-      <p>
-         Then, note that your custom extensions must be detected by Dandelion-Datatables. To do so, you must define the
-         <code>global.main.base.package</code>
-         property in the configuration file. This property needs a package name where to scan.
-      </p>
-      <p>
-         Following the above extension, you will need to add this line in your <i>datatables.properties</i> file:
-<pre class="prettyprint">
-global.main.base.package=my.package
-</pre>         
-      </p>
-   </li>
-   <li>
-      <p>
-         Then, it depends on your template engine.
-      </p>
-      <h4>Using JSP</h4>
-      <p>
-         You can use the <a href="/datatables/docs/ref/jsp/table.html#ext"><code>ext</code></a> table attribute and set one or more extension name separated by a comma.
-<pre class="prettyprint">
-&lt;datatables:table id="myTableId" data="${persons}" ext="myAwesomeExtension">
-   &lt;datatables:column title="Id" property="id" />
-   &lt;datatables:column title="FirstName" property="firstName" />
-   &lt;datatables:column title="LastName" property="lastName" />
-   &lt;datatables:column title="City" property="address.town.name" />
-   &lt;datatables:column title="Mail" property="mail" />
-&lt;/datatables:table>
-</pre>
-         Note that <code>myAwesomeExtension</code> if the name of the extension you set in the <code>getName()</code> method.
-      </p>
-      <h4>Using Thymeleaf</h4>
-      <p>
-         You can use the  in the same way as for JSP. Don't forget to wrap the attribute's value in single quotes.
-<pre class="prettyprint">
-&lt;table id="myTableId" dt:table="true" dt:ext="'myAwesomeExtension'">
-   &lt;thead>
-      &lt;tr>
-         &lt;th>Id&lt;/th>
-         &lt;th>Firstname&lt;/th>
-         &lt;th>Lastname&lt;/th>
-         &lt;th>City&lt;/th>
-         &lt;th>Mail&lt;/th>
-      &lt;/tr>
-   &lt;/thead>
-   ...
-&lt;/table>
-</pre>
-      </p>
-   </li>
-</ol>
+
+<h4>Accessing the column configuration</h4>
 <p>
-   And that's all! Your extension(s) will be loaded as any other extension before displaying the table.
+   Column configurations are stored in a <code>ColumnConfiguration <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> instance attached in each header column of the table.
 </p>
+<p>
+   You can access the header column with the following syntax:
+</p>
+<pre class="prettyprint">
+package my.package;
+
+public class MyCustomExtension extends AbstractExtension {
+
+   ...
+
+   public void setup(HtmlTable table) throws ExtensionLoadingException {
+      
+      for (HtmlColumn column : table.getHeadRow().getColumns()) {
+         // do something with the column configuration
+         column.getColumnConfiguration();
+      }
+      
+      // some stuff...
+   }
+}
+</pre>
+
          </div>
       </div>
    </div>

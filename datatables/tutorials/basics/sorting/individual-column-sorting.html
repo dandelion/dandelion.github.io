@@ -1,0 +1,65 @@
+---
+layout: datatables
+menu: basics
+submenu: sorting
+level1: tutorials
+level2:
+  url: basics
+  name: Basics
+level3:
+  url: sorting
+  name: Sorting data
+level4:
+  url: individual-column-sorting
+  name: Individual column sorting
+---
+
+<h2 class="page-title">Individual column sorting</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   In <a href="/datatables/tutorials/basics/feature-enablement.html">another
+      tutorial</a>, you've seen you can enable/disable global sorting. But
+   you can also enable/disable sorting on individual columns. This tutorial describes how to do it.
+</p>
+
+<h3 class="section-title">Using JSP</h3>
+<p>
+   You can enable/disable the sorting feature in a specific column using the {% refjsp dt column sortable %} column attribute.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}">
+   &lt;datatables:column title="Id" property="id" sortable="false" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" sortable="false" />
+&lt;/datatables:table>
+</pre>
+
+<h3 class="section-title">Using Thymeleaf</h3>
+<p>
+   You can enable/disable the sorting feature in a specific column using the {% reftl dt th dt:sortable %} th attribute.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th dt:sortable="false">Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>
