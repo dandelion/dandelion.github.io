@@ -141,7 +141,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/docs/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+                  <a href="/datatables/docs/migration/" title="Migration guides"> <i class="icon-plane"></i> Migration guides</a>
                </li>
                <li >
                   <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
@@ -169,7 +169,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-globe"></i> I18n</a>
+                  <a href="/datatables/tutorials/i18n/" title="Internationalization"> <i class="icon-globe"></i> I18n</a>
                   
                </li>
                <li >
@@ -177,7 +177,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  <a href="/datatables/tutorials/configuration/" title="Configuration"> <i class="icon-cog"></i> Configuration</a>
                   
                </li>
             </ul>
@@ -211,7 +211,7 @@
 
 <h2 class="page-title">Table tag</h2>
 <h3 class="section-title">Usage</h3>
-<p>The table tag allows you to display a HTML table thanks to a set of attributes and nested <a href="/datatables/docs/ref/jsp/column.html"><code>&lt;datatables:column&gt;</code></a> tags.
+<p>The <code>&lt;datatables:table&gt;</code> tag allows you to display a HTML table thanks to a set of attributes and nested <a href="/datatables/docs/ref/jsp/column.html"><code>&lt;datatables:column&gt;</code></a> tags.
 <p>
    You can either use a "DOM" source, i.e. a Java collection previously set in the page or request scope or an "AJAX" source, i.e. using a web service that must return data formatted in JSON.
 </p>
@@ -225,7 +225,7 @@
    &lt;datatables:column title="Mail" property="mail" />
 &lt;/datatables:table>
 </pre>
-   You will find in the bellowing table all the available attributes for this tag.
+   You will find in the bellowing table all the available attributes of the <code>&lt;datatables:table&gt;</code> tag.
 </p>
 <p>Note that:
    <ul>
@@ -488,7 +488,7 @@
 </td>
          <td>top_right
 </td>
-         <td><span class="label label-success">DOM</span></td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
          <td>export.links</td>
       </tr>
       <tr>
@@ -572,7 +572,7 @@
          <td>scrollY</td>
          <td>(scroller) Table's height to display in scrolling mode.
 </td>
-         <td>
+         <td>Any CSS unit, or a number (in which case it will be treated as a pixel measurement)
 </td>
          <td>300px
 </td>

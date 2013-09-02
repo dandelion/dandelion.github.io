@@ -114,7 +114,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/docs/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+                  <a href="/datatables/docs/migration/" title="Migration guides"> <i class="icon-plane"></i> Migration guides</a>
                </li>
                <li >
                   <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
@@ -142,7 +142,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-globe"></i> I18n</a>
+                  <a href="/datatables/tutorials/i18n/" title="Internationalization"> <i class="icon-globe"></i> I18n</a>
                   
                </li>
                <li  class="active">
@@ -150,10 +150,10 @@
                   
                   <ul class="nav nav-list">
                      <li >
-                        <a href="/datatables/tutorials/plugins/colreorder.html"><i class="icon-double-angle-right"></i> Colreorder</a>
+                        <a href="/datatables/tutorials/plugins/scroller.html"><i class="icon-double-angle-right"></i> Scroller</a>
                      </li>
                      <li >
-                        <a href="/datatables/tutorials/plugins/scroller.html"><i class="icon-double-angle-right"></i> Scroller</a>
+                        <a href="/datatables/tutorials/plugins/colreorder.html"><i class="icon-double-angle-right"></i> Colreorder</a>
                      </li>
                      <li class="active">
                         <a href="/datatables/tutorials/plugins/fixedheader.html"><i class="icon-double-angle-right"></i> FixedHeader</a>
@@ -162,7 +162,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  <a href="/datatables/tutorials/configuration/" title="Configuration"> <i class="icon-cog"></i> Configuration</a>
                   
                </li>
             </ul>
@@ -192,46 +192,51 @@
       Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a>
    </li>
 </ul>
-            <h3 id='plugins__fixedheader'>Plugins :: FixedHeader</h3>
+            <h2 class="page-title">FixedHeader</h2>
+<p>
+   This plugin allows you to fixed the table header by scrolling.
+</p>
 
-<p>This plugin allows you to fixed the table header by scrolling.</p>
-<br />
-<h4 id='using_jsp'>Using JSP</h4>
+<h3 class="section-title">Using JSP</h3>
+<p>
+   You just need to set the <a href="/datatables/docs/ref/jsp/table.html#fixedheader"><code>fixedheader</code></a> table attribute to <code>true</code> to activate the plugin.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}" fixedHeader="true" offsetTop="40">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
 
-<p>You just need to set the <code>fixedheader</code> table attribute to <code>true</code> to activate the plugin.</p>
-
-<pre><code>&lt;datatables:table id=&quot;myTableId&quot; data=&quot;${persons}&quot; fixedHeader=&quot;true&quot; offsetTop=&quot;40&quot;&gt;
-   &lt;datatables:column title=&quot;Id&quot; property=&quot;id&quot; /&gt;
-   &lt;datatables:column title=&quot;FirstName&quot; property=&quot;firstName&quot; /&gt;
-   &lt;datatables:column title=&quot;LastName&quot; property=&quot;lastName&quot; /&gt;
-   &lt;datatables:column title=&quot;City&quot; property=&quot;address.town.name&quot; /&gt;
-   &lt;datatables:column title=&quot;Mail&quot; property=&quot;mail&quot; /&gt;
-&lt;/datatables:table&gt;</code></pre>
-<br />
-<h4 id='using_thymeleaf'>Using Thymeleaf</h4>
-
-<p>Just set the <code>dt:fixedheader</code> thead attribute to <code>true</code>.</p>
-
-<pre><code>&lt;table id=&quot;myTable&quot; dt:table=&quot;true&quot;&gt;
-   &lt;thead dt:fixedheader=&quot;true&quot;&gt;
-      &lt;tr&gt;
-         &lt;th&gt;Id&lt;/th&gt;
-         &lt;th&gt;Firstname&lt;/th&gt;
-         &lt;th&gt;Lastname&lt;/th&gt;
-         &lt;th&gt;City&lt;/th&gt;
-         &lt;th&gt;Mail&lt;/th&gt;
-      &lt;/tr&gt;
-   &lt;/thead&gt;
-   &lt;tbody&gt;
-      &lt;tr th:each=&quot;person : ${persons}&quot;&gt;
-         &lt;td th:text=&quot;${person.id}&quot;&gt;1&lt;/td&gt;
-         &lt;td th:text=&quot;${person.firstName}&quot;&gt;John&lt;/td&gt;
-         &lt;td th:text=&quot;${person.lastName}&quot;&gt;Doe&lt;/td&gt;
-         &lt;td th:text=&quot;${person.address.town.name}&quot;&gt;Nobody knows !&lt;/td&gt;
-         &lt;td&gt;&lt;a th:href=&quot;${&#39;mailto:&#39; + person.mail}&quot; th:text=&quot;${person.mail}&quot;&gt;john@doe.com&lt;/a&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-   &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
+<h3 class="section-title">Using Thymeleaf</h3>
+<p>
+   Just set the <a href="/datatables/docs/ref/thymeleaf/thead.html#dt:fixedheader"><code>dt:fixedheader</code></a> thead attribute to <code>true</code>.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTable" dt:table="true">
+   &lt;thead dt:fixedheader="true">
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
+         &lt;td>&lt;a th:href="${'mailto:' + person.mail}" th:text="${person.mail}">john@doe.com&lt;/a>&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>
          </div>
       </div>
    </div>

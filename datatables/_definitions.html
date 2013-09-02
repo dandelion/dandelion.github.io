@@ -31,7 +31,7 @@ main.base.url#desc==String that will override the default URL (get from the curr
 main.base.url#val==
 main.base.url#def==
 main.compressor.disableopti#desc==Whether the compressor must disable the micro optimizations or not. Micro optimizations concern :<ul><li>object member access : Transforms obj["foo"] into obj.foo whenever possible, saving 3 bytes</li><li>object litteral member declaration : Transforms 'foo': ... into foo: ... whenever possible, saving 2 bytes</li></ul>
-main.compressor.disableopti#val==ture|false
+main.compressor.disableopti#val==true|false
 main.compressor.disableopti#def==Yes
 main.compressor.munge#desc==Whether the compressor must obfuscate the Javascript and CSS code or not
 main.compressor.munge#val==true|false
@@ -42,12 +42,12 @@ main.compressor.preservesemi#def==false
 main.cdn#desc==Enable the DataTables source files to be loaded from the Microsoft CDN (Content Delivery Framework) preventing you from hosting the files yourself. 
 main.cdn#val==true|false
 main.cdn#def==false
-main.cdn.css#desc==
+main.cdn.css#desc==URL of the CSS file
 main.cdn.css#val==
-main.cdn.css#def==
-main.cdn.js#desc==
+main.cdn.css#def==//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css
+main.cdn.js#desc==URL of the Javascript file 
 main.cdn.js#val==
-main.cdn.js#def==
+main.cdn.js#def==//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js
 css.class#desc==CSS class(es) applied on the HTML table (HTML class attribute)
 css.class#val==
 css.class#def==            
@@ -109,7 +109,7 @@ feature.scrollXInner#desc==Use more width than it might otherwise do when x-scro
 feature.scrollXInner#val==
 feature.scrollXInner#def==
 feature.scrollY#desc==(scroller) Table's height to display in scrolling mode.
-feature.scrollY#val==
+feature.scrollY#val==Any CSS unit, or a number (in which case it will be treated as a pixel measurement)
 feature.scrollY#def==300px
 feature.scrollCollapse#desc==When vertical (y) scrolling is enabled, DataTables will force the height of the table's viewport to the given height at all times (useful for layout). However, this can look odd when filtering data down to a small data set, and the footer is left "floating" further down. This parameter (when enabled) will cause DataTables to collapse the table's viewport down when the result set will fit within the given Y height.
 feature.scrollCollapse#val==true|false
@@ -162,19 +162,19 @@ export.links#def==top_right
 export.types#desc==Comma-separated list of allowed export types
 export.types#val==csv|xml|pdf|xls|xlsx
 export.types#def==
-export.csv.class#desc==Java class name used to export in the CSV format
+export.csv.class#desc==Java class name to use with filter-based exports in the CSV format
 export.csv.class#val==Any class that implements {% javadoc dt datatables-core DatatablesExport %}
 export.csv.class#def==com.github.dandelion.datatables.core.export.CsvExport
-export.pdf.class#desc==Java class name used to export in the PDF format
+export.pdf.class#desc==Java class name to use with filter-based exports in the PDF format
 export.pdf.class#val==Any class that implements {% javadoc dt datatables-core DatatablesExport %}
 export.pdf.class#def==com.github.dandelion.datatables.extras.export.itext.PdfExport<br /><span class="label label-warning">Warning!</span> don't forget the additional dependency!
-export.xls.class#desc==Java class name used to export in the XLS format
+export.xls.class#desc==Java class name to use with filter-based exports in the XLS format
 export.xls.class#val==Any class that implements {% javadoc dt datatables-core DatatablesExport %}
 export.xls.class#def==com.github.dandelion.datatables.extras.export.poi.XlsExport<br /><span class="label label-warning">Warning!</span> don't forget the additional dependency!
-export.xlsx.class#desc==Java class name used to export in the XLSX format
+export.xlsx.class#desc==Java class name to use with filter-based exports in the XLSX format
 export.xlsx.class#val==Any class that implements {% javadoc dt datatables-core DatatablesExport %}
 export.xlsx.class#def==com.github.dandelion.datatables.extras.export.poi.XlsxExport<br /><span class="label label-warning">Warning!</span> don't forget the additional dependency!
-export.xml.class#desc==Java class name used to export in the XML format
+export.xml.class#desc==Java class name to use with filter-based exports in the XML format
 export.xml.class#val==Any class that implements {% javadoc dt datatables-core DatatablesExport %}
 export.xml.class#def==com.github.dandelion.datatables.core.export.XmlExport
 msg.aria.sortasc#desc==ARIA label that is added to the table headers when the column may be sorted ascending by activing the column (click or return when focused). Note that the column header is prefixed to this string

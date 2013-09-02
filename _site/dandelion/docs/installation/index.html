@@ -30,7 +30,7 @@
 <script>
       var _gaq = _gaq || [];
       _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
-      _gaq.push([ '_setCookiePath', '/webanalytics/' ]);
+      _gaq.push([ '_setCookiePath', '/dandelion/' ]);
       _gaq.push([ '_trackPageview' ]);
       (function() {
         var ga = document.createElement('script');
@@ -54,11 +54,11 @@
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
             </button>
-            <a href="/webanalytics">
+            <a href="/dandelion">
                <div id="logo_container">
                    <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
                    <p id="logo_text">
-                       webanalytics
+                       core
                    </p>
                </div>
             </a>
@@ -68,7 +68,7 @@
                   <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt icon-3x"></i><br />Forum</a></li>
                   <li class="text-center"><a href="/blog"><i class="icon-comment-alt icon-3x"></i><br />Blog</a></li>
                   <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug icon-3x"></i><br />Issues</a></li>
-                  <li class="text-center"><a href="https://github.com/dandelion/dandelion-webanalytics" alt="Dandelion-Webanalytics sources"><i class="icon-github icon-3x"></i><br />Sources</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/dandelion" alt="Dandelion sources"><i class="icon-github icon-3x"></i><br />Sources</a></li>
                </ul>
             </div>
             <!--/.nav-collapse -->
@@ -76,93 +76,97 @@
       </div>
    </div>
 
-   <div class="span2">
-    <div class="well sidebar-nav">
-        <ul class="nav nav-list">
-
-            <li class="nav-header">Overview</li>
-            <li >
-            <a href="/webanalytics"><i class="icon-home"></i> Home</a>
-            </li>
-            <li >
-            <a href="/webanalytics/features/" title="Features"><i class="icon-th-list"></i> Features</a>
-            </li>
-            <li  class="active">
-            <a href="/webanalytics/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
-            </li>
-            <li >
-            <a href="/webanalytics/changelog.html" title="Changelog"> <i class="icon-info-sign"></i> Changelog</a>
-            </li>
-            <li >
-            <a href="/webanalytics/roadmap.html" title="Roadmap"><i class="icon-road"></i> Roadmap</a>
-            </li>
-
-            <li class="nav-header">Tutorials</li>
-            <li >
-            <a href="/webanalytics/features/basic/" title="Basic Setup"> <i class="icon-signal"></i> Basic Setup</a>
-            </li>
-            <li >
-            <a href="/webanalytics/features/providers/" title="Providers"> <i class="icon-truck"></i> Providers</a>
-            </li>
-
-            <li class="nav-header">Reference</li>
-            <li ><a href="/webanalytics/ref/jsp/" title="JSP taglib"> JSP taglib
-        </a></li>
-            <li ><a href="/webanalytics/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect
-        </a></li>
-            <li >
-            <a href="/webanalytics/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration
-        </a></li>
-            <li ><a href="/webanalytics/ref/javadoc"> <i class="none"></i>Javadoc
-        </a></li>
-        </ul>
-    </div>
-</div>
-<div class="span10">
+   <div class="container-fluid container-component">
     <div class="row-fluid">
-        <ul class="breadcrumb hidden-phone">
+	<div class="span2">
+	    <div class="well sidebar-nav">
+		<ul class="nav nav-list">
+
+		    <li class="nav-header">Overview</li>
+		    <li >
+		    <a href="/dandelion"><i class="icon-home"></i> Home</a>
+		    </li>
+		    <li >
+		    <a href="/dandelion/features/" title="Features"><i class="icon-th-list"></i> Features</a>
+		    </li>
+		    <li  class="active">
+		    <a href="/dandelion/docs/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+		    </li>
+		    <li >
+		    <a href="/dandelion/releases/" title="Releases"> <i class="icon-tags"></i> Releases</a>
+		    </li>
+
+		    <li class="nav-header">Reference</li>
+		    <li ><a href="/dandelion/docs/ref/jsp/" title="JSP taglib"> JSP taglib
+		</a></li>
+		    <li ><a href="/dandelion/docs/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect
+		</a></li>
+		    <li >
+		    <a href="/dandelion/docs/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration
+		</a></li>
+
+		    <li class="nav-header">Tutorials</li>
+		    <li >
+		    <a href="/dandelion/tutorials/assets/" title="Assets Stack"> <i class="icon-th"></i> Assets Stack</a>
+		    </li>
+		</ul>
+	    </div>
+	</div>
+	<div class="span10">
+	    <div class="row-fluid">
+		<ul class="breadcrumb hidden-phone">
    <li><a href="/"><i class="icon-home"></i></a></li>
-   <li><span class="divider">|</span><a href="/webanalytics">Dandelion-Webanalytics</a></li>
+   <li><span class="divider">|</span><a href="/dandelion">Dandelion</a></li>
      
    
-   <li><span class="divider">|</span><a href="/webanalytics/installation">Installation</a></li>
+   <li><span class="divider">|</span><a href="/dandelion/installation">Installation</a></li>
    
      
    
      
    
-   <li><span class="divider">|</span><a href="/webanalytics/installation//"></a></li>
+   <li><span class="divider">|</span><a href="/dandelion/installation//"></a></li>
    
    
    
    
    <li class="pull-right">
-      Latest release: <a href="/webanalytics/releases/0.2.2/">0.2.2</a>
+      Latest release: <a href="/dandelion/releases/0.2.1/">0.2.1</a>
    </li>
 </ul>
-        <h3 id='installation_guide'>Installation guide</h3>
+		<h2 class="page-title">Installation guide</h2>
 
-<h4 id='prerequisites'>Prerequisites</h4>
+<h3 class="section-title">Prerequisites</h3>
+<p>
+   Java 6 or higher
+</p>
 
-<p>​ Java 6 or higher</p>
-<br />
-<h4 id='notes'>Notes</h4>
+<h3 class="section-title">Notes</h3>
+<p>
+   Dandelion-DataTables takes advantage of the <a href="http://jcp.org/en/jsr/detail?id=315">Servlet API 3.x</a> to ease its required configuration. In return, however, you have to use a Servlet container compatible with this API.
+</p>
+<p>
+   You'll have no trouble if you deploy on recent containers as Tomcat 7.x, Jetty 8.x, Glassfish 3.x or JBoss 7.x.
+</p>
+<p>
+   Actually, you'll have no trouble either with lower versions thanks to the <a href="https://github.com/dandelion/dandelion/tree/master/dandelion-extras/dandelion-servlet2">backward compatibility extra</a>. :-)
+</p>
 
-<p><strong>Dandelion</strong> takes advantage of the <a href='http://jcp.org/en/jsr/detail?id=315'>Servlet API 3.x</a> to ease its required configuration. In return, however, you have to use a Servlet container compatible with this API.</p>
 
-<p>You&#39;ll have no trouble if you deploy on recent containers as Tomcat 7.x, Jetty 8.x, Glassfish 3.x or JBoss 7.x.</p>
-
-<p>Actually, you&#39;ll have no trouble either with lower versions thanks to the <a href='https://github.com/dandelion/dandelion/tree/master/dandelion-extras/dandelion-servlet2'>backward compatibility extra</a>. :-)</p>
-<br />
-<h4 id='guides'>Guides</h4>
-
-<p>The installation guide defers, depending on the template engine you want to use and the target container. Please begin by choosing below a template engine. <br /> <div style='text-align:center;'>
-<a class='btn btn-large' href='jsp.html'>JSP</a>
+<h3 class="section-title">Guides</h3>
+<p>
+   The installation guide defers, depending on the template engine you want to use and the target container:
+</p>
+<div class="text-center">
+<a href="jsp.html" class="btn btn-large">JSP</a>
 &nbsp;
 or
 &nbsp;
-<a class='btn btn-large' href='thymeleaf.html'>Thymeleaf</a>
-</div></p>
+<a href="thymeleaf.html" class="btn btn-large">Thymeleaf</a>
+</div>
+
+	    </div>
+	</div>
     </div>
 </div>
    

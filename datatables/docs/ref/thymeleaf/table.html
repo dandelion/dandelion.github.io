@@ -9,239 +9,312 @@ level3:
   url: table
   name: Table attributes
 ---
+<link rel="stylesheet" href="/assets/css/site-reference.css" />
 
-<h3>Table attributes</h3>
-<hr />
+<h2 class="page-title"><code>&lt;table&gt;</code> attributes</h2>
+<h3 class="section-title">Usage</h3>
+<p>
+   The <code>&lt;table&gt;</code> attributes allow you to configure the main features of DataTables, including DataTables enablement.
+</p>
+<p>
+   You can either use a "DOM" source, i.e. a Java collection previously
+   set in the page or request scope or an "AJAX" source, i.e. using a
+   web service that must return data formatted in JSON.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${myCollection}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address.town.name}">Nobody knows!&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>
+<p>
+   You will find in the bellowing table all the available attributes for this tag.
+</p>
 
-<h4>Description</h4>
-<br />
-
-The <code>&lt;table&gt;</code> attributes allow to set the main options for the table, ie sorting, filtering, theme activation, \...
-
-Don\'t forget to add the prefix <code>dt:</code> before each attribute.
-
-<br />
-<h4>Usage</h4>
-
-    <table dt:table="true" ...>
-       ...
-    </table>
-
-<br />
-<h4>Reference</h4>
-
-<table id="tableReference" class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Value(s)</th>
-      <th>Default</th>
-      <th>Data source</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>dt:table</td>
-    <td><strong>(required)</strong> Enables DataTables4j in a Thymeleaf template. The value must be <code>true</code></td>
-    <td>true|false</td>
-    <td></td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:url</td>
-    <td>Web service URL used to populate the table</td>
-    <td></td>
-    <td></td>
-    <td>AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:appear</td>
-    <td>Display mode used when the table has finished loading and must appear in the page. A duration can be set (in milliseconds) if the display mode is set to "fadein"</td>
-    <td>block|fadein[,duration]</td>
-    <td></td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:cdn</td>
-    <td>Enable the DataTables source files to be loaded from the Microsoft CDN (Content Delivery Framework) preventing you from hosting the files yourself.</td>
-    <td>true|false</td>
-    <td>false</td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:info</td>
-    <td>Enable or disable the table information display. This shows information about the data that is currently visible on the page, including information about filtered data if that action is being performed</td>
-    <td>true|false</td>
-    <td>true</td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:paginate</td>
-    <td>Enable or disable pagination</td>
-    <td>true|false</td>
-    <td>true</td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:filter</td>
-    <td>Enable or disable filtering of data</td>
-    <td>true|false</td>
-    <td>true</td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:sort</td>
-    <td>Enable or disable sorting of columns. Sorting of individual columns can be disabled by the "sortable" attribute of column tag</td>
-    <td>true|false</td>
-    <td>true</td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:autowidth</td>
-    <td>Enable or disable automatic column width calculation</td>
-    <td>true|false</td>
-    <td>true</td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:displaylength</td>
-    <td>Number of rows to display on a single page when using pagination</td>
-    <td></td>
-    <td>10</td>
-    <th>DOM/AJAX</th>
-  </tr>
-  <tr>
-    <td>dt:paginationtype</td>
-    <td>Choice between the different built-in pagination interaction methods which present different page controls to the end user</td>
-    <td>two_button|<br/>full_numbers|<br/>four_button|<br/>bootstrap|<br/>scrolling|<br/>input|<br/>listbox|<br/>extJs</td>
-    <td>two_button</td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:export</td>
-    <td>Enable or disable the export functionality</td>
-    <td>true|false</td>
-    <td>false</td>
-    <td>DOM</td>
-  </tr>
-  <tr>
-    <td>dt:theme</td>
-    <td>Name of a theme to activate for the current table</td>
-    <td>bootstrap2|jqueryui</td>
-    <td></td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:themeOption</td>
-    <td>Name of an option to activate in relation to the current activated theme.</td>
-    <td></td>
-    <td></td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:labels</td>
-    <td>Relative URL of an AJAX loaded file which contains all the labels used in tables.</td>
-    <td></td>
-    <td></td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:serverside</td>
-    <td>Tell DataTables to use server-side processing.</td>
-    <td>true|false</td>
-    <td>false</td>
-    <td>AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:pipelining</td>
-    <td>Enable pipelining data for paging when server-side processing is enabled.</td>
-    <td>true|false</td>
-    <td>false</td>
-    <td>AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:pipesize</td>
-    <td>Pipe size used when pipelining is enabled, i.e. times that the user can page before a request must be made of the server.</td>
-    <td></td>
-    <td>5</td>
-    <td>AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:processing</td>
-    <td>Enable or disable the display of a 'processing' indicator when the table is being processed (e.g. a sort). This is particularly useful for tables with large amounts of data where it can take a noticeable amount of time to sort the entries</td>
-    <td>true|false</td>
-    <td>false</td>
-    <td>AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:exportLinks</td>
-    <td>Comma-separated list of positions where the export links will be generated</td>
-    <td>top_left|<br/>top_middle|<br/>top_right|<br/>bottom_left|<br/>bottom_middle|<br/>bottom_right</td>
-    <td>top_right</td>
-    <td>DOM</td>
-  </tr>
-  <tr>
-    <td>dt:lengthmenu</td>
-    <td>Specify the entries in the length drop down menu that DataTables show when pagination is enabled.</td>
-    <td></td>
-    <td></td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:serverdata</td>
-    <td>This parameter allows you to override the default function which obtains the data from the server ($.getJSON) so something more suitable for your application</td>
-    <td></td>
-    <td></td>
-    <td>AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:serverparams</td>
-    <td>Allows you to send extra information to the server when using AJAX source</td>
-    <td></td>
-    <td></td>
-    <td>AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:stripeclasses</td>
-    <td>Comma-separated list of CSS classes that should be applied to displayed rows. This sequence of CSS classes may be of any length, and DataTables will apply each class sequentially, looping when required.</td>
-    <td></td>
-    <td></td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:scrolly</td>
-    <td>(scroller) Table's height to display in scrolling mode.</td>
-    <td></td>
-    <td>300px</td>
-    <th>DOM/AJAX</th>
-  </tr>
-  <tr>
-    <td>dt:scrollcollapse</td>
-    <td>When vertical (y) scrolling is enabled, 
-         	DataTables will force the height of the table's viewport to the 
-         	given height at all times (useful for layout). However, this can 
-         	look odd when filtering data down to a small data set, and 
-         	the footer is left "floating" further down. This parameter 
-         	(when enabled) will cause DataTables to collapse the table's 
-         	viewport down when the result set will fit within the given 
-         	Y height.</td>
-    <td>true|false</td>
-    <td>false</td>
-    <th>DOM/AJAX</th>
-  </tr>
-  <tr>
-    <td>dt:dom</td>
-    <td>Allows you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page (for example you might want the pagination controls at the top of the table). DIV elements (with or without a custom class) can also be added to aid styling.</td>
-    <td></td>
-    <td>lfrtip</td>
-    <td>DOM/AJAX</td>
-  </tr>
-  </tbody>
+<h3 class="section-title">
+   Reference
+   <div class="custom-filter" style="float:right;">
+      <input id="customFilter" type="text" placeholder="Search for an attribute...">
+   </div>
+</h3>
+<table id="tableReference" class="table table-striped table-bordered table-hover">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+         <th>Value(s)</th>
+         <th>Default value</th>
+         <th style="width:9%">Data source compatibility</th>
+         <th>Corresponding configuration name</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>dt:table</td>
+         <td><span class="label label-important">(required)</span> Enables Dandelion-Datatables in a Thymeleaf template. The value must be <code>true</code></td>
+         <td>true|false</td>
+         <td></td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>n/a</td>
+      </tr>
+      <tr>
+         <td>dt:url</td>
+         <td>Web service URL used to populate the table</td>
+         <td></td>
+         <td></td>
+         <td><span class="label label-info">AJAX</span></td>
+         <td>n/a</td>
+      </tr>
+      <tr>
+         <td>dt:appear</td>
+         <td>{% def dt extra.appear %}</td>
+         <td>{% def dt extra.appear val %}</td>
+         <td>{% def dt extra.appear def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>extra.appear</td>
+      </tr>
+      <tr>
+         <td>dt:cdn</td>
+         <td>{% def dt extra.cdn %}</td>
+         <td>{% def dt extra.cdn val %}</td>
+         <td>{% def dt extra.cdn def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>extra.cdn</td>
+      </tr>
+      <tr>
+         <td>dt:info</td>
+         <td>{% def dt feature.info %}</td>
+         <td>{% def dt feature.info val %}</td>
+         <td>{% def dt feature.info def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>feature.info</td>
+      </tr>
+      <tr>
+         <td>dt:paginate</td>
+         <td>{% def dt feature.paginate %}</td>
+         <td>{% def dt feature.paginate val %}</td>
+         <td>{% def dt feature.paginate def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>feature.paginate</td>
+      </tr>
+      <tr>
+         <td>dt:lengthChange</td>
+         <td>{% def dt feature.lengthChange %}</td>
+         <td>{% def dt feature.lengthChange val %}</td>
+         <td>{% def dt feature.lengthChange def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>feature.lengthChange</td>
+      </tr>
+      <tr>
+         <td>dt:filter</td>
+         <td>{% def dt feature.filter %}</td>
+         <td>{% def dt feature.filter def %}</td>
+         <td>{% def dt feature.filter val %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>feature.filter</td>
+      </tr>
+      <tr>
+         <td>dt:filterPlaceholder</td>
+         <td>{% def dt feature.filterplaceholder %}</td>
+         <td>{% def dt feature.filterplaceholder val %}</td>
+         <td>{% def dt feature.filterplaceholder def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>feature.filterplaceholder</td>
+      </tr>
+      <tr>
+         <td>dt:sort</td>
+         <td>{% def dt feature.sort %}</td>
+         <td>{% def dt feature.sort val %}</td>
+         <td>{% def dt feature.sort def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>feature.sort</td>
+      </tr>
+      <tr>
+         <td>dt:autowidth</td>
+         <td>{% def dt feature.autoWidth %}</td>
+         <td>{% def dt feature.autoWidth val %}</td>
+         <td>{% def dt feature.autoWidth def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>feature.autoWidth</td>
+      </tr>
+      <tr>
+         <td>dt:displaylength</td>
+         <td>{% def dt feature.displayLength %}</td>
+         <td>{% def dt feature.displayLength val %}</td>
+         <td>{% def dt feature.displayLength def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>feature.displayLength</td>
+      </tr>
+      <tr>
+         <td>dt:paginationtype</td>
+         <td>{% def dt feature.paginationType %}</td>
+         <td>{% def dt feature.paginationType val %}</td>
+         <td>{% def dt feature.paginationType def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>feature.paginationType</td>
+      </tr>
+      <tr>
+         <td>dt:export</td>
+         <td>{% def dt export.types %}</td>
+         <td>{% def dt export.types val %}</td>
+         <td>{% def dt export.types def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>export.types</td>
+      </tr>
+      <tr>
+         <td>dt:theme</td>
+         <td>{% def dt css.theme %}</td>
+         <td>{% def dt css.theme val %}</td>
+         <td>{% def dt css.theme def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>css.theme</td>
+      </tr>
+      <tr>
+         <td>dt:themeOption</td>
+          <td>{% def dt css.themeOption %}</td>
+         <td>{% def dt css.themeOption val %}</td>
+         <td>{% def dt css.themeOption def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>css.themeOption</td>
+      </tr>
+      <tr>
+         <td>dt:serverside</td>
+         <td>{% def dt ajax.serverSide %}</td>
+         <td>{% def dt ajax.serverSide val %}</td>
+         <td>{% def dt ajax.serverSide def %}</td>
+         <td><span class="label label-info">AJAX</span></td>
+         <td>ajax.serverSide</td>
+      </tr>
+      <tr>
+         <td>dt:pipelining</td>
+         <td>{% def dt ajax.pipelining %}</td>
+         <td>{% def dt ajax.pipelining val %}</td>
+         <td>{% def dt ajax.pipelining def %}</td>
+         <td><span class="label label-info">AJAX</span></td>
+         <td>ajax.pipelining</td>
+      </tr>
+      <tr>
+         <td>dt:pipesize</td>
+         <td>{% def dt ajax.pipeSize %}</td>
+         <td>{% def dt ajax.pipeSize val %}</td>
+         <td>{% def dt ajax.pipeSize def %}</td>
+         <td><span class="label label-info">AJAX</span></td>
+         <td>ajax.pipeSize</td>
+      </tr>
+      <tr>
+         <td>dt:processing</td>
+         <td>{% def dt ajax.processing %}</td>
+         <td>{% def dt ajax.processing val %}</td>
+         <td>{% def dt ajax.processing def %}</td>
+         <td><span class="label label-info">AJAX</span></td>
+         <td>ajax.processing</td>
+      </tr>
+      <tr>
+         <td>dt:exportLinks</td>
+         <td>{% def dt export.links %}</td>
+         <td>{% def dt export.links val %}</td>
+         <td>{% def dt export.links def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>export.links</td>
+      </tr>
+      <tr>
+         <td>dt:lengthmenu</td>
+         <td>{% def dt feature.lengthMenu %}</td>
+         <td>{% def dt feature.lengthMenu val %}</td>
+         <td>{% def dt feature.lengthMenu def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>feature.lengthMenu</td>
+      </tr>
+      <tr>
+         <td>dt:serverdata</td>
+         <td>{% def dt ajax.serverData %}</td>
+         <td>{% def dt ajax.serverData val %}</td>
+         <td>{% def dt ajax.serverData def %}</td>
+         <td><span class="label label-info">AJAX</span></td>
+         <td>ajax.serverData</td>
+      </tr>
+      <tr>
+         <td>dt:serverparams</td>
+         <td>{% def dt ajax.serverParams %}</td>
+         <td>{% def dt ajax.serverParams val %}</td>
+         <td>{% def dt ajax.serverParams def %}</td>
+         <td><span class="label label-info">AJAX</span></td>
+         <td>ajax.serverParams</td>
+      </tr>
+      <tr>
+         <td>dt:stripeclasses</td>
+         <td>{% def dt css.stripeClasses %}</td>
+         <td>{% def dt css.stripeClasses val %}</td>
+         <td>{% def dt css.stripeClasses def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>css.stripeClasses</td>
+      </tr>
+      <tr>
+         <td>dt:scrollx</td>
+         <td>{% def dt feature.scrollX %}</td>
+         <td>{% def dt feature.scrollX val %}</td>
+         <td>{% def dt feature.scrollX def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>feature.scrollX</td>
+      </tr>
+      <tr>
+         <td>dt:scrollxinner</td>
+         <td>{% def dt feature.scrollXInner %}</td>
+         <td>{% def dt feature.scrollXInner val %}</td>
+         <td>{% def dt feature.scrollXInner def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>feature.scrollXInner</td>
+      </tr>
+      <tr>
+         <td>dt:scrolly</td>
+         <td>{% def dt feature.scrollY %}</td>
+         <td>{% def dt feature.scrollY val %}</td>
+         <td>{% def dt feature.scrollY def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>feature.scrollY</td>
+      </tr>
+      <tr>
+         <td>dt:ext</td>
+         <td>{% def dt main.extension.names %}</td>
+         <td>{% def main.extension.names val %}</td>
+         <td>{% def main.extension.names def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>main.extension.names</td>
+      </tr>
+      <tr>
+         <td>dt:scrollcollapse</td>
+         <td>{% def dt feature.scrollCollapse %}</td>
+         <td>{% def dt feature.scrollCollapse val %}</td>
+         <td>{% def dt feature.scrollCollapse def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>feature.scrollCollapse</td>
+      </tr>
+      <tr>
+         <td>dt:dom</td>
+         <td>{% def dt feature.dom %}</td>
+         <td>{% def dt feature.dom val %}</td>
+         <td>{% def dt feature.dom def %}</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+         <td>feature.dom</td>
+      </tr>
+   </tbody>
 </table>
 
-<link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" />
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
-</script>
-<script src="/assets/js/site_reference.js">
-</script>
+<script src="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="/assets/js/site_reference.js"></script>

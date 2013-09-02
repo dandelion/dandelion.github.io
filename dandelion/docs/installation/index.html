@@ -1,0 +1,36 @@
+---
+layout: dandelion
+menu: installation
+level1: installation
+---
+
+<h2 class="page-title">Installation guide</h2>
+
+<h3 class="section-title">Prerequisites</h3>
+<p>
+   Java 6 or higher
+</p>
+
+<h3 class="section-title">Notes</h3>
+<p>
+   Dandelion-DataTables takes advantage of the <a href="http://jcp.org/en/jsr/detail?id=315">Servlet API 3.x</a> to ease its required configuration. In return, however, you have to use a Servlet container compatible with this API.
+</p>
+<p>
+   You'll have no trouble if you deploy on recent containers as Tomcat 7.x, Jetty 8.x, Glassfish 3.x or JBoss 7.x.
+</p>
+<p>
+   Actually, you'll have no trouble either with lower versions thanks to the <a href="https://github.com/dandelion/dandelion/tree/master/dandelion-extras/dandelion-servlet2">backward compatibility extra</a>. :-)
+</p>
+
+
+<h3 class="section-title">Guides</h3>
+<p>
+   The installation guide defers, depending on the template engine you want to use and the target container:
+</p>
+<div class="text-center">
+<a href="jsp.html" class="btn btn-large">JSP</a>
+&nbsp;
+or
+&nbsp;
+<a href="thymeleaf.html" class="btn btn-large">Thymeleaf</a>
+</div>

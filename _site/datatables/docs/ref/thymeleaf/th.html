@@ -132,7 +132,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/docs/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+                  <a href="/datatables/docs/migration/" title="Migration guides"> <i class="icon-plane"></i> Migration guides</a>
                </li>
                <li >
                   <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
@@ -160,7 +160,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-globe"></i> I18n</a>
+                  <a href="/datatables/tutorials/i18n/" title="Internationalization"> <i class="icon-globe"></i> I18n</a>
                   
                </li>
                <li >
@@ -168,7 +168,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  <a href="/datatables/tutorials/configuration/" title="Configuration"> <i class="icon-cog"></i> Configuration</a>
                   
                </li>
             </ul>
@@ -198,129 +198,148 @@
       Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a>
    </li>
 </ul>
-            <h3>Th attributes</h3>
-<hr />
+            <link rel="stylesheet" href="/assets/css/site-reference.css" />
 
-<h4>Description</h4>
-<br />
+<h2 class="page-title"><code>&lt;th&gt;</code> attributes</h2>
+<h3 class="section-title">Usage</h3>
+<p>
+   The <code>&lt;th&gt;</code> attributes allow you to configure each column.
+</p>
+<pre class="prettyprint">
+&lt;table dt:table="true" ...>
+   &lt;thead ...>
+      &lt;tr>
+         &lt;th>...&lt;/th>
+         &lt;th>...&lt;/th>
+         &lt;th dt:filterable="true">...&lt;/th>
+         &lt;th>...&lt;/th>
+         &lt;th>...&lt;/th>
+      &lt;tr>
+   &lt;/thead>
+   ...
+&lt;/table>
+</pre>
 
-The <code>&lt;th&gt;</code> attributes allow to configure the columns.
-
-<br />
-<h4>Usage</h4>
-
-    <table dt:table="true" ...>
-        <thead ...>
-            <tr>
-                <th>...</th>
-                <th>...</th>
-                <th dt:filterable="true">...</th>
-                <th>...</th>
-                <th>...</th>
-            </tr>
-        </thead>
-        ...
-    </table>
-
-<br />
-<h4>Reference</h4>
-
-<table id="tableReference" class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Value(s)</th>
-      <th>Default</th>
-      <th>Data source</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>dt:sortable</td>
-    <td>Enable or disable sorting on column</td>
-    <td>true|false</td>
-    <td>true</td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:sortInit</td>
-    <td>If <code>dt:sortable</code> is enabled, set the default sorting direction</td>
-    <td>asc|desc</td>
-    <td>asc</td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:sortDirection</td>
-    <td>If <code>dt:sortable</code> is enabled, allow to control the sorting direction(s)</td>
-    <td></td>
-    <td></td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:filterable</td>
-    <td>Enable or disable filtering on column</td>
-    <td>true|false</td>
-    <td>false</td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:filterType</td>
-    <td>If <code>dt:filterable</code> is enabled, you can choose the filter type between 'select' and 'input', adding either select box or input field in the table's footer</td>
-    <td>select|input</td>
-    <td>input</td>
-    <td>DOM</td>
-  </tr>
-  <tr>
-    <td>dt:property</td>
-    <td>Property (or nested property) that must is read from the AJAX source to fill in the corresponding column</td>
-    <td></td>
-    <td></td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:default</td>
-    <td>Default value if the property's value is null</td>
-    <td>java.lang.String</td>
-    <td>Empty string</td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:searchable</td>
-    <td>Enable or disable filtering on column</td>
-    <td>true|false</td>
-    <td>true</td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:renderFunction</td>
-    <td>Name of an external Javascript function that will be used to render the column (used with AJAX sources)</td>
-    <td></td>
-    <td></td>
-    <td>AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:visible</td>
-    <td>Enable or disable the display of the column</td>
-    <td>true|false</td>
-    <td>true</td>
-    <td>DOM/AJAX</td>
-  </tr>
-  <tr>
-    <td>dt:selector</td>
-    <td>jQuery selector used to populate a placeholder with a filtering widget</td>
-    <td></td>
-    <td></td>
-    <td>DOM/AJAX</td>
-  </tr>
-  </tbody>
+<h3 class="section-title">
+   Reference
+   <div class="custom-filter" style="float:right;">
+      <input id="customFilter" type="text" placeholder="Search for an attribute...">
+   </div>
+</h3>
+<table id="tableReference" class="table table-striped table-bordered table-hover">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+         <th>Value(s)</th>
+         <th>Default value</th>
+         <th style="width: 9%">Data source compatibility</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>dt:sortable</td>
+         <td>Enable or disable sorting on column</td>
+         <td>true|false</td>
+         <td>true</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
+         <td>dt:sortInit</td>
+         <td>If <code>dt:sortable</code> is enabled, set the default sorting direction
+         </td>
+         <td>asc|desc</td>
+         <td>asc</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
+         <td>dt:sortDirection</td>
+         <td>If <code>dt:sortable</code> is enabled, allow to control the sorting direction(s)
+         </td>
+         <td></td>
+         <td></td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
+         <td>dt:filterable</td>
+         <td>Enable or disable filtering on column</td>
+         <td>true|false</td>
+         <td>false</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
+         <td>dt:filterType</td>
+         <td>If <code>dt:filterable</code> is enabled, you can choose the filter type between
+            'select' and 'input', adding either select box or input field in the table's footer
+         </td>
+         <td>select|input</td>
+         <td>input</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
+         <td>dt:filterValues</td>
+         <td>Name of a Javascript array of string that will be used to populate a filtering drop-down list. The value of the <code>dt:filterType</code> attribute must be set to <code>select</code>.
+         </td>
+         <td></td>
+         <td></td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
+         <td>dt:property</td>
+         <td>Property (or nested property) that must is read from the AJAX source to fill in
+            the corresponding column</td>
+         <td></td>
+         <td></td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
+         <td>dt:default</td>
+         <td>Default value if the property's value is null</td>
+         <td>Any string</td>
+         <td></td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
+         <td>dt:sortType</td>
+         <td>Type of sorting function to apply on the column</td>
+         <td>natural | date | anti_the | alt_string | currency | filesize | formatted_number</td>
+         <td></td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
+         <td>dt:searchable</td>
+         <td>Enable or disable filtering on column</td>
+         <td>true|false</td>
+         <td>true</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
+         <td>dt:renderFunction</td>
+         <td>Name of an external Javascript function that will be used to render the column
+            (used with AJAX sources)</td>
+         <td></td>
+         <td></td>
+         <td><span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
+         <td>dt:visible</td>
+         <td>Enable or disable the display of the column</td>
+         <td>true|false</td>
+         <td>true</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
+         <td>dt:selector</td>
+         <td>jQuery selector used to populate a placeholder with a filtering widget</td>
+         <td></td>
+         <td></td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+   </tbody>
 </table>
 
-<link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" />
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
-</script>
-<script src="/assets/js/site_reference.js">
-</script>
+<script src="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="/assets/js/site_reference.js"></script>
          </div>
       </div>
    </div>

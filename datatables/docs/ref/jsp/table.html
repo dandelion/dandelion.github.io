@@ -13,7 +13,7 @@ level3:
 
 <h2 class="page-title">Table tag</h2>
 <h3 class="section-title">Usage</h3>
-<p>The table tag allows you to display a HTML table thanks to a set of attributes and nested {% refjsp dt column %} tags.
+<p>The <code>&lt;datatables:table&gt;</code> tag allows you to display a HTML table thanks to a set of attributes and nested {% refjsp dt column %} tags.
 <p>
    You can either use a "DOM" source, i.e. a Java collection previously set in the page or request scope or an "AJAX" source, i.e. using a web service that must return data formatted in JSON.
 </p>
@@ -27,7 +27,7 @@ level3:
    &lt;datatables:column title="Mail" property="mail" />
 &lt;/datatables:table>
 </pre>
-   You will find in the bellowing table all the available attributes for this tag.
+   You will find in the bellowing table all the available attributes of the <code>&lt;datatables:table&gt;</code> tag.
 </p>
 <p>Note that:
    <ul>
@@ -251,7 +251,7 @@ level3:
          <td>{% def dt export.links %}</td>
          <td>{% def dt export.links val %}</td>
          <td>{% def dt export.links def %}</td>
-         <td><span class="label label-success">DOM</span></td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
          <td>export.links</td>
       </tr>
       <tr>

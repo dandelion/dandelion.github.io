@@ -1,0 +1,59 @@
+---
+layout: datatables
+menu: plugins
+level1: features
+level2: 
+  url: plugins
+  name: Plugins
+level3:
+  url: scroller
+  name: Scroller
+---
+<h2 class="page-title">Scroller</h2>
+<p>
+   This plugin allows you to scroll inside the table data.
+</p>
+
+<h3 class="section-title">Using JSP</h3>
+<p>
+   You just need to set the {% refjsp dt table scroller %} table attribute to <code>true</code> to activate the Scroller plugin.
+</p>
+<p>
+   By default, the height is <code>300px</code> but you can configure it with the {% refjsp dt table scrollY %} table attribute.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}" scroller="true">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
+
+<h3 class="section-title">Using Thymeleaf</h3>
+<p>
+   Just set the {% reftl dt thead dt:scroller %} thead attribute to <code>true</code>.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTable" dt:table="true">
+   &lt;thead dt:scroller="true">
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address.town.name}">Nobody knows!&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>

@@ -114,7 +114,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/docs/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+                  <a href="/datatables/docs/migration/" title="Migration guides"> <i class="icon-plane"></i> Migration guides</a>
                </li>
                <li >
                   <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
@@ -130,6 +130,9 @@
                      </li>
                      <li >
                         <a href="/datatables/tutorials/basics/dom-positionning.html"><i class="icon-double-angle-right"></i> DOM positionning</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/basics/changing-display-length.html"><i class="icon-double-angle-right"></i> Changing display length</a>
                      </li>
                      <li >
                         <a href="/datatables/tutorials/basics/using-implicit-objects.html"><i class="icon-double-angle-right"></i> Using implicit objects</a>
@@ -182,7 +185,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-globe"></i> I18n</a>
+                  <a href="/datatables/tutorials/i18n/" title="Internationalization"> <i class="icon-globe"></i> I18n</a>
                   
                </li>
                <li >
@@ -190,7 +193,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  <a href="/datatables/tutorials/configuration/" title="Configuration"> <i class="icon-cog"></i> Configuration</a>
                   
                </li>
             </ul>
@@ -211,7 +214,7 @@
    
      
    
-   <li><span class="divider">|</span><a href="/datatables/features/basics/changingdisplay">Changing the display</a></li>
+   <li><span class="divider">|</span><a href="/datatables/features/basics/scrolling">Scrolling</a></li>
    
    
    
@@ -220,170 +223,99 @@
       Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a>
    </li>
 </ul>
-            ### Basics :: Changing table\'s display
+            <h2 class="page-title">Scrolling</h2>
 
-Some options are available to adapt the table's display. 
+<h3 class="section-title">Preamble</h3>
+<p>
+   You may need to allow horizontal or vertical scrolling, e.g. when you have a wide table, with a large
+   number of rows and/or columns to display. Let's see in this tutorial how to proceed.
+</p>
 
-<br />
-#### DOM positionning
-The `dom` / `dt:dom` (JSP / Thymeleaf) attributes allow you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page (for example you might want the pagination controls at the top of the table). DIV elements (with or without a custom class) can also be added to aid styling.
+<h3 class="section-title" id="vs">Vertical scrolling</h3>
+<h4>Using JSP</h4>
+<p>
+   You can use the <a href="/datatables/docs/ref/jsp/table.html#scrollY"><code>scrollY</code></a> table attribute.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}" scrollY="200px" paginate="false">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
+<p>
+   Note that disabling table pagination is not mandatory, it will work just fine with pagination enabled as well!
+</p>
 
-##### Using JSP 
-In the following example, the global filtering input has been removed.
+<h4>Using JSP</h4>
+<p>
+   You can use the <a href="/datatables/docs/ref/thymeleaf/table.html#dt:scrolly"><code>dt:scrolly</code></a> table attribute.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTable" dt:table="true" dt:scrolly="'200px'" dt:paginate="false">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name}">Nobody knows!&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>
+</p>
 
-    <datatables:table id="myTableId" data="${persons}" dom="lrtip">
-        <datatables:column title="Id" property="id" />
-        <datatables:column title="FirstName" property="firstName" />
-        <datatables:column title="LastName" property="lastName" />
-        <datatables:column title="City" property="address.town.name" />
-        <datatables:column title="Mail" property="mail" />
-    </datatables:table>
-
-##### Using Thymeleaf
-With Thymeleaf, use the `dt:dom` attribute instead.
-
-    <table id="myTableId" dt:table="true" dt:dom="lrtip">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>City</th>
-                <th>Mail</th>
-            </tr>
-        </thead>
-        <tbody th:remove="all-but-first">
-            <tr th:each="person : ${persons}">
-                <td th:text="${person.id}">1</td>
-                <td th:text="${person.firstName}">John</td>
-                <td th:text="${person.lastName}">Doe</td>
-                <td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !</td>
-                <td th:text="${person.mail}">john@doe.com</td>
-            </tr>
-        </tbody>
-    </table>
-
-<br />
-#### Changing the display length
-
-##### Using JSP 
-By default, **Datatables** displays 10 rows when using pagination. You can change this value using the `displayLength` table attribute.
-
-    <datatables:table id="myTableId" data="${persons}" displayLength="40">
-        <datatables:column title="Id" property="id" />
-        <datatables:column title="FirstName" property="firstName" />
-        <datatables:column title="LastName" property="lastName" />
-        <datatables:column title="City" property="address.town.name" />
-        <datatables:column title="Mail" property="mail" />
-    </datatables:table>
-
-##### Using Thymeleaf
-Using Thymeleaf, you can change the number of rows displayed using the `dt:displaylength` table attribute.
-
-    <table id="myTableId" dt:table="true" dt:displaylength="45">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>City</th>
-                <th>Mail</th>
-            </tr>
-        </thead>
-        <tbody th:remove="all-but-first">
-            <tr th:each="person : ${persons}">
-                <td th:text="${person.id}">1</td>
-                <td th:text="${person.firstName}">John</td>
-                <td th:text="${person.lastName}">Doe</td>
-                <td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !</td>
-                <td th:text="${person.mail}">john@doe.com</td>
-            </tr>
-        </tbody>
-    </table>
-
-<br />
-#### Using scroll options
-When vertical (y) scrolling is enabled, **DataTables** will force the height of the table's viewport to the given height at all times (useful for layout). However, this can look odd when filtering data down to a small data set, and the footer is left "floating" further down. 
-
-##### Using JSP 
-To avoid this, you can use the `scrollCollapse` table attribute. This will cause **DataTables** to collapse the table's viewport down when the result set will fit within the given Y height.
-
-    <datatables:table id="myTableId" data="${persons}" scrollY="1000px" scrollCollapse="false">
-        <datatables:column title="Id" property="id" />
-        <datatables:column title="FirstName" property="firstName" />
-        <datatables:column title="LastName" property="lastName" />
-        <datatables:column title="City" property="address.town.name" />
-        <datatables:column title="Mail" property="mail" />
-    </datatables:table>
-
-##### Using Thymeleaf
-Using Thymeleaf, you can use the `dt:scrollcollapse`.
-
-    <table id="myTableId" dt:table="true" dt:scrolly="'1000px'" dt:scrollcollapse="false">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>City</th>
-                <th>Mail</th>
-            </tr>
-        </thead>
-        <tbody th:remove="all-but-first">
-            <tr th:each="person : ${persons}">
-                <td th:text="${person.id}">1</td>
-                <td th:text="${person.firstName}">John</td>
-                <td th:text="${person.lastName}">Doe</td>
-                <td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !</td>
-                <td th:text="${person.mail}">john@doe.com</td>
-            </tr>
-        </tbody>
-    </table>
-
-<br />
-#### Hide column
-It can be useful to hide column. **Dandelion-Datatables** allows you to hide column. Note that a hidden column is automatically unsearchable. 
-
-##### Using JSP 
-You can use the `visible` column attribute.
-
-    <datatables:table id="myTableId" data="${persons}">
-        <datatables:column title="Id" property="id" />
-        <datatables:column title="FirstName" property="firstName" />
-        <datatables:column title="LastName" property="lastName" />
-        <datatables:column title="City" property="address.town.name" />
-        <datatables:column title="Mail" property="mail" visible="false" />
-    </datatables:table>
-
-##### Using Thymeleaf
-Using Thymeleaf, you can use the `dt:visible` TH attribute.
-
-    <table id="myTableId" dt:table="true">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>City</th>
-                <th dt:visible="false">Mail</th>
-            </tr>
-        </thead>
-        <tbody th:remove="all-but-first">
-            <tr th:each="person : ${persons}">
-                <td th:text="${person.id}">1</td>
-                <td th:text="${person.firstName}">John</td>
-                <td th:text="${person.lastName}">Doe</td>
-                <td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !</td>
-                <td th:text="${person.mail}">john@doe.com</td>
-            </tr>
-        </tbody>
-    </table>
+<h3 class="section-title" id="hs">Horizontal scrolling</h3>
+<h4>Using JSP</h4>
+<p>
+   You can use the <a href="/datatables/docs/ref/jsp/table.html#scrollX"><code>scrollX</code></a> table attribute.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}" scrollX="120%">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" filterable="true" />
+   &lt;datatables:column title="Mail" property="mail" filterable="true" />
+&lt;/datatables:table>
+</pre>
 
 
+<pre class="prettyprint">
+&lt;table id="myTable" dt:table="true" dt:scrollx="'120%'">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name}">Nobody knows!&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>
 
-
-
-   
          </div>
       </div>
    </div>

@@ -67,7 +67,7 @@ level3:
 </p> 
 <pre class="prettyprint">
 &lt;table id="myTableId" dt:table="true" dt:export="xls,csv">
-   &lt;thead>
+   &lt;thead dt:csv:class="'btn'" dt:xls:class="'btn'" dt:csv:label="'custom label for CSV'" dt:xls:label="'custom label for XLS'">
       &lt;tr>
          &lt;th>Id&lt;/th>
          &lt;th>Firstname&lt;/th>
@@ -76,13 +76,13 @@ level3:
          &lt;th>Mail&lt;/th>
       &lt;/tr>
    &lt;/thead>
-   &lt;tbody dt:csv:class="'btn'" dt:xls:class="'btn'" dt:csv:label="'custom label for CSV'" dt:xls:label="'custom label for XLS'">
+   &lt;tbody>
       &lt;tr th:each="person : ${persons}">
          &lt;td th:text="${person.id}">1&lt;/td>
          &lt;td th:text="${person.firstName}">John&lt;/td>
          &lt;td th:text="${person.lastName}">Doe&lt;/td>
          &lt;td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !&lt;/td>
-         &lt;td dt:csv="'csv' + ${person.mail}" dt:xls="'xls' + ${person.mail}">
+         &lt;td dt:csv="${person.mail}" dt:xls="${person.mail}">
             &lt;a th:href="${'mailto:' + person.mail}" th:text="${person.mail}">john@doe.com&lt;/a>
          &lt;/td>
       &lt;/tr>
@@ -131,7 +131,7 @@ level3:
          &lt;td th:text="${person.firstName}">John&lt;/td>
          &lt;td th:text="${person.lastName}">Doe&lt;/td>
          &lt;td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !&lt;/td>
-         &lt;td dt:csv="'csv' + ${person.mail}" dt:xls="'xls' + ${person.mail}">
+         &lt;td dt:csv="${person.mail}" dt:xls="${person.mail}">
             &lt;a th:href="${'mailto:' + person.mail}" th:text="${person.mail}">john@doe.com&lt;/a>
          &lt;/td>
       &lt;/tr>

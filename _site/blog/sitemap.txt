@@ -42,8 +42,8 @@ http://dandelion.github.io/datatables/docs/architecture/server.html
 http://dandelion.github.io/datatables/docs/installation/index.html
 http://dandelion.github.io/datatables/docs/installation/jsp.html
 http://dandelion.github.io/datatables/docs/installation/thymeleaf.html
-http://dandelion.github.io/datatables/docs/migration/from_0.8.x_to_0.9.x.html
-http://dandelion.github.io/datatables/docs/migration/from_datatables4j_to_dandelion-datatables.html
+http://dandelion.github.io/datatables/docs/migration/from-0.8.x-to-0.9.x.html
+http://dandelion.github.io/datatables/docs/migration/from-datatables4j-to-dandelion-datatables.html
 http://dandelion.github.io/datatables/docs/migration/index.html
 http://dandelion.github.io/datatables/docs/ref/configuration/index.html
 http://dandelion.github.io/datatables/docs/ref/index.html
@@ -106,8 +106,7 @@ http://dandelion.github.io/datatables/tutorials/ajax/server-side/index.html
 http://dandelion.github.io/datatables/tutorials/ajax/server-side/pipelining-data.html
 http://dandelion.github.io/datatables/tutorials/ajax/springmvc.html
 http://dandelion.github.io/datatables/tutorials/ajax/using-ajax-sources.html
-http://dandelion.github.io/datatables/tutorials/basics/changingappearing.html
-http://dandelion.github.io/datatables/tutorials/basics/changingdisplay.html
+http://dandelion.github.io/datatables/tutorials/basics/changing-display-length.html
 http://dandelion.github.io/datatables/tutorials/basics/customized-column-header.html
 http://dandelion.github.io/datatables/tutorials/basics/displaying-multiple-tables.html
 http://dandelion.github.io/datatables/tutorials/basics/dom-positionning.html
@@ -145,7 +144,6 @@ http://dandelion.github.io/datatables/tutorials/export/controller-based-exports.
 http://dandelion.github.io/datatables/tutorials/export/customizing-export-content.html
 http://dandelion.github.io/datatables/tutorials/export/customizing-export-links.html
 http://dandelion.github.io/datatables/tutorials/export/customizing-export-url.html
-http://dandelion.github.io/datatables/tutorials/export/exportoptions.html
 http://dandelion.github.io/datatables/tutorials/export/filter-based-exports.html
 http://dandelion.github.io/datatables/tutorials/export/index.html
 http://dandelion.github.io/datatables/tutorials/i18n/index.html

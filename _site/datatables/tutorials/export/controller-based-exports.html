@@ -114,7 +114,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/docs/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+                  <a href="/datatables/docs/migration/" title="Migration guides"> <i class="icon-plane"></i> Migration guides</a>
                </li>
                <li >
                   <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
@@ -169,7 +169,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-globe"></i> I18n</a>
+                  <a href="/datatables/tutorials/i18n/" title="Internationalization"> <i class="icon-globe"></i> I18n</a>
                   
                </li>
                <li >
@@ -177,7 +177,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  <a href="/datatables/tutorials/configuration/" title="Configuration"> <i class="icon-cog"></i> Configuration</a>
                   
                </li>
             </ul>
@@ -221,7 +221,12 @@
    In return, you'll see in this tutorial that it requires a bit more work.
 </p>
 
-   <h3 class="section-title" id="suaec">Setting up an export controller</h3>
+<h3 class="section-title" id="rs">Required steps</h3>
+<p>
+   Export based on filter
+</p>
+
+<h3 class="section-title" id="suaec">Setting up an export controller</h3>
 <p>
    Actually, there are several ways to do it:
 </p>
@@ -240,7 +245,7 @@
 </p>
 <h4 id="suaec-rd">1. Retrieve data</h4>
 <p>
-   First step, you need to retrieve your data that will be used to build your export file. For example:
+   First step, you need to retrieve data that will be used to build your export file. For example:
 </p>
 <pre class="prettyprint">
 DatatablesCriterias criterias = DatatablesCriterias.getFromRequest(request);
@@ -294,12 +299,12 @@ ExportConf exportCsvConf = new ExportConf.Builder(ExportType.CSV)
    Once again, you have at your disposal a fluent API allowing you to easily build an instance of <code>HtmlTable <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/html/HtmlTable.Builder.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/html/HtmlTable.Builder.html"><i class="icon-book"></i></a></code>. See below:
 </p>
 <pre class="prettyprint">
-HtmlTable table = new HtmlTable.Builder<Person>("tableId", persons, request)
-   .column("id").title("Id")
-   .column("firstName").title("FirstName")
-   .column("lastName").title("LastName")
-   .column("address.town.name").title("City")
-   .column("mail").title("Mail")
+HtmlTable table = new HtmlTableBuilder&lt;Person>().newBuilder("tableId", persons, request)
+   .column().fillWithProperty("id").title("Id")
+   .column().fillWithProperty("firstName").title("Firtname")
+   .column().fillWithProperty("lastName").title("Lastname")
+   .column().fillWithProperty("address.town.name").title("City")
+   .column().fillWithProperty("mail").title("Mail")
    .configureExport(exportCsvConf)
    .build();
 </pre>
@@ -307,8 +312,9 @@ HtmlTable table = new HtmlTable.Builder<Person>("tableId", persons, request)
    Note in the above example that:
 </p>
 <ul>
-   <li>Columns are added thanks to the <code>column(String property)</code> method where the <strong>property</strong> argument is the name of the property that will be extracted from the bean.</li>
-   <li>You need to configure the export by passing the previously created instance of <code>ExportConf <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/ExportConf.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/export/ExportConf.html"><i class="icon-book"></i></a></code> thanks to the <code>configureExport(ExportConf)</code> method</li>
+   <li>columns are added thanks to the <code>column()</code> and are finally declared using the <code>title(String)</code> method</li>
+   <li>you can easily configure the content using the <code>fillWith</code>, <code>fillWithProperty</code>, <code>andProperty</code> and <code>and</code> methods.</li>
+   <li>you need to configure the export by passing the previously created instance of <code>ExportConf <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/ExportConf.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/export/ExportConf.html"><i class="icon-book"></i></a></code> thanks to the <code>configureExport(ExportConf)</code> method</li>
 </ul>
 <p class="alert alert-info">
    <strong><i class="icon-info-sign icon-2x"></i></strong>

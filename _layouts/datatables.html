@@ -118,7 +118,7 @@ module: datatables
                   {% endif %}
                </li>
                <li {% if page.menu == 'migration' %} class="active"{% endif %}>
-                  <a href="/datatables/docs/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+                  <a href="/datatables/docs/migration/" title="Migration guides"> <i class="icon-plane"></i> Migration guides</a>
                </li>
                <li {% if page.menu == 'architecture' %} class="active"{% endif %}>
                   <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
@@ -134,6 +134,9 @@ module: datatables
                      </li>
                      <li {% if page.url contains '/basics/dom-positionning.html' %}class="active"{% endif %}>
                         <a href="/datatables/tutorials/basics/dom-positionning.html"><i class="icon-double-angle-right"></i> DOM positionning</a>
+                     </li>
+                     <li {% if page.url contains '/basics/changing-display-length.html' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/basics/changing-display-length.html"><i class="icon-double-angle-right"></i> Changing display length</a>
                      </li>
                      <li {% if page.url contains '/basics/using-implicit-objects.html' %}class="active"{% endif %}>
                         <a href="/datatables/tutorials/basics/using-implicit-objects.html"><i class="icon-double-angle-right"></i> Using implicit objects</a>
@@ -329,7 +332,7 @@ module: datatables
                   {% endif %}
                </li>
                <li {% if page.menu == 'i18n' %} class="active"{% endif %}>
-                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-globe"></i> I18n</a>
+                  <a href="/datatables/tutorials/i18n/" title="Internationalization"> <i class="icon-globe"></i> I18n</a>
                   {% if page.menu == 'i18n' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains '/i18n/internationalization.html' %}class="active"{% endif %}>
@@ -351,11 +354,11 @@ module: datatables
                   <a href="/datatables/tutorials/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
                   {% if page.menu == 'plugins' %}
                   <ul class="nav nav-list">
-                     <li {% if page.url contains 'colreorder' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/plugins/colreorder.html"><i class="icon-double-angle-right"></i> Colreorder</a>
-                     </li>
                      <li {% if page.url contains 'scroller' %}class="active"{% endif %}>
                         <a href="/datatables/tutorials/plugins/scroller.html"><i class="icon-double-angle-right"></i> Scroller</a>
+                     </li>
+                     <li {% if page.url contains 'colreorder' %}class="active"{% endif %}>
+                        <a href="/datatables/tutorials/plugins/colreorder.html"><i class="icon-double-angle-right"></i> Colreorder</a>
                      </li>
                      <li {% if page.url contains 'fixedheader' %}class="active"{% endif %}>
                         <a href="/datatables/tutorials/plugins/fixedheader.html"><i class="icon-double-angle-right"></i> FixedHeader</a>
@@ -364,7 +367,7 @@ module: datatables
                   {% endif %}
                </li>
                <li {% if page.menu == 'configuration' %} class="active"{% endif %}>
-                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  <a href="/datatables/tutorials/configuration/" title="Configuration"> <i class="icon-cog"></i> Configuration</a>
                   {% if page.menu == 'configuration' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains 'configuration/configuration-loading' %}class="active"{% endif %}>
