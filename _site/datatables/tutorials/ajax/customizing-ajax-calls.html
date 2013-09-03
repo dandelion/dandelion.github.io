@@ -121,74 +121,8 @@
                </li>
                
                <h5>Tutorials</h5>
-               <li  class="active">
+               <li >
                   <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
-                  
-                  <ul class="nav nav-list">
-                     <li >
-                        <a href="/datatables/tutorials/basics/feature-enablement.html"><i class="icon-double-angle-right"></i> Feature enablement</a>
-                     </li>
-                     <li >
-                        <a href="/datatables/tutorials/basics/dom-positionning.html"><i class="icon-double-angle-right"></i> DOM positionning</a>
-                     </li>
-                     <li >
-                        <a href="/datatables/tutorials/basics/changing-display-length.html"><i class="icon-double-angle-right"></i> Changing display length</a>
-                     </li>
-                     <li >
-                        <a href="/datatables/tutorials/basics/using-implicit-objects.html"><i class="icon-double-angle-right"></i> Using implicit objects</a>
-                     </li>
-                     <li >
-                        <a href="/datatables/tutorials/basics/sorting/"><i class="icon-double-angle-right"></i> Sorting data</a>
-                     </li>
-                     
-                     <li class="active">
-                        <a href="/datatables/tutorials/basics/filtering/"><i class="icon-double-angle-right"></i> Filtering data</a>
-                     </li>
-                     
-                     <ul class="nav nav-list">
-                        <li class="active">
-                           <a href="/datatables/tutorials/basics/filtering/filtering-with-inputs.html"><i class="icon-double-angle-right"></i> Filtering with inputs</a>
-                        </li>
-                        <!-- 
-                        <li >
-                           <a href="/datatables/tutorials/basics/filtering/filtering-with-number-range.html"><i class="icon-double-angle-right"></i> Filtering with number range</a>
-                        </li>
-                         -->
-                        <li >
-                           <a href="/datatables/tutorials/basics/filtering/filtering-with-drop-down-lists.html"><i class="icon-double-angle-right"></i> Filtering with drop-down lists</a>
-                        </li>
-                        <li >
-                           <a href="/datatables/tutorials/basics/filtering/filtering-placeholders.html"><i class="icon-double-angle-right"></i> Filtering placeholders</a>
-                        </li>
-                        <li >
-                           <a href="/datatables/tutorials/basics/filtering/using-an-external-form.html"><i class="icon-double-angle-right"></i> Using an external form</a>
-                        </li>
-                        <li >
-                           <a href="/datatables/tutorials/basics/filtering/exclude-columns-from-global-filtering.html"><i class="icon-double-angle-right"></i> Exclude columns from global filtering</a>
-                        </li>
-                     </ul>
-                     
-                     <li >
-                        <a href="/datatables/tutorials/basics/paging/"><i class="icon-double-angle-right"></i> Paging data</a>
-                     </li>
-                     
-                        
-                     <li >
-                        <a href="/datatables/tutorials/basics/scrolling.html"><i class="icon-double-angle-right"></i> Scrolling</a>
-                     </li>
-                     <li >
-                        <a href="/datatables/tutorials/basics/displaying-multiple-tables.html"><i class="icon-double-angle-right"></i> Displaying multiple tables</a>
-                     </li>
-                     <li >
-                        <a href="/datatables/tutorials/basics/handling-null-and-default-values.html"><i class="icon-double-angle-right"></i> Handling null and default values</a>
-                     </li>
-                     <li >
-                        <a href="/datatables/tutorials/basics/using-a-cdn.html"><i class="icon-double-angle-right"></i> Using a CDN</a>
-                     </li>
-                     <li >
-                        <a href="/datatables/tutorials/basics/customizing-column-header.html"><i class="icon-double-angle-right"></i> Customizing column header</a>
-                     </li>
-                  </ul>
                   
                </li>
                <li >
@@ -203,8 +137,27 @@
                   <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
                   
                </li>
-               <li >
+               <li  class="active">
                   <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+                  
+                  <ul class="nav nav-list">
+                     <li >
+                        <a href="/datatables/tutorials/ajax/using-ajax-sources.html"><i class="icon-double-angle-right"></i> Using AJAX sources</a>
+                     </li>
+                     <li class="active">
+                        <a href="/datatables/tutorials/ajax/customizing-ajax-calls.html"><i class="icon-double-angle-right"></i> Customizing AJAX calls</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/ajax/customizing-column-content.html"><i class="icon-double-angle-right"></i> Customizing column content</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/ajax/server-side/index.html"><i class="icon-double-angle-right"></i> Server-side processing</a>
+                     </li>
+                     
+                     <li >
+                        <a href="/datatables/tutorials/ajax/integration-with-spring.html"><i class="icon-double-angle-right"></i> Integration with Spring</a>
+                     </li>
+                  </ul>
                   
                </li>
                <li >
@@ -233,15 +186,13 @@
    
      
    
-   <li><span class="divider">|</span><a href="/datatables/tutorials/basics">Basics</a></li>
+   <li><span class="divider">|</span><a href="/datatables/tutorials/ajax">AJAX</a></li>
    
      
    
-   <li><span class="divider">|</span><a href="/datatables/tutorials/basics/filtering.html">Filtering data</a></li>
+   <li><span class="divider">|</span><a href="/datatables/tutorials/ajax/customized-ajax-calls">Customized AJAX calls</a></li>
    
    
-   
-   <li><span class="divider">|</span><a href="/datatables/tutorials/basics/filtering/filtering-with-inputs.html">Filtering with inputs</a></li>
    
    
    <li class="pull-right" style="margin-left:5px;">
@@ -260,52 +211,158 @@
 </ul>
 
 
-            <h2 class="page-title">Filtering with inputs</h2>
-
+            <h2 class="page-title">Customized AJAX calls
+   <div class="pull-right">
+      <span class="badge badge-success compatibility" title="Compatible with JSP">JSP</span>
+      <span class="badge badge-success compatibility" title="Compatible with Thymeleaf">Thymeleaf</span>
+   </div>
+</h2>
 <h3 class="section-title">Preamble</h3>
 <p>
-   As soon as you activate individual column filtering, Dandelion-Datatables will generate some fields allowing you to filter each column of the table.
-</p>
-<p>
-   By default, input fields will be generated in the corresponding <code>tfoot</code> cell.
+   You may need some additional request parameters to call your AJAX source or even a fully customized call. Well, whether or not you use server-side processing, you can completely override the default AJAX request which obtains the data from the
+   server to something more suitable for your application.
 </p>
 
-<h3 class="section-title">Using JSP</h3>
+<h3 class="section-title" id="erq">Extra request parameters</h3>
 <p>
-   Just use the <a href="/datatables/docs/ref/jsp/column.html#filterable"><code>filterable</code></a> column attribute and set it to <code>true</code>.
-</p>
+   You can send extra information to the server when making an AJAX request. For that, you'll have to:
+   <ul>
+      <li>
+         <p>Step 1: write a Javascript function that will be internally called by the DataTables configuration
 <pre class="prettyprint">
-&lt;datatables:table id="myTableId" data="${persons}">
+function getExtraParams( aoData ) {
+   aoData.push( { "name": "more_data", "value": "my_value" } );
+}
+</pre>
+         </p>
+         <p>
+            This Javascript function takes 1 parameter :
+            <ul>
+               <li>{array}: Data array (array of objects which are name/value pairs) that has been constructed by DataTables and will be sent to the server.</li>
+            </ul>
+         </p>
+      </li>
+      <li>
+         Step 2: tell <strong>Dandelion-Datatables</strong> you need extra parameters using either the <a href="/datatables/docs/ref/jsp/table.html#serverParams"><code>serverParams</code></a> (JSP) or the <a href="/datatables/docs/ref/thymeleaf/table.html#dt:serverParams"><code>dt:serverParams</code></a> table attribute.
+      </li>
+   </ul>
+</p>
+
+<h4>Using JSP</h4>
+<p>
+   Use the <a href="/datatables/docs/ref/jsp/table.html#serverParams"><code>serverParams</code></a> table attribute and set the name of the previous Javascript function. Ensure that the function is loaded <strong>before</strong> using the taglib.
+</p>
+<p>
+<pre class="prettyprint">
+&lt;c:url var="datasource" value="/persons" />
+&lt;datatables:table id="myTableId" url="${datasource}" serverSide="true" serverParams="getExtraParams" processing="true">
    &lt;datatables:column title="Id" property="id" />
-   &lt;datatables:column title="FirstName" property="firstName" filterable="true" />
-   &lt;datatables:column title="LastName" property="lastName" filterable="true" />
-   &lt;datatables:column title="City" property="address.town.name" filterable="true" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
+</p>
+
+<h4>Using Thymeleaf</h4>
+<p>
+   Using Thymeleaf, you can use the <a href="/datatables/docs/ref/thymeleaf/table.html#dt:serverParams"><code>dt:serverParams</code></a> table attribute. It works the same way than with JSP. Pass the name of the previous Javascript function.
+</p>
+<p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true" dt:url="@{/persons3}" dt:serverside="true" dt:serverparams="'getExtraParams'">
+   &lt;thead>
+      &lt;tr>
+         &lt;th dt:property="'id'">Id&lt;/th>
+         &lt;th dt:property="'firstName'">Firstname&lt;/th>
+         &lt;th dt:property="'lastName'">Lastname&lt;/th>
+         &lt;th dt:property="'address.town.name'">City&lt;/th>
+         &lt;th dt:property="'mail'">Mail&lt;/th>
+      &lt;/tr>
+  &lt;/thead>
+&lt;/table>
+</pre>
+</p>
+
+<h3 class="section-title" id=cthm"">Change the HTTP method</h3>
+<p>
+   You may also need to change the HTTP method that is used to make the AJAX call (server-side processing or AJAX sourced data).
+</p>
+<p>For that you can use either the <a href="/datatables/docs/ref/jsp/table.html#serverMethod"><code>serverMethod</code></a> (JSP) or the <a href="/datatables/docs/ref/thymeleaf/table.html#dt:serverMethod"><code>dt:serverMethod</code></a> (Thymeleaf) and pass "POST" if you need a POST instead of the default GET.</p>
+
+<h3 class="section-title" id="fcac">Fully customized AJAX call</h3>
+<p>
+   As a last resort, if the above tricks are not enough, you can use a fully customized AJAX call.
+</p>
+<p>
+   For that, you will need:
+   <ul>
+      <li>
+         <p>Step 1: to write a Javascript function that will be internally called by the DataTables configuration
+<pre class="prettyprint">
+function myAjaxRequest ( sSource, aoData, fnCallback, oSettings ) {
+   oSettings.jqXHR = $.ajax( {
+      "dataType": 'json',
+      "type": "POST",
+      "url": sSource,
+      "data": aoData,
+      "success": fnCallback
+   });
+}
+</pre>
+         </p>
+         <p>
+            This Javascript function takes 4 parameters :
+            <ul>
+               <li>{string}: HTTP source to obtain the data from (sAjaxSource)</li>
+               <li>{array}: A key/value pair object containing the data to send to the server</li>
+               <li>{function}: to be called on completion of the data get process that will draw the data on the page
+               <li>{object}: DataTables settings object</li>
+            </ul>
+         </p>
+      </li>
+      <li>
+         Step 2: tell <strong>Dandelion-Datatables</strong> you need to override the AJAX call using either the <a href="/datatables/docs/ref/jsp/table.html#serverData"><code>serverData</code></a> (JSP) or the <a href="/datatables/docs/ref/thymeleaf/table.html#dt:serverData"><code>dt:serverData</code></a> table attribute.
+      </li>
+   </ul>
+</p>
+<br />
+
+<h4>Using JSP</h4>
+<p>
+   Use the <a href="/datatables/docs/ref/jsp/table.html#serverData"><code>serverData</code></a> table attribute and set the name of the previous Javascript function. Ensure that the function is loaded <strong>before</strong> using the taglib.
+</p>
+<p>
+<pre class="prettyprint">
+&lt;c:url var="datasource" value="/persons" />
+&lt;datatables:table id="myTableId" url="${datasource}" serverSide="true" serverData="myAjaxRequest" processing="true">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
    &lt;datatables:column title="Mail" property="mail" />
 &lt;/datatables:table>
 </pre>
 
-<h3 class="section-title">Using Thymeleaf</h3>
+<h4>Using Thymeleaf</h4>
 <p>
-   With Thymeleaf, use the <a href="/datatables/docs/ref/thymeleaf/th.html#dt:filterable"><code>dt:filterable</code></a> th attribute instead.
+   Using Thymeleaf, you can use the <a href="/datatables/docs/ref/thymeleaf/table.html#dt:serverdata"><code>dt:serverdata</code></a> table attribute. It works the same way than with JSP. Pass the name of the previous Javascript function.
 </p>
+<p>
 <pre class="prettyprint">
-&lt;table id="myTableId" dt:table="true">
+&lt;table id="myTableId" dt:table="true" dt:url="@{/persons}" dt:serverside="true" dt:serverdata="'myAjaxRequest'">
    &lt;thead>
       &lt;tr>
-         &lt;th>Id&lt;/th>
-         &lt;th dt:filterable="true">FirstName&lt;/th>
-         &lt;th dt:filterable="true">LastName&lt;/th>
-         &lt;th dt:filterable="true">City&lt;/th>
-         &lt;th>Mail&lt;/th>
+         &lt;th dt:property="'id'">Id&lt;/th>
+         &lt;th dt:property="'firstName'">Firstname&lt;/th>
+         &lt;th dt:property="'lastName'">Lastname&lt;/th>
+         &lt;th dt:property="'address.town.name'">City&lt;/th>
+         &lt;th dt:property="'mail'">Mail&lt;/th>
       &lt;/tr>
-   &lt;/thead>
-   ...
+  &lt;/thead>
 &lt;/table>
 </pre>
-
-<p>
-   Note that you can change the place where the filtering fields will be injected. See <a href="filtering-placeholders.html">this tutorial</a> for more details.
-</p>
          </div>
       </div>
    </div>

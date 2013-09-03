@@ -27,65 +27,66 @@ level1: features
     </tr>
     <tr>
       <td>Sorting enablement</td>
-      <td><a href="/datatables/ref/jsp/table.html#sort">sort</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:sort">dt:sort</a></td>
-      <td><a href="/datatables/features/basics/featurenablement.html" class="btn btn-mini btn-info">More details »</a></td>    
+      <td>{% refjsp dt table sort %}</td>
+      <td>{% reftl dt table dt:sort %}</td>
+      <td><a href="/datatables/tutorials/basics/feature-enablement.html" class="btn btn-mini btn-info">More details »</a></td>    
     </tr>
     <tr>
       <td>Filtering enablement</td>
-      <td><a href="/datatables/ref/jsp/table.html#filter">filter</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:filter">dt:filter</a></td>
-      <td><a href="/datatables/features/basics/featurenablement.html" class="btn btn-mini btn-info">More details »</a></td>    
+      <td>{% refjsp dt table filter %}</td>
+      <td>{% reftl dt table dt:filter %}</td>
+      <td><a href="/datatables/tutorials/basics/feature-enablement.html" class="btn btn-mini btn-info">More details »</a></td>    
     </tr>
     <tr>
       <td>Paging enablement</td>
-      <td><a href="/datatables/ref/jsp/table.html#paginate">paginate</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:paginate">dt:paginate</a></td>
-      <td><a href="/datatables/features/basics/featurenablement.html" class="btn btn-mini btn-info">More details »</a></td>    
+      <td>{% refjsp dt table paginate %}</td>
+      <td>{% reftl dt table dt:paginate %}</td>
+      <td><a href="/datatables/tutorials/basics/feature-enablement.html" class="btn btn-mini btn-info">More details »</a></td>    
     </tr>
     <tr>
       <td>Info enablement</td>
-      <td><a href="/datatables/ref/jsp/table.html#info">info</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:info">dt:info</a></td>
-      <td><a href="/datatables/features/basics/featurenablement.html" class="btn btn-mini btn-info">More details »</a></td>    
+      <td>{% refjsp dt table info %}</td>
+      <td>{% reftl dt table dt:info %}</td>
+      <td><a href="/datatables/tutorials/basics/feature-enablement.html" class="btn btn-mini btn-info">More details »</a></td>    
     </tr>
     <tr>
       <td>Length change enablement</td>
-      <td><a href="/datatables/ref/jsp/table.html#lengthChange">lengthChange</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:lengthchange">dt:lengthchange</a></td>
-      <td><a href="/datatables/features/basics/featurenablement.html" class="btn btn-mini btn-info">More details »</a></td>    
+      <td>{% refjsp dt table lengthChange %}</td>
+      <td>{% reftl dt table dt:lengthChange %}</td>
+      <td><a href="/datatables/tutorials/basics/feature-enablement.html" class="btn btn-mini btn-info">More details »</a></td>    
     </tr>
     <tr>
-      <td>Handling default value</td>
-      <td><a href="/datatables/ref/jsp/column.html#default">default</a></td>
+      <td>Handling null/default values</td>
+      <td>{% refjsp dt column default %}</td>
       <td>Native support</td>
-      <td><a href="/datatables/features/basics/defaultvalues.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td><a href="/datatables/tutorials/basics/handling-null-and-default-values.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Using CDN</td>
-      <td><a href="/datatables/ref/jsp/table.html#cdn">cdn</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:cdn">dt:cdn</a></td>
-      <td><a href="/datatables/features/basics/cdn.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% refjsp dt table cdn %}</td>
+      <td>{% reftl dt table dt:cdn %}</td>
+      <td><a href="/datatables/tutorials/basics/using-a-cdn.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Using implicit objects</td>
-      <td><a href="/datatables/ref/jsp/table.html#row">row</a></td>
+      <td>{% refjsp dt table row %}</td>
       <td>Native support</td>
-      <td><a href="/datatables/features/basics/implicit.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td><a href="/datatables/tutorials/basics/using-implicit-objects.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
-      <td>Specific column's content</td>
-      <td><a href="/datatables/ref/jsp/column.html#property">property</a> / <a href="/datatables/ref/jsp/table.html#row">row</a></td>
+      <td>Customizing column header</td>
+      <td>{% refjsp dt columnHead %}</td>
       <td>Native support</td>
-      <td><a href="/datatables/features/basics/customcontent.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td><a href="/datatables/tutorials/basics/customizing-column-header.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
-      <td>Specific column's head</td>
-      <td><a href="/datatables/ref/jsp/columnhead.html#uid">uid (columnHead)</a> / <a href="/datatables/ref/jsp/column.html#uid">uid (column)</a></td>
-      <td>Native support</td>
-      <td><a href="/datatables/features/basics/customhead.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>DOm positionning</td>
+      <td>{% refjsp dt table dom %}</td>
+      <td>{% reftl dt table dt:dom %}</td>
+      <td><a href="/datatables/tutorials/basics/dom-positionning.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
+    <!-- 
     <tr>
       <td><h4>Changing the display</h4></td>
       <td colspan="3"></td>
@@ -120,34 +121,35 @@ level1: features
       <td><a href="/datatables/ref/thymeleaf/column.html#dt:visible">dt:visible</a></td>
       <td><a href="/datatables/features/basics/changingdisplay.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
-    
+     -->
+     
     <tr>
       <td><h4>Sorting</h4></td>
       <td colspan="3"></td>
     </tr>
     <tr>
       <td>Indivual sorting enablement</td>
-      <td><a href="/datatables/ref/jsp/column.html#sortable">sortable</a></td>
-      <td><a href="/datatables/ref/thymeleaf/th.html#dt:sortable">dt:sortable</a></td>
-      <td><a href="/datatables/features/basics/sorting.html#Individual_column_sorting" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% refjsp dt column sortable %}</td>
+      <td>{% reftl dt th dt:sortable %}</td>
+      <td><a href="/datatables/tutorials/basics/sorting/individual-column-sorting.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Sorting initialization</td>
-      <td><a href="/datatables/ref/jsp/column.html#sortInit">sortInit</a></td>
-      <td><a href="/datatables/ref/thymeleaf/th.html#dt:sortinit">dt:sortinit</a></td>
-      <td><a href="/datatables/features/basics/sorting.html#sorting_initialisation" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% refjsp dt column sortInit %}</td>
+      <td>{% reftl dt th dt:sortinit %}</td>
+      <td><a href="/datatables/tutorials/basics/sorting/sorting-initialization.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
-      <td>Sorting type (TODO)</td>
-      <td><a href="/datatables/ref/jsp/column.html#sortable">sortable</a></td>
-      <td><a href="/datatables/ref/thymeleaf/th.html#dt:sortable">dt:sortable</a></td>
-      <td><a href="/datatables/features/basics/sorting.html#Individual_column_sorting" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>Sorting type</td>
+      <td>{% refjsp dt column sortType %}</td>
+      <td>{% reftl dt th dt:sortType %}</td>
+      <td><a href="/datatables/tutorials/basics/sorting/using-a-sorting-function.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Sorting direction control</td>
-      <td><a href="/datatables/ref/jsp/column.html#sortDirection">sortDirection</a></td>
-      <td><a href="/datatables/ref/thymeleaf/th.html#dt:sortdir">dt:sortdir</a></td>
-      <td><a href="/datatables/features/basics/sorting.html#sorting_direction_control" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% refjsp dt column sortDirection %}</td>
+      <td>{% reftl dt th dt:sortdir %}</td>
+      <td><a href="/datatables/tutorials/basics/sorting/sorting-direction-control.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
     <tr>
@@ -156,27 +158,33 @@ level1: features
     </tr>
     <tr>
       <td>Indivual filtering enablement (using default input)</td>
-      <td><a href="/datatables/ref/jsp/column.html#filterable">filterable</a></td>
-      <td><a href="/datatables/ref/thymeleaf/th.html#dt:filterable">dt:filterable</a></td>
-      <td><a href="/datatables/features/basics/filtering.html#Individual_column_sorting" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% refjsp dt column filterable %}</td>
+      <td>{% reftl dt th dt:filterable %}</td>
+      <td><a href="/datatables/tutorials/basics/filtering/filtering-with-inputs.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Indivual filtering enablement (using drop down lists)</td>
-      <td><a href="/datatables/ref/jsp/column.html#filterType">filterType</a></td>
-      <td><a href="/datatables/ref/thymeleaf/th.html#dt:filterType">dt:filterType</a></td>
-      <td><a href="/datatables/features/basics/filtering.html#Using_drop_down_lists" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% refjsp dt column filterType %}</td>
+      <td>{% reftl dt th dt:filterType %}</td>
+      <td><a href="/datatables/tutorials/basics/filtering/filtering-with-drop-down-lists.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td>Filtering placeholders</td>
+      <td>{% refjsp dt table filterPlaceholder %}</td>
+      <td>{% reftl dt table dt:filterPlaceholder %}</td>
+      <td><a href="/datatables/tutorials/basics/filtering/filtering-placeholders.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Exclude column from filtering</td>
-      <td><a href="/datatables/ref/jsp/column.html#searchable">searchable</a></td>
-      <td><a href="/datatables/ref/thymeleaf/th.html#dt:searchable">dt:searchable</a></td>
-      <td><a href="/datatables/features/basics/filtering.html#exclude_column_from_filtering" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% refjsp dt column searchable %}</td>
+      <td>{% reftl dt th dt:searchable %}</td>
+      <td><a href="/datatables/tutorials/basics/filtering/exclude-columns-from-global-filtering.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Using an external search form</td>
-      <td><a href="/datatables/ref/jsp/column.html#selector">selector</a></td>
-      <td><a href="/datatables/ref/thymeleaf/th.html#dt:selector">dt:selector</a></td>
-      <td><a href="/datatables/features/basics/filtering.html#using_an_external_search_form" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% refjsp dt column selector %}</td>
+      <td>{% reftl dt th dt:selector %}</td>
+      <td><a href="/datatables/tutorials/basics/filtering/using-an-external-form.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
     <tr>
@@ -185,26 +193,26 @@ level1: features
     </tr>
     <tr>
       <td>Changing pagination type</td>
-      <td><a href="/datatables/ref/jsp/table.html#paginationType">paginationType</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:paginationtype">dt:paginationtype</a></td>
-      <td><a href="/datatables/features/basics/paging.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% refjsp dt table paginationType %}</td>
+      <td>{% reftl dt table dt:paginationType %}</td>
+      <td><a href="/datatables/tutorials/basics/paging/changing-pagination-style.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
     <tr>
-      <td><h4>Scrolling (TODO)</h4></td>
+      <td><h4>Scrolling</h4></td>
       <td colspan="3"></td>
     </tr>
     <tr>
-      <td>Vertical scrolling (TODO</td>
-      <td><a href="/datatables/ref/jsp/table.html#paginationType">paginationType</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:paginationtype">dt:paginationtype</a></td>
-      <td><a href="/datatables/features/basics/paging.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>Vertical scrolling</td>
+      <td>{% refjsp dt table scrollY %}</td>
+      <td>{% reftl dt table dt:scrolly %}</td>
+      <td><a href="/datatables/tutorials/basics/scrolling.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
-      <td>Horizontal scrolling (TODO</td>
-      <td><a href="/datatables/ref/jsp/table.html#paginationType">paginationType</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:paginationtype">dt:paginationtype</a></td>
-      <td><a href="/datatables/features/basics/paging.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>Horizontal scrolling</td>
+      <td>{% refjsp dt table scrollX %}</td>
+      <td>{% reftl dt table dt:scrollx %}</td>
+      <td><a href="/datatables/tutorials/basics/scrolling.html#hs" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
     <tr>
@@ -212,10 +220,28 @@ level1: features
       <td colspan="3"></td>
     </tr>
     <tr>
-      <td>Internationalisation</td>
-      <td><a href="/datatables/ref/jsp/table.html#labels">labels</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:labels">dt:labels</a></td>
-      <td><a href="/datatables/features/advanced/i18n.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>Internationalization</td>
+      <td></td>
+      <td></td>
+      <td><a href="/datatables/tutorials/i18n/internationalization.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td>Integration with other projects</td>
+      <td></td>
+      <td></td>
+      <td><a href="/datatables/tutorials/i18n/integration-with-other-projects.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td>Pluging a custom locale resolver</td>
+      <td></td>
+      <td></td>
+      <td><a href="/datatables/tutorials/i18n/pluging-a-custom-localeresolver.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td>Pluging a custom message resolver</td>
+      <td></td>
+      <td></td>
+      <td><a href="/datatables/tutorials/i18n/pluging-a-custom-messageresolver.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
     <tr>
@@ -223,40 +249,40 @@ level1: features
       <td colspan="3"></td>
     </tr>
     <tr>
-      <td>Export enablement</td>
-      <td><a href="/datatables/ref/jsp/table.html#export">export</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:export">dt:export</a></td>
-      <td><a href="/datatables/features/export/activateexport.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>Activation export</td>
+      <td>{% refjsp dt table export %}</td>
+      <td>{% reftl dt table dt:export %}</td>
+      <td><a href="/datatables/tutorials/export/activating-export.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
-      <td>Adapting links' style</td>
-      <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/datatables/ref/jsp/export.html#label">label</a> / <a href="/datatables/ref/jsp/export.html#cssStyle">cssStyle</a> / <a href="/datatables/ref/jsp/export.html#cssClass">cssClass</a></td>
-      <td><a href="/datatables/ref/thymeleaf/tbody.html">see here</a></td>
-      <td><a href="/datatables/features/export/customlink.html#Link_style" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>Customizing export content</td>
+      <td>{% refjsp dt column display %}</td>
+      <td>{% reftl dt td dt:csv %} / {% reftl dt td dt:xml %} / {% reftl dt td dt:pdf %} / {% reftl dt td dt:xls %} / {% reftl dt td dt:xlsx %}</td>
+      <td><a href="/datatables/tutorials/export/customizing-export-content.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
-      <td>Adapting links' position</td>
-      <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/datatables/ref/jsp/table.html#exportLinks">exportLinks</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:exportLinks">dt:exportLinks</a></td>
-      <td><a href="/datatables/features/export/customlink.html#Link_position" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>Customizing export links</td>
+      <td>{% refjsp dt export type %} / {% refjsp dt export label %} / {% refjsp dt export cssStyle %} / {% refjsp dt export cssClass %}</td>
+      <td>{% reftl dt thead dt:csv:label %} / {% reftl dt thead dt:csv:style %} / {% reftl dt thead dt:csv:class %} / ...</td>
+      <td><a href="/datatables/tutorials/export/customizing-export-links.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
-      <td>Remove header (all formats)</td>
-      <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/datatables/ref/jsp/export.html#removeHeader">removeHeader</a></td>
-      <td><a href="/datatables/ref/thymeleaf/tbody.html">see here</a></td>
-      <td><a href="/datatables/features/export/customlink.html#Remove_header_all_formats" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>Adapting links position</td>
+      <td>{% refjsp dt table exportLinks %}</td>
+      <td>{% reftl dt table dt:exportLinks %}</td>
+      <td><a href="/datatables/tutorials/export/customizing-export-links.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
-      <td>Column auto-sizing (XLS/XLSX)</td>
-      <td><a href="/datatables/ref/jsp/export.html#type">type</a> / <a href="/datatables/ref/jsp/export.html#autoSize">autoSize</a></td>
-      <td><a href="/datatables/ref/thymeleaf/tbody.html#dt:xls:autosize">dt:xls:autosize</a> / <a href="/datatables/ref/thymeleaf/tbody.html#dt:xlsx:autosize">dt:xlsx:autosize</a></td>
-      <td><a href="/datatables/features/export/customlink.html#Column_auto-sizing_only_XLSXLSX" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>Customizing export URL</td>
+      <td>{% refjsp dt export type %} / {% refjsp dt export url %} / {% refjsp dt export method %}</td>
+      <td>{% reftl dt thead dt:csv:url %} / {% reftl dt thead dt:csv:method %} / ...</td>
+      <td><a href="/datatables/tutorials/export/customizing-export-url.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
-      <td>Adapt export content</td>
-      <td><a href="/datatables/ref/jsp/column.html#display">display</a></td>
-      <td><a href="/datatables/ref/thymeleaf/td.html#dt:csv">dt:csv</a> / <a href="/datatables/ref/thymeleaf/td.html#dt:xml">dt:xml</a> / <a href="/datatables/ref/thymeleaf/td.html#dt:pdf">dt:pdf</a> / <a href="/datatables/ref/thymeleaf/td.html#dt:xls">dt:xls</a> / <a href="/datatables/ref/thymeleaf/td.html#dt:xlsx">dt:xlsx</a></td>
-      <td><a href="/datatables/features/export/adaptcontent.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>Writing your own export class</td>
+      <td></td>
+      <td></td>
+      <td><a href="/datatables/tutorials/export/configuring-export-classes.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
     <tr>
@@ -266,24 +292,24 @@ level1: features
     <tr>
       <td>Basic styling</td>
       <td>
-         <a href="/datatables/ref/jsp/table.html#cssClass">cssClass</a> / <a href="/datatables/ref/jsp/table.html#cssStyle">cssStyle</a> (table)<br/>
-         <a href="/datatables/ref/jsp/column.html#cssClass">cssClass</a> / <a href="/datatables/ref/jsp/column.html#cssStyle">cssStyle</a> (column)<br />
-         <a href="/datatables/ref/jsp/table.html#cssStripes">cssStripes</a>
+         {% refjsp dt table cssStyle %} / {% refjsp dt table cssClass %} (table)<br/>
+         {% refjsp dt column cssStyle %} / {% refjsp dt column cssClass %} (column)<br />
+         {% refjsp dt table cssStripes %}
       </td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:stripeclasses">dt:stripeclasses</a></td>
-      <td><a href="/datatables/features/styling/basicstyling.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% reftl dt table dt:stripeclasses %}</td>
+      <td><a href="/datatables/tutorials/styling/basics-of-styling.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td><a href="http://twitter.github.com/bootstrap/">Bootstrap 2 theme</a></td>
-      <td><a href="/datatables/ref/jsp/table.html#theme">theme</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:theme">dt:theme</a></td>
-      <td><a href="/datatables/features/styling/bootstrap2.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% refjsp dt table theme %}</td>
+      <td>{% reftl dt table dt:theme %}</td>
+      <td><a href="/datatables/tutorials/styling/themes/bootstrap2.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
 	<tr>
       <td><a href="http://jqueryui.com/themeroller/">jQuery UI theme</a></td>
-      <td><a href="/datatables/ref/jsp/table.html#theme">theme</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:theme">dt:theme</a></td>
-      <td><a href="/datatables/features/styling/jqueryui.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% refjsp dt table theme %}</td>
+      <td>{% reftl dt table dt:theme %}</td>
+      <td><a href="/datatables/tutorials/styling/themes/jqueryui.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
 
     <tr>
@@ -292,45 +318,39 @@ level1: features
     </tr>
     <tr>
       <td>Using AJAX sources</td>
-      <td><a href="/datatables/ref/jsp/table.html#url">url</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:url">dt:url</a></td>
+      <td>{% refjsp dt table url %}</td>
+      <td>{% reftl dt table dt:url %}</td>
       <td><a href="/datatables/features/ajax/ajaxsource.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Server-side processing</td>
-      <td><a href="/datatables/ref/jsp/table.html#serverSide">serverSide</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:serverside">dt:serverside</a></td>
-      <td><a href="/datatables/features/ajax/serverside.html" class="btn btn-mini btn-info">More details »</a></td>   
-    </tr>
-    <tr>
-      <td>Processing indication</td>
-      <td><a href="/datatables/ref/jsp/table.html#processing">processing</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:processing">dt:processing</a></td>
+      <td>{% refjsp dt table serverSide %} / {% refjsp dt table processing %}</td>
+      <td>{% reftl dt table dt:serverside %} / {% reftl dt table dt:processing %}</td>
       <td><a href="/datatables/features/ajax/serverside.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Pipelining data</td>
-      <td><a href="/datatables/ref/jsp/table.html#pipelining">pipelining</a> / <a href="/datatables/ref/jsp/table.html#pipeSize">pipeSize</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:pipelining">dt:pipelining</a> / <a href="/datatables/ref/thymeleaf/table.html#dt:pipesize">dt:pipesize</a></td>
+      <td>{% refjsp dt table pipelining %} / {% refjsp dt table pipeSize %}</td>
+      <td>{% reftl dt table dt:pipelining %} / {% reftl dt table dt:pipesize %}</td>
       <td><a href="/datatables/features/ajax/serverside.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
-      <td>Custom column's content</td>
-      <td><a href="/datatables/ref/jsp/column.html#renderFunction">renderFunction</a></td>
-      <td><a href="/datatables/ref/thymeleaf/th.html#dt:renderFunction">dt:renderFunction</a></td>
-      <td><a href="/datatables/features/ajax/customcontent.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>Customizing column content</td>
+      <td>{% refjsp dt table renderFunction %}</td>
+      <td>{% reftl dt table dt:renderFunction %}</td>
+      <td><a href="/datatables/tutorials/ajax/customizing-column-content.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
-      <td>Custom AJAX request</td>
-      <td><a href="/datatables/ref/jsp/table.html#serverData">serverData</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:serverdata">dt:serverdata</a></td>
+      <td>Customizing AJAX call</td>
+      <td>{% refjsp dt table serverParams %} / {% refjsp dt table serverData %} / {% refjsp dt table serverMethod %}</td>
+      <td>{% reftl dt table dt:serverparams %} / {% reftl dt table dt:serverData %} / {% reftl dt table dt:servermethod %}</td>
       <td><a href="/datatables/features/ajax/customrequest.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
-      <td>Extra AJAX request parameters</td>
-      <td><a href="/datatables/ref/jsp/table.html#serverParams">serverParams</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html#dt:serverparams">dt:serverparams</a></td>
-      <td><a href="/datatables/features/ajax/extrarequestparam.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>Integration with Spring</td>
+      <td></td>
+      <td></td>
+      <td><a href="/datatables/tutorials/ajax/integration-with-spring.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
     <tr>
@@ -339,21 +359,21 @@ level1: features
     </tr>
     <tr>
       <td><a href="http://datatables.net/extras/colreorder/">ColReorder</a></td>
-      <td><a href="/datatables/ref/jsp/table.html#colReorder">colReorder</a></td>
-      <td><a href="/datatables/ref/thymeleaf/thead.html#dt:colReorder">dt:colReorder</a></td>
-      <td><a href="/datatables/features/plugins/colreorder.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% refjsp dt table colReorder %}</td>
+      <td>{% reftl dt thead dt:colReorder %}</td>
+      <td><a href="/datatables/tutorials/plugins/colreorder.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td><a href="http://datatables.net/extras/scroller/">Scroller</a></td>
-      <td><a href="/datatables/ref/jsp/table.html#scroller">scroller</a></td>
-      <td><a href="/datatables/ref/thymeleaf/thead.html#dt:scroller">dt:scroller</a></td>
-      <td><a href="/datatables/features/plugins/scroller.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% refjsp dt table scroller %}</td>
+      <td>{% reftl dt thead dt:scroller %}</td>
+      <td><a href="/datatables/tutorials/plugins/scroller.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td><a href="http://datatables.net/extras/fixedheader/">FixedHeader</a></td>
-      <td><a href="/datatables/ref/jsp/table.html#fixedHeader">fixedHeader</a> / <a href="/jsp/table.html#offsetTop">offsetTop</a></td>
-      <td><a href="/datatables/ref/thymeleaf/thead.html#dt:fixedheader">dt:fixedheader</a></td>
-      <td><a href="/datatables/features/plugins/fixedheader.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% refjsp dt table fixedHeader %} / {% refjsp dt table offsetTop %}</td>
+      <td>{% reftl dt thead dt:fixedHeader %} / {% reftl dt thead dt:offsetTop %}</td>
+      <td><a href="/datatables/tutorials/plugins/fixedheader.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
     <tr>
@@ -362,27 +382,50 @@ level1: features
     </tr>
     <tr>
       <td>Callbacks</td>
-      <td><a href="/datatables/ref/jsp/callback.html">datatables:callback</a></td>
-      <td><a href="/datatables/ref/thymeleaf/tbody.html#dt:cbk">dt:cbk:*</a></td>
-      <td><a href="/datatables/features/advanced/callbacks.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>{% refjsp dt callback %}</td>
+      <td>{% reftl dt tbody dt:cbk:* %}</td>
+      <td><a href="/datatables/tutorials/advanced/using-callbacks.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
-      <td>Extra file</td>
-      <td><a href="/datatables/ref/jsp/extrafile.html">datatables:extraFile</a></td>
+      <td>Using extra Javascript files</td>
+      <td>{% refjsp dt extraFile %}</td>
       <td><span class="icon-remove"></span></td>
-      <td><a href="/datatables/features/advanced/extrafile.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td><a href="/datatables/tutorials/advanced/using-extra-files.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
-      <td>Extra conf</td>
-      <td><a href="/datatables/ref/jsp/extraconf.html">datatables:extraConf</a></td>
+      <td>Using extra DataTables configuration</td>
+      <td>{% refjsp dt extraConf %}</td>
       <td><span class="icon-remove"></span></td>
-      <td><a href="/datatables/features/advanced/extraconf.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td><a href="/datatables/tutorials/advanced/using-extra-conf.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
-      <td>Writing your own extension (TODO)</td>
-      <td><a href="/datatables/ref/jsp/table.html">ext</a></td>
-      <td><a href="/datatables/ref/thymeleaf/table.html">dt:ext</a></td>
-      <td><a href="/datatables/features/advanced/write-your-own-extension.html" class="btn btn-mini btn-info">More details »</a></td>   
+      <td>Writing your own extension</td>
+      <td>{% refjsp dt table ext %}</td>
+      <td>{% reftl dt table dt:ext %}</td>
+      <td><a href="/datatables/tutorials/advanced/writing-your-own-extension.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td>Pluging a custom configuration loader</td>
+      <td></td>
+      <td></td>
+      <td><a href="/datatables/tutorials/configuration/custom-configuration-loader.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    
+    <tr>
+      <td><h4>Asset processing</h4></td>
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td>Using compression</td>
+      <td></td>
+      <td></td>
+      <td><a href="/datatables/tutorials/advanced/using-asset-compression.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td>Using aggregation</td>
+      <td></td>
+      <td></td>
+      <td><a href="/datatables/tutorials/advanced/using-asset-aggregation.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     
     <tr>
@@ -390,16 +433,16 @@ level1: features
       <td colspan="3"></td>
     </tr>
     <tr>
-      <td>Using global configuration</td>
-      <td></td>
-      <td></td>
-      <td><a href="/datatables/tutorials/configuration/global-configuration.html" class="btn btn-mini btn-info">More details »</a></td>   
-    </tr>
-    <tr>
       <td>Overriding configuration</td>
       <td>{% refjsp dt prop %}</td>
       <td></td>
       <td><a href="/datatables/tutorials/configuration/override-conf.html" class="btn btn-mini btn-info">More details »</a></td>   
+    </tr>
+    <tr>
+      <td>Using global configuration</td>
+      <td></td>
+      <td></td>
+      <td><a href="/datatables/tutorials/configuration/global-configuration.html" class="btn btn-mini btn-info">More details »</a></td>   
     </tr>
     <tr>
       <td>Using configuration groups</td>

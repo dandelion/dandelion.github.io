@@ -99,8 +99,8 @@ http://dandelion.github.io/datatables/tutorials/advanced/using-callbacks.html
 http://dandelion.github.io/datatables/tutorials/advanced/using-extra-conf.html
 http://dandelion.github.io/datatables/tutorials/advanced/using-extra-files.html
 http://dandelion.github.io/datatables/tutorials/advanced/writing-your-own-extension.html
-http://dandelion.github.io/datatables/tutorials/ajax/customized-ajax-calls.html
-http://dandelion.github.io/datatables/tutorials/ajax/customized-column-content.html
+http://dandelion.github.io/datatables/tutorials/ajax/customizing-ajax-calls.html
+http://dandelion.github.io/datatables/tutorials/ajax/customizing-column-content.html
 http://dandelion.github.io/datatables/tutorials/ajax/index.html
 http://dandelion.github.io/datatables/tutorials/ajax/integration-with-spring.html
 http://dandelion.github.io/datatables/tutorials/ajax/server-side/index.html
@@ -108,7 +108,7 @@ http://dandelion.github.io/datatables/tutorials/ajax/server-side/pipelining-data
 http://dandelion.github.io/datatables/tutorials/ajax/springmvc.html
 http://dandelion.github.io/datatables/tutorials/ajax/using-ajax-sources.html
 http://dandelion.github.io/datatables/tutorials/basics/changing-display-length.html
-http://dandelion.github.io/datatables/tutorials/basics/customized-column-header.html
+http://dandelion.github.io/datatables/tutorials/basics/customizing-column-header.html
 http://dandelion.github.io/datatables/tutorials/basics/displaying-multiple-tables.html
 http://dandelion.github.io/datatables/tutorials/basics/dom-positionning.html
 http://dandelion.github.io/datatables/tutorials/basics/feature-enablement.html
@@ -184,7 +184,7 @@ http://dandelion.github.io/webanalytics/ref/thymeleaf/index.html
 http://dandelion.github.io/webanalytics/ref/thymeleaf/tracker.html
 http://dandelion.github.io/webanalytics/roadmap.html
 
-http://dandelion.github.io/blog/2013/09/04/dandelion-datatables-0.9.0-release
+http://dandelion.github.io/blog/2013/09/03/dandelion-datatables-0.9.0-release
 http://dandelion.github.io/blog/2013/07/28/dandelion-0.2.1-release
 http://dandelion.github.io/blog/2013/06/29/dandelion-webanalytics-0.2.2-release
 http://dandelion.github.io/blog/2013/06/06/dandelion-webanalytics-0.2.1-release

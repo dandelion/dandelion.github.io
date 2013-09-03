@@ -3,7 +3,7 @@
    <title>Dandelion Project</title>
    <link href="http://dandelion.github.io//blog/atom.xml" rel="self"/>
    <link href="http://dandelion.github.io"/>
-   <updated>2013-09-03T21:31:08+02:00</updated>
+   <updated>2013-09-03T23:10:25+02:00</updated>
    <id>http://dandelion.github.io</id>
    <author>
       <name>Dandelion Team</name>
@@ -13,9 +13,9 @@
    
    <entry>
       <title>Dandelion Datatables 0.9.0 Release</title>
-      <link href="http://dandelion.github.io/blog/2013/09/04/dandelion-datatables-0.9.0-release"/>
-      <updated>2013-09-04T00:00:00+02:00</updated>
-      <id>http://dandelion.github.io/blog/2013/09/04/dandelion-datatables-0.9.0-release</id>
+      <link href="http://dandelion.github.io/blog/2013/09/03/dandelion-datatables-0.9.0-release"/>
+      <updated>2013-09-03T00:00:00+02:00</updated>
+      <id>http://dandelion.github.io/blog/2013/09/03/dandelion-datatables-0.9.0-release</id>
       <content type="html">
 
 

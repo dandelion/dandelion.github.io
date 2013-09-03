@@ -141,32 +141,9 @@
                         <a href="/datatables/tutorials/basics/sorting/"><i class="icon-double-angle-right"></i> Sorting data</a>
                      </li>
                      
-                     <li class="active">
+                     <li >
                         <a href="/datatables/tutorials/basics/filtering/"><i class="icon-double-angle-right"></i> Filtering data</a>
                      </li>
-                     
-                     <ul class="nav nav-list">
-                        <li class="active">
-                           <a href="/datatables/tutorials/basics/filtering/filtering-with-inputs.html"><i class="icon-double-angle-right"></i> Filtering with inputs</a>
-                        </li>
-                        <!-- 
-                        <li >
-                           <a href="/datatables/tutorials/basics/filtering/filtering-with-number-range.html"><i class="icon-double-angle-right"></i> Filtering with number range</a>
-                        </li>
-                         -->
-                        <li >
-                           <a href="/datatables/tutorials/basics/filtering/filtering-with-drop-down-lists.html"><i class="icon-double-angle-right"></i> Filtering with drop-down lists</a>
-                        </li>
-                        <li >
-                           <a href="/datatables/tutorials/basics/filtering/filtering-placeholders.html"><i class="icon-double-angle-right"></i> Filtering placeholders</a>
-                        </li>
-                        <li >
-                           <a href="/datatables/tutorials/basics/filtering/using-an-external-form.html"><i class="icon-double-angle-right"></i> Using an external form</a>
-                        </li>
-                        <li >
-                           <a href="/datatables/tutorials/basics/filtering/exclude-columns-from-global-filtering.html"><i class="icon-double-angle-right"></i> Exclude columns from global filtering</a>
-                        </li>
-                     </ul>
                      
                      <li >
                         <a href="/datatables/tutorials/basics/paging/"><i class="icon-double-angle-right"></i> Paging data</a>
@@ -185,7 +162,7 @@
                      <li >
                         <a href="/datatables/tutorials/basics/using-a-cdn.html"><i class="icon-double-angle-right"></i> Using a CDN</a>
                      </li>
-                     <li >
+                     <li class="active">
                         <a href="/datatables/tutorials/basics/customizing-column-header.html"><i class="icon-double-angle-right"></i> Customizing column header</a>
                      </li>
                   </ul>
@@ -237,11 +214,9 @@
    
      
    
-   <li><span class="divider">|</span><a href="/datatables/tutorials/basics/filtering.html">Filtering data</a></li>
+   <li><span class="divider">|</span><a href="/datatables/tutorials/basics/customized-column-header">Customized column header</a></li>
    
    
-   
-   <li><span class="divider">|</span><a href="/datatables/tutorials/basics/filtering/filtering-with-inputs.html">Filtering with inputs</a></li>
    
    
    <li class="pull-right" style="margin-left:5px;">
@@ -260,52 +235,69 @@
 </ul>
 
 
-            <h2 class="page-title">Filtering with inputs</h2>
+            <h2 class="page-title">Customized column header</h2>
 
 <h3 class="section-title">Preamble</h3>
 <p>
-   As soon as you activate individual column filtering, Dandelion-Datatables will generate some fields allowing you to filter each column of the table.
-</p>
-<p>
-   By default, input fields will be generated in the corresponding <code>tfoot</code> cell.
+   At times it can be useful to have some HTML code in a column header. A classic use case is the <i>master checkbox</i>.
 </p>
 
 <h3 class="section-title">Using JSP</h3>
 <p>
-   Just use the <a href="/datatables/docs/ref/jsp/column.html#filterable"><code>filterable</code></a> column attribute and set it to <code>true</code>.
+   This can be done using the <a href="/datatables/docs/ref/jsp/columnhead.html"><code>&lt;datatables:columnhead&gt;</code></a> tag, which works hand-in-hand with the <a href="/datatables/docs/ref/jsp/column.html"><code>&lt;datatables:column&gt;</code></a> tag.
+</p>
+<p>
+   As soon as you need to customize a column header, you will have to write an unique value in the <code>uid</code> attribute both in the <a href="/datatables/docs/ref/jsp/columnhead.html"><code>&lt;datatables:columnhead&gt;</code></a> tag and in the corresponding <a href="/datatables/docs/ref/jsp/column.html"><code>&lt;datatables:column&gt;</code></a> tag, in order to "link" them together. 
 </p>
 <pre class="prettyprint">
-&lt;datatables:table id="myTableId" data="${persons}">
+&lt;datatables:table id="myTableId" data="${persons}" row="person">
    &lt;datatables:column title="Id" property="id" />
-   &lt;datatables:column title="FirstName" property="firstName" filterable="true" />
-   &lt;datatables:column title="LastName" property="lastName" filterable="true" />
-   &lt;datatables:column title="City" property="address.town.name" filterable="true" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
    &lt;datatables:column title="Mail" property="mail" />
+   &lt;datatables:columnHead uid="actionColumn">
+      &lt;input type="checkbox" onclick="$('#myTableId').find(':checkbox').attr('checked', this.checked);" />
+   &lt;/datatables:columnHead>
+   &lt;datatables:column uid="actionColumn" sortable="false" cssCellStyle="text-align:center;">
+      &lt;input type="checkbox" value="${person.id}" />
+   &lt;/datatables:column>
 &lt;/datatables:table>
 </pre>
 
 <h3 class="section-title">Using Thymeleaf</h3>
 <p>
-   With Thymeleaf, use the <a href="/datatables/docs/ref/thymeleaf/th.html#dt:filterable"><code>dt:filterable</code></a> th attribute instead.
+   Nothing's specific is needed with Thymeleaf since you have full control over the <code>thead</code> section of the table.
 </p>
 <pre class="prettyprint">
 &lt;table id="myTableId" dt:table="true">
    &lt;thead>
       &lt;tr>
          &lt;th>Id&lt;/th>
-         &lt;th dt:filterable="true">FirstName&lt;/th>
-         &lt;th dt:filterable="true">LastName&lt;/th>
-         &lt;th dt:filterable="true">City&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
          &lt;th>Mail&lt;/th>
+         &lt;th dt:sortable="false">
+            &lt;input type="checkbox" onclick="$('#myTableId').find(':checkbox').attr('checked', this.checked);" />
+         &lt;/th>
       &lt;/tr>
    &lt;/thead>
-   ...
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+         &lt;td style="text-align:center;">
+            &lt;input type="checkbox" th:value="${person.id}" />
+         &lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
 &lt;/table>
 </pre>
 
-<p>
-   Note that you can change the place where the filtering fields will be injected. See <a href="filtering-placeholders.html">this tutorial</a> for more details.
-</p>
          </div>
       </div>
    </div>
