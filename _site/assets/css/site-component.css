@@ -38,6 +38,17 @@ p.alert i.icon-2x {
 }
 /* End Alert customization */
 
+/* Search form customization */
+.custom-form-search input {
+	height: 16px;
+	margin-top: -2px;
+}
+.custom-form-search button {
+	padding: 2px 8px;
+	margin-top: -2px;
+}
+/* End search form customization */
+
 /* Navbar marketing 
 
 .navbar .nav>li>a {

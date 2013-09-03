@@ -20,7 +20,18 @@
    <li><span class="divider">|</span><a href="/{{ site.dandelion.components.[page.module].url }}/{{ page.level1 | downcase }}/{{ page.level2.url | downcase }}/{{ page.level3.url | downcase }}/{{ page.level4.url | downcase }}.html">{{ page.level4.name }}</a></li>
    {% endif %}
    
+   <li class="pull-right" style="margin-left:5px;">
+      <form class="custom-form-search" action="http://google.com/search" method="get" style="margin:0;">
+         <input type="hidden" name="q" value="site:dandelion.github.io/{{ site.dandelion.components.[page.module].url }}">
+         <div class="input-append">
+            <input type="text" class="input-medium" name="q" placeholder="Search via Google" />
+            <button type="submit" class="btn"><i class="icon-search"></i></button>
+         </div>
+      </form>
+   </li>
+   
    <li class="pull-right">
-      Latest release: <a href="/{{ site.dandelion.components.[page.module].url }}/releases/{{ site.dandelion.components.[page.module].version }}/">{{ site.dandelion.components.[page.module].version }}</a>
+      Latest release: <a href="/{{ site.dandelion.components.[page.module].url }}/releases/{{ site.dandelion.components.[page.module].version }}/">{{ site.dandelion.components.[page.module].version }}</a><span class="divider">|</span>
    </li>
 </ul>
+

@@ -1,0 +1,153 @@
+---
+layout: post
+categories : ['News', 'Release']
+tags : ['Dandelion-datatables']
+author: 'Thibault Duchateau'
+---
+{% include setup %}
+
+<br />
+<div class="alert alert-success text-center" style="padding:20px;">
+   <h3>Dandelion-Datatables v0.9.0 has been released in <a href="http://search.maven.org/#search%7Cga%7C1%7Cdandelion">Maven Central</a>!</h3>
+</div>
+<p>
+   Since the beginning of the project, this is clearly the biggest release ever published. Beside, even if it looks more like a major version, we prefer to keep the 1.x.y version number for the first stable version. 
+</p>
+<p>
+   Some works about this release...
+</p>
+
+<h3 class="section-title">Overview of the new features</h3>
+<p>
+   
+</p>
+<h4>Support for Java-based i18n</h4>
+<p>
+   Dandelion-Datatables has now full support for internationalization of column titles and
+   surrounding information, based on the ResourceBundle mechanism.
+</p>
+<p>
+   And since Dandelion will probably be used in an application where content is already
+   internationalized using a specific framework, some ready-to-use adapters are provided for <a href="http://www.springsource.org/">Spring</a>
+   and the <a href="http://jstl.java.net/">JSP Standard Tag Library</a>.
+</p>
+<p>
+   You can see more details <a href="http://localhost:4000/datatables/tutorials/i18n/">here</a>...
+</p>
+
+<h4>Support for global table configuration and configuration groups</h4>
+<p>
+   This new feature allows you:   
+</p>
+<ul>
+   <li>to join together in one properties file a configuration which will be applied on all tables in the application</li>
+   <li>to put together table configurations inside multiple groups that can be then activated locally using tag attributes</li>
+</ul>
+<p>
+   See more details <a href="/datatables/tutorials/configuration">here</a>...
+</p>
+
+<h4>Fully customizable export</h4>
+<p>
+   Exports have been refactored in order to allow export with all kind of data sources (DOM and
+   AJAX). You can now fully customize what will appear in exported files. See more details <a href="/datatables/tutorials/export/">here</a>...
+</p>
+
+<h4>Write your own extensions!</h4>
+<p>
+   A great extension point has been added, allowing you to write and activate your own extensions!
+   See more details
+   <a href="/datatables/tutorials/advanced/writing-your-own-extension.html">here</a>...
+</p>
+
+<h4>See more...</h4>
+<p>
+   There are much more new features, enhancements and bug fixes. Feel free to see the <a href="/datatables/releases/0.9.0/">full changelog</a>.
+</p>
+
+<h3 class="section-title">Some words about testing...</h3>
+<p>
+   Integration tests of Dandelion-Datatables are currently based, amongst others, on
+   <a href="http://docs.seleniumhq.org/">Selenium</a> and <a
+      href="https://github.com/detro/ghostdriver">Ghost Driver</a>, which are both amazing projects.
+</p>
+<p>
+   Unfortunately, we're experiencing a very annoying <a href="https://github.com/detro/ghostdriver/issues/140">Ghost Driver issue</a> for several months which affects the
+   releasing process in the way that integration tests randomly fail, thus breaking either the <code>release:prepare</code> or the <code>release:perform</code> Maven goals. Grrrr...
+   That's why there are so much
+   <a href="https://github.com/dandelion/dandelion-datatables/releases">ugly tags in the
+      corresponding SCM</a>.
+</p>
+<p>
+   As a consequence, in order to release within enhanced conditions we finally took the decision to
+   <a
+      href="https://github.com/dandelion/dandelion-datatables/commit/c3ec9b83e8d2c8711d5c7ec747c27a1c7f22e057">temporarily
+      disable all the integration tests</a> for this release. You have to trust us, all tests are
+   green! :-)
+</p>
+<p>
+   We'll probably update the integration tests in the next release and switch back to a more stable web driver.
+</p>
+
+<h3 class="section-title">New contributions</h3
+<p>
+   This new release ships some great contributions, for example:
+</p>
+<ul>
+   <li>Support for horizontal scrolling</li>
+   <li>Support for EL expressions in all attributes of the JSP taglib</li>
+   <li>Support for nested JSP tags</li>
+   <li>...</li>
+</ul>
+<p>
+   Many thanks to the <a href="/team/">new contributors</a>!
+</p>
+
+<h3 class="section-title">Demo applications</h3>
+<p>
+   Demo apps needed a huge refreshment. It is done! As usual, if you encounter any
+   issue with one of the examples, feel free to raise an issue or directly make pull requests!
+</p>
+<ul>
+   <li><a href="https://github.com/dandelion/dandelion-samples/tree/master/datatables-jsp">JSP demo</a></li>
+   <li><a href="https://github.com/dandelion/dandelion-samples/tree/master/datatables-thymeleaf">Thymeleaf demo</a></li>
+</ul>
+
+<h3 class="section-title">Documentation</h3>
+<p>
+   In short, the whole site has been refactored. :-)
+</p>
+<p>
+    At the level of contents...
+</p>
+<ul>
+   <li>all existing <a href="/datatables/tutorials">tutorials</a> have been rewritten</li>
+   <li>lots of <a href="/datatables/tutorials">tutorials</a> have been added</li>
+   <li>new <a href="/faq">FAQ</a> section</li>
+   <li>new global <a href="/roadmap">roadmap</a></li>
+   <li>...</li>
+</ul>
+<p>
+   ... as well as form:
+</p>
+<ul>
+   <li>new home page</li>
+   <li>more streamlined design</li>
+</ul>
+<p>
+   Moreover, we changed the way the site was generated. It is now based on
+   <a href="http://jekyllrb.com/">Jekyll</a> and some <a
+      href="https://github.com/rson/rson.github.com/blob/source/README.md">Git-based deployment
+      steps</a> (thanks to <a href="http://rsontech.net/">Randy Morris</a> for the tip!).
+</p>
+<p>
+   All these above changes should simplify the maintenance of the site, at least we hope!
+</p>
+
+<h3 class="section-title">As a conclusion...</h3>
+<p>
+   Hope you like it! :-)
+</p>
+<p>
+   And as usual, your thoughts and feedback are very welcome!
+</p>

@@ -3,13 +3,168 @@
    <title>Dandelion Project</title>
    <link href="http://dandelion.github.io//blog/atom.xml" rel="self"/>
    <link href="http://dandelion.github.io"/>
-   <updated>2013-09-02T22:59:37+02:00</updated>
+   <updated>2013-09-03T17:57:45+02:00</updated>
    <id>http://dandelion.github.io</id>
    <author>
       <name>Dandelion Team</name>
       <email>dandelion-devteam@googlegroups.com</email>
    </author>
    
+   
+   <entry>
+      <title>Dandelion Datatables 0.9.0 Release</title>
+      <link href="http://dandelion.github.io/blog/2013/09/04/dandelion-datatables-0.9.0-release"/>
+      <updated>2013-09-04T00:00:00+02:00</updated>
+      <id>http://dandelion.github.io/blog/2013/09/04/dandelion-datatables-0.9.0-release</id>
+      <content type="html">
+
+
+&lt;br /&gt;
+&lt;div class=&quot;alert alert-success text-center&quot; style=&quot;padding:20px;&quot;&gt;
+   &lt;h3&gt;Dandelion-Datatables v0.9.0 has been released in &lt;a href=&quot;http://search.maven.org/#search%7Cga%7C1%7Cdandelion&quot;&gt;Maven Central&lt;/a&gt;!&lt;/h3&gt;
+&lt;/div&gt;
+&lt;p&gt;
+   Since the beginning of the project, this is clearly the biggest release ever published. Beside, even if it looks more like a major version, we prefer to keep the 1.x.y version number for the first stable version. 
+&lt;/p&gt;
+&lt;p&gt;
+   Some works about this release...
+&lt;/p&gt;
+
+&lt;h3 class=&quot;section-title&quot;&gt;Overview of the new features&lt;/h3&gt;
+&lt;p&gt;
+   
+&lt;/p&gt;
+&lt;h4&gt;Support for Java-based i18n&lt;/h4&gt;
+&lt;p&gt;
+   Dandelion-Datatables has now full support for internationalization of column titles and
+   surrounding information, based on the ResourceBundle mechanism.
+&lt;/p&gt;
+&lt;p&gt;
+   And since Dandelion will probably be used in an application where content is already
+   internationalized using a specific framework, some ready-to-use adapters are provided for &lt;a href=&quot;http://www.springsource.org/&quot;&gt;Spring&lt;/a&gt;
+   and the &lt;a href=&quot;http://jstl.java.net/&quot;&gt;JSP Standard Tag Library&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+   You can see more details &lt;a href=&quot;http://localhost:4000/datatables/tutorials/i18n/&quot;&gt;here&lt;/a&gt;...
+&lt;/p&gt;
+
+&lt;h4&gt;Support for global table configuration and configuration groups&lt;/h4&gt;
+&lt;p&gt;
+   This new feature allows you:   
+&lt;/p&gt;
+&lt;ul&gt;
+   &lt;li&gt;to join together in one properties file a configuration which will be applied on all tables in the application&lt;/li&gt;
+   &lt;li&gt;to put together table configurations inside multiple groups that can be then activated locally using tag attributes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+   See more details &lt;a href=&quot;/datatables/tutorials/configuration&quot;&gt;here&lt;/a&gt;...
+&lt;/p&gt;
+
+&lt;h4&gt;Fully customizable export&lt;/h4&gt;
+&lt;p&gt;
+   Exports have been refactored in order to allow export with all kind of data sources (DOM and
+   AJAX). You can now fully customize what will appear in exported files. See more details &lt;a href=&quot;/datatables/tutorials/export/&quot;&gt;here&lt;/a&gt;...
+&lt;/p&gt;
+
+&lt;h4&gt;Write your own extensions!&lt;/h4&gt;
+&lt;p&gt;
+   A great extension point has been added, allowing you to write and activate your own extensions!
+   See more details
+   &lt;a href=&quot;/datatables/tutorials/advanced/writing-your-own-extension.html&quot;&gt;here&lt;/a&gt;...
+&lt;/p&gt;
+
+&lt;h4&gt;See more...&lt;/h4&gt;
+&lt;p&gt;
+   There are much more new features, enhancements and bug fixes. Feel free to see the &lt;a href=&quot;/datatables/releases/0.9.0/&quot;&gt;full changelog&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h3 class=&quot;section-title&quot;&gt;Some words about testing...&lt;/h3&gt;
+&lt;p&gt;
+   Integration tests of Dandelion-Datatables are currently based, amongst others, on
+   &lt;a href=&quot;http://docs.seleniumhq.org/&quot;&gt;Selenium&lt;/a&gt; and &lt;a
+      href=&quot;https://github.com/detro/ghostdriver&quot;&gt;Ghost Driver&lt;/a&gt;, which are both amazing projects.
+&lt;/p&gt;
+&lt;p&gt;
+   Unfortunately, we&#39;re experiencing a very annoying &lt;a href=&quot;https://github.com/detro/ghostdriver/issues/140&quot;&gt;Ghost Driver issue&lt;/a&gt; for several months which affects the
+   releasing process in the way that integration tests randomly fail, thus breaking either the &lt;code&gt;release:prepare&lt;/code&gt; or the &lt;code&gt;release:perform&lt;/code&gt; Maven goals. Grrrr...
+   That&#39;s why there are so much
+   &lt;a href=&quot;https://github.com/dandelion/dandelion-datatables/releases&quot;&gt;ugly tags in the
+      corresponding SCM&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+   As a consequence, in order to release within enhanced conditions we finally took the decision to
+   &lt;a
+      href=&quot;https://github.com/dandelion/dandelion-datatables/commit/c3ec9b83e8d2c8711d5c7ec747c27a1c7f22e057&quot;&gt;temporarily
+      disable all the integration tests&lt;/a&gt; for this release. You have to trust us, all tests are
+   green! :-)
+&lt;/p&gt;
+&lt;p&gt;
+   We&#39;ll probably update the integration tests in the next release and switch back to a more stable web driver.
+&lt;/p&gt;
+
+&lt;h3 class=&quot;section-title&quot;&gt;New contributions&lt;/h3
+&lt;p&gt;
+   This new release ships some great contributions, for example:
+&lt;/p&gt;
+&lt;ul&gt;
+   &lt;li&gt;Support for horizontal scrolling&lt;/li&gt;
+   &lt;li&gt;Support for EL expressions in all attributes of the JSP taglib&lt;/li&gt;
+   &lt;li&gt;Support for nested JSP tags&lt;/li&gt;
+   &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+   Many thanks to the &lt;a href=&quot;/team/&quot;&gt;new contributors&lt;/a&gt;!
+&lt;/p&gt;
+
+&lt;h3 class=&quot;section-title&quot;&gt;Demo applications&lt;/h3&gt;
+&lt;p&gt;
+   Demo apps needed a huge refreshment. It is done! As usual, if you encounter any
+   issue with one of the examples, feel free to raise an issue or directly make pull requests!
+&lt;/p&gt;
+&lt;ul&gt;
+   &lt;li&gt;&lt;a href=&quot;https://github.com/dandelion/dandelion-samples/tree/master/datatables-jsp&quot;&gt;JSP demo&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href=&quot;https://github.com/dandelion/dandelion-samples/tree/master/datatables-thymeleaf&quot;&gt;Thymeleaf demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 class=&quot;section-title&quot;&gt;Documentation&lt;/h3&gt;
+&lt;p&gt;
+   In short, the whole site has been refactored. :-)
+&lt;/p&gt;
+&lt;p&gt;
+    At the level of contents...
+&lt;/p&gt;
+&lt;ul&gt;
+   &lt;li&gt;all existing &lt;a href=&quot;/datatables/tutorials&quot;&gt;tutorials&lt;/a&gt; have been rewritten&lt;/li&gt;
+   &lt;li&gt;lots of &lt;a href=&quot;/datatables/tutorials&quot;&gt;tutorials&lt;/a&gt; have been added&lt;/li&gt;
+   &lt;li&gt;new &lt;a href=&quot;/faq&quot;&gt;FAQ&lt;/a&gt; section&lt;/li&gt;
+   &lt;li&gt;new global &lt;a href=&quot;/roadmap&quot;&gt;roadmap&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+   ... as well as form:
+&lt;/p&gt;
+&lt;ul&gt;
+   &lt;li&gt;new home page&lt;/li&gt;
+   &lt;li&gt;more streamlined design&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+   Moreover, we changed the way the site was generated. It is now based on
+   &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; and some &lt;a
+      href=&quot;https://github.com/rson/rson.github.com/blob/source/README.md&quot;&gt;Git-based deployment
+      steps&lt;/a&gt; (thanks to &lt;a href=&quot;http://rsontech.net/&quot;&gt;Randy Morris&lt;/a&gt; for the tip!).
+&lt;/p&gt;
+&lt;p&gt;
+   All these above changes should simplify the maintenance of the site, at least we hope!
+&lt;/p&gt;
+
+&lt;h3 class=&quot;section-title&quot;&gt;As a conclusion...&lt;/h3&gt;
+&lt;p&gt;
+   Hope you like it! :-)
+&lt;/p&gt;
+&lt;p&gt;
+   And as usual, your thoughts and feedback are very welcome!
+&lt;/p&gt;</content>
+   </entry>
    
    <entry>
       <title>Dandelion 0.2.1 Release</title>

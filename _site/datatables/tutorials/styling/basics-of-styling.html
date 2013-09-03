@@ -80,8 +80,8 @@
    <div class="row-fluid">
       <div class="span2">
          <div class="well sidebar-nav">
+      
             <ul class="nav nav-list">
-               
                <h5>Overview</h5>
                <li >
                   <a href="/datatables"><i class="icon-home"></i> Home</a>
@@ -187,10 +187,22 @@
    
    
    
+   <li class="pull-right" style="margin-left:5px;">
+      <form class="custom-form-search" action="http://google.com/search" method="get" style="margin:0;">
+         <input type="hidden" name="q" value="site:dandelion.github.io/datatables">
+         <div class="input-append">
+            <input type="text" class="input-medium" name="q" placeholder="Search via Google" />
+            <button type="submit" class="btn"><i class="icon-search"></i></button>
+         </div>
+      </form>
+   </li>
+   
    <li class="pull-right">
-      Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a>
+      Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a><span class="divider">|</span>
    </li>
 </ul>
+
+
             <h2 class="page-title">Basics of styling</h2>
 <p>
 	There are a number of ways in which DataTables allows you to style tables and HTML it adds to the document. Dandelion-DataTables supports some of them but also provides themes integration such as the <a href="/datatables/tutorials/styling/bootstrap2.html">Bootstrap2 theme</a>.
