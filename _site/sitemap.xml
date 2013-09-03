@@ -168,11 +168,11 @@
     </url>
     <url>
         <loc>http://dandelion.github.io/dandelion/features/dandelion/features/</loc>
-        <lastmod>2013-09-03T17:57:30+02:00</lastmod>
+        <lastmod>2013-09-03T20:44:17+02:00</lastmod>
     </url>
     <url>
         <loc>http://dandelion.github.io/dandelion/dandelion/</loc>
-        <lastmod>2013-08-14T22:13:04+02:00</lastmod>
+        <lastmod>2013-09-03T20:45:12+02:00</lastmod>
     </url>
     <url>
         <loc>http://dandelion.github.io/dandelion/releases/0.1.0/dandelion/releases/0.1.0/</loc>
@@ -549,6 +549,12 @@
     <url>
         <loc>http://dandelion.github.io/datatables/releases/0.9.0/datatables/releases/0.9.0/</loc>
         <lastmod>2013-09-03T17:57:30+02:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://dandelion.github.io/datatables/releases/0.9.0/javadoc/datatables/releases/0.9.0/javadoc/
+        </loc>
+        <lastmod>2013-09-03T20:55:28+02:00</lastmod>
     </url>
     <url>
         <loc>http://dandelion.github.io/datatables/releases/datatables/releases/</loc>
@@ -990,7 +996,7 @@
     </url>
     <url>
         <loc>http://dandelion.github.io/</loc>
-        <lastmod>2013-09-03T17:57:30+02:00</lastmod>
+        <lastmod>2013-09-03T20:50:03+02:00</lastmod>
     </url>
     <url>
         <loc>http://dandelion.github.io/releases/releases/</loc>
@@ -1006,78 +1012,78 @@
     </url>
     <url>
         <loc>http://dandelion.github.io/webanalytics/webanalytics/changelog.html</loc>
-        <lastmod>2013-08-10T11:11:27+02:00</lastmod>
+        <lastmod>2013-09-03T20:37:14+02:00</lastmod>
     </url>
     <url>
         <loc>
             http://dandelion.github.io/webanalytics/features/basic/webanalytics/features/basic/
         </loc>
-        <lastmod>2013-08-10T11:11:27+02:00</lastmod>
+        <lastmod>2013-09-03T20:37:14+02:00</lastmod>
     </url>
     <url>
         <loc>http://dandelion.github.io/webanalytics/features/webanalytics/features/</loc>
-        <lastmod>2013-09-03T17:57:30+02:00</lastmod>
+        <lastmod>2013-09-03T20:43:43+02:00</lastmod>
     </url>
     <url>
         <loc>
             http://dandelion.github.io/webanalytics/features/providers/webanalytics/features/providers/
         </loc>
-        <lastmod>2013-08-10T11:11:27+02:00</lastmod>
+        <lastmod>2013-09-03T20:37:14+02:00</lastmod>
     </url>
     <url>
         <loc>http://dandelion.github.io/webanalytics/webanalytics/</loc>
-        <lastmod>2013-08-10T11:11:27+02:00</lastmod>
+        <lastmod>2013-09-03T20:45:02+02:00</lastmod>
     </url>
     <url>
         <loc>http://dandelion.github.io/webanalytics/installation/webanalytics/installation/</loc>
-        <lastmod>2013-08-10T11:11:27+02:00</lastmod>
+        <lastmod>2013-09-03T20:37:14+02:00</lastmod>
     </url>
     <url>
         <loc>
             http://dandelion.github.io/webanalytics/installation/webanalytics/installation/jsp.html
         </loc>
-        <lastmod>2013-08-10T11:11:27+02:00</lastmod>
+        <lastmod>2013-09-03T20:37:14+02:00</lastmod>
     </url>
     <url>
         <loc>
             http://dandelion.github.io/webanalytics/installation/webanalytics/installation/thymeleaf.html
         </loc>
-        <lastmod>2013-08-10T11:11:27+02:00</lastmod>
+        <lastmod>2013-09-03T20:37:14+02:00</lastmod>
     </url>
     <url>
         <loc>
             http://dandelion.github.io/webanalytics/ref/configuration/webanalytics/ref/configuration/
         </loc>
-        <lastmod>2013-08-10T11:11:27+02:00</lastmod>
+        <lastmod>2013-09-03T20:37:14+02:00</lastmod>
     </url>
     <url>
         <loc>http://dandelion.github.io/webanalytics/ref/javadoc/webanalytics/ref/javadoc/</loc>
-        <lastmod>2013-08-10T11:11:27+02:00</lastmod>
+        <lastmod>2013-09-03T20:37:14+02:00</lastmod>
     </url>
     <url>
         <loc>http://dandelion.github.io/webanalytics/ref/jsp/webanalytics/ref/jsp/</loc>
-        <lastmod>2013-08-10T11:11:27+02:00</lastmod>
+        <lastmod>2013-09-03T20:37:14+02:00</lastmod>
     </url>
     <url>
         <loc>
             http://dandelion.github.io/webanalytics/ref/jsp/webanalytics/ref/jsp/tracker.html
         </loc>
-        <lastmod>2013-08-10T11:11:27+02:00</lastmod>
+        <lastmod>2013-09-03T20:37:14+02:00</lastmod>
     </url>
     <url>
         <loc>
             http://dandelion.github.io/webanalytics/ref/thymeleaf/webanalytics/ref/thymeleaf/
         </loc>
-        <lastmod>2013-08-10T11:11:27+02:00</lastmod>
+        <lastmod>2013-09-03T20:37:14+02:00</lastmod>
     </url>
     <url>
         <loc>
             http://dandelion.github.io/webanalytics/ref/thymeleaf/webanalytics/ref/thymeleaf/tracker.html
         </loc>
-        <lastmod>2013-08-10T11:11:27+02:00</lastmod>
+        <lastmod>2013-09-03T20:37:14+02:00</lastmod>
     </url>
     <url>
         <loc>http://dandelion.github.io/webanalytics/webanalytics/roadmap.html</loc>
-        <lastmod>2013-08-10T11:11:27+02:00</lastmod>
+        <lastmod>2013-09-03T20:37:14+02:00</lastmod>
     </url>
 </urlset>
