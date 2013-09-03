@@ -238,19 +238,19 @@
    Dandelion-Datatables can help you during this process by providing you some utility classes:
    <ul>
       <li>
-        <code>DatatablesCriterias <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.html"><i class="icon-book"></i></a></code>
+        <code>DatatablesCriterias <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.html"><i class="icon-book"></i></a></code>
         <p>
             This class mainly contains a <code>getFromRequest(HttpServletRequest request)</code> method that maps all the DataTables parameters into itself, allowing you to use it in your data access layer.
         </p>
       </li>
       <li>
-         <code>DataSet <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/ajax/DataSet.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/ajax/DataSet.html"><i class="icon-book"></i></a></code>
+         <code>DataSet <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/ajax/DataSet.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/ajax/DataSet.html"><i class="icon-book"></i></a></code>
          <p>
             All the results returned from you data access layer should be wrapped in this class in order to build a <strong>DataTablesResponse</strong>.
          </p>
       </li>
       <li>
-         <code>DatatablesResponse <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/ajax/DatatablesResponse.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/ajax/DatatablesResponse.html"><i class="icon-book"></i></a></code>
+         <code>DatatablesResponse <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/ajax/DatatablesResponse.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/ajax/DatatablesResponse.html"><i class="icon-book"></i></a></code>
          <p>
             This class contains a builder that helps you to return the data in the format required by DataTables. Ensure this object is converted to JSON before displaying the table.
          </p>
@@ -272,7 +272,7 @@
       <li>
          <h5>Prepare the needed SQL queries using your favorite ORM framework</h5>
          <p>
-            Whether you use Hibernate or any other ORM framework, you need to write some methods, knowing you can use an instance of <code>DatatablesCriterias <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.html"><i class="icon-book"></i></a></code> to help building the queries.
+            Whether you use Hibernate or any other ORM framework, you need to write some methods, knowing you can use an instance of <code>DatatablesCriterias <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.html"><i class="icon-book"></i></a></code> to help building the queries.
          </p>
          <p>
             Waiting for other implementations are added, you can browse the following example from the demo application that uses

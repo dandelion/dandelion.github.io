@@ -225,7 +225,7 @@
 
 <h3 class="section-title">Writing your own configuration loader</h3>
 <p>
-   First, your custom configuration loader must implements the <code>ConfigurationLoader <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> interface.
+   First, your custom configuration loader must implements the <code>ConfigurationLoader <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/configuration/ConfigurationLoader.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/configuration/ConfigurationLoader.html"><i class="icon-book"></i></a></code> interface.
 </p>
 <pre class="prettyprint">
 package my.package;
@@ -254,7 +254,7 @@ public class MyConfigurationLoader implements ConfigurationLoader {
 }
 </pre>
 <p>
-   Note that you can get inspired by the <code>StandardConfigurationLoader <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code>.
+   Note that you can get inspired by the <code>StandardConfigurationLoader <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/configuration/StandardConfigurationLoader.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/configuration/StandardConfigurationLoader.html"><i class="icon-book"></i></a></code>.
 </p>
 
 <h3 class="section-title">Activating your own configuration loader</h3>
@@ -262,7 +262,7 @@ public class MyConfigurationLoader implements ConfigurationLoader {
    The value of the <strong>dandelion.datatables.confloader.class</strong> system property is taken as the fully qualified class name of your custom loader.
 </p>
 <p>
-   If no system property is used, Dandelion-Datatables will defaultly use the <code>StandardConfigurationLoader <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code>.
+   If no system property is used, Dandelion-Datatables will defaultly use the <code>StandardConfigurationLoader <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/configuration/StandardConfigurationLoader.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/configuration/StandardConfigurationLoader.html"><i class="icon-book"></i></a></code>.
 </p>
 <p>
    To continue the above example, you should add the system property as follows:

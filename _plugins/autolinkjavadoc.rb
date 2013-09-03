@@ -21,19 +21,24 @@ module Jekyll
       case @module
       when "dt"
 
-        version = '0.8.14' #version = config['dandelion']['components']['datatables']['version']
+        version = config['dandelion']['components']['datatables']['version']
         sources = config['dandelion']['components']['datatables']['sources']
           
-        version2 = '0.8.14-11' # a supprimer au passage a la 0.9.0, par contre, il ne faut pas se chier dans la creation des tags
         javadocPath = nil
         sourcePath = nil
-        searchPath = './datatables/releases/' + version + '/javadoc/' + project + '/'
+        if project.include? '/'
+           projectSearchPath = project.split("/")[1]
+        else
+           projectSearchPath = project
+        end
+        projectSearchPath = 
+        searchPath = './datatables/releases/' + version + '/javadoc/' + projectSearchPath + '/'
         reg = searchPath[1, searchPath.length]
         
         Find.find(searchPath) do |path|
           if !path.include? 'class-use' and path.include? clazz
             javadocPath = path[1, path.length]
-            sourcePath = javadocPath.gsub(/#{Regexp.escape(reg)}/, "https://github.com/dandelion/" + sources + "/blob/" + sources + "-" + version2 + "/" + project + "/src/main/java/").gsub(/\.html/, '.java')
+            sourcePath = javadocPath.gsub(/#{Regexp.escape(reg)}/, "https://github.com/dandelion/" + sources + "/blob/" + sources + "-" + version + "/" + project + "/src/main/java/").gsub(/\.html/, '.java')
             break
           end
         end

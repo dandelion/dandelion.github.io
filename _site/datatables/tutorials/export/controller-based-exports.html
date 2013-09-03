@@ -269,12 +269,12 @@ List&lt;Person> persons = personService.findPersonsWithDatatablesCriterias(crite
 
 <p class="alert alert-info">
    <strong><i class="icon-info-sign icon-2x"></i></strong> 
-   Note that the <code>DatatablesCriterias <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.html"><i class="icon-book"></i></a></code> object is same used in <a href="/datatables/tutorials/ajax/">AJAX tutorials</a>.
+   Note that the <code>DatatablesCriterias <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.html"><i class="icon-book"></i></a></code> object is same used in <a href="/datatables/tutorials/ajax/">AJAX tutorials</a>.
 </p>
 
-<h4 id="suaec-baioe">2. Build an instance of <code>ExportConf <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/ExportConf.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/export/ExportConf.html"><i class="icon-book"></i></a></code></h4>
+<h4 id="suaec-baioe">2. Build an instance of <code>ExportConf <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/ExportConf.Builder.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/export/ExportConf.Builder.html"><i class="icon-book"></i></a></code></h4>
 <p>
-   Then, you need to build an instance of <code>ExportConf <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/ExportConf.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/export/ExportConf.html"><i class="icon-book"></i></a></code>, which allows you to configure the export:
+   Then, you need to build an instance of <code>ExportConf <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/ExportConf.Builder.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/export/ExportConf.Builder.html"><i class="icon-book"></i></a></code>, which allows you to configure the export:
 </p>
 <ul>
    <li>column headers displaying</li>
@@ -293,7 +293,7 @@ ExportConf exportCsvConf = new ExportConf.Builder(ExportType.CSV)
 </pre>
 <p>Note that:</p>
 <ul>
-   <li>you need to pass the desired <code>ExportType <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/ExportType.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/export/ExportType.html"><i class="icon-book"></i></a></code> in the constructor of the builder</li>
+   <li>you need to pass the desired <code>ExportType <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/ExportType.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/export/ExportType.html"><i class="icon-book"></i></a></code> in the constructor of the builder</li>
    <li>the <code>header(Boolean)</code> method indicates that column headers need to be displayed in the export file</li>
    <li>the <code>exportClass(DatatablesExport)</code> method is used to set up the class that will generate the export content. Here we use the default CSV export class.</li>
 </ul>
@@ -303,12 +303,12 @@ ExportConf exportCsvConf = new ExportConf.Builder(ExportType.CSV)
    You can of course use your own export class. See <a href="configuring-export-classes#wyoec.html">this tutorial</a> for more details.
 </p>
 
-<h4 id="suaec-baioh">3. Build an instance of <code>HtmlTable <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/html/HtmlTable.Builder.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/html/HtmlTable.Builder.html"><i class="icon-book"></i></a></code></h4>
+<h4 id="suaec-baioh">3. Build an instance of <code>HtmlTable <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/HtmlTableBuilder.BeforeEndStep.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/export/HtmlTableBuilder.BeforeEndStep.html"><i class="icon-book"></i></a></code></h4>
 <p>
-   Once you have both data and the associated export configuration, you can now build an instance of <code>HtmlTable <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/html/HtmlTable.Builder.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/html/HtmlTable.Builder.html"><i class="icon-book"></i></a></code>, which is the object used in any export class. 
+   Once you have both data and the associated export configuration, you can now build an instance of <code>HtmlTable <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/HtmlTableBuilder.BeforeEndStep.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/export/HtmlTableBuilder.BeforeEndStep.html"><i class="icon-book"></i></a></code>, which is the object used in any export class. 
 </p>
 <p>
-   Once again, you have at your disposal a fluent API allowing you to easily build an instance of <code>HtmlTable <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/html/HtmlTable.Builder.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/html/HtmlTable.Builder.html"><i class="icon-book"></i></a></code>. See below:
+   Once again, you have at your disposal a fluent API allowing you to easily build an instance of <code>HtmlTable <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/HtmlTableBuilder.BeforeEndStep.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/export/HtmlTableBuilder.BeforeEndStep.html"><i class="icon-book"></i></a></code>. See below:
 </p>
 <pre class="prettyprint">
 HtmlTable table = new HtmlTableBuilder&lt;Person>().newBuilder("tableId", persons, request)
@@ -326,14 +326,14 @@ HtmlTable table = new HtmlTableBuilder&lt;Person>().newBuilder("tableId", person
 <ul>
    <li>columns are added thanks to the <code>column()</code> and are finally declared using the <code>title(String)</code> method</li>
    <li>you can easily configure the content using the <code>fillWith</code>, <code>fillWithProperty</code>, <code>andProperty</code> and <code>and</code> methods.</li>
-   <li>you need to configure the export by passing the previously created instance of <code>ExportConf <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/ExportConf.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/export/ExportConf.html"><i class="icon-book"></i></a></code> thanks to the <code>configureExport(ExportConf)</code> method</li>
+   <li>you need to configure the export by passing the previously created instance of <code>ExportConf <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/ExportConf.Builder.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/export/ExportConf.Builder.html"><i class="icon-book"></i></a></code> thanks to the <code>configureExport(ExportConf)</code> method</li>
 </ul>
 <p class="alert alert-info">
    <strong><i class="icon-info-sign icon-2x"></i></strong>
-   It is also worth noting that the <code>HtmlTable <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/html/HtmlTable.Builder.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/html/HtmlTable.Builder.html"><i class="icon-book"></i></a></code> instance just wraps data that will
+   It is also worth noting that the <code>HtmlTable <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/HtmlTableBuilder.BeforeEndStep.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/export/HtmlTableBuilder.BeforeEndStep.html"><i class="icon-book"></i></a></code> instance just wraps data that will
    appear in the export file. It means that all the
    filtering/sorting/paging part should have already been done in the
-   <a href="#suaec-rd">first step</a>, thanks to the <code>DatatablesCriterias <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.html"><i class="icon-book"></i></a></code> object.
+   <a href="#suaec-rd">first step</a>, thanks to the <code>DatatablesCriterias <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.html"><i class="icon-book"></i></a></code> object.
 </p>
 
 <h4 id="suaec-rtgef">4. Render the generated export file</h4>
@@ -341,7 +341,7 @@ HtmlTable table = new HtmlTableBuilder&lt;Person>().newBuilder("tableId", person
    Last step, you need to use the configured export class to generate the export content and write it to the response (instead of redirecting to a view).
 </p>
 <p>
-   Fortunately, a utility method has been written for that, located in the <code>ExportUtils <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> class. Use it as follows: 
+   Fortunately, a utility method has been written for that, located in the <code>ExportUtils <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/ExportUtils.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/export/ExportUtils.html"><i class="icon-book"></i></a></code> class. Use it as follows: 
 </p>
 <pre class="prettyprint">
 ExportUtils.renderExport(table, exportCsvConf, response);
@@ -350,8 +350,8 @@ ExportUtils.renderExport(table, exportCsvConf, response);
    Where:
 </p>
 <ul>
-   <li>table is the instance of <code>HtmlTable <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/html/HtmlTable.Builder.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/html/HtmlTable.Builder.html"><i class="icon-book"></i></a></code> built in the step 3</li>
-   <li>exportCsvConf is the instance of <code>ExportConf <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/ExportConf.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/export/ExportConf.html"><i class="icon-book"></i></a></code> built in the step 2</li>
+   <li>table is the instance of <code>HtmlTable <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/HtmlTableBuilder.BeforeEndStep.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/export/HtmlTableBuilder.BeforeEndStep.html"><i class="icon-book"></i></a></code> built in the step 3</li>
+   <li>exportCsvConf is the instance of <code>ExportConf <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/ExportConf.Builder.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/export/ExportConf.Builder.html"><i class="icon-book"></i></a></code> built in the step 2</li>
    <li>response in the <code>HttpServletResponse</code> in which the content of the export will be written (and proposed to download)</li>
 </ul>
 

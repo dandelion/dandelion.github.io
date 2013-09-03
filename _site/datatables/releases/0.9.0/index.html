@@ -232,7 +232,7 @@
       Improved CDN support: it’s now fully configurable <a href="/datatables/docs/ref/configuration/#main-main.cdn">through properties</a> (enablement, css link, js link)
    </li>
    <li>
-      Added support for horizontal scrolling
+      Added support for <a href="/datatables/tutorials/basics/scrolling.html">horizontal scrolling</a>
    </li>
    <li>
       Reduced needed third-party libraries (commons-lang removed)
@@ -269,24 +269,24 @@
 <h3 class="section-title">Spring3 extra</h3>
 <ul>
    <li>Spring dependencies are now marked as provided</li>
-   <li>Added ready-to-use <code>SpringLocaleResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> and <code>SpringMessageResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> to connect Dandelion-Datatables to the Spring i18n mechanism</li>
-   <li>Added <code>DatatablesCriteriasMethodArgumentResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> allowing you to resolve a method argument of type <code>DatatablesCriterias <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.8.14-11/datatables-core/src/main/java/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.html"><i class="icon-book"></i></a></code> annotated with <code>DatatablesParams <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> (compatible with Spring 3.1+)</li>
+   <li>Added ready-to-use <code>SpringLocaleResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-extras/datatables-spring3/src/main/java/com/github/dandelion/datatables/extras/spring3/i18n/SpringLocaleResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-spring3/com/github/dandelion/datatables/extras/spring3/i18n/SpringLocaleResolver.html"><i class="icon-book"></i></a></code> and <code>SpringMessageResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-extras/datatables-spring3/src/main/java/com/github/dandelion/datatables/extras/spring3/i18n/SpringMessageResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-spring3/com/github/dandelion/datatables/extras/spring3/i18n/SpringMessageResolver.html"><i class="icon-book"></i></a></code> to connect Dandelion-Datatables to the Spring i18n mechanism</li>
+   <li>Added <code>DatatablesCriteriasMethodArgumentResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-extras/datatables-spring3/src/main/java/com/github/dandelion/datatables/extras/spring3/ajax/DatatablesCriteriasMethodArgumentResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-spring3/com/github/dandelion/datatables/extras/spring3/ajax/DatatablesCriteriasMethodArgumentResolver.html"><i class="icon-book"></i></a></code> allowing you to resolve a method argument of type <code>DatatablesCriterias <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/ajax/DatatablesCriterias.html"><i class="icon-book"></i></a></code> annotated with <code>DatatablesParams <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> (compatible with Spring 3.1+)</li>
 </ul>
 
 <h3 class="section-title">Export iText extra</h3>
 <ul>
-   <li>The PdfExport now implements the new <code>DatatablesExport <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> interface</li>
+   <li>The PdfExport now implements the new <code>DatatablesExport <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/DatatablesExport.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/export/DatatablesExport.html"><i class="icon-book"></i></a></code> interface</li>
    <li>A default title is now always added</li>
 </ul>
 
 <h3 class="section-title">Export POI extra</h3>
 <ul>
-   <li>The XlsExport now implements the new <code>DatatablesExport <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> interface</li>
+   <li>The XlsExport now implements the new <code>DatatablesExport <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/DatatablesExport.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/export/DatatablesExport.html"><i class="icon-book"></i></a></code> interface</li>
 </ul>
 
 <h3 class="section-title">Export POI-OOXML extra</h3>
 <ul>
-   <li>The XlsxExport now implements the new <code>DatatablesExport <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> interface</li>
+   <li>The XlsxExport now implements the new <code>DatatablesExport <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/export/DatatablesExport.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/export/DatatablesExport.html"><i class="icon-book"></i></a></code> interface</li>
 </ul>
 
 <h3 class="section-title">Servlet 2 extra</h3>

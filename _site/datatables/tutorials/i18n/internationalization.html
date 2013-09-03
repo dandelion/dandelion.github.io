@@ -322,30 +322,30 @@ global.msg.info=Affichage de l'élément _START_ à _END_ sur _TOTAL_ éléments
 
 <h3 class="section-title" id="lamdr">Locale and message default resolution</h3>
 <p>
-   By default, Dandelion-Datatables uses the <code>StandardLocaleResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> to resolve the locale from the
+   By default, Dandelion-Datatables uses the <code>StandardLocaleResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/i18n/StandardLocaleResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/i18n/StandardLocaleResolver.html"><i class="icon-book"></i></a></code> to resolve the locale from the
    <code>HttpServletRequest</code>
    , i.e. from your browser. But if you need to override this behaviour, you can in two ways:
    <ul>
       <li>
-         using one of the ready-to-use implementations of the <code>LocaleResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> interface: <a href="integration-with-other-projects.html">see this section for more
+         using one of the ready-to-use implementations of the <code>LocaleResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/i18n/LocaleResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/i18n/LocaleResolver.html"><i class="icon-book"></i></a></code> interface: <a href="integration-with-other-projects.html">see this section for more
             details</a>
       </li>
       <li>
-         pluging a custom implementation of the <code>LocaleResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> interface: <a href="pluging-a-custom-localeresolver.html">see here for more details</a>
+         pluging a custom implementation of the <code>LocaleResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/i18n/LocaleResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/i18n/LocaleResolver.html"><i class="icon-book"></i></a></code> interface: <a href="pluging-a-custom-localeresolver.html">see here for more details</a>
       </li>
    </ul>
 </p>
 <p>
-   Regarding the message resolution, note that the <code>JstlMessageResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> will be automatically enabled if the JSTL JAR is detected in the classpath and if no
+   Regarding the message resolution, note that the <code>JstlMessageResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-jsp/src/main/java/com/github/dandelion/datatables/jsp/i18n/JstlMessageResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-jsp/com/github/dandelion/datatables/jsp/i18n/JstlMessageResolver.html"><i class="icon-book"></i></a></code> will be automatically enabled if the JSTL JAR is detected in the classpath and if no
    <code>i18n.message.resolver</code>
    property is used in your custom configuration file. This means that content of <a href="/datatables/docs/ref/jsp/column.html#titleKey"><code>titleKey</code></a> attributes will be evaluated in the same way as for the
    <code>&lt;fmt:message&gt;</code> JSTL tag. You can override this in two ways as well:
    <ul>
-      <li>using one of the ready-to-use implementations of the <code>MessageResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> interface: <a href="integration-with-other-projects.html">see this section for more
+      <li>using one of the ready-to-use implementations of the <code>MessageResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/i18n/AbstractMessageResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/i18n/AbstractMessageResolver.html"><i class="icon-book"></i></a></code> interface: <a href="integration-with-other-projects.html">see this section for more
             details</a>
       </li>
       <li>
-         pluging your own implementation of the <code>MessageResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> interface: <a href="pluging-a-custom-messageresolver.html">see this section for more details</a>
+         pluging your own implementation of the <code>MessageResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/i18n/AbstractMessageResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/i18n/AbstractMessageResolver.html"><i class="icon-book"></i></a></code> interface: <a href="pluging-a-custom-messageresolver.html">see this section for more details</a>
       </li>
    </ul>
 </p>

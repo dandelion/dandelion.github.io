@@ -29,7 +29,9 @@ module Jekyll
           path = config['source'] + "/datatables/_definitions.html"
           if File.exists?(path)
             File.open(path, "r").each_line do |line|
-              @@dt_definitions[line.split("==")[0]] = line.split("==")[1]
+              tmpLine = Liquid::Template.parse(line)
+              tmpLine2 = tmpLine.render
+              @@dt_definitions[line.split("==")[0]] = tmpLine2.split("==")[1]
             end
           end 
         
@@ -58,8 +60,7 @@ module Jekyll
           @@ddl_definitions[key + "#" + property]
             
         when "dt" 
-          @teste = Liquid::Template.parse(@@dt_definitions[key + "#" + property])
-          @teste.render
+          @@dt_definitions[key + "#" + property]
 
         when "wa" 
           @@wa_definitions[key + "#" + property]

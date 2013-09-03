@@ -223,11 +223,11 @@
 
 <h3 class="section-title" id="lr">Locale resolution</h3>
 <p>
-   Today, there exists two ready-to-use implementations of the <code>LocaleResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> interface:
+   Today, there exists two ready-to-use implementations of the <code>LocaleResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/i18n/LocaleResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/i18n/LocaleResolver.html"><i class="icon-book"></i></a></code> interface:
 </p>
 <ul>
    <li>
-      for <strong>Spring</strong> with the <code>SpringLocaleResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> class
+      for <strong>Spring</strong> with the <code>SpringLocaleResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-extras/datatables-spring3/src/main/java/com/github/dandelion/datatables/extras/spring3/i18n/SpringLocaleResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-spring3/com/github/dandelion/datatables/extras/spring3/i18n/SpringLocaleResolver.html"><i class="icon-book"></i></a></code> class
       <p>
          The resolver will use the <code>RequestContextUtils.getLocale()</code> method for locale resolution (which will in turn delegate to the Spring locale resolver)
       </p>
@@ -239,7 +239,7 @@ i18n.locale.resolver=com.github.dandelion.datatables.extras.spring3.i18n.SpringL
       </p>
    </li>
    <li>
-      for <strong>JSTL</strong> with the <code>JstlLocaleResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> class
+      for <strong>JSTL</strong> with the <code>JstlLocaleResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-jsp/src/main/java/com/github/dandelion/datatables/jsp/i18n/JstlLocaleResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-jsp/com/github/dandelion/datatables/jsp/i18n/JstlLocaleResolver.html"><i class="icon-book"></i></a></code> class
       <p>
          The resolver will first try to get the locale from the <code>Config.FMT_LOCALE</code> key first from the request and then from the session.
       </p>
@@ -252,7 +252,7 @@ i18n.locale.resolver.resolver=com.github.dandelion.datatables.jsp.i18n.JstlLocal
    </li>
 </ul>
 <p>
-   Note that by default, the <code>StandardLocaleResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> is used and retrieves the Locale from the <code>HttpServletRequest</code>.
+   Note that by default, the <code>StandardLocaleResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/i18n/StandardLocaleResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/i18n/StandardLocaleResolver.html"><i class="icon-book"></i></a></code> is used and retrieves the Locale from the <code>HttpServletRequest</code>.
 </p>
 
 <h3 class="section-title" id="mr">Message resolution</h3>
@@ -260,11 +260,11 @@ i18n.locale.resolver.resolver=com.github.dandelion.datatables.jsp.i18n.JstlLocal
    Other than resolving the currently used locale, your framework will probably provide a standard way to store i18n resources. Just like for the locale resolution, Dandelion will allow you to plug in different implementations.
 </p>
 <p>
-   You will find below the existing ready-to-use implementations of the <code>MessageResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> interface:
+   You will find below the existing ready-to-use implementations of the <code>MessageResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-core/src/main/java/com/github/dandelion/datatables/core/i18n/AbstractMessageResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-core/com/github/dandelion/datatables/core/i18n/AbstractMessageResolver.html"><i class="icon-book"></i></a></code> interface:
 </p>
 <ul>
    <li>
-      for <strong>Spring</strong> with the <code>SpringMessageResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> class
+      for <strong>Spring</strong> with the <code>SpringMessageResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-extras/datatables-spring3/src/main/java/com/github/dandelion/datatables/extras/spring3/i18n/SpringMessageResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-spring3/com/github/dandelion/datatables/extras/spring3/i18n/SpringMessageResolver.html"><i class="icon-book"></i></a></code> class
       <p>
          The resolver will look for the message inside the configured MessageSource bean
       </p>
@@ -276,7 +276,7 @@ global.i18n.message.resolver=com.github.dandelion.datatables.extras.spring3.i18n
       </p>
    </li>
    <li>
-      for <strong>JSTL</strong> with the <code>JstlMessageResolver <a title="Source" href=""><i class="icon-github"></i></a> <a title="Javadoc" href=""><i class="icon-book"></i></a></code> class
+      for <strong>JSTL</strong> with the <code>JstlMessageResolver <a title="Source" href="https://github.com/dandelion/dandelion-datatables/blob/dandelion-datatables-0.9.0/datatables-jsp/src/main/java/com/github/dandelion/datatables/jsp/i18n/JstlMessageResolver.java"><i class="icon-github"></i></a> <a title="Javadoc" href="/datatables/releases/0.9.0/javadoc/datatables-jsp/com/github/dandelion/datatables/jsp/i18n/JstlMessageResolver.html"><i class="icon-book"></i></a></code> class
       <p>
          The resolver will look for the message as the <code>&lt;fmt:message&gt;</code> does.
       </p>
