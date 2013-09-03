@@ -190,178 +190,32 @@
 </ul>
 
 
-            <h2 class="page-title">Download</h2>
+            <h3 id='download'>Download</h3>
+<br />
+<h4 id='main_jars'>Main JARs</h4>
 
-<h3 class="section-title">Using a build tool</h3>
+<p>All the main <strong>Dandelion-DataTables</strong> JAR can be found in the <a href='http://search.maven.org/#search%7Cga%7C1%dandelion-datatables'>Maven Central Repository</a></p>
+<br />
+<h4 id='dependencies'>Dependencies</h4>
 
-<h4>JSP implementation</h4>
+<p>You can download the <strong>Dandelion-DataTables</strong> dependencies using e.g. <a href='http://search.maven.org'>http://search.maven.org</a> or <a href='http://mvnrepository.com/'>http://mvnrepository.com/</a>.</p>
 
-
-<ul class="nav nav-tabs" id="build-tools-tab-datatables-jsp" style="margin-bottom:0;">
-   <li class="active"><a href="#maven-datatables-jsp">Maven</a></li>
-   <li><a href="#gradle-datatables-jsp">Gradle</a></li>
-   <li><a href="#grails-datatables-jsp">Grails</a></li>
-   <li><a href="#ivy-datatables-jsp">Ivy</a></li>
-   <li><a href="#grape-datatables-jsp">Grape</a></li>
-   <li><a href="#buildr-datatables-jsp">Buildr</a></li>
-   <li><a href="#sbt-datatables-jsp">SBT</a></li>
-</ul>
-<div class="tab-content">
-   <div class="tab-pane active" id="maven-datatables-jsp">
-<pre class="prettyprint">
-&lt;dependency>
-    &lt;groupId>com.github.dandelion&lt;/groupId>
-    &lt;artifactId>datatables-jsp&lt;/artifactId>
-    &lt;version>0.9.0&lt;/version>
-&lt;/dependency>
-</pre>
-   </div>
-   <div class="tab-pane" id="gradle-datatables-jsp">
-<pre class="prettyprint">
-'com.github.dandelion:datatables-jsp:0.9.0'
-</pre>   
-   </div>
-   <div class="tab-pane" id="ivy-datatables-jsp">
-<pre class="prettyprint">
-&lt;dependency org="com.github.dandelion" name="datatables-jsp" rev="0.9.0" />
-</pre>      
-   </div>
-   <div class="tab-pane" id="grape-datatables-jsp">
-<pre class="prettyprint">
-@Grapes( 
-   @Grab(group='com.github.dandelion', module='datatables-jsp', version='0.9.0') 
-)
-</pre>      
-   </div>
-   <div class="tab-pane" id="buildr-datatables-jsp">
-<pre class="prettyprint">
-'com.github.dandelion:datatables-jsp:jar:0.9.0'
-</pre>      
-   </div>
-   <div class="tab-pane" id="sbt-datatables-jsp">
-<pre class="prettyprint">
-libraryDependencies += "com.github.dandelion" % "datatables-jsp" % "0.9.0"
-</pre>      
-   </div>
-   <div class="tab-pane" id="grails-datatables-jsp">
-<pre class="prettyprint">
-compile 'com.github.dandelion:datatables-jsp:0.9.0'
-</pre>      
-   </div>
-</div>
-<script>
-	$('#build-tools-tab-datatables-jsp a').click(function(e) {
-		e.preventDefault();
-		$(this).tab('show');
-	})
-</script>
-
-<h4>Thymeleaf implementation</h4>
-
-
-<ul class="nav nav-tabs" id="build-tools-tab-datatables-thymeleaf" style="margin-bottom:0;">
-   <li class="active"><a href="#maven-datatables-thymeleaf">Maven</a></li>
-   <li><a href="#gradle-datatables-thymeleaf">Gradle</a></li>
-   <li><a href="#grails-datatables-thymeleaf">Grails</a></li>
-   <li><a href="#ivy-datatables-thymeleaf">Ivy</a></li>
-   <li><a href="#grape-datatables-thymeleaf">Grape</a></li>
-   <li><a href="#buildr-datatables-thymeleaf">Buildr</a></li>
-   <li><a href="#sbt-datatables-thymeleaf">SBT</a></li>
-</ul>
-<div class="tab-content">
-   <div class="tab-pane active" id="maven-datatables-thymeleaf">
-<pre class="prettyprint">
-&lt;dependency>
-    &lt;groupId>com.github.dandelion&lt;/groupId>
-    &lt;artifactId>datatables-thymeleaf&lt;/artifactId>
-    &lt;version>0.9.0&lt;/version>
-&lt;/dependency>
-</pre>
-   </div>
-   <div class="tab-pane" id="gradle-datatables-thymeleaf">
-<pre class="prettyprint">
-'com.github.dandelion:datatables-thymeleaf:0.9.0'
-</pre>   
-   </div>
-   <div class="tab-pane" id="ivy-datatables-thymeleaf">
-<pre class="prettyprint">
-&lt;dependency org="com.github.dandelion" name="datatables-thymeleaf" rev="0.9.0" />
-</pre>      
-   </div>
-   <div class="tab-pane" id="grape-datatables-thymeleaf">
-<pre class="prettyprint">
-@Grapes( 
-   @Grab(group='com.github.dandelion', module='datatables-thymeleaf', version='0.9.0') 
-)
-</pre>      
-   </div>
-   <div class="tab-pane" id="buildr-datatables-thymeleaf">
-<pre class="prettyprint">
-'com.github.dandelion:datatables-thymeleaf:jar:0.9.0'
-</pre>      
-   </div>
-   <div class="tab-pane" id="sbt-datatables-thymeleaf">
-<pre class="prettyprint">
-libraryDependencies += "com.github.dandelion" % "datatables-thymeleaf" % "0.9.0"
-</pre>      
-   </div>
-   <div class="tab-pane" id="grails-datatables-thymeleaf">
-<pre class="prettyprint">
-compile 'com.github.dandelion:datatables-thymeleaf:0.9.0'
-</pre>      
-   </div>
-</div>
-<script>
-	$('#build-tools-tab-datatables-thymeleaf a').click(function(e) {
-		e.preventDefault();
-		$(this).tab('show');
-	})
-</script>
-
-<h3 class="section-title">Manually</h3>
-
-<h4>Core and dependencies</h4>
 <ul>
-   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-core%7C0.9.0%7Cjar">datatables-core</a></li>
-   <li><a href="http://search.maven.org/#artifactdetails%7Corg.slf4j%7Cslf4j-api%7C1.6.4%7Cjar">slf4j-api 1.6.4</a></li>
-   <li><a href="http://search.maven.org/#artifactdetails%7Ccommons-beanutils%7Ccommons-beanutils%7C1.8.3%7Cjar">Commons Beanutils 1.8.3</a></li>
-   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.googlecode.json-simple%7Cjson-simple%7C1.1.1%7Cbundle">JSON Simple 1.1.1</a></li>
-</ul>
+<li>
+<p><strong>slf4j-api-1.6.4.jar</strong> : <a href='http://mvnrepository.com/artifact/org.slf4j/slf4j-api/1.6.4'>using mvnrepository</a> | <a href='http://search.maven.org/#artifactdetails%7Corg.slf4j%7Cslf4j-api%7C1.6.4%7Cjar'>using search.maven</a></p>
+</li>
 
-<h4>JSP implementation</h4>
-<ul>
-   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-jsp%7C0.9.0%7Cjar">datatables-jsp</a></li>
-</ul>
+<li>
+<p><strong>commons-lang-2.6.jar</strong> : <a href='http://mvnrepository.com/artifact/commons-lang/commons-lang/2.6'>download using mvnrepository</a> | <a href='http://search.maven.org/#artifactdetails%7Ccommons-lang%7Ccommons-lang%7C2.6%7Cjar'>using search.maven</a></p>
+</li>
 
-<h4>Thymeleaf implementation</h4>
-<ul>
-   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-thymeleaf%7C0.9.0%7Cjar">datatables-thymeleaf</a></li>
-</ul>
+<li>
+<p><strong>commons-beanutils-1.8.3.jar</strong> : <a href='http://mvnrepository.com/artifact/commons-beanutils/commons-beanutils/1.8.3'>download using mvnrepository</a> | <a href='http://search.maven.org/#artifactdetails%7Ccommons-beanutils%7Ccommons-beanutils%7C1.8.3%7Cjar'>using search.maven</a></p>
+</li>
 
-<h4>Extras</h4>
-<h5>Servlet 2</h5>
-<ul>
-   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-servlet2%7C0.9.0%7Cjar">datatables-servlet2</a></li>
-</ul>
-
-<h5>Spring 3</h5>
-<ul>
-   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-spring3%7C0.9.0%7Cjar">datatables-spring3</a></li>
-</ul>
-
-<h5>Export POI (XLS)</h5>
-<ul>
-   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-export-poi%7C0.9.0%7Cjar">datatables-export-poi</a></li>
-</ul>
-
-<h5>Export POI OOXML (XLSX)</h5>
-<ul>
-   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-export-poi-ooxml%7C0.9.0%7Cjar">datatables-export-poi-ooxml</a></li>
-</ul>
-
-<h5>Export iText (PDF)</h5>
-<ul>
-   <li><a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-export-itext%7C0.9.0%7Cjar">datatables-export-itext</a></li>
+<li>
+<p><strong>json-simple-1.1.1.jar</strong> : <a href='http://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple/1.1.1'>download using mvnrepository</a> | <a href='http://search.maven.org/#artifactdetails%7Ccom.googlecode.json-simple%7Cjson-simple%7C1.1.1%7Cbundle'>using search.maven</a></p>
+</li>
 </ul>
          </div>
       </div>

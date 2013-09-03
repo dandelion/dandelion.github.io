@@ -7,6 +7,7 @@
 <meta name="description" content="java, web, component, library, assets, datatables">
 <meta name="author" content="Dandelion">
 
+<link href="/assets/css/prettify.css" rel="stylesheet">
 <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
 <link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
 <!-- <link href="/assets/css/component.css" rel="stylesheet"> -->
@@ -63,17 +64,11 @@
             </a>
             <div class="nav-collapse collapse">
                <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
-                  <li class="text-center"><a href="/"><i class="icon-home"></i> Home</a></li>
-                  <li class="text-center"><a href="/blog"><i class="icon-comment"></i> Blog</a></li>
-                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt"></i> Forum</a></li>
-                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-github"></i> Issues</a></li>
-                  <li class="text-center"><a href="https://github.com/dandelion/dandelion-datatables"><i class="icon-github-sign"></i> Sources</a></li>
-               </ul>
-               <ul class="nav pull-right" style="clear:right;">
-                  <form class="navbar-search" action="http://google.com/search" method="get" style="margin-right:15px;">
-                     <input type="hidden" name="q" value="site:dandelion.github.io/datatables" />
-                     <input type="text" class="search search-query" name="q" results="0" placeholder="Search"/>
-                  </form>
+                  <li class="text-center"><a href="/"><i class="icon-home icon-3x"></i><br/>Home</a></li>
+                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt icon-3x"></i><br />Forum</a></li>
+                  <li class="text-center"><a href="/blog"><i class="icon-comment-alt icon-3x"></i><br />Blog</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug icon-3x"></i><br />Issues</a></li>
+                  <li class="text-center"><a href="https://github.com/dandelion/dandelion-datatables" alt="Dandelion-Datatables sources"><i class="icon-github icon-3x"></i><br />Sources</a></li>
                </ul>
             </div>
             <!--/.nav-collapse -->
@@ -85,8 +80,8 @@
    <div class="row-fluid">
       <div class="span2">
          <div class="well sidebar-nav">
+      
             <ul class="nav nav-list">
-               
                <h5>Overview</h5>
                <li >
                   <a href="/datatables"><i class="icon-home"></i> Home</a>
@@ -97,62 +92,65 @@
                <li >
                   <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
                </li>
+               <li >
+                  <a href="/datatables/releases/" title="Download"> <i class="icon-tags"></i> Releases</a>
+               </li>
                
                <h5>Documentation</h5>
                <li >
-                  <a href="/datatables/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+                  <a href="/datatables/docs/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
                   
                </li>
                <li >
-                  <a href="/datatables/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
-               </li>
-               <li >
-                  <a href="/datatables/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
-               </li>
-               
-               <h5>Reference</h5>
-               <li >
-                  <a href="/datatables/ref/" title="Releases"> Releases</a>
-               </li>
-               <li >
-                  <a href="/datatables/ref/jsp/" title="JSP taglib"> JSP taglib</a>
+                  <a href="/datatables/docs/ref/jsp/" title="JSP taglib"><i class="icon-book"></i> JSP taglib</a>
                   
                </li>
                <li >
-                  <a href="/datatables/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect</a>
+                  <a href="/datatables/docs/ref/thymeleaf/" title="Thymeleaf dialect"><i class="icon-book"></i> Thymeleaf dialect</a>
                   
                </li>
                <li >
-                  <a href="/datatables/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration</a>
+                  <a href="/datatables/docs/ref/configuration/" title="Configuration"><i class="icon-book"></i> Configuration</a>
                   
+               </li>
+               <li >
+                  <a href="/datatables/docs/migration/" title="Migration guides"> <i class="icon-plane"></i> Migration guides</a>
+               </li>
+               <li >
+                  <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
                </li>
                
                <h5>Tutorials</h5>
                <li >
                   <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-flag-checkered"></i> I18n</a>
+                  <a href="/datatables/tutorials/i18n/" title="Internationalization"> <i class="icon-globe"></i> I18n</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  <a href="/datatables/tutorials/configuration/" title="Configuration"> <i class="icon-cog"></i> Configuration</a>
                   
                </li>
             </ul>
@@ -171,11 +169,27 @@
    
      
    
+   <li><span class="divider">|</span><a href="/datatables/changelog//"></a></li>
+   
+   
+   
+   
+   <li class="pull-right" style="margin-left:5px;">
+      <form class="custom-form-search" action="http://google.com/search" method="get" style="margin:0;">
+         <input type="hidden" name="q" value="site:dandelion.github.io/datatables">
+         <div class="input-append">
+            <input type="text" class="input-medium" name="q" placeholder="Search via Google" />
+            <button type="submit" class="btn"><i class="icon-search"></i></button>
+         </div>
+      </form>
+   </li>
    
    <li class="pull-right">
-      Latest release: <a href="/datatables/ref/0.9.0/">0.9.0</a>
+      Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a><span class="divider">|</span>
    </li>
 </ul>
+
+
             <h3 class='page-title'>Changelog</h3><h4 class='section-title'>0.9.0 (??-??-2013)</h4>
 <h5 id='core'>Core</h5>
 
@@ -236,17 +250,17 @@
 
 <li>Improved JSP tags composition, allowing to use JSTL tags around Dandelion-Datatables&#39; ones</li>
 
-<li>New <a href='/datatables/ref/jsp/table.html#dom'><code>dom</code></a> table attribute, allowing you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page.</li>
+<li>New table attribute, allowing you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page.</li>
 
-<li>New <a href='/datatables/ref/jsp/column.html#selector'><code>selector</code></a> column attribute, which is a jQuery selector used to populate a placeholder with a filtering widgets (e.g. useful if you want externalized search form)</li>
+<li>New column attribute, which is a jQuery selector used to populate a placeholder with a filtering widgets (e.g. useful if you want externalized search form)</li>
 </ul>
 
 <h5 id='thymeleaf_implementation'>Thymeleaf implementation</h5>
 
 <ul>
-<li>New <a href='/datatables/ref/thymeleaf/table.html#dt:dom'><code>dt:dom</code></a> table attribute.</li>
+<li>New table attribute.</li>
 
-<li>New <a href='/datatables/ref/thymeleaf/th.html#dt:selector'><code>dt:selector</code></a> th attribute.</li>
+<li>New th attribute.</li>
 </ul>
 
 <h5 id='issues'>Issues</h5>
@@ -307,17 +321,17 @@
 <h5 id='jsp_implementation'>JSP implementation</h5>
 
 <ul>
-<li>New <a href='/datatables/ref/jsp/table.html#dom'><code>dom</code></a> table attribute, allowing you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page.</li>
+<li>New table attribute, allowing you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page.</li>
 
-<li>New <a href='/datatables/ref/jsp/column.html#selector'><code>selector</code></a> column attribute, which is a jQuery selector used to populate a placeholder with a filtering widgets (e.g. useful if you want externalized search form)</li>
+<li>New column attribute, which is a jQuery selector used to populate a placeholder with a filtering widgets (e.g. useful if you want externalized search form)</li>
 </ul>
 
 <h5 id='thymeleaf_implementation'>Thymeleaf implementation</h5>
 
 <ul>
-<li>New <a href='/datatables/ref/thymeleaf/table.html#dt:dom'><code>dt:dom</code></a> table attribute.</li>
+<li>New table attribute.</li>
 
-<li>New <a href='/datatables/ref/thymeleaf/th.html#dt:selector'><code>dt:selector</code></a> th attribute.</li>
+<li>New th attribute.</li>
 </ul>
 
 <h5 id='issues'>Issues</h5>
@@ -862,7 +876,7 @@
          <div class="span8">
             
             <div class="row-fluid">
-               <div class="span4">
+               <div class="span3">
                   <h3>Dandelion</h3>
                   <ul>
                      <li><a href="https://github.com/dandelion"><i class="icon-github"></i> Source repository</a></li>
@@ -872,7 +886,15 @@
                      <li><a href="/acknowledgements/"><i class="icon-info-sign"></i> Acknowledgements</a></li>
                   </ul>
                </div>
-               <div class="span4">
+               <div class="span3">
+                  <h3>Components</h3>
+                  <ul>
+                     <li><a href="/dandelion">Dandelion</a></li>
+                     <li><a href="/datatables">Datatables</a></li>
+                     <li><a href="/webanalytics">Webanalytics</a></li>
+                  </ul>
+               </div>
+               <div class="span3">
                   <h3>Get started</h3>
                   <ul>
                      <li><a href="/faq"> <i class="icon-book"></i> FAQ</a></li>
@@ -880,7 +902,7 @@
                      <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
                   </ul>
                </div>
-               <div class="span4">
+               <div class="span3">
                   <h3>Community</h3>
                   <ul>
                      <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>
@@ -901,7 +923,7 @@
       <div class="row" style="padding-top:10px;">
          <div class="span12">
             <p class="text-center">
-               <strong>Dandelion</strong> and all its components, are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
             </p>
          </div>
       </div>
@@ -909,6 +931,7 @@
 </footer>
    </div>
    
-   <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+   <script src="/assets/js/prettify.js"></script>
+   <script src="/assets/js/site-main.js"></script>
 </body>
 </html>

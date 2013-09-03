@@ -7,6 +7,7 @@
 <meta name="description" content="java, web, component, library, assets, datatables">
 <meta name="author" content="Dandelion">
 
+<link href="/assets/css/prettify.css" rel="stylesheet">
 <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
 <link href="/assets/css/bootstrap_custom1.css" rel="stylesheet">
 <!-- <link href="/assets/css/component.css" rel="stylesheet"> -->
@@ -79,8 +80,8 @@
    <div class="row-fluid">
       <div class="span2">
          <div class="well sidebar-nav">
+      
             <ul class="nav nav-list">
-               
                <h5>Overview</h5>
                <li >
                   <a href="/datatables"><i class="icon-home"></i> Home</a>
@@ -113,7 +114,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/docs/migration/" title="Migration guide"> <i class="icon-plane"></i> Migration guide</a>
+                  <a href="/datatables/docs/migration/" title="Migration guides"> <i class="icon-plane"></i> Migration guides</a>
                </li>
                <li >
                   <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
@@ -122,22 +123,53 @@
                <h5>Tutorials</h5>
                <li >
                   <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+                  
                </li>
                <li  class="active">
                   <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
+                  
+                  <ul class="nav nav-list">
+                     <li >
+                        <a href="/datatables/tutorials/advanced/generating-row-ids.html"><i class="icon-double-angle-right"></i> Generating row id</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/using-extra-files.html"><i class="icon-double-angle-right"></i> Using extra Javascript files</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/using-extra-conf.html"><i class="icon-double-angle-right"></i> Using extra DataTables configuration</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/using-asset-compression.html"><i class="icon-double-angle-right"></i> Using assets compression</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/using-asset-aggregation.html"><i class="icon-double-angle-right"></i> Using assets aggregation</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/using-callbacks.html"><i class="icon-double-angle-right"></i> Using callbacks</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/nesting-jsp-tags.html"><i class="icon-double-angle-right"></i> Nesting JSP tags</a>
+                     </li>
+                     <li >
+                        <a href="/datatables/tutorials/advanced/writing-your-own-extension.html"><i class="icon-double-angle-right"></i> Writing your own extension</a>
+                     </li>
+                  </ul>
+                  
                </li>
                <li >
                   <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/i18n/" title="Plugins"> <i class="icon-globe"></i> I18n</a>
+                  <a href="/datatables/tutorials/i18n/" title="Internationalization"> <i class="icon-globe"></i> I18n</a>
                   
                </li>
                <li >
@@ -145,7 +177,7 @@
                   
                </li>
                <li >
-                  <a href="/datatables/tutorials/configuration/" title="Plugins"> <i class="icon-cog"></i> Configuration</a>
+                  <a href="/datatables/tutorials/configuration/" title="Configuration"> <i class="icon-cog"></i> Configuration</a>
                   
                </li>
             </ul>
@@ -171,10 +203,22 @@
    
    
    
+   <li class="pull-right" style="margin-left:5px;">
+      <form class="custom-form-search" action="http://google.com/search" method="get" style="margin:0;">
+         <input type="hidden" name="q" value="site:dandelion.github.io/datatables">
+         <div class="input-append">
+            <input type="text" class="input-medium" name="q" placeholder="Search via Google" />
+            <button type="submit" class="btn"><i class="icon-search"></i></button>
+         </div>
+      </form>
+   </li>
+   
    <li class="pull-right">
-      Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a>
+      Latest release: <a href="/datatables/releases/0.9.0/">0.9.0</a><span class="divider">|</span>
    </li>
 </ul>
+
+
             <h3 id='advanced__using_extra_conf_only_jsp'>Advanced :: Using extra conf (only JSP)</h3>
 
 <p>As for the <code>datatables:extraFile</code> tag, extra configuration allows you to add DataTables configuration which are not supported by the tag attributes, e.g. <a href='http://datatables.net/release-datatables/examples/advanced_init/column_render.html'>custom column rendering</a>.</p>
@@ -246,7 +290,7 @@
                      <li><a href="/downloads"><i class="icon-download-alt"></i> Downloads</a></li>
                   </ul>
                </div>
-               <div cl3ss="span3">
+               <div class="span3">
                   <h3>Community</h3>
                   <ul>
                      <li><a href="/blog"><i class="icon-comment-alt"></i> Blog</a></li>
@@ -267,7 +311,7 @@
       <div class="row" style="padding-top:10px;">
          <div class="span12">
             <p class="text-center">
-               <strong>Dandelion</strong> and all its components, are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
             </p>
          </div>
       </div>
@@ -275,6 +319,7 @@
 </footer>
    </div>
    
-   <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+   <script src="/assets/js/prettify.js"></script>
+   <script src="/assets/js/site-main.js"></script>
 </body>
 </html>
