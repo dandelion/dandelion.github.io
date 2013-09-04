@@ -213,18 +213,11 @@ http://dandelion.github.io/datatables/releases/0.9.0/index.html
 http://dandelion.github.io/datatables/releases/0.9.0/javadoc/index.html
 http://dandelion.github.io/datatables/releases/index.html
 http://dandelion.github.io/datatables/roadmap.html
-http://dandelion.github.io/datatables/tutorials/advanced/aggregation.html
-http://dandelion.github.io/datatables/tutorials/advanced/callbacks.html
-http://dandelion.github.io/datatables/tutorials/advanced/compression.html
-http://dandelion.github.io/datatables/tutorials/advanced/extraconf.html
-http://dandelion.github.io/datatables/tutorials/advanced/extrafile.html
 http://dandelion.github.io/datatables/tutorials/advanced/generating-row-ids.html
-http://dandelion.github.io/datatables/tutorials/advanced/index.html
 http://dandelion.github.io/datatables/tutorials/advanced/index.html
 http://dandelion.github.io/datatables/tutorials/advanced/multiple-tables.html
 http://dandelion.github.io/datatables/tutorials/advanced/nested-tags.html
 http://dandelion.github.io/datatables/tutorials/advanced/nesting-jsp-tags.html
-http://dandelion.github.io/datatables/tutorials/advanced/rowid.html
 http://dandelion.github.io/datatables/tutorials/advanced/using-asset-aggregation.html
 http://dandelion.github.io/datatables/tutorials/advanced/using-asset-compression.html
 http://dandelion.github.io/datatables/tutorials/advanced/using-callbacks.html
@@ -234,12 +227,10 @@ http://dandelion.github.io/datatables/tutorials/advanced/writing-your-own-extens
 http://dandelion.github.io/datatables/tutorials/ajax/customizing-ajax-calls.html
 http://dandelion.github.io/datatables/tutorials/ajax/customizing-column-content.html
 http://dandelion.github.io/datatables/tutorials/ajax/index.html
-http://dandelion.github.io/datatables/tutorials/ajax/index.html
 http://dandelion.github.io/datatables/tutorials/ajax/integration-with-spring.html
 http://dandelion.github.io/datatables/tutorials/ajax/server-side/index.html
 http://dandelion.github.io/datatables/tutorials/ajax/server-side/pipelining-data.html
 http://dandelion.github.io/datatables/tutorials/ajax/server-side.html
-http://dandelion.github.io/datatables/tutorials/ajax/springmvc.html
 http://dandelion.github.io/datatables/tutorials/ajax/using-ajax-sources.html
 http://dandelion.github.io/datatables/tutorials/basics/changing-display-length.html
 http://dandelion.github.io/datatables/tutorials/basics/customizing-column-header.html
@@ -256,7 +247,6 @@ http://dandelion.github.io/datatables/tutorials/basics/filtering/index.html
 http://dandelion.github.io/datatables/tutorials/basics/filtering/using-an-external-form.html
 http://dandelion.github.io/datatables/tutorials/basics/handling-null-and-default-values.html
 http://dandelion.github.io/datatables/tutorials/basics/index.html
-http://dandelion.github.io/datatables/tutorials/basics/multiple.html
 http://dandelion.github.io/datatables/tutorials/basics/paging/changing-pagination-style.html
 http://dandelion.github.io/datatables/tutorials/basics/paging/index.html
 http://dandelion.github.io/datatables/tutorials/basics/scrolling.html
@@ -282,7 +272,6 @@ http://dandelion.github.io/datatables/tutorials/export/customizing-export-links.
 http://dandelion.github.io/datatables/tutorials/export/customizing-export-url.html
 http://dandelion.github.io/datatables/tutorials/export/filter-based-exports.html
 http://dandelion.github.io/datatables/tutorials/export/index.html
-http://dandelion.github.io/datatables/tutorials/i18n/i18n.html
 http://dandelion.github.io/datatables/tutorials/i18n/index.html
 http://dandelion.github.io/datatables/tutorials/i18n/integration-with-other-projects.html
 http://dandelion.github.io/datatables/tutorials/i18n/internationalization.html
