@@ -49,14 +49,35 @@ i18n.locale.resolver=com.github.dandelion.datatables.extras.spring3.i18n.SpringL
       <p>
          To use it globally in your application, just add the following line in your <i>datatables.properties</i> file:
 <pre class="prettyprint">
-i18n.locale.resolver.resolver=com.github.dandelion.datatables.jsp.i18n.JstlLocaleResolver
+i18n.locale.resolver=com.github.dandelion.datatables.jsp.i18n.JstlLocaleResolver
+</pre>
+      </p>
+   </li>
+   <li>
+      for <strong>Struts 1</strong> with the {% javadoc dt datatables-extras/datatables-struts1 Struts1LocaleResolver %} class
+      <p>
+         The resolver will first try to get the locale from the <code>Globals.LOCALE_KEY</code> key and will fall back to request locale.
+      </p>
+      <p>
+         To use it globally in your application, just add the following line in your <i>datatables.properties</i> file:
+<pre class="prettyprint">
+i18n.locale.resolver=com.github.dandelion.datatables.extras.struts1.i18n.Struts1LocaleResolver
+</pre>
+      </p>
+   </li>
+   <li>
+      for <strong>Struts 2</strong> with the {% javadoc dt datatables-extras/datatables-struts2 Struts2LocaleResolver %} class
+      <p>
+         The resolver will look for the first <code>LocaleProvider</code> action in the stack.
+      </p>
+      <p>
+         To use it globally in your application, just add the following line in your <i>datatables.properties</i> file:
+<pre class="prettyprint">
+i18n.locale.resolver=com.github.dandelion.datatables.extras.struts2.i18n.Struts2LocaleResolver
 </pre>
       </p>
    </li>
 </ul>
-<p>
-   Note that by default, the {% javadoc dt datatables-core StandardLocaleResolver %} is used and retrieves the Locale from the <code>HttpServletRequest</code>.
-</p>
 
 <h3 class="section-title" id="mr">Message resolution</h3>
 <p>
@@ -90,7 +111,34 @@ global.i18n.message.resolver=com.github.dandelion.datatables.jsp.i18n.JstlMessag
 </pre>
       </p>
    </li>
+   <li>
+      for <strong>Struts1</strong> with the {% javadoc dt datatables-extras/datatables-struts1 Struts1MessageResolver %} class
+      <p>
+         The resolver will look for the message using the <code>Globals.MESSAGES_KEY</code>.
+      </p>
+      <p>
+         To use it globally in your application, just add the following line in your <i>datatables.properties</i> file:
+<pre class="prettyprint">
+global.i18n.message.resolver=com.github.dandelion.datatables.extras.struts1.i18n.Struts1MessageResolver
+</pre>
+      </p>
+   </li>
+   <li>
+      for <strong>Struts2</strong> with the {% javadoc dt datatables-extras/datatables-struts2 Struts2MessageResolver %} class
+      <p>
+         The resolver will look for the first <code>TextProvider</code> action in the stack.
+      </p>
+      <p>
+         To use it globally in your application, just add the following line in your <i>datatables.properties</i> file:
+<pre class="prettyprint">
+global.i18n.message.resolver=com.github.dandelion.datatables.extras.struts2.i18n.Struts2MessageResolver
+</pre>
+      </p>
+   </li>
 </ul>
-<p>
+
+
+<p class="alert alert-warn">
+   <strong><i class="icon-warning-sign icon-2x"></i></strong> 
    Note that by default, no message resolver is configured.
 </p>
