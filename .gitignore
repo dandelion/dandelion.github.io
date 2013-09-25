@@ -2,3 +2,4 @@
 *.iml
 .settings
 .project
+_site/
