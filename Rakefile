@@ -4,10 +4,8 @@ require "tmpdir"
 require "bundler/setup"
 require "jekyll"
 
-
 # Change your GitHub reponame
 GITHUB_REPONAME = "dandelion/dandelion.github.io"
-
 
 desc "Generate blog files"
 task :generate do
@@ -16,7 +14,6 @@ task :generate do
     "destination" => "_site"
   })).process
 end
-
 
 desc "Generate and publish blog to gh-pages"
 task :publish => [:generate] do
