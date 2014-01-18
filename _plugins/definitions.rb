@@ -26,7 +26,7 @@ module Jekyll
           end
         
         when "dt"
-          path = config['source'] + "/datatables/_definitions.html"
+          path = config['source'] + "/datatables/_attributes.html"
           if File.exists?(path)
             File.open(path, "r").each_line do |line|
               tmpLine = Liquid::Template.parse(line)
