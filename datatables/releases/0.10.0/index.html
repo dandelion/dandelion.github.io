@@ -1,0 +1,149 @@
+---
+layout: datatables
+menu: releases
+level1: releases
+level2:
+  url: 0.10.0
+  name: 0.10.0
+---
+
+<h2 class="page-title">Dandelion-Datatables 0.10.0 change log<span class="release-date">11-24-2013</span></h2>
+
+<h3 class="section-title">Core</h3>
+<ul>
+   <li>Finally connected with Dandelion Core!
+      <ul>
+         <li>All extensions have been refactored in order to work with the AssetStack (lien)</li>
+         <li>Lots of Dandelion scopes have been added and are available in the JAR:
+            <ul>
+               <li>jQuery</li>
+               <li>jQuery UI</li>
+               <li>Bootstrap v2</li>
+               <li>Bootstrap v3</li>
+               <li>DataTables</li>
+               <li>See the full list here (lien)</li>
+            </ul>
+         </li>
+      </ul>
+   </li>
+   <li>Refactored the table and column configurations processing for greater clarity and better performance</li>
+   <li>Cleaned Javascript generation: unneccessary parameters are non longer generated</li>
+   <li>Added support for pluging a custom Javascript generator (lien)</li>
+   <li>Refactored the Javascript generation to be able to compute the code before rendering it</li>
+   <li>Improved exception handling</li>
+   <li>Added support for hot reloading of the whole configuration, i.e.:
+      <ul>
+         <li><i>datatables.properties</i>: the main configuration file</li>
+         <li>all <i>datatables_XX.properties</i>: bundles containing internationalized messages</li>
+      </ul>
+   </li>
+   <li>Added new themes for Bootstrap Responsive and Bootstrap 3</li>
+   <li>Fixed display issue in the listbox pagination style</li>
+   <li>Added URL processing (back)</li>
+   <li>Added support for totally custom export (custom format, custom class, ...) (lien)</li>
+   <li>New pagination styles based on Bootstrap 2: bootstrap_four_button and bootstrap_full_numbers</li>
+   <li>Fixed usage of BEFORESTARTDOCUMENTREADY when using extra Javascript files (lien)</li>
+   <li>Better test coverage</li>
+</ul>
+
+<h3 class="section-title">JSP implementation</h3> 
+<p>
+</p>
+<p></p>
+<ul>
+   <li>New id (lien) attribute for the <code>&lt;datatables:column&gt;</code> tag, allowing to assign an ID to the header cell</li>
+   <li>New filterMinLength (lien) attribute for the <code>&lt;datatables:column&gt;</code> tag, allowing to trigger the filtering after a minimum number of characters has been reached in a filtering field.</li>
+   <li>New filterDelay (lien) attribute for the <code>&lt;datatables:column&gt;</code> tag, allowing to set a delay (in ms) before the AJAX call is performed to obtain data from server</li>
+   <li>New filterSelector (lien) attribute for the <code>&lt;datatables:column&gt;</code> tag, allowing </li>
+   <li>New filterClearSelector (lien) attribute for the <code>&lt;datatables:column&gt;</code> tag, allowing </li>
+   <li>New name (lien) attribute for the <code>&lt;datatables:column&gt;</code> tag (lien), allowing to apply a name to a column. Used with server-side processing.</li>
+   <li>New escapeXml (lien) attribute for the <code>&lt;datatables:column&gt;</code> tag, allowing to disable the XML characters escaping</li>
+   <li>New <code>&lt;datatables:extraHtml&gt;</code> (lien) tag, allowing to create DataTables feature plug-ins that can be used to decorate the table. See more details here. (lien)</li>
+   <li>New orientation (lien) for the <code>&lt;datatables:export&gt;</code> tag (lien), allowing to change the default PDF orientation</li>
+   <li>New fileExtension (lien) for the <code>&lt;datatables:export&gt;</code> tag (lien), allowing to set the extension of the exported file</li>
+   <li>New mimeType (lien) for the <code>&lt;datatables:export&gt;</code> tag (lien), allowing to set the mime Type of the response when exporting data</li>
+   <li>New escapeXml (lien) attribute for the <code>&lt;datatables:export&gt;</code> tag, allowing to disable the XML characters escaping</li>
+   <li>New reloadSelector (lien) attribute for the <code>&lt;datatables:table&gt;</code> tag, allowing to bind a "click" event to element that will trigger the table reloading</li>
+   <li>New reloadFunction (lien) attribute for the <code>&lt;datatables:table&gt;</code> tag, allowing to customize the table reloading</li>
+   <li>Renamed the sortInit table attribute to sortInitDirection</li>
+   <li>New sortInitOrder (lien) attribute for the <code>&lt;datatables:table&gt;</code> tag, allowing to set the order in which columns should be initialized</li>
+   <li>New escapeXml (lien) attribute for the <code>&lt;datatables:table&gt;</code> tag, allowing to disable the XML characters escaping</li>
+   <li>Renamed the <code>rowIdSufix</code> table attribute to rowIdSuffix</li>
+   <li>Renamed the <code>filter</code> table attribute to filterable</li>
+   <li>Renamed the <code>sort</code> table attribute to sortable</li>
+   <li>Renamed the <code>paginate</code> table attribute to pageable</li>
+   <li>Removed the unused <code>footer</code> table attribute</li>
+   <li>Removed the <code>&lt;datatables:extraConf&gt;</code> tag</li>
+   <li>Generally speaking, <code>&lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt;</code> has been added in all TLDs where it was missing</li>
+</ul>
+
+<h3 class="section-title">Thymeleaf implementation</h3> 
+<p>
+   <ul>
+      <li>Added support for Thymeleaf 2.1.x</li>
+   </ul>
+</p>
+
+<h3 class="section-title">Spring3 extra</h3> 
+<p>
+   <ul>
+      <li></li>
+   </ul>
+</p>
+
+<h3 class="section-title">Struts1 extra</h3> 
+<p>
+   <ul>
+      <li></li>
+   </ul>
+</p>
+
+<h3 class="section-title">Struts2 extra</h3> 
+<p>
+   <ul>
+      <li></li>
+   </ul>
+</p>
+
+<h3 class="section-title">Export iText extra</h3> 
+<p>
+   <ul>
+      <li></li>
+   </ul>
+</p>
+
+<h3 class="section-title">Closed issues</h3>
+<ul>
+   <li>{% issue 205 %}: Add support for state saving in Thymeleaf</li>
+   <li>{% issue 202 %}: Add support for extraFile in Thymeleaf Dialect</li>
+   <li>{% issue 201 %}: Provide a new configuration option allowing to generate PDF in landscape mode</li>
+   <li>{% issue 200 %}: Escape XML to prevent XSS attacks</li>
+   <li>{% issue 199 %}: NPE with native table with th nodes</li>
+   <li>{% issue 198 %}: BEFORESTARTDOCUMENTREADY does not work.</li>
+   <li>{% issue 197 %}: Add support to export via AJAX when there are multiple tables</li>
+   <li>{% issue 196 %}: Not automatically set as "unsearchable" the hidden columns</li>
+   <li>{% issue 195 %}: Add support for Thymeleaf 2.1</li>
+   <li>{% issue 194 %}: Allow custom order in sorting initialization</li>
+   <li>{% issue 191 %}: Rework on all configuration names and taglib attributes</li>
+   <li>{% issue 190 %}: Fix pipelining issue (pipelining defined but no pipesize)</li>
+   <li>{% issue 189 %}: Export param problem</li>
+   <li>{% issue 188 %}: Async servlet support</li>
+   <li>{% issue 187 %}: Add support for delayed filtering</li>
+   <li>{% issue 182 %}: Add support for dynamic internationalization</li>
+   <li>{% issue 181 %}: Unable to use the DatatablesDialect when using Thymeleaf and the Tiles2 extra</li>
+   <li>{% issue 176 %}: Allow usage of totally custom export</li>
+   <li>{% issue 175 %}: Refactor the links management</li>
+   <li>{% issue 169 %}: Add support for responsive design</li>
+   <li>{% issue 167 %}: Avoid repeating the header again in the empty cells of the filtering bar</li>
+   <li>{% issue 165 %}: Add the ability to use a custom sorting function</li>
+   <li>{% issue 161 %}: Add support for configuration local overloading</li>
+   <li>{% issue 159 %}: Add support for Bootstrap 3</li>
+   <li>{% issue 147 %}: Add support for the id attribute in datatables:column tag</li>
+   <li>{% issue 141 %}: Object Serialization</li>
+   <li>{% issue 129 %}: Table with dash in id is not working</li>
+   <li>{% issue 123 %}: Add support for ColumnHead when working with AJAX sources</li>
+   <li>{% issue 119 %}: Enhancement. Add support for filtering after button click</li>
+   <li>{% issue 54 %}: Connect Dandelion-DataTables to Dandelion</li>
+   <li>{% issue 37 %}: ClassCastException if table is directly under a div which is processed by Tiles</li>
+   <li>{% issue 8 %}: Content assist for the JSP taglib</li>
+</ul>
