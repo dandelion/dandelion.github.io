@@ -39,6 +39,4 @@ We find all these statistics pretty amazing, especially because 99% of the proje
 
 <br />
 Well, the conclusion is pretty simple :
-<p class="text-center">
-<img class="blog_img" src="/assets/images/blog/cool-thanks-guys.jpg" width="300px" height="300px" />
-</p>
+<p class="text-center"><img class="blog_img" src="/assets/images/blog/cool-thanks-guys.jpg" width="300px" height="300px" /></p>
