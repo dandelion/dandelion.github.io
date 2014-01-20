@@ -6,16 +6,12 @@ level2:
   url: i18n
   name: I18n
 level3:
-  url: pluging-a-custom-messageresolver
-  name: Pluging a custom message resolver
+  url: plugging-in-a-custom-messageresolver
+  name: Plugging-in a custom message resolver
 ---
 
-<h2 class="page-title">Pluging a custom message resolver
-   <div class="pull-right">
-      <span class="badge badge-success compatibility" title="Compatible with JSP">JSP</span>
-      <span class="badge badge-success compatibility" title="Compatible with Thymeleaf">Thymeleaf</span>
-   </div>
-</h2>
+<h2 class="page-title">Plugging-in a custom message resolver</h2>
+
 <h3 class="section-title">Writing your message resolver</h3>
 <p>
    Begin creating a class that implements the {% javadoc dt datatables-core MessageResolver %} interface.
@@ -38,7 +34,7 @@ public class MyMessageResolver extends AbstractMessageResolver {
 </pre>  
 </p>
 
-<h3 class="section-title">Pluging your message resolver</h3>
+<h3 class="section-title">Plugging-in your message resolver</h3>
 <p>
    To use it globally in your application, just add the following line in your <i>datatables.properties</i> file:
 <pre class="prettyprint">
