@@ -27,54 +27,13 @@
 <link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
 <link rel="shortcut icon" href="/assets/images/dandelion_square.png">
 
-<script>
-      var _gaq = _gaq || [];
-      _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
-      _gaq.push([ '_setCookiePath', '/{{site.dandelion.components.[page.module].url}}/' ]);
-      _gaq.push([ '_trackPageview' ]);
-      (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-            ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl'
-      			: 'http://www')
-      			+ '.google-analytics.com/ga.js';
-      	var s = document.getElementsByTagName('script')[0];
-      	s.parentNode.insertBefore(ga, s);
-      })();
-</script>
 <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
 <script src="/assets/js/site-component.js"></script>
+{% include analytics %}
 </head>
 <body>
-   <div class="navbar navbar-static-top">
-      <div class="navbar-inner">
-         <div class="container-fluid">
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-               <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a href="/{{ site.dandelion.components.[page.module].url }}">
-               <div id="logo_container">
-                   <img id="logo_image" src="/assets/images/dandelion/github-dandelion-logo.png" alt="dandelion"/>
-                   <p id="logo_text">
-                       {{ site.dandelion.components.[page.module].name }}
-                   </p>
-               </div>
-            </a>
-            <div class="nav-collapse collapse">
-               <ul class="nav pull-right" style="margin-bottom: 5px; margin-top: 10px;">
-                  <li class="text-center"><a href="/"><i class="icon-home icon-3x"></i><br/>Home</a></li>
-                  <li class="text-center"><a href="http://dandelion-forum.48353.n6.nabble.com/"><i class="icon-comments-alt icon-3x"></i><br />Forum</a></li>
-                  <li class="text-center"><a href="/blog"><i class="icon-comment-alt icon-3x"></i><br />Blog</a></li>
-                  <li class="text-center"><a href="https://github.com/dandelion/issues/issues"><i class="icon-bug icon-3x"></i><br />Issues</a></li>
-                  <li class="text-center"><a href="https://github.com/dandelion/{{ site.dandelion.components.[page.module].sources }}" alt="{{ site.dandelion.components.[page.module].breadcrumb}} sources"><i class="icon-github icon-3x"></i><br />Sources</a></li>
-               </ul>
-            </div>
-            <!--/.nav-collapse -->
-         </div>
-      </div>
-   </div>
+   {% include layout/navbar-component.html %}
 
    {{ content }}
    

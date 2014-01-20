@@ -10,232 +10,235 @@ module: datatables
             <ul class="nav nav-list">
                <h5>Overview</h5>
                <li {% if page.menu == 'home' %} class="active"{% endif %}>
-                  <a href="/datatables"><i class="icon-home"></i> Home</a>
+                  <a href="/datatables"><i class="fa fa-home"></i> Dandelion-Datatables</a>
                </li>
                <li {% if page.menu == 'features' %} class="active"{% endif %}>
-                  <a href="/datatables/features/" title="Features"><i class="icon-th-list"></i> Features</a>
+                  <a href="/datatables/features/" title="Features"><i class="fa fa-th-list"></i> Features</a>
                </li>
                <li {% if page.menu == 'download' %} class="active"{% endif %}>
-                  <a href="/datatables/download.html" title="Download"> <i class="icon-download-alt"></i> Download</a>
+                  <a href="/datatables/download.html" title="Download"> <i class="fa fa-download"></i> Download</a>
                </li>
                <li {% if page.menu == 'releases' %} class="active"{% endif %}>
-                  <a href="/datatables/releases/" title="Download"> <i class="icon-tags"></i> Releases</a>
+                  <a href="/datatables/releases/" title="Download"> <i class="fa fa-tags"></i> Releases</a>
                </li>
                
                <h5>Documentation</h5>
                <li {% if page.menu == 'installation' %} class="active"{% endif %}>
-                  <a href="/datatables/docs/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
+                  <a href="/datatables/docs/installation/" title="Installation"><i class="fa fa-wrench"></i> Installation guides</a>
                   {% if page.menu == 'installation' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains 'jsp' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/installation/jsp.html"><i class="icon-double-angle-right"></i> JSP</a>
+                        <a href="/datatables/docs/installation/jsp.html"><i class="fa-double-angle-right"></i> JSP</a>
                      </li>
                      <li {% if page.url contains 'thymeleaf' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/installation/thymeleaf.html"><i class="icon-double-angle-right"></i> Thymeleaf</a>
+                        <a href="/datatables/docs/installation/thymeleaf.html"><i class="fa-double-angle-right"></i> Thymeleaf</a>
                      </li>
                   </ul>
                   {% endif %}
                </li>
                <li {% if page.menu == 'jsp' %} class="active"{% endif %}>
-                  <a href="/datatables/docs/ref/jsp/" title="JSP taglib"><i class="icon-book"></i> JSP taglib</a>
+                  <a href="/datatables/docs/ref/jsp/" title="JSP taglib"><i class="fa fa-book"></i> JSP taglib</a>
                   {% if page.menu == 'jsp' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains '/jsp/table.html' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/jsp/table.html"><i class="icon-double-angle-right"></i> Table tag</a>
+                        <a href="/datatables/docs/ref/jsp/table.html"><i class="fa-double-angle-right"></i> <code>&lt;datatables:table&gt;</code></a>
                      </li>
                      <li {% if page.url contains '/jsp/column.html' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/jsp/column.html"><i class="icon-double-angle-right"></i> Column tag</a>
+                        <a href="/datatables/docs/ref/jsp/column.html"><i class="fa-double-angle-right"></i> <code>&lt;datatables:column&gt;</code></a>
                      </li>
                      <li {% if page.url contains '/jsp/columnhead.html' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/jsp/columnhead.html"><i class="icon-double-angle-right"></i> ColumnHead tag</a>
-                     </li>
-                     <li {% if page.url contains '/jsp/extraconf.html' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/jsp/extraconf.html"><i class="icon-double-angle-right"></i> ExtraConf tag</a>
+                        <a href="/datatables/docs/ref/jsp/columnhead.html"><i class="fa-double-angle-right"></i> <code>&lt;datatables:columnHead&gt;</code></a>
                      </li>
                      <li {% if page.url contains '/jsp/extrafile.html' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/jsp/extrafile.html"><i class="icon-double-angle-right"></i> ExtraFile tag</a>
+                        <a href="/datatables/docs/ref/jsp/extrafile.html"><i class="fa-double-angle-right"></i> <code>&lt;datatables:extraFile&gt;</code></a>
                      </li>
                      <li {% if page.url contains '/jsp/prop.html' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/jsp/prop.html"><i class="icon-double-angle-right"></i> Prop tag</a>
+                        <a href="/datatables/docs/ref/jsp/prop.html"><i class="fa-double-angle-right"></i> <code>&lt;datatables:prop&gt;</code></a>
                      </li>
                      <li {% if page.url contains '/jsp/export.html' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/jsp/export.html"><i class="icon-double-angle-right"></i> Export tag</a>
+                        <a href="/datatables/docs/ref/jsp/export.html"><i class="fa-double-angle-right"></i> <code>&lt;datatables:export&gt;</code></a>
                      </li>
                      <li {% if page.url contains '/jsp/callback.html' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/jsp/callback.html"><i class="icon-double-angle-right"></i> Callback tag</a>
+                        <a href="/datatables/docs/ref/jsp/callback.html"><i class="fa-double-angle-right"></i> <code>&lt;datatables:callback&gt;</code></a>
+                     </li>
+                     <li {% if page.url contains '/jsp/extrahtml.html' %}class="active"{% endif %}>
+                        <a href="/datatables/docs/ref/jsp/extrahtml.html"><i class="fa-double-angle-right"></i> <code>&lt;datatables:extraHtml&gt;</code></a>
                      </li>
                   </ul>
                   {% endif %}
                </li>
                <li {% if page.menu == 'thymeleaf' %} class="active"{% endif %}>
-                  <a href="/datatables/docs/ref/thymeleaf/" title="Thymeleaf dialect"><i class="icon-book"></i> Thymeleaf dialect</a>
+                  <a href="/datatables/docs/ref/thymeleaf/" title="Thymeleaf dialect"><i class="fa fa-book"></i> Thymeleaf dialect</a>
                   {% if page.menu == 'thymeleaf' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains '/thymeleaf/table.html' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/thymeleaf/table.html"><i class="icon-double-angle-right"></i> Table attributes</a>
+                        <a href="/datatables/docs/ref/thymeleaf/table.html"><i class="fa-double-angle-right"></i> <code>&lt;table&gt;</code> attributes</a>
                      </li>
                      <li {% if page.url contains '/thymeleaf/thead.html' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/thymeleaf/thead.html"><i class="icon-double-angle-right"></i> Thead attributes</a>
+                        <a href="/datatables/docs/ref/thymeleaf/thead.html"><i class="fa-double-angle-right"></i> <code>&lt;thead&gt;</code> attributes</a>
                      </li>
                      <li {% if page.url contains 'thymeleaf/tbody.html' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/thymeleaf/tbody.html"><i class="icon-double-angle-right"></i> Tbody attributes</a>
+                        <a href="/datatables/docs/ref/thymeleaf/tbody.html"><i class="fa-double-angle-right"></i> <code>&lt;tbody&gt;</code> attributes</a>
                      </li>
                      <li {% if page.url contains '/thymeleaf/th.html' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/thymeleaf/th.html"><i class="icon-double-angle-right"></i> Th attributes</a>
+                        <a href="/datatables/docs/ref/thymeleaf/th.html"><i class="fa-double-angle-right"></i> <code>&lt;th&gt;</code> attributes</a>
                      </li>
                      <li {% if page.url contains '/thymeleaf/td.html' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/thymeleaf/td.html"><i class="icon-double-angle-right"></i> Td attributes</a>
+                        <a href="/datatables/docs/ref/thymeleaf/td.html"><i class="fa-double-angle-right"></i> <code>&lt;td&gt;</code> attributes</a>
+                     </li>
+                     <li {% if page.url contains '/thymeleaf/div.html' %}class="active"{% endif %}>
+                        <a href="/datatables/docs/ref/thymeleaf/div.html"><i class="fa-double-angle-right"></i> <code>&lt;div&gt;</code> attributes</a>
                      </li>
                   </ul>
                   {% endif %}
                </li>
                <li {% if page.menu == 'properties' %} class="active"{% endif %}>
-                  <a href="/datatables/docs/ref/configuration/" title="Configuration"><i class="icon-book"></i> Configuration</a>
+                  <a href="/datatables/docs/ref/configuration/" title="Configuration"><i class="fa fa-book"></i> Configuration</a>
                   {% if page.menu == 'properties' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains '/docs/ref/configuration#main-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/configuration#mainconfiguration"><i class="icon-double-angle-right"></i> Main</a>
+                        <a href="/datatables/docs/ref/configuration#mainconfiguration"><i class="fa-double-angle-right"></i> Main</a>
                      </li>
                      <li {% if page.url contains '/docs/ref/configuration#css-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/configuration#cssconfiguration"><i class="icon-double-angle-right"></i> CSS</a>
+                        <a href="/datatables/docs/ref/configuration#cssconfiguration"><i class="fa-double-angle-right"></i> CSS</a>
                      </li>
                      <li {% if page.url contains '/docs/ref/configuration#features-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/configuration#featuresconfiguration"><i class="icon-double-angle-right"></i> Features</a>
+                        <a href="/datatables/docs/ref/configuration#featuresconfiguration"><i class="fa-double-angle-right"></i> Features</a>
                      </li>
                      <li {% if page.url contains '/docs/ref/configuration#plugins-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/configuration#pluginsconfiguration"><i class="icon-double-angle-right"></i> Plugins</a>
+                        <a href="/datatables/docs/ref/configuration#pluginsconfiguration"><i class="fa-double-angle-right"></i> Plugins</a>
                      </li>
                      <li {% if page.url contains '/docs/ref/configuration#ajax-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/configuration#ajaxconfiguration"><i class="icon-double-angle-right"></i> AJAX</a>
+                        <a href="/datatables/docs/ref/configuration#ajaxconfiguration"><i class="fa-double-angle-right"></i> AJAX</a>
                      </li>
                      <li {% if page.url contains '/docs/ref/configuration#export-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/configuration/#exportconfiguration"><i class="icon-double-angle-right"></i> Export</a>
+                        <a href="/datatables/ref/configuration/#exportconfiguration"><i class="fa-double-angle-right"></i> Export</a>
                      </li>
                      <li {% if page.url contains '/docs/ref/configuration/#i18n-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/configuration/#i18nconfiguration"><i class="icon-double-angle-right"></i> I18n</a>
+                        <a href="/datatables/docs/ref/configuration/#i18nconfiguration"><i class="fa-double-angle-right"></i> I18n</a>
                      </li>
                   </ul>
                   {% endif %}
                </li>
                <li {% if page.menu == 'migration' %} class="active"{% endif %}>
-                  <a href="/datatables/docs/migration/" title="Migration guides"> <i class="icon-plane"></i> Migration guides</a>
+                  <a href="/datatables/docs/migration/" title="Migration guides"> <i class="fa fa-plane"></i> Migration guides</a>
                </li>
                <li {% if page.menu == 'architecture' %} class="active"{% endif %}>
-                  <a href="/datatables/docs/architecture/" title="Architecture"> <i class="icon-sitemap"></i> Architecture</a>
+                  <a href="/datatables/docs/architecture/" title="Architecture"> <i class="fa fa-sitemap"></i> Architecture</a>
                </li>
                <li {% if page.menu == 'external' %} class="active"{% endif %}>
-                  <a href="/datatables/docs/external/" title="External resources"> <i class="icon-cloud"></i> External resources</a>
+                  <a href="/datatables/docs/external/" title="External resources"> <i class="fa fa-cloud"></i> External resources</a>
                </li>
                
-               <h5>Tutorials</h5>
+               <h5>Features</h5>
                <li {% if page.menu == 'basics' %} class="active"{% endif %}>
-                  <a href="/datatables/tutorials/basics/" title="Basics"> <i class="icon-leaf"></i> Basics</a>
+                  <a href="/datatables/features/basics/" title="Basics"> <i class="fa fa-leaf"></i> Basics</a>
                   {% if page.menu == 'basics' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains '/basics/feature-enablement.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/basics/feature-enablement.html"><i class="icon-double-angle-right"></i> Feature enablement</a>
+                        <a href="/datatables/features/basics/feature-enablement.html"><i class="fa-double-angle-right"></i> Feature enablement</a>
                      </li>
                      <li {% if page.url contains '/basics/dom-positionning.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/basics/dom-positionning.html"><i class="icon-double-angle-right"></i> DOM positionning</a>
+                        <a href="/datatables/features/basics/dom-positionning.html"><i class="fa-double-angle-right"></i> DOM positionning</a>
                      </li>
                      <li {% if page.url contains '/basics/changing-display-length.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/basics/changing-display-length.html"><i class="icon-double-angle-right"></i> Changing display length</a>
+                        <a href="/datatables/features/basics/changing-display-length.html"><i class="fa-double-angle-right"></i> Changing display length</a>
                      </li>
                      <li {% if page.url contains '/basics/using-implicit-objects.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/basics/using-implicit-objects.html"><i class="icon-double-angle-right"></i> Using implicit objects</a>
+                        <a href="/datatables/features/basics/using-implicit-objects.html"><i class="fa-double-angle-right"></i> Using implicit objects</a>
                      </li>
                      <li {% if page.url contains '/basics/sorting/' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/basics/sorting/"><i class="icon-double-angle-right"></i> Sorting data</a>
+                        <a href="/datatables/features/basics/sorting/"><i class="fa-double-angle-right"></i> Sorting data</a>
                      </li>
                      {% if page.submenu == 'sorting' %}
                      <ul class="nav nav-list">
                         <li {% if page.url contains '/sorting/individual-column-sorting.html' %}class="active"{% endif %}>
-                           <a href="/datatables/tutorials/basics/sorting/individual-column-sorting.html"><i class="icon-double-angle-right"></i> Individual column sorting</a>
+                           <a href="/datatables/features/basics/sorting/individual-column-sorting.html"><i class="fa-double-angle-right"></i> Individual column sorting</a>
                         </li>
                         <li {% if page.url contains '/sorting/sorting-initialization.html' %}class="active"{% endif %}>
-                           <a href="/datatables/tutorials/basics/sorting/sorting-initialization.html"><i class="icon-double-angle-right"></i> Sorting initialization</a>
+                           <a href="/datatables/features/basics/sorting/sorting-initialization.html"><i class="fa-double-angle-right"></i> Sorting initialization</a>
                         </li>
                         <li {% if page.url contains '/sorting/sorting-direction-control.html' %}class="active"{% endif %}>
-                           <a href="/datatables/tutorials/basics/sorting/sorting-direction-control.html"><i class="icon-double-angle-right"></i> Sorting direction control</a>
+                           <a href="/datatables/features/basics/sorting/sorting-direction-control.html"><i class="fa-double-angle-right"></i> Sorting direction control</a>
                         </li>
                         <li {% if page.url contains '/sorting/using-a-sorting-function.html' %}class="active"{% endif %}>
-                           <a href="/datatables/tutorials/basics/sorting/using-a-sorting-function.html"><i class="icon-double-angle-right"></i> Using a sorting function</a>
+                           <a href="/datatables/features/basics/sorting/using-a-sorting-function.html"><i class="fa-double-angle-right"></i> Using a sorting function</a>
                         </li>
                      </ul>
                      {% endif %}
                      <li {% if page.url contains '/basics/filtering/' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/basics/filtering/"><i class="icon-double-angle-right"></i> Filtering data</a>
+                        <a href="/datatables/features/basics/filtering/"><i class="fa-double-angle-right"></i> Filtering data</a>
                      </li>
                      {% if page.submenu == 'filtering' %}
                      <ul class="nav nav-list">
                         <li {% if page.url contains '/filtering/filtering-with-inputs.html' %}class="active"{% endif %}>
-                           <a href="/datatables/tutorials/basics/filtering/filtering-with-inputs.html"><i class="icon-double-angle-right"></i> Filtering with inputs</a>
+                           <a href="/datatables/features/basics/filtering/filtering-with-inputs.html"><i class="fa-double-angle-right"></i> Filtering with inputs</a>
                         </li>
                         <!-- 
                         <li {% if page.url contains '/filtering/filtering-with-number-range.html' %}class="active"{% endif %}>
-                           <a href="/datatables/tutorials/basics/filtering/filtering-with-number-range.html"><i class="icon-double-angle-right"></i> Filtering with number range</a>
+                           <a href="/datatables/features/basics/filtering/filtering-with-number-range.html"><i class="fa-double-angle-right"></i> Filtering with number range</a>
                         </li>
                          -->
                         <li {% if page.url contains '/filtering/filtering-with-drop-down-lists.html' %}class="active"{% endif %}>
-                           <a href="/datatables/tutorials/basics/filtering/filtering-with-drop-down-lists.html"><i class="icon-double-angle-right"></i> Filtering with drop-down lists</a>
+                           <a href="/datatables/features/basics/filtering/filtering-with-drop-down-lists.html"><i class="fa-double-angle-right"></i> Filtering with drop-down lists</a>
                         </li>
                         <li {% if page.url contains '/filtering/filtering-placeholders.html' %}class="active"{% endif %}>
-                           <a href="/datatables/tutorials/basics/filtering/filtering-placeholders.html"><i class="icon-double-angle-right"></i> Filtering placeholders</a>
+                           <a href="/datatables/features/basics/filtering/filtering-placeholders.html"><i class="fa-double-angle-right"></i> Filtering placeholders</a>
                         </li>
                         <li {% if page.url contains '/filtering/using-an-external-form.html' %}class="active"{% endif %}>
-                           <a href="/datatables/tutorials/basics/filtering/using-an-external-form.html"><i class="icon-double-angle-right"></i> Using an external form</a>
+                           <a href="/datatables/features/basics/filtering/using-an-external-form.html"><i class="fa-double-angle-right"></i> Using an external form</a>
                         </li>
                         <li {% if page.url contains '/filtering/exclude-columns-from-global-filtering.html' %}class="active"{% endif %}>
-                           <a href="/datatables/tutorials/basics/filtering/exclude-columns-from-global-filtering.html"><i class="icon-double-angle-right"></i> Exclude columns from global filtering</a>
+                           <a href="/datatables/features/basics/filtering/exclude-columns-from-global-filtering.html"><i class="fa-double-angle-right"></i> Exclude columns from global filtering</a>
                         </li>
                      </ul>
                      {% endif %}
                      <li {% if page.url contains '/basics/paging/' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/basics/paging/"><i class="icon-double-angle-right"></i> Paging data</a>
+                        <a href="/datatables/features/basics/paging/"><i class="fa-double-angle-right"></i> Paging data</a>
                      </li>
                      {% if page.submenu == 'paging' %}
                      <ul class="nav nav-list">
                         <li {% if page.url contains '/paging/changing-pagination-style.html' %}class="active"{% endif %}>
-                           <a href="/datatables/tutorials/basics/paging/changing-pagination-style.html"><i class="icon-double-angle-right"></i> Changing pagination style</a>
+                           <a href="/datatables/features/basics/paging/changing-pagination-style.html"><i class="fa-double-angle-right"></i> Changing pagination style</a>
                         </li>
                      </ul>
                      {% endif %}
                         
                      <li {% if page.url contains '/basics/scrolling.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/basics/scrolling.html"><i class="icon-double-angle-right"></i> Scrolling</a>
+                        <a href="/datatables/features/basics/scrolling.html"><i class="fa-double-angle-right"></i> Scrolling</a>
                      </li>
                      <li {% if page.url contains '/basics/displaying-multiple-tables.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/basics/displaying-multiple-tables.html"><i class="icon-double-angle-right"></i> Displaying multiple tables</a>
+                        <a href="/datatables/features/basics/displaying-multiple-tables.html"><i class="fa-double-angle-right"></i> Displaying multiple tables</a>
                      </li>
                      <li {% if page.url contains '/basics/handling-null-and-default-values.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/basics/handling-null-and-default-values.html"><i class="icon-double-angle-right"></i> Handling null and default values</a>
+                        <a href="/datatables/features/basics/handling-null-and-default-values.html"><i class="fa-double-angle-right"></i> Handling null and default values</a>
                      </li>
                      <li {% if page.url contains '/basics/using-a-cdn.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/basics/using-a-cdn.html"><i class="icon-double-angle-right"></i> Using a CDN</a>
+                        <a href="/datatables/features/basics/using-a-cdn.html"><i class="fa-double-angle-right"></i> Using a CDN</a>
                      </li>
                      <li {% if page.url contains '/basics/customizing-column-header.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/basics/customizing-column-header.html"><i class="icon-double-angle-right"></i> Customizing column header</a>
+                        <a href="/datatables/features/basics/customizing-column-header.html"><i class="fa-double-angle-right"></i> Customizing column header</a>
                      </li>
                   </ul>
                   {% endif %}
                </li>
                <li {% if page.menu == 'styling' %} class="active"{% endif %}>
-                  <a href="/datatables/tutorials/styling/" title="Styling"> <i class="icon-magic"></i> Styling</a>
+                  <a href="/datatables/features/styling/" title="Styling"> <i class="fa fa-magic"></i> Styling</a>
                   {% if page.menu == 'styling' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains '/styling/basics-of-styling.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/styling/basics-of-styling.html"><i class="icon-double-angle-right"></i> Basics</a>
+                        <a href="/datatables/features/styling/basics-of-styling.html"><i class="fa-double-angle-right"></i> Basics</a>
                      </li>
                      <li {% if page.url contains '/styling/themes/' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/styling/themes/index.html"><i class="icon-double-angle-right"></i> Themes</a>
+                        <a href="/datatables/features/styling/themes/index.html"><i class="fa-double-angle-right"></i> Themes</a>
                      </li>
                      {% if page.submenu == 'themes' %}
                      <ul class="nav nav-list">
                         <li {% if page.url contains '/styling/themes/bootstrap2.html' %}class="active"{% endif %}>
-                           <a href="/datatables/tutorials/styling/themes/bootstrap2.html"><i class="icon-double-angle-right"></i> Bootstrap 2</a>
+                           <a href="/datatables/features/styling/themes/bootstrap2.html"><i class="fa-double-angle-right"></i> Bootstrap 2</a>
                         </li>
                         <li {% if page.url contains '/styling/themes/jqueryui.html' %}class="active"{% endif %}>
-                           <a href="/datatables/tutorials/styling/themes/jqueryui.html"><i class="icon-double-angle-right"></i> jQuery UI</a>
+                           <a href="/datatables/features/styling/themes/jqueryui.html"><i class="fa-double-angle-right"></i> jQuery UI</a>
                         </li>
                      </ul>
                      {% endif %}
@@ -244,168 +247,168 @@ module: datatables
                   {% endif %}
                </li>
                <li {% if page.menu == 'export' %} class="active"{% endif %}>
-                  <a href="/datatables/tutorials/export/" title="Export"> <i class="icon-file-alt"></i> Export</a>
+                  <a href="/datatables/features/export/" title="Export"> <i class="fa fa-print"></i> Export</a>
                   {% if page.menu == 'export' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains '/export/available-export-formats.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/export/available-export-formats.html"><i class="icon-double-angle-right"></i> Available export formats</a>
+                        <a href="/datatables/features/export/available-export-formats.html"><i class="fa-double-angle-right"></i> Available export formats</a>
                      </li>
                      <li {% if page.url contains '/export/filter-based-exports.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/export/filter-based-exports.html"><i class="icon-double-angle-right"></i> Filter-based exports</a>
+                        <a href="/datatables/features/export/filter-based-exports.html"><i class="fa-double-angle-right"></i> Filter-based exports</a>
                      </li>
                      <li {% if page.url contains '/export/controller-based-exports.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/export/controller-based-exports.html"><i class="icon-double-angle-right"></i> Controller-based exports</a>
+                        <a href="/datatables/features/export/controller-based-exports.html"><i class="fa-double-angle-right"></i> Controller-based exports</a>
                      </li>
                      <li {% if page.url contains '/export/activating-export.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/export/activating-export.html"><i class="icon-double-angle-right"></i> Activating export</a>
+                        <a href="/datatables/features/export/activating-export.html"><i class="fa-double-angle-right"></i> Activating export</a>
                      </li>
                      <li {% if page.url contains '/export/customizing-export-content.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/export/customizing-export-content.html"><i class="icon-double-angle-right"></i> Customizing export content</a>
+                        <a href="/datatables/features/export/customizing-export-content.html"><i class="fa-double-angle-right"></i> Customizing export content</a>
                      </li>
                      <li {% if page.url contains '/export/customizing-export-links.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/export/customizing-export-links.html"><i class="icon-double-angle-right"></i> Customizing export links</a>
+                        <a href="/datatables/features/export/customizing-export-links.html"><i class="fa-double-angle-right"></i> Customizing export links</a>
                      </li>
                      <li {% if page.url contains '/export/customizing-export-url.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/export/customizing-export-url.html"><i class="icon-double-angle-right"></i> Customizing export URL</a>
+                        <a href="/datatables/features/export/customizing-export-url.html"><i class="fa-double-angle-right"></i> Customizing export URL</a>
                      </li>
                      <li {% if page.url contains '/export/configuring-export-classes.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/export/configuring-export-classes.html"><i class="icon-double-angle-right"></i> Configuring export classes</a>
+                        <a href="/datatables/features/export/configuring-export-classes.html"><i class="fa-double-angle-right"></i> Configuring export classes</a>
                      </li>
                   </ul>
                   {% endif %}
                </li>
                <li {% if page.menu == 'advanced' %} class="active"{% endif %}>
-                  <a href="/datatables/tutorials/advanced/" title="Advanced usage"> <i class="icon-fire"></i> Advanced usage</a>
+                  <a href="/datatables/features/advanced/" title="Advanced usage"> <i class="fa fa-fire"></i> Advanced usage</a>
                   {% if page.menu == 'advanced' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains '/advanced/generating-row-ids.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/advanced/generating-row-ids.html"><i class="icon-double-angle-right"></i> Generating row id</a>
+                        <a href="/datatables/features/advanced/generating-row-ids.html"><i class="fa-double-angle-right"></i> Generating row id</a>
                      </li>
                      <li {% if page.url contains '/advanced/using-extra-files.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/advanced/using-extra-files.html"><i class="icon-double-angle-right"></i> Using extra Javascript files</a>
+                        <a href="/datatables/features/advanced/using-extra-files.html"><i class="fa-double-angle-right"></i> Using extra Javascript files</a>
                      </li>
                      <li {% if page.url contains '/advanced/using-extra-conf.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/advanced/using-extra-conf.html"><i class="icon-double-angle-right"></i> Using extra DataTables configuration</a>
+                        <a href="/datatables/features/advanced/using-extra-conf.html"><i class="fa-double-angle-right"></i> Using extra DataTables configuration</a>
                      </li>
                      <li {% if page.url contains '/advanced/using-asset-compression.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/advanced/using-asset-compression.html"><i class="icon-double-angle-right"></i> Using assets compression</a>
+                        <a href="/datatables/features/advanced/using-asset-compression.html"><i class="fa-double-angle-right"></i> Using assets compression</a>
                      </li>
                      <li {% if page.url contains '/advanced/using-asset-aggregation.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/advanced/using-asset-aggregation.html"><i class="icon-double-angle-right"></i> Using assets aggregation</a>
+                        <a href="/datatables/features/advanced/using-asset-aggregation.html"><i class="fa-double-angle-right"></i> Using assets aggregation</a>
                      </li>
                      <li {% if page.url contains '/advanced/using-callbacks.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/advanced/using-callbacks.html"><i class="icon-double-angle-right"></i> Using callbacks</a>
+                        <a href="/datatables/features/advanced/using-callbacks.html"><i class="fa-double-angle-right"></i> Using callbacks</a>
                      </li>
                      <li {% if page.url contains '/advanced/nesting-jsp-tags.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/advanced/nesting-jsp-tags.html"><i class="icon-double-angle-right"></i> Nesting JSP tags</a>
+                        <a href="/datatables/features/advanced/nesting-jsp-tags.html"><i class="fa-double-angle-right"></i> Nesting JSP tags</a>
                      </li>
                      <li {% if page.url contains '/advanced/writing-your-own-extension.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/advanced/writing-your-own-extension.html"><i class="icon-double-angle-right"></i> Writing your own extension</a>
+                        <a href="/datatables/features/advanced/writing-your-own-extension.html"><i class="fa-double-angle-right"></i> Writing your own extension</a>
                      </li>
                   </ul>
                   {% endif %}
                </li>
                <li {% if page.menu == 'ajax' %} class="active"{% endif %}>
-                  <a href="/datatables/tutorials/ajax/" title="AJAX"> <i class="icon-refresh"></i> AJAX</a>
+                  <a href="/datatables/features/ajax/" title="AJAX"> <i class="fa fa-refresh"></i> AJAX</a>
                   {% if page.menu == 'ajax' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains '/ajax/using-ajax-sources.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/ajax/using-ajax-sources.html"><i class="icon-double-angle-right"></i> Using AJAX sources</a>
+                        <a href="/datatables/features/ajax/using-ajax-sources.html"><i class="fa-double-angle-right"></i> Using AJAX sources</a>
                      </li>
                      <li {% if page.url contains '/ajax/customizing-ajax-calls.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/ajax/customizing-ajax-calls.html"><i class="icon-double-angle-right"></i> Customizing AJAX calls</a>
+                        <a href="/datatables/features/ajax/customizing-ajax-calls.html"><i class="fa-double-angle-right"></i> Customizing AJAX calls</a>
                      </li>
                      <li {% if page.url contains '/ajax/customizing-column-content.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/ajax/customizing-column-content.html"><i class="icon-double-angle-right"></i> Customizing column content</a>
+                        <a href="/datatables/features/ajax/customizing-column-content.html"><i class="fa-double-angle-right"></i> Customizing column content</a>
                      </li>
                      <li {% if page.url contains '/ajax/server-side/' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/ajax/server-side/index.html"><i class="icon-double-angle-right"></i> Server-side processing</a>
+                        <a href="/datatables/features/ajax/server-side/index.html"><i class="fa-double-angle-right"></i> Server-side processing</a>
                      </li>
                      {% if page.submenu == 'serverside' %}
                      <ul class="nav nav-list">
                         <li {% if page.url contains '/ajax/server-side/pipelining-data.html' %}class="active"{% endif %}>
-                           <a href="/datatables/tutorials/ajax/server-side/pipelining-data.html"><i class="icon-double-angle-right"></i> Pipelining data</a>
+                           <a href="/datatables/features/ajax/server-side/pipelining-data.html"><i class="fa-double-angle-right"></i> Pipelining data</a>
                         </li>
                      </ul>
                      {% endif %}
                      <li {% if page.url contains '/ajax/integration-with-spring.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/ajax/integration-with-spring.html"><i class="icon-double-angle-right"></i> Integration with Spring</a>
+                        <a href="/datatables/features/ajax/integration-with-spring.html"><i class="fa-double-angle-right"></i> Integration with Spring</a>
                      </li>
                   </ul>
                   {% endif %}
                </li>
                <li {% if page.menu == 'i18n' %} class="active"{% endif %}>
-                  <a href="/datatables/tutorials/i18n/" title="Internationalization"> <i class="icon-globe"></i> I18n</a>
+                  <a href="/datatables/features/i18n/" title="Internationalization"> <i class="fa fa-globe"></i> I18n</a>
                   {% if page.menu == 'i18n' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains '/i18n/internationalization.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/i18n/internationalization.html"><i class="icon-double-angle-right"></i> Internationalization</a>
+                        <a href="/datatables/features/i18n/internationalization.html"><i class="fa-double-angle-right"></i> Internationalization</a>
                      </li>
                      <li {% if page.url contains '/i18n/integration-with-other-projects.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/i18n/integration-with-other-projects.html"><i class="icon-double-angle-right"></i> Integration with other projects</a>
+                        <a href="/datatables/features/i18n/integration-with-other-projects.html"><i class="fa-double-angle-right"></i> Integration with other projects</a>
                      </li>
                      <li {% if page.url contains '/i18n/pluging-a-custom-localeresolver.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/i18n/pluging-a-custom-localeresolver.html"><i class="icon-double-angle-right"></i> Pluging a custom locale resolver</a>
+                        <a href="/datatables/features/i18n/pluging-a-custom-localeresolver.html"><i class="fa-double-angle-right"></i> Pluging a custom locale resolver</a>
                      </li>
                      <li {% if page.url contains '/i18n/pluging-a-custom-messageresolver.html' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/i18n/pluging-a-custom-messageresolver.html"><i class="icon-double-angle-right"></i> Pluging a custom message resolver</a>
+                        <a href="/datatables/features/i18n/pluging-a-custom-messageresolver.html"><i class="fa-double-angle-right"></i> Pluging a custom message resolver</a>
                      </li>
                   </ul>
                   {% endif %}
                </li>
                <li {% if page.menu == 'plugins' %} class="active"{% endif %}>
-                  <a href="/datatables/tutorials/plugins/" title="Plugins"> <i class="icon-plus"></i> Plugins</a>
+                  <a href="/datatables/features/plugins/" title="Plugins"> <i class="fa fa-plus"></i> Plugins</a>
                   {% if page.menu == 'plugins' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains 'scroller' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/plugins/scroller.html"><i class="icon-double-angle-right"></i> Scroller</a>
+                        <a href="/datatables/features/plugins/scroller.html"><i class="fa-double-angle-right"></i> Scroller</a>
                      </li>
                      <li {% if page.url contains 'colreorder' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/plugins/colreorder.html"><i class="icon-double-angle-right"></i> Colreorder</a>
+                        <a href="/datatables/features/plugins/colreorder.html"><i class="fa-double-angle-right"></i> Colreorder</a>
                      </li>
                      <li {% if page.url contains 'fixedheader' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/plugins/fixedheader.html"><i class="icon-double-angle-right"></i> FixedHeader</a>
+                        <a href="/datatables/features/plugins/fixedheader.html"><i class="fa-double-angle-right"></i> FixedHeader</a>
                      </li>
                   </ul>
                   {% endif %}
                </li>
                <li {% if page.menu == 'configuration' %} class="active"{% endif %}>
-                  <a href="/datatables/tutorials/configuration/" title="Configuration"> <i class="icon-cog"></i> Configuration</a>
+                  <a href="/datatables/features/configuration/" title="Configuration"> <i class="fa fa-cog"></i> Configuration</a>
                   {% if page.menu == 'configuration' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains 'configuration/configuration-loading' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/configuration/configuration-loading.html"><i class="icon-double-angle-right"></i> Configuration loading</a>
+                        <a href="/datatables/features/configuration/configuration-loading.html"><i class="fa-double-angle-right"></i> Configuration loading</a>
                      </li>
                      <li {% if page.url contains 'override-conf' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/configuration/configuration-overloading.html"><i class="icon-double-angle-right"></i> Overloading default configuration</a>
+                        <a href="/datatables/features/configuration/configuration-overloading.html"><i class="fa-double-angle-right"></i> Overloading default configuration</a>
                      </li>
                      <li {% if page.url contains 'global-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/configuration/global-configuration.html"><i class="icon-double-angle-right"></i> Using global configuration</a>
+                        <a href="/datatables/features/configuration/global-configuration.html"><i class="fa-double-angle-right"></i> Using global configuration</a>
                      </li>
                      <li {% if page.url contains 'configuration-groups' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/configuration/configuration-groups.html"><i class="icon-double-angle-right"></i> Using configuration groups</a>
+                        <a href="/datatables/features/configuration/configuration-groups.html"><i class="fa-double-angle-right"></i> Using configuration groups</a>
                      </li>
                      <li {% if page.url contains 'configuration/custom-configuration-loader' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/configuration/custom-configuration-loader.html"><i class="icon-double-angle-right"></i> Pluging a custom configuration loader</a>
+                        <a href="/datatables/features/configuration/custom-configuration-loader.html"><i class="fa-double-angle-right"></i> Pluging a custom configuration loader</a>
                      </li>
                   </ul>
                   {% endif %}
                </li>
                <li {% if page.menu == 'extension' %} class="active"{% endif %}>
-                  <a href="/datatables/tutorials/extension/" title="Extension"> <i class="icon-puzzle-piece"></i> Extension</a>
+                  <a href="/datatables/features/extension/" title="Extension"> <i class="fa fa-puzzle-piece"></i> Extension</a>
                   {% if page.menu == 'extension' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains 'extension/overview' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/extension/overview.html"><i class="icon-double-angle-right"></i> Overview</a>
+                        <a href="/datatables/features/extension/overview.html"><i class="fa-double-angle-right"></i> Overview</a>
                      </li>
                      <li {% if page.url contains 'extension/writing-your-own' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/extension/writing-your-own-extension.html"><i class="icon-double-angle-right"></i> Writing your own extension</a>
+                        <a href="/datatables/features/extension/writing-your-own-extension.html"><i class="fa-double-angle-right"></i> Writing your own extension</a>
                      </li>
                      <li {% if page.url contains 'extension/examples' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/extension/examples.html"><i class="icon-double-angle-right"></i> Examples</a>
+                        <a href="/datatables/features/extension/examples.html"><i class="fa-double-angle-right"></i> Examples</a>
                      </li>
                      <li {% if page.url contains 'extension/going-further' %}class="active"{% endif %}>
-                        <a href="/datatables/tutorials/extension/going-further.html"><i class="icon-double-angle-right"></i> Going further...</a>
+                        <a href="/datatables/features/extension/going-further.html"><i class="fa-double-angle-right"></i> Going further...</a>
                      </li>
                   </ul>
                   {% endif %}

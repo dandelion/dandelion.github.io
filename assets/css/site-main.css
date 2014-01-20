@@ -46,11 +46,13 @@ h4>code>a:hover{
 	text-decoration: none;
 }
 a {
-	color: #65c22f;
+/* 	color: #65c22f; */
+	color: #5aae2a;
 }
 
 a:hover,a:focus {
-	color: #65c22f;
+/* 	color: #65c22f; */
+	color: #5aae2a;
 	text-decoration: underline;
 }
 

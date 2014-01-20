@@ -7,7 +7,7 @@ layout: home
 <meta charset="utf-8">
 <title>Dandelion Project</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="web, component, library, assets, datatables">
+<meta name="description" content="web, component, library, assets, datatables, java, javaee, framework, webjar, thymeleaf, jsp, taglib">
 <meta name="author" content="Dandelion">
 
 <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
@@ -22,6 +22,8 @@ layout: home
 <link href="/assets/css/site-main.css" rel="stylesheet">
 <link href="/assets/css/site-home.css" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Lato:300italic" rel="stylesheet">
+<link href="/assets/css/animate.min.css" rel="stylesheet">
+<link href="/assets/css/jquery.wordrotator.min.css" rel="stylesheet">
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
@@ -34,24 +36,10 @@ layout: home
 <meta name="twitter:creator" content="@dandelion_proj">
 <meta name="twitter:url" content="http://dandelion.github.com">
 <meta name="twitter:title" content="Dandelion Project">
-<meta name="twitter:description" content="Extensible web framework for funnier web development">
+<meta name="twitter:description" content="Extensible web framework making web development simpler">
 <meta name="twitter:image" content="http://dandelion.github.com/dandelion_square.png">
 
-<script>
-   var _gaq = _gaq || [];
-   _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
-   _gaq.push([ '_trackPageview' ]);
-   (function() {
-      var ga = document.createElement('script');
-      ga.type = 'text/javascript';
-      ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl'
-            : 'http://www')
-            + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(ga, s);
-   })();
-</script>
+{% include analytics %}
 </head>
 
 <body>
@@ -59,55 +47,118 @@ layout: home
       <img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub">
    </a>
    
-   <div class="container-fluid" style="padding: 0; margin: 0;">
-      <div class="jumbotron dandelion-jumbotron">
-         <p>
-            <img src="/assets/images/logo-dandelion_02-blanc.png" width="600px" height="300px" alt="Dandelion">
-            <h2>Extensible web framework making web development simpler</h2>
-         </p>
+   <div class="container-fluid dandelion-jumbotron">
+      <div class="container">
+         <div class="row">
+            <div class="span7 text-center">
+               <p>
+                  <img src="/assets/images/logo-dandelion_02-blanc.png" width="600px" height="300px"
+                     alt="Dandelion">
+               </p>
+            </div>
+            <div class="span5 text-left" style="padding-top:40px;">
+               <h2>Extensible web framework making web development</h2>
+               <p>
+                  <span style="font-size:31.5px; font-weight: bold;" id="words"></span>
+               </p>
+               <p style="margin-top: 20px;">
+                  <a href="/get-started" class="btn btn-warning btn-large"
+                     style="margin: 10px 0 10px">Get started »</a>
+               </p>
+            </div>
+         </div>
+         <div class="row">
+            <div class="span12">
+               <blockquote>
+                  <p>
+                     <strong>Dandelion</strong> is a free and Open Source Java framework which aims
+                     to ease web development in Java-based environments.
+                  </p>
+                  <p>
+                     It helps to manipulate the web assets in many ways: good organization and
+                     classical optimizations like JS/CSS compression and aggregation. But it also
+                     facilitates the integration of JavaScript libraries thanks to a set of
+                     extensible components.
+                  <p>
+               </blockquote>            
+            </div>
+         </div>
       </div>
    </div>
    
    <div class="container-fluid area-share"> 
       <div class="row-fluid">
          <div class="span12">
-            <table width="100%" border="0">
-               <tbody>
-                  <tr>
-                     <td width="33%" valign="top">
-                        <h2>
-                           Dandelion &nbsp;&nbsp;<span class="version">v{{ site.dandelion.components.['core'].version }}</span>
-                           <br/><small>Play with your web assets!</small>
-                           <br /><span class="incubating">Incubating...</span>
-                        </h2>
-                     </td>
-                     <td width="33%" valign="top">
-                        <h2>
-                           Datatables &nbsp;&nbsp;<span class="version">v{{ site.dandelion.components.['datatables'].version }}</span>
-                           <br/><small>Create awesome HTML tables using <a href="http://datatables.net/">DataTables</a></small>
-                        </h2>
-                     </td>
-                     <td width="33%" valign="top">
-                        <h2>
-                           Webanalytics &nbsp;&nbsp;<span class="version">v{{ site.dandelion.components.['webanalytics'].version }}</span>
-                           <br/><small>Easily configure a site-wide web analytics provider</small>
-                           <br /><span class="incubating">Incubating...</span>
-                        </h2>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <a href="/dandelion" class="btn btn-warning btn-large">Get started »</a>
-                     </td>
-                     <td>
-                        <a href="/datatables" class="btn btn-warning btn-large">Get started »</a>
-                     </td>
-                     <td>
-                        <a href="/webanalytics" class="btn btn-warning btn-large">Get started »</a>
-                     </td>
-                  </tr>               
-               </tbody>
-            </table>
+            <p class="addthis_toolbox addthis_default_style text-center">
+               <a class="addthis_button_twitter_follow_native" tw:screen_name="dandelion_proj"></a>
+               <a class="addthis_button_tweet"></a> 
+               <a class="addthis_button_google_plusone" g:plusone:size="medium"></a> 
+               <a class="addthis_button_linkedin_counter"></a> 
+               <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+               <a class="addthis_counter addthis_pill_style"></a>
+            </p>
+         </div>
+      </div>
+   </div>
+      
+   <div class="container-fluid area-features">
+      <div class="container">
+         <div class="row">
+            <div class="span4">
+               <h4><i class="fa fa-sitemap fa-2x"></i>&nbsp;&nbsp;Assets organization</h4>
+               <p>
+                  <strong>Dandelion</strong> proposes a new approach for dealing with web assets.
+                  Build your own
+                  <a href="">asset stack</a> (lien) by organizing them into
+                  <a href="">scopes</a> (lien) and keep them well organized.
+               </p>
+            </div>
+            <div class="span4">
+               <h4><i class="fa fa-bolt fa-2x"></i>&nbsp;&nbsp;Assets optimization</h4>
+               <p>
+                  Apply the best pratices of web development without effort! Web assets can be
+                  compressed, aggregated and optimally injected into web pages, thus improving page
+                  load times!
+               </p>
+            </div>
+            <div class="span4">
+               <h4><i class="fa fa-cloud-download fa-2x"></i>&nbsp;&nbsp;Multiple locations</h4>
+               <p>
+                  Collect assets from multiple locations before using them: file system, classpath,
+                  webapp, CDNs or
+                  <a href="http://www.webjars.org/">WebJars</a>. <strong>Dandelion</strong> also
+                  support dynamically generated assets (lien)!
+               </p>
+            </div>
+         </div>
+         <div class="row">
+            <div class="span4">
+               <h4><i class="fa fa-code fa-2x"></i>&nbsp;&nbsp;Template engine integration</h4>
+               <p>
+                  <strong>Dandelion</strong> and its components all provide a JSP taglib. And if
+                  you're cool people who use cool technologies, we also provide support for
+                  <a href="http://www.thymeleaf.org/">Thymeleaf</a>!
+               </p>
+            </div>
+            <div class="span4">
+               <h4><i class="fa fa-puzzle-piece fa-2x"></i>&nbsp;&nbsp;Ready-to-use components</h4>
+               <p>
+                  The most advanced component is
+                  <a href="">Dandelion-Datatables</a> which allows you to create awesome HTML tables
+                  using <a
+                     href="http://datatables.net/">DataTables</a>. Other components are also
+                  incubating...
+               </p>
+            </div>
+            <div class="span4">
+               <h4><i class="fa fa-plus fa-2x"></i>&nbsp;&nbsp;Easily extensible</h4>
+               <p>
+                  <strong>Dandelion</strong> makes use of the <a
+                     href="http://docs.oracle.com/javase/6/docs/api/java/util/ServiceLoader.html">Service
+                     Provider Interface API</a> introduced in Java 6 to provide plenty of extension
+                  points.
+               </p>
+            </div>
          </div>
       </div>
    </div>
@@ -116,7 +167,7 @@ layout: home
       <div class="container">
          <div class="row">
             <div class="span6" style="overflow:hidden; ">
-               <h3 class="section-title">Latest news</h3>
+               <h3 class="section-title"><i class="fa fa-rss"></i> Latest news</h3>
                <ul>
                {% for post in site.posts limit:4 %}
                   <li>
@@ -133,27 +184,12 @@ layout: home
                </ul>
             </div>
             <div class="span6 hidden-phone">
-               <h3 class="section-title">Social</h3>
+               <h3 class="section-title"><i class="fa fa-twitter"></i> Social</h3>
                <div>
                   <a class="twitter-timeline" height="400" href="https://twitter.com/dandelion_proj" data-widget-id="306779829204828161" data-chrome="noheader transparent noscrollbar nofooter">Tweets de @dandelion_proj</a>
                   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                </div>
             </div>
-         </div>
-      </div>
-   </div>
-   
-   <div class="container-fluid area-share"> 
-      <div class="row-fluid">
-         <div class="span12">
-            <p class="addthis_toolbox addthis_default_style">
-               <a class="addthis_button_twitter_follow_native" tw:screen_name="dandelion_proj"></a>
-               <a class="addthis_button_tweet"></a> 
-               <a class="addthis_button_google_plusone" g:plusone:size="medium"></a> 
-               <a class="addthis_button_linkedin_counter"></a> 
-               <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-               <a class="addthis_counter addthis_pill_style"></a>
-            </p>
          </div>
       </div>
    </div>
@@ -166,5 +202,17 @@ layout: home
    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
    <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-516d4b686f218f23"></script>
+   <script src="/assets/js/jquery.wordrotator.min.js"></script>
+   </style>
+   <script>
+   $(function () {
+       $("#words").wordsrotator({
+    	   animationIn: "fadeInRight",
+    	   animationOut: "fadeOutLeft",
+    	   speed: 3000,
+           words: ['simpler', 'enjoyable!', 'faster!!']
+       });
+   });
+   </script>
 </body>
 </html>

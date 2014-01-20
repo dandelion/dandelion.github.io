@@ -1,0 +1,45 @@
+---
+layout: datatables
+menu: configuration
+level1: features
+level2:
+  url: configuration
+  name: Configuration
+level3:
+  url: overrideconf
+  name: Overloading default configuration
+---
+
+<h2 class="page-title">Overloading default configuration</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   By default, <strong>Dandelion-Datatables</strong> internally uses a properties file, containing some configuration properties.
+</p>
+<p>
+   But you can of course override it in multiple ways:
+   <ul>
+      <li>First, you can add a file called <code>datatables.properties</code> at the root of the classpath, allowing you to redefine every property you need. Your custom global configuration will then be
+         merged with the default one.
+      </li>
+      <li>Or you can locally overload properties using the {% refjsp dt prop %} JSP tag or the ??? (lien). Just define the property's name and value.</li>
+   </ul>
+</p>
+
+<h3 class="section-title">Example</h3>
+<p>
+   For instance, the compression feature is disabled by default. Thanks to the {% refjsp dt prop %} tag, you can enable it locally, just for the current table.
+</p>
+<h4>Using JSP</h4>
+<p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+   &lt;datatables:prop name="compressor.enable" value="true" />
+&lt;/datatables:table>
+</pre>
+</p>

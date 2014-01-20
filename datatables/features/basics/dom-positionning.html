@@ -1,0 +1,111 @@
+---
+layout: datatables
+menu: basics
+level1: tutorials
+level2:
+  url: basics
+  name: Basics
+level3:
+  url: dom-positionning
+  name: DOM positionning
+---
+
+<h2 class="page-title">DOM positionning</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   When customising DataTables for your own usage, you might find that
+   the default position of the feature elements (filter input etc) is
+   not quite to your liking. To address this issue DataTables takes
+   inspiration from the CSS 3 Advanced Layout Module and provides the
+   sDom initialisation parameter which can be set to indicate where you
+   wish particular features to appear in the DOM. You can also specify
+   div wrapping containers (with classes) to provide complete layout
+   flexibility
+</p>
+<p>
+   The syntax available is:
+</p>
+<ul>
+   <li>l - Length changing</li>
+   <li>f - Filtering input</li>
+   <li>t - The table!</li>
+   <li>i - Information</li>
+   <li>p - Pagination</li>
+   <li>r - pRocessing</li>
+   <li>< and > - div elements</li>
+   <li><"class" and > - div with a class</li>
+</ul>
+<p>
+   Since the v0.10.0, you can make use of this feature to configure your own control. See more details here (lien). 
+</p>
+
+<h3 class="section-title">Using JSP</h3>
+<p>
+   You can use the {% refjsp dt table dom %} table attribute.
+</p>
+<p>
+   In the following example, all controls are disabled. Only the table is displayed.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}" dom="t">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
+
+<h3 class="section-title">Using Thymeleaf</h3>
+<p>
+   With Thymeleaf, you can use the {% reftl dt table dt:dom %} table attribute.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true" dt:dom="'t'">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address.town.name}">Nobody knows!&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+  &lt;/tbody>
+&lt;/table>
+</pre>
+<p>
+   Note that with the available parsers, you won't be able to directly use more complex
+   expressions such as
+   <code>&lt;"class"t&gt;</code> because some characters like "&lt;" are not allowed.
+   If you do need expression like that, use the properties trick as follows:
+</p>
+<ul>
+   <li>
+      <p>
+         In your properties file associated with your template, add a new property for the <code>dom</code> value:
+      </p>
+<pre class="prettyprint">
+dom=&lt;"myCSSClass"t&gt;
+</pre>
+   </li>
+   <li>
+      <p>
+         Then, use the created property in your template:
+      </p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true" dt:dom="#{dom}">
+   ...
+&lt;/table>
+</pre>   
+   </li>
+</ul>

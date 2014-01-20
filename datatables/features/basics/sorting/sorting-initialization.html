@@ -1,0 +1,114 @@
+---
+layout: datatables
+menu: basics
+submenu: sorting
+level1: tutorials
+level2:
+  url: basics
+  name: Basics
+level3:
+  url: sorting
+  name: Sorting data
+level4:
+  url: sorting-initialization
+  name: Sorting initialization
+---
+
+<h2 class="page-title">Sorting initialization</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   You will see in this tutorial how to initialize sorting on individual columns.
+</p>
+
+<h3 class="section-title">Default initialization order</h3>
+
+<h4 class="section-title">Using JSP</h4>
+<p>
+   You can also initialise the column sorting direction using the {% refjsp dt column sortInitDirection %} column attribute.
+   Just set it to <code>asc</code> or <code>desc</code> on each column you want sorting to be initialized.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}">
+   &lt;datatables:column title="Id" property="id" sortable="false" />
+   &lt;datatables:column title="FirstName" property="firstName" sortInit="desc" />
+   &lt;datatables:column title="LastName" property="lastName" sortInit="desc" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" sortable="false" />
+&lt;/datatables:table>
+</pre>
+
+<h4 class="section-title">Using Thymeleaf</h4>
+<p>
+   Use the {% reftl dt th dt:sortInitDirection %} in the same manner.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th >Id&lt;/th>
+         &lt;th dt:sortInitDirection="desc">Firstname&lt;/th>
+         &lt;th dt:sortInitDirection="desc">Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>
+
+<p>
+Note that by default, columns are initialized in a sequential order, i.e. in the order columns are defined.
+</p>
+
+<h3 class="section-title">Custom initialization order</h3>
+
+<h4 class="section-title">Using JSP</h4>
+<p>You can change the initialization order using the {% refjsp dt column sortInitOrder %} column
+   attribute. You just need to set the index in which you want to column to be initialized.
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}"&gt;
+   &lt;datatables:column title="Id" property="id" /&gt;
+   &lt;datatables:column title="FirstName" property="firstName" sortInitDirection="asc" sortInitOrder="1" /&gt;
+   &lt;datatables:column title="LastName" property="lastName" sortInitDirection="desc" sortInitOrder="0" /&gt;
+   &lt;datatables:column title="City" property="address.town.name" /&gt;
+   &lt;datatables:column title="Mail" property="mail" /&gt;
+&lt;/datatables:table&gt;
+</pre>
+
+<h4 class="section-title">Using Thymeleaf</h4>
+<p>
+   Use the {% reftl dt th dt:sortInitOrder %} in the same manner.
+</p>
+<pre class="prettyprint">
+&lt;table id="myTableId" dt:table="true"&gt;
+   &lt;thead&gt;
+      &lt;tr&gt;
+         &lt;th &gt;Id&lt;/th&gt;
+         &lt;th dt:sortInitDirection="asc" dt:sortInitOrder="1"&gt;Firstname&lt;/th&gt;
+         &lt;th dt:sortInitDirection="desc" dt:sortInitOrder="0"&gt;Lastname&lt;/th&gt;
+         &lt;th&gt;City&lt;/th&gt;
+         &lt;th&gt;Mail&lt;/th&gt;
+      &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+      &lt;tr th:each="person : ${persons}"&gt;
+         &lt;td th:text="${person.id}"&gt;1&lt;/td&gt;
+         &lt;td th:text="${person.firstName}"&gt;John&lt;/td&gt;
+         &lt;td th:text="${person.lastName}"&gt;Doe&lt;/td&gt;
+         &lt;td th:text="${person.address.town.name}"&gt;Nobody knows !&lt;/td&gt;
+         &lt;td th:text="${person.mail}"&gt;john@doe.com&lt;/td&gt;
+      &lt;/tr&gt;
+   &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+ 

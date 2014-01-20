@@ -1,5 +1,5 @@
 <ul class="breadcrumb hidden-phone">
-   <li><a href="/"><i class="icon-home"></i></a></li>
+   <li><a href="/"><i class="fa fa-home"></i></a></li>
    <li><span class="divider">|</span><a href="/{{ site.dandelion.components.[page.module].url }}">{{ site.dandelion.components.[page.module].breadcrumb }}</a></li>
      
    {% if page.level1 | size >= 0 %}
@@ -31,7 +31,8 @@
    </li>
    
    <li class="pull-right">
-      Latest release: <a href="/{{ site.dandelion.components.[page.module].url }}/releases/{{ site.dandelion.components.[page.module].version }}/">{{ site.dandelion.components.[page.module].version }}</a><span class="divider">|</span>
+      Latest release: <a href="/{{ site.dandelion.components.[page.module].url }}/releases/{{ site.dandelion.components.[page.module].version }}/">{{ site.dandelion.components.[page.module].version }}</a>
+      <span class="divider">|</span>
    </li>
 </ul>
 

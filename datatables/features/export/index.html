@@ -1,0 +1,80 @@
+---
+layout: datatables
+menu: export
+level1: tutorials
+level2: 
+  url: export
+  name: Export
+---
+
+<h2 class="page-title">Export</h2>
+<p>
+   Dandelion-Datatables provides two ways to handle table export:
+</p>
+<ul>
+   <li>
+      Either using a servlet filter: fast to set up but not very
+      configurable and only compatible with DOM sources. Use it for
+      basic exports only.
+   </li>
+   <li>
+      Or using a controller: this one offers you a full control over
+      what is exported but requires a bit more work to set up.
+      Compatible with DOM and AJAX sources.
+   </li>
+</ul>
+<p>
+   Use one of the ways described above using the following compatibility matrix:
+</p>
+<table class="table table-striped" style="width:70%;margin:auto;" id="ecm">
+   <thead>
+      <tr>
+         <th></th>
+         <th>JSP</th>
+         <th>Thymeleaf</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><strong>DOM source</strong></td>
+         <td><a href="filter-based-exports.html">Filter-based export</a><br /><a href="controller-based-exports.html">Controller-based export</a></td>
+         <td><a href="filter-based-exports.html">Filter-based export</a><br /><a href="controller-based-exports.html">Controller-based export</a> + {% reftl dt th dt:property %}</td>
+      </tr>
+      <tr>
+         <td><strong>AJAX source</strong></td>
+         <td><a href="controller-based-exports.html">Controller-based export</a></td>
+         <td><a href="controller-based-exports.html">Controller-based export</a> + {% reftl dt th dt:property %}</td>
+      </tr>
+   </tbody>
+</table>
+<br />
+
+<p>All tutorials in this section: </p>
+<div class="section-index">
+   <ul>
+      <li>
+         <a href="/datatables/features/export/available-export-formats.html"><i class="icon-double-angle-right"></i> Available export formats</a>
+      </li>
+      <li>
+         <a href="/datatables/features/export/filter-based-exports.html"><i class="icon-double-angle-right"></i> Filter-based exports</a>
+      </li>
+      <li>
+         <a href="/datatables/features/export/controller-based-exports.html"><i class="icon-double-angle-right"></i> Controller-based exports</a>
+      </li>
+      <li>
+         <a href="/datatables/features/export/activating-export.html"><i class="icon-double-angle-right"></i> Activating export</a>
+      </li>
+      <li>
+         <a href="/datatables/features/export/customizing-export-content.html"><i class="icon-double-angle-right"></i> Customizing export content</a>
+      </li>
+      <li>
+         <a href="/datatables/features/export/customizing-export-links.html"><i class="icon-double-angle-right"></i> Customizing export links</a>
+      </li>
+      <li>
+         <a href="/datatables/features/export/customizing-export-url.html"><i class="icon-double-angle-right"></i> Customizing export URL</a>
+      </li>
+      <li>
+         <a href="/datatables/features/export/configuring-export-classes.html"><i class="icon-double-angle-right"></i> Configuring export classes</a>
+      </li>
+   </ul>
+</div>

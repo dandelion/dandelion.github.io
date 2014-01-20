@@ -1,0 +1,142 @@
+---
+layout: datatables
+menu: styling
+submenu: themes
+level1: tutorials
+level2: 
+  url: styling
+  name: Styling
+level3:
+  url: themes
+  name: Themes
+level4:
+  url: bootstrap2
+  name: Bootstrap 2 theme
+---
+
+<h2 class="page-title">Bootstrap 2 theme</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   Dandelion-Datatables provides an easy way to apply the <a href="http://getbootstrap.com/2.3.2/">Bootstrap framework</a> on your tables.
+</p>
+
+<h3 class="section-title" id="atb2t">Activating the Bootstrap 2 theme</h3>
+<p>
+   In order to activate the Bootstrap 2 theme, follow these steps:
+</p>
+<ol>
+   <li><i>Provide the needed static assets</i>
+      <p>
+         Link to the <a href="http://getbootstrap.com/2.3.2/">Bootstrap 2</a> library (only the CSS is required)
+      </p>
+      <p>
+         Of course, don't forget jQuery (JS) and DataTables (JS)
+      </p>
+   </li>
+   <li><i>Use the JSP taglib/Thymeleaf dialect</i>
+      <p>
+         Set the {% refjsp dt table theme %} (JSP) / {% reftl dt table dt:theme %} (Thymeleaf) table attributes to <code>bootstrap2</code>
+      </p>
+   </li>
+   <li><i>Use the Bootstrap classes</i>
+      <p>
+         At least, you need to add the
+         <code>table</code>
+         CSS class. But you can use any of the other CSS classes
+         provided by Bootstrap:
+         <code>table-striped</code>
+         ,
+         <code>table-bordered</code>
+         , ...
+      </p>
+      <p>
+         Just use the {% refjsp dt table cssClass %} table attribute of
+         the JSP taglib, or simply the
+         <code>class</code>
+         table attribute when using Thymeleaf.
+      </p>
+   </li>
+   <li><i>Choose a theme option</i>
+      <p>
+         Since the v0.9.1, you can use the {% refjsp dt table themeOption %} (JSP) / {% reftl dt table dt:themeOption %} (Thymeleaf) table attributes to select
+         a theme option based on <a href="http://tableclothjs.com/">tablecloth.js</a>.
+      </p>
+      <p>   
+         You need first to apply the <code>tablecloth</code> theme option and then, just add a CSS class among: <code>table-dark</code>, <code>table-stats</code> and <code>table-paper</code>.
+      </p>            
+   </li>
+</ol>
+
+<h3 class="section-title" id="ex">Example</h3>
+<h4>Using JSP</h4>
+<pre class="prettyprint">
+&lt;link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+&lt;datatables:table id="myTableId" data="${persons}" theme="bootstrap2" cssClass="table table-striped">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="Street" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
+
+<h4>Using Thymeleaf</h4>
+<pre class="prettyprint">
+&lt;link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+&lt;table id="myTableId" dt:table="true" dt:theme="bootstrap2" class="table table-striped">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>Street&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person.id}">1&lt;/td>
+         &lt;td th:text="${person.firstName}">John&lt;/td>
+         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
+         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>
+
+<h3 class="section-title">Some notes...</h3>
+<h4>Sorting icons</h4>
+<p>
+   The DataTables' CSS is optional but if you don't use it, you will lose the sorting icons.
+<p>
+<p>
+   If you really need them, of course you can, by using the
+   <a href="/datatables/features/styling/basics-of-styling.html#ltaess">sorting
+      CSS classes</a> as follows:
+</p>
+<pre class="prettyprint">
+.sorting { background: url('/your-assets-directory/images/lib/datatables/sort_both.png') no-repeat center right; }
+.sorting_asc { background: url('/your-assets-directory/images/lib/datatables/sort_asc.png') no-repeat center right; }
+.sorting_desc { background: url('/your-assets-directory/images/lib/datatables/sort_desc.png') no-repeat center right; }
+.sorting_asc_disabled { background: url('/your-assets-directory/images/lib/datatables/sort_asc_disabled.png') no-repeat center right; }
+.sorting_desc_disabled { background: url('/your-assets-directory/images/lib/datatables/sort_desc_disabled.png') no-repeat center right; }
+</pre>
+
+<h4>CDN feature</h4>
+<p>At the moment, you won't be able to use any custom style if you use
+   the {% refjsp dt table cdn %} (JSP) / {% reftl dt table dt:cdn %}
+   (Thymeleaf) table attributes.
+</p>
+<p>
+   Indeed, if you activate the CDN feature, Dandelion-Datatables will
+   generate
+   <code>&lt;script&gt;</code>
+   and
+   <code>&lt;link&gt;</code>
+   tags and place them in a way yon't be able to override with your
+   custom style.
+</p>

@@ -195,3 +195,7 @@ div.DTFC_LeftBodyWrapper tbody tr:first-child th,div.DTFC_LeftBodyWrapper tbody 
 div.DTFC_LeftFootWrapper table {
 	border-top: none;
 }
+
+table.td {
+	font-size: 10px;
+}

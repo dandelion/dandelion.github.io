@@ -1,0 +1,103 @@
+---
+layout: datatables
+menu: extension
+level1: tutorials
+level2:
+  url: extension
+  name: Extension
+level3:
+  url: examples
+  name: Examples
+---
+
+<h2 class="page-title">Examples</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>You will see here some examples of extension.</p>
+<p>
+   Note that you can also take a look at all the built-in extensions available in the package
+   <code>com.github.dandelion.datatables.core.extension</code>
+   .
+</p>
+
+<h3 class="section-title" id="eot">Example of theme</h3>
+<p>
+   Let's look at the {% javadoc dt datatables-core Bootstrap2Theme %}.
+</p>
+<pre class="prettyprint">
+public class Bootstrap2Theme extends AbstractExtension {
+
+   public String getName() {
+      return "bootstrap2";
+   }
+
+   public void setup(HtmlTable table) {
+
+      // Scope updating
+      addScope(Scope.DDL_DT_THEME_BOOTSTRAP2);
+      addScope(Scope.DDL_DT_PAGING_BOOTSTRAP);
+
+      // Theme option      
+      ThemeOption themeOption = TableConfig.CSS_THEMEOPTION.valueFrom(table);
+      if (themeOption != null) {
+         if(themeOption.equals(ThemeOption.TABLECLOTH)){
+            addScope(Scope.DDL_DT_THEME_BOOTSTRAP2_TABLECLOTH);
+         }
+         else{
+            throw new ExtensionLoadingException("Only the 'tablecloth' theme option is compatible with the 'bootstrap2' theme");
+         }
+      }
+      
+      // DataTables parameters
+      if (StringUtils.isBlank(TableConfig.FEATURE_DOM.valueFrom(table))) {
+         addParameter(DTConstants.DT_DOM,
+               "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>");
+      }
+      
+      if(TableConfig.FEATURE_PAGINATIONTYPE.valueFrom(table.getTableConfiguration()) == null){
+         addParameter(DTConstants.DT_PAGINATION_TYPE, PaginationType.BOOTSTRAP.toString());
+      }
+      addParameter(DTConstants.DT_AS_STRIPE_CLASSES, new JavascriptSnippet("[]"));
+   }
+}
+</pre>
+<p>
+   Let's describe what happens here.
+</p>
+<ul>
+   <li>
+      First, note that all extensions must have a name. This name is used both in the JSP taglib and in
+      the Thymeleaf dialect to activate it in a page.
+   </li>
+   <li>
+      <p>
+         The extension is supposed to theme the table with the Bootstrap v2 framework. Of course, it
+         requires some extra Javascript and CSS to adapt the table. This is now easily done with the
+         scope mechanism (lien). Scopes are simply added using the
+         <code>addScope</code> method.
+      </p>
+      <p>Two scopes are loaded by this extension:</p>
+      <ul>
+         <li><code>ddl-dt-theme-bootstrap2</code></li>
+         <li><code>ddl-dt-paging-bootstrap</code></li>
+      </ul>
+   </li>
+   <li>
+      Then, depending on the activated configuration, a theme option might have been enabled.
+   </li>
+   <li>
+      <p>
+         Finally, you can see that the DataTables' configuration is updated multiple times thanks to
+         the
+         <code>addParameter</code>
+         method The DataTables' initialization has been changed using the
+         <code>addParameter</code>
+         method.
+      </p>
+      <p>For example, we add to the configuration the following pair:
+<pre>
+"sPaginationType" : "bootstrap"
+</pre>
+      </p>
+   </li>
+</ul>
