@@ -11,92 +11,269 @@ level2:
 
 <h3 class="section-title">Core</h3>
 <ul>
-   <li>Finally connected with Dandelion Core!
+   <li><strong>Finally connected <a href="/datatables">Dandelion-Datatables</a> to <a href="/dandelion">Dandelion</a>! Yeah!</strong>
       <ul>
-         <li>All extensions have been refactored in order to work with the AssetStack (lien)</li>
-         <li>Lots of Dandelion scopes have been added and are available in the JAR:
+         <li>All extensions have been refactored in order to integrate all necessary assets into the <a href="">asset stack</a> (lien)</li>
+         <li>Lots of Dandelion scopes have been added and are available in the <i>datatables-core</i> JAR:
             <ul>
                <li>jQuery</li>
-               <li>jQuery UI</li>
+               <li>DataTables</li>
                <li>Bootstrap v2</li>
                <li>Bootstrap v3</li>
-               <li>DataTables</li>
-               <li>See the full list here (lien)</li>
+               <li>See the full <a href="/datatables/docs/ref/scopes/">scope reference here</a></li>
+            </ul>
+         </li>
+         <li>New syntax available is some attributes (JSP and Thymeleaf)
+            <ul>
+               <li>For instance in the {% refjsp dt column renderFunction %} column attribute, the following syntax can now be used: <code>renderFunction="scopeNameToAddInTheCurrentRequest#javascriptFunction"</code> thus allowing to avoid using the Dandelion JSP taglib or Thymeleaf dialect to add manually the scope in the request</li>
+               <li>Multiple scopes can now be added, separated by a comma. For example: <code>renderFunction="scope1,scope2#javascriptFunction"</code></li>
             </ul>
          </li>
       </ul>
    </li>
-   <li>Refactored the table and column configurations processing for greater clarity and better performance</li>
-   <li>Cleaned Javascript generation: unneccessary parameters are non longer generated</li>
-   <li>Added support for pluging a custom Javascript generator (lien)</li>
-   <li>Refactored the Javascript generation to be able to compute the code before rendering it</li>
-   <li>Improved exception handling</li>
-   <li>Added support for hot reloading of the whole configuration, i.e.:
+   <li><strong>Configuration improvements</strong>
       <ul>
-         <li><i>datatables.properties</i>: the main configuration file</li>
-         <li>all <i>datatables_XX.properties</i>: bundles containing internationalized messages</li>
+         <li>Refactored the whole configuration system for greater clarity and better performance
+            <ul>
+               <li>The main goal of this refactoring was to increase performance by removing reflection.</li>
+               <li>Added a new ConfigToken allowing to store a configuration, how to read it from properties and how to process it. Note that even if all configurations have been refactored to support the CamelCase syntax, the case remains insensitive when it's read.</li>
+               <li>Added {% javadoc dt datatables-core TableConfig %} and {% javadoc dt datatables-core ColumnConfig %}: placeholder for all possible configurations</li>
+               <li>Refactored {% javadoc dt datatables-core TableConfiguration %} and {% javadoc dt datatables-core ColumnConfiguration %} objects to use the recently added {% javadoc dt datatables-core ConfigToken %} instead of plenty of fields/accessors</li>
+               <li>All configurations are now lazy processed, i.e. in the JSP taglib or in the
+                  Thymeleaf dialect but no longer when a TableConfiguration is instantiated. Two
+                  operations are now well decoupled: first the local configuration is applied (and
+                  overloads the one loaded from properties) and then the whole configuration is
+                  processed only once</li>
+               <li>Now all processors extends the same processor: {% javadoc dt datatables-core AbstractConfigurationProcessor %}. This allowed to removed code duplication and especially to handle in one place the case of processor that accept the recently added syntax for manipulating Dandelion scopes.</li>
+            </ul>
+         </li>
+         <li>The user configuration properties, when read from classpath, are now read from <code>dandelion/datatables</code>.
+            When read from a system property, it remains unchanged. See more <a
+            href="/datatables/features/configuration/configuration-loading.html">here</a>.
+         </li>
+         <li>Fixed auto configuration of the {% javadoc dt datatables-core JstlMessageResolver %}: it was auto-configured because of the presence of the JSTL JAR in the classpath, even in Thymeleaf-based applications (only when using the Thymeleaf Tiles2 extra)</li>
+         <li>The {% javadoc dt datatables-core AjaxReloadFunctionProcessor %} now accept the special syntax.</li>
+         <li>Added support for hot reloading of whole the configuration when the dev mode is enabled.
+            <ul>
+               <li><code>datatables.properties</code> (containing the main configuration of the component)</li>
+               <li>all <code>datatables_XX.properties</code> (bundles containing internationalized messages)</li>
+            </ul>
+         </li>
       </ul>
    </li>
-   <li>Added new themes for Bootstrap Responsive and Bootstrap 3</li>
-   <li>Fixed display issue in the listbox pagination style</li>
-   <li>Added URL processing (back)</li>
-   <li>Added support for totally custom export (custom format, custom class, ...) (lien)</li>
-   <li>New pagination styles based on Bootstrap 2: bootstrap_four_button and bootstrap_full_numbers</li>
-   <li>Fixed usage of BEFORESTARTDOCUMENTREADY when using extra Javascript files (lien)</li>
-   <li>Better test coverage</li>
+   <li><strong>Improved the extension API</strong>
+      <ul>
+         <li>Fixed issue with the <code>addCssClass</code> method when one or more CSS classes was to be added to a column (header or not)</li>
+         <li>Fixed issue when trying to modify CSS classes inside an extension using Thymeleaf</li>
+         <li>New utilites available in the {% javadoc dt datatables-core AbstractExtension %} class</li>
+      </ul>
+   </li>
+   <li><strong>Reintegrated URL processing</strong>
+      <ul>
+         <li>The URL passed in some of the JSP taglib attributes is now processed again (context path applied) in order to be able to apply some internal request parameters</li>
+         <li>Removed RequestHelper and added some utilites in UrlUtils</li>
+         <li>The HttpServletResponse is now part of the {% javadoc dt datatables-core TableConfiguration %}, in order to be able to encode URLs if necessary</li>
+      </ul>
+   </li>
+   <li><strong>Sorting</strong>
+      <ul>
+         <li>Custom sort types can now be used in the sortType / dt:sortType column attribute. Closes dandelion/issues#165</li>
+      </ul>
+   </li>
+   <li><strong>Filtering</strong>
+      <ul>
+         <li>Added support for delayed filtering: the filtering delay is based on the number of new character that have to be taped to trigger the filtering. .
+         <li>Added support for multi-filtering: filtering can now be triggered on a click event. New attributes have been added (filterSelector, filterClearSelector) to automatically bind click event to some elements targeted by the passed selectors</li>
+         <li>New "date_range" filter type, automatically created with bootstrap datepicker when enabled.</li>
+         <li>Fixed issue with repeated headers: now the duplicated cells added for filtering but without any filtering element are empty.</li>
+         <li>Updated the filteringaddon to the latest version</li>
+      </ul>
+   </li>
+   <li><strong>Pagination</strong>
+      <ul>
+         <li>Fixed display issue in the listbox pagination style</li>
+         <li>New pagination styles based on Bootstrap 2: bootstrap_four_button and
+            bootstrap_full_numbers. See <a
+            href="/datatables/features/basics/paging/changing-pagination-style.html">here</a> for
+            further details.
+         </li>
+      </ul>
+   </li>
+   <li><strong>Export</strong>
+      <ul>
+         <li>Refactored export mechanism to be able to use a totally custom export. Some export formats use reserved words, such as "csv", "pdf", "xml", "xls" and "xlsx" and allow to activate default values (e.g. mimeType, built-in export classes)</li>
+         <li>Added support for landscape orientation when exporting in PDF (overloadable with JSP/Thymeleaf attributes)</li>
+         <li>Fixed issue with export URL: now both custom and default export URL are updated with the parameter telling Dandelion to disable the asset filter</li>
+         <li>Modified the custom export function name: the name now contains only the table id, without "oTable"</li>
+         <li>The autoSize option is now set to true by default (XLS and XLSX export only)</li>
+         <li>Improved export feature when using controller
+            <ul>
+               <li>The {% javadoc dt datatables-core ExportConf %} instance built with any controller is now optional. By default, the parameter set via the JSP taglib / Thymeleaf dialect will be used to initialize an {% javadoc dt datatables-core ExportConf %} instance.</li>
+               <li>{% javadoc dt datatables-core ExportConf %} instance built by hand in a controller will override the default {% javadoc dt datatables-core ExportConf %} built from the request</li>
+            </ul>
+         </li>
+         <li>URL parameters are now decoded if necessary</li>
+         <li>Refactored the passed export parameters. Now all requests (default or custom export) contains the tableId being exported</li>
+      </ul>
+   </li>
+   <li><strong>AJAX</strong>
+      <ul>
+         <li>Added support for ranges in {% javadoc dt datatables-core DatatablesCriterias %}: the {% javadoc dt datatables-core DatatablesCriterias %} object can now parse range values and update all {% javadoc dt datatables-core ColumnDef %} accordingly</li>
+         <li>Added support for table reloading (lien)</li>
+      </ul>
+   </li>
+   <li><strong>Themes</strong>
+      <ul>
+         <li>Fixed conflict when using the Bootstrap2 theme and a custom pagination type</li>
+         <li>Added a new theme for <a href="">Bootstrap Responsive</a></li>
+         <li>Added a new theme for <a href="">Bootstrap v3</a></li>
+      </ul>
+   </li>        
+   <li><strong>Javascript generation</strong>
+      <ul>
+         <li>Cleaned the DataTables generated configuration: unneccessary parameters are non longer generated</li>
+         <li>Added the ability to plug in a custom Javascript generator (lien)</li>
+         <li>Refactored the Javascript generation to be able to compute the code before rendering it</li>
+         <li>Refactored the {% javadoc dt datatables-core WebResourceGenerator %} using the extension mechanism
+            <ul>
+               <li>Added new internal extensions: {% javadoc dt datatables-core ExportFeature %}, {% javadoc dt datatables-core AppearFeature %}, {% javadoc dt datatables-core ExtraFileFeature %} and {% javadoc dt datatables-core ExtraHtmlFeature %}</li>
+               <li>Improved Javascript generation (indentations, CR)</li>
+               <li>A random ID is not needed any longer. Dandelion can properly handle multiple tables on the same page (no more Javascript duplication)</li>
+               <li>Table id security: all special characters are removed when creating the Javascript name but the original one is preserved</li>   
+            </ul>
+         </li>
+      </ul>
+   <li><strong>Refactored exception handling</strong>
+      <ul>
+         <li>All exceptions now extend a new {% javadoc dt datatables-core DandelionDatatablesException %} (RuntimeException)</li>
+         <li>A new {% javadoc dt datatables-core ExtraFileNotFoundException %} is now thrown when an extra file is not found</li>
+         <li>Better exception handling when the export class is not present in the classpath</li>
+         <li>Better exception handling when a wrong configuration group is activated</li>
+      </ul>
+   </li>
 </ul>
 
-<h3 class="section-title">JSP implementation</h3> 
-<p>
-</p>
-<p></p>
+<h3 class="section-title">JSP implementation</h3>
 <ul>
-   <li>New id (lien) attribute for the <code>&lt;datatables:column&gt;</code> tag, allowing to assign an ID to the header cell</li>
-   <li>New filterMinLength (lien) attribute for the <code>&lt;datatables:column&gt;</code> tag, allowing to trigger the filtering after a minimum number of characters has been reached in a filtering field.</li>
-   <li>New filterDelay (lien) attribute for the <code>&lt;datatables:column&gt;</code> tag, allowing to set a delay (in ms) before the AJAX call is performed to obtain data from server</li>
-   <li>New filterSelector (lien) attribute for the <code>&lt;datatables:column&gt;</code> tag, allowing </li>
-   <li>New filterClearSelector (lien) attribute for the <code>&lt;datatables:column&gt;</code> tag, allowing </li>
-   <li>New name (lien) attribute for the <code>&lt;datatables:column&gt;</code> tag (lien), allowing to apply a name to a column. Used with server-side processing.</li>
-   <li>New escapeXml (lien) attribute for the <code>&lt;datatables:column&gt;</code> tag, allowing to disable the XML characters escaping</li>
-   <li>New <code>&lt;datatables:extraHtml&gt;</code> (lien) tag, allowing to create DataTables feature plug-ins that can be used to decorate the table. See more details here. (lien)</li>
-   <li>New orientation (lien) for the <code>&lt;datatables:export&gt;</code> tag (lien), allowing to change the default PDF orientation</li>
-   <li>New fileExtension (lien) for the <code>&lt;datatables:export&gt;</code> tag (lien), allowing to set the extension of the exported file</li>
-   <li>New mimeType (lien) for the <code>&lt;datatables:export&gt;</code> tag (lien), allowing to set the mime Type of the response when exporting data</li>
-   <li>New escapeXml (lien) attribute for the <code>&lt;datatables:export&gt;</code> tag, allowing to disable the XML characters escaping</li>
-   <li>New reloadSelector (lien) attribute for the <code>&lt;datatables:table&gt;</code> tag, allowing to bind a "click" event to element that will trigger the table reloading</li>
-   <li>New reloadFunction (lien) attribute for the <code>&lt;datatables:table&gt;</code> tag, allowing to customize the table reloading</li>
-   <li>Renamed the sortInit table attribute to sortInitDirection</li>
-   <li>New sortInitOrder (lien) attribute for the <code>&lt;datatables:table&gt;</code> tag, allowing to set the order in which columns should be initialized</li>
-   <li>New escapeXml (lien) attribute for the <code>&lt;datatables:table&gt;</code> tag, allowing to disable the XML characters escaping</li>
-   <li>Renamed the <code>rowIdSufix</code> table attribute to rowIdSuffix</li>
-   <li>Renamed the <code>filter</code> table attribute to filterable</li>
-   <li>Renamed the <code>sort</code> table attribute to sortable</li>
-   <li>Renamed the <code>paginate</code> table attribute to pageable</li>
-   <li>Removed the unused <code>footer</code> table attribute</li>
-   <li>Removed the <code>&lt;datatables:extraConf&gt;</code> tag</li>
-   <li>Generally speaking, <code>&lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt;</code> has been added in all TLDs where it was missing</li>
+   <li>Configuration renaming and TLD improvement
+      <ul>
+         <li>The TLD has been refactored with the new attributes and all descriptions have been improved to help the content assist plugins of IDEs</li>
+         <li>Some attributes have been renamed for a better consistency:
+            <ul>
+               <li>sort => sortable</li>
+               <li>paginate => pageable</li>
+               <li>filter => filterable</li>
+               <li>ajax.processing => feature.processing</li>
+            </ul>
+         </li>
+         <li>Generally speaking, <code>&lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt;</code> has been added in the TLD where it was missing</li>
+      </ul>
+   </li>
+   <li>Removed unused attributes and corresponding processors</li>
+   <li>Added new <code>escapeXml</code> attributes in almost all JSP tags. XML escaping is now enabled by default and can be disabled using <code>escapeXml="false"</code></li>
+   <li>Improved column sorting initialization: a new column attribute has been added (sortInitOrder/dt:sortInitOrder) allowing to set the order in which column sorting must be initialized</li>
+   <li>Improved exception handling in JSP tags</li>
+   <li>Added support for dynamic attributes in the <a href="/datatables/docs/ref/jsp/caption.html">CaptionTag</a></li>
+   <lI>Removed the <code>ExtraConf</code> JSP tag and all related resources</li>
+   <li>Changes in attributes
+      <ul>
+         <li>New {% refjsp dt column id %} column attribute, allowing to assign an ID to the header cell</li>
+         <li>New {% refjsp dt column filterMinLength %} column attribute, allowing to trigger the filtering after a minimum number of characters has been reached in a filtering field.</li>
+         <li>New {% refjsp dt column filterDelay %} column attribute, allowing to set a delay (in ms) before the AJAX call is performed to obtain data from server</li>
+         <li>New {% refjsp dt column filterSelector %} column attribute, allowing </li>
+         <li>New {% refjsp dt column filterClearSelector %} column attribute, allowing </li>
+         <li>New {% refjsp dt column name %} column attribute (lien), allowing to apply a name to a column. Used with server-side processing.</li>
+         <li>New {% refjsp dt column escapeXml %} column attribute, allowing to disable the XML characters escaping</li>
+         <li>Renamed the <code>sortInit</code> column attribute to {% refjsp dt column sortInitDirection %}</li>
+         <li>New {% refjsp dt column sortInitOrder %} column attribute, allowing to set the order in which columns must be initialized</li>
+         <li>New {% refjsp dt extraHtml %} tag, allowing to create DataTables feature plug-ins that can be used to decorate the table. Read more here. (lien)</li>
+         <li>New {% refjsp dt export orientation %} export attribute, allowing to change the default PDF orientation</li>
+         <li>New {% refjsp dt export fileExtension %} export attribute, allowing to set the extension of the exported file</li>
+         <li>New {% refjsp dt export mimeType %} export attribute, allowing to set the mime Type of the response when exporting data</li>
+         <li>New {% refjsp dt export escapeXml  %} export attribute, allowing to disable the XML characters escaping</li>
+         <li>New {% refjsp dt table reloadSelector %} table attribute, allowing to bind a "click" event to element that will trigger the table reloading</li>
+         <li>New {% refjsp dt table reloadFunction %} table attribute, allowing to customize the table reloading</li>
+         <li>New {% refjsp dt table escapeXml %} table attribute, allowing to disable the XML characters escaping</li>
+         <li>Renamed the <code>rowIdSufix</code> table attribute to {% refjsp dt table rowIdSuffix %}</li>
+         <li>Renamed the <code>filter</code> table attribute to {% refjsp dt table filterable %}</li>
+         <li>Renamed the <code>sort</code> table attribute to {% refjsp dt table sortable %}</li>
+         <li>Renamed the <code>paginate</code> table attribute to {% refjsp dt table pageable %}</li>
+         <li>Removed the unused <code>footer</code> table attribute</li>
+         <li>Removed the <code>&lt;datatables:extraConf&gt;</code> tag</li>
+         <li>Removed the <code>cdn</code> table attribute from the taglib: it is now activated by default thanks to <a href="">scope mechanism</a> of <a href="/dandelion">Dandelion</a></li>
+      </ul>
+   </li>
+</ul> 
+<ul>
 </ul>
 
 <h3 class="section-title">Thymeleaf implementation</h3> 
-<p>
-   <ul>
-      <li>Added support for Thymeleaf 2.1.x</li>
-   </ul>
-</p>
+<ul>
+   <li>Added support for Thymeleaf 2.1.x and removed deprecated usage of StandardExpressionProcessor</li>
+   <li>Refactored the Thymeleaf implementation
+      <ul>
+         <li>All abstract processors now contain utilities to facilitate the creation of processors</li>
+         <li>Added new processors allowing to write a "configuring div" inside a template, just before the table tag. This div allows to configure: exports, callback, extraFile and configuration properties.</li>
+         <lI>Comments updated/added in almost all processors</li>
+         <li>Renamed some processors for the sake of consistency</li>
+         <li>Removed all processors related to export and callback (now handled by the new "configuring div")</li>
+         <li>Huge code cleaning</li>
+      </ul>
+   </li>
+   <li>All processors are now well isolated</li>
+   <li>Added support for stateSave using Thymeleaf</li>
+   <li>Renamed some attribute processors to be more consistent with the JSP taglib</li>
+   <li>Added a missing Thymeleaf processor for the fixedHeader plugin</li>
+   <li>Removed unused attributes and corresponding processors (plugins are now enabled thanks to the ext / dt:ext table attribute)</li>
+   <li>Improved column sorting initialization: aA new column attribute has been added (sortInitOrder/dt:sortInitOrder) allowing to set the order in which column sorting must be initialized.</li>
+   <li>Added Thymeleaf support for extraHTML snippets
+   <li>Cleaned ColumnInitializedElProcessor: now, the property, renderFunction and default have their own processor</li>
+   <li>The DataTables defaultContent parameter is now always added</li>
+   <li>Added missing processor for the dt:filterMinLengh column attribute</li>
+   <li>Fixed the scope of application of the dialect: all processors are now applied only if
+      they match a particular context. It prevents bugs when native <code>&lt;table&gt;</code> were
+      being used in the same page
+   </li>
+   
+   <li>Changes in attributes
+      <ul>
+         <li>New {% reftl dt column id %} column attribute, allowing to assign an ID to the header cell</li>
+         <li>New {% reftl dt column filterMinLength %} column attribute, allowing to trigger the filtering after a minimum number of characters has been reached in a filtering field.</li>
+         <li>New {% reftl dt column filterDelay %} column attribute, allowing to set a delay (in ms) before the AJAX call is performed to obtain data from server</li>
+         <li>New {% reftl dt column filterSelector %} column attribute, allowing </li>
+         <li>New {% reftl dt column filterClearSelector %} column attribute, allowing </li>
+         <li>New {% reftl dt column name %} column attribute (lien), allowing to apply a name to a column. Used with server-side processing.</li>
+         <li>New {% reftl dt column escapeXml %} column attribute, allowing to disable the XML characters escaping</li>
+         <li>Renamed the <code>sortInit</code> column attribute to {% reftl dt column sortInitDirection %}</li>
+         <li>New {% reftl dt column sortInitOrder %} column attribute, allowing to set the order in which columns must be initialized</li>
+         <li>New {% reftl dt extraHtml %} tag, allowing to create DataTables feature plug-ins that can be used to decorate the table. Read more here. (lien)</li>
+         <li>New {% reftl dt export orientation %} export attribute, allowing to change the default PDF orientation</li>
+         <li>New {% reftl dt export fileExtension %} export attribute, allowing to set the extension of the exported file</li>
+         <li>New {% reftl dt export mimeType %} export attribute, allowing to set the mime Type of the response when exporting data</li>
+         <li>New {% reftl dt export escapeXml  %} export attribute, allowing to disable the XML characters escaping</li>
+         <li>New {% reftl dt table reloadSelector %} table attribute, allowing to bind a "click" event to element that will trigger the table reloading</li>
+         <li>New {% reftl dt table reloadFunction %} table attribute, allowing to customize the table reloading</li>
+         <li>New {% reftl dt table escapeXml %} table attribute, allowing to disable the XML characters escaping</li>
+         <li>Renamed the <code>rowIdSufix</code> table attribute to {% reftl dt table rowIdSuffix %}</li>
+         <li>Renamed the <code>filter</code> table attribute to {% reftl dt table filterable %}</li>
+         <li>Renamed the <code>sort</code> table attribute to {% reftl dt table sortable %}</li>
+         <li>Renamed the <code>paginate</code> table attribute to {% reftl dt table pageable %}</li>
+         <li>Removed the unused <code>footer</code> table attribute</li>
+         <li>Removed the <code>&lt;datatables:extraConf&gt;</code> tag</li>
+         <li>Removed the <code>cdn</code> table attribute from the dialect: it is now activated by default thanks to <a href="">scope mechanism</a> of <a href="/dandelion">Dandelion</a></li>
+      </ul>
+   </li>
+</ul>
 
 <h3 class="section-title">Spring3 extra</h3> 
-<p>
-   <ul>
-      <li></li>
-   </ul>
-</p>
+<ul>
+   <li>A new <code>dandelion-datatables.xml</code> file has been made available to bundle the Spring configuration. Read more <a href="">here</a>. (lien)</li>
+</ul>
 
 <h3 class="section-title">Struts1 extra</h3> 
-<p>
-   <ul>
-      <li></li>
-   </ul>
-</p>
+<ul>
+   <li></li>
+</ul>
 
 <h3 class="section-title">Struts2 extra</h3> 
 <p>
@@ -106,11 +283,14 @@ level2:
 </p>
 
 <h3 class="section-title">Export iText extra</h3> 
-<p>
-   <ul>
-      <li></li>
-   </ul>
-</p>
+<ul>
+   <li></li>
+</ul>
+
+<h3 class="section-title">Export iText extra</h3> 
+<ul>
+   <li></li>
+</ul>
 
 <h3 class="section-title">Closed issues</h3>
 <ul>

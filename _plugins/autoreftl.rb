@@ -18,7 +18,7 @@ module Jekyll
         when 3
           @reftag = args[1].downcase
           @refparam = args[2]
-          "<a href=\"/datatables/docs/ref/thymeleaf/#{@reftag}.html##{@refparam}\"><code>#{@refparam}</code></a>"
+          "<a href=\"/datatables/docs/ref/thymeleaf/#{@reftag}.html#dt:#{@refparam}\"><code>dt:#{@refparam}</code></a>"
         when 2
           @reftag = args[1].downcase
           "<a href=\"/datatables/docs/ref/thymeleaf/#{@reftag}.html\"><code>#{@reftag}</code></a>"

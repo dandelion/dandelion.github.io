@@ -1,5 +1,6 @@
 # {% javadoc dt datatables-core AbstractExtension %} => <a href="/datatables/releases/0.8.14/javadoc/datatables-core/com/github/dandelion/datatables/core/extension/AbstractExtension.html"><code>AbstractExtension</code></a>
 
+$: << File.expand_path(File.dirname(__FILE__) + "/../lib")
 require 'find'
 
 module Jekyll
@@ -43,7 +44,7 @@ module Jekyll
           end
         end
         
-        "<code>#{clazz} <a title=\"Source\" href=\"#{sourcePath}\"><i class=\"icon-github\"></i></a> <a title=\"Javadoc\" href=\"#{javadocPath}\"><i class=\"icon-book\"></i></a></code>"
+        "<code>#{clazz} <a title=\"Source\" href=\"#{sourcePath}\"><i class=\"fa fa-github\"></i></a> <a title=\"Javadoc\" href=\"#{javadocPath}\"><i class=\"fa fa-book\"></i></a></code>"
       
       when "ddl"
         
@@ -63,7 +64,7 @@ module Jekyll
           end
         end
         
-        "<code>#{clazz} <a title=\"Source\" href=\"#{sourcePath}\"><i class=\"icon-github\"></i></a> <a title=\"Javadoc\" href=\"#{javadocPath}\"><i class=\"icon-book\"></i></a></code>"
+        "<code>#{clazz} <a title=\"Source\" href=\"#{sourcePath}\"><i class=\"fa fa-github\"></i></a> <a title=\"Javadoc\" href=\"#{javadocPath}\"><i class=\"fa fa-book\"></i></a></code>"
         
       when "wa"
         
@@ -83,7 +84,7 @@ module Jekyll
           end
         end
         
-        "<code>#{clazz} <a title=\"Source\" href=\"#{sourcePath}\"><i class=\"icon-github\"></i></a> <a title=\"Javadoc\" href=\"#{javadocPath}\"><i class=\"icon-book\"></i></a></code>"
+        "<code>#{clazz} <a title=\"Source\" href=\"#{sourcePath}\"><i class=\"fa fa-github\"></i></a> <a title=\"Javadoc\" href=\"#{javadocPath}\"><i class=\"fa fa-book\"></i></a></code>"
         
       end
     end

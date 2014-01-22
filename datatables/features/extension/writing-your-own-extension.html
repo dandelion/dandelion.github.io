@@ -16,7 +16,7 @@ level3:
 <ol>
    <li>
       <p>
-         First, create a class that extends the {% javadoc dt datatables-core AbstractExtension %} class as follows:
+         First, create a class that extends the {% javadoc dt datatables-core AbstractExtension %} class:
 <pre class="prettyprint">
 package com.example;
 
@@ -33,12 +33,18 @@ public class MyCustomExtension extends AbstractExtension {
 </pre>
       </p>
       <p>
-         You can access the {% javadoc dt datatables-core HtmlTable %} class, allowing you to change anything you want: activated DataTables' options, columns, etc.... See the <a href="#atetc">below section</a> to find out more.
+         You can access the {% javadoc dt datatables-core HtmlTable %} class, allowing you to change anything you want.
+      </p>
+      <p>
+         Also note that the {% javadoc dt datatables-core AbstractExtension %} class provided plenty
+         of utilities for dealing with
+         <a href="/datatables/features/advanced/using-callbacks.html">callbacks</a>, Dandelion
+         <a href="">scopes</a> (lien), ...
       </p>
    </li>
    <li>
       <p>
-         Then, your extensions must be detected by Dandelion-Datatables. To do so, you must define
+         Then, your extension must be detected by <strong>Dandelion-Datatables</strong>. To do so, you must define
          the
          <code>[group].main.extension.package</code>
          property in the configuration file. This property needs a package name where to scan.
@@ -88,7 +94,7 @@ global.main.extension.names=myAwesomeExtension
 <h4>Locally</h4>
 <p>
    Some attributes are available in the JSP taglib and in the Thymelead dialect, allowing you to
-   activate your extension in a single web page.
+   activate your extension in a single table.
 </p>
 <ul>
    <li>
