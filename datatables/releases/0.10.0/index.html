@@ -36,7 +36,7 @@ level2:
          <li>Refactored the whole configuration system for greater clarity and better performance
             <ul>
                <li>The main goal of this refactoring was to increase performance by removing reflection.</li>
-               <li>Added a new ConfigToken allowing to store a configuration, how to read it from properties and how to process it. Note that even if all configurations have been refactored to support the CamelCase syntax, the case remains insensitive when it's read.</li>
+               <li>Added a new {% javadoc dt datatables-core ConfigToken %} allowing to store a configuration, how to read it from properties and how to process it. Note that even if all configurations have been refactored to comply with CamelCase syntax, the case remains insensitive when it's read.</li>
                <li>Added {% javadoc dt datatables-core TableConfig %} and {% javadoc dt datatables-core ColumnConfig %}: placeholder for all possible configurations</li>
                <li>Refactored {% javadoc dt datatables-core TableConfiguration %} and {% javadoc dt datatables-core ColumnConfiguration %} objects to use the recently added {% javadoc dt datatables-core ConfigToken %} instead of plenty of fields/accessors</li>
                <li>All configurations are now lazy processed, i.e. in the JSP taglib or in the
@@ -294,36 +294,36 @@ level2:
 
 <h3 class="section-title">Closed issues</h3>
 <ul>
-   <li>{% issue 205 %}: Add support for state saving in Thymeleaf</li>
-   <li>{% issue 202 %}: Add support for extraFile in Thymeleaf Dialect</li>
-   <li>{% issue 201 %}: Provide a new configuration option allowing to generate PDF in landscape mode</li>
-   <li>{% issue 200 %}: Escape XML to prevent XSS attacks</li>
-   <li>{% issue 199 %}: NPE with native table with th nodes</li>
-   <li>{% issue 198 %}: BEFORESTARTDOCUMENTREADY does not work.</li>
-   <li>{% issue 197 %}: Add support to export via AJAX when there are multiple tables</li>
-   <li>{% issue 196 %}: Not automatically set as "unsearchable" the hidden columns</li>
-   <li>{% issue 195 %}: Add support for Thymeleaf 2.1</li>
-   <li>{% issue 194 %}: Allow custom order in sorting initialization</li>
-   <li>{% issue 191 %}: Rework on all configuration names and taglib attributes</li>
-   <li>{% issue 190 %}: Fix pipelining issue (pipelining defined but no pipesize)</li>
-   <li>{% issue 189 %}: Export param problem</li>
-   <li>{% issue 188 %}: Async servlet support</li>
-   <li>{% issue 187 %}: Add support for delayed filtering</li>
-   <li>{% issue 182 %}: Add support for dynamic internationalization</li>
-   <li>{% issue 181 %}: Unable to use the DatatablesDialect when using Thymeleaf and the Tiles2 extra</li>
-   <li>{% issue 176 %}: Allow usage of totally custom export</li>
-   <li>{% issue 175 %}: Refactor the links management</li>
-   <li>{% issue 169 %}: Add support for responsive design</li>
-   <li>{% issue 167 %}: Avoid repeating the header again in the empty cells of the filtering bar</li>
-   <li>{% issue 165 %}: Add the ability to use a custom sorting function</li>
-   <li>{% issue 161 %}: Add support for configuration local overloading</li>
-   <li>{% issue 159 %}: Add support for Bootstrap 3</li>
-   <li>{% issue 147 %}: Add support for the id attribute in datatables:column tag</li>
-   <li>{% issue 141 %}: Object Serialization</li>
+   <li>{% issue 231 %}: Add support for state saving in Thymeleaf</li>
+   <li>{% issue 228 %}: Add support for extraFile in Thymeleaf Dialect</li>
+   <li>{% issue 227 %}: Provide a new configuration option allowing to generate PDF in landscape mode</li>
+   <li>{% issue 226 %}: Escape XML to prevent XSS attacks</li>
+   <li>{% issue 225 %}: NPE with native table with th nodes</li>
+   <li>{% issue 224 %}: BEFORESTARTDOCUMENTREADY does not work.</li>
+   <li>{% issue 223 %}: Add support to export via AJAX when there are multiple tables</li>
+   <li>{% issue 222 %}: Not automatically set as "unsearchable" the hidden columns</li>
+   <li>{% issue 221 %}: Add support for Thymeleaf 2.1</li>
+   <li>{% issue 220 %}: Allow custom order in sorting initialization</li>
+   <li>{% issue 217 %}: Rework on all configuration names and taglib attributes</li>
+   <li>{% issue 216 %}: Fix pipelining issue (pipelining defined but no pipesize)</li>
+   <li>{% issue 215 %}: Export param problem</li>
+   <li>{% issue 214 %}: Async servlet support</li>
+   <li>{% issue 213 %}: Add support for delayed filtering</li>
+   <li>{% issue 208 %}: Add support for dynamic internationalization</li>
+   <li>{% issue 207 %}: Unable to use the DatatablesDialect when using Thymeleaf and the Tiles2 extra</li>
+   <li>{% issue 202 %}: Allow usage of totally custom export</li>
+   <li>{% issue 201 %}: Refactor the links management</li>
+   <li>{% issue 195 %}: Add support for responsive design</li>
+   <li>{% issue 193 %}: Avoid repeating the header again in the empty cells of the filtering bar</li>
+   <li>{% issue 191 %}: Add the ability to use a custom sorting function</li>
+   <li>{% issue 187 %}: Add support for configuration local overloading</li>
+   <li>{% issue 185 %}: Add support for Bootstrap 3</li>
+   <li>{% issue 173 %}: Add support for the id attribute in datatables:column tag</li>
+   <li>{% issue 155 %}: Object Serialization</li>
    <li>{% issue 129 %}: Table with dash in id is not working</li>
-   <li>{% issue 123 %}: Add support for ColumnHead when working with AJAX sources</li>
-   <li>{% issue 119 %}: Enhancement. Add support for filtering after button click</li>
-   <li>{% issue 54 %}: Connect Dandelion-DataTables to Dandelion</li>
-   <li>{% issue 37 %}: ClassCastException if table is directly under a div which is processed by Tiles</li>
-   <li>{% issue 8 %}: Content assist for the JSP taglib</li>
+   <li>{% issue 149 %}: Add support for ColumnHead when working with AJAX sources</li>
+   <li>{% issue 145 %}: Enhancement. Add support for filtering after button click</li>
+   <li>{% issue 80 %}: Connect Dandelion-DataTables to Dandelion</li>
+   <li>{% issue 63 %}: ClassCastException if table is directly under a div which is processed by Tiles</li>
+   <li>{% issue 34 %}: Content assist for the JSP taglib</li>
 </ul>
