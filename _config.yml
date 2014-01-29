@@ -43,12 +43,16 @@ dandelion :
       url: dandelion
       breadcrumb: Dandelion
       sources: dandelion
+      issues: dandelion
+      forum: http://dandelion-forum.48353.x6.nabble.com/Dandelion-f295.html
     datatables:
       name: datatables
       version: 0.10.0
       url: datatables
       breadcrumb: Dandelion-Datatables
       sources: dandelion-datatables
+      issues: dandelion-datatables
+      forum: http://dandelion-forum.48353.x6.nabble.com/Dandelion-Datatables-f3.html
     glyph:
       name: glyph
       version: 0.1.0-SNAPSHOT
