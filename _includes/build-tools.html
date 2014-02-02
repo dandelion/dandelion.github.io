@@ -13,40 +13,40 @@
 &lt;dependency>
     &lt;groupId>com.github.dandelion&lt;/groupId>
     &lt;artifactId>{{ artifact }}&lt;/artifactId>
-    &lt;version>{{ site.dandelion.components.datatables.version }}&lt;/version>
+    &lt;version>{{ site.dandelion.components.[page.module].version }}&lt;/version>
 &lt;/dependency>
 </pre>
    </div>
    <div class="tab-pane" id="gradle-{{ artifact }}">
 <pre class="prettyprint">
-'com.github.dandelion:{{ artifact }}:{{ site.dandelion.components.datatables.version }}'
+'com.github.dandelion:{{ artifact }}:{{ site.dandelion.components.[page.module].version }}'
 </pre>   
    </div>
    <div class="tab-pane" id="ivy-{{ artifact }}">
 <pre class="prettyprint">
-&lt;dependency org="com.github.dandelion" name="{{ artifact }}" rev="{{ site.dandelion.components.datatables.version }}" />
+&lt;dependency org="com.github.dandelion" name="{{ artifact }}" rev="{{ site.dandelion.components.[page.module].version }}" />
 </pre>      
    </div>
    <div class="tab-pane" id="grape-{{ artifact }}">
 <pre class="prettyprint">
 @Grapes( 
-   @Grab(group='com.github.dandelion', module='{{ artifact }}', version='{{ site.dandelion.components.datatables.version }}') 
+   @Grab(group='com.github.dandelion', module='{{ artifact }}', version='{{ site.dandelion.components.[page.module].version }}') 
 )
 </pre>      
    </div>
    <div class="tab-pane" id="buildr-{{ artifact }}">
 <pre class="prettyprint">
-'com.github.dandelion:{{ artifact }}:jar:{{ site.dandelion.components.datatables.version }}'
+'com.github.dandelion:{{ artifact }}:jar:{{ site.dandelion.components.[page.module].version }}'
 </pre>      
    </div>
    <div class="tab-pane" id="sbt-{{ artifact }}">
 <pre class="prettyprint">
-libraryDependencies += "com.github.dandelion" % "{{ artifact }}" % "{{ site.dandelion.components.datatables.version }}"
+libraryDependencies += "com.github.dandelion" % "{{ artifact }}" % "{{ site.dandelion.components.[page.module].version }}"
 </pre>      
    </div>
    <div class="tab-pane" id="grails-{{ artifact }}">
 <pre class="prettyprint">
-compile 'com.github.dandelion:{{ artifact }}:{{ site.dandelion.components.datatables.version }}'
+compile 'com.github.dandelion:{{ artifact }}:{{ site.dandelion.components.[page.module].version }}'
 </pre>      
    </div>
 </div>
