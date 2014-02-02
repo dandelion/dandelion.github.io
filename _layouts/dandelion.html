@@ -8,9 +8,9 @@ module: core
          <div class="well sidebar-nav">
 
             <ul class="nav nav-list">
-               <li class="nav-header">Overview</li>
-               <li {% if page.menu== 'home' %} class="active"{% endif %}>
-                  <a href="/dandelion"><i class="fa fa-home"></i> Home</a>
+               <h5>Overview</h5>
+               <li {% if page.menu == 'home' %} class="active"{% endif %}>
+                  <a href="/dandelion"><i class="fa fa-home"></i> Dandelion</a>
                </li>
                <li {% if page.menu == 'download' %} class="active"{% endif %}>
                   <a href="/dandelion/download.html" title="Download"> <i class="fa fa-download"></i> Download</a>
@@ -39,8 +39,8 @@ module: core
                <li {% if page.menu == 'jsp' %} class="active"{% endif %}>
                   <a href="/dandelion/docs/ref/jsp/" title="JSP taglib"><i class="fa fa-book"></i> JSP taglib reference</a>
                </li>
-               <li {% if page.menu == 'jsp' %} class="active"{% endif %}>
-                  <a href="/dandelion/docs/ref/jsp/" title="Thymeleaf dialect"><i class="fa fa-book"></i> Thymeleaf dialect reference</a>
+               <li {% if page.menu == 'thymeleaf' %} class="active"{% endif %}>
+                  <a href="/dandelion/docs/ref/thymeleaf/" title="Thymeleaf dialect"><i class="fa fa-book"></i> Thymeleaf dialect reference</a>
                </li>
                <li {% if page.menu == 'properties' %} class="active"{% endif %}>
                   <a href="/dandelion/docs/ref/configuration/" title="Configuration"><i class="fa fa-book"></i> Configuration reference</a>
@@ -48,12 +48,25 @@ module: core
                               
                <h5>Features</h5>
                <li {% if page.menu == 'assets' %} class="active"{% endif %}>
-                  <a href="/dandelion/features/assets/" title="Assets Stack"> <i class="icon-th"></i> Assets Stack </a>
+                  <a href="/dandelion/features/assets/" title="Assets Stack"> <i class="fa fa-sitemap"></i> Assets Stack </a>
+               </li>
+               <li {% if page.menu == 'configuration' %} class="active"{% endif %}>
+                  <a href="/dandelion/features/configuration/" title="Configuration"> <i class="fa fa-cog"></i> Configuration</a>
+                  {% if page.menu == 'configuration' %}
+                  <ul class="nav nav-list">
+                     <li {% if page.url contains 'configuration/configuration-loading' %}class="active"{% endif %}>
+                        <a href="/dandelion/features/configuration/configuration-loading.html"><i class="fa fa-double-angle-right"></i> Configuration loading</a>
+                     </li>
+                  </ul>
+                  {% endif %}
                </li>
                
                <h5>Development</h5>
                <li>
                   <a href="https://github.com/dandelion/{{ site.dandelion.components.[page.module].sources }}" alt="{{ site.dandelion.components.[page.module].breadcrumb}} sources" title="Sources" target="_blank"><i class="fa fa-github"></i> Sources</a>
+               </li>
+               <li>
+                  <a href="https://github.com/dandelion/{{ site.dandelion.components.[page.module].issues }}/issues"><i class="fa fa-bug"></i> Issues</a>
                </li>
                <li>
                   <a href="https://dandelion.ci.cloudbees.com/" title="Continuous integration" target="_blank"><i class="fa fa-cogs"></i> Continuous integration</a>
