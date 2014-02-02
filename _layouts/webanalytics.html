@@ -1,52 +1,27 @@
----
-layout: component
-module: webanalytics
+--- 
+layout: component 
+module: webanalytics 
 ---
 <div class="container-fluid container-component">
    <div class="row-fluid">
-      <div class="span2">
-          <div class="well sidebar-nav">
-              <ul class="nav nav-list">
-      
-                  <li class="nav-header">Overview</li>
-                  <li {% if page.menu == 'home' %} class="active"{% endif %}>
+      <div class="span3">
+         <div class="well sidebar-nav">
+
+            <ul class="nav nav-list">
+               <li class="nav-header">Overview</li>
+               <li {% if page.menu== 'home' %} class="active"{% endif %}>
                   <a href="/webanalytics"><i class="icon-home"></i> Home</a>
-                  </li>
-                  <li {% if page.menu == 'features' %} class="active"{% endif %}>
-                  <a href="/webanalytics/features/" title="Features"><i class="icon-th-list"></i> Features</a>
-                  </li>
-                  <li {% if page.menu == 'installation' %} class="active"{% endif %}>
-                  <a href="/webanalytics/installation/" title="Installation"><i class="icon-wrench"></i> Installation</a>
-                  </li>
-                  <li {% if page.menu == 'changelog' %} class="active"{% endif %}>
-                  <a href="/webanalytics/changelog.html" title="Changelog"> <i class="icon-info-sign"></i> Changelog</a>
-                  </li>
-      
-                  <li class="nav-header">Tutorials</li>
-                  <li {% if page.menu == 'basic' %} class="active"{% endif %}>
-                  <a href="/webanalytics/features/basic/" title="Basic Setup"> <i class="icon-signal"></i> Basic Setup</a>
-                  </li>
-                  <li {% if page.menu == 'providers' %} class="active"{% endif %}>
-                  <a href="/webanalytics/features/providers/" title="Providers"> <i class="icon-truck"></i> Providers</a>
-                  </li>
-      
-                  <li class="nav-header">Reference</li>
-                  <li {% if page.menu == 'jsp' %} class="active"{% endif %}><a href="/webanalytics/ref/jsp/" title="JSP taglib"> JSP taglib
-              </a></li>
-                  <li {% if page.menu == 'thymeleaf' %} class="active"{% endif %}><a href="/webanalytics/ref/thymeleaf/" title="Thymeleaf dialect"> Thymeleaf dialect
-              </a></li>
-                  <li {% if page.menu == 'properties' %} class="active"{% endif %}>
-                  <a href="/webanalytics/ref/configuration/" title="Configuration"> <i class="none"></i> Configuration
-              </a></li>
-                  <li {% if page.menu == 'javadoc' %} class="active"{% endif %}><a href="/webanalytics/ref/javadoc"> <i class="none"></i>Javadoc
-              </a></li>
-              </ul>
-           </div>
-        </div>
-      <div class="span10">
-         <div class="row-fluid">
-            {% include layout/breadcrumbs.html %} 
+               </li> 
+            </ul>
+         </div>
+      </div>
+      <div class="span9">
+         <div class="row-fluid" style="min-height:500px;">
+            {% include layout/breadcrumbs.html %}
             {{ content }}
+         </div>
+         <div class="row-fluid">
+            <a href="/contributing.html#{{ page.url }}" title="Improve this page!" class="btn btn-mini" style="float:right;"><i class="icon icon-edit"></i> Improve this page</a>
          </div>
       </div>
    </div>
