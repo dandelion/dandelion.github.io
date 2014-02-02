@@ -1,0 +1,89 @@
+---
+layout: dandelion
+menu: configuration
+level1: features
+level2:
+  url: configuration
+  name: Configuration
+level3:
+  url: configuration-loading
+  name: Configuration loading
+---
+
+<h2 class="page-title">Configuration loading</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   Dandelion-Datatables internally uses a configuration file called
+   <code>datatables-default.properties</code>
+   that contains configuration properties used by default.
+</p>
+<p>
+   These configuration properties can be overloaded in multiple ways. This section decribes how.
+</p>
+
+<h3 class="section-title">Loading strategy</h3>
+<p>
+   You can overload the default configuration using a file named <code>datatables.properties</code>. Dandelion-Datatables will load it thanks to the ResourceBundle mechanism and using the following
+   strategy:
+</p>
+<ul>
+   <li>
+      <p>First, check if the <strong>dandelion.datatables.configuration</strong> system property is defined.</p>
+      <p>If it exists, Dandelion-Datatables attempts to convert the value to a URL and use it to load a resource bundle called <code>datatables.properties</code></p>
+   </li>
+   <li>
+      <p>If no system property is defined, Dandelion-Datatables tries to load a resource bundle still called <code>datatables.properties</code> in <code>classpath_root/dandelion/datatables/</code></p>
+   </li>
+   <li>
+      If no <code>datatables.properties</code> file is found, only the default configuration will be used.
+   </li>
+</ul>
+<p>
+   Note that this strategy can be overriden by <a href="custom-configuration-loader.html">pluging a custom configuration loader</a>.
+</p>
+
+<h3 class="section-title">Example using classpath configuration</h3>
+<p>
+   Let's say you use Maven as a build tool. When reading configuration from classpath, you should
+   strictly follow the convention, i.e. place the properties files under the
+   <code>classpath_root/dandelion/datatables/</code>
+   folder.
+<pre class="prettyprint">
+   MyApp
+   |__ src
+      |__ main
+         |__ java
+         |__ resources
+            |__ logback.xml
+            |__ ...
+            |__ dandelion
+               |__ datatables 
+                  |__ datatables.properties
+                  |__ datatables_FR.properties
+                  |__ datatables_ES.properties
+</pre>
+</p>
+
+<h3 class="section-title">Example using externalized configuration</h3>
+<p>
+   Let's say you have the following files:
+<pre class="prettyprint">
+   C:
+   |__ Documents
+      |__ MyApp
+         |__ datatables.properties
+         |__ datatables_FR.properties
+         |__ datatables_ES.properties
+</pre>
+You just need to add
+<code>-Ddandelion.datatables.configuration="C:\Documents\MyApp\"</code>
+to the starting script of the server.
+</p>
+
+<p class="alert alert-info">
+   <strong><i class="icon-info-sign icon-2x"></i></strong> Note that when reading from externalized
+   file, you don't have to place the properties files under the
+   <code>dandelion</code>
+   folder.
+</p>
