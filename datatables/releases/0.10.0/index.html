@@ -128,6 +128,11 @@ level2:
          <li>Added a new theme for <a href="">Bootstrap Responsive</a></li>
          <li>Added a new theme for <a href="">Bootstrap v3</a></li>
       </ul>
+   </li>
+   <li><strong>Plugins</strong>
+      <ul>
+         <li>All supported DataTables <a href="/datatables/features/plugins">plugins</a> have been updated to their latest version</li>
+      </ul>
    </li>        
    <li><strong>Javascript generation</strong>
       <ul>
@@ -174,7 +179,8 @@ level2:
    <li>Improved column sorting initialization: a new column attribute has been added (sortInitOrder/dt:sortInitOrder) allowing to set the order in which column sorting must be initialized</li>
    <li>Improved exception handling in JSP tags</li>
    <li>Added support for dynamic attributes in the <a href="/datatables/docs/ref/jsp/caption.html">CaptionTag</a></li>
-   <lI>Removed the <code>ExtraConf</code> JSP tag and all related resources</li>
+   <li>Removed the <code>ExtraConf</code> JSP tag and all related resources</li>
+   <li>The {% refjsp dt callback function %} callback attribute now accepst the special syntax (lien)</li>
    <li>Changes in attributes
       <ul>
          <li>New {% refjsp dt column id %} column attribute, allowing to assign an ID to the header cell</li>
@@ -213,6 +219,7 @@ level2:
    <li>Refactored the Thymeleaf implementation
       <ul>
          <li>All abstract processors now contain utilities to facilitate the creation of processors</li>
+         <li>No longer necessary to wrap string values with single quotes, thus alleviating the dialect usage</li>
          <li>Added new processors allowing to write a "configuring div" inside a template, just before the table tag. This div allows to configure: exports, callback, extraFile and configuration properties.</li>
          <lI>Comments updated/added in almost all processors</li>
          <li>Renamed some processors for the sake of consistency</li>
