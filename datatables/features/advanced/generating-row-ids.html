@@ -1,20 +1,23 @@
 ---
 layout: datatables
 menu: advanced
-level1: tutorials
-level2:
-  url: advanced
-  name: Advanced usage
+level1:
+   url: features
+   name: Features
+level2: 
+   url: advanced
+   name: Advanced usage
 level3:
-  url: rowid
-  name: Generating row id
+   url: generating-row-ids.html
+   name: Generating row IDs
 ---
-
-<h2 class="page-title">Generating row id</h2>
+<h2 class="page-title">Generating row IDs</h2>
 
 <h3 class="section-title">Preamble</h3>
-<p>Sometimes, it can be useful to add an HTML id to each row (tr tags). Sometimes too, the row id cannot just be an incremented id but a dynamic builded string, for instance, from a bean's
-   attribute.
+<p>
+   Sometimes, it can be useful to add an HTML id to each row (<code>&lt;tr&gt;</code> tags). Sometimes too, the row id
+   cannot just be an incremented id but a dynamically builded string, for instance, from a bean's
+   attribute. Let's see here how to do that.
 </p>
 
 <h3 class="section-title">Using JSP</h3>
@@ -22,18 +25,22 @@ level3:
    You have 3 table attributes available: {% refjsp dt table rowIdBase %}, {% refjsp dt table rowIdPrefix %} and {% refjsp dt table rowIdSuffix %}.
 </p>
 <ul>
-   <li>{% refjsp dt table rowIdBase %}: This attribute is evaluated as a property of the current iterated bean</li>
+   <li>{% refjsp dt table rowIdBase %}: This attribute is evaluated as a property of the bean present in the collection being iterated on</li>
    <li>{% refjsp dt table rowIdPrefix %}: String prepended to the {% refjsp dt table rowIdBase %} attribute</li>
    <li>{% refjsp dt table rowIdSufix %}: String appended to the {% refjsp dt table rowIdBase %} attribute</li>
 </ul>
 
 <p class="alert alert-warn">
-   <strong><i class="icon-warning-sign icon-2x"></i></strong> 
+   <strong><i class="fa fa-warning fa-2x"></i></strong> 
    Those table attributes are not compatible with AJAX sources!
 </p>
 
 <p>
-   In the following example, Dandelion-Datatables will build rows (tr tags) with the following ids: person_1, person_2, ...
+   In the following example, Dandelion-Datatables will build rows (
+   <code>&lt;tr&gt;</code>
+   tags inside the
+   <code>&lt;body&gt;</code>
+   tag) with the following ids: person_1, person_2, ...
 </p>
 <pre class="prettyprint">
 &lt;datatables:table id="myTableId" data="${persons}" rowIdBase="id" rowIdPrefix="person_">
@@ -62,11 +69,11 @@ level3:
    &lt;/thead>
    &lt;tbody>
       &lt;tr th:each="person : ${persons}" th:attr="id=${'person_' + person.id}">
-         &lt;td th:text="${person.id}">1&lt;/td>
-         &lt;td th:text="${person.firstName}">John&lt;/td>
-         &lt;td th:text="${person.lastName}">Doe&lt;/td>
-         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
-         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+         &lt;td th:text="${person?.id}">1&lt;/td>
+         &lt;td th:text="${person?.firstName}">John&lt;/td>
+         &lt;td th:text="${person?.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person?.address?.town?.name}">Nobody knows!&lt;/td>
+         &lt;td th:text="${person?.mail}">john@doe.com&lt;/td>
       &lt;/tr>
    &lt;/tbody>
 &lt;/table>

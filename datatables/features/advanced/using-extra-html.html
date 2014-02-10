@@ -1,0 +1,134 @@
+---
+layout: datatables
+menu: advanced
+level1:
+   url: features
+   name: Features
+level2: 
+   url: advanced
+   name: Advanced usage
+level3:
+   url: using-extra-html.html
+   name: Using extra HTML snippets
+---
+<h2 class="page-title">Using extra HTML snippets</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   Starting from the v0.10.0, Dandelion-Datatables makes use of the
+   <a href="http://datatables.net/development/features">DataTables feature plug-ins</a> to easily
+   create custom controls that can be positioned around the table as any other built-in control. It
+   can be handy for example to add custom links.
+</p>
+<p>
+   Let's see how to proceed.
+</p>
+   
+<h3 class="section-title" id="hiw">How it works?</h3>
+<p>
+   Whether you use the JSP or the Thymeleaf syntax, Dandelion-Datatables will create a feature plug-in with the following configuration:
+</p>
+<ul>
+   <li>
+      <p>
+         <code>cFeature</code>: the character that will be used to locate this plug-in with the <a
+         href="/datatables/features/basics/dom-positioning.html">DOM positioning feature</a>
+      </p>
+      <p class="alert alert-warn">
+         <strong><i class="fa fa-warning fa-2x"></i></strong> Some characters are reserved by
+         DataTables for internal features and possibly by DataTables' plugins. To avoid any conflict, it
+         is recommended to use a figure (between 0 and 9) instead of a letter. If you use a letter,
+         please make sure at least that it is lower cased to avoid conflict with plugins.
+      </p>
+   </li>
+   <li>
+      <p>
+         <code>fnInit</code>: function that will create a new container wrapping your custom HTML code
+      </p>
+   </li>
+   <li>
+      <p>
+         <code>sFeature</code>: internal name of the feature.
+      </p>
+   </li>
+</ul>
+<p>
+   Once the feature created, it will be automatically added to the DataTable configuration before
+   initializing the table.
+</p>
+
+<h3 class="section-title">Using JSP</h3>
+<p>
+   You will need to use {% refjsp dt extraHtml %} tag as follows:
+</p>
+
+<p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}" dom="l0frtip">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+   &lt;datatables:extraHtml uid="0" cssStyle="float:right; margin-left: 5px;">
+      &lt;a class="btn" onclick="alert('Click!');">My custom link&lt;/a>
+   &lt;/datatables:extraHtml>
+&lt;/datatables:table>
+</pre>
+</p>
+<p>
+   As you can see in the above example:
+</p>
+<ul>
+   <li>The feature is identified by the {% refjsp dt extraHtml uid %} attribute.</li>
+   <li>Some HTML code is added in the tag's body. This HTML markup will used inside the container that Dandelion-Datatables will create.</li>
+   <li>The feature is activated thanks to {% refjsp dt table dom %} attribute: <code>l0frtip</code>.</li>
+</ul>
+
+<h3 class="section-title">Using Thymeleaf</h3>
+<p>
+   You will need to use the <a href="/datatables/features/advanced/configuration-div.html">configuration div</a>.
+</p>
+
+<pre class="prettyprint">
+&lt;div dt:conf="myTableId">
+   &lt;div dt:confType="extrahtml" dt:uid="0" dt:cssStyle="float:right; margin-left: 5px;">
+      &lt;a class="btn btn-info" onclick="alert('Click!');">My custom control&lt;/a>
+   &lt;/div>
+&lt;/div>
+
+&lt;table id="myTableId" dt:table="true" dt:dom="l0frtip">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person?.id}">1&lt;/td>
+         &lt;td th:text="${person?.firstName}">John&lt;/td>
+         &lt;td th:text="${person?.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person?.address?.town?.name}">Nobody knows!&lt;/td>
+         &lt;td th:text="${person?.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>
+<p>
+   As you can see in the above example:
+</p>
+<ul>
+   <li>The feature is identified by the {% reftl dt extraHtml uid %} attribute.</li>
+   <li>Some HTML code is added in the tag's body. This HTML markup will used inside the container that Dandelion-Datatables will create.</li>
+   <li>The feature is activated thanks to {% reftl dt table dom %} attribute: <code>l0frtip</code>.</li>
+</ul>
+
+<h3 class="section-title">One more note...</h3>
+<p>
+   It is worth noting that all DataTables features created inside a table are available in the whole
+   page, so it can possibly be used inside other tables in the same page.
+</p>

@@ -1,13 +1,15 @@
 ---
 layout: datatables
-menu: basics
-level1: tutorials
-level2:
-  url: basics
-  name: Basics
+menu: advanced
+level1:
+   url: features
+   name: Features
+level2: 
+   url: advanced
+   name: Advanced usage
 level3:
-  url: multiple-tables
-  name: Displaying multiple tables
+   url: multiple-tables.html
+   name: Displaying multiple tables
 ---
 <h2 class="page-title">Displaying multiple tables</h2>
 
@@ -47,11 +49,11 @@ level3:
    &lt;/thead>
    &lt;tbody>
       &lt;tr th:each="person : ${persons}">
-         &lt;td th:text="${person.id}">1&lt;/td>
-         &lt;td th:text="${person.firstName}">John&lt;/td>
-         &lt;td th:text="${person.lastName}">Doe&lt;/td>
-         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
-         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+         &lt;td th:text="${person?.id}">1&lt;/td>
+         &lt;td th:text="${person?.firstName}">John&lt;/td>
+         &lt;td th:text="${person?.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person?.address?.town?.name}">Nobody knows!&lt;/td>
+         &lt;td th:text="${person?.mail}">john@doe.com&lt;/td>
       &lt;/tr>
    &lt;/tbody>
 &lt;/table>
@@ -68,11 +70,11 @@ level3:
    &lt;/thead>
    &lt;tbody>
       &lt;tr th:each="person : ${persons}">
-         &lt;td th:text="${person.id}">1&lt;/td>
-         &lt;td th:text="${person.firstName}">John&lt;/td>
-         &lt;td th:text="${person.lastName}">Doe&lt;/td>
-         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
-         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+         &lt;td th:text="${person?.id}">1&lt;/td>
+         &lt;td th:text="${person?.firstName}">John&lt;/td>
+         &lt;td th:text="${person?.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person?.address.town.name}">Nobody knows!&lt;/td>
+         &lt;td th:text="${person?.mail}">john@doe.com&lt;/td>
       &lt;/tr>
    &lt;/tbody>
 &lt;/table>

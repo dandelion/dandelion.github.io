@@ -1,0 +1,144 @@
+---
+layout: datatables
+menu: advanced
+level1:
+   url: features
+   name: Features
+level2: 
+   url: advanced
+   name: Advanced usage
+level3:
+   url: using-extra-js.html
+   name: Using extra JavaScript
+---
+<h2 class="page-title">Using extra JavaScript</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   There are so many possibilities with <a
+      href="http://datatables.net/">DataTables</a> it would be too bad to limit its configuration
+   with the JSP taglib/Thymeleaf dialect attributes.
+</p>
+<p>
+   Let's see here how to inject custom code inside the generated configuration.
+</p>
+
+<h3 class="section-title" id="hiw">How it works?</h3>
+<p>
+   Prior to the v0.10.0, you already was able to inject some code but with two restrictions:
+</p>
+<ul>
+   <li>You had to specify the (context-relative) location of JavaScript files to inject</li>
+   <li>It was only compatible with JSP, not Thymeleaf.</li>
+</ul>
+<p>
+   Starting from the v0.10.0, the above restrictions have disappeared!
+</p>
+<p>
+   The code injection is now based on scopes (lien). This means that you now inject one (or more)
+   scopes inside the generated configuration. Dandelion-Datatables will then filter the assets bundled in
+   the supplied scope(s) and only take into account JS files.
+</p>
+<p>
+   Once the assets filtered, their content will retrieved, depending on the location you configured
+   in the scope (lien) and injected into the specified location aka the <i>insert mode</i>.
+</p>
+
+<h3 class="section-title" id="im">Insert mode</h3>
+<p>
+   The {% refjsp dt extraFile %} tag has an {% refjsp dt extraFile insert %} attribute that is used to determine where the content of the external Javascript file will be inserted in the main generated Javascript file (datatables-XXXXX.js).
+</p>
+
+<img src="/assets/images/datatables/insert-mode.png" style="float:left;"/>
+<p>
+   The {% refjsp dt extraFile insert %} attribute can take 5 different values:
+</p>
+<ul>
+   <li><code>BEFOREALL</code>: the Javascript code will be inserted before all existing generated code</li> 
+   <li><code>BEFORESTARTDOCUMENTREADY</code>: the Javascript code will be inserted just before the start of the jQuery <code>ready()</code> method</li>
+   <li><code>AFTERSTARTDOCUMENTREADY</code>: the Javascript code will be inserted just after the start of the jQuery <code>ready()</code> method</li>
+   <li><code>BEFOREENDDOCUMENTREADY</code>: the Javascript code will be inserted just before the end of the jQuery <code>ready()</code> method</li>
+   <li><code>AFTERALL</code>: the Javascript code will be inserted after all existing generated code</li>
+</ul>
+
+<div class="clearfix"></div>
+<h3 class="section-title" id="im">Using JSP</h3>
+<p>
+   That's why {% refjsp dt extraJs %} and {% refjsp dt extraHtml %} tags exist and provide
+   extension points. Let's focus on extra Javascript here.
+</p>
+<p>
+   The {% refjsp dt extraJs %} tag allows you to inject extra JavaScript into the DataTables configuration. Depending on what you
+   need to do, the custom code can be inserted at different locations, using
+   the {% refjsp dt extraJs insert %} extraFile attribute.
+</p>
+
+<h3 class="section-title" id="im">Using Thymeleaf</h3>
+
+<h3 class="section-title">Using extra files</h3>
+<p>
+   A classic use case is an external drop down list which can filter the table's data.
+</p>
+<p>
+   In the following example, an external drop down list is added to filter the <i>lastName</i> column of the table.
+</p>
+<pre class="prettyprint">
+&lt;select class="input-medium" id="lastNameChoice">
+   &lt;option value="All">All&lt;/option>
+   &lt;option value="Carpenter">Carpenter&lt;/option>
+   &lt;option value="Holloway">Holloway&lt;/option>
+   &lt;option value="Peck">Peck&lt;/option>
+   &lt;option value="Pena">Pena&lt;/option>
+   &lt;option value="Wilder">Wilder&lt;/option>
+&lt;/select>
+</pre>
+
+<p>
+   The initialization code must be then placed in a file that is
+   accessible by your webapp. In the example, the file is located in
+   <code>/assets/js/datatables.extraFile.js</code>
+   and contains the following Javascript code:
+</p>
+<pre class="prettyprint">
+$.fn.dataTableExt.afnFiltering.push(
+   function( oSettings, aData, iDataIndex ) {
+      var chosenName = $("#lastNameChoice").val(); // Grab selected item in the dropdown list
+      var nameInColumn = aData[2]; // 2 is the index (begins from 0) of the column I want to sort
+       
+      // If nothing or "All" is selected, don't filter
+      if ( chosenName == "" || chosenName == "All")
+      {
+         return true;
+      }
+      // Filtering on the city name
+      else if ( chosenName == nameInColumn)
+      {
+         return true;
+      }
+      return false;
+   }
+);
+ 
+// Redraw the table as soon as the selected item changes
+// Important : the DataTable is accessible through the taglib with the name : oTable_[HTML table id]
+$("#lastNameChoice").change( function() { oTable_myTableId.fnDraw(); });
+</pre>
+
+<p class="alert alert-info">
+   <strong><i class="icon-info-sign icon-2x"></i></strong> 
+   Note that the global Javascript variable containing the table is accessible in a global scope with the name : <strong>oTable_[HTML table id]</strong>.
+</p>
+
+<p>
+   Finally, you can add an {% refjsp dt extraFile %} tag in your table declaration as follows:
+</p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="Firstname" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" sortable="false" />
+   &lt;datatables:column title="Mail" property="mail" />
+   &lt;datatables:extraFile src="/assets/js/datatables.extraFile.js" />
+&lt;/datatables:table>
+</pre>

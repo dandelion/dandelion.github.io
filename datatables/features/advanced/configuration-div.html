@@ -1,0 +1,136 @@
+---
+layout: datatables
+menu: advanced
+level1:
+   url: features
+   name: Features
+level2: 
+   url: advanced
+   name: Advanced usage
+level3:
+   url: configuration-div.html
+   name: Configuration div
+---
+<h2 class="page-title">Configuration div (Thymeleaf only)</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   Since the v0.10.0, a set of new Thymeleaf processors have been added to the
+   <a href="/docs/ref/thymeleaf/">DataTables dialect</a>, all focused on advanced configuration such
+   as callbacks, extra HTML snipptes, extra JS, etc...
+</p>
+
+<h3 class="section-title">How to use it?</h3>
+<p>
+   First note that there are some prerequisites when using a <i>configuration div</i>:
+</p>
+<ul>
+   <li>
+      A <i>configuration div</i> must be just above the <code>&lt;table&gt;</code> tag it is supposed to configure
+   </li>
+   <li>
+      In order to link a <i>configuration div</i> to a table, the {% reftl dt div conf %} div
+      attribute and the <code>id</code> table attribute must match.
+   </li>
+</ul>
+
+<p>
+   Then, inside the main <i>configuration div</i>, you have to write a div per configuration type
+   using the {% reftl dt div confType %} attribute.
+</p>
+<p>
+   The following configuration types are allowed:
+</p>
+<ul>
+   <li><code>callback</code> which allows you to configure a <a href="/datatables/features/advanced/using-callbacks.html">callback</a>:
+<pre class="prettyprint">
+&lt;div dt:conf="your-table-id">
+   &lt;div confType="callback" ... />
+&lt;/div>
+</pre>   
+   </li>
+   <li><code>export</code> which allows you to configure an export type:
+<pre class="prettyprint">
+&lt;div dt:conf="your-table-id">
+   &lt;div confType="export" ... /> 
+&lt;/div>
+</pre>
+   </li>
+   <li><code>property</code> which allows you to locally overload a <a href="/datatables/features/configuration/configuration-overloading.html">configuration property</a>:
+<pre class="prettyprint">
+&lt;div dt:conf="your-table-id">
+   &lt;div confType="property" ... /> 
+&lt;/div>
+</pre>
+   </li>
+   <li><code>extrajs</code> which allows you to inject extra JavaScript code into the generated DataTable configuration:
+<pre class="prettyprint">
+&lt;div dt:conf="your-table-id">
+   &lt;div confType="extrajs" ... /> 
+&lt;/div>
+</pre>
+   </li>
+   <li><code>extrahtml</code> which allows you to add <a href="/datatables/features/advanced/using-extra-html.html">custom controls</a> around the table:
+<pre class="prettyprint">
+&lt;div dt:conf="your-table-id">
+   &lt;div confType="extrahtml" ... /> 
+&lt;/div>
+</pre>
+   </li>
+</ul>
+
+<p>
+   From there you will be able to do some advanced configuration!
+</p>
+
+<h3 class="section-title">Example: adding a DataTable callback</h3>
+<p>
+   Assuming that the
+   <code>callbackCreateRow</code>
+   JavaScript function is already loaded in your page, just write the following code:
+</p>
+<pre class="prettyprint">
+&lt;div dt:conf="myTableId">
+   &lt;div confType="callback" dt:type="createdrow" dt:function="callbackCreateRow" /> 
+&lt;/div>
+
+&lt;table id="myTableId" dt:table="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>Firstname&lt;/th>
+         &lt;th>Lastname&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person?.id}">1&lt;/td>
+         &lt;td th:text="${person?.firstName}">John&lt;/td>
+         &lt;td th:text="${person?.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person?.address?.town?.name}">Nobody knows!&lt;/td>
+         &lt;td th:text="${person?.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>
+
+<p>
+   Note that since the v0.10.0, you can use the <a
+      href="/datatables/features/dandelion/scope-special-syntax.html">scope special syntax</a>
+   inside some attributes.
+</p>
+<p>
+   Assuming the above
+   <code>callbackCreateRow</code>
+   function is present in an asset
+   <code>asset1.js</code>
+   which is bundled in a scope <code>my-scope</code>
+   , you could automatically load the scope with the following syntax:
+</p>
+<pre class="prettyprint">
+&lt;div dt:conf="myTableId">
+   &lt;div confType="callback" dt:type="createdrow" dt:function="my-scope#callbackCreateRow" /> 
+&lt;/div>
+</pre>

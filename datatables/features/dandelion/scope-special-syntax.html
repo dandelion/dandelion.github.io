@@ -1,0 +1,51 @@
+---
+layout: datatables
+menu: dandelion
+level1:
+   url: features
+   name: Features
+level2: 
+   url: dandelion
+   name: Dandelion features
+level3:
+   url: scope-special-syntax.html
+   name: Scope special syntax
+---
+<h2 class="page-title">Scope special syntax</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   By default, <strong>Dandelion-Datatables</strong> internally uses a properties file, containing some configurations.
+</p>
+<p>
+   But you can of course override it in multiple ways:
+   <ul>
+      <li>First, you can add a file called <i>datatables.properties</i> at the root of the classpath, allowing you to redefine every property you need. Your custom global configuration will then be
+         merged with the default one.
+      </li>
+      <li>Or you can locally override properties using the {% refjsp dt prop %} JSP tag. Just define the property's name and value.</li>
+   </ul>
+</p>
+
+<p class="alert alert-warn">
+   <strong><i class="icon-warning-sign icon-2x"></i></strong> 
+   Note that configuration overriding is not supported yet when using Thymeleaf
+</p>
+
+<h3 class="section-title">Example</h3>
+<p>
+   For instance, the compression feature is disabled by default. Thanks to the {% refjsp dt prop %} tag, you can enable it locally, just for the current table.
+</p>
+<h4>Using JSP</h4>
+<p>
+<pre class="prettyprint">
+&lt;datatables:table id="myTableId" data="${persons}">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+   &lt;datatables:prop name="compressor.enable" value="true" />
+&lt;/datatables:table>
+</pre>
+</p>

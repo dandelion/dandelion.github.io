@@ -1,15 +1,16 @@
 ---
 layout: datatables
 menu: basics
-level1: tutorials
-level2:
-  url: basics
-  name: Basics
+level1:
+   url: features
+   name: Features
+level2: 
+   url: basics
+   name: Basic usage
 level3:
-  url: handling-null-and-default-values
-  name: Handling null/default values
+   url: handling-null-and-default-values.html
+   name: Handling null/default values
 ---
-
 <h2 class="page-title">Handling null/default values</h2>
 
 <h3 class="section-title">Preamble</h3>
@@ -72,11 +73,11 @@ level3:
    &lt;/thead>
    &lt;tbody th:remove="all-but-first">
       &lt;tr th:each="person : ${persons}">
-         &lt;td th:text="${person.id}">1&lt;/td>
-         &lt;td th:text="${person.firstName}">John&lt;/td>
-         &lt;td th:text="${person.lastName}">Doe&lt;/td>
-         &lt;td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : 'Nothing to display !'">Nobody knows !&lt;/td>
-         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+         &lt;td th:text="${person?.id}">1&lt;/td>
+         &lt;td th:text="${person?.firstName}">John&lt;/td>
+         &lt;td th:text="${person?.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person?.address != null and person.address.town != null} ? ${person.address.town.name} : 'Nothing to display !'">Nobody knows!&lt;/td>
+         &lt;td th:text="${person?.mail}">john@doe.com&lt;/td>
       &lt;/tr>
    &lt;/tbody>
 &lt;/table>

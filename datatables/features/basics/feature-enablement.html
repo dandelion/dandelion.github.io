@@ -1,15 +1,16 @@
 ---
 layout: datatables
 menu: basics
-level1: tutorials
-level2:
-  url: basics
-  name: Basics
+level1:
+   url: features
+   name: Features
+level2: 
+   url: basics
+   name: Basic usage
 level3:
-  url: feature-enablement
-  name: Feature enablement
+   url: feature-enablement.html
+   name: Feature enablement
 ---
-
 <h2 class="page-title">Feature enablement</h2>
 
 <h3 class="section-title">Preamble</h3>
@@ -92,11 +93,11 @@ level3:
    &lt;/thead>
    &lt;tbody>
       &lt;tr th:each="person : ${persons}">
-         &lt;td th:text="${person.id}">1&lt;/td>
-         &lt;td th:text="${person.firstName}">John&lt;/td>
-         &lt;td th:text="${person.lastName}">Doe&lt;/td>
-         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
-         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+         &lt;td th:text="${person?.id}">1&lt;/td>
+         &lt;td th:text="${person?.firstName}">John&lt;/td>
+         &lt;td th:text="${person?.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person?.address?.town?.name}">Nobody knows!&lt;/td>
+         &lt;td th:text="${person?.mail}">john@doe.com&lt;/td>
       &lt;/tr>
    &lt;/tbody>
 &lt;/table>

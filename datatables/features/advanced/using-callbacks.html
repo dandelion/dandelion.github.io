@@ -1,26 +1,27 @@
 ---
 layout: datatables
 menu: advanced
-level1: tutorials
-level2:
-  url: advanced
-  name: Advanced usage
+level1:
+   url: features
+   name: Features
+level2: 
+   url: advanced
+   name: Advanced usage
 level3:
-  url: callbacks
-  name: Using callbacks
+   url: using-callbacks.html
+   name: Using callbacks
 ---
-<h2 class="page-title">Using callbacks
-   <div class="pull-right">
-      <span class="badge badge-success compatibility" title="Compatible with JSP">JSP</span>
-      <span class="badge badge-success compatibility" title="Compatible with Thymeleaf">Thymeleaf</span>
-   </div>
-</h2>
+<h2 class="page-title">Using callbacks</h2>
+
 <h3 class="section-title">Preamble</h3>
 <p>
-   During your use and integration of DataTables into your own software, there might be times when you wish to know when a certain event has occurred, allowing you to take appropriate action for that event. This might include modifying a table row/cell, or simply updating an information display every time the table is redrawn.
+   During your use and integration of DataTables into your own software, there might be times when
+   you wish to know when a certain event has occurred, allowing you to take appropriate action for
+   that event. This might include modifying a table row/cell, or simply updating an information
+   display every time the table is redrawn.
 <p>
 <p>
-   Since v0.8.9, Dandelion-DataTables provides support for almost all callbacks.
+   Since v0.8.9, Dandelion-DataTables provides support for all DataTables callbacks.
 </p>
 
 <h3 class="section-title">Using JSP</h3>
@@ -40,7 +41,7 @@ level3:
    &lt;datatables:column title="Id" property="id" />
    &lt;datatables:column title="Firstname" property="firstName" />
    &lt;datatables:column title="LastName" property="lastName" />
-   &lt;datatables:column title="City" property="address.town.name" sortable="false" />
+   &lt;datatables:column title="City" property="address.town.name" />
    &lt;datatables:column title="Mail" property="mail" />
    &lt;datatables:callback type="createdrow" function="callbackCreatedRow" />
 &lt;/datatables:table>
@@ -59,10 +60,16 @@ function callbackCreatedRow(nRow, aData, iDataIndex) {
 
 <h3 class="section-title">Using Thymeleaf</h3>
 <p>
-   All callbacks are declared using the {% reftl dt tbody %} tag.
+   All callbacks are declared using the <a
+      href="/datatables/features/advanced/configuration-div.html">configuration div</a> introduced
+   in the v0.10.0.
 </p>
 <p>
 <pre class="prettyprint">
+&lt;div dt:conf="myTableId">
+   &lt;div confType="callback" dt:type="createdrow" dt:function="callbackCreateRow" /> 
+&lt;/div>
+
 &lt;table id="myTableId" dt:table="true">
    &lt;thead>
       &lt;tr>
@@ -73,13 +80,13 @@ function callbackCreatedRow(nRow, aData, iDataIndex) {
          &lt;th>Mail&lt;/th>
       &lt;/tr>
    &lt;/thead>
-   &lt;tbody dt:cbk:createdrow="'callbackCreateRow'">
+   &lt;tbody>
       &lt;tr th:each="person : ${persons}">
-         &lt;td th:text="${person.id}">1&lt;/td>
-         &lt;td th:text="${person.firstName}">John&lt;/td>
-         &lt;td th:text="${person.lastName}">Doe&lt;/td>
-         &lt;td th:text="${person.address != null and person.address.town != null} ? ${person.address.town.name} : ''">Nobody knows !&lt;/td>
-         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+         &lt;td th:text="${person?.id}">1&lt;/td>
+         &lt;td th:text="${person?.firstName}">John&lt;/td>
+         &lt;td th:text="${person?.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person?.address?.town?.name}">Nobody knows!&lt;/td>
+         &lt;td th:text="${person?.mail}">john@doe.com&lt;/td>
       &lt;/tr>
   &lt;/tbody>
 &lt;/table>
@@ -104,6 +111,7 @@ function cookieCallback(sName, oData, sExpires, sPath) {
 <ul>
    <li>JSP usage: <code>&lt;datatables:callback type="cookie" function="cookieCallback" /></code></li>
    <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:cookie="cookieCallback"></code></li>
+   <li>Thymeleaf usage: <code>&lt;div confType="cookie" type="format" dt:function="cookieCallback"></code></li>
 </ul>
 
 <h4>CreatedRow callback</h4>
@@ -118,7 +126,7 @@ function createdRowCallback(nRow, aData, iDataIndex){
 </pre>
 <ul>
    <li>JSP usage: <code>&lt;datatables:callback type="createdRow" function="createdRowCallback" /></code></li>
-   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:createdrow="createdRowCallback"></code></li>
+   <li>Thymeleaf usage: <code>&lt;div confType="createdrow" type="format" dt:function="createdRowCallback"></code></li>
 </ul>
 
 <h4>Draw callback</h4>
@@ -132,7 +140,7 @@ function drawCallback(nRow, aData, iDataIndex){
 </pre>
 <ul>
    <li>JSP usage: <code>&lt;datatables:callback type="draw" function="drawCallback" /></code></li>
-   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:draw="drawCallback"></code></li>
+   <li>Thymeleaf usage: <code>&lt;div confType="draw" type="format" dt:function="drawCallback"></code></li>
 </ul>
 
 <h4>Footer callback</h4>
@@ -146,7 +154,7 @@ function drawCallback(nRow, aData, iDataIndex){
 </pre>
 <ul>
    <li>JSP usage: <code>&lt;datatables:callback type="footer" function="footerCallback" /></code></li>
-   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:footer="footerCallback"></code></li>
+   <li>Thymeleaf usage: <code>&lt;div confType="footer" type="format" dt:function="footerCallback"></code></li>
 </ul>
 
 <h4>FormatNumber callback</h4>
@@ -176,7 +184,7 @@ function formatNumberCallback(iIn) {
 </pre>
 <ul>
    <li>JSP usage: <code>&lt;datatables:callback type="format" function="formatNumberCallback" /></code></li>
-   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:format="formatNumberCallback"></code></li>
+   <li>Thymeleaf usage: <code>&lt;div confType="callback" type="format" dt:function="formatNumberCallback"></code></li>
 </ul>
 
 <h4>Header callback</h4>
@@ -190,7 +198,7 @@ function headerCallback(nHead, aData, iStart, iEnd, aiDisplay) {
 </pre>
 <ul>
    <li>JSP usage: <code>&lt;datatables:callback type="header" function="headerCallback" /></code></li>
-   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:header="headerCallback"></code></li>
+   <li>Thymeleaf usage: <code>&lt;div confType="header" type="format" dt:function="headerCallback"></code></li>
 </ul>
 
 <h4>Info callback</h4>
@@ -204,7 +212,7 @@ function infoCallback (oSettings, iStart, iEnd, iMax, iTotal, sPre) {
 </pre>
 <ul>
    <li>JSP usage: <code>&lt;datatables:callback type="info" function="infoCallback" /></code></li>
-   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:info="infoCallback"></code></li>
+   <li>Thymeleaf usage: <code>&lt;div confType="callback" type="info" dt:function="infoCallback"></code></li>
 </ul>
 
 <h4>InitComplete callback</h4>
@@ -218,7 +226,7 @@ function initCompleteCallback(oSettings, json) {
 </pre>
 <ul>
    <li>JSP usage: <code>&lt;datatables:callback type="init" function="initCompleteCallback" /></code></li>
-   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:init="initCompleteCallback"></code></li>
+   <li>Thymeleaf usage: <code>&lt;div confType="init" type="format" dt:function="initCompleteCallback"></code></li>
 </ul>
 
 <h4>PreDraw callback</h4>
@@ -234,7 +242,7 @@ function preDrawCallback( oSettings ) {
 </pre>
 <ul>
    <li>JSP usage: <code>&lt;datatables:callback type="predraw" function="preDrawCallback" /></code></li>
-   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:predraw="preDrawCallback"></code></li>
+   <li>Thymeleaf usage: <code>&lt;div confType="predraw" type="format" dt:function="preDrawCallback"></code></li>
 </ul>
 
 <h4>Row callback</h4>
@@ -251,5 +259,5 @@ function rowCallback( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
 </pre>
 <ul>
    <li>JSP usage: <code>&lt;datatables:callback type="row" function="rowCallback" /></code><:
-   <li>Thymeleaf usage: <code>&lt;tbody dt:cbk:row="rowCallback"></code></li>
+   <li>Thymeleaf usage: <code>&lt;div confType="row" type="format" dt:function="rowCallback"></code></li>
 </ul

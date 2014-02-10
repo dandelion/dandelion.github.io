@@ -1,0 +1,142 @@
+---
+layout: datatables
+menu: dandelion
+level1:
+   url: docs/ref/scopes
+   name: Scopes reference
+---
+<h2 class="page-title">Scopes reference</h2>
+
+<h3 class="section-title">Preamble</h3>
+<p>
+   Since the v0.10.0, <strong>Dandelion-Datatables</strong> ships a set of what we call
+   <i>default scopes</i>, i.e. scopes that bundle assets with a default location (all pointing to a
+   CDN).
+</p>
+<p>
+   You will find bellow all the default scopes and their content.
+</p>
+
+<h3 class="section-title">Vendor scopes</h3>
+
+<style>
+   #scope-ref th {
+      vertical-align: middle;
+   }
+</style>
+<table id="scope-ref" class="table table-striped table-hover table-bordered">
+   <thead>
+      <tr>
+         <th rowspan="2">Scope name</th>
+         <th rowspan="2">Parent scope</th>
+         <th colspan="5" style="text-align:center;">Embedded assets</th>
+      </tr>
+      <tr>
+         <th>Name</th>
+         <th>Version</th>
+         <th>Type</th>
+         <th>Location type</th>
+         <th>Location</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>jquery</td>
+         <td>none</td>
+         <td>jquery-js</td>
+         <td>1.10.2</td>
+         <td>js</td>
+         <td>cdn</td>
+         <td>//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js</td>
+      </tr>
+      <tr>
+         <td>jqueryui</td>
+         <td>jquery</td>
+         <td>jqueryui-js</td>
+         <td>1.9.2</td>
+         <td>js</td>
+         <td>cdn</td>
+         <td>//ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.min.js</td>
+      </tr>
+      <tr>
+         <td rowspan="2">datatables</td>
+         <td rowspan="2">jquery</td>
+         <td>datatables-js</td>
+         <td>1.9.4</td>
+         <td>js</td>
+         <td>cdn</td>
+         <td>//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js</td>
+      </tr>
+      <tr>
+         <td>datatables-css</td>
+         <td>1.9.4</td>
+         <td>css</td>
+         <td>cdn</td>
+         <td>//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css</td>
+      </tr>
+      <tr>
+         <td rowspan="3">bootstrap2</td>
+         <td rowspan="3">jquery</td>
+         <td>bootstrap-js</td>
+         <td>2.3.0</td>
+         <td>js</td>
+         <td>cdn</td>
+         <td>//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.0/js/bootstrap.min.js</td>
+      </tr>
+      <tr>
+         <td>bootstrap-css</td>
+         <td>2.3.0</td>
+         <td>css</td>
+         <td>cdn</td>
+         <td>//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.0/css/bootstrap.min.css</td>
+      </tr>
+      <tr>
+         <td>bootstrap-responsive-css</td>
+         <td>2.3.0</td>
+         <td>css</td>
+         <td>cdn</td>
+         <td>//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.0/css/bootstrap-responsive.min.css</td>
+      </tr>
+      <tr>
+         <td rowspan="2">bootstrap3</td>
+         <td rowspan="2">jquery</td>
+         <td>bootstrap-js</td>
+         <td>3.0.2</td>
+         <td>js</td>
+         <td>cdn</td>
+         <td>//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js</td>
+      </tr>
+      <tr>
+         <td>bootstrap-css</td>
+         <td>3.0.2</td>
+         <td>css</td>
+         <td>cdn</td>
+         <td>//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css</td>
+      </tr>
+      <tr>
+         <td>moment</td>
+         <td>none</td>
+         <td>moment-js</td>
+         <td>2.4.0</td>
+         <td>js</td>
+         <td>cdn</td>
+         <td>//cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js</td>
+      </tr>
+      <tr>
+         <td rowspan="2">bootstrap-datepicker</td>
+         <td rowspan="2">bootstrap2</td>
+         <td>bootstrap-datepicker-js</td>
+         <td>1.3.0</td>
+         <td>js</td>
+         <td>cdn</td>
+         <td>//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js</td>
+      </tr>
+      <tr>
+         <td>bootstrap-datepicker-css</td>
+         <td>1.3.0</td>
+         <td>css</td>
+         <td>cdn</td>
+         <td>//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css</td>
+      </tr>
+   </tbody>
+</table>

@@ -1,16 +1,17 @@
 ---
 layout: datatables
 menu: basics
-level1: tutorials
-level2:
-  url: basics
-  name: Basics
+level1:
+   url: features
+   name: Features
+level2: 
+   url: basics
+   name: Basic usage
 level3:
-  url: dom-positionning
-  name: DOM positionning
+   url: dom-positioning.html
+   name: DOM positioning
 ---
-
-<h2 class="page-title">DOM positionning</h2>
+<h2 class="page-title">DOM positioning</h2>
 
 <h3 class="section-title">Preamble</h3>
 <p>
@@ -37,7 +38,8 @@ level3:
    <li><"class" and > - div with a class</li>
 </ul>
 <p>
-   Since the v0.10.0, you can make use of this feature to configure your own control. See more details here (lien). 
+   Since the v0.10.0, you can make use of this feature to configure your own control. See more
+   <a href="/datatables/features/advanced/using-extra-html.html">here</a>.
 </p>
 
 <h3 class="section-title">Using JSP</h3>
@@ -74,11 +76,11 @@ level3:
    &lt;/thead>
    &lt;tbody>
       &lt;tr th:each="person : ${persons}">
-         &lt;td th:text="${person.id}">1&lt;/td>
-         &lt;td th:text="${person.firstName}">John&lt;/td>
-         &lt;td th:text="${person.lastName}">Doe&lt;/td>
-         &lt;td th:text="${person.address.town.name}">Nobody knows!&lt;/td>
-         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+         &lt;td th:text="${person?.id}">1&lt;/td>
+         &lt;td th:text="${person?.firstName}">John&lt;/td>
+         &lt;td th:text="${person?.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person?.address?.town?.name}">Nobody knows!&lt;/td>
+         &lt;td th:text="${person?.mail}">john@doe.com&lt;/td>
       &lt;/tr>
   &lt;/tbody>
 &lt;/table>
