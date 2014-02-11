@@ -43,12 +43,12 @@ p.alert i.icon-2x {
 	height: 16px;
 	margin-top: -2px;
 }
+
 .custom-form-search button {
 	padding: 2px 8px;
 	margin-top: -2px;
 }
 /* End search form customization */
-
 #logo_container {
 	width: 331px;
 	height: 100px;
@@ -72,9 +72,8 @@ p.alert i.icon-2x {
 }
 /* End Navbar marketing */
 h2.marketing {
-	background:
-		url(/assets/images/dandelion/github-dandelion-logo-twitter-50px.png)
-		no-repeat left center;
+	background: url(/assets/images/dandelion/github-dandelion-logo-twitter-50px.png) no-repeat left
+		center;
 	padding-left: 55px;
 	border-bottom: 1px solid #a0cd70;
 }
@@ -86,23 +85,24 @@ h2.marketing {
 
 .breadcrumb {
 	padding: 4px 15px;
-	font-size: 13px;	
+	font-size: 13px;
 }
 
-.nav-list>.active>a,.nav-list>.active>a:hover,.nav-list>.active>a:focus
-	{
+.nav-list>.active>a,.nav-list>.active>a:hover,.nav-list>.active>a:focus {
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
 	background-color: #65c22f;
 }
 
-.nav-list .nav-list>.active>a,.nav-list .nav-list>.active>a:hover,.nav-list .nav-list>.active>a:focus {
+.nav-list .nav-list>.active>a,.nav-list .nav-list>.active>a:hover,.nav-list .nav-list>.active>a:focus
+	{
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
 	background-color: #74c843;
 }
 
-.nav-list .nav-list .nav-list>.active>a,.nav-list .nav-list .nav-list>.active>a:hover,.nav-list .nav-list .nav-list>.active>a:focus {
+.nav-list .nav-list .nav-list>.active>a,.nav-list .nav-list .nav-list>.active>a:hover,.nav-list .nav-list .nav-list>.active>a:focus
+	{
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
 	background-color: #83ce58;

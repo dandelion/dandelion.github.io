@@ -73,23 +73,5 @@ module: blog
       </script>
       <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        
-      <hr>
-   
-      <div class="pagination">
-         <ul>
-         {% if page.previous %}
-           <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
-         {% else %}
-           <li class="prev disabled"><a>&larr; Previous</a></li>
-         {% endif %}
-           <li><a href="{{ BASE_PATH }}{{ site.archive_path }}">Archive</a></li>
-         {% if page.next %}
-           <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
-         {% else %}
-           <li class="next disabled"><a>Next &rarr;</a>
-         {% endif %}
-         </ul>
-      </div>
    </div>
 </div>

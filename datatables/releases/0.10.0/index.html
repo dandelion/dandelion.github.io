@@ -15,7 +15,10 @@ level2:
 <ul>
    <li><strong>Finally connected <a href="/datatables">Dandelion-Datatables</a> to <a href="/dandelion">Dandelion</a>! Yeah!</strong>
       <ul>
-         <li>All extensions have been refactored in order to integrate all necessary assets into the <a href="">asset stack</a> (lien)</li>
+         <li>
+            All extensions have been refactored in order to plug all necessary assets in the <a
+            href="/dandelion/features/asset-stack/building-your-asset-stack.html">asset stack</a>
+         </li>
          <li>Lots of Dandelion scopes have been added and are available in the <i>datatables-core</i> JAR:
             <ul>
                <li>jQuery</li>
@@ -29,6 +32,7 @@ level2:
             <ul>
                <li>For instance in the {% refjsp dt column renderFunction %} column attribute, the following syntax can now be used: <code>renderFunction="scopeNameToAddInTheCurrentRequest#javascriptFunction"</code> thus allowing to avoid using the Dandelion JSP taglib or Thymeleaf dialect to add manually the scope in the request</li>
                <li>Multiple scopes can now be added, separated by a comma. For example: <code>renderFunction="scope1,scope2#javascriptFunction"</code></li>
+               <li>Read more <a href="/datatables/features/dandelion/scope-special-syntax.html">here</a></li>
             </ul>
          </li>
       </ul>
@@ -46,7 +50,7 @@ level2:
                   operations are now well decoupled: first the local configuration is applied (and
                   overloads the one loaded from properties) and then the whole configuration is
                   processed only once</li>
-               <li>Now all processors extends the same processor: {% javadoc dt datatables-core AbstractConfigurationProcessor %}. This allowed to removed code duplication and especially to handle in one place the case of processor that accept the recently added syntax for manipulating Dandelion scopes.</li>
+               <li>Now all processors extends the same processor: {% javadoc dt datatables-core AbstractConfigurationProcessor %}. This allowed to remove code duplication and especially to handle in one place the case of processor that accept the recently added <a href="/datatables/features/dandelion/scope-special-syntax.html">scope syntax</a>.</li>
             </ul>
          </li>
          <li>The user configuration properties, when read from classpath, are now read from <code>dandelion/datatables</code>.
@@ -65,7 +69,7 @@ level2:
    </li>
    <li><strong>Improved the extension API</strong>
       <ul>
-         <li>Fixed issue with the <code>addCssClass</code> method when one or more CSS classes was to be added to a column (header or not)</li>
+         <li>Fixed issue with the <code>addCssClass</code> method when one or more CSS classes was added to a column (header or not)</li>
          <li>Fixed issue when trying to modify CSS classes inside an extension using Thymeleaf</li>
          <li>New utilites available in the {% javadoc dt datatables-core AbstractExtension %} class</li>
       </ul>
@@ -181,8 +185,12 @@ level2:
    <li>Improved column sorting initialization: a new column attribute has been added (sortInitOrder/dt:sortInitOrder) allowing to set the order in which column sorting must be initialized</li>
    <li>Improved exception handling in JSP tags</li>
    <li>Added support for dynamic attributes in the <a href="/datatables/docs/ref/jsp/caption.html">CaptionTag</a></li>
-   <li>Removed the <code>ExtraConf</code> JSP tag and all related resources</li>
-   <li>The {% refjsp dt callback function %} callback attribute now accepst the special syntax (lien)</li>
+   <li>Removed the <code>extraConf</code> JSP tag and all related resources</li>
+   <li>Replaced the <code>extraFile</code> JSP tag with the new {% refjsp dt extraJs %} tag</li>
+   <li>
+      The {% refjsp dt callback function %} callback attribute now accepst the <a
+      href="/datatables/features/dandelion/scope-special-syntax.html">scope special syntax</a>
+   </li>
    <li>Changes in attributes
       <ul>
          <li>New {% refjsp dt column id %} column attribute, allowing to assign an ID to the header cell</li>
@@ -208,7 +216,13 @@ level2:
          <li>Renamed the <code>paginate</code> table attribute to {% refjsp dt table pageable %}</li>
          <li>Removed the unused <code>footer</code> table attribute</li>
          <li>Removed the <code>&lt;datatables:extraConf&gt;</code> tag</li>
-         <li>Removed the <code>cdn</code> table attribute from the taglib: it is now activated by default thanks to <a href="">scope mechanism</a> of <a href="/dandelion">Dandelion</a></li>
+         <li>
+            Removed the <code>cdn</code> table attribute from the taglib: it is now activated
+            by default thanks to <a
+            href="/dandelion/features/asset-stack/introducing-asset-scopes.html">scope mechanism</a>
+            of <a href="/dandelion">Dandelion</a>
+         </li>
+         <li>Removed the <code>exportLinks</code> table attribute from the taglib: export links are now positioned thanks to the {% refjsp dt table dom %} table attribute</li>
       </ul>
    </li>
 </ul> 
@@ -239,7 +253,8 @@ level2:
    <li>Cleaned ColumnInitializedElProcessor: now, the property, renderFunction and default have their own processor</li>
    <li>The DataTables defaultContent parameter is now always added</li>
    <li>Added missing processor for the dt:filterMinLengh column attribute</li>
-   <li>Fixed the scope of application of the dialect: all processors are now applied only if
+   <li>
+      Fixed the scope of application of the dialect: all processors are now applied only if
       they match a particular context. It prevents bugs when native <code>&lt;table&gt;</code> were
       being used in the same page
    </li>
@@ -269,7 +284,13 @@ level2:
          <li>Renamed the <code>paginate</code> table attribute to {% reftl dt table pageable %}</li>
          <li>Removed the unused <code>footer</code> table attribute</li>
          <li>Removed the <code>&lt;datatables:extraConf&gt;</code> tag</li>
-         <li>Removed the <code>cdn</code> table attribute from the dialect: it is now activated by default thanks to <a href="">scope mechanism</a> of <a href="/dandelion">Dandelion</a></li>
+         <li>
+            Removed the <code>cdn</code> table attribute from the dialect: it is now activated
+            by default thanks to <a
+            href="/dandelion/features/asset-stack/introducing-asset-scopes.html">scope mechanism</a>
+            of <a href="/dandelion">Dandelion</a>
+         </li>
+         <li>Removed the <code>dt:exportLinks</code> table attribute from the dialect: export links are now positioned using the {% reftl dt table dom %} table attribute</li>
       </ul>
    </li>
 </ul>
@@ -293,7 +314,7 @@ level2:
 
 <h3 class="section-title">Export iText extra</h3> 
 <ul>
-   <li></li>
+   <li>Better exception handling in the default PDF export class</li>
 </ul>
 
 <h3 class="section-title">Export iText extra</h3> 
