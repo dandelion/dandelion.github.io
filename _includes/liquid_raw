@@ -1,2 +1,0 @@
-<pre><code>{{text | replace:"|.", "&#123;" | replace:".|", "&#125;" | replace:">", "&gt;" | replace:"<", "&lt;" }}</code></pre>
-{% assign text = nil %}

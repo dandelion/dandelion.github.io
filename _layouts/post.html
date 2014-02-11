@@ -8,7 +8,7 @@ module: blog
       "data_track_clickback":true,
       "ui_offset_top": 187,
       "ui_offset_left": 30,
-      "data_ga_tracker": "{{ site.analytics_google_tracking_id }}"
+      "data_ga_tracker": "{{ site.gaid }}"
    };
    var addthis_share = {
       "url" : "http://dandelion.github.io{{ page.url }}",
@@ -41,7 +41,7 @@ module: blog
          <li class="pull-right"></span><i class="fa fa-folder-open"></i></li>
       </ul>
 
-      <div class="content" style="margin-top:10px;">
+      <div class="blog-content">
          {{ content }}
       </div>
       

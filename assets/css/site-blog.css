@@ -54,3 +54,14 @@
 	/*border: 1px solid black;*/
 	margin: 10px;
 }
+
+.blog-content {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	min-height: 300px;
+}
+
+.blog-post {
+	margin-top: 5px;
+	margin-bottom: 30px;
+}
