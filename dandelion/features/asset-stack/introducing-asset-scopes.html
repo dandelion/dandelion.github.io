@@ -1,0 +1,150 @@
+---
+layout: dandelion
+menu: stack
+level1:
+   url: features
+   name: Features
+level2:
+   url: asset-stack
+   name: Asset stack
+level3:
+   url: introducing-asset-scopes.html
+   name: Introducing asset scopes
+---
+
+<h2 class="page-title">Introducing asset scopes</h2>
+
+<p>
+   Asset and asset scopes are the main unit of work in Dandelion.
+</p>
+
+<h3 class="section-title" id="wiaa">What is an asset?</h3>
+<p>
+   An asset, or web resource, is basically a JavaScript or a CSS file, with some additional information.
+</p>
+<p>
+   By default, Dandelion uses JSON as a main representation format. Here is how an asset is defined:
+</p>
+<ul>
+   <li><code>name</code>: name of the asset.</li>
+   <li><code>version</code>: version of the asset.</li>
+   <li><code>type</code>: type of the asset, among <code>js</code> or <code>css</code>.</li>
+   <li><code>locations</code>: set of locations available for the asset.</li>
+</ul>
+<p>
+   For example, if we wanted to translate the v1.11.0 of
+   <a href="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js">jQuery</a> that points to <a href="http://cdnjs.com/">cdnjs</a>,
+   it would look like:
+</p>
+<pre class="prettyprint">
+{
+    "name": "jquery-js",
+    "version": "1.11.0",
+    "type": "js",
+    "locations": {
+        "cdn": "//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"
+    }
+}
+</pre>
+<p>
+   multiple locations?
+</p>
+   
+<h3 class="section-title" id="wiaas">What is an asset scope?</h3>
+<p>
+   An asset scope is just a set of assets, grouped together inside a
+   <code>.json</code>
+   file. The asset scope has 3 main propertiess:
+</p>
+<ul>
+   <li><code>scope</code>: the scope name.</li>
+   <li><code>parent</code>: the name of the parent scope</li>
+   <li><code>assets</code>: the array of assets contained in this scope</li>
+</ul>
+<p>
+   Consider, for example, the
+   <code>jquery</code>
+   scope (coming from the
+   <code>jquery.json</code>
+   file).<p>
+<pre class="prettyprint">
+{
+    "scope" : "jquery",
+    "parent": "none",
+    "assets": [
+      {
+          "name": "jquery-js",
+          "version": "1.11.0",
+          "type": "js",
+          "locations": {
+              "cdn": "//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"
+          }
+      }
+    ]
+}
+</pre>
+<p>
+   Note that:
+</p>
+<ul>
+   <li>the <code>jquery</code> scope has a parent called <code>none</code> . It basically means
+      that the <code>jquery</code> scope has no parent.
+   </li>
+   <li>
+      the <code>jquery</code> scope contains only one asset: the sources of jQuery v1.11.0.
+   </li>
+</ul>
+<p>
+   Let's take another example: the <a href="http://datatables.net/">DataTables</a> jQuery plugin. The <code>datatables</code> scope would look like:
+</p>
+<pre class="prettyprint">
+{
+    "scope" : "datatables",
+    "parent": "jquery",
+    "assets": [
+        {
+            "name": "datatables-js",
+            "version": "1.9.4",
+            "type": "js",
+            "locations": {
+                "cdn": "//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.js"
+            }
+        },
+        {
+            "name": "datatables-css",
+            "version": "1.9.4",
+            "type": "css",
+            "locations": {
+                "cdn": "//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"
+            }
+        }
+    ]
+}
+</pre>
+<p>
+   This scope is essentially the same as the previous one with the exceptions that:   
+</p>
+<ul>
+   <li>It has a parent scope: <code>jquery</code>. Pretty simple to understand, indeed the <a
+      href="http://datatables.net/">DataTables jQuery plugin</a> needs <a
+      href="http://jquery.com/">jQuery</a> to work.
+   </li>
+   <li>This scope contains two assets: one JavaScript file and one CSS file, all pointing to a CDN.</li>
+</ul>
+
+<p>
+</p>
+
+<h3 class="section-title" id="ccs">Conclusion</h3>
+<p>
+   As a conclusion, an <i>asset scopes</i>, or a <i>scope</i> to simplify the language is stored in
+   a JSON file and contains some information:
+</p>
+<ul>
+   <li>a name</li>
+   <li>the name of its parent</li>
+   <li>a set of assets (JS and CSS files) that can come from different locations</li>
+</ul>
+<p>
+   You're ready for <a href="building-your-asset-stack.html">building your asset stack!</a>.
+</p>

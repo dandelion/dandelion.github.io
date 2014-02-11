@@ -1,0 +1,98 @@
+---
+layout: dandelion
+menu: wrappers
+level1:
+   url: features
+   name: Features
+level2:
+   url: asset-location-wrappers
+   name: Asset location wrappers
+level3:
+   url: plugging-in-your-own-location-wrapper.html
+   name: Plugging-in your own location wrapper
+---
+<h2 class="page-title">Plugging-in your own location wrapper</h2>
+
+<p>
+   You may wish to change the default behaviour brought by
+   <a href="introducing-asset-loaders.html">default loaders</a>. Let's see here how to plug-in your
+   own asset loader.
+</p>
+
+<h3 class="section-title" id="slw">SPI for location wrapper</h3>
+<p>
+   In order to plug-in your own location wrapper, just follow these steps:
+</p>
+<ol>
+   <li>Create a class that extends AbstractAssetJsonLoader (lien) or directly implements AssetLoader (lien).
+<pre class="prettyprint">
+package com.foo.asset.loader.impl;
+
+public class MyAssetLoader extends AbstractAssetJsonLoader {
+
+   private static final Logger LOG = LoggerFactory.getLogger(MyAssetLoader.class);
+
+	@Override
+	public String getName() {
+		return "myLoader";
+	}
+
+	@Override
+	public boolean isRecursive() {
+		return false;
+	}
+
+	@Override
+	protected Logger getLogger() {
+		return LOG;
+	}
+
+	@Override
+	public String getPath() {
+		return "myPath";
+	}
+}
+</pre>   
+   </li>
+   <li>
+      <p>
+         In the <code>META-INF/services</code> folder, create a text file (UTF-8 encoded) using the following convention:
+<pre class="prettyprint">
+yourJar
+|__ src
+   |__ main
+      |__ resources
+         |__ META-INF
+            |__ services
+               |__ com.github.dandelion.core.asset.loader.spi.AssetLoader
+   
+</pre>   
+      </p>
+      <p>
+         Inside this file, just add the fully qualified name of your own implementation. For example:
+<pre class="prettyprint">
+com.foo.asset.loader.impl.MyAssetLoader
+</pre>
+      </p>   
+   </li>
+</ol>
+<p>
+   And that's all! Dandelion, thanks to the SPI mechanism, will automatically pick up your
+   implementation and add it to the active asset loaders on the next restart.
+</p>
+
+<h3 class="section-title" id="sal">Example with Dandelion-Datatables</h3>
+<p>
+   <a href="/datatables">Dandelion-Datatables</a> is a nice example of how a custom asset loader can be plugged in the asset loader system.
+</p>
+<p>
+   Indeed, the Dandelion-Datatables component provides its own asset loader:
+   DatatablesAssetJsonLoader (lien). This loaders only scans inside the
+   <code>dandelion/datatables</code>
+   folder.
+</p>
+<p>
+   You can find the SPI configuration <a
+      href="https://github.com/dandelion/dandelion-datatables/tree/dandelion-datatables-{{ site.dandelion.components.[page.module].version }}/datatables-core/src/main/resources/META-INF/services">in
+      the sources</a>.
+</p>

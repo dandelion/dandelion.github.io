@@ -1,0 +1,108 @@
+---
+layout: dandelion
+menu: loaders
+level1:
+   url: features
+   name: Features
+level2:
+   url: asset-loaders
+   name: Asset loaders
+level3:
+   url: introducing-asset-loaders.html
+   name: Introducing asset loaders
+---
+
+<h2 class="page-title">Introducing asset loaders</h2>
+
+<p>
+   As we saw in the <a
+      href="/dandelion/features/asset-stack/introducing-asset-scopes.html">asset stack
+      introduction</a>, all scopes are stored in JSON files. This section describes how these files
+   are loaded into the system.
+</p>
+
+<h3 class="section-title" id="sal">Standard asset loader</h3>
+<p>
+   The DandelionAssetJsonLoader is the main loader used by default by Dandelion.
+</p>
+<p>
+   Its role is to scan the classpath recursively, starting from the
+   <code>/dandelion</code>
+   folder, for files that ends with
+   <code>.json</code>
+   .
+</p>
+<p>
+   All files found in the
+   <code>/dandelion</code>
+   folder will then be converted into an internal representation: AssetComponent (lien javadoc).
+</p>
+
+<p>
+   For example, in the following <a
+      href="https://maven.apache.org/">Maven</a> structure, the standard asset loader will pick up
+   and load
+   <code>scope1.json</code>
+   ,
+   <code>scope2.json</code>
+   and
+   <code>scope3.json</code>
+   files.
+</p>
+<pre class="prettyprint">
+YourWebApp
+|__ src
+   |__ main
+      |__ resources
+         |__ dandelion
+            |__ scope1.json
+            |__ scope2.json
+            |__ scope3.json 
+</pre>
+
+<h3 class="section-title" id="val">Vendor asset loader</h3>
+<p>
+   This is the second and last asset loader to be defaultly enabled by Dandelion.
+</p>
+<p>
+   This loader is intended to load vendor's librairies, such as
+   <a href="http://jquery.com/">jQuery</a> or <a href="http://getbootstrap.com/">Bootstrap</a>. The
+   only difference with the other built-in loader is that it scans for JSON files inside the
+   <code>/vendor</code>
+   folder and all subfolders.
+</p>
+<p>
+   For example, some <i>vendor scopes</i> are bundled with the dandelion-core JAR. They're all
+   located under the
+   <code>/vendor</code>
+   folder.
+</p>
+<pre class="prettyprint">
+dandelion-core
+|__ src
+   |__ main
+      |__ resources
+         |__ vendor
+            |__ jquery.json
+            |__ jquery2.json
+            |__ bootstap2.json
+            |__ bootstap3.json
+            |__ ... 
+</pre>
+<p>
+   Of course, you are encouraged to follow the same practice, for a better asset organization.
+</p>
+<p class="alert alert-info">
+   <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp; 
+    Except the location, there is currently no difference with the standard asset loader. In upcoming
+   releases however, this will allow us to easily apply a specific caching policy.
+</p>
+
+<h3 class="section-title" id="maal">How it works with multiple active asset loaders?</h3>
+<p>
+   All active asset loaders are mutually exclusive. It means that a folder or subfolder will never
+   be scanned twice.
+</p>
+<p>
+   This rule ensures maximum consistency with the loaded assets.
+</p>

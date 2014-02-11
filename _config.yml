@@ -15,7 +15,7 @@ analytics_google_tracking_id : 'UA-33818546-8'
 # Blog configuration
 #
 title : Dandelion Project
-tagline: Extensible web library for funnier web development
+tagline: Extensible web library making web development simpler
 author :
   name : Dandelion Team
   email : dandelion-devteam@googlegroups.com
@@ -59,3 +59,5 @@ dandelion :
       url: webanalytics
       breadcrumb: Dandelion-Webanalytics
       sources: dandelion-webanalytics
+    blog:
+      name: blog

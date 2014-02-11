@@ -4,8 +4,6 @@ categories : ['News']
 tags : ['Dandelion-datatables']
 author: 'Thibault Duchateau'
 ---
-{% include setup %}
-
 I recently looked at download the stats in Maven Central and ... was pleasantly surprised! So I decided to make a quick review of the first seven months, since the beginning of the project (previously called DataTables4j). 
 
 Here are some figures:

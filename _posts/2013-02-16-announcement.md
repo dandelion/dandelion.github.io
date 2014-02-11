@@ -4,8 +4,6 @@ categories : ['News']
 tags : ['Datatables4j', 'Dandelion-datatables', 'Dandelion']
 author: 'Thibault Duchateau'
 ---
-{% include setup %}
-
 **Hi all!**
 
 

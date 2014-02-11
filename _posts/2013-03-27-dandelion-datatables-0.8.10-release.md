@@ -4,8 +4,6 @@ categories : ['News', 'Release']
 tags : ['Dandelion-datatables', 'Design']
 author: 'Thibault Duchateau'
 ---
-{% include setup %}
-
 **Dandelion-Datatables v0.8.10 has been released in Maven Central.**
 
 The new release contains lots of new features, for both JSP and Thymeleaf. See the [changelog](/datatables/changelog.html) for more details. 

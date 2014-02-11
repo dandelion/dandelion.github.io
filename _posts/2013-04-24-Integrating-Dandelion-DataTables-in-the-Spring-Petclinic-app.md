@@ -4,8 +4,6 @@ categories : ['Tutorial']
 tags : ['Spring', 'Dandelion-datatables', 'Maven', 'JSP', 'Bootstrap', 'iText']
 author: 'Thibault Duchateau'
 ---
-{% include setup %}
-
 Petclinic is one of the sample applications created by [SpringSource](http://www.springsource.org/) to demonstrate the key features of the [Spring Framework](http://www.springsource.org/spring-framework).
 
 We recently had the opportunity to integrate [Dandelion-Datatables](http://dandelion.github.io/datatables) into this app. Here is a tutorial describing how it has been done, step by step.

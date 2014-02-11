@@ -47,11 +47,100 @@ module: core
                </li>
                               
                <h5>Features</h5>
-               <li {% if page.menu == 'assets' %} class="active"{% endif %}>
-                  <a href="/dandelion/features/assets/" title="Assets Stack"> <i class="fa fa-sitemap"></i> Assets Stack </a>
+               <li {% if page.menu == 'stack' %} class="active"{% endif %}>
+                  <a href="/dandelion/features/asset-stack/" title="Assets Stack">Asset stack</a>
+                  {% if page.menu == 'stack' %}
+                  <ul class="nav nav-list">
+                     <li {% if page.url contains 'asset-stack/introducing-asset-scopes' %}class="active"{% endif %}>
+                        <a href="/dandelion/features/asset-stack/introducing-asset-scopes.html"><i class="fa fa-double-angle-right"></i> Introducing asset scopes</a>
+                     </li>
+                     <li {% if page.url contains 'asset-stack/scope-hierarchy' %}class="active"{% endif %}>
+                        <a href="/dandelion/features/asset-stack/scope-hierarchy.html"><i class="fa fa-double-angle-right"></i> Scope hierarchy</a>
+                     </li>
+                     <li {% if page.url contains 'asset-stack/building-your-asset-stack' %}class="active"{% endif %}>
+                        <a href="/dandelion/features/asset-stack/building-your-asset-stack.html"><i class="fa fa-double-angle-right"></i> Building your asset stack</a>
+                     </li>
+                     <li {% if page.url contains 'asset-stack/storage-rules' %}class="active"{% endif %}>
+                        <a href="/dandelion/features/asset-stack/storage-rules.html"><i class="fa fa-double-angle-right"></i> Storage rules</a>
+                     </li>
+                     <li {% if page.url contains 'asset-stack/interacting-with-the-asset-stack' %}class="active"{% endif %}>
+                        <a href="/dandelion/features/asset-stack/interacting-with-the-asset-stack"><i class="fa fa-double-angle-right"></i> Interacting with the asset stack</a>
+                        {% if page.submenu == 'interacting' %}
+                        <ul class="nav nav-list">
+                           <li {% if page.url contains 'interacting-with-the-asset-stack/using-api' %}class="active"{% endif %}>
+                              <a href="/dandelion/features/asset-stack/interacting-with-the-asset-stack/using-api.html"><i class="fa fa-double-angle-right"></i> Using API</a>
+                           </li>
+                           <li {% if page.url contains 'interacting-with-the-asset-stack/using-jsp' %}class="active"{% endif %}>
+                              <a href="/dandelion/features/asset-stack/interacting-with-the-asset-stack/using-jsp.html"><i class="fa fa-double-angle-right"></i> Using JSP</a>
+                           </li>
+                           <li {% if page.url contains 'interacting-with-the-asset-stack/using-thymeleaf' %}class="active"{% endif %}>
+                              <a href="/dandelion/features/asset-stack/interacting-with-the-asset-stack/using-thymeleaf.html"><i class="fa fa-double-angle-right"></i> Using Thymeleaf</a>
+                           </li>
+                        </ul>
+                        {% endif %}
+                     </li>
+                  </ul>
+                  {% endif %}
+               </li>
+               <li {% if page.menu == 'loaders' %} class="active"{% endif %}>
+                  <a href="/dandelion/features/asset-loaders/" title="Assets loaders">Asset loaders</a>
+                  {% if page.menu == 'loaders' %}
+                  <ul class="nav nav-list">
+                     <li {% if page.url contains 'asset-loaders/introducing-asset-loaders' %}class="active"{% endif %}>
+                        <a href="/dandelion/features/asset-loaders/introducing-asset-loaders.html"><i class="fa fa-double-angle-right"></i> Introducing asset loaders</a>
+                     </li>
+                     <li {% if page.url contains 'asset-loaders/plugging-in-your-own-asset-loader' %}class="active"{% endif %}>
+                        <a href="/dandelion/features/asset-loaders/plugging-in-your-own-asset-loader.html"><i class="fa fa-double-angle-right"></i> Plugging-in your own asset loader</a>
+                     </li>
+                  </ul>
+                  {% endif %}
+               </li>
+               <li {% if page.menu == 'wrappers' %} class="active"{% endif %}>
+                  <a href="/dandelion/features/asset-location-wrappers/" title="Assets location wrappers">Asset location wrappers</a>
+                  {% if page.menu == 'wrappers' %}
+                  <ul class="nav nav-list">
+                     <li {% if page.url contains 'asset-location-wrappers/introducing-asset-location-wrappers' %}class="active"{% endif %}>
+                        <a href="/dandelion/features/asset-location-wrappers/introducing-asset-location-wrappers.html"><i class="fa fa-double-angle-right"></i> Introducing asset location wrappers</a>
+                     </li>
+                     <li {% if page.url contains 'asset-location-wrappers/built-in' %}class="active"{% endif %}>
+                        <a href="/dandelion/features/asset-location-wrappers/built-in"><i class="fa fa-double-angle-right"></i> Built-in location wrappers</a>
+                        {% if page.submenu == 'builtinwrappers' %}
+                        <ul class="nav nav-list">
+                           <li {% if page.url contains 'built-in/webapp-location-wrapper' %}class="active"{% endif %}>
+                              <a href="/dandelion/features/asset-location-wrappers/built-in/webapp-location-wrapper.html"><i class="fa fa-double-angle-right"></i> Webapp location wrapper</a>
+                           </li>
+                           <li {% if page.url contains 'built-in/classpath-location-wrapper' %}class="active"{% endif %}>
+                              <a href="/dandelion/features/asset-location-wrappers/built-in/classpath-location-wrapper.html"><i class="fa fa-double-angle-right"></i> Classpath location wrapper</a>
+                           </li>
+                           <li {% if page.url contains 'built-in/cdn-location-wrapper' %}class="active"{% endif %}>
+                              <a href="/dandelion/features/asset-location-wrappers/built-in/cdn-location-wrapper.html"><i class="fa fa-double-angle-right"></i> Cdn location wrapper</a>
+                           </li>
+                           <li {% if page.url contains 'built-in/templated-location-wrapper' %}class="active"{% endif %}>
+                              <a href="/dandelion/features/asset-location-wrappers/built-in/templated-location-wrapper.html"><i class="fa fa-double-angle-right"></i> Templated location wrapper</a>
+                           </li>
+                           <li {% if page.url contains 'built-in/delegated-location-wrapper' %}class="active"{% endif %}>
+                              <a href="/dandelion/features/asset-location-wrappers/built-in/delegated-location-wrapper.html"><i class="fa fa-double-angle-right"></i> Delegated location wrapper</a>
+                           </li>
+                           <li {% if page.url contains 'built-in/webjars-location-wrapper' %}class="active"{% endif %}>
+                              <a href="/dandelion/features/asset-location-wrappers/built-in/webjars-location-wrapper.html"><i class="fa fa-double-angle-right"></i> Webjars location wrapper</a>
+                           </li>
+                        </ul>
+                        {% endif %}
+                     </li>
+                     <li {% if page.url contains 'asset-location-wrappers/plugging-in-your-own-location-wrapper' %}class="active"{% endif %}>
+                        <a href="/dandelion/features/asset-location-wrappers/plugging-in-your-own-location-wrapper.html"><i class="fa fa-double-angle-right"></i> Plugging-in your own location wrapper</a>
+                     </li>
+                  </ul>
+                  {% endif %}
+               </li>
+               <li {% if page.menu == 'processors' %} class="active"{% endif %}>
+                  <a href="/dandelion/features/asset-processors/" title="Assets processors">Asset processors</a>
+               </li>
+               <li {% if page.menu == 'caching' %} class="active"{% endif %}>
+                  <a href="/dandelion/features/asset-caching/" title="Assets Stack">Asset caching</a>
                </li>
                <li {% if page.menu == 'configuration' %} class="active"{% endif %}>
-                  <a href="/dandelion/features/configuration/" title="Configuration"> <i class="fa fa-cog"></i> Configuration</a>
+                  <a href="/dandelion/features/configuration/" title="Configuration"> Configuration</a>
                   {% if page.menu == 'configuration' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains 'configuration/configuration-loading' %}class="active"{% endif %}>
@@ -59,6 +148,9 @@ module: core
                      </li>
                   </ul>
                   {% endif %}
+               </li>
+               <li {% if page.menu == 'devmode' %} class="active"{% endif %}>
+                  <a href="/dandelion/features/devlopment-mode/" title="Assets Stack"> Development mode</a>
                </li>
                
                <h5>Development</h5>

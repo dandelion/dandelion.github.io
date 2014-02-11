@@ -9,7 +9,8 @@
 	background-color: #73c730;
 }
 a {
-	color: #65c22f;
+	/*color: #65c22f;*/
+	color: #5aae2a;
 }
 
 /* Navbar marketing */
@@ -24,13 +25,11 @@ a {
 .navbar-inner {
 	background-image: -moz-linear-gradient(top, #65c22f, #65c22f);
 	background-image: -ms-linear-gradient(top, #65c22f, #65c22f);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#65c22f),
-		to(#65c22f) );
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#65c22f), to(#65c22f) );
 	background-image: -webkit-linear-gradient(top, #65c22f, #65c22f);
 	background-image: -o-linear-gradient(top, #65c22f, #65c22f);
 	background-image: linear-gradient(top, #65c22f, #65c22f);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#65c22f',
-		endColorstr='#65c22f', GradientType=0 );
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#65c22f', endColorstr='#65c22f', GradientType=0 );
 }
 
 .navbar .brand {

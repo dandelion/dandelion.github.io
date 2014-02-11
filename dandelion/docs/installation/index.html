@@ -1,36 +1,96 @@
 ---
 layout: dandelion
 menu: installation
-level1: installation
+level1:
+   url: docs/installation
+   name: Installation
 ---
-
 <h2 class="page-title">Installation guide</h2>
 
 <h3 class="section-title">Prerequisites</h3>
+<ul>
+   <li>Java 6 or higher</li>
+</ul>
+
+<h3 class="section-title">Required steps</h3>
 <p>
-   Java 6 or higher
+   Irrespective of which template engine your web application is based on, there are some required steps to follow.
 </p>
 
-<h3 class="section-title">Notes</h3>
+<h4>Step 1/4: Install the server-side dependencies</h4>
 <p>
-   Dandelion-DataTables takes advantage of the <a href="http://jcp.org/en/jsr/detail?id=315">Servlet API 3.x</a> to ease its required configuration. In return, however, you have to use a Servlet container compatible with this API.
-</p>
-<p>
-   You'll have no trouble if you deploy on recent containers as Tomcat 7.x, Jetty 8.x, Glassfish 3.x or JBoss 7.x.
-</p>
-<p>
-   Actually, you'll have no trouble either with lower versions thanks to the <a href="https://github.com/dandelion/dandelion/tree/master/dandelion-extras/dandelion-servlet2">backward compatibility extra</a>. :-)
+   {% assign artifact = 'dandelion-core' %} 
+   {% include build-tools.html %}
 </p>
 
-
-<h3 class="section-title">Guides</h3>
+<h4>Step 2/4: Configure the Dandelion filter</h4>
 <p>
-   The installation guide defers, depending on the template engine you want to use and the target container:
+   Add the Dandelion filter definition and mapping to the <code>web.xml</code> file:
+<pre class="prettyprint">
+&lt;filter>
+   &lt;filter-name>dandelion&lt;/filter-name>
+   &lt;filter-class>com.github.dandelion.core.asset.web.AssetFilter&lt;/filter-class>
+&lt;/filter>
+&lt;filter-mapping>
+   &lt;filter-name>dandelion&lt;/filter-name>
+   &lt;url-pattern>/*&lt;/url-pattern>
+&lt;/filter-mapping>
+</pre>
 </p>
-<div class="text-center">
-<a href="jsp.html" class="btn btn-large">JSP</a>
-&nbsp;
-or
-&nbsp;
-<a href="thymeleaf.html" class="btn btn-large">Thymeleaf</a>
-</div>
+
+<h4>Step 3/4: Configure the Dandelion servlet</h4>
+<p>
+   Add the Dandelion servlet definition and mapping to the <code>web.xml</code> file:
+<pre class="prettyprint">
+&lt;servlet>
+   &lt;servlet-name>dandelionServlet&lt;/servlet-name>
+   &lt;servlet-class>com.github.dandelion.core.asset.web.AssetServlet&lt;/servlet-class>
+&lt;/servlet>
+&lt;servlet-mapping>
+   &lt;servlet-name>dandelionServlet&lt;/servlet-name>
+   &lt;url-pattern>/dandelion-assets/*&lt;/url-pattern>
+&lt;/servlet-mapping>
+</pre>
+</p>
+
+<h4>Step 4/4: Configure the development mode</h4>
+<p>
+   Dandelion uses a development mode to 
+</p>
+
+<p>
+   You're done with the basic installation! With all the steps above, you can already enjoy using
+   Dandelion.
+</p>
+<p>
+   It's time to <a
+      href="/dandelion/features/asset-stack/building-your-asset-stack.html">build your asset
+      stack</a>!
+</p>
+
+<h3 class="section-title">Optional steps</h3>
+<p>
+   Below are specific installation guides, depending on your needs.
+</p>
+<table class="table table-striped">
+   <thead>
+      <tr>
+         <th>Use case</th>
+         <th></th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>
+            The view layer of my web application is based on JSP.
+         </td>
+         <td><a href="jsp.html" class="btn">JSP guide »</a></td>
+      </tr>
+      <tr>
+         <td>
+            The view layer of my web application is based on Thymeleaf.
+         </td>
+         <td><a href="thymeleaf.html" class="btn">Thymeleaf guide »</a></td>
+      </tr>
+   </tbody>
+</table>

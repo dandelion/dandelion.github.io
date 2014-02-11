@@ -1,34 +1,22 @@
 ---
 layout: blog
+module: blog
 ---
-<div class="row-fluid">
-   <div class="span2">
-      <!-- AddThis Button BEGIN -->
-      <div class="addthis_toolbox addthis_floating_style addthis_counter_style" style="left:30px;top:187px;">
-         <a class="addthis_button_tweet" tw:count="vertical" tw:via="dandelion_proj"></a>
-         <a class="addthis_button_google_plusone" g:plusone:size="tall"></a>
-         <a class="addthis_button_linkedin_counter" li:counter="top"></a>
-         <a class="addthis_button_facebook_like" fb:like:layout="box_count"></a>
-         <a class="addthis_counter"></a>
-      </div>
-      <script type="text/javascript">
-         var addthis_config = {
-   	        "data_track_addressbar":false,
-   	        "data_track_clickback":true,
-   	        "ui_offset_top": 187,
-   	        "ui_offset_left": 30,
-   	        "data_ga_tracker": "{{ site.analytics_google_tracking_id }}"
-   	     };
-         var addthis_share = {
-            "url" : "http://dandelion.github.io{{ page.url }}",
-            "title" : "[Blog] {{ page.title }}"
-         }
-      </script>
-      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-516d4b686f218f23"></script>
-      <!-- AddThis Button END -->
-   </div>
-   
-   <div class="span10">
+<script type="text/javascript">
+   var addthis_config = {
+      "data_track_addressbar":false,
+      "data_track_clickback":true,
+      "ui_offset_top": 187,
+      "ui_offset_left": 30,
+      "data_ga_tracker": "{{ site.analytics_google_tracking_id }}"
+   };
+   var addthis_share = {
+      "url" : "http://dandelion.github.io{{ page.url }}",
+      "title" : "[Blog] {{ page.title }}"
+   }
+</script>
+<div class="row">
+   <div class="span12">
       <h2 class="page-title">
          {{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}
       </h1>
@@ -40,17 +28,17 @@ layout: blog
             <span>{{ page.date | date_to_long_string }}</span>
          </li>
          <li>
-            <span class="divider">|</span><i class="icon-comments"></i>
+            <span class="divider">|</span><i class="fa fa-comments"></i>
             <a href="{{ page.url }}#disqus_thread">Comments</a>
          </li>
-         <li><span class="divider">|</span><i class="icon-tags"></i></li>
+         <li><span class="divider">|</span><i class="fa fa-tags"></i></li>
          {% for tag in page.tags %} 
             <li class="tag"><a href="{{ BASE_PATH }}{{ site.tags_path }}#{{ tag }}-ref">{{ tag }}</a></li>
          {% endfor %}
          {% for category in page.categories %} 
             <li class="pull-right tag"><a href="{{ BASE_PATH }}{{ site.categories_path }}#{{ category }}-ref">{{ category | join: "/" }}</a></li>
          {% endfor %}
-         <li class="pull-right"></span><i class="icon-folder-open"></i></li>
+         <li class="pull-right"></span><i class="fa fa-folder-open"></i></li>
       </ul>
 
       <div class="content" style="margin-top:10px;">
@@ -59,6 +47,18 @@ layout: blog
       
       <hr />
       
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+         <a class="addthis_button_twitter"></a>
+         <a class="addthis_button_google_plusone_share"></a>
+         <a class="addthis_button_linkedin"></a>
+         <a class="addthis_button_facebook"></a>
+         <a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+      </div>
+      <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-516d4b686f218f23"></script>
+      <!-- AddThis Button END -->
+
       <div id="disqus_thread" style="margin-top:15px;"></div>
       <script type="text/javascript">
       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

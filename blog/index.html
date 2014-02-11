@@ -1,19 +1,30 @@
 ---
 layout: blog
 title: Dandelion's blog
-tagline: 
 ---
-{% include setup %}
+<div class="row">
+   <div class="span12">
+      {% for post in site.posts limit:5 %}
+      <article class="homelist">
+         <h2 class="page-title">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+         </h2>
+      
+         {{ post.content | truncatewords: 50 }}
+      
+         <aside class="seemore">
+            <time pubdate datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d" }}</time>, {{ post.categories | category_links }} | 
+            <a rel="nofollow" href="{{ post.url }}">Read &raquo;</a>
+         </aside>
+      
+      </article>
+      <hr />
+      {% endfor %}
+   </div>
+</div>
 
-<div class="row-fluid">
-  <div class="span12">
-
-      <!-- 
-	  <div class="page-header">
-	    <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
-	  </div>
-	   -->
-{% assign posts_list = site.posts %}
-{% include posts_list %}
-  </div>
+<div class="row">
+   <div class="span12" style="margin-bottom:10px;">
+      <a href="/blog/archive.html" class="btn pull-right">Archive</a>
+   </div>
 </div>

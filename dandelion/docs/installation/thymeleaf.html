@@ -1,0 +1,57 @@
+---
+layout: dandelion
+menu: installation
+level1:
+   url: docs/installation
+   name: Installation
+level2:
+   url: thymeleaf.html
+   name: Thymeleaf
+---
+<h2 class="page-title">Installation guide with Thymeleaf</h2>
+
+<p>
+   Some extra steps are required when using Thymeleaf.
+</p>
+
+<h4>Step 1/3: Install the server-side dependencies</h4>
+<p>
+   {% assign artifact = 'dandelion-thymeleaf' %} 
+   {% include build-tools.html %}
+</p>
+
+<h4>Step 2/3: Declare the Dandelion dialect</h4>
+<p>
+   If you are using Spring, update the SpringTemplateEngine bean as follows:
+<pre class="prettyprint">
+&lt;bean id="templateEngine" class="org.thymeleaf.spring3.SpringTemplateEngine">
+   &lt;property name="templateResolver" ref="templateResolver" />
+   &lt;property name="additionalDialects">
+      &lt;set>
+	     &lt;bean class="com.github.dandelion.thymeleaf.dialect.DandelionDialect" />
+      &lt;/set>
+   &lt;/property>
+&lt;/bean>
+</pre>
+</p>
+<p>
+   Otherwise, add the DandelionDialect to your existing Thymeleaf template engine:
+<pre class="prettyprint">
+ServletContextTemplateResolver templateresolver = new ServletContextTemplateResolver();
+templateresolver.setTemplateMode("HTML5");
+
+templateengine = new TemplateEngine();
+templateengine.setTemplateResolver(templateresolver);
+templateengine.addDialect(new DandelionDialect());
+</pre>
+</p>
+
+<h4>Step 3/3: Add the namespace declaration</h4>
+<p>
+   Everywhere you want to use the Thymeleaf dialect, think to add the following namespace declaration:
+<pre class="prettyprint">
+&lt;html xmlns:th="http://www.thymeleaf.org" xmlns:ddl="http://github.com/dandelion">
+</pre>
+   Actually this step is not required but thanks to the namespace declaration, you'll get some content
+   assist in your IDE (Eclipse only for now).
+</p>

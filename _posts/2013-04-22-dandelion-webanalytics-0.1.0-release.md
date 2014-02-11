@@ -4,8 +4,6 @@ categories : ['News', 'Release']
 tags : ['Dandelion-Webanalytics']
 author: 'Romain Lespinasse'
 ---
-{% include setup %}
-
 **Dandelion-Webanalytics v0.1.0 has been released in [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Cdandelion).**
 
 This is the first version of Dandelion-Webanalytics.

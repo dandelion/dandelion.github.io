@@ -4,8 +4,6 @@ categories : ['News']
 tags : ['Documentation']
 author: 'Thibault Duchateau'
 ---
-{% include setup %}
-
 #### Fresh documentation available!
 
 The new documentation has been published! From now, we'll use [Github Pages](http://pages.github.com/) for the whole documentation generation and publication process.

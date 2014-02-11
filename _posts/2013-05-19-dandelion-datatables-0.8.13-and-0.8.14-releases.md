@@ -4,8 +4,6 @@ categories : ['News', 'Release']
 tags : ['Dandelion-datatables']
 author: 'Thibault Duchateau'
 ---
-{% include setup %}
-
 **Dandelion-Datatables v0.8.13 has been released in [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Cdandelion)** and the **v0.8.14 as well**, because of a shameful omission :-/
 
 This is mainly a bugfixing version.
