@@ -11,141 +11,107 @@ level3:
    url: introducing-asset-location-wrappers.html
    name: Introducing asset location wrappers
 ---
-
 <h2 class="page-title">Introducing asset location wrappers</h2>
 
 <p>
-   Dandelion provides a powerful mechanism to locate the assets before using them.
+   <strong>Dandelion</strong> can build an <a
+      href="/dandelion/features/asset-stack/buiding-an-asset-stack">asset stack</a> with assets
+   coming from multiple locations. This feature is based on asset location wrappers which will be
+   introduced in this section.
 </p>
 
 <h3 class="section-title" id="wialw">What is a location wrapper?</h3>
 <p>
    An <i>asset location wrapper</i> (or <i>location wrapper</i> to simplify the language) is a
-   component that will transform the specified asset location in order to make it usable by
-   Dandelion.
+   component that will wraps the passed in location and process it in order to make it understandable by
+   <strong>Dandelion</strong>.
 </p>
 <p>
-   The kind of transformation differs according to the configured location wrapper.
+   The type of processing differs according to the configured location wrapper(s).
 </p>
 <p>
-   Consider the default <code>jquery</code> scope bundled with the dandelion-core JAR.
-</p>
+   Consider the following bundle.
 <pre class="prettyprint">
 {
-    "scope" : "jquery",
-    "parent": "none",
-    "assets": [
-      {
-          "name": "jquery-js",
-          "version": "1.11.0",
-          "type": "js",
-          "locations": {
-              "cdn": "//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"
-          }
+   "bundle" : "jquery",
+   "parent": "none",
+   "assets": [{
+      "name": "jquery-js",
+      "version": "1.11.0",
+      "type": "js",
+      "locations": {
+         "cdn": "//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js",
       }
-    ]
+   }]
 }
 </pre>
-<p>
-   The interesting part here is the <code>locations</code> property.
 </p>
-<h1>Pourquoi plusieurs locations ????</h1>
+<p>
+   This bundle defines only one asset called
+   <code>jquery-js</code>
+   with a single location, pointing to a CDN.
+</p>
+<p>
+   But <strong>Dandelion</strong> also allows to declare multiple locations. For example:
+<pre class="prettyprint">
+{
+   "bundle" : "jquery",
+   "parent": "none",
+   "assets": [{
+      "name": "jquery-js",
+      "version": "1.11.0",
+      "type": "js",
+      "locations": {
+         "webapp" : "/assets/js/jquery.js",
+         "cdn": "//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"
+      }
+   }]
+}
+</pre>
+</p>
+<p>
+   Both
+   <code>webapp</code>
+   and
+   <code>cdn</code>
+   are used in the declaration of the
+   <code>jquery-js</code>
+   asset.
+</p>
+
+<h3 class="section-title" id="wialw">Locations resolution strategy</h3>
+<p>
+   By default, the following resolution strategy is used when multiples locations are declared:
+</p>
+<ul>
+   <li>
+      <strong>Dandelion</strong> checks first if a <code>cdn</code> location key is defined.
+      If so, the corresponding location will be used by the asset stack.
+   </li>
+   <li>
+      Then, if the <code>webapp</code> location key is defined, the corresponding location will be
+      used by the asset stack.
+   </li>
+</ul>
+<p>
+   You can of course override this behaviour by using the
+   <code>assets.locations</code>
+   <a href="/dandelion/docs/ref/configuration#assets.locations">configuration property</a>.
+</p>
+<p>
+   Just change the order of selection of location keys in your configuration file.
+</p>
+<pre class="prettyprint">
+assets.locations=webjars,cdn
+</pre>
 
 <h3 class="section-title" id="bilw">Built-in location wrappers</h3>
 <p>
-   <table class="table table-striped table-hover">
-      <thead>
-         <tr>
-            <th>Location key</th>
-            <th>Name</th>
-            <th>Active by default</th>
-            <th>Description</th>
-         </tr>
-      </thead>
-      <tbody>
-         <tr>
-            <td>webapp</td>
-            <td>WebappLocationWrapper (lien)</td>
-            <td>yes</td>
-            <td>
-               <p>
-                  Relates to assets located in the web applicatin directory, e.g.
-                  <code>src/main/webapp</code>
-                  in Maven projects.
-               </p>
-               <p>
-                  Read more <a href="built-in/webapp-location-wrapper.html">here</a>.
-               </p>
-            </td>
-         </tr>
-         <tr>
-            <td>classpath</td>
-            <td>ClasspathLocationWrapper (lien)</td>
-            <td>yes</td>
-            <td>
-               <p>
-                  Relates to assets located in the classpath, e.g. in a JAR.
-               </p>
-               <p>
-                  Read more <a href="built-in/classpath-location-wrapper.html">here</a>.
-               </p>
-            </td>
-         </tr>
-         <tr>
-            <td>cdn</td>
-            <td>CdnLocationWrapper (lien)</td>
-            <td>no</td>
-            <td>
-               <p>
-                  Relates to assets served by a <a
-                     href="wikipedia.org/wiki/Content_delivery_network">Content Delivery Network</a>.
-               </p>
-               <p>
-                  Read more <a href="built-in/cdn-location-wrapper.html">here</a>.
-               </p>
-            </td>
-         </tr>
-         <tr>
-            <td>webjars</td>
-            <td>WebjarsLocationWrapper (lien)</td>
-            <td>yes</td>
-            <td>
-               <p>
-                  Relates to assets served by a <a href="http://www.webjars.org/">WebJar</a>.
-               </p>
-               <p>
-                  Read more <a href="built-in/webjars-location-wrapper.html">here</a>.
-               </p>
-            </td>
-         </tr>
-         <tr>
-            <td>templated</td>
-            <td>TemplatedLocationWrapper (lien)</td>
-            <td>yes</td>
-            <td>
-               <p>
-                  Relates to assets located in the classpath and which contains one or more
-               variables to be replaced.
-               </p>
-               <p>
-                  Read more <a href="built-in/templated-location-wrapper.html">here</a>.
-               </p>
-            </td>
-         </tr>
-         <tr>
-            <td>delegated</td>
-            <td>DelegatedLocationWrapper (lien)</td>
-            <td>yes</td>
-            <td>
-               <p>
-                  Relates to assets whose location is delegated to another component, e.g.
-                  <a href="/datatables">Dandelion-Datatables</a> which generates assets.
-               </p>
-               <p>
-                  Read more <a href="built-in/delegated-location-wrapper.html">here</a>.
-               </p>
-            </td>
-         </tr>
-      </tbody>
-   </table>
+   <strong>Dandelion</strong> provides multiple built-in location wrappers. See
+   <a href="built-in">this section</a> for more detail.
+</p>
+
+<h3 class="section-title" id="pyolw">Plugging-in your own location wrappers</h3>
+<p>
+   See this <a href="plugging-in-your-own-location-wrapper.html">section</a>.
 </p>

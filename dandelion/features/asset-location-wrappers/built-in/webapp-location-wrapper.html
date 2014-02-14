@@ -54,21 +54,18 @@ your-project
 </pre>   
 </p>
 <p>
-The scope definition should look like:
+The bundle definition should look like:
 <pre class="prettyprint">
 {
-    "scope" : "my-scope",
-    "parent": "none",
-    "assets": [
-      {
-          "name": "my-application",
-          "version": "1.0.0",
-          "type": "js",
-          "locations": {
-              "webapp": "/assets/js/application.js"
-          }
+   "bundle" : "my-bundle",
+   "assets": [{
+      "name": "my-application",
+      "version": "1.0.0",
+      "type": "js",
+      "locations": {
+         "webapp": "/assets/js/application.js"
       }
-    ]
+   }]
 }
 </pre>
 </p>

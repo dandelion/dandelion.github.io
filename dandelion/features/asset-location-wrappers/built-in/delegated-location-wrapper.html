@@ -59,26 +59,24 @@ level4:
    DataTables configuration to the asset stack.
 </p>
 <p>
-   Below is the main Dandelion-Datatables scope:
+   Below is the main Dandelion-Datatables bundle:
 <pre class="prettyprint">
 {
-   "scope": "ddl-dt",
+   "bundle": "ddl-dt",
    "parent": "ddl-dt-root", 
-    "assets": [
-        {
-            "name": "dandelion-datatables", 
-            "version": "0.10.0",
-            "type": "js", 
-            "locations": {
-               "delegated": "dandelion-datatables.js"
-            }
-        }
-    ]
+   "assets": [{
+      "name": "dandelion-datatables", 
+      "version": "0.10.0",
+      "type": "js", 
+      "locations": {
+         "delegated": "dandelion-datatables.js"
+      }
+   }]
 }
 </pre>
 </p>
 <p>
-   In the above scope, an asset called <strong>dandelion-datatables</strong> has a delegated
+   In the above bundle, an asset called <strong>dandelion-datatables</strong> has a delegated
    content. It basically means that a delegate object must return the content to be injected into
    this asset.
 </p>
@@ -87,7 +85,7 @@ level4:
 <pre class="prettyprint">
 AssetRequestContext
    .get(request)
-   .addScopes("ddl-dt", "datatables")
+   .addBundles("ddl-dt", "datatables")
    .addParameter("dandelion-datatables", DelegatedLocationWrapper.DELEGATED_CONTENT_PARAM, DatatablesConfigurator.getJavascriptGenerator(), false);
 </pre>
    where:
@@ -98,7 +96,7 @@ AssetRequestContext
       point to access the asset stack
    </li>
    <li>
-      <code>addScopes("ddl-dt", "datatables")</code> just adds the given scopes to the
+      <code>addBundles("ddl-dt", "datatables")</code> just adds the given bundle to the
       asset request context
    </li>
    <li>

@@ -19,8 +19,8 @@ level4:
 
 <h3 class="section-title" id="wjlwi">Installation</h3>
 <p>
-   This wrapper is bundled in the dandelion-webjars extra since it brings a new dependency to the
-   <a href="https://github.com/webjars/webjars-locator">webjars-locator</a> project, interally used
+   This wrapper is bundled in the <i>dandelion-webjars</i> extra since it brings a new dependency to the
+   <a href="https://github.com/webjars/webjars-locator">webjars-locator</a> project, internally used
    by this location wrapper to locate assets within <a href="http://www.webjars.org/">WebJars</a>.
 </p>
 <p>
@@ -46,7 +46,7 @@ level4:
          </tr>
          <tr>
             <td>Corresponding value</td>
-            <td>Name of the asset (including extension)</td>
+            <td>Name of the asset (path excluded but extension included)</td>
          </tr>
       </tbody>
    </table>
@@ -54,22 +54,19 @@ level4:
 
 <h3 class="section-title" id="wjlwe">Example</h3>
 <p>
-   Assuming that the <strong>bootstrap-2.3.0.jar</strong> is present in your classpath, the scope
+   Assuming that the <strong>bootstrap-2.3.0.jar</strong> is present in your classpath, the bundle
    definition should look like:
 <pre class="prettyprint">
 {
-    "scope" : "my-scope",
-    "parent": "none",
-    "assets": [
-      {
-          "name": "bootstrap",
-          "version": "2.3.0",
-          "type": "css",
-          "locations": {
-              "webjars": "bootstrap.css"
-          }
+   "bundle" : "my-bundle",
+   "assets": [{
+      "name": "bootstrap",
+      "version": "2.3.0",
+      "type": "css",
+      "locations": {
+         "webjars": "bootstrap.css"
       }
-   ]
+   }]
 }
 </pre>
 </p>

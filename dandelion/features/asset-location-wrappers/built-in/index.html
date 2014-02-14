@@ -12,9 +12,105 @@ level3:
    url: built-in
    name: Built-in location wrappers
 ---
-
 <h2 class="page-title">Built-in location wrappers</h2>
+
 <p>
-   TODO
+   Listed below are the built-in location wrappers provided by <strong>Dandelion</strong>.
 </p>
-   
+<p>
+   <table class="table table-striped table-hover">
+      <thead>
+         <tr>
+            <th>Location key</th>
+            <th>Name</th>
+            <th>Active by default</th>
+            <th>Description</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>webapp</td>
+            <td>WebappLocationWrapper</td>
+            <td>yes</td>
+            <td>
+               <p>
+                  Relates to assets located in the web application directory, e.g.
+                  <code>src/main/webapp</code>
+                  in Maven projects.
+               </p>
+               <p>
+                  Read more <a href="webapp-location-wrapper.html">here</a>.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>classpath</td>
+            <td>ClasspathLocationWrapper</td>
+            <td>yes</td>
+            <td>
+               <p>
+                  Relates to assets located in the classpath, e.g. in a JAR.
+               </p>
+               <p>
+                  Read more <a href="classpath-location-wrapper.html">here</a>.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>cdn</td>
+            <td>CdnLocationWrapper</td>
+            <td>no</td>
+            <td>
+               <p>
+                  Relates to assets served by a <a
+                     href="wikipedia.org/wiki/Content_delivery_network">Content Delivery Network</a>.
+               </p>
+               <p>
+                  Read more <a href="cdn-location-wrapper.html">here</a>.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>webjars</td>
+            <td>WebjarsLocationWrapper</td>
+            <td>yes</td>
+            <td>
+               <p>
+                  Relates to assets served by a <a href="http://www.webjars.org/">WebJar</a>.
+               </p>
+               <p>
+                  Read more <a href="webjars-location-wrapper.html">here</a>.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>templated</td>
+            <td>TemplatedLocationWrapper</td>
+            <td>yes</td>
+            <td>
+               <p>
+                  Relates to assets located in the classpath and which contains one or more
+               variables to be replaced.
+               </p>
+               <p>
+                  Read more <a href="templated-location-wrapper.html">here</a>.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>delegated</td>
+            <td>DelegatedLocationWrapper</td>
+            <td>yes</td>
+            <td>
+               <p>
+                  Relates to assets whose location is delegated to another component, e.g.
+                  <a href="/datatables">Dandelion-Datatables</a> which generates assets.
+               </p>
+               <p>
+                  Read more <a href="delegated-location-wrapper.html">here</a>.
+               </p>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</p>
