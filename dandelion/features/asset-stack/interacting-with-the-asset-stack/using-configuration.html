@@ -1,0 +1,49 @@
+---
+layout: dandelion
+menu: stack
+submenu: interacting
+level1:
+   url: features
+   name: Features
+level2:
+   url: asset-stack
+   name: Asset stack
+level3:
+   url: interacting-with-the-asset-stack
+   name: Interacting with the asset stack
+level4:
+   url: using-configuration.html
+   name: Using configuration
+---
+<h2 class="page-title">Using configuration</h2>
+
+<p>
+   You can also use the <a href="/dandelion/docs/ref/configuration/">configuration
+      properties</a> to interact with the asset stack.
+</p>
+<p>
+   Note that all following properties have a global impact on the asset stack, i.e. in all your application.
+</p>
+
+<h3 class="section-title" id="mb">Activate bundles permanently</h3>
+<p>
+   Among all available properties, one can be use to activate a bundle permanently. It can be handy
+   for example when you need to load a CSS file everywhere in your application.
+</p>
+<p>
+   For this purpose, just define the
+   <code>bundles.include</code>
+   in your <a href="/dandelion/docs/ref/configuration">dandelion.properties</a> file.
+</p>
+<p>
+   For example, assuming your <code>dandelion.properties</code> file contains the following configuration:
+<pre class="prettyprint">
+bundles.include=bootstrap2
+</pre>
+   The
+   <code>bootstrap2</code>
+   bundle will be loaded into the asset stack permanently. As a consequence, all assets defined in this
+   bundle will be loaded in all pages.
+</p>
+
+<!-- <h3 class="section-title" id="wiaa">What is an asset?</h3> -->

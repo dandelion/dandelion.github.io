@@ -17,10 +17,59 @@ level4:
 ---
 <h2 class="page-title">Using JSP</h2>
 
+<h3 class="section-title" id="i">Installation</h3>
 <p>
-   Once your are more familiar with <a
-      href="introducing-asset-stack.html">asset and asset scopes</a>, let's see how to build your
-   asset stack.
+   First of all, please read the <a href="/dandelion/docs/installation/jsp.html">JSP installation guide</a>.
 </p>
 
-<h3 class="section-title" id="wiaa">What is an asset?</h3>
+<h3 class="section-title" id="mb">Manipulating bundles</h3>
+<p>
+   The JSP taglib allows you to manipulate bundles by using the {% refjsp ddl bundle %} tag.
+</p>
+
+<h4>Including one or more bundles</h4>
+<p>
+   You can use the {% refjsp ddl bundle include %} attribute to add one or more bundles to the current request.
+</p>
+<p>
+<pre class="prettyprint">
+&lt;dandelion:bundle include="bundle1" /&gt;
+</pre>
+</p>
+
+<h4>Excluding one or more bundles</h4>
+<p>
+   You can use the {% refjsp ddl bundle exclude %} attribute to remove one o rmore bundles from the current request.
+</p>
+<p>
+<pre class="prettyprint">
+&lt;dandelion:bundle include="bundle1" /&gt;
+</pre>
+</p>
+
+<h3 class="section-title" id="ma">Manipulating assets</h3>
+<p>
+   You can also manipule assets directly by using the {% refjsp ddl asset %} tag which provides the {% refjsp ddl asset exclude %}
+   attribute, allowing you to exclude one or more asset from the asset stack.</p>
+<p>
+<pre class="prettyprint">
+&lt;dandelion:asset exclude="asset2" /&gt;
+</pre>
+</p>
+<p>
+   For example, assuming the following asset stack:
+<pre class="prettyprint">
+{
+   "bundle": "bundle1",
+   "assets": [{
+      "name": "asset1",
+      ...
+      }
+   }, {
+      "name": "asset2",
+      ...
+   }]
+}
+</pre>
+   Only the <code>asset1</code> will be loaded.
+</p>

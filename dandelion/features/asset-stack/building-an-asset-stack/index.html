@@ -1,0 +1,219 @@
+---
+layout: dandelion
+menu: stack
+submenu: buildingassetstack
+level1:
+   url: features
+   name: Features
+level2:
+   url: asset-stack
+   name: Asset stack
+level3:
+   url: building-an-asset-stack
+   name: Building an asset stack
+---
+<h2 class="page-title">Building an asset stack</h2>
+
+<p>
+   You have seen in the <a href="introducing-asset-bundles.html">introduction
+      about asset bundles</a> that you can connect bundles together with the
+   <code>parent</code>
+   property. Now let's see in detail how works the bundle hierarchy.
+</p>
+
+<h3 class="section-title" id="wiaa">Bundle hierarchy</h3>
+<p>
+   Building a bundle hierarchy is as simple as using the
+   <code>parent</code>
+   property.
+</p>
+<p>
+   Take the example of <a href="">DataTables</a>, which is a <a href="">jQuery</a> plugin. Its bundle representation is:
+<pre class="prettyprint">
+{
+    "bundle" : "datatables",
+    "parent": "jquery",
+    "assets": [
+       {
+          "name": "datatables-js",
+          "version": "1.9.4",
+          "type": "js",
+          "locations": {
+             "cdn": "//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.js"
+          }
+       }, {
+          "name": "datatables-css",
+          "version": "1.9.4",
+          "type": "css",
+          "locations": {
+             "cdn": "//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"
+          }
+       }
+    ]
+}
+</pre>
+</p>
+<p>
+   In the above bundle, <code>jquery</code>
+   is set as a <strong>parent bundle</strong> of
+   <code>datatables</code>
+   .
+</p>
+<p>   
+   For a better overview, take a look at the bundle hierarchy:
+</p>
+<p class="text-center">
+   <img src="/assets/images/dandelion/bundle-hierarchy-00.png" style="margin:15px;"/>
+</p>
+
+<p>
+   Keep in mind that by creating bundles, you actually create a tree-like structure of assets.
+</p>
+<p>
+   There are many benefits to manipulate bundles:
+   <ul>
+      <li>thanks to the bundle hierarchy, all assets are ordered. This order is extremely
+         important since <strong>Dandelion</strong> will preserve this order when injecting <code>&lt;script&gt;</code> and <code>&lt;link&gt;</code>
+         tags into the HTML code.
+      </li>
+      <li>
+         it provides a layer of abstraction on top of all your web resources, providing you a single entry point for managing your assets.
+      </li>
+      <li>you can easily load assets in pages by requesting a bundle. Read more about <a
+         href="/interacting-with-the-asset-stack/">how you can interact with the asset stack</a>.
+      </li>
+      <li>
+         thanks to this layer of abstraction, we'll provide in future versions some tooling
+         allowing you to debug your asset stack or even to fully integrate the asset in the build
+         process. Stay tuned!
+      </li>
+   </ul>
+</p>
+<p>
+   Once bundles created, you have now an <i>asset stack</i>!
+</p>
+<p class="alert alert-info">
+   <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp; 
+   We chose the term <i>asset stack</i>
+   in reference to the term <a
+      href="http://en.wikipedia.org/wiki/Technology_stack">technology stack</a>, which is
+   traditionnaly used to define a list of technologies used to provide a software solution or
+   application. In
+   <strong>Dandelion</strong>, <i>asset stack</i> actually means the set of client-side dependencies
+   to be used in your application.
+</p>
+
+<h3 class="section-title" id="rb">Redefining bundles</h3>
+<p>
+   Once created, a bundle is not "static". Actually you can redefine bundles in several ways:
+   <ul>
+      <li>You can overload some assets defined in a bundle (lien)</li>
+      <li>You can also completely override some assets (lien)</li>
+   </ul>
+</p>
+<p>
+   It is worth noting that whether it's at the moment of the asset stack building or when it is
+   accessed,
+   <strong>Dandelion</strong> always apply a set of rules. <a
+      href="storage-rules.html">Read more about the storage rules</a>.
+</p>
+
+<h3 class="section-title" id="wiaa">Vendor bundles</h3>
+<p>
+   The <i>dandelion-core</i> JAR ships what we call <i>vendor bundles</i>, i.e. vendor librairies
+   that you can already use without writing the JSON files by yourself.
+</p>
+<p>
+   The versions of these librairies are set arbitrarily but you can of course modify them by
+   <a href="#rb">redefining the bundles</a> as mentioned above.
+</p>
+<p>
+   Listed below are the available <i>vendor bundles</i>.
+</p>
+<table id="scope-ref" class="table table-striped table-hover table-bordered">
+   <thead>
+      <tr>
+         <th rowspan="2">Bundle</th>
+         <th rowspan="2">Parent bundle</th>
+         <th colspan="5" style="text-align:center;">Bundled assets</th>
+      </tr>
+      <tr>
+         <th>Name</th>
+         <th>Version</th>
+         <th>Type</th>
+         <th>Location type</th>
+         <th>Location</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>jquery</td>
+         <td>none</td>
+         <td>jquery-js</td>
+         <td>1.11.0</td>
+         <td>js</td>
+         <td>cdn</td>
+         <td>//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js</td>
+      </tr>
+      <tr>
+         <td>jquery2</td>
+         <td>none</td>
+         <td>jquery2-js</td>
+         <td>2.1.0</td>
+         <td>js</td>
+         <td>cdn</td>
+         <td>//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js</td>
+      </tr>
+      <tr>
+         <td>jqueryui</td>
+         <td>jquery</td>
+         <td>jqueryui-js</td>
+         <td>1.10.3</td>
+         <td>js</td>
+         <td>cdn</td>
+         <td>//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js</td>
+      </tr>
+      <tr>
+         <td rowspan="2">bootstrap2</td>
+         <td rowspan="2">jquery</td>
+         <td>bootstrap2-js</td>
+         <td>2.3.2</td>
+         <td>js</td>
+         <td>cdn</td>
+         <td>//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.js</td>
+      </tr>
+      <tr>
+         <td>bootstrap2-css</td>
+         <td>2.3.2</td>
+         <td>css</td>
+         <td>cdn</td>
+         <td>//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.css</td>
+      </tr>
+      <tr>
+         <td rowspan="2">bootstrap3</td>
+         <td rowspan="2">jquery</td>
+         <td>bootstrap3-js</td>
+         <td>3.0.3</td>
+         <td>js</td>
+         <td>cdn</td>
+         <td>//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.js</td>
+      </tr>
+      <tr>
+         <td>bootstrap3-css</td>
+         <td>3.0.3</td>
+         <td>css</td>
+         <td>cdn</td>
+         <td>//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css</td>
+      </tr>
+   </tbody>
+</table>
+<p>
+   Note that these <i>vendor bundles</i> are loaded using a dedicated
+   <a href="/dandelion/features/asset-loaders/introducing-asset-loaders.html#val">asset loader</a>.
+</p>
+
+<h3 class="section-title" id="win">What's next?</h3>
+<p>
+   Now that you have see how to build an asset stack, let's see
+   <a href="/interacting-with-the-asset-stack">how to interact with it</a>!
+</p>

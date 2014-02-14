@@ -1,0 +1,121 @@
+---
+layout: dandelion
+menu: stack
+submenu: buildingassetstack
+level1:
+   url: features
+   name: Features
+level2:
+   url: asset-stack
+   name: Asset stack
+level3:
+   url: building-an-asset-stack
+   name: Building an asset stack
+level4:
+   url: storage-rules.html
+   name: Storage rules
+---
+<h2 class="page-title">Storage rules</h2>
+
+<p>
+   You have seen in the <a href="../introducing-asset-bundles.html">introduction
+      about asset bundles</a> that you can connect bundles together with the
+   <code>parent</code>
+   property. Now let's see in detail how works the bundle hierarchy.
+</p>
+
+<h3 class="section-title" id="wiaa">Rules applied to storage</h3>
+<p>
+   <h5>#1 An asset can't be added twice in the same bundle</h5>
+<pre class="prettyprint alert-error">
+{
+   "bundle" : "my-bundle",
+   "parent": "none",
+   "assets": [{
+      "name": "asset1",
+      ...
+   }, {
+      "name": "asset1",
+      ...
+   }]
+}
+</pre>
+<pre class="prettyprint alert-success">
+{
+   "bundle" : "my-bundle",
+   "parent": "none",
+   "assets": [{
+      "name": "asset1",
+      ...
+   }, {
+      "name": "asset2",
+      ...
+   }]
+}
+</pre>
+</p>
+<p>
+   <h5>#2 A location key can't be used twice in the same asset</h5>
+<pre class="prettyprint alert-error">
+{
+   "bundle" : "my-bundle",
+   "parent": "none",
+   "assets": [{
+      "name": "asset1",
+      ...,
+      "locations" : {
+         "cdn" : "//cdn1",
+         "cdn" : "//cdn2",
+      }
+   }
+}
+</pre>
+<pre class="prettyprint alert-success">
+{
+   "bundle" : "my-bundle",
+   "parent": "none",
+   "assets": [{
+      "name": "asset1",
+      ...,
+      "locations" : {
+         "cdn" : "//cdn",
+         "webapp" : "/assets/...",
+      }
+   }
+}
+</pre>
+</p>
+<p>
+   <h5>#3 A bundle can't have a parent bundle that doesn't exist in the asset stack</h5>
+<pre class="prettyprint alert-error">
+{
+   "bundle" : "my-bundle",
+   "parent": "bundle-that-does-not-exist",
+   "assets": [{
+      "name": "asset1",
+      ...
+   }
+}
+</pre>
+<pre class="prettyprint alert-success">
+{
+   "bundle" : "my-bundle",
+   "parent": "bundle-that-already-exists",
+   "assets": [{
+      "name": "asset1",
+      ...
+   }
+}
+</pre>
+</p>
+
+<h3 class="section-title" id="wiaa">Rules applied to access</h3>
+<p>
+   <h5>#1 All assets are returned sorted from the oldest bundle to the youngest one</h5>
+</p>
+<p>
+   <h5>#2 Versions returned are those in the youngest bundles (but always keeping the order of their original bundle in the case of a change)</h5>
+</p>
+<p>
+   <h5>#3 Locations are merged during the course if and only if the version is identical to an asset</h5>
+</p>
