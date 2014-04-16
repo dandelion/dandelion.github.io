@@ -1,0 +1,90 @@
+---
+layout: dandelion
+menu: locators
+submenu: builtinlocators
+level1:
+   url: features
+   name: Features
+level2:
+   url: asset-locators
+   name: Asset locators
+level3:
+   url: built-in
+   name: Built-in location wrappers
+level4:
+   url: templated-location-wrapper.html
+   name: Templated location wrapper
+---
+<h2 class="page-title">Templated location wrapper</h2>
+
+<h3 class="section-title" id="tlwu">Usage</h3>
+<p>
+   The templated location wrapper must be used whenever you need to load an asset stored in the
+   classpath and must do some variable replacement inside.
+</p>
+<p>
+   <table class="table table-striped table-hover">
+      <tbody>
+         <tr>
+            <td>Location key</td>
+            <td><code>templated</code></td>
+         </tr>
+         <tr>
+            <td>Active by default</td>
+            <td>yes</td>
+         </tr>
+         <tr>
+            <td>Corresponding value</td>
+            <td>Absolute name of the asset (no leading "/", as it internally uses <code>ClassLoader.getResourceAsStream()</code>)</td>
+         </tr>
+      </tbody>
+   </table>
+</p>
+<p>
+   The variable replacement can be achieved using the Java API. See the example below.
+</p>
+
+<h3 class="section-title" id="tlwe">Example</h3>
+<p>
+   Assuming the following project structure:
+<pre class="prettyprint">
+your-project
+|__ src
+   |__ main
+      |__ resources
+         |__ js
+            |__ application.js
+</pre>
+   And that the <strong>application.js</strong> asset has the following content:
+<pre class="prettyprint">
+var myVar = [replace];
+</pre>   
+</p>
+<p>
+The bundle definition should look like:
+<pre class="prettyprint">
+{
+   "bundle" : "my-bundle",
+   "assets": [{
+      "name": "my-application",
+      "version": "1.0.0",
+      "type": "js",
+      "locations": {
+         "templated": "js/application.js"
+      }
+   }]
+}
+</pre>
+Then, the variable can be replaced using:
+<pre class="prettyprint">
+AssetRequestContext
+   .get(request)
+   .addParameter("my-application", "[replace]", "yeah");
+</pre>
+where:
+<ul>
+   <li><code>my-application</code> is the asset name</li>
+   <li><code>[replace]</code> is the string to be replaced</li>
+   <li><code>yeah</code> is the string to be used as replacement value</li>
+</ul>
+</p>

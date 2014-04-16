@@ -98,31 +98,6 @@ cookiePath: /datatables
                </li>
                <li {% if page.menu == 'properties' %} class="active"{% endif %}>
                   <a href="/datatables/docs/ref/configuration/" title="Configuration"><i class="fa fa-book"></i> Configuration reference</a>
-                  {% if page.menu == 'properties' %}
-                  <ul class="nav nav-list">
-                     <li {% if page.url contains '/docs/ref/configuration#main-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/configuration#mainconfiguration"><i class="fa fa-double-angle-right"></i> Main</a>
-                     </li>
-                     <li {% if page.url contains '/docs/ref/configuration#css-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/configuration#cssconfiguration"><i class="fa fa-double-angle-right"></i> CSS</a>
-                     </li>
-                     <li {% if page.url contains '/docs/ref/configuration#features-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/configuration#featuresconfiguration"><i class="fa fa-double-angle-right"></i> Features</a>
-                     </li>
-                     <li {% if page.url contains '/docs/ref/configuration#plugins-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/configuration#pluginsconfiguration"><i class="fa fa-double-angle-right"></i> Plugins</a>
-                     </li>
-                     <li {% if page.url contains '/docs/ref/configuration#ajax-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/configuration#ajaxconfiguration"><i class="fa fa-double-angle-right"></i> AJAX</a>
-                     </li>
-                     <li {% if page.url contains '/docs/ref/configuration#export-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/ref/configuration/#exportconfiguration"><i class="fa fa-double-angle-right"></i> Export</a>
-                     </li>
-                     <li {% if page.url contains '/docs/ref/configuration/#i18n-configuration' %}class="active"{% endif %}>
-                        <a href="/datatables/docs/ref/configuration/#i18nconfiguration"><i class="fa fa-double-angle-right"></i> I18n</a>
-                     </li>
-                  </ul>
-                  {% endif %}
                </li>
                <li {% if page.menu == 'scopes' %} class="active"{% endif %}>
                   <a href="/datatables/docs/ref/scopes"><i class="fa fa-sitemap"></i> Scope reference</a>

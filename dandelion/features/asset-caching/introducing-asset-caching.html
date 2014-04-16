@@ -1,0 +1,113 @@
+---
+layout: dandelion
+menu: caching
+level1:
+   url: features
+   name: Features
+level2:
+   url: asset-caching
+   name: Asset caching
+level3:
+   url: introducing-asset-caching.html
+   name: Introducing asset caching
+---
+<h2 class="page-title">Introducing asset caching</h2>
+
+<p>
+PARLER DU FAIT QUE CERTAINS LOCATORS NECESSITENT DU CACHING ALORS QUE D'AUTRES NON
+</p>
+
+<p>
+   Dandelion provides some processors intended to be applied on assets. This section introduces
+   major concepts around these processors.
+</p>
+
+<h3 class="section-title" id="def">Definition</h3>
+<p>
+   An <i>asset processor</i> (or <i>processor</i> to simplify the language) is defined as follows:
+</p>
+<ul>
+   <li>A processor key, used as an identifier</li>
+   <li>A type of asset to process, such as <i>js</i> or <i>css</i></li>
+</ul>
+<p>
+   All processors are currently used to minify assets thereby improving load times.
+</p>
+<p class="alert alert-info">
+   <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp; 
+   In upcoming releases, more processors will be provided, allowing to process more CSS and JavaScript languages such as
+   <a href="http://coffeescript.org/">CoffeeScript</a>.
+</p>
+<p>
+   Dandelion already provides some <a href="/built-in">built-in
+      processors</a> which are configured by default when the
+   <a href="/dandelion/features/production-mode">production mode</a> (TODO) is enabled. Note that
+   when the <a
+      href="/dandelion/features/development-mode">development mode</a> is enabled, the
+   <a href="">minification</a> (TODO lien) configuration property is disabled, and thus no processor
+   is applied.
+</p>
+
+<h3 class="section-title" id="sbl">Built-in cache system</h3>
+<p>
+   By default, Dandelion uses 
+</p>
+<h3 class="section-title" id="ac">Configuring asset processors</h3>
+<p>
+   Asset processors are configured through the <a
+      href="">asset.processors</a> (TODO) configuration property. You just need to define a
+   comma-separated list of processor keys to enable the corresponding processors.
+</p>
+<p>
+   For example, the default value is
+   <code>cssurlrewriting,jsmin,cssmin</code>
+   . This means that by default, the processors behing these keys will be applied sequentially on
+   all asset, depending on their compatible asset type(s).
+</p>
+
+<h3 class="section-title" id="ac">Enabling asset processing</h3>
+<p>
+   By default, no asset is processed, because the
+   <a href="">minification</a> (TODO) configuration property is set to
+   <code>false</code>
+   (see the <a href="/dandelion/features/development-mode/default-configuration.html">default
+      configuration</a>).
+</p>
+<p>
+   You can activate asset processing by turning the above configuration property to
+   <code>true</code>
+   . When set to
+   <code>true</code>
+   , Dandelion will use the asset processors configured thanks to the
+   <a href="">asset.processors</a> (TODO) configuration property as seen in the previous section.
+</p>
+
+<h3 class="section-title" id="acns">Asset caching and naming strategy</h3>
+<p>
+   Once asset processing is enabled, there are two points to note:
+</p>
+<ul>
+   <li>
+      <p>
+         Asset naming: the <i>min</i> keyword is appended to the asset name, just before the extension name.
+      </p>
+      <p>
+         For example, an asset non-minified called <code>app-1.0.0.css</code> will be called <code>app-1.0.0.min.css</code>. 
+      </p>
+   </li>
+   <li>
+      <p>
+         Asset caching: it is also worth noting that all processed assets will be first cached,
+         thanks to the
+         <a href="/dandelion/features/asset-caching">configured cache system</a>, and then served by
+         the DandelionServlet (TODO).
+      </p>
+   </li>
+</ul>
+
+<h3 class="section-title" id="pyop">Plugging-in your own processor</h3>
+<p>
+   As all other parts of the framework, Dandelion provides an extension point allowing you to
+   plug-in your own asset processor. Read more
+   <a href="plugging-in-your-own-processor.html">here</a>.
+</p>

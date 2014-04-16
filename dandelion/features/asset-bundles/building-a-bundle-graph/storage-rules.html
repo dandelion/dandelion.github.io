@@ -1,0 +1,178 @@
+---
+layout: dandelion
+menu: bundles
+submenu: graph
+level1:
+   url: features
+   name: Features
+level2:
+   url: asset-bundles
+   name: Asset bundles
+level3:
+   url: building-a-bundle-graph
+   name: Building a bundle graph
+level4:
+   url: storage-rules.html
+   name: Storage rules
+---
+<h2 class="page-title">Storage rules</h2>
+
+<p>
+   When building a <a
+      href="/dandelion/features/asset-bundles/building-a-bundle-graph/">bundle graph</a>, Dandelion
+   applies some rules in order to keep consistency between
+   <a href="/dandelion/features/asset-bundles/introducing-asset-bundles.html">bundles</a>. This
+   section describes these rules.
+</p>
+
+<h3>#1 An asset can't be added twice in the same bundle</h3>
+<div class="row-fluid">
+   <div class="span6">
+<pre class="prettyprint alert-error">
+{
+   "bundle" : "my-bundle",
+   "assets" : [{
+      "name" : "asset1",
+      "type" : "js",
+      ...
+   }, {
+      "name" : "asset1",
+      "type" : "js",
+      ...
+   }]
+}
+</pre>
+      <p class="text-center">
+         <i class="fa fa-frown-o fa-2x"></i>
+      </p>
+   </div>
+   <div class="span6">
+<pre class="prettyprint alert-success">
+{
+   "bundle" : "my-bundle",
+   "assets" : [{
+      "name" : "asset1",
+      "type" : "js",
+      ...
+   }, {
+      "name" : "asset2",
+      "type" : "js",
+      ...
+   }]
+}
+</pre>
+      <p class="text-center">
+         <i class="fa fa-smile-o fa-2x"></i>
+      </p>
+   </div>
+</div>
+<p>
+   Note that the uniqueness of the assets is based both on the asset type and on the name. As a consequence,
+   the following configuration is permitted:
+</p>
+<div class="row-fluid">
+   <div class="span6">
+<pre class="prettyprint alert-success">
+{
+   "bundle" : "my-bundle",
+   "assets" : [{
+      "name" : "asset1",
+      "type" : "js",
+      ...
+   }, {
+      "name" : "asset1",
+      "type" : "css",
+      ...
+   }]
+}
+</pre>
+      <p class="text-center">
+         <i class="fa fa-smile-o fa-2x"></i>
+      </p>
+   </div>
+</div>
+
+<h3>#2 The same location key can't be used twice in the same asset</h3>
+<div class="row-fluid">
+   <div class="span6">
+<pre class="prettyprint alert-error">
+{
+   "bundle" : "my-bundle",
+   "assets": [{
+      "name": "asset1",
+      ...,
+      "locations" : {
+         "cdn" : "//cdn1",
+         "cdn" : "//cdn2",
+      }
+   }
+}
+</pre>
+      <p class="text-center">
+         <i class="fa fa-frown-o fa-2x"></i>
+      </p>
+   </div>
+   <div class="span6">
+<pre class="prettyprint alert-success">
+{
+   "bundle" : "my-bundle",
+   "assets": [{
+      "name": "asset1",
+      ...,
+      "locations" : {
+         "cdn" : "//cdn",
+         "webapp" : "/assets/...",
+      }
+   }
+}
+</pre>
+      <p class="text-center">
+         <i class="fa fa-smile-o fa-2x"></i>
+      </p>
+   </div>
+</div>
+
+<h3>#3 Cycles between bundles must be avoided</h3>
+<div class="row-fluid">
+   <div class="span4">
+<pre class="prettyprint alert-error">
+{
+   "bundle" : "bundle1",
+   "dependencies": "bundle2",
+   "assets": [{
+      ...
+   }
+}
+</pre>
+   </div>
+   <div class="span4">
+<pre class="prettyprint alert-error">
+{
+   "bundle" : "bundle2",
+   "dependencies": "bundle3",
+   "assets": [{
+      ...
+   }
+}
+</pre>
+   </div>
+   <div class="span4">
+<pre class="prettyprint alert-error">
+{
+   "bundle" : "bundle3",
+   "dependencies": "bundle1",
+   "assets": [{
+      ...
+   }
+}
+</pre>
+   </div>
+</div>
+<div class="row-fluid">
+   <div class="span12 text-center">
+      <i class="fa fa-frown-o fa-2x"></i>
+   </div>
+</div>
+<p>
+   Note that an exception is thrown as soon as a cycle is detected among your bundles.
+</p>

@@ -51,7 +51,7 @@ cookiePath: /
                <blockquote>
                   <p>
                      <strong>Dandelion</strong> is a free and Open Source Java framework which aims
-                     to ease web development in Java-based environments.
+                     to ease web development in JVM-based environments.
                   </p>
                   <p>
                      It helps to manipulate the web assets (JS, CSS) in many ways: good organization
@@ -84,28 +84,27 @@ cookiePath: /
             <div class="span4">
                <h4><i class="fa fa-sitemap fa-2x"></i>&nbsp;&nbsp;Assets organization</h4>
                <p>
-                  Cherish your web resources! <strong>Dandelion</strong> offers a new way of dealing
-                  with web assets. Organize them into
-                  <a href="/dandelion/features/asset-stack/introducing-asset-scopes.html">scopes</a>
-                  and build a real <a
-                     href="/dandelion/features/asset-stack/building-your-asset-stack.html">asset
-                     stack</a>.
+                  Cherish your web resources! <strong>Dandelion</strong> proposes to organize your
+                  web assets into <a
+                     href="/dandelion/features/asset-bundles/introducing-asset-bundles.html">bundles</a>
+                  that can be joined together into a
+                  <a href="/dandelion/features/asset-bundles/building-a-bundle-graph/">graph</a>.
+                  You can then interact with this graph in multiple ways...
                </p>
             </div>
             <div class="span4">
                <h4><i class="fa fa-bolt fa-2x"></i>&nbsp;&nbsp;Assets optimization</h4>
                <p>
                   Apply the best pratices of web development without effort! Web assets can be
-                  minified, aggregated and optimally injected into web pages, thus improving page
-                  load times!
+                  minified and optimally injected into web pages thereby improving load
+                  times. Support for asset merging will be added soon.
                </p>
             </div>
             <div class="span4">
                <h4><i class="fa fa-cloud-download fa-2x"></i>&nbsp;&nbsp;Multiple locations</h4>
                <p>
-                  Collect assets from multiple locations before using them: webapp, classpath,
-                  webapp,
-                  <a href="http://en.wikipedia.org/wiki/Content_delivery_network">CDN</a>s or <a
+                  Assets can be collected from multiple locations before using them: webapp, classpath,
+                  <a href="http://en.wikipedia.org/wiki/Content_delivery_network">CDN</a>s, JARs or <a
                      href="http://www.webjars.org/">WebJars</a>. <strong>Dandelion</strong> also
                   support <a
                      href="/dandelion/features/asset-location-wrappers/built-in/delegated-location-wrapper.html">dynamically
@@ -117,16 +116,17 @@ cookiePath: /
             <div class="span4">
                <h4><i class="fa fa-code fa-2x"></i>&nbsp;&nbsp;Template engine integration</h4>
                <p>
-                  <strong>Dandelion</strong> and its components all provide a JSP taglib. And if
-                  you're cool people who use cool technologies, we also provide support for
-                  <a href="http://www.thymeleaf.org/">Thymeleaf</a>!
+                  <strong>Dandelion</strong> and its components all provide a
+                  <a href="/dandelion/docs/ref/jsp/">JSP taglib</a>. And if you're cool people who
+                  use cool technologies, we also provide support for
+                  <a href="/dandelion/docs/ref/thymeleaf/">Thymeleaf</a>!
                </p>
             </div>
             <div class="span4">
                <h4><i class="fa fa-puzzle-piece fa-2x"></i>&nbsp;&nbsp;Ready-to-use components</h4>
                <p>
                   The most advanced component is
-                  <a href="">Dandelion-Datatables</a> which allows you to create awesome HTML tables
+                  <a href="/datatables">Dandelion-Datatables</a> which allows you to create awesome HTML tables
                   using <a
                      href="http://datatables.net/">DataTables</a>. Other components are also
                   incubating...
@@ -135,7 +135,7 @@ cookiePath: /
             <div class="span4">
                <h4><i class="fa fa-plus fa-2x"></i>&nbsp;&nbsp;Easily extensible</h4>
                <p>
-                  <strong>Dandelion</strong> makes use of the <a
+                  <strong>Dandelion</strong> makes intensive use of the <a
                      href="http://docs.oracle.com/javase/6/docs/api/java/util/ServiceLoader.html">Service
                      Provider Interface API</a> introduced in Java 6 to provide plenty of extension
                   points.

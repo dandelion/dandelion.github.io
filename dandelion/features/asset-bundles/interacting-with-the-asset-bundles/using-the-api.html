@@ -1,0 +1,41 @@
+---
+layout: dandelion
+menu: bundles
+submenu: interacting
+level1:
+   url: features
+   name: Features
+level2:
+   url: asset-bundles
+   name: Asset bundles
+level3:
+   url: interacting-with-the-asset-bundles
+   name: Interacting with the asset bundles
+level4:
+   url: using-the-api.html
+   name: Using the API
+---
+<h2 class="page-title">Using the API</h2>
+
+<p>
+   All <a href="/dandelion/features/asset-bundles/introducing-asset-bundles.html">bundles</a> can
+   also be accessed using the Dandelion API. This is the way used by current components such as
+   <a href="/datatables">Dandelion-Datatables</a> but you could of course make use of the API for
+   writing your own component or any kind of extension.
+</p>
+
+<h3 class="section-title" id="wiaa">Accessing the bundle graph</h3>
+<p>
+   Dandelion allows you to manipulate the <a
+      href="/dandelion/features/asset-bundles/building-a-bundle-graph/">bundle graph</a> in a
+   request scope.
+</p>
+<p>
+   Indeed, Dandelion makes available a utility class called AssetRequestContext (TODO) allowing to interact
+   with the Dandelion context for a given
+   <code>HttpServletRequest</code>
+   .
+</p>
+<p>
+   Indeed, Dandelion mainly intervene in a request scope
+</p>

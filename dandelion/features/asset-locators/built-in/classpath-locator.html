@@ -1,0 +1,80 @@
+---
+layout: dandelion
+menu: locators
+submenu: builtinlocators
+level1:
+   url: features
+   name: Features
+level2:
+   url: asset-locators
+   name: Asset locators
+level3:
+   url: built-in
+   name: Built-in asset locators
+level4:
+   url: classpath-locator.html
+   name: Classpath locator
+---
+<h2 class="page-title">Classpath locator</h2>
+
+<h3 class="section-title" id="clu">Usage</h3>
+<p>
+   The <i>classpath locator</i> should be used whenever you need to load an asset stored in the classpath.
+</p>
+<p>
+   <table class="table table-striped table-hover">
+      <tbody>
+         <tr>
+            <td>Location key</td>
+            <td><code>classpath</code></td>
+         </tr>
+         <tr>
+            <td>Corresponding value</td>
+            <td>Absolute name of the asset (no leading "/", as it internally uses <code>ClassLoader.getResourceAsStream()</code>)</td>
+         </tr>
+         <tr>
+            <td>Caching forced</td>
+            <td>yes</td>
+         </tr>
+         <tr>
+            <td>Class(es)</td>
+            <td>ClasspathLocator (TODO lien)</td>
+         </tr>
+      </tbody>
+   </table>
+</p>   
+
+<h3 class="section-title" id="cle">Example</h3>
+<p>
+   Assuming the following project structure:
+<pre class="prettyprint">
+your-project
+|__ src
+   |__ main
+      |__ resources
+         |__ js
+            |__ application.js
+</pre>   
+</p>
+<p>
+The asset declaration should look like:
+<pre class="prettyprint">
+{
+   "bundle" : "my-bundle",
+   "assets": [{
+      "name": "my-application",
+      "version": "1.0.0",
+      "type": "js",
+      "locations": {
+          "webapp": "js/application.js"
+      }
+   }]
+}
+</pre>
+</p>
+<p>
+   Client-side, Dandelion will generate the following link:
+<pre class="prettyprint">
+&lt;script src="/[contextPath]/dandelion-assets/[cacheKey]/application.js">&lt;/script>
+</pre>
+</p>

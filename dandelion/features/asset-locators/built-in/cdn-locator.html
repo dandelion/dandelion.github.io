@@ -1,0 +1,69 @@
+---
+layout: dandelion
+menu: locators
+submenu: builtinlocators
+level1:
+   url: features
+   name: Features
+level2:
+   url: asset-locators
+   name: Asset locators
+level3:
+   url: built-in
+   name: Built-in asset locators
+level4:
+   url: cdn-locator.html
+   name: CDN locator
+---
+<h2 class="page-title">CDN locator</h2>
+
+<h3 class="section-title" id="cdnlu">Usage</h3>
+<p>
+   The <i>CDN locator</i> should be used whenever you need to load an asset hosted by a
+   <a href="http://en.wikipedia.org/wiki/Content_delivery_network">Content Delivery Network</a>.
+</p>
+<p>
+   <table class="table table-striped table-hover">
+      <tbody>
+         <tr>
+            <td>Location key</td>
+            <td><code>cdn</code></td>
+         </tr>
+         <tr>
+            <td>Corresponding value</td>
+            <td>URL of the asset (protocal-relative URLs such as <i>//domain/foo.js</i> are supported)</td>
+         </tr>
+         <tr>
+            <td>Caching forced</td>
+            <td>no</td>
+         </tr>
+         <tr>
+            <td>Class(es)</td>
+            <td>CdnLocator (TODO lien)</td>
+         </tr>
+      </tbody>
+   </table>
+</p>
+
+<h3 class="section-title" id="cdnle">Example</h3>
+<p>
+<pre class="prettyprint">
+{
+   "bundle" : "jquery",
+   "assets": [{
+      "name": "jquery-js",
+      "version": "1.11.0",
+      "type": "js",
+      "locations": {
+         "cdn": "//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"
+      }
+   }]
+}
+</pre>
+</p>
+<p>
+   Client-side, Dandelion will generate the following link:
+<pre class="prettyprint">
+&lt;script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js">&lt;/script>
+</pre>
+</p>

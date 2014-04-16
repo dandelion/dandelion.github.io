@@ -7,9 +7,13 @@ level1:
 ---
 <h2 class="page-title">Installation guide</h2>
 
-<h3 class="section-title">Prerequisites</h3>
+<h3 class="section-title">Requirements</h3>
+<p>
+   Any application that uses the Dandelion framework:
+</p>
 <ul>
-   <li>Java 6 or higher</li>
+   <li>must use Java 6 (or later)</li>
+   <li>must be deployed inside any Servlet 2.5 (or later) container</li>
 </ul>
 
 <h3 class="section-title">Required steps</h3>
@@ -29,7 +33,7 @@ level1:
 <pre class="prettyprint">
 &lt;filter>
    &lt;filter-name>dandelion&lt;/filter-name>
-   &lt;filter-class>com.github.dandelion.core.asset.web.AssetFilter&lt;/filter-class>
+   &lt;filter-class>com.github.dandelion.core.web.DandelionFilter&lt;/filter-class>
 &lt;/filter>
 &lt;filter-mapping>
    &lt;filter-name>dandelion&lt;/filter-name>
@@ -44,7 +48,7 @@ level1:
 <pre class="prettyprint">
 &lt;servlet>
    &lt;servlet-name>dandelionServlet&lt;/servlet-name>
-   &lt;servlet-class>com.github.dandelion.core.asset.web.AssetServlet&lt;/servlet-class>
+   &lt;servlet-class>com.github.dandelion.core.web.DandelionServlet&lt;/servlet-class>
 &lt;/servlet>
 &lt;servlet-mapping>
    &lt;servlet-name>dandelionServlet&lt;/servlet-name>

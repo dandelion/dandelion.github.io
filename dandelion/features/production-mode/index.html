@@ -1,19 +1,25 @@
 ---
 layout: dandelion
-menu: devmode
+menu: prodmode
 level1:
    url: features
    name: Features
 level2:
-   url: development-mode
-   name: Development mode
+   url: production-mode
+   name: Production mode
 ---
-<h2 class="page-title">Development mode</h2>
+<h2 class="page-title">Production mode</h2>
 
 <p>
-   Dandelion has been designed to make the web development simpler and as such ships a
-   <i>development mode</i> which helps developers making great apps faster thanks to the following
-   features:
+   Dandelion provides two modes: <i>development</i> and <i>production</i>. We'll see here what it is
+   hiding behind the <i>development mode</i>.
+</p>
+
+<h3 class="section-title" id="itdm">Introducing the developement mode</h3>
+<p>
+   Dandelion has been designed to make the web development simpler. This is why the framework ships
+   a
+   <i>development mode</i> which helps developers making great apps faster thanks to the following features:
 </p>
 <ul>
    <li>Asset reloading thanks to specific HTTP cache headers. Read more <a href="">here</a>.
@@ -23,6 +29,7 @@ level2:
       your assets. Read more <a href="">here</a>. (TODO lien)
    </li>
 </ul>
+<li>
 <p>
    However, much work remains to be done. For example the bundle full reloading is not
    supported yet, which means each time you modify a

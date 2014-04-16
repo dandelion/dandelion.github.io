@@ -47,7 +47,8 @@ module Jekyll
       case @args.length
         when 2
           key = @args[1]
-          property = 'desc' # description by default
+          #description by default
+          property = 'desc' 
         when 3  
           key = @args[1]
           property = @args[2]

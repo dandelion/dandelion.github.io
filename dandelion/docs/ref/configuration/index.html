@@ -10,16 +10,11 @@ level2:
 
 <h2 class="page-title">Configuration properties reference</h2>
 <p>
-   The bellowing tables list all the configurable properties that you can use in the
+   Listed below are all the configuration properties that you can use in the
    <a href="/dandelion/features/configuration/configuration-loading.html">configuration files</a>.
 </p>
 
-<p>
-   In <strong>Dandelion</strong>, you can configure all features in your application by configuring some property files.
-</p>
-
 <h3 class="section-title" id="mainconfiguration">
-   Main configuration properties
    <div class="pull-right">
       <input id="inputMain" type="text" placeholder="Search for a configuration...">
    </div>
@@ -31,76 +26,102 @@ level2:
          <th>Name</th>
          <th>Description</th>
          <th>Value(s)</th>
-         <th>Default</th>
+         <th>Default dev</th>
+         <th>Default prod</th>
       </tr>
    </thead>
    <tbody>
       <tr>
-         <td>assets.loaders</td>
-         <td>Define all loaders for assets (ordered)</td>
-         <td>implements <i>AssetsLoader</i></td>
-         <td><a href="/dandelion/features/assets/loaders.html">AssetsJsonLoader</a></td>
+         <td>minimification</td>
+         <td>Enable the asset minification</td>
+         <td></td>
+         <td>false</td>
+         <td>true</td>
+      </tr>
+      
+      <tr>
+         <td>asset.locations.resolution.strategy</td>
+         <td>Resolution strategy of asset locations if assets are defined with multiple locations</td>
+         <td>Comma-separated list of location keys</td>
+         <td>webapp,webjar,jar,cdn</td>
+         <td>webapp,webjar,jar,cdn</td>
       </tr>
       <tr>
-         <td>assets.locations</td>
-         <td>Define possible locations on assets (ordered)</td>
-         <td>List of String separated by comma</td>
-         <td>remote,local</td>
+         <td>asset.processors</td>
+         <td>List of processors applied on each asset if minification is enabled.</td>
+         <td>Comma-separated list of processor keys</td>
+         <td>cssurlrewriting,jsmin,cssmin</td>
+         <td>cssurlrewriting,jsmin,cssmin</td>
       </tr>
       <tr>
-         <td>assets.excluded.scopes</td>
-         <td>Define the excluded scopes on load</td>
-         <td>List of String separated by comma</td>
+         <td>asset.processors.encoding</td>
+         <td>Encoding used by processors to write/read in/from streams</td>
+         <td></td>
+         <td>UTF-8</td>
+         <td>UTF-8</td>
+      </tr>
+      <tr>
+         <td>asset.excludes</td>
+         <td>Comma-separated list of asset names to always exclude from the graph.</td>
+         <td></td>
+         <td></td>
          <td></td>
       </tr>
       <tr>
-         <td>assets.excluded.assets</td>
-         <td>Define the excluded assets on load</td>
-         <td>List of String separated by comma</td>
+         <td>asset.excludes</td>
+         <td>Comma-separated list of asset names to always exclude from the graph.</td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      
+      <tr>
+         <td>bundle.includes</td>
+         <td></td>
+         <td></td>
+         <td></td>
          <td></td>
       </tr>
       <tr>
-         <td>assets.excluded.assets</td>
-         <td>Define the excluded assets on load</td>
-         <td>List of String separated by comma</td>
+         <td>bundle.excludes</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      
+      <tr>
+         <td>cache.asset.max.size</td>
+         <td></td>
+         <td></td>
+         <td>50</td>
+         <td>50</td>
+      </tr>
+      <tr>
+         <td>cache.request.max.size</td>
+         <td></td>
+         <td></td>
+         <td>50</td>
+         <td>50</td>
+      </tr>
+      <tr>
+         <td>cache.manager.name</td>
+         <td></td>
+         <td></td>
+         <td></td>
          <td></td>
       </tr>
       <tr>
-         <td>assets.location.wrapper.{location}</td>
-         <td>Define the wrapper for an asset {location}</td>
-         <td>implements <i>AssetsLocationWrapper</i></td>
-         <td><a href="/dandelion/features/assets/wrappers.html">Built-in implementations</a></td>
-      </tr>
-      <tr>
-         <td>assets.servlet.cache.control</td>
-         <td>Define the value of <b>Cache-Control</b> in response header for the <a
-            href="/dandelion/features/assets/cache.html">Dandelion Assets Cache</a></td>
-         <td>String</td>
-         <td>no-cache</td>
-      </tr>
-      <tr>
-         <td>assets.cache</td>
-         <td>Define the 'Assets Cache' system under the <a
-            href="/dandelion/features/assets/cache.html">Dandelion Assets Cache</a></td>
-         <td>implements <i>AssetsCache</i></td>
-         <td><a href="/dandelion/features/assets/cache.html">DefaultAssetsCache</a></td>
+         <td>cache.configuration.location</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
       </tr>
    </tbody>
 </table>
 </p>
 
-<h3 class="section-title" id="ipf">Internal configuration properties</h3>
-<p>
-   You will find bellow the default properties file internally used by Dandelion-Datatables.
-</p>
-<pre class="prettyprint">
-############################################
-# Dandelion default configuration
-############################################
-
-TODO
-</pre>
-   
 <script src="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
 <script>
 var dtConf = {
