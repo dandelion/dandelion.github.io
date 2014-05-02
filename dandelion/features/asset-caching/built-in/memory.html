@@ -1,0 +1,42 @@
+---
+layout: dandelion
+menu: caching
+submenu: builtincache
+level1:
+   url: features
+   name: Features
+level2:
+   url: asset-caching
+   name: Asset caching
+level3:
+   url: built-in-cache-systems
+   name: Built-in cache system
+level4:
+   url: memory.html
+   name: MemoryAssetCache
+---
+<h2 class="page-title">MemoryAssetCache</h2>
+<p>
+   The {% javadoc ddl dandelion-core MemoryAssetCache %} class is the default implementation
+   used for caching.
+</p>
+<p>
+   <table class="table table-striped table-hover">
+      <tbody>
+         <tr>
+            <td>Cache name</td>
+            <td><code>default</code></td>
+         </tr>
+         <tr>
+            <td>Service provider</td>
+            <td>{% javadoc ddl dandelion-core MemoryAssetCache %}</td>
+         </tr>
+      </tbody>
+   </table>
+</p>
+<p>
+   This implementation contains one map for asset caching and another
+   for request caching. The max element of each of them can be
+   configured thanks to the <a href="/dandelion/docs/ref/configuration/#main-cache.asset.max.size">cache.asset.max.size</a> and
+   <a href="/dandelion/docs/ref/configuration/#main-cache.request.max.size">cache.request.max.size</a> configuration properties.
+</p>

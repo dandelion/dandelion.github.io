@@ -14,100 +14,92 @@ level3:
 <h2 class="page-title">Introducing asset caching</h2>
 
 <p>
-PARLER DU FAIT QUE CERTAINS LOCATORS NECESSITENT DU CACHING ALORS QUE D'AUTRES NON
+   You may have seen in the section about <a
+      href="/dandelion/features/asset-locators/introducing-asset-locators.html">asset
+      locators</a> that some of them require caching. Actually caching
+   operates at several levels that we'll see in this section.
 </p>
 
+<h3 class="section-title" id="ac">Asset caching</h3>
 <p>
-   Dandelion provides some processors intended to be applied on assets. This section introduces
-   major concepts around these processors.
+   As soon as a page is requested, Dandelion reads your
+   <a href="/dandelion/features/asset-bundles/building-a-bundle-graph/">bundle
+      graph</a>, grabs all necessary assets and apply asset processors
+   on them.
+</p>
+<p>
+   This is where the first caching pass occurs: as soon as an asset is
+   fetched, using its associated locator, the content can be stored in
+   the configured cache system, but under certain condition.
+</p>
+<h4>Production mode</h4>
+<p>
+   In <a href="/dandelion/features/production-mode/">production
+      mode</a>, the content of assets is always cached after
+   all enabled processors have processed the assets. This way, assets
+   processing is done only once.
+</p>
+<h4>Development mode</h4>
+<p>
+   In <a href="/dandelion/features/development-mode/">development
+      mode</a>, actually it depends on the locator used to fetch the asset.
+</p>
+<p>
+   Basically, if Dandelion can render the asset directly from its
+   source (e.g. with assets coming from the current webapp, or from a
+   CDN), the asset won't be cached.
+</p>
+<p>
+   However if the asset comes, for example, from a JAR, Dandelion
+   will generate direct link if your servlet container allows it
+   (Servlet API >3.0). If not, the asset will be cached.
 </p>
 
-<h3 class="section-title" id="def">Definition</h3>
+<h4>Cache key</h4>
 <p>
-   An <i>asset processor</i> (or <i>processor</i> to simplify the language) is defined as follows:
-</p>
-<ul>
-   <li>A processor key, used as an identifier</li>
-   <li>A type of asset to process, such as <i>js</i> or <i>css</i></li>
-</ul>
-<p>
-   All processors are currently used to minify assets thereby improving load times.
-</p>
-<p class="alert alert-info">
-   <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp; 
-   In upcoming releases, more processors will be provided, allowing to process more CSS and JavaScript languages such as
-   <a href="http://coffeescript.org/">CoffeeScript</a>.
+   Each asset that must be cached has an associated cache key defined as follows:
 </p>
 <p>
-   Dandelion already provides some <a href="/built-in">built-in
-      processors</a> which are configured by default when the
-   <a href="/dandelion/features/production-mode">production mode</a> (TODO) is enabled. Note that
-   when the <a
-      href="/dandelion/features/development-mode">development mode</a> is enabled, the
-   <a href="">minification</a> (TODO lien) configuration property is disabled, and thus no processor
-   is applied.
+   <strong>[SHA1_generated_from_the_current_URL]/[asset_name]-[asset_version].[asset_type]</strong>
 </p>
 
-<h3 class="section-title" id="sbl">Built-in cache system</h3>
+<h3 class="section-title" id="rc">Request caching</h3>
 <p>
-   By default, Dandelion uses 
-</p>
-<h3 class="section-title" id="ac">Configuring asset processors</h3>
-<p>
-   Asset processors are configured through the <a
-      href="">asset.processors</a> (TODO) configuration property. You just need to define a
-   comma-separated list of processor keys to enable the corresponding processors.
+   The second pass of caching occurs as soon as all assets requested by
+   a page are fetched and processed.
 </p>
 <p>
-   For example, the default value is
-   <code>cssurlrewriting,jsmin,cssmin</code>
-   . This means that by default, the processors behing these keys will be applied sequentially on
-   all asset, depending on their compatible asset type(s).
-</p>
-
-<h3 class="section-title" id="ac">Enabling asset processing</h3>
-<p>
-   By default, no asset is processed, because the
-   <a href="">minification</a> (TODO) configuration property is set to
-   <code>false</code>
-   (see the <a href="/dandelion/features/development-mode/default-configuration.html">default
-      configuration</a>).
+   At this moment, Dandelion will store the association
+      between the request and all the corresponding assets into the
+   configured cache system.
 </p>
 <p>
-   You can activate asset processing by turning the above configuration property to
-   <code>true</code>
-   . When set to
-   <code>true</code>
-   , Dandelion will use the asset processors configured thanks to the
-   <a href="">asset.processors</a> (TODO) configuration property as seen in the previous section.
+   <img src="/assets/images/dandelion/cache-request-assets.png" style="margin-top:20px;" />
+</p>
+<h4>Cache key</h4>
+<p>
+   These assets are stored under a simple cache key which corresponds to
+   the current request's URI with potential request parameters appended.
+</p>
+<p>
+   <strong>[current_URI]</strong>
 </p>
 
-<h3 class="section-title" id="acns">Asset caching and naming strategy</h3>
+<h3 class="section-title" id="bics">Built-in cache system</h3>
 <p>
-   Once asset processing is enabled, there are two points to note:
+   By default, Dandelion uses a memory-based cache with a
+   <a href="http://en.wikipedia.org/wiki/Cache_algorithms">LRU</a>
+   policy.
 </p>
-<ul>
-   <li>
-      <p>
-         Asset naming: the <i>min</i> keyword is appended to the asset name, just before the extension name.
-      </p>
-      <p>
-         For example, an asset non-minified called <code>app-1.0.0.css</code> will be called <code>app-1.0.0.min.css</code>. 
-      </p>
-   </li>
-   <li>
-      <p>
-         Asset caching: it is also worth noting that all processed assets will be first cached,
-         thanks to the
-         <a href="/dandelion/features/asset-caching">configured cache system</a>, and then served by
-         the DandelionServlet (TODO).
-      </p>
-   </li>
-</ul>
+<p>
+   Note that an extra has been developed for <a
+      href="http://ehcache.org/">Ehcache</a>. See more <a
+      href="/dandelion/features/asset-caching/built-in-cache-systems/">here</a>.
+</p>
 
-<h3 class="section-title" id="pyop">Plugging-in your own processor</h3>
+<h3 class="section-title" id="pyocs">Plugging-in your own cache system</h3>
 <p>
    As all other parts of the framework, Dandelion provides an extension point allowing you to
-   plug-in your own asset processor. Read more
-   <a href="plugging-in-your-own-processor.html">here</a>.
+   plug-in your own cache system. Read more
+   <a href="plugging-in-your-own-cache-system.html">here</a>.
 </p>
