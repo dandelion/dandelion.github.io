@@ -17,7 +17,7 @@ module Jekyll
       args = @params.split(" ").map(&:strip)
       project = args[1].downcase
       clazz = args[2]
-      
+
       @module = args[0].downcase
       case @module
       when "dt"
@@ -50,13 +50,19 @@ module Jekyll
         
         version = config['dandelion']['components']['core']['version']
         sources = config['dandelion']['components']['core']['sources']
-  
+
         javadocPath = nil
         sourcePath = nil
-        searchPath = './dandelion/releases/' + version + '/javadoc/' + project + '/'
+        if project.include? '/'
+           projectSearchPath = project.split("/")[1]
+        else
+           projectSearchPath = project
+        end
+        projectSearchPath = 
+        searchPath = './dandelion/releases/' + version + '/javadoc/' + projectSearchPath + '/'
         reg = searchPath[1, searchPath.length]
         
-        Find.find(@searchPath) do |path|
+        Find.find(searchPath) do |path|
           if !path.include? 'class-use' and path.include? clazz
             javadocPath = path[1, path.length]
             sourcePath = javadocPath.gsub(/#{Regexp.escape(reg)}/, "https://github.com/dandelion/" + sources + "/blob/" + sources + "-" + version + "/" + project + "/src/main/java/").gsub(/\.html/, '.java')
