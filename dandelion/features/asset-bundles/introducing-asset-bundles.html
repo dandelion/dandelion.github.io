@@ -47,15 +47,14 @@ level3:
 <h3 class="section-title" id="jr">JSON representation</h3>
 <p>
    All assets intented to be used in your web applications need to be known by the framework. For
-   that, you have to create one or more bundles.</p>
+   that, you have to create one or more bundles in a declarative approach.</p>
 <p>
-   Each bundle is basically a JSON file where you will declare all assets needed in your
-   application.
+   Each bundle is basically a JSON file where you will describe each asset.
 </p>
 
 <h4>Basic example</h4>
 <p>
-   Assume we want to use jQuery in our web application. One representation could be the following:
+   Assume we want to use <a href="http://jquery.com/">jQuery</a> in our web application. One representation could be the following:
 <pre class="prettyprint">
 {
    "bundle" : "jquery",
@@ -71,10 +70,10 @@ level3:
 </pre>
 </p>
 <p>
-   You will note that: 
+   In this bundle:
 </p>
 <ul>
-   <li>this bundle has no dependency</li>
+   <li>no dependency is declared</li>
    <li>the <i>jquery</i> asset is configured with the <i>cdn</i> location key. This key is mapped to
       a particular <i>asset locator</i> used by Dandelion to know the fetching strategy to use. See
       more about <a href="/dandelion/features/asset-locators">asset locators</a>.
