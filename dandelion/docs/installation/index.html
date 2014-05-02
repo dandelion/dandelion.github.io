@@ -1,5 +1,6 @@
 ---
 layout: dandelion
+module: core
 menu: installation
 level1:
    url: docs/installation
@@ -21,13 +22,13 @@ level1:
    Irrespective of which template engine your web application is based on, there are some required steps to follow.
 </p>
 
-<h4>Step 1/4: Install the server-side dependencies</h4>
+<h4>Step 1/3: Install the server-side dependencies</h4>
 <p>
    {% assign artifact = 'dandelion-core' %} 
    {% include build-tools.html %}
 </p>
 
-<h4>Step 2/4: Configure the Dandelion filter</h4>
+<h4>Step 2/3: Configure the Dandelion filter</h4>
 <p>
    Add the Dandelion filter definition and mapping to the <code>web.xml</code> file:
 <pre class="prettyprint">
@@ -42,7 +43,7 @@ level1:
 </pre>
 </p>
 
-<h4>Step 3/4: Configure the Dandelion servlet</h4>
+<h4>Step 3/3: Configure the Dandelion servlet</h4>
 <p>
    Add the Dandelion servlet definition and mapping to the <code>web.xml</code> file:
 <pre class="prettyprint">
@@ -57,42 +58,26 @@ level1:
 </pre>
 </p>
 
-<h4>Step 4/4: Configure the development mode</h4>
-<p>
-   Dandelion uses a development mode to 
-</p>
-
 <p>
    You're done with the basic installation! With all the steps above, you can already enjoy using
    Dandelion.
 </p>
-<p>
-   It's time to <a
-      href="/dandelion/features/asset-stack/building-your-asset-stack.html">build your asset
-      stack</a>!
-</p>
 
 <h3 class="section-title">Optional steps</h3>
 <p>
-   Below are specific installation guides, depending on your needs.
+   Below are specific installation guides, depending on your template engine.
 </p>
 <table class="table table-striped">
-   <thead>
-      <tr>
-         <th>Use case</th>
-         <th></th>
-      </tr>
-   </thead>
    <tbody>
       <tr>
          <td>
-            The view layer of my web application is based on JSP.
+            I'm using JSP
          </td>
          <td><a href="jsp.html" class="btn">JSP guide »</a></td>
       </tr>
       <tr>
          <td>
-            The view layer of my web application is based on Thymeleaf.
+            I'm using Thymeleaf
          </td>
          <td><a href="thymeleaf.html" class="btn">Thymeleaf guide »</a></td>
       </tr>

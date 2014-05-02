@@ -193,12 +193,15 @@ cookiePath: /dandelion
                      <li {% if page.url contains 'asset-caching/introducing-asset-caching' %}class="active"{% endif %}>
                         <a href="/dandelion/features/asset-caching/introducing-asset-caching.html"><i class="fa fa-angle-double-right"></i> Introducing asset caching</a>
                      </li>
-                     <li {% if page.url contains 'asset-processors/built-in' %}class="active"{% endif %}>
-                        <a href="/dandelion/features/asset-caching/available-cache-systems"><i class="fa fa-angle-double-right"></i> Available cache systems</a>
-                        {% if page.submenu == 'availablecache' %}
+                     <li {% if page.url contains 'asset-caching/built-in' %}class="active"{% endif %}>
+                        <a href="/dandelion/features/asset-caching/built-in/"><i class="fa fa-angle-double-right"></i> Built-in cache systems</a>
+                        {% if page.submenu == 'builtincache' %}
                         <ul class="nav nav-list">
-                           <li {% if page.url contains 'available-cache-systems/ehcache' %}class="active"{% endif %}>
-                              <a href="/dandelion/features/asset-caching/available-cache-systems/ehcache.html"><i class="fa fa-angle-double-right"></i> EhCacheAssetCache</a>
+                           <li {% if page.url contains 'built-in/memory' %}class="active"{% endif %}>
+                              <a href="/dandelion/features/asset-caching/built-in/memory.html"><i class="fa fa-angle-double-right"></i> MemoryAssetCache</a>
+                           </li>
+                           <li {% if page.url contains 'built-in/ehcache' %}class="active"{% endif %}>
+                              <a href="/dandelion/features/asset-caching/built-in/ehcache.html"><i class="fa fa-angle-double-right"></i> EhCacheAssetCache</a>
                            </li>
                         </ul>
                         {% endif %}
