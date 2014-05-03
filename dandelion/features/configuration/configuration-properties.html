@@ -1,0 +1,51 @@
+---
+layout: dandelion
+menu: configuration
+level1: features
+level2:
+  url: configuration
+  name: Configuration
+level3:
+  url: configuration-properties
+  name: Configuration properties
+---
+<h2 class="page-title">Configuration properties</h2>
+
+<p>
+   Any of the <a href="/dandelion/docs/ref/configuration">configuration properties</a> can be loaded using the same strategy. 
+</p>
+<p>As most of the configuration properties, you have several options to do so:</p>
+<ul>
+   <li>
+      Using the properties file: just add the following key/value
+      pair to your <a
+      href="/dandelion/features/configuration/configuration-loading.html">dandelion.properties</a>
+      file: 
+<pre class="prettyprint">
+minification=true
+</pre>
+   </li>
+   <li>Using a filter initialization parameter in your <code>web.xml</code> file:
+<pre class="prettyprint">
+&lt;filter>
+   &lt;filter-name>dandelion&lt;/filter-name>
+   &lt;filter-class>com.github.dandelion.core.web.DandelionFilter&lt;/filter-class>
+   &lt;init-param>
+      &lt;param-name>minification&lt;/param-name>
+      &lt;param-value>true&lt;/param-value>
+   &lt;/init-param>
+&lt;/filter>
+</pre>
+   </li>
+   <li>
+      Using a system property: add the following system property to your server starting script:
+<pre class="prettyprint">
+-Dminification=true
+</pre>   
+   </li>
+</ul>
+<p>
+   Remember that as for any other <a href="/dandelion/docs/ref/configuration">configuration
+      property</a>, the following rule applies:
+   <i>system property</i> > <i>filter init param</i> > <i>properties file</i>.
+</p>
