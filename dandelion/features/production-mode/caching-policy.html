@@ -1,0 +1,25 @@
+---
+layout: dandelion
+menu: prodmode
+level1:
+   url: features
+   name: Features
+level2:
+   url: development-mode
+   name: Development mode
+level3:
+   url: caching-policy.html
+   name: Caching policy
+---
+<h2 class="page-title">Caching policy</h2>
+<p>
+   When the <i>production mode</i> is enabled, Dandelion applies a
+   particular caching policy in order to optimize load times.
+</p>
+<p>
+   This is done thanks to the following HTTP headers applied on each request that serves an asset:
+</p>
+<ul>
+   <li><code>Cache-Control</code>, set to <code>public, max-age=315360000</code></li>
+   <li><code>Expires</code>, set to the current date plus one year</li>
+</ul>

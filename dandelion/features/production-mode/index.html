@@ -15,38 +15,44 @@ level2:
    hiding behind the <i>development mode</i>.
 </p>
 
-<h3 class="section-title" id="itdm">Introducing the developement mode</h3>
+<h3 class="section-title" id="itdm">Default production properties</h3>
 <p>
-   Dandelion has been designed to make the web development simpler. This is why the framework ships
-   a
-   <i>development mode</i> which helps developers making great apps faster thanks to the following features:
+   It is important to note that when you switch to production mode, Dandelion will use some configurations.
 </p>
+
+<h3 class="section-title" id="itdm">Enabling the production mode</h3>
+<p>As most of the configuration properties, you have several options to do so:</p>
 <ul>
-   <li>Asset reloading thanks to specific HTTP cache headers. Read more <a href="">here</a>.
-      (TODO lien)
+   <li>
+      Using the properties file: just add the following key/value
+      pair to your <a
+      href="/dandelion/features/configuration/configuration-loading.html">dandelion.properties</a>
+      file: 
+<pre class="prettyprint">
+dandelion.mode=production
+</pre>
    </li>
-   <li>A bundle graph viewer, allowing you to visualize on runtime how Dandelion will manage
-      your assets. Read more <a href="">here</a>. (TODO lien)
+   <li>Using a filter initialization parameter in your <code>web.xml</code> file:
+<pre class="prettyprint">
+&lt;filter>
+   &lt;filter-name>dandelion&lt;/filter-name>
+   &lt;filter-class>com.github.dandelion.core.web.DandelionFilter&lt;/filter-class>
+   &lt;init-param>
+      &lt;param-name>dandelion.mode&lt;/param-name>
+      &lt;param-value>production&lt;/param-value>
+   &lt;/init-param>
+&lt;/filter>
+</pre>
+   </li>
+   <li>
+      Using a system property: add the following system property to your server starting script:
+<pre class="prettyprint">
+-Ddandelion.mode=production
+</pre>   
    </li>
 </ul>
-<li>
 <p>
-   However, much work remains to be done. For example the bundle full reloading is not
-   supported yet, which means each time you modify a
-   <a href="">bundle</a> (TODO lien), you have to restart your server.
-</p>
-
-<p>
-   Feel free to browse the opposite menu to read more about the <i>development mode</i>.
-</p>
-<h3 class="section-title" id="ddc">Enabling/disabling the developement mode</h3>
-
-
-<h3 class="section-title" id="ddc">Default developement configuration</h3>
-
-
-<h3 class="section-title" id="odt">Other development tools</h3>
-<p>
-   Dandelion also provide a <a href="bundle-graph-viewer.html">bundle
-      graph viewer</a> that you may find useful when developing your web application.
+   Remember that as for any other <a href="/dandelion/docs/ref/configuration/">configuration
+      property</a>, the following rule applies:
+   <i>system property</i> > <i>filter init param</i> > <i>properties file</i>.
 </p>

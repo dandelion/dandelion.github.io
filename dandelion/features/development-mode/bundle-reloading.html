@@ -1,0 +1,46 @@
+---
+layout: dandelion
+menu: devmode
+level1:
+   url: features
+   name: Features
+level2:
+   url: development-mode
+   name: Development mode
+level3:
+   url: bundle-reloading.html
+   name: Bundle reloading
+---
+<h2 class="page-title">Bundle reloading</h2>
+<p>
+   During project development, you may need to add new or change existing
+   <a
+      href="/dandelion/features/asset-bundles/introducing-asset-bundles.html">asset
+      bundles</a>.
+</p>
+<p>
+   Dandelion doesn't support automatic bundle reloading yet. For now, you have to do it manually.
+</p>
+
+<h3 class="section-title" id="ryab">Reloading your asset bundles</h3>
+<p>
+   To reload your <a
+      href="/dandelion/features/asset-bundles/introducing-asset-bundles.html">asset
+      bundles</a>, you just need to append a new
+   <code>reloadBundles</code>
+   request parameter to the current URL.
+</p>
+<p>
+   For example, if you're currently browsing the following URL:
+   <code>http://localhost/context/foo</code>
+   , just modify the URL as follows:
+   <code>http://localhost/context/foo?reloadBundles</code>
+   . As a consequence, Dandelion will re-initialize your
+   <a href="/dandelion/features/asset-bundles/building-a-bundle-graph/">bundle
+      graph</a>.
+</p>
+<p class="alert alert-warn">
+   <strong><i class="fa fa-warning fa-2x"></i></strong>&nbsp; It is
+   worth noting that bundle reloading
+   <i>development mode</i> is enabled.
+</p>
