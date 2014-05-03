@@ -15,43 +15,34 @@ level3:
 
 <p>
    You may wish to use a custom <a
-      href="introducing-asset-locator.html">locator</a>. Let's see here how to
+      href="introducing-asset-processor.html">processor</a>. Let's see here how to
    proceed.
 </p>
 
 <h3 class="section-title" id="slw">SPI for asset processors</h3>
 <p>
-   In order to plug-in your own locator, just follow these steps:
+   In order to plug-in your own asset processor, just follow these steps:
 </p>
 <ol>
    <li>Create a class:
       <ul>
-         <li>that extends {% javadoc ddl dandelion-core AbstractAssetLocator %}</li>
-         <li>that implement either the {% javadoc ddl dandelion-core Servlet2Compatible %} interface, or {% javadoc ddl dandelion-core Servlet3Compatible %}, or both</li>
+         <li>that extends {% javadoc ddl dandelion-core AbstractAssetProcessor %}</li>
+         <li>annotated with {% javadoc ddl dandelion-core CompatibleAssetType %}</li>
       </ul> 
 <pre class="prettyprint">
-package com.foo.asset.locator.impl;
+package com.foo.asset.processor.impl;
 
-public class MyLocator extends AbstractAssetLocator implements Servlet2Compatible {
+@CompatibleAssetType(types = AssetType.css)
+public class MyProcessor extends AbstractAssetLocator {
 
    @Override
-   public String getLocationKey() {
-      return "a-new-location-key";
+   public String getProcessorKey() {
+      return "yourprocessorname";
    }
 
    @Override
-   public boolean isCachingForced() {
-      return false;
-   }
-
-   @Override
-   public String doGetLocation(AssetStorageUnit asu, HttpServletRequest request) {
-      return "the location of the asset";
-   }
-
-   @Override
-   protected String doGetContent(String location, Map&lt;String, Object&gt; parameters, HttpServletRequest request) {
-      return "the content of the asset";
+   public void doProcess(Asset asset, Reader reader, Writer writer) throws Exception {
+      ...
    }
 }
 </pre>   
@@ -66,21 +57,23 @@ yourJar
       |__ resources
          |__ META-INF
             |__ services
-               |__ com.github.dandelion.core.asset.locator.spi.AssetLocator
+               |__ com.github.dandelion.core.asset.processor.spi.AssetProcessor
    
 </pre>   
       </p>
       <p>
          Inside this file, just add the fully qualified name of your own implementation. For example:
 <pre class="prettyprint">
-com.foo.asset.locator.impl.MyLocator
+com.foo.asset.processor.impl.MyProcessor
 </pre>
       </p>   
    </li>
+   <li>
+      Finally, you need to update the <a
+      href="/dandelion/docs/ref/configuration/#asset.processors">asset.processors</a>
+      configuration property by appending the name of your processor. For example:
+<pre class="prettyprint">
+asset.processors=cssurlrewriting,jsmin,cssmin,yourprocessorname
+</pre>
+   </li>
 </ol>
-<p>
-   And that's all! Dandelion, thanks to the
-   <a href="http://docs.oracle.com/javase/tutorial/sound/SPI-intro.html">SPI
-            mechanism</a>, will automatically pick up your
-         implementation on the next restart.
-      </p>
