@@ -40,12 +40,12 @@ level3:
 <p>
    However, an asset stored in the classpath, for example, cannot be served directly by the webapp.
    Instead, in such a case, Dandelion grabs its content and stores it in the configured
-   <a href="">cache system</a> (TODO lien), with a particular cache key. Later, the generated link
-   pointing to this asset will be served by the DandelionServlet (TODO lien), the role of which is
+   <a href="/dandelion/features/asset-caching/">cache system</a>, with a particular cache key. Later, the generated link
+   pointing to this asset will be served by the {% javadoc ddl dandelion-core DandelionServlet %}, the role of which is
    to retrieve the content from the cache system and serve it.
 </p>
 <p>
-   See the <a href="">asset caching section</a> (TODO lien) for more details.
+   See the <a href="/dandelion/features/asset-caching/">asset caching</a> section for more details.
 </p>
 
 <h3 class="section-title" id="ex">Example</h3>

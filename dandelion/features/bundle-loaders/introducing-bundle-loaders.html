@@ -35,8 +35,8 @@ level3:
 
 <h3 class="section-title" id="sbl">Built-in loaders</h3>
 <p>
-   Dandelion comes with two built-in bundle loaders: DandelionBundleLoader (javadoc) and
-   VendorBundleLoader (javadoc). They basically do the same job except the location where JSON files
+   Dandelion comes with two built-in bundle loaders: {% javadoc ddl dandelion-core DandelionBundleLoader %} and
+   {% javadoc ddl dandelion-core VendorBundleLoader %}. They basically do the same job except the location where JSON files
    are scanned.
 </p>
 <p>
@@ -44,7 +44,7 @@ level3:
    scanned twice.
 </p>
 
-<h4>VendorBundleLoader (TODO lien)</h4>
+<h4>{% javadoc ddl dandelion-core VendorBundleLoader %}</h4>
 <p>
    This loader is intended to load vendor's librairies, such as
    <a href="http://jquery.com/">jQuery</a> or <a href="http://getbootstrap.com/">Bootstrap</a>. The
@@ -54,7 +54,7 @@ level3:
 </p>
 <p>
    Assuming the following <a href="https://maven.apache.org/">Maven</a> structure, the
-   VendorBundleLoader (TODO lien) will only pick up and load
+   {% javadoc ddl dandelion-core VendorBundleLoader %} will only pick up and load
    <code>jquery.json</code>
    and
    <code>bootstrap2.json</code>
@@ -81,7 +81,7 @@ YourWebApp
    In upcoming releases, all assets defined in "vendor bundles" will have a specific caching policy applied.
 </p>
 
-<h4>DandelionBundleLoader (TODO lien)</h4>
+<h4>{% javadoc ddl dandelion-core DandelionBundleLoader %}</h4>
 <p>
    Its role is to scan the classpath recursively, starting from the
    <code>/dandelion</code>
@@ -127,12 +127,12 @@ YourWebApp
 </p>
 <ol>
    <li>
-      <p>First, by executing the VendorBundleLoader (TODO lien).</p>
+      <p>First, by executing the {% javadoc ddl dandelion-core VendorBundleLoader %}.</p>
    </li>
    <li>
       <p>
          Then, by executing all other bundle loaders present in the classpath, i.e. classes that
-         entends AbstractBundleLoader (TODO lien). All bundles loaded by these loaders will be considered as
+         extends {% javadoc ddl dandelion-core AbstractBundleLoader %}. All bundles loaded by these loaders will be considered as
          <i>component bundles</i> in the rest of the documentation.
       </p>
       <p>
@@ -145,7 +145,7 @@ YourWebApp
    </li>
    <li>
       <p>
-         Finally by executing the DandelionBundleLoader (TODO lien).
+         Finally by executing the {% javadoc ddl dandelion-core DandelionBundleLoader %}.
       </p>
       <p>
          The <i>user bundles</i> are always loaded in last, for the purpose of allowing to override

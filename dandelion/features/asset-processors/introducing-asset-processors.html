@@ -27,16 +27,16 @@ level3:
    <li>A type of asset to process, such as <i>js</i> or <i>css</i></li>
 </ul>
 <p>
-   All processors are currently used to minify assets thereby improving load times.
+   Most of the existing processors are used to minify assets thereby improving load times.
 </p>
 <p>
-   Dandelion already provides some <a href="/built-in">built-in
-      processors</a> which are configured by default when the
-   <a href="/dandelion/features/production-mode">production mode</a> (TODO) is enabled. Note that
-   when the <a
-      href="/dandelion/features/development-mode">development mode</a> is enabled, the
-   <a href="">minification</a> (TODO lien) configuration property is disabled, and thus no processor
-   is applied.
+   Dandelion already provides some
+   <a href="/built-in">built-in processors</a> which are configured by
+   default when the <a
+      href="/dandelion/features/production-mode">production mode</a> is
+   enabled. Note that in <a
+      href="/dandelion/features/development-mode">development mode</a>,
+   asset minification is disabled, and thus no processor is applied.
 </p>
 <p class="alert alert-info">
    <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp; 
@@ -47,7 +47,7 @@ level3:
 <h3 class="section-title" id="ac">Configuring asset processors</h3>
 <p>
    Asset processors are configured through the <a
-      href="">asset.processors</a> (TODO) configuration property. You just need to define a
+      href="/dandelion/docs/ref/configuration/#asset.processors">asset.processors</a> configuration property. You just need to define a
    comma-separated list of processor keys to enable the corresponding processors.
 </p>
 <p>
@@ -60,7 +60,7 @@ level3:
 <h3 class="section-title" id="ac">Enabling asset processing</h3>
 <p>
    By default, no asset is processed, because the
-   <a href="">minification</a> (TODO) configuration property is set to
+   <a href="/dandelion/docs/ref/configuration/#minification">minification</a> configuration property is set to
    <code>false</code>
    (see the <a href="/dandelion/features/development-mode/default-configuration.html">default
       configuration</a>).
@@ -71,7 +71,7 @@ level3:
    . When set to
    <code>true</code>
    , Dandelion will use the asset processors configured thanks to the
-   <a href="">asset.processors</a> (TODO) configuration property as seen in the previous section.
+   <a href="/dandelion/docs/ref/configuration/#asset.processors">asset.processors</a> configuration property as seen in the previous section.
 </p>
 
 <h3 class="section-title" id="acns">Asset caching and naming strategy</h3>
@@ -92,7 +92,7 @@ level3:
          Asset caching: it is also worth noting that all processed assets will be first cached,
          thanks to the
          <a href="/dandelion/features/asset-caching">configured cache system</a>, and then served by
-         the DandelionServlet (TODO).
+         the {% javadoc ddl dandelion-core DandelionServlet %}.
       </p>
    </li>
 </ul>

@@ -39,7 +39,7 @@ level4:
          </tr>
          <tr>
             <td>Class(es)</td>
-            <td>DelegateLocator (TODO lien)</td>
+            <td>{% javadoc ddl dandelion-core DelegateLocator %}</td>
          </tr>
       </tbody>
    </table>
@@ -47,21 +47,21 @@ level4:
 
 <p>
    This locator is a bit particular since it reads the content of the asset from a special parameter
-   stored inside the AssetRequestContext (TODO lien).
+   stored inside the {% javadoc ddl dandelion-core AssetRequestContext %}.
 </p>
 <p>
    This parameter:
 </p>
 <ul>
    <li>must be stored under the key <code>DelegateLocator.DELEGATED_CONTENT_PARAM</code></li>
-   <li>must be a class that implements DelegatedContent (lien javadoc) and where the
+   <li>must be a class that implements {% javadoc ddl dandelion-core DelegatedContent %} and where the
       <code>getContent()</code> method must return the asset content to be injected</li>
 </ul>
 
 <h3 class="section-title" id="dle">Example</h3>
 <p>
    <a href="/datatables">Dandelion-Datatables</a> internally uses this locator to delegate the
-   content generation to JavascriptGenerator (TODO lien).
+   content generation to {% javadoc ddl dandelion-core JavascriptGenerator %}.
 </p>
 <p>
    Below is the main Dandelion-Datatables bundle:
@@ -101,7 +101,7 @@ AssetRequestContext
       user-side entry point for manipulating the assets graph associated to the current <code>HttpServletRequest</code>.
    </li>
    <li>
-      <code>addBundles("ddl-dt", "datatables")</code> just adds the given bundle to the AssetRequestContext (TODO lien).
+      <code>addBundles("ddl-dt", "datatables")</code> just adds the given bundle to the {% javadoc ddl dandelion-core AssetRequestContext %}.
    </li>
    <li>
       <p>

@@ -219,6 +219,9 @@ cookiePath: /dandelion
                      <li {% if page.url contains 'configuration/configuration-loading' %}class="active"{% endif %}>
                         <a href="/dandelion/features/configuration/configuration-loading.html"><i class="fa fa-angle-double-right"></i> Configuration loading</a>
                      </li>
+                     <li {% if page.url contains 'configuration/configuration-properties' %}class="active"{% endif %}>
+                        <a href="/dandelion/features/configuration/configuration-properties.html"><i class="fa fa-angle-double-right"></i> Configuration properties</a>
+                     </li>
                   </ul>
                   {% endif %}
                </li>
@@ -226,20 +229,14 @@ cookiePath: /dandelion
                   <a href="/dandelion/features/development-mode/" title="Development mode"> Development mode</a>
                   {% if page.menu == 'devmode' %}
                   <ul class="nav nav-list">
-                     <li {% if page.url contains 'development-mode/toggling-the-development-mode' %}class="active"{% endif %}>
-                        <a href="/dandelion/features/development-mode/toggling-the-development-mode.html"><i class="fa fa-angle-double-right"></i> Toggling the development mode</a>
-                     </li>
-                     <li {% if page.url contains 'development-mode/default-configuration' %}class="active"{% endif %}>
-                        <a href="/dandelion/features/development-mode/default-configuration.html"><i class="fa fa-angle-double-right"></i> Default configuration</a>
+                     <li {% if page.url contains 'development-mode/asset-reloading' %}class="active"{% endif %}>
+                        <a href="/dandelion/features/development-mode/asset-reloading.html"><i class="fa fa-angle-double-right"></i> Asset reloading</a>
                      </li>
                      <li {% if page.url contains 'development-mode/bundle-graph-viewer' %}class="active"{% endif %}>
                         <a href="/dandelion/features/development-mode/bundle-graph-viewer.html"><i class="fa fa-angle-double-right"></i> Bundle graph viewer</a>
                      </li>
-                     <li {% if page.url contains 'development-mode/configuration-reloading' %}class="active"{% endif %}>
-                        <a href="/dandelion/features/development-mode/configuration-reloading.html"><i class="fa fa-angle-double-right"></i> Configuration reloading</a>
-                     </li>
-                     <li {% if page.url contains 'development-mode/logging' %}class="active"{% endif %}>
-                        <a href="/dandelion/features/development-mode/logging.html"><i class="fa fa-angle-double-right"></i> Logging</a>
+                     <li {% if page.url contains 'development-mode/bundle-reloading' %}class="active"{% endif %}>
+                        <a href="/dandelion/features/development-mode/bundle-reloading.html"><i class="fa fa-angle-double-right"></i> Bundle reloading</a>
                      </li>
                   </ul>
                   {% endif %}
@@ -253,9 +250,6 @@ cookiePath: /dandelion
                      </li>
                   </ul>
                   {% endif %}
-               </li>
-               <li {% if page.menu == 'extras' %} class="active"{% endif %}>
-                  <a href="/dandelion/features/extras/" title="Development mode"> Extras</a>
                </li>
                
                <h5>Development</h5>

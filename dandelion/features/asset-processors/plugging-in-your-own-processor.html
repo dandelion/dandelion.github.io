@@ -19,15 +19,15 @@ level3:
    proceed.
 </p>
 
-<h3 class="section-title" id="slw">SPI for locators</h3>
+<h3 class="section-title" id="slw">SPI for asset processors</h3>
 <p>
    In order to plug-in your own locator, just follow these steps:
 </p>
 <ol>
    <li>Create a class:
       <ul>
-         <li>that extends AbstractAssetLocator (lien)</li>
-         <li>that implement either the Servlet2Compatible (TODO lien) interface, or Servlet3Compatible, or both</li>
+         <li>that extends {% javadoc ddl dandelion-core AbstractAssetLocator %}</li>
+         <li>that implement either the {% javadoc ddl dandelion-core Servlet2Compatible %} interface, or {% javadoc ddl dandelion-core Servlet3Compatible %}, or both</li>
       </ul> 
 <pre class="prettyprint">
 package com.foo.asset.locator.impl;
@@ -50,7 +50,7 @@ public class MyLocator extends AbstractAssetLocator implements Servlet2Compatibl
    }
 
    @Override
-   protected String doGetContent(String location, Map&lt;String, Object> parameters, HttpServletRequest request) {
+   protected String doGetContent(String location, Map&lt;String, Object&gt; parameters, HttpServletRequest request) {
       return "the content of the asset";
    }
 }
@@ -79,6 +79,8 @@ com.foo.asset.locator.impl.MyLocator
    </li>
 </ol>
 <p>
-   And that's all! Dandelion, thanks to the SPI mechanism, will automatically pick up your
-   implementation on the next restart.
-</p>
+   And that's all! Dandelion, thanks to the
+   <a href="http://docs.oracle.com/javase/tutorial/sound/SPI-intro.html">SPI
+            mechanism</a>, will automatically pick up your
+         implementation on the next restart.
+      </p>
