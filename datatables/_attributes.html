@@ -6,154 +6,156 @@ i18n.locale.resolver#def==com. github. dandelion. datatables. core. i18n. Standa
 i18n.message.resolver#desc==
 i18n.message.resolver#val==Any class implementing com. github. dandelion. datatables. core. i18n. MessageResolver
 i18n.message.resolver#def==com. github. dandelion. datatables. jsp. i18n. JstlMessageResolver if the JSTL Jar is present in the classpath
-main.extension.package#desc==Common parent package for all custom extensions
+main.extension.package#desc==Common parent package where all extensions will be scanned
 main.extension.package#val==
 main.extension.package#def==
-main.extension.names#desc==Comma-separated list of names of custom extensions to register in the current table. Note that the extensions must be scanned using the <a href="/datatables/docs/ref/configuration/#main-main.extension.package"><code>main.extension.package</code></a> configuration. Read more <a href="/datatables/features/extension/writing-your-own-extension.html">here</a>.
+main.extension.names#desc==Comma-separated names of extensions to register in the current table
 main.extension.names#val==
 main.extension.names#def==
-css.class#desc==CSS class(es) applied on the HTML table (HTML class attribute)
+main.standalone#desc==Flag allowing to use Dandelion-Datatables as a standalone library. Automatically excludes all <a href="/datatables/docs/ref/bundles/">vendor bundles</a>.
+main.standalone#val==true | false
+main.standalone#def==
+css.class#desc==CSS class(es) applied on the <code>table</code>
 css.class#val==
 css.class#def==            
-css.style#desc==CSS style applied on the HTML table (HTML style attribute)
+css.style#desc==CSS style to be applied on the <code>table</code>
 css.style#val==
 css.style#def==            
 css.stripeClasses#desc==Comma-separated list of CSS classes that should be applied to displayed rows. This sequence of CSS classes may be of any length, and DataTables will apply each class sequentially, looping when required.
 css.stripeClasses#val==
 css.stripeClasses#def==
 css.theme#desc==Name of a theme to activate for the current table 
-css.theme#val==bootstrap2 | jqueryui
+css.theme#val==bootstrap2 | bootstrap3 | jqueryui
 css.theme#def==
 css.themeOption#desc==Name of an option to activate in relation to the current activated theme. 
 css.themeOption#val==See the <a href="/datatables/docs/ref/configuration/#themeoptions">full list</a>
 css.themeOption#def==
 feature.info#desc==Enable or disable the table information display. This shows information about the data that is currently visible on the page, including information about filtered data if that action is being performed
-feature.info#val==true|false
+feature.info#val==true | false
 feature.info#def==true
 feature.autoWidth#desc==Enable or disable automatic column width calculation
-feature.autoWidth#val==true|false
+feature.autoWidth#val==true | false
 feature.autoWidth#def==true
-feature.filter#desc==Enable or disable filtering of data
-feature.filter#val==true|false
-feature.filter#def==true
+feature.filterable#desc==Enable or disable global filtering of data
+feature.filterable#val==true | false
+feature.filterable#def==true
 feature.filterplaceholder#desc==Placeholder used to hold the individual column filtering elements
-feature.filterplaceholder#val==head_before|head_after|foot|none
+feature.filterplaceholder#val==head_before | head_after | foot | none
 feature.filterplaceholder#def==foot
+feature.filterDelay#desc==Delay (in milliseconds) to be used before the AJAX call is performed to obtain data
+feature.filterDelay#val==
+feature.filterDelay#def==500ms
+feature.filterSelector#desc==jQuery selector targeting the element on which a 'click' event will be bound to trigger the filtering
+feature.filterSelector#val==Any jQuery selector
+feature.filterSelector#def==
+feature.filterClearSelector#desc==jQuery selector targeting the element on which a 'click' event will be bound to trigger the clearing of all filter elements
+feature.filterClearSelector#val==Any jQuery selector
+feature.filterClearSelector#def==
 feature.pageable#desc==Enable or disable pagination
-feature.pageable#val==true|false
+feature.pageable#val==true | false
 feature.pageable#def==true
-feature.paginationType#desc==Choice between the different built-in pagination interaction methods which present different page controls to the end user
-feature.paginationType#val==two_button|<br />full_numbers|<br />four_button|<br />bootstrap|<br />scrolling|<br />input|<br />listbox|<br />extJs|<br />bootstrap_full_numbers|<br />bootstrap_four_button
+feature.paginationType#desc==Name of the pagination interaction methods which present different page controls to the end user.
+feature.paginationType#val==two_button | full_numbers | four_button | bootstrap | scrolling | input | listbox | extJs | bootstrap_full_numbers | bootstrap_four_button
 feature.paginationType#def==two_button
-feature.lengthChange#desc==If paginate is enabled, allows the end user to select the size of a formatted page from a select menu (sizes are 10, 25, 50 and 100)
-feature.lengthChange#val==true|false
+feature.lengthChange#desc==If <strong>pageable</strong> is set to true, allows the end user to select the size of a formatted page from a select menu (sizes are 10, 25, 50 and 100)
+feature.lengthChange#val==true | false
 feature.lengthChange#def==true
 feature.sortable#desc==Enable or disable sorting of columns. Sorting of individual columns can be disabled by the "sortable" attribute of column tag
-feature.sortable#val==true|false
+feature.sortable#val==true | false
 feature.sortable#def==true
-feature.stateSave#desc==Enable or disable state saving. When enabled a cookie will be used to save table display information such as pagination information, display length, filtering and sorting. As such when the end user reloads the page the display display will match what thy had previously set up.
-feature.stateSave#val==true|false
+feature.stateSave#desc==When enabled a cookie will be used to save table display information such as pagination information, display length, filtering and sorting. As such when the end user reloads the page the display display will match what thy had previously set up
+feature.stateSave#val==true | false
 feature.stateSave#def==false
 feature.jqueryUi#desc==Enable jQuery UI ThemeRoller support
-feature.jqueryUi#val==true|false
+feature.jqueryUi#val==true | false
 feature.jqueryUi#def==false
 feature.lengthMenu#desc==Specify the entries in the length drop down menu that DataTables show when pagination is enabled
 feature.lengthMenu#val==
-feature.lengthMenu#def==
+feature.lengthMenu#def==10,25,50,100
 feature.displayLength#desc==Number of rows to display on a single page when using pagination
 feature.displayLength#val==
 feature.displayLength#def==10
-feature.dom#desc==Allows you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page (for example you might want the pagination controls at the top of the table). DIV elements (with or without a custom class) can also be added to aid styling.
+feature.dom#desc==Allows you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page (for example you might want the pagination controls at the top of the table).
 feature.dom#val==
 feature.dom#def==lfrtip
-feature.scrollX#desc==Table's width to display in scrolling mode
-feature.scrollX#val==
-feature.scrollX#def==
+feature.scrollX#desc==Enable horizontal scrolling. When a table is too wide to fit into a certain layout, or you have a large number of columns in the table, you can enable x-scrolling to show the table in a viewport, which can be scrolled
+feature.scrollX#val==Any CSS unit, or a number (in which case it will be treated as a pixel measurement)
+feature.scrollX#def==Empty string, i.e. disabled
 feature.scrollXInner#desc==Use more width than it might otherwise do when x-scrolling is enabled
 feature.scrollXInner#val==
 feature.scrollXInner#def==
-feature.scrollY#desc==(scroller) Table's height to display in scrolling mode.
+feature.scrollY#desc==Enable vertical scrolling. Vertical scrolling will constrain the DataTable to the given height, and enable scrolling for any data which overflows the current viewport. This can be used as an alternative to paging to display a lot of data in a small area (although paging and scrolling can both be enabled at the same time)
 feature.scrollY#val==Any CSS unit, or a number (in which case it will be treated as a pixel measurement)
-feature.scrollY#def==300px
+feature.scrollY#def==Empty string, i.e. disabled
 feature.scrollCollapse#desc==When vertical (y) scrolling is enabled, DataTables will force the height of the table's viewport to the given height at all times (useful for layout). However, this can look odd when filtering data down to a small data set, and the footer is left "floating" further down. This parameter (when enabled) will cause DataTables to collapse the table's viewport down when the result set will fit within the given Y height.
-feature.scrollCollapse#val==true|false
+feature.scrollCollapse#val==true | false
 feature.scrollCollapse#def==false
-feature.appear#desc==Allows to change the display mode used when the table has finished loading and must appear in the page. A duration can be set (in milliseconds) if the display mode is set to "fadein" 
-feature.appear#val==block|fadein[,duration]
-feature.appear#def==
+feature.appear#desc==Display mode used when the table has finished loading and must appear in the page. A duration can be set (in milliseconds) if the display mode is set to <strong>fadein</strong> 
+feature.appear#val==block | fadein[,duration]
+feature.appear#def==fadein
 feature.processing#desc==Enable or disable the display of a 'processing' indicator when the table is being processed (e.g. a sort). This is particularly useful for tables with large amounts of data where it can take a noticeable amount of time to sort the entries
-feature.processing#val==true|false
+feature.processing#val==true | false
 feature.processing#def==false
-plugin.fixedHeader#desc==Enable or disable the DataTables FixedHeader plugin
-plugin.fixedHeader#val==true|false
-plugin.fixedHeader#def==false
-plugin.fixedPosition#desc==(fixedHeader) Respectively fix the header, footer, left column, right column
-plugin.fixedPosition#val==top|bottom|left|right
+plugin.fixedPosition#desc==(<a href="/datatables/features/plugins/fixedheader.html">fixedHeader</a>) Respectively fix the header, footer, left column, right column
+plugin.fixedPosition#val==top | bottom | left | right
 plugin.fixedPosition#def==top
-plugin.fixedOffsetTop#desc==(fixedHeader) Offset applied on the top.
+plugin.fixedOffsetTop#desc==(<a href="/datatables/features/plugins/fixedheader.html">fixedHeader</a>) Offset applied on the top
 plugin.fixedOffsetTop#val==
 plugin.fixedOffsetTop#def==
-plugin.scroller#desc==Enable or disable the DataTables Scroller plugin
-plugin.scroller#val==true|false
-plugin.scroller#def==false
-plugin.colReorder#desc==Enable or disable the DataTables ColReorder plugin
-plugin.colReorder#val==true|false
-plugin.colReorder#def==false
 ajax.deferRender#desc==Defer the creation of the table elements for each row until they are needed for a draw
-ajax.deferRender#val==true|false
+ajax.deferRender#val==true | false
 ajax.deferRender#def==false
-ajax.serverSide#desc==Configure DataTables to use server-side processing. 
-ajax.serverSide#val==true|false
+ajax.serverSide#desc==Configure DataTables to use server-side processing. Note that the <strong>url</strong> attribute must be given in order to give DataTables a source to obtain the required data for each draw
+ajax.serverSide#val==true | false
 ajax.serverSide#def==false
 ajax.pipelining#desc==Enable pipelining data for paging when server-side processing is enabled. 
-ajax.pipelining#val==true|false
+ajax.pipelining#val==true | false
 ajax.pipelining#def==false
 ajax.pipeSize#desc==Pipe size used when pipelining is enabled, i.e. times that the user can page before a request must be made of the server.
-ajax.pipeSize#val==
+ajax.pipeSize#val==Any integer starting from 1
 ajax.pipeSize#def==5
+ajax.reloadFunction#desc==Name of a Javascript function that will be called in the 'click' event bound by the reloadSelector attribute. Note that when using this attribute, you will have to call manually the 'fnReloadAjax()' function
+ajax.reloadFunction#val==Any String representing the name of an accessible Javascript function. <a href="/datatables/features/dandelion/bundle-special-syntax.html">Bundle special syntax</a> allowed.
+ajax.reloadFunction#def==Empty string
+ajax.reloadSelector#desc==jQuery selector targeting the element on which a 'click' event will be bound to trigger the table reloading
+ajax.reloadSelector#val==Any jQuery selector
+ajax.reloadSelector#def==Empty string
 ajax.serverData#desc==Allows you to override the default function which obtains the data from the server ($.getJSON) so something more suitable for your application 
-ajax.serverData#val==
+ajax.serverData#val==Any String representing the name of an accessible Javascript function. <a href="/datatables/features/dandelion/bundle-special-syntax.html">Bundle special syntax</a> allowed.
 ajax.serverData#def==
-ajax.serverParams#desc==Allows you to send extra information to the server when using AJAX source
-ajax.serverParams#val==
-ajax.serverParams#def==
-ajax.serverMethod#desc==
-ajax.serverMethod#val==
-ajax.serverMethod#def==
-ajax.reloadSelector#desc=
-ajax.reloadSelector#val=
-ajax.reloadSelector#def=
-ajax.reloadFunction#desc=
-ajax.reloadFunction#val=
-ajax.reloadFunction#def=
-export.links#desc==Comma-separated list of positions where the export links will be generated
-export.links#val==top_left| top_middle| top_right| bottom_left| bottom_middle| bottom_right
-export.links#def==top_right
-export.enabled.formats#desc=Comma-separated list of enabled export formats. Some formats use reserved words, such as 'csv', 'xls', 'xlsx', 'pdf' and 'xml'. You can overload the default configuration attached to these formats using the configuration properties.
-export.enabled.formats#val=
-export.enabled.formats#def=
-export.container.style#desc=CSS style to be applied to the container used for export links.
-export.container.style#val=
-export.container.style#def=
-export.container.class#desc=CSS class(s) to be applied to the container used for export links.
-export.container.class#val=
-export.container.class#def=
-export.[format].class#desc=
-export.[format].class#val=
-export.[format].class#def=
-export.[format].fileName#desc=
-export.[format].fileName#val=
-export.[format].fileName#def=
-export.[format].label#desc=
-export.[format].label#val=
-export.[format].label#def=
-export.[format].mimeType#desc=
-export.[format].mimeType#val=
-export.[format].mimeType#def=
-
-export.types#desc==Comma-separated list of allowed export types
-export.types#val==csv|xml|pdf|xls|xlsx
-export.types#def==
+ajax.serverParam#desc==Allows you to send extra information to the server when using AJAX source
+ajax.serverParam#val==Any String representing the name of an accessible Javascript function. <a href="/datatables/features/dandelion/bundle-special-syntax.html">Bundle special syntax</a> allowed.
+ajax.serverParam#def==
+ajax.serverMethod#desc==Allows you to change the HTTP method called to obtain data when using an AJAX source
+ajax.serverMethod#val==Any valid HTTP method
+ajax.serverMethod#def==GET
+export.enabled.formats#desc==Comma-separated list of enabled export formats. Some formats use reserved words, such as 'csv', 'xls', 'xlsx', 'pdf' and 'xml'
+export.enabled.formats#val==
+export.enabled.formats#def==
+export.container.style#desc==CSS style to be applied to the container used for export links.
+export.container.style#val==
+export.container.style#def==
+export.container.class#desc==CSS class(s) to be applied to the container used for export links.
+export.container.class#val==
+export.container.class#def==
+export.[format].class#desc==
+export.[format].class#val==
+export.[format].class#def==
+export.[format].fileName#desc==
+export.[format].fileName#val==
+export.[format].fileName#def==
+export.[format].label#desc==
+export.[format].label#val==
+export.[format].label#def==
+export.[format].mimeType#desc==
+export.[format].mimeType#val==
+export.[format].mimeType#def==
+export.style#desc==CSS style to be applied to the container used for export links
+export.style#val==
+export.style#def==
+export.class#desc==CSS class(s) to be applied to the container used for export links
+export.class#val==
+export.class#def==
 export.csv.class#desc==Java class name to use with filter-based exports in the CSV format
 export.csv.class#val==Any class that implements com. github. dandelion. datatables. core. export. DatatablesExport
 export.csv.class#def==com.github.dandelion.datatables.core.export.CsvExport
@@ -169,54 +171,54 @@ export.xlsx.class#def==com.github.dandelion.datatables.extras.export.poi.XlsxExp
 export.xml.class#desc==Java class name to use with filter-based exports in the XML format
 export.xml.class#val==Any class that implements com. github. dandelion. datatables. core. export. DatatablesExport
 export.xml.class#def==com.github.dandelion.datatables.core.export.XmlExport
-msg.aria.sortasc#desc==ARIA label that is added to the table headers when the column may be sorted ascending by activing the column (click or return when focused). Note that the column header is prefixed to this string
-msg.aria.sortasc#val==
-msg.aria.sortasc#def==": activate to sort column ascending"
-msg.aria.sortdesc#desc==ARIA label that is added to the table headers when the column may be sorted descending by activing the column (click or return when focused). Note that the column header is prefixed to this string
-msg.aria.sortdesc#val==
-msg.aria.sortdesc#def==": activate to sort column ascending"
-msg.lengthMenu#desc== Detail the action that will be taken when the drop down menu for the pagination length option is changed. The 'MENU' variable is replaced with a default select list of 10, 25, 50 and 100, and can be replaced with a custom select box if required
-msg.lengthMenu#val==
-msg.lengthMenu#def=="Show _MENU_ entries"
-msg.search#desc==  Details the actions that will be taken when the user types into the filtering input text box. The variable "INPUT", if used in the string, is replaced with the HTML text box for the filtering input allowing control over where it appears in the string. If "INPUT" is not given then the input box is appended to the string automatically  
-msg.search#val
-msg.search#def=="Search:"
-msg.info.empty#desc== Display information string for when the table is empty. Typically the format of this string should match sInfo 
-msg.info.empty#val==
-msg.info.empty#def=="Showing 0 to 0 of 0 entries"
-msg.info.postfix#desc==  If can be useful to append extra information to the info string at times, and this variable does exactly that. This information will be appended to the sInfo (msg.info.empty and msg.info.filtered in whatever combination they are being used) at all times
-msg.info.postfix#val==
-msg.info.postfix#def==""
-msg.zerorecords#desc==Text shown inside the table records when the is no information to be displayed after filtering. sEmptyTable is shown when there is simply no information in the table at all (regardless of filtering)   
-msg.zerorecords#val==
-msg.zerorecords#def=="No matching records found"
-msg.paginate.next#desc==Text to use for the 'next' pagination button (to take the user to the next page) 
-msg.paginate.next#val==
-msg.paginate.next#def=="Next"
-msg.paginate.previous#desc==Text to use for the 'previous' pagination button (to take the user to the previous page)  
-msg.paginate.previous#val==
-msg.paginate.previous#def=="Previous"
-msg.paginate.first#desc==Text to use when using the 'full_numbers' type of pagination for the button to take the user to the first page
-msg.paginate.first#val==
-msg.paginate.first#def=="First"
-msg.paginate.last#desc==Text to use when using the 'full_numbers' type of pagination for the button to take the user to the last page
-msg.paginate.last#val==
-msg.paginate.last#def=="Last"
-msg.processing#desc==Text which is displayed when the table is processing a user action (usually a sort command or similar) 
-msg.processing#val==
-msg.processing#def=="Processing..."
-msg.info#desc==This string gives information to the end user about the information that is current on display on the page. The START, END and TOTAL variables are all dynamically replaced as the table display updates, and can be freely moved or removed as the language requirements change
-msg.info#val==
-msg.info#def=="Showing _START_ to _END_ of _TOTAL_ entries"
-msg.emptytable#desc==This string is shown in preference to msg.zerorecords when the table is empty of data (regardless of filtering). Note that this is an optional parameter - if it is not given, the value of msg.zerorecords will be used instead (either the default or given value)
-msg.emptytable#val==
-msg.emptytable#def=="No data available in table"
-msg.info.filtered#desc==When a user filters the information in a table, this string is appended to the information (sInfo) to give an idea of how strong the filtering is. The variable MAX is dynamically updated
-msg.info.filtered#val==
-msg.info.filtered#def=="(filtered from _MAX_ total entries)"
-msg.loadingrecords#desc==When using Ajax sourced data and during the first draw when DataTables is gathering the data, this message is shown in an empty row in the table to indicate to the end user the data is being loaded. Note that this parameter is not used when loading data by server-side processing, just Ajax sourced data with client-side processing
-msg.loadingrecords#val==
-msg.loadingrecords#def=="Loading..."
+i18n.msg.aria.sortasc#desc==ARIA label that is added to the table headers when the column may be sorted ascending by activing the column (click or return when focused). Note that the column header is prefixed to this string
+i18n.msg.aria.sortasc#val==
+i18n.msg.aria.sortasc#def==": activate to sort column ascending"
+i18n.msg.aria.sortdesc#desc==ARIA label that is added to the table headers when the column may be sorted descending by activing the column (click or return when focused). Note that the column header is prefixed to this string
+i18n.msg.aria.sortdesc#val==
+i18n.msg.aria.sortdesc#def==": activate to sort column ascending"
+i18n.msg.lengthMenu#desc== Detail the action that will be taken when the drop down menu for the pagination length option is changed. The 'MENU' variable is replaced with a default select list of 10, 25, 50 and 100, and can be replaced with a custom select box if required
+i18n.msg.lengthMenu#val==
+i18n.msg.lengthMenu#def=="Show _MENU_ entries"
+i18n.msg.search#desc==  Details the actions that will be taken when the user types into the filtering input text box. The variable "INPUT", if used in the string, is replaced with the HTML text box for the filtering input allowing control over where it appears in the string. If "INPUT" is not given then the input box is appended to the string automatically  
+i18n.msg.search#val
+i18n.msg.search#def=="Search:"
+i18n.msg.info.empty#desc== Display information string for when the table is empty. Typically the format of this string should match sInfo 
+i18n.msg.info.empty#val==
+i18n.msg.info.empty#def=="Showing 0 to 0 of 0 entries"
+i18n.msg.info.postfix#desc==  If can be useful to append extra information to the info string at times, and this variable does exactly that. This information will be appended to the sInfo (msg.info.empty and msg.info.filtered in whatever combination they are being used) at all times
+i18n.msg.info.postfix#val==
+i18n.msg.info.postfix#def==""
+i18n.msg.zerorecords#desc==Text shown inside the table records when the is no information to be displayed after filtering. sEmptyTable is shown when there is simply no information in the table at all (regardless of filtering)   
+i18n.msg.zerorecords#val==
+i18n.msg.zerorecords#def=="No matching records found"
+i18n.msg.paginate.next#desc==Text to use for the 'next' pagination button (to take the user to the next page) 
+i18n.msg.paginate.next#val==
+i18n.msg.paginate.next#def=="Next"
+i18n.msg.paginate.previous#desc==Text to use for the 'previous' pagination button (to take the user to the previous page)  
+i18n.msg.paginate.previous#val==
+i18n.msg.paginate.previous#def=="Previous"
+i18n.msg.paginate.first#desc==Text to use when using the 'full_numbers' type of pagination for the button to take the user to the first page
+i18n.msg.paginate.first#val==
+i18n.msg.paginate.first#def=="First"
+i18n.msg.paginate.last#desc==Text to use when using the 'full_numbers' type of pagination for the button to take the user to the last page
+i18n.msg.paginate.last#val==
+i18n.msg.paginate.last#def=="Last"
+i18n.msg.processing#desc==Text which is displayed when the table is processing a user action (usually a sort command or similar) 
+i18n.msg.processing#val==
+i18n.msg.processing#def=="Processing..."
+i18n.msg.info#desc==This string gives information to the end user about the information that is current on display on the page. The START, END and TOTAL variables are all dynamically replaced as the table display updates, and can be freely moved or removed as the language requirements change
+i18n.msg.info#val==
+i18n.msg.info#def=="Showing _START_ to _END_ of _TOTAL_ entries"
+i18n.msg.emptytable#desc==This string is shown in preference to msg.zerorecords when the table is empty of data (regardless of filtering). Note that this is an optional parameter - if it is not given, the value of msg.zerorecords will be used instead (either the default or given value)
+i18n.msg.emptytable#val==
+i18n.msg.emptytable#def=="No data available in table"
+i18n.msg.info.filtered#desc==When a user filters the information in a table, this string is appended to the information (sInfo) to give an idea of how strong the filtering is. The variable MAX is dynamically updated
+i18n.msg.info.filtered#val==
+i18n.msg.info.filtered#def=="(filtered from _MAX_ total entries)"
+i18n.msg.loadingrecords#desc==When using Ajax sourced data and during the first draw when DataTables is gathering the data, this message is shown in an empty row in the table to indicate to the end user the data is being loaded. Note that this parameter is not used when loading data by server-side processing, just Ajax sourced data with client-side processing
+i18n.msg.loadingrecords#val==
+i18n.msg.loadingrecords#def=="Loading..."
 
 
 

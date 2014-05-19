@@ -12,8 +12,6 @@ level3:
    name: Configuration div
 ---
 <h2 class="page-title">Configuration div (Thymeleaf only)</h2>
-
-<h3 class="section-title">Preamble</h3>
 <p>
    Since the v0.10.0, a set of new Thymeleaf processors have been added to the
    <a href="/docs/ref/thymeleaf/">DataTables dialect</a>, all focused on advanced configuration such
@@ -22,11 +20,11 @@ level3:
 
 <h3 class="section-title">How to use it?</h3>
 <p>
-   First note that there are some prerequisites when using a <i>configuration div</i>:
+   First note that there are some requirements when using a <i>configuration div</i>:
 </p>
 <ul>
    <li>
-      A <i>configuration div</i> must be just above the <code>&lt;table&gt;</code> tag it is supposed to configure
+      A <i>configuration div</i> must locate just above the <code>&lt;table&gt;</code> tag it is supposed to configure.
    </li>
    <li>
       In order to link a <i>configuration div</i> to a table, the {% reftl dt div conf %} div
@@ -63,7 +61,7 @@ level3:
 &lt;/div>
 </pre>
    </li>
-   <li><code>extrajs</code> which allows you to inject extra JavaScript code into the generated DataTable configuration:
+   <li><code>extrajs</code> which allows you to inject <a href="/datatables/features/advanced/using-extra-js.html">extra JavaScript</a> code into the generated DataTable configuration:
 <pre class="prettyprint">
 &lt;div dt:conf="your-table-id">
    &lt;div confType="extrajs" ... /> 
@@ -118,7 +116,7 @@ level3:
 
 <p>
    Note that since the v0.10.0, you can use the <a
-      href="/datatables/features/dandelion/scope-special-syntax.html">scope special syntax</a>
+      href="/datatables/features/dandelion/bundle-special-syntax.html">bundle special syntax</a>
    inside some attributes.
 </p>
 <p>
@@ -126,11 +124,11 @@ level3:
    <code>callbackCreateRow</code>
    function is present in an asset
    <code>asset1.js</code>
-   which is bundled in a scope <code>my-scope</code>
-   , you could automatically load the scope with the following syntax:
+   which is bundled in a bundle <code>my-bundle</code>
+   , you could automatically load the bundle with the following syntax:
 </p>
 <pre class="prettyprint">
 &lt;div dt:conf="myTableId">
-   &lt;div confType="callback" dt:type="createdrow" dt:function="my-scope#callbackCreateRow" /> 
+   &lt;div confType="callback" dt:type="createdrow" dt:function="my-bundle#callbackCreateRow" /> 
 &lt;/div>
 </pre>

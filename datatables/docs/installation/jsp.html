@@ -1,5 +1,6 @@
 ---
 layout: datatables
+module: datatables
 menu: installation
 level1:
    url: docs/installation
@@ -23,14 +24,15 @@ level2:
    {% include build-tools.html %}
 </p>
 
-<h4>Step 2: Add the Dandelion filter</h4>
+<h4>Step 2: Configure the Dandelion filter</h4>
 <p>
    Add the following configuration to your <code>web.xml</code> file:
 </p>
 <pre class="prettyprint">
+&lt;!-- Dandelion filter definition and mapping --&gt;
 &lt;filter&gt;
    &lt;filter-name&gt;dandelionFilter&lt;/filter-name&gt;
-   &lt;filter-class&gt;com.github.dandelion.core.asset.web.AssetFilter&lt;/filter-class&gt;
+   &lt;filter-class&gt;com.github.dandelion.core.web.DandelionFilter&lt;/filter-class&gt;
 &lt;/filter&gt;
 &lt;filter-mapping&gt;
    &lt;filter-name&gt;dandelionFilter&lt;/filter-name&gt;
@@ -38,7 +40,7 @@ level2:
 &lt;/filter-mapping&gt;
 </pre>
 
-<h4>Step 3: Add the Dandelion-DataTables servlet</h4>
+<h4>Step 3: Configure the Dandelion servlet</h4>
 <p>
    Add the following configuration to your <code>web.xml</code> file:
 </p>
@@ -46,7 +48,7 @@ level2:
 &lt;!-- Dandelion servlet definition and mapping --&gt;
 &lt;servlet&gt;
    &lt;servlet-name&gt;dandelionServlet&lt;/servlet-name&gt;
-   &lt;servlet-class&gt;com.github.dandelion.core.asset.web.AssetServlet&lt;/servlet-class&gt;
+   &lt;servlet-class&gt;com.github.dandelion.core.web.DandelionServlet&lt;/servlet-class&gt;
 &lt;/servlet&gt;
 &lt;servlet-mapping&gt;
    &lt;servlet-name&gt;dandelionServlet&lt;/servlet-name&gt;
@@ -62,23 +64,38 @@ level2:
 <%@ taglib prefix="datatables" uri="http://github.com/dandelion/datatables" %>
 </pre>
 
-<h4>Step 5: Development mode</h4>
 <p>
-   By default, Dandelion-DataTables generates the web assets (js, css) that are needed by DataTables. Once generated, all files are then stored in a cache for better performance.
-</p>
-<p>
-   Of course, you are advised to disable the cache during the development. This way, all the configuration is generated each time you access a page that uses Dandelion-DataTables.
-   For that purpose, just set the following system property in your server launch configuration: 
-</p>
-<pre class="prettyprint">
--Ddandelion.dev.mode=true
-</pre>
-
-<p>
-   You can now begin using the taglib! :-)
+   You can now begin using the taglib!
 </p>
 
-<h4>Optional step : Add a custom configuration file</h4>
+<h4>Cient-side dependencies</h4>
 <p>
-   See <a href="/datatables/tutorials/configuration/configuration-loading.html">here for more details</a>!
+   Dandelion-Datatables needs some client-side libraries such as
+   <a href="http://datatables.net/">DataTables</a> and <a
+      href="http://jquery.com/">jQuery</a> to work.
 </p>
+<p>
+   Starting from the v0.10.0, Dandelion-Datatables is based on the
+   <a
+      href="/dandelion/features/asset-bundles/introducing-asset-bundles.html">asset
+      bundles</a> managed by <a href="/dandelion">Dandelion
+      Core</a>. Therefore, it ships a couple of
+   <a href="/datatables/docs/ref/bundles/">vendor bundles</a>, i.e.
+   bundle containing vendor libraries, all configured to use a
+   <a href="http://en.wikipedia.org/wiki/Content_delivery_network">CDN</a>.
+</p>
+<p>
+   This simply means that once the installation steps performed, it just works.
+</p>
+<p>
+   Of course, you may want to use your own assets instead. In this situation, you have several options:
+</p>
+<ul>
+   <li>You may need to make a more fine-tuned configuration of the
+      assets. Read more <a href="/datatables/features/dandelion/overriding-asset-bundles.html">here</a>.
+   </li>
+   <li>Or you may want to use Dandelion-Datatables as a standalone
+      library, i.e. without the asset management brought by Dandelion.
+      Read more <a href="/datatables/features/dandelion/standalone-mode.html">here</a>.
+   </li>
+</ul>

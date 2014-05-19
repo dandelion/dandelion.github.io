@@ -9,10 +9,7 @@ level3:
   url: configuration-groups
   name: Using configuration groups
 ---
-
 <h2 class="page-title">Using configuration groups</h2>
-
-<h3 class="section-title">Preamble</h3>
 <p>
    You may have seen in the <a href="/datatables/features/configuration/global-configuration.html">tutorial about using global configuration</a> that all configuration names are prepended with
    <code>global.</code>
@@ -49,7 +46,6 @@ level3:
    This is quite simple. Just use the {% refjsp dt table confGroup %} (JSP) or {% reftl dt table dt:confGroup %} (Thymeleaf) table attributes and set the group name as a value.
 </p>
 <h4>Using JSP</h4>
-<p>
 <pre class="prettyprint">
 &lt;datatables:table id="myTableId" data="${persons}" confGroup="group1">
    &lt;datatables:column title="Id" property="id" />
@@ -59,11 +55,9 @@ level3:
    &lt;datatables:column title="Mail" property="mail" />
 &lt;/datatables:table>
 </pre>
-</p>
 <h4>Using Thymeleaf</h4>
-<p>
 <pre class="prettyprint">
-&lt;table id="myTableId" dt:table="true" dt:confGroup="'group1'">
+&lt;table id="myTableId" dt:table="true" dt:confGroup="group1">
    &lt;thead>
       &lt;tr>
          &lt;th>Id&lt;/th>
@@ -76,8 +70,8 @@ level3:
    ...
 &lt;/table>
 </pre>
-</p>
+
 <p class="alert alert-info">
-   <strong><i class="icon-info-sign icon-2x"></i></strong> 
+   <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp;
    Note that at the moment, you can only activate one group at a time.
 </p>

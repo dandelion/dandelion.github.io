@@ -24,18 +24,33 @@ level4:
    writing your own component or any kind of extension.
 </p>
 
-<h3 class="section-title" id="wiaa">Accessing the bundle graph</h3>
+<h3 class="section-title" id="atbg">Accessing the bundle graph</h3>
 <p>
-   Dandelion allows you to manipulate the <a
-      href="/dandelion/features/asset-bundles/building-a-bundle-graph/">bundle graph</a> in a
-   request scope.
+   Each request of your application holds the Dandelion context and thus
+   gives access to Dandelion configuration, including the
+   <a href="/dandelion/features/asset-bundles/building-a-bundle-graph/">bundle
+      graph</a>.
 </p>
 <p>
-   Indeed, Dandelion makes available a utility class called AssetRequestContext (TODO) allowing to interact
-   with the Dandelion context for a given
-   <code>HttpServletRequest</code>
-   .
+   The only requirement is that you have access to the <code>HttpServletRequest</code> API.
 </p>
 <p>
-   Indeed, Dandelion mainly intervene in a request scope
+   You can then access the {% javadoc ddl dandelion-core AssetRequestContext %} object, an utility made available to allow you to interact with
+   the bundle graph. See the examples below.
+</p>
+<ul>
+   <li><code>AssetRequestContext.get(request).addBundles(...)</code> allows you to add one or more bundles to the current request</li>
+   <li><code>AssetRequestContext.get(request).excludeBundles(...)</code> allows you exclude one or more bundles from the current request</li>
+   <li><code>AssetRequestContext.get(request).excludeJs(...)</code> allows you exclude one or more JavaScript assets from the current request</li>
+   <li><code>AssetRequestContext.get(request).excludeCss(...)</code> allows you exclude one or more CSS assets from the current request</li>
+   <li>...</li>
+</ul>
+
+<p class="alert alert-info">
+   <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp;
+   Remember that in <a href="/dandelion/features/development-mode/">development
+      mode</a>, the <a
+      href="/dandelion/features/development-mode/bundle-graph-viewer.html">bundle
+      graph viewer</a> can help you visualizing what bundles are added in
+   the current request.
 </p>

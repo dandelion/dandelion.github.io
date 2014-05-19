@@ -9,10 +9,7 @@ level3:
   url: examples
   name: Examples
 ---
-
 <h2 class="page-title">Examples</h2>
-
-<h3 class="section-title">Preamble</h3>
 <p>You will see here some examples of extension.</p>
 <p>
    Note that you can also take a look at all the built-in extensions available in the package
@@ -33,30 +30,26 @@ public class Bootstrap2Theme extends AbstractExtension {
 
    public void setup(HtmlTable table) {
 
-      // Scope updating
-      addScope(Scope.DDL_DT_THEME_BOOTSTRAP2);
-      addScope(Scope.DDL_DT_PAGING_BOOTSTRAP);
-
-      // Theme option      
+      addBundle(DatatableBundles.DDL_DT_THEME_BOOTSTRAP2);
+      
+      if(isEnabled(TableConfig.FEATURE_PAGEABLE)){
+         addBundle(DatatableBundles.DDL_DT_PAGING_BOOTSTRAP);
+         if(TableConfig.FEATURE_PAGINATIONTYPE.valueFrom(table.getTableConfiguration()) == null){
+            addParameter(DTConstants.DT_PAGINATION_TYPE, PaginationType.BOOTSTRAP.toString());
+         }
+      }
+      
       ThemeOption themeOption = TableConfig.CSS_THEMEOPTION.valueFrom(table);
+      
       if (themeOption != null) {
          if(themeOption.equals(ThemeOption.TABLECLOTH)){
-            addScope(Scope.DDL_DT_THEME_BOOTSTRAP2_TABLECLOTH);
+            addBundle(DatatableBundles.DDL_DT_THEME_BOOTSTRAP2_TABLECLOTH);
          }
          else{
             throw new ExtensionLoadingException("Only the 'tablecloth' theme option is compatible with the 'bootstrap2' theme");
          }
       }
       
-      // DataTables parameters
-      if (StringUtils.isBlank(TableConfig.FEATURE_DOM.valueFrom(table))) {
-         addParameter(DTConstants.DT_DOM,
-               "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>");
-      }
-      
-      if(TableConfig.FEATURE_PAGINATIONTYPE.valueFrom(table.getTableConfiguration()) == null){
-         addParameter(DTConstants.DT_PAGINATION_TYPE, PaginationType.BOOTSTRAP.toString());
-      }
       addParameter(DTConstants.DT_AS_STRIPE_CLASSES, new JavascriptSnippet("[]"));
    }
 }
@@ -73,10 +66,10 @@ public class Bootstrap2Theme extends AbstractExtension {
       <p>
          The extension is supposed to theme the table with the Bootstrap v2 framework. Of course, it
          requires some extra Javascript and CSS to adapt the table. This is now easily done with the
-         scope mechanism (lien). Scopes are simply added using the
-         <code>addScope</code> method.
+         bundle mechanism handled by <a href="/dandelion">Dandelion Core</a>. Bundles are simply added using the
+         <code>addBundle</code> method.
       </p>
-      <p>Two scopes are loaded by this extension:</p>
+      <p>Two bundles are loaded by this extension:</p>
       <ul>
          <li><code>ddl-dt-theme-bootstrap2</code></li>
          <li><code>ddl-dt-paging-bootstrap</code></li>

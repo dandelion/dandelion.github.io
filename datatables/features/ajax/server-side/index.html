@@ -12,10 +12,10 @@ level3:
 ---
 
 <h2 class="page-title">Server-side processing</h2>
-
-<h3 class="section-title">Preamble</h3>
 <p>
-   If you are working with seriously large databases, you might want to consider using the server-side options that DataTables provides and that Dandelion-Datatables supports. 
+   If you are working with seriously large databases, you might want to
+   consider using the server-side options that DataTables provides and
+   that Dandelion-Datatables supports.
 </p>
 
 <h3 class="section-title">How does it work?</h3>
@@ -48,10 +48,10 @@ level3:
 </p>
 
 <p class="alert alert-info">
-   <strong><i class="icon-info-sign icon-2x"></i></strong> 
+   <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp;
    Note that an integration with Spring has been developed. More details <a href="/datatables/features/ajax/integration-with-spring.html">here</a>...
 </p>
-
+         
 <h3 class="section-title">Preparing the ground...</h3>
 <p>
    As you may expect, server-side processing requires a bit more work than client-side one. Here are the needed steps to set this up.
@@ -104,8 +104,7 @@ level3:
 </p>
 <p>
 <pre class="prettyprint">
-&lt;c:url var="datasource" value="/persons" />
-&lt;datatables:table id="myTableId" url="${datasource}" serverSide="true" processing="true">
+&lt;datatables:table id="myTableId" url="/persons" serverSide="true" processing="true">
    &lt;datatables:column title="Id" property="id" />
    &lt;datatables:column title="FirstName" property="firstName" />
    &lt;datatables:column title="LastName" property="lastName" />
@@ -117,24 +116,24 @@ level3:
 
 <h4>Using Thymeleaf</h4>
 <p>
-   This is quite similar. You can use the {% reftl dt table dt:serverside %} and {% reftl dt table dt:processing %} table attributes.
+   This is quite similar. You can use the {% reftl dt table serverside %} and {% reftl dt table processing %} table attributes.
 </p>
 <p>
 <pre class="prettyprint">
 &lt;table id="myTableId" dt:table="true" dt:url="@{/persons}" dt:serverside="true" dt:processing="true">
    &lt;thead>
       &lt;tr>
-         &lt;th dt:property="'id'">Id&lt;/th>
-         &lt;th dt:property="'firstName'">Firstname&lt;/th>
-         &lt;th dt:property="'lastName'">Lastname&lt;/th>
-         &lt;th dt:property="'address.town.name'">City&lt;/th>
-         &lt;th dt:property="'mail'">Mail&lt;/th>
+         &lt;th dt:property="id">Id&lt;/th>
+         &lt;th dt:property="firstName">Firstname&lt;/th>
+         &lt;th dt:property="lastName">Lastname&lt;/th>
+         &lt;th dt:property="address.town.name">City&lt;/th>
+         &lt;th dt:property="mail">Mail&lt;/th>
       &lt;/tr>
    &lt;/thead>
 &lt;/table>
 </pre>
 
 <p class="alert alert-info">
-   <strong><i class="icon-info-sign icon-2x"></i></strong> 
+   <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp;
    Note that you can also reduce AJAX calls for paging by pipelinig data. See more details <a href="/datatables/features/ajax/server-side/pipelining-data.html">here</a>...
 </p>

@@ -8,10 +8,17 @@ level2:
    url: from-0.9.x-to-0.10.x.html
    name: From 0.9.x to 0.10.x
 ---
-
 <h2 class="page-title">Migrating from 0.9.x to 0.10.x</h2>
 <p>
-   As with the previous release, much has changed. You will find below as exhaustive a list as possible of all changes.
+   As with the previous release, much has changed. You will find below as exhaustive as possible a list of all changes.
+</p>
+
+<h3 class="section-title">New requirements</h3>
+<p>
+   Since the use of Servlet 3.x annotations has been abandonned, you now
+   have to declare the web components by yourself. Please read the
+   updated
+   <a href="/datatables/docs/installation/">installation guides</a>.
 </p>
 
 <h3 class="section-title">Configuration properties</h3>
@@ -37,8 +44,9 @@ level2:
    Removed attributes:
 <ul>
    <li>scroller, colreorder and fixedheader: all supported plugins can now be enabled thanks to the ext table attribute (lien)</li>
-   <li>cdn: the asset provisionning is now handled by Dandelion.</li>
+   <li>cdn: the asset provisionning is now handled by <a href="/dandelion">Dandelion Core</a></li>
 </ul>
+<p>The {% refjsp dt columnHead %} tag is now used inside a {% refjsp dt column %} tag</p>
 
 <h3 class="section-title">Thymeleaf dialect</h3>
 <p>As for the JSP taglib, there was some changes in the Thymeleaf dialect.
@@ -55,7 +63,7 @@ level2:
    Removed attributes:
 <ul>
    <li>dt:scroller, dt:colReorder and dt:fixedHeader: all supported plugins can now be enabled thanks to the dt:ext table attribute (lien)</li>
-   <li>cdn: the asset provisionning is now handled by Dandelion.</li>
+   <li>cdn: the asset provisionning is now handled by <a href="/dandelion">Dandelion Core</a></li>
 </ul>
 
 <h3 class="section-title">Configuration properties</h3>
@@ -64,25 +72,20 @@ level2:
    file must be in its place. 
 </p>
 <p>
-   For Dandelion, the <code>dandelion.properties</code> must locate under the <code>/dandelion</code> directory.
+   For Dandelion, the <code>dandelion.properties</code> must locate under the <code>/dandelion</code> folder.
 </p>
 <p>
-   For Dandelion-Datatables, all *.properties files must now locate under the
+   For Dandelion-Datatables, all *.properties files must now locate
+   under the
    <code>/dandelion/datatables</code>
-   directory. Apart from that, the configuration loading strategy (lien) remains applyable.
+   folder. Apart from that, the configuration
+   <a
+      href="/datatables/features/configuration/configuration-loading.html">loading
+      strategy</a> remains applyable.
 </p>
 <p>
-   Moreover, some properties have changed. Please see the reference for an exhaustive list of all available configuration properties. (lien)
+   Moreover, some properties have changed. Please see the reference for
+   an exhaustive list of all available
+   <a href="/datatables/docs/ref/configuration/">configuration
+      properties</a>.
 </p>
-
-<h3 class="section-title">Using plugins and export with Thymeleaf</h3>
-<ul>
-   <li>Most of attributesAll export attributes has been moved from the <code>&lt;tbody&gt;</code> tag to the <code>&lt;thead&gt;</code> tag.</li>
-   <li>The value of some attributes don't require to be surrounded by single quotes anymore. See the explanations <a href="/faq/#thymeleafquote">here</a>.</li>
-   
-</ul>
-
-<h3 class="section-title">Servlet2 extra</h3>
-<p>The required Servlet API version has been downgraded to 2.x in the v0.10.0. We directly
-   integrated the Servlet 2.x-compatible classes into Dandelion-Datatables' core. As a consequence, the Servlet2 extra has been removed.</p>
-<p>Please take a look at the updated <a href="/datatables/docs/installation">installation guides</a>.</p>

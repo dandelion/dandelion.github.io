@@ -34,7 +34,8 @@ $(document).ready(function () {
 			oTable.fnFilter(search, 0);
 			
 			// Move window to the right section
-			$('html, body').animate({scrollTop: $('#tableReference').offset().top}, 1500);
+			$('html, body').animate({
+				scrollTop: $('#tableReference').offset().top - 100}, 1500, "easeInOutCubic");
 		}
 	}
 });

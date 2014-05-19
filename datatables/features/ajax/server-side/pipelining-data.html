@@ -15,13 +15,23 @@ level4:
 ---
 
 <h2 class="page-title">Pipelining data</h2>
-
-<h3 class="section-title">Preamble</h3>
 <p>
-   When using server-side processing with DataTables, it can be quite intensive on your server having an Ajax call every time the user performs some kind of interaction - you can effectively DDOS your server with your own application!
+   When using server-side processing with DataTables, it can be quite
+   intensive on your server having an Ajax call every time the user
+   performs some kind of interaction - you can effectively DDOS your
+   server with your own application!
 </p>
 <p>
-   You might over-come this by modifying the request set to the server to retrieve more information than is actually required for a single page's display. This means that the user can page multiple times (5 times the display size is the default) before a request must be made of the server. Paging is typically the most common interaction performed with a DataTable, so this can be most beneficial to your server's resource usage. Of course the pipeline must be cleared for interactions other than paging (sorting, filtering etc), but that's the trade off that can be made (sending extra information is cheap - while another XHR is expensive).
+   You might over-come this by modifying the request set to the server
+   to retrieve more information than is actually required for a single
+   page's display. This means that the user can page multiple times (5
+   times the display size is the default) before a request must be made
+   of the server. Paging is typically the most common interaction
+   performed with a DataTable, so this can be most beneficial to your
+   server's resource usage. Of course the pipeline must be cleared for
+   interactions other than paging (sorting, filtering etc), but that's
+   the trade off that can be made (sending extra information is cheap -
+   while another XHR is expensive).
 </p>
 
 <h3 class="section-title">Activating data pipelining</h3>
@@ -31,8 +41,7 @@ level4:
 </p>
 <p>
 <pre class="prettyprint">
-&lt;c:url var="datasource" value="/persons" />
-&lt;datatables:table id="myTableId" url="${datasource}" serverSide="true" processing="true" pipelining="true" pipeSize="6">
+&lt;datatables:table id="myTableId" url="/persons" serverSide="true" processing="true" pipelining="true" pipeSize="6">
    &lt;datatables:column title="Id" property="id" />
    &lt;datatables:column title="FirstName" property="firstName" />
    &lt;datatables:column title="LastName" property="lastName" />
@@ -54,11 +63,11 @@ level4:
 &lt;table id="myTableId" dt:table="true" dt:url="@{/persons}" dt:serverside="true" dt:pipelining="true" dt:pipesize="6">
    &lt;thead>
       &lt;tr>
-         &lt;th dt:property="'id'">Id&lt;/th>
-         &lt;th dt:property="'firstName'">Firstname&lt;/th>
-         &lt;th dt:property="'lastName'">Lastname&lt;/th>
-         &lt;th dt:property="'address.town.name'">City&lt;/th>
-         &lt;th dt:property="'mail'">Mail&lt;/th>
+         &lt;th dt:property="id">Id&lt;/th>
+         &lt;th dt:property="firstName">Firstname&lt;/th>
+         &lt;th dt:property="lastName">Lastname&lt;/th>
+         &lt;th dt:property="address.town.name">City&lt;/th>
+         &lt;th dt:property="mail">Mail&lt;/th>
       &lt;/tr>
    &lt;/thead>
 &lt;/table>

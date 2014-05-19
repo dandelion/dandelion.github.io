@@ -13,9 +13,6 @@ cookiePath: /dandelion
                <li {% if page.menu == 'home' %} class="active"{% endif %}>
                   <a href="/dandelion"><i class="fa fa-home"></i> Dandelion</a>
                </li>
-               <li {% if page.menu == 'download' %} class="active"{% endif %}>
-                  <a href="/dandelion/download.html" title="Download"> <i class="fa fa-download"></i> Download</a>
-               </li>
                <li>
                   <a href="https://github.com/dandelion/dandelion-samples/dandelion" title="Samples" target="_blank"> <i class="fa fa-code"></i> Samples</a>
                </li>
@@ -42,10 +39,10 @@ cookiePath: /dandelion
                   {% if page.menu == 'jsp' %}
                   <ul class="nav nav-list">
                      <li {% if page.url contains '/ref/jsp/bundle' %}class="active"{% endif %}>
-                        <a href="/dandelion/docs/ref/jsp/bundle.html"><i class="fa fa-angle-double-right"></i> Bundle tag</a>
+                        <a href="/dandelion/docs/ref/jsp/bundle.html"><i class="fa fa-angle-double-right"></i> <code>&lt;dandelion:bundle&gt;</code></a>
                      </li>
                      <li {% if page.url contains '/ref/jsp/asset' %}class="active"{% endif %}>
-                        <a href="/dandelion/docs/ref/jsp/asset.html"><i class="fa fa-angle-double-right"></i> Asset tag</a>
+                        <a href="/dandelion/docs/ref/jsp/asset.html"><i class="fa fa-angle-double-right"></i> <code>&lt;dandelion:asset&gt;</code></a>
                      </li>
                   </ul>
                   {% endif %}
@@ -67,9 +64,9 @@ cookiePath: /dandelion
                      </li>
                      <li {% if page.url contains 'asset-bundles/building-a-bundle-graph' %}class="active"{% endif %}>
                         <a href="/dandelion/features/asset-bundles/building-a-bundle-graph/"><i class="fa fa-angle-double-right"></i> Building a bundle graph</a>
-                        {% if page.submenu == 'graph' %}
+                        {% if page.submenu == 'storagerules' %}
                         <ul class="nav nav-list">
-                           <li {% if page.url contains 'interacting-with-the-asset-bundles/using-the-jsp' %}class="active"{% endif %}>
+                           <li {% if page.url contains 'building-a-bundle-graph/storage-rules' %}class="active"{% endif %}>
                               <a href="/dandelion/features/asset-bundles/building-a-bundle-graph/storage-rules.html"><i class="fa fa-angle-double-right"></i> Storage rules</a>
                            </li>
                         </ul>
@@ -93,9 +90,6 @@ cookiePath: /dandelion
                            </li>
                         </ul>
                         {% endif %}
-                     </li>
-                     <li {% if page.url contains 'asset-bundles/asset-bundling-lifecycle' %}class="active"{% endif %}>
-                        <a href="/dandelion/features/asset-bundles/asset-bundling-lifecycle.html"><i class="fa fa-angle-double-right"></i> Asset bundling lifecycle</a>
                      </li>
                   </ul>
                   {% endif %}

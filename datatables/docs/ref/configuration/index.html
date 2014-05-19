@@ -9,22 +9,22 @@ level1:
 
 <h2 class="page-title">Configuration properties reference</h2>
 <p>
-   The bellowing tables list all the configurable properties that you can use in the
+   The table below lists all the configurable properties that you can use in the
    <a href="/datatables/features/configuration/configuration-loading.html">configuration files</a>.
 </p>
-
-<p class="pull-right">
-   <input id="search" type="text" placeholder="Search for a configuration......">
 <p>
-<p>
+   Remember that you need to apply a
+   <a
+      href="/datatables/features/configuration/global-configuration.html">configuration
+      group</a> to each groupable property.
+</p>
 
-<style>
-#configurationReference td:first-child {
-   font-weight: bold;
-}
-</style>
+<h3 class="section-title">
+   Reference
+   <input id="customFilter" type="text" placeholder="Search for a configuration..." style="float:right;">
+</h3>
 
-<table id="configurationReference" class="table table-striped table-bordered table-hover" style="font-size:12px;">
+<table id="tableReference" class="table table-striped table-bordered table-hover">
    <thead>
       <tr>
          <th>Name</th>
@@ -44,9 +44,16 @@ level1:
       </tr>
       <tr>
          <td>main.extension.names</td>
-         <td>{% def dt main.extension.names %}</td>
-         <td>{% def dt main.extension.names val %}</td>
-         <td>{% def dt main.extension.names def %}</td>
+         <td>Comma-separated names of extensions to register in all tables</td>
+         <td></td>
+         <td></td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>main.standalone</td>
+         <td>{% def dt main.standalone %}</td>
+         <td>{% def dt main.standalone val %}</td>
+         <td>{% def dt main.standalone def %}</td>
          <td>yes</td>
       </tr>
       <tr>
@@ -114,23 +121,23 @@ level1:
       </tr>
       <tr>
          <td>feature.filterDelay</td>
-         <td>{% def dt feature.filterdelay %}</td>
-         <td>{% def dt feature.filterdelay val %}</td>
-         <td>{% def dt feature.filterdelay def %}</td>
+         <td>{% def dt feature.filterDelay %}</td>
+         <td>{% def dt feature.filterDelay val %}</td>
+         <td>{% def dt feature.filterDelay def %}</td>
          <td>yes</td>
       </tr>
       <tr>
          <td>feature.filterSelector</td>
-         <td>{% def dt feature.filterselector %}</td>
-         <td>{% def dt feature.filterselector val %}</td>
-         <td>{% def dt feature.filterselector def %}</td>
+         <td>{% def dt feature.filterSelector %}</td>
+         <td>{% def dt feature.filterSelector val %}</td>
+         <td>{% def dt feature.filterSelector def %}</td>
          <td>yes</td>
       </tr>
       <tr>
          <td>feature.filterClearSelector</td>
-         <td>{% def dt feature.filterclearselector %}</td>
-         <td>{% def dt feature.filterclearselector val %}</td>
-         <td>{% def dt feature.filterclearselector def %}</td>
+         <td>{% def dt feature.filterClearSelector %}</td>
+         <td>{% def dt feature.filterClearSelector val %}</td>
+         <td>{% def dt feature.filterClearSelector def %}</td>
          <td>yes</td>
       </tr>
       <tr>
@@ -239,13 +246,6 @@ level1:
          <td>yes</td>
       </tr>
       <tr>
-         <td>plugin.fixedHeader</td>
-         <td>{% def dt plugin.fixedHeader %}</td>
-         <td>{% def dt plugin.fixedHeader val %}</td>
-         <td>{% def dt plugin.fixedHeader def %}</td>
-         <td>yes</td>
-      </tr>
-      <tr>
          <td>plugin.fixedPosition</td>
          <td>{% def dt plugin.fixedPosition %}</td>
          <td>{% def dt plugin.fixedPosition val %}</td>
@@ -260,24 +260,10 @@ level1:
          <td>yes</td>
       </tr>
       <tr>
-         <td>plugin.scroller</td>
-         <td>{% def dt plugin.scroller %}</td>
-         <td>{% def dt plugin.scroller val %}</td>
-         <td>{% def dt plugin.scroller def %}</td>
-         <td>yes</td>
-      </tr>
-      <tr>
-         <td>plugin.colReorder</td>
-         <td>{% def dt plugin.colReorder %}</td>
-         <td>{% def dt plugin.colReorder val %}</td>
-         <td>{% def dt plugin.colReorder def %}</td>
-         <td>yes</td>
-      </tr>
-      <tr>
-         <td>ajax.processing</td>
-         <td>{% def dt ajax.processing %}</td>
-         <td>{% def dt ajax.processing val %}</td>
-         <td>{% def dt ajax.processing def %}</td>
+         <td>feature.processing</td>
+         <td>{% def dt feature.processing %}</td>
+         <td>{% def dt feature.processing val %}</td>
+         <td>{% def dt feature.processing def %}</td>
          <td>yes</td>
       </tr>
       <tr>
@@ -330,17 +316,24 @@ level1:
          <td>yes</td>
       </tr>
       <tr>
-         <td>export.types</td>
-         <td>{% def dt export.types %}</td>
-         <td>{% def dt export.types val %}</td>
-         <td>{% def dt export.types def %}</td>
+         <td>export.enabled.formats</td>
+         <td>{% def dt export.enabled.formats %}</td>
+         <td>{% def dt export.enabled.formats val %}</td>
+         <td>{% def dt export.enabled.formats def %}</td>
          <td>yes</td>
       </tr>
       <tr>
-         <td>export.links</td>
-         <td>{% def dt export.links %}</td>
-         <td>{% def dt export.links val %}</td>
-         <td>{% def dt export.links def %}</td>
+         <td>export.container.style</td>
+         <td>{% def dt export.container.style %}</td>
+         <td>{% def dt export.container.style val %}</td>
+         <td>{% def dt export.container.style def %}</td>
+         <td>yes</td>
+      </tr>
+      <tr>
+         <td>export.container.class</td>
+         <td>{% def dt export.container.class %}</td>
+         <td>{% def dt export.container.class val %}</td>
+         <td>{% def dt export.container.class def %}</td>
          <td>yes</td>
       </tr>
       <tr>
@@ -507,17 +500,9 @@ level1:
    </tbody>
 </table>
 
-<h3 class="section-title" id="ipf">Internal configuration properties</h3>
-<p>
-   You will find bellow the default properties file internally used by Dandelion-Datatables.
-</p>
-<pre class="prettyprint">
-</pre>
-
-<p id="themeoptions">
-   Available values for the
-   <code>css.themeOption</code>
-   configuration:
+<div id="themeoptions">
+   <p>
+      Available theme options for the <code>jqueryui</code> theme:
    <code>blacktie</code>
    ,
    <code>blitzer</code>
@@ -566,42 +551,12 @@ level1:
    , and
    <code>vader</code>
    .
-</p>
-   
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-<script>
-var dtConf = {
-	"sDom": "t",
-	"bSortClasses": false,
-	"bPaginate": false,
-	"aaSorting": [[0,'asc']]
-// 	,"fnInitComplete": function () {
-// 		this.fnAdjustColumnSizing();
-// 	}
-}
+   </p>
+   <p>
+      Available theme options for the <code>bootstrap2</code> theme: <code>tablecloth</code>.
+   </p>
+</div>
 
-$.fn.dataTableExt.oApi.fnFilterAll = function(oSettings, sInput, iColumn, bRegex, bSmart) {
-    var settings = $.fn.dataTableSettings;
-    for ( var i=0 ; i<settings.length ; i++ ) {
-       settings[i].oInstance.fnFilter( sInput, iColumn, bRegex, bSmart);
-    }
-};
-
-$(document).ready(function () {
-	
-	var oTable = $('#configurationReference').dataTable(dtConf);
-
-   	$("#search").keyup( function () {
-      	oTable.fnFilterAll(this.value);
-   	});
-   	
-	if ( window.location.hash !== "") {
-		var searchValue = window.location.hash;
-		
-		$('#search').val(searchValue);
-		$('#search').focus();
-		
-		oTable.fnFilterAll(searchValue);
-	}
-});
-</script>
+<script src="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="/assets/js/site-reference.js"></script>

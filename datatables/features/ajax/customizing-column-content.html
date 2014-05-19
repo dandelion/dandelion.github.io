@@ -9,16 +9,19 @@ level3:
   url: customized-column-content
   name: Customized column content
 ---
-
 <h2 class="page-title">Customized column content</h2>
-
-<h3 class="section-title">Preamble</h3>
 <p>
-   Since the v0.8.7, you can add customized column content using AJAX sources. It can be very useful for instance to display an "actions" column or if you need to display a bit more than just the raw data (e.g. a mailto link).
+   Since the v0.8.7, you can add customized column content using AJAX
+   sources. It can be very useful for instance to display an "actions"
+   column or if you need to display a bit more than just the raw data
+   (e.g. a mailto link).
 </p>
-<p>Using DOM sources, you can use the {% refjsp dt table row %} table attribute but using AJAX source, the table's build if fully delegated to DataTables. So the only way to customize the column content
-   is to do it client-side, passing a particular Javascript function.
-</p>
+<p>
+   Using DOM sources, you can use the {% refjsp dt table row %}
+   table attribute but using AJAX source, the table's build if fully
+   delegated to DataTables. So the only way to customize the column
+   content is to do it client-side, passing a particular Javascript
+   function.</p>
 <p>
    So, you have to:
    <ul>
@@ -40,7 +43,8 @@ function yourFunction(data, type, full) {
             </ul>
          </p>
          <p class="alert alert-info">
-            <strong><i class="icon-info-sign icon-2x"></i></strong> You can use the first parameter (data) of the function if you already use the {% refjsp dt column property %} (JSP) or {% reftl dt th dt:property %} (Thymeleaf) attribute because it internally generates a
+            <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp;
+            You can use the first parameter (data) of the function if you already use the {% refjsp dt column property %} (JSP) or {% reftl dt th dt:property %} (Thymeleaf) attribute because it internally generates a
             <a href="http://datatables.net/ref#mdata">mData</a> parameter that you can reuse.
          </p>
       </li>
@@ -49,8 +53,10 @@ function yourFunction(data, type, full) {
       </li>
    </ul>
 </p>
+
+
 <p class="alert alert-warn">
-   <strong><i class="icon-warning-sign icon-2x"></i></strong> 
+   <strong><i class="fa fa-warning fa-2x"></i></strong>&nbsp; 
    Note that you can't use the {% refjsp dt column format%} column attribute of the JSP taglib when using an AJAX source!
 </p>
 
@@ -71,14 +77,13 @@ function mailify(data, type, full) {
 <p>
    Then, just use the {% refjsp dt column renderFunction %} column attribute and pass the name of the previous Javascript function.
 <pre class="prettyprint">
-   &lt;c:url var="datasource" value="/persons" />
-   &lt;datatables:table id="myTableId" url="${datasource}" serverSide="true" processing="true">
-      &lt;datatables:column title="Id" property="id" />
-      &lt;datatables:column title="FirstName" property="firstName" />
-      &lt;datatables:column title="LastName" property="lastName" />
-      &lt;datatables:column title="City" property="address.town.name" />
-      &lt;datatables:column title="Mail" property="mail" renderFunction="mailify" />
-   &lt;/datatables:table>
+&lt;datatables:table id="myTableId" url="/persons" serverSide="true" processing="true">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" renderFunction="mailify" />
+&lt;/datatables:table>
 </pre>
 </p>
 
@@ -90,15 +95,14 @@ function mailify(data, type, full) {
 <h4>Using JSP</h4>
 <p>
 <pre class="prettyprint">
-   &lt;c:url var="datasource" value="/persons" />
-   &lt;datatables:table id="myTableId" url="${datasource}" serverSide="true" processing="true">
-      &lt;datatables:column title="Id" property="id" />
-      &lt;datatables:column title="FirstName" property="firstName" />
-      &lt;datatables:column title="LastName" property="lastName" />
-      &lt;datatables:column title="City" property="address.town.name" />
-      &lt;datatables:column title="Mail" property="mail" />
-      &lt;datatables:column title="Actions" renderFunction="actions" />
-   &lt;/datatables:table>
+&lt;datatables:table id="myTableId" url="/persons" serverSide="true" processing="true">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+   &lt;datatables:column title="Actions" renderFunction="actions" />
+&lt;/datatables:table>
 </pre>
 </p>
 <p>
@@ -112,22 +116,25 @@ function actions(data, type, full) {
 </p>
 
 <p class="alert alert-info">
-   <strong><i class="icon-info-sign icon-2x"></i></strong> 
-   This time, the "Actions" column doesn't use any property of the iterated bean. That's why you should use the third parameter (full) of the Javascript function, which holds the full data source for the row exposed as a JSON object.
+   <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp; This
+   time, the "Actions" column doesn't use any property of the iterated
+   bean. That's why you should use the third parameter (full) of the
+   Javascript function, which holds the full data source for the row
+   exposed as a JSON object.
 </p>
          
 <h4>Using Thymeleaf</h4>
 <p>
    Using Thymeleaf, you can use the {% reftl dt th dt:renderFunction %} th attribute in the same manner.
 <pre class="prettyprint">
-&lt;table id="myTableId" dt:table="true" dt:url="@{/persons1}" dt:serverSide="true">
+&lt;table id="myTableId" dt:table="true" dt:url="@{/persons}" dt:serverSide="true">
    &lt;thead>
       &lt;tr>
-         &lt;th dt:property="'id'">Id&lt;/th>
-         &lt;th dt:property="'firstName'">Firstname&lt;/th>
-         &lt;th dt:property="'lastName'">Lastname&lt;/th>
-         &lt;th dt:property="'address.town.name'">City&lt;/th>
-         &lt;th dt:property="'mail'" dt:renderFunction="'mailify'">Mail&lt;/th>
+         &lt;th dt:property="id">Id&lt;/th>
+         &lt;th dt:property="firstName">Firstname&lt;/th>
+         &lt;th dt:property="lastName">Lastname&lt;/th>
+         &lt;th dt:property="address.town.name">City&lt;/th>
+         &lt;th dt:property="mail" dt:renderFunction="'mailify'">Mail&lt;/th>
       &lt;/tr>
   &lt;/thead>
 &lt;/table>
@@ -160,8 +167,7 @@ You can find more details <a href="http://www.thymeleaf.org/doc/Tutorial%20-%20U
 <p>
    You can also use the {% refjsp dt column default %} column attribute to replace the empty string by anything you want.
 <pre class="prettyprint">
-&lt;c:url var="datasource" value="/persons" />
-&lt;datatables:table id="myTableId" url="${datasource}">
+&lt;datatables:table id="myTableId" url="/persons">
    &lt;datatables:column title="Id" property="id" />
    &lt;datatables:column title="FirstName" property="firstName" />
    &lt;datatables:column title="LastName" property="lastName" />
@@ -178,11 +184,11 @@ You can find more details <a href="http://www.thymeleaf.org/doc/Tutorial%20-%20U
 &lt;table id="myTableId" dt:table="true" dt:url="@{/persons}">
    &lt;thead>
       &lt;tr>
-         &lt;th dt:property="'id'">Id&lt;/th>
-         &lt;th dt:property="'firstName'">Firstname&lt;/th>
-         &lt;th dt:property="'lastName'">Lastname&lt;/th>
-         &lt;th dt:property="'address.town.name'" dt:default="'My default value !'">City&lt;/th>
-         &lt;th dt:property="'mail'">Mail&lt;/th>
+         &lt;th dt:property="id">Id&lt;/th>
+         &lt;th dt:property="firstName">Firstname&lt;/th>
+         &lt;th dt:property="lastName">Lastname&lt;/th>
+         &lt;th dt:property="address.town.name" dt:default="My default value !">City&lt;/th>
+         &lt;th dt:property="mail">Mail&lt;/th>
       &lt;/tr>
    &lt;/thead>
 &lt;/table>

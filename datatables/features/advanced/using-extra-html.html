@@ -12,16 +12,11 @@ level3:
    name: Using extra HTML snippets
 ---
 <h2 class="page-title">Using extra HTML snippets</h2>
-
-<h3 class="section-title">Preamble</h3>
 <p>
    Starting from the v0.10.0, Dandelion-Datatables makes use of the
-   <a href="http://datatables.net/development/features">DataTables feature plug-ins</a> to easily
+   <a href="http://legacy.datatables.net/development/features">DataTables feature plug-ins</a> to easily
    create custom controls that can be positioned around the table as any other built-in control. It
    can be handy for example to add custom links.
-</p>
-<p>
-   Let's see how to proceed.
 </p>
    
 <h3 class="section-title" id="hiw">How it works?</h3>
@@ -80,9 +75,9 @@ level3:
    As you can see in the above example:
 </p>
 <ul>
-   <li>The feature is identified by the {% refjsp dt extraHtml uid %} attribute.</li>
-   <li>Some HTML code is added in the tag's body. This HTML markup will used inside the container that Dandelion-Datatables will create.</li>
-   <li>The feature is activated thanks to {% refjsp dt table dom %} attribute: <code>l0frtip</code>.</li>
+   <li>The feature is identified by the {% refjsp dt extraHtml uid %} attribute</li>
+   <li>HTML code is added in the tag's body. This HTML markup will be used inside the container that Dandelion-Datatables will create</li>
+   <li>The feature is activated thanks to {% refjsp dt table dom %} attribute: <code>l0frtip</code></li>
 </ul>
 
 <h3 class="section-title">Using Thymeleaf</h3>
@@ -123,12 +118,12 @@ level3:
 </p>
 <ul>
    <li>The feature is identified by the {% reftl dt extraHtml uid %} attribute.</li>
-   <li>Some HTML code is added in the tag's body. This HTML markup will used inside the container that Dandelion-Datatables will create.</li>
+   <li>HTML code is added in the tag's body. This HTML markup will be used inside the container that Dandelion-Datatables will create.</li>
    <li>The feature is activated thanks to {% reftl dt table dom %} attribute: <code>l0frtip</code>.</li>
 </ul>
 
-<h3 class="section-title">One more note...</h3>
+<h3 class="section-title">A note about the scope</h3>
 <p>
-   It is worth noting that all DataTables features created inside a table are available in the whole
-   page, so it can possibly be used inside other tables in the same page.
+   It is worth noting that all DataTables features created inside a table are actually available in the whole
+   page, so it can possibly be used somewhere else in the same page, inside another table.
 </p>

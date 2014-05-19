@@ -7,18 +7,17 @@ level2:
   name: Configuration reference
 ---
 <link rel="stylesheet" href="/assets/css/site-reference.css" />
-
 <h2 class="page-title">Configuration properties reference</h2>
 <p>
    Listed below are all the configuration properties that you can use in the
    <a href="/dandelion/features/configuration/configuration-loading.html">configuration files</a>.
 </p>
 
-<div class="pull-right">
-   <input id="confSearch" type="text" placeholder="Search for a configuration...">
-</div>
-<p>
-<table id="configurationReference" class="table table-striped table-bordered table-hover">
+<h3 class="section-title">
+   Reference
+   <input id="customFilter" type="text" placeholder="Search for a configuration..." style="float:right;">
+</h3>
+<table id="tableReference" class="table table-striped table-bordered table-hover">
    <thead>
       <tr>
          <th>Name</th>
@@ -38,14 +37,13 @@ level2:
       </tr>
       <tr>
          <td>override.servlet3</td>
-         <td>Flag used to force Dandelion to locate assets with
-            Servlet 2.x or Servlet 3.x compatible locators</td>
+         <td>Flag used to force Dandelion to locate assets using
+            locators that are compatible with the Servlet 2.x API if
+            false, or with the Servlet 3.x API otherwise</td>
          <td>true | false</td>
          <td></td>
          <td></td>
       </tr>
-      
-      
       <tr>
          <td>asset.locations.resolution.strategy</td>
          <td>Resolution strategy of asset locations if assets are defined with multiple locations</td>
@@ -102,9 +100,9 @@ level2:
          <td>Name of the cache system to use. If nothing is set,
             Dandelion will use the <a
             href="/dandelion/features/asset-caching/built-in/memory.html">default
-               implementation</td>
-         <td>default | ehcache | <a
-            href="/dandelion/features/asset-caching/plugging-in-your-own-cache-system.html">custom</a></td>
+               implementation</a>
+         </td>
+         <td>default | ehcache</td>
          <td></td>
          <td></td>
       </tr>
@@ -139,29 +137,6 @@ level2:
       </tr>
    </tbody>
 </table>
-</p>
 
 <script src="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-<script>
-var dtConf = {
-	"sDom": "t",
-	"bSortClasses": false,
-	"bPaginate": false,
-	"aaSorting": [[0,'asc']],
-	"fnInitComplete": function () {
-		this.fnAdjustColumnSizing();
-	}
-}
-$(document).ready(function () {
-	var oTable = $('#configurationReference').dataTable(dtConf);
-	$("#confSearch").keyup( function () {
-      	oTable.fnFilter(this.value, 0);
-   	});
-	if ( window.location.hash !== "") {
-		var searchValue = window.location.hash.substring(1);
-		$('#confSearch').val(searchValue);
-		$('#confSearch').focus();
-		oTable.fnFilter(searchValue, 0);
-	}
-});
-</script>
+<script src="/assets/js/site-reference.js"></script>

@@ -13,28 +13,35 @@ level2:
 
 <h3 class="section-title">Core</h3>
 <ul>
-   <li><strong>Finally connected <a href="/datatables">Dandelion-Datatables</a> to <a href="/dandelion">Dandelion</a>! Yeah!</strong>
+   <li><strong>Finally connected <a href="/datatables">Dandelion-Datatables</a> to <a href="/dandelion">Dandelion</a>!</strong>
       <ul>
-         <li>
-            All extensions have been refactored in order to plug all necessary assets in the <a
-            href="/dandelion/features/asset-stack/building-your-asset-stack.html">asset stack</a>
+         <li>All extensions have been refactored in order to be
+            able to interact with the <a
+            href="/dandelion/features/asset-bundles/building-a-bundle-graph/">bundle
+               graph</a>.
          </li>
-         <li>Lots of Dandelion scopes have been added and are available in the <i>datatables-core</i> JAR:
+         <li>Lots of vendor bundles have been added and are available in the <i>datatables-core</i> JAR:
             <ul>
                <li>jQuery</li>
                <li>DataTables</li>
                <li>Bootstrap v2</li>
                <li>Bootstrap v3</li>
-               <li>See the full <a href="/datatables/docs/ref/scopes/">scope reference here</a></li>
+               <li>See the full <a href="/datatables/docs/ref/bundles/">bundle reference here</a></li>
             </ul>
          </li>
          <li>New syntax available is some attributes (JSP and Thymeleaf)
             <ul>
-               <li>For instance in the {% refjsp dt column renderFunction %} column attribute, the following syntax can now be used: <code>renderFunction="scopeNameToAddInTheCurrentRequest#javascriptFunction"</code> thus allowing to avoid using the Dandelion JSP taglib or Thymeleaf dialect to add manually the scope in the request</li>
-               <li>Multiple scopes can now be added, separated by a comma. For example: <code>renderFunction="scope1,scope2#javascriptFunction"</code></li>
-               <li>Read more <a href="/datatables/features/dandelion/scope-special-syntax.html">here</a></li>
+               <li>For instance in the {% refjsp dt column renderFunction %} column attribute, the following
+                  syntax can now be used: <code>renderFunction="bundleNameToIncludeInTheCurrentRequest#javascriptFunction"</code>
+                  thus allowing to avoid using the Dandelion JSP taglib
+                  or Thymeleaf dialect to include manually the bundle in
+                  the request
+               </li>
+               <li>Multiple bundles can now be added, separated by a comma. For example: <code>renderFunction="bundle1,bundle2#javascriptFunction"</code></li>
+               <li>Read more <a href="/datatables/features/dandelion/bundle-special-syntax.html">here</a></li>
             </ul>
          </li>
+         <li>New main.standalone configuration property allowing to use Dandelion-Datatables as a standalone library</li>
       </ul>
    </li>
    <li><strong>Configuration improvements</strong>
@@ -42,27 +49,36 @@ level2:
          <li>Refactored the whole configuration system for greater clarity and better performance
             <ul>
                <li>The main goal of this refactoring was to increase performance by removing reflection.</li>
-               <li>Added a new {% javadoc dt datatables-core ConfigToken %} allowing to store a configuration, how to read it from properties and how to process it. Note that even if all configurations have been refactored to comply with CamelCase syntax, the case remains insensitive when it's read.</li>
-               <li>Added {% javadoc dt datatables-core TableConfig %} and {% javadoc dt datatables-core ColumnConfig %}: placeholder for all possible configurations</li>
+               <li>Added a new {% javadoc dt datatables-core ConfigToken %} class allowing to store a configuration, how to read it from properties and how to process it. Note that even if all configurations have been refactored to comply with CamelCase syntax, the case remains insensitive when it's read.</li>
+               <li>Added {% javadoc dt datatables-core TableConfig %} and {% javadoc dt datatables-core ColumnConfig %} classes: placeholders for all possible configurations</li>
                <li>Refactored {% javadoc dt datatables-core TableConfiguration %} and {% javadoc dt datatables-core ColumnConfiguration %} objects to use the recently added {% javadoc dt datatables-core ConfigToken %} instead of plenty of fields/accessors</li>
                <li>All configurations are now lazy processed, i.e. in the JSP taglib or in the
                   Thymeleaf dialect but no longer when a TableConfiguration is instantiated. Two
                   operations are now well decoupled: first the local configuration is applied (and
                   overloads the one loaded from properties) and then the whole configuration is
                   processed only once</li>
-               <li>Now all processors extends the same processor: {% javadoc dt datatables-core AbstractConfigurationProcessor %}. This allowed to remove code duplication and especially to handle in one place the case of processor that accept the recently added <a href="/datatables/features/dandelion/scope-special-syntax.html">scope syntax</a>.</li>
+               <li>Now all processors extends the same processor: {% javadoc dt datatables-core AbstractConfigurationProcessor %}. This allowed to remove code duplication and especially to handle in one place the case of processor that accept the recently added <a href="/datatables/features/dandelion/bundle-special-syntax.html">bundle syntax</a>.</li>
             </ul>
          </li>
-         <li>The user configuration properties, when read from classpath, are now read from <code>dandelion/datatables</code>.
+         <li>The user properties file is now read from the <code>dandelion/datatables</code> folder.
             When read from a system property, it remains unchanged. See more <a
             href="/datatables/features/configuration/configuration-loading.html">here</a>.
          </li>
          <li>Fixed auto configuration of the {% javadoc dt datatables-core JstlMessageResolver %}: it was auto-configured because of the presence of the JSTL JAR in the classpath, even in Thymeleaf-based applications (only when using the Thymeleaf Tiles2 extra)</li>
-         <li>The {% javadoc dt datatables-core AjaxReloadFunctionProcessor %} now accept the special syntax.</li>
-         <li>Added support for hot reloading of whole the configuration when the dev mode is enabled.
+         <li>The {% javadoc dt datatables-core AjaxReloadFunctionProcessor %} now accept the <a
+            href="/datatables/features/dandelion/bundle-special-syntax.html">bundle
+               special syntax</a>.
+         </li>
+         <li>Added support for hot reloading of whole the
+            configuration when the <a
+            href="/dandelion/features/development-mode/">development
+               mode</a> is enabled.
             <ul>
-               <li><code>datatables.properties</code> (containing the main configuration of the component)</li>
-               <li>all <code>datatables_XX.properties</code> (bundles containing internationalized messages)</li>
+               <li><code>datatables.properties</code> (containing
+                  the main configuration of the component)</li>
+               <li>all <code>datatables_XX.properties</code>
+                  (bundles containing internationalized messages)
+               </li>
             </ul>
          </li>
       </ul>
@@ -71,7 +87,7 @@ level2:
       <ul>
          <li>Fixed issue with the <code>addCssClass</code> method when one or more CSS classes was added to a column (header or not)</li>
          <li>Fixed issue when trying to modify CSS classes inside an extension using Thymeleaf</li>
-         <li>New utilites available in the {% javadoc dt datatables-core AbstractExtension %} class</li>
+         <li>New utilities available in the {% javadoc dt datatables-core AbstractExtension %} class</li>
       </ul>
    </li>
    <li><strong>Reintegrated URL processing</strong>
@@ -83,16 +99,17 @@ level2:
    </li>
    <li><strong>Sorting</strong>
       <ul>
-         <li>Custom sort types can now be used in the sortType / dt:sortType column attribute. Closes dandelion/issues#165</li>
+         <li>Custom sort types can now be used in the {% refjsp dt column sortType %} / {% reftl dt column sortType %} column attribute.</li>
       </ul>
    </li>
    <li><strong>Filtering</strong>
       <ul>
-         <li>Added support for delayed filtering: the filtering delay is based on the number of new character that have to be taped to trigger the filtering. .
-         <li>Added support for multi-filtering: filtering can now be triggered on a click event. New attributes have been added (filterSelector, filterClearSelector) to automatically bind click event to some elements targeted by the passed selectors</li>
-         <li>New "date_range" filter type, automatically created with bootstrap datepicker when enabled.</li>
-         <li>Fixed issue with repeated headers: now the duplicated cells added for filtering but without any filtering element are empty.</li>
-         <li>Updated the filteringaddon to the latest version</li>
+         <li>Added support for <a href="/datatables/features/basics/filtering/filtering-on-click.html">filtering on click</a></li>
+         <li>Added support for <a href="/datatables/features/basics/filtering/delayed-filtering.html">delayed filtering</a>, either based on time or on entered characters</li>
+         <li>Added support for multi-filtering based on a new {% refjsp dt column name %} / {% reftl dt column name %} column attribute</li>
+         <li>New "date_range" filter type, automatically created with bootstrap datepicker when enabled</li>
+         <li>Fixed issue with repeated headers: now the duplicated cells added for filtering but without any filtering element remains empty</li>
+         <li>Updated the <a href="https://github.com/tduchateau/jquery-datatables-column-filter">filtering add-on</a> to the latest version</li>
       </ul>
    </li>
    <li><strong>Pagination</strong>
@@ -107,7 +124,11 @@ level2:
    </li>
    <li><strong>Export</strong>
       <ul>
-         <li>Refactored export mechanism to be able to use a totally custom export. Some export formats use reserved words, such as "csv", "pdf", "xml", "xls" and "xlsx" and allow to activate default values (e.g. mimeType, built-in export classes)</li>
+         <li>Refactored export mechanism to be able to use a
+            totally custom export. Some export formats use reserved
+            words, such as "csv", "pdf", "xml", "xls" and "xlsx" and are
+            used to activate default configurations (e.g. mimeType,
+            built-in export classes)</li>
          <li>Added support for landscape orientation when exporting in PDF (overloadable with JSP/Thymeleaf attributes)</li>
          <li>Fixed issue with export URL: now both custom and default export URL are updated with the parameter telling Dandelion to disable the asset filter</li>
          <li>Modified the custom export function name: the name now contains only the table id, without "oTable"</li>
@@ -189,11 +210,11 @@ level2:
    <li>Replaced the <code>extraFile</code> JSP tag with the new {% refjsp dt extraJs %} tag</li>
    <li>
       The {% refjsp dt callback function %} callback attribute now accepst the <a
-      href="/datatables/features/dandelion/scope-special-syntax.html">scope special syntax</a>
+      href="/datatables/features/dandelion/bundle-special-syntax.html">bundle special syntax</a>
    </li>
    <li>Changes in attributes
       <ul>
-         <li>New {% refjsp dt column id %} column attribute, allowing to assign an ID to the header cell</li>
+         <li>New {% refjsp dt column id %} column attribute, allowing to assign an ID to each column header</li>
          <li>New {% refjsp dt column filterMinLength %} column attribute, allowing to trigger the filtering after a minimum number of characters has been reached in a filtering field.</li>
          <li>New {% refjsp dt column filterDelay %} column attribute, allowing to set a delay (in ms) before the AJAX call is performed to obtain data from server</li>
          <li>New {% refjsp dt column filterSelector %} column attribute, allowing </li>
@@ -218,11 +239,12 @@ level2:
          <li>Removed the <code>&lt;datatables:extraConf&gt;</code> tag</li>
          <li>
             Removed the <code>cdn</code> table attribute from the taglib: it is now activated
-            by default thanks to <a
-            href="/dandelion/features/asset-stack/introducing-asset-scopes.html">scope mechanism</a>
+            by default thanks to the <a
+            href="/dandelion/features/asset-bundles/introducing-asset-bundles.html">bundle mechanism</a>
             of <a href="/dandelion">Dandelion</a>
          </li>
          <li>Removed the <code>exportLinks</code> table attribute from the taglib: export links are now positioned thanks to the {% refjsp dt table dom %} table attribute</li>
+         <li>Revmoed the <code>uid</code> column attribute and changed the usage of the {% refjsp dt columnHead %} tag</li>
       </ul>
    </li>
 </ul> 
@@ -286,8 +308,8 @@ level2:
          <li>Removed the <code>&lt;datatables:extraConf&gt;</code> tag</li>
          <li>
             Removed the <code>cdn</code> table attribute from the dialect: it is now activated
-            by default thanks to <a
-            href="/dandelion/features/asset-stack/introducing-asset-scopes.html">scope mechanism</a>
+            by default thanks to the <a
+            href="/dandelion/features/asset-bundles/introducing-asset-bundles.html">scope mechanism</a>
             of <a href="/dandelion">Dandelion</a>
          </li>
          <li>Removed the <code>dt:exportLinks</code> table attribute from the dialect: export links are now positioned using the {% reftl dt table dom %} table attribute</li>
@@ -324,6 +346,9 @@ level2:
 
 <h3 class="section-title">Closed issues</h3>
 <ul>
+   <li>{% issue 236 %}: Concurrency bug : Wrong WebResources linked to an HtmlTable</li>
+   <li>{% issue 234 %}: Move the columnHead tag inside the column tag</li>
+   <li>{% issue 233 %}: Use of columnHead tag renders empty header if table has less than 2 rows</li>
    <li>{% issue 231 %}: Add support for state saving in Thymeleaf</li>
    <li>{% issue 228 %}: Add support for extraFile in Thymeleaf Dialect</li>
    <li>{% issue 227 %}: Provide a new configuration option allowing to generate PDF in landscape mode</li>

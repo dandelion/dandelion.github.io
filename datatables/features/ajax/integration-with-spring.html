@@ -9,10 +9,7 @@ level3:
   url: integration-with-spring
   name: Integration with Spring
 ---
-
 <h2 class="page-title">Integration with Spring</h2>
-
-<h3 class="section-title">Preamble</h3>
 <p>
    Wether you use client-side or server-side processing, the Spring extra provides some utility classes to work with AJAX sources.
 <p>
@@ -27,10 +24,10 @@ level3:
    &lt;version>{{ site.dandelion.components.datatables.version }}&lt;/version>
 &lt;/dependency>
 </pre>
-   <p class="alert alert-info">
-      <strong><i class="icon-info-sign icon-2x"></i></strong> 
-      If you use another build system or want to download the JAR manually, go <a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-spring3%7C{{ site.dandelion.components.datatables.version }}%7Cjar">here</a>.
-   </p>
+</p>
+<p class="alert alert-info">
+   <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp;
+   If you use another build system or want to download the JAR manually, go <a href="http://search.maven.org/#artifactdetails%7Ccom.github.dandelion%7Cdatatables-spring3%7C{{ site.dandelion.components.datatables.version }}%7Cjar">here</a>.
 </p>
 
 <h3 class="section-title">Custom method argument resolver for {% javadoc dt datatables-core DatatablesCriterias %}</h3>
@@ -83,7 +80,7 @@ public @ResponseBody DatatablesResponse<Person> findAll(@DatatablesParams Datata
    &lt;/mvc:argument-resolvers&gt;
 &lt;/mvc:annotation-driven&gt;
 </pre>         
-         ... or using Javaconfig:
+         ... or using JavaConfig:
 <pre class="prettyprint">
 &#064;Configuration
 &#064;EnableWebMvc

@@ -9,9 +9,7 @@ level3:
   url: writing-your-own-extension
   name: Writing your own extension
 ---
-
 <h2 class="page-title">Writing your own extension</h2>
-
 <p>In order to write your own extension, follow these steps:</p>
 <ol>
    <li>
@@ -39,7 +37,7 @@ public class MyCustomExtension extends AbstractExtension {
          Also note that the {% javadoc dt datatables-core AbstractExtension %} class provided plenty
          of utilities for dealing with
          <a href="/datatables/features/advanced/using-callbacks.html">callbacks</a>, Dandelion
-         <a href="">scopes</a> (lien), ...
+         <a href="/dandelion/features/asset-bundles/introducing-asset-bundles.html">bundles</a>, ...
       </p>
    </li>
    <li>
@@ -117,9 +115,9 @@ global.main.extension.names=myAwesomeExtension
    <li>
       <h5>Using Thymeleaf</h5>
       <p>
-         You can use the {% reftl dt table dt:ext %} in the same way as for JSP. Don't forget to wrap the attribute's value in single quotes.
+         You can use the {% reftl dt table ext %} in the same way as for JSP.
 <pre class="prettyprint">
-&lt;table id="myTableId" dt:table="true" dt:ext="'myAwesomeExtension'">
+&lt;table id="myTableId" dt:table="true" dt:ext="myAwesomeExtension">
    &lt;thead>
       &lt;tr>
          &lt;th>Id&lt;/th>

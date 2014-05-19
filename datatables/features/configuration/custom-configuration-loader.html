@@ -7,14 +7,14 @@ level2:
   name: Configuration
 level3:
   url: custom-configuration-loader
-  name: Pluging a custom configuration loader
+  name: Plugging-in your own configuration loader
 ---
-
-<h2 class="page-title">Pluging a custom configuration loader</h2>
-
-<h3 class="section-title">Preamble</h3>
+<h2 class="page-title">Plugging-in your own configuration loader</h2>
 <p>
-   Dandelion-Datatables loads configuration files using a default strategy but you can optionnaly change it to fit your needs.
+   Dandelion-Datatables loads configuration files using a
+   <a
+      href="/datatables/features/configuration/configuration-loading.html">default
+      strategy</a> but you can optionnaly change it to fit your needs.
 </p>
 
 <h3 class="section-title">Writing your own configuration loader</h3>
@@ -37,12 +37,12 @@ public class MyConfigurationLoader implements ConfigurationLoader {
    }
 
    @Override
-   public Set<String> resolveGroups(Locale locale) {
+   public Set&lt;String&gt; resolveGroups(Locale locale) {
       // ...
    }
 
    @Override
-   public void resolveConfigurations(Map<String, TableConfiguration> map, Locale locale, HttpServletRequest request) {
+   public void resolveConfigurations(Map&lt;String&gt;, TableConfiguration> map, Locale locale, HttpServletRequest request) {
       // ...
    }
 }

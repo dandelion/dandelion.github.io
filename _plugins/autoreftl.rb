@@ -17,7 +17,7 @@ module Jekyll
         case args.length
         when 3
           @reftag = args[1].downcase
-          @refparam = args[2]
+          @refparam = (args[2].match(/^dt/) ? args[2][3, args[2].length] : args[2])
           "<a href=\"/datatables/docs/ref/thymeleaf/#{@reftag}.html#dt:#{@refparam}\"><code>dt:#{@refparam}</code></a>"
         when 2
           @reftag = args[1].downcase

@@ -9,7 +9,6 @@ level3:
   url: basics-of-styling
   name: Basics of styling
 ---
-
 <h2 class="page-title">Basics of styling</h2>
 <p>
 	There are a number of ways in which DataTables allows you to style tables and HTML it adds to the document. Dandelion-DataTables supports some of them but also provides themes integration such as the <a href="/datatables/features/styling/bootstrap2.html">Bootstrap2 theme</a>.
@@ -47,7 +46,7 @@ level3:
    However, if for example you need to set the stripe classes, you can use the  {% reftl dt table dt:stripeclasses %} table attribute.
 </p> 
 <pre class="prettyprint">
-&lt;table id="myTableId" dt:table="true" dt:stripeclasses="'class1,class2'">
+&lt;table id="myTableId" dt:table="true" dt:stripeclasses="class1,class2">
    &lt;thead>
       &lt;tr>
          &lt;th>Id&lt;/th>
@@ -90,7 +89,7 @@ level3:
    However, if for example you need to set the stripe classes, you can use the  {% reftl dt table dt:stripeclasses %} table attribute.
 </p> 
 <pre class="prettyprint">
-&lt;table id="myTableId" dt:table="true" dt:stripeclasses="'class1,class2'">
+&lt;table id="myTableId" dt:table="true" dt:stripeclasses="class1,class2">
    &lt;thead>
       &lt;tr>
          &lt;th class="myColumn1Class">Id&lt;/th>
@@ -101,9 +100,9 @@ level3:
    &lt;/thead>
    &lt;tbody>
       &lt;tr th:each="person : ${persons}">
-         &lt;td th:text="${person.id}">1&lt;/td>
-         &lt;td th:text="${person.firstName}">John&lt;/td>
-         &lt;td th:text="${person.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person?.id}">1&lt;/td>
+         &lt;td th:text="${person?.firstName}">John&lt;/td>
+         &lt;td th:text="${person?.lastName}">Doe&lt;/td>
          &lt;td>&lt;a th:href="${'mailto:' + person.mail}" th:text="${person.mail}">john@doe.com&lt;/a>&lt;/td>
       &lt;/tr>
    &lt;/tbody>

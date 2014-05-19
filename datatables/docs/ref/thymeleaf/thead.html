@@ -9,15 +9,15 @@ level2:
    name: Thead attributes
 ---
 <link rel="stylesheet" href="/assets/css/site-reference.css" />
-
 <h2 class="page-title"><code>&lt;thead&gt;</code> attributes</h2>
-<h3 class="section-title">Usage</h3>
 <p>
-   The <code>&lt;thead&gt;</code> attributes allow you to configure both plugins (Scroller, FixedHeader, ...) and export.
+   The <code>&lt;thead&gt;</code> attributes are mainly used to configure <a href="/datatables/features/plugins/">plugins</a>.
 </p>
+
+<h3 class="section-title">Usage</h3>
 <pre class="prettyprint">
-&lt;table id="myTable" dt:table="true" dt:export="csv">
-   &lt;thead dt:csv:class="'btn'" dt:csv:label="'Custom label'">
+&lt;table id="myTable" dt:table="true" dt:ext="fixedheader">
+   &lt;thead dt:fixedOffsetTop="40">
       &lt;tr>
          &lt;th>Id&lt;/th>
          &lt;th>Firstname&lt;/th>
@@ -26,23 +26,13 @@ level2:
          &lt;th>Mail&lt;/th>
       &lt;/tr>
    &lt;/thead>
-   &lt;tbody>
-      &lt;tr th:each="person : ${persons}">
-         &lt;td th:text="${person.id}">1&lt;/td>
-         &lt;td th:text="${person.firstName}">John&lt;/td>
-         &lt;td th:text="${person.lastName}">Doe&lt;/td>
-         &lt;td th:text="${person.address.town.name}">Nobody knows!&lt;/td>
-         &lt;td>&lt;a th:href="${'mailto:' + person.mail}" th:text="${person.mail}">john@doe.com&lt;/a>&lt;/td>
-      &lt;/tr>
-   &lt;/tbody>
+   ...
 &lt;/table>
 </pre>
 
 <h3 class="section-title">
    Reference
-   <div class="custom-filter" style="float:right;">
-      <input id="customFilter" type="text" placeholder="Search for an attribute...">
-   </div>
+   <input id="customFilter" type="text" placeholder="Search for an attribute..." style="float:right;">
 </h3>
 <table id="tableReference" class="table table-striped table-bordered table-hover">
    <thead>
@@ -56,303 +46,14 @@ level2:
    </thead>
    <tbody>
       <tr>
-         <td>dt:scroller</td>
-         <td>Enable or disable the DataTables Scroller plugin</td>
-         <td>true|false</td>
-         <td>false</td>
+         <td>dt:fixedPosition</td>
+         <td>{% def dt plugin.fixedPosition %}</td>
+         <td>{% def dt plugin.fixedPosition val %}</td>
+         <td>{% def dt plugin.fixedPosition def %}</td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
-         <td>dt:colreorder</td>
-         <td>Enable or disable the DataTables ColReorder plugin</td>
-         <td>true|false</td>
-         <td>false</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:fixedheader</td>
-         <td>Enable or disable the DataTables FixedHeader plugin</td>
-         <td>true|false</td>
-         <td>false</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:csv:style</td>
-         <td>CSS style applied on the CSV export link(s)</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xml:style</td>
-         <td>CSS style applied on the XML export link(s)</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:pdf:style</td>
-         <td>CSS style applied on the PDF export link(s)</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xls:style</td>
-         <td>CSS style applied on the XLS export link(s)</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xlsx:style</td>
-         <td>CSS style applied on the XLSX export link(s)</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:csv:class</td>
-         <td>CSS class applied on the CSV export link(s)</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xml:class</td>
-         <td>CSS class applied on the XML export link(s)</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:pdf:class</td>
-         <td>CSS class applied on the PDF export link(s)</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xls:class</td>
-         <td>CSS class applied on the XLS export link(s)</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xlsx:class</td>
-         <td>CSS class applied on the XLSX export link(s)</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:csv:label</td>
-         <td>Label of the CSV export link(s)</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xml:label</td>
-         <td>Label of the XML export link(s)</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:pdf:label</td>
-         <td>Label of the PDF export link(s)</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xls:label</td>
-         <td>Label of the XLS export link(s)</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xlsx:label</td>
-         <td>Label of the XLSX export link(s)</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:csv:filename</td>
-         <td>Name of the generated CSV file containing exported
-            data</td>
-         <td></td>
-         <td>The export type uppercased</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xml:filename</td>
-         <td>Name of the generated XML file containing exported
-            data</td>
-         <td></td>
-         <td>The export type uppercased</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:pdf:filename</td>
-         <td>Name of the generated PDF file containing exported
-            data</td>
-         <td></td>
-         <td>The export type uppercased</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xls:filename</td>
-         <td>Name of the generated XLX file containing exported
-            data</td>
-         <td></td>
-         <td>The export type uppercased</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xlsx:filename</td>
-         <td>Name of the generated XLSX file containing exported
-            data</td>
-         <td></td>
-         <td>The export type uppercased</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xls:autosize</td>
-         <td>Indicates whether columns should be auto-sized or not
-            (in XLS export file) (See the <a
-            href="http://poi.apache.org/spreadsheet/quick-guide.html#Autofit">reference</a>)
-         </td>
-         <td>true|false</td>
-         <td>false</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xlsx:autosize</td>
-         <td>Indicates whether columns should be auto-sized or not
-            (in XLSX export file) (See the <a
-            href="http://poi.apache.org/spreadsheet/quick-guide.html#Autofit">reference</a>)
-         </td>
-         <td>true|false</td>
-         <td>false</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:csv:header</td>
-         <td>Indicates whether headers should be added in the CSV
-            export file or not</td>
-         <td>true|false</td>
-         <td>true</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xml:header</td>
-         <td>Indicates whether headers should be added in the XML
-            export file or not</td>
-         <td>true|false</td>
-         <td>true</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:pdf:header</td>
-         <td>Indicates whether headers should be added in the PDF
-            export file or not</td>
-         <td>true|false</td>
-         <td>true</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xls:header</td>
-         <td>Indicates whether headers should be added in the XLS
-            export file or not</td>
-         <td>true|false</td>
-         <td>true</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xlsx:header</td>
-         <td>Indicates whether headers should be added in the XLSX
-            export file or not</td>
-         <td>true|false</td>
-         <td>true</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:csv:url</td>
-         <td>URL that will be called to export in the CSV format</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xml:url</td>
-         <td>URL that will be called to export in the CSV format</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xls:url</td>
-         <td>URL that will be called to export in the CSV format</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xlsx:url</td>
-         <td>URL that will be called to export in the CSV format</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:pdf:url</td>
-         <td>URL that will be called to export in the CSV format</td>
-         <td></td>
-         <td></td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:csv:method</td>
-         <td>HTTP method used to call the CSV export URL. <br /><span class="label label-warning">Warning!</span> all methods are not supported by all browsers</td>
-         <td>GET /<br/>POST /<br/>PUT /<br/>DELETE</td>
-         <td>GET</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xml:method</td>
-         <td>HTTP method used to call the CSV export URL. <br /><span class="label label-warning">Warning!</span> all methods are not supported by all browsers</td>
-         <td>GET /<br/>POST /<br/>PUT /<br/>DELETE</td>
-         <td>GET</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:pdf:method</td>
-         <td>HTTP method used to call the CSV export URL. <br /><span class="label label-warning">Warning!</span> all methods are not supported by all browsers</td>
-         <td>GET /<br/>POST /<br/>PUT /<br/>DELETE</td>
-         <td>GET</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xls:method</td>
-         <td>HTTP method used to call the CSV export URL. <br /><span class="label label-warning">Warning!</span> all methods are not supported by all browsers</td>
-         <td>GET /<br/>POST /<br/>PUT /<br/>DELETE</td>
-         <td>GET</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:xlsx:method</td>
-         <td>HTTP method used to call the CSV export URL. <br /><span class="label label-warning">Warning!</span> all methods are not supported by all browsers</td>
-         <td>GET /<br/>POST /<br/>PUT /<br/>DELETE</td>
-         <td>GET</td>
-         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
-      </tr>
-      <tr>
-         <td>dt:offsetTop</td>
+         <td>dt:fixedOffsetTop</td>
          <td>{% def dt plugin.fixedOffsetTop %}</td>
          <td>{% def dt plugin.fixedOffsetTop val %}</td>
          <td>{% def dt plugin.fixedOffsetTop def %}</td>

@@ -13,38 +13,29 @@ level4:
   url: jqueryui
   name: jQuery UI
 ---
-
 <h2 class="page-title">jQuery UI theme</h2>
-
-<h3 class="section-title">Preamble</h3>
 <p>
    Dandelion-Datatables provides an easy way to apply the <a href="http://getbootstrap.com/2.3.2/">Bootstrap framework</a> on your tables.
 </p>
 
-<h3 class="section-title">Activating the jQuery UI theme</h3>
+<h3 class="section-title" id="atjquit">Activating the jQuery UI theme</h3>
 <p>
-   In order to activate the jQuery UI theme, follow these steps:
+   Just follow these steps:
 </p>
 <ol>
-   <li><i>Provide the needed static assets</i>
+   <li><i>Use the JSP taglib / Thymeleaf dialect</i>
       <p>
-         Link to the jQuery UI library (JS)
-      </p>
-      <p>
-         Of course, don't forget jQuery (JS) and DataTables (JS) 
-      </p>
-   </li>
-   <li><i>Use the JSP taglib/Thymeleaf dialect</i>
-      <p>
-         Set the {% refjsp dt table theme %} (JSP) / {% reftl dt table dt:theme %} (Thymeleaf) table attributes to <code>jqueryui</code>
-      </p>
-   </li>
+         Set the {% refjsp dt table theme %} (JSP) / {% reftl dt table theme %} (Thymeleaf) table attribute to
+         <code>jqueryui</code>
+         .
+      </p></li>
    <li><i>Choose a theme option</i>
       <p>
          Use the {% refjsp dt table themeOption %} (JSP) / {% reftl dt table dt:themeOption %} (Thymeleaf) table attributes to select
-         a theme option. See <a href="/datatables/docs/ref/configuration/#themeoptions">full list</a> of available values.
-      </p>
-   </li>
+         a theme option. See <a
+            href="/datatables/docs/ref/configuration/#themeoptions">full
+            list</a> of available values.
+      </p></li>
 </ol>
 
 <h3 class="section-title" id="ex">Example</h3>
@@ -73,11 +64,11 @@ level4:
    &lt;/thead>
    &lt;tbody>
       &lt;tr th:each="person : ${persons}">
-         &lt;td th:text="${person.id}">1&lt;/td>
-         &lt;td th:text="${person.firstName}">John&lt;/td>
-         &lt;td th:text="${person.lastName}">Doe&lt;/td>
-         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
-         &lt;td th:text="${person.mail}">john@doe.com&lt;/td>
+         &lt;td th:text="${person?.id}">1&lt;/td>
+         &lt;td th:text="${person?.firstName}">John&lt;/td>
+         &lt;td th:text="${person?.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person?.address?.town?.name}">Nobody knows!&lt;/td>
+         &lt;td th:text="${person?.mail}">john@doe.com&lt;/td>
       &lt;/tr>
    &lt;/tbody>
 &lt;/table>

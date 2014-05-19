@@ -23,13 +23,15 @@ module Jekyll
           "<a href=\"/datatables/docs/ref/configuration/##{@confType}-#{@confName}\"><code>#{@confName}</code></a>" 
         # Link an attribute of a tag
         when 3
-          @reftag = args[1].downcase
+          @reftag = args[1]
+          @reftagurl = args[1].downcase
           @refparam = args[2]
-          "<a href=\"/datatables/docs/ref/jsp/#{@reftag}.html##{@refparam}\"><code>#{@refparam}</code></a>"
+          "<a href=\"/datatables/docs/ref/jsp/#{@reftagurl}.html##{@refparam}\"><code>#{@refparam}</code></a>"
         # Link to a tag
         when 2
-          @reftag = args[1].downcase
-          "<a href=\"/datatables/docs/ref/jsp/#{@reftag}.html\"><code>&lt;datatables:#{@reftag}&gt;</code></a>"
+          @reftag = args[1]
+          @reftagurl = args[1].downcase
+          "<a href=\"/datatables/docs/ref/jsp/#{@reftagurl}.html\"><code>&lt;datatables:#{@reftag}&gt;</code></a>"
         end
       
       when "ddl"

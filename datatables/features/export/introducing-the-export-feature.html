@@ -1,0 +1,92 @@
+---
+layout: datatables
+module: datatables
+menu: export
+level1: tutorials
+level2:
+  url: export
+  name: Export
+level3:
+  url: introducing-the-export-feature.html
+  name: Introducing the export feature
+---
+<h2 class="page-title">Introducing the export feature</h2>
+<p>
+   Since the v0.10.0, you can use any export format you want. However
+   Dandelion-Datatables provides ready-to-use features allowing have an
+   exportable table within seconds.
+</p>
+
+<h3 class="section-title" id="hiw">How it works?</h3>
+<p>
+   Whether you use <a
+      href="/datatables/features/export/filter-based-exports.html">filter-based</a>
+   or <a
+      href="/datatables/features/export/controller-based-exports.html">controller-based</a>
+   exports, Dandelion-Datatables uses an
+   <i>export class</i> that describes the content of the export.
+</p>
+<p>
+   Dandelion-Datatables provides built-in exports classes for the
+   following formats:
+   <strong>CSV</strong>, <strong>XML</strong>, <strong>PDF</strong>, <strong>XLS</strong>
+   and <strong>XLSX</strong>. These classes can be used to quickly set up export in your application.
+</p>
+<p>
+   Of course if you need to customize the rendered file, you can write
+   <a href="/datatables/features/export/plugging-in-your-onw-export-class.html">your
+      own export classes</a>. 
+</p>
+
+<h3 class="section-title" id="uj">Text-based export formats: CSV, XML</h3>
+<p>
+   For the text-based export formats, such as CSV or XML, no additional
+   dependency is required and built-in export classes ( {% javadoc dt datatables-core CsvExport %} 
+   and {% javadoc dt datatables-core XmlExport %} ) are bundled within the
+   <i>datatables-core</i> artifact.
+</p>
+
+<h3 class="section-title" id="uj">Binary-based export formats: XLS, XLSX, PDF</h3>
+<p>
+   Binary export formats, such as XLS or PDF, require most of the time some additional dependencies.
+</p>
+<p>
+   For these formats, Dandelion-Datatables provides some extras:
+</p>
+<ul>
+   <li><a href="https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-itext">datatables-export-itext</a>: used for PDF exports</li>
+   <li><a href="https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-poi">datatables-export-poi</a>: used for XLS exports</li>
+   <li><a href="https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-poi-ooxml">datatables-export-poi-ooxml</a>: used for XLSX exports (Excel 2007 or later)</li>
+</ul>
+<p>
+   Each of those dependencies contains:
+</p>
+<ul>
+   <li>an export class that will be used by default by Dandelion-Datatables if the corresponding export format is enabled in the table </li>
+   <li>the corresponding third-party dependency (e.g. the iText library for the <i>datatatables-export-itext</i> extra)</li>
+</ul>
+<p>
+   In order to use one of these extras, just add the corresponding dependency to your classpath.
+</p>
+<h4>XLS export</h4>
+<p>
+   {% assign artifact = 'datatables-export-poi' %}
+   {% include build-tools.html %}
+</p>
+<h4>XLSX export</h4>
+<p>
+   {% assign artifact = 'datatables-export-poi-ooxml' %}
+   {% include build-tools.html %}
+</p>
+<h4>PDF export</h4>
+<p>
+   {% assign artifact = 'datatables-export-itext' %}
+   {% include build-tools.html %}
+</p>
+
+<p>
+   Note that those extras are just here to help you or to get inspired
+   for writing your own. You can of course
+   <a href="/datatables/features/export/plugging-in-your-onw-export-class.html">write
+      your own export class</a>.
+</p>

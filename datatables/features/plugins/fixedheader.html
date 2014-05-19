@@ -16,7 +16,7 @@ level3:
 
 <h3 class="section-title">Using JSP</h3>
 <p>
-   You just need to set the {% refjsp dt table fixedheader %} table attribute to <code>true</code> to activate the plugin.
+   Just enable the extension by adding <code>fixedheader</code> to the {% refjsp dt table ext %} table attribute.
 </p>
 <pre class="prettyprint">
 &lt;datatables:table id="myTableId" data="${persons}" fixedHeader="true" offsetTop="40">
@@ -30,11 +30,11 @@ level3:
 
 <h3 class="section-title">Using Thymeleaf</h3>
 <p>
-   Just set the {% reftl dt thead dt:fixedheader %} thead attribute to <code>true</code>.
+   Just enable the extension by adding <code>fixedheader</code> to the {% reftl dt table ext %} table attribute.
 </p>
 <pre class="prettyprint">
-&lt;table id="myTable" dt:table="true">
-   &lt;thead dt:fixedheader="true">
+&lt;table id="myTable" dt:table="true" dt:ext="fixedheader">
+   &lt;thead>
       &lt;tr>
          &lt;th>Id&lt;/th>
          &lt;th>Firstname&lt;/th>
@@ -45,11 +45,11 @@ level3:
    &lt;/thead>
    &lt;tbody>
       &lt;tr th:each="person : ${persons}">
-         &lt;td th:text="${person.id}">1&lt;/td>
-         &lt;td th:text="${person.firstName}">John&lt;/td>
-         &lt;td th:text="${person.lastName}">Doe&lt;/td>
-         &lt;td th:text="${person.address.town.name}">Nobody knows !&lt;/td>
-         &lt;td>&lt;a th:href="${'mailto:' + person.mail}" th:text="${person.mail}">john@doe.com&lt;/a>&lt;/td>
+         &lt;td th:text="${person?.id}">1&lt;/td>
+         &lt;td th:text="${person?.firstName}">John&lt;/td>
+         &lt;td th:text="${person?.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person?.address?.town?.name}">Nobody knows !&lt;/td>
+         &lt;td>&lt;a th:href="${'mailto:' + person?.mail}" th:text="${person?.mail}">john@doe.com&lt;/a>&lt;/td>
       &lt;/tr>
    &lt;/tbody>
 &lt;/table>

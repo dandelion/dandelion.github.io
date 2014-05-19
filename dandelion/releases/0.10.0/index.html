@@ -15,87 +15,140 @@ level2:
    <li>
       Lots of internal features are now based on the <a
       href="http://docs.oracle.com/javase/6/docs/api/java/util/ServiceLoader.html">Service
-         Provider Interface API</a>: processors, wrappers, locations and caching in order to provide
-      plenty of extension points
+         Provider Interface API</a>: <a
+      href="/dandelion/features/asset-processors/">processors</a>, <a
+      href="/dandelion/features/asset-locators/">locators</a>, <a
+      href="/dandelion/features/bundle-loaders/">bundle loaders</a> and
+      <a href="/dandelion/features/asset-caching/">caching</a> in order
+      to provide plenty of extension points
    </li>
-   <li>
-      The asset rendering is now based on a servlet filter (AssetFilter (plugin jekyll)),
+   <li><strong>Main</strong>
+      <ul>
+         <li>The asset rendering is now based on a servlet filter ({% javadoc ddl dandelion-core DandelionFilter %}),
       which optimally injects <code>&lt;script&gt;</code> and <code>&lt;link&gt;</code> tags into
-      the page. Read more here. (lien)
-   </li>
-   <li>
-      New asset processors available for compression (based on YUICompressor) and aggregation. Read
-      more <a href="/dandelion/features/asset-processors">here</a>.
-   </li>
-   <li>
-      Added a new <a href="/dandelion/features/asset-location-wrappers">CdnLocationWrapper</a> used
-      to rewrite URLs in CSS files. Automatically activated when minification or aggregation is
-      enabled.
-   </li>
-   <li>
-      The <a href="/dandelion/features/asset-location-wrappers">WebjarsLocationWrapper</a> now
-      support URL rewriting in CSS files when necessary.
-   </li>
-   <li>
-      New asset stack-related utilities:
-      <ul>
-         <li>Orphan bundles (lien) are now handled (dans quel sens ?)</li>
-         <li>Possibility to exclude assets by type</li>
-         <li>The asset position can be forced using a new JSON parameter (dom)</li>
-         <li>Possibility to activate bundles permanently (e.g. handy for global CSS files)</li>
+      the page.</li>
+         <li>
+            The old DatatablesController (used to serve generated assets of the Dandelion-Datatables
+            component) has been repatriated to Dandelion core, renamed to {% javadoc ddl dandelion-core DandelionServlet %} and is now
+            used to serve all kinds of generated assets.
+         </li>
+         <li>Dropped Servlet 3.x annotations usage in favour of plain old XML.</li>
+         <li>Asset bundle are no longer based on a tree but on a <a
+            href="http://en.wikipedia.org/wiki/Directed_acyclic_graph">DAG</a>. The old <code>parent</code> properties of
+            bundles has been replaced by the <code>dependencies</code>
+            attribute.
+         </li>
+         <li>
+            New utilities related to assets and bundles:
+            <ul>
+               <li>Ability to exclude assets by type</li>
+               <li>The asset position can be forced using a new JSON parameter (dom)</li>
+               <li>Possibility to <a
+                  href="/dandelion/features/asset-bundles/interacting-with-the-asset-bundles/using-the-configuration-properties.html">activate
+                     bundles permanently</a> (e.g. handy for global CSS
+                  files)
+               </li>
+            </ul>
+         </li>
+         <li>
+            The URL of generated asset is now built with a
+            SHA1 key instead of the old parameters previously used in Dandelion-Datatables.
+         </li>
       </ul>
    </li>
-   <li>
-      The old DatatablesController (used to serve generated assets of the Dandelion-Datatables
-      component) has been repatriated to Dandelion core, renamed to AssetServlet (lien) and is now
-      used to serve all kinds of generated assets (minified, aggregated, delegated, templated)
-   </li>
-   <li>Dropped Servlet 3.x annotations in favour of plain old XML.</li>
-   <li>
-      The URL of generated asset (minified, aggregated, delegated, templated) is now built with a
-      SHA1 key instead of the old parameters previously used in Dandelion-Datatables.
-   </li>
-   <li>
-      Lots of new utilities for dealing with:
+   <li><strong>Bundle loaders</strong>
       <ul>
-         <li>resource scanning</li>
-         <li>files</li>
-         <li>...</li>
+         <li>
+            All <a href="/dandelion/features/bundle-loaders/introducing-bundle-loaders.html">*BundleLoader</a>
+            are now mutually exclusives in order to be able to disable one or more loaders (useful for
+            Dandelion integration in legacy apps)
+         </li>
+         <li>Bundle and asset names are not case sensitive any longer</li>
       </ul>
    </li>
-   <li>
-      All <a href="/dandelion/features/asset-loaders/introducing-asset-loaders.html">*AssetLoader</a>
-      are now mutually exclusives in order to be able to disable one or more loaders (useful for
-      Dandelion integration in legacy apps)
+   <li><strong>Asset locators</strong>
+      <ul>
+         <li>Fixed issue with protocol-relative URLs used as locations (aka //cdn)</li>
+         <li>Added a new <a
+            href="/dandelion/features/asset-locators/built-in/cdn-locator.html">CdnLocator</a>
+            used to rewrite URLs in CSS files. Automatically activated when
+            minification is enabled.
+         </li>
+         <li>Improved the <i>dandelion-webjars</i> extra. See below.</li>
+      </ul>
    </li>
-   <li>Bundle and asset names are not case sensitive any longer</li>
-   <li>Fixed issue with protocol-relative URLs used as asset locations (aka //cdn)</li>
-   <li>
-      <a href="/dandelion/features/development-mode">DevMode</a> refactored to avoid
-      re-initializing the asset stack at each request thus drastically improving performance
+   <li><strong>Asset processors</strong>
+      <ul>
+         <li>
+            New asset processors available for JS and CSS compression (based on YUICompressor). Read
+            more <a href="/dandelion/features/asset-processors/built-in/">here</a>.
+         </li>
+      </ul>
    </li>
-</ul>
-
-<h3 class="section-title">Spring3 extra</h3>
-<ul>
-   <li>
-      The Spring3 extra now embeds a new AssetController (lien) that can be used as an
-      alternative to the AssetServlet (lien). The controller has been bundled in a configuration
-      file that can be easily imported in the main Spring configuration.
+   <li><strong>Configuration</strong>
+      <ul>
+         <li>Lots of new <a
+            href="/dandelion/docs/ref/configuration/">configuration
+               properties</a></li>
+         <li>All configuration properties can now be loaded using <a
+            href="/dandelion/features/configuration/configuration-properties.html">different
+               strategies</a></li>
+      </ul>
+   </li>
+   <li><strong>Development/production mode</strong>
+      <ul>
+         <li><a href="/dandelion/features/development-mode">Development mode</a> refactored to avoid
+      re-initializing the bundle graph at each request thus drastically improving performance</li>
+         <li>Added a <a
+            href="/dandelion/features/development-mode/bundle-graph-viewer.html">bundle
+               graph viewer</a>, allowing to visualize how Dandelion deals
+            with your current request
+         </li>
+         <li>Added support for manual <a
+            href="/dandelion/features/development-mode/bundle-reloading.html">bundle
+               reloading</a>
+         </li>
+         <li>New <a
+            href="/dandelion/features/production-mode/caching-policy.html">caching
+               policy</a> applied when using the <i>production mode</i></li>
+      </ul>
+   </li>
+   <li><strong>JSP taglib / Thymeleaf dialect</strong>
+      <ul>
+         <li>The <a href="/dandelion/docs/ref/jsp/">JSP taglib</a>
+            and <a href="/dandelion/docs/ref/thymeleaf/">Thymeleaf
+               dialect</a> have been fully refactored.
+         </li>
+         <li>
+            Added support for the <a href="https://github.com/thymeleaf/thymeleaf-extras-eclipse-plugin">content assist Eclipse plugin</a>.
+         </li>
+      </ul>
    </li>
 </ul>
 
 <h3 class="section-title">Ehcache extra</h3>
 <ul>
    <li>
-      A new dandelion-ehcache module has been added, allowing to plug an Ehcache-based cache
-      in the Dandelion cache system (lien).
+      A new dandelion-ehcache module has been added, allowing to plug
+      an <a
+      href="/dandelion/features/asset-caching/built-in/ehcache.html">Ehcache-based
+         cache</a> in the Dandelion <a
+      href="/dandelion/features/asset-caching/introducing-asset-caching.html">cache
+         system</a>.
    </li>
+</ul>
+
+<h3 class="section-title">Webjars extra</h3>
+<ul>
+   <li>The Webjars extra now provides <a href="/dandelion/features/asset-locators/built-in/webjar-locator.html">two different locators</a>,
+      automatically picked up depending on the version of the Servlet
+      API supported by the server</li>
 </ul>
 
 <h3 class="section-title">Closed issues</h3>
 <p>
    <ul>
-      <li>{% issue 2 %}: Content assist for the Dandelion dialect</li>
+      <li>{% issue 7 %}: Provide multiple configuration points for the dandelion.dev.mode</li>
+      <li>{% issue 2 %}: Content assist for the Dandelion dialect (Eclipse)</li>
    </ul>
 </p>

@@ -4,12 +4,14 @@
 => dandelion
 => webanalytics
 ************************************/
+/*
 h3.section-title {
 	padding-top: 10px;
 	padding-bottom: 5px;
 	margin: 30px 0 20px;
 	border-bottom: 1px solid #eeeeee;
 }
+*/
 
 div.dataTables_length label {
 	float: left;
@@ -198,4 +200,14 @@ div.DTFC_LeftFootWrapper table {
 
 table.td {
 	font-size: 10px;
+}
+
+#tableReference {
+   font-size:12px;
+}
+#tableReference th{
+   font-size:14px;
+}
+#tableReference td:first-child {
+   font-weight: bold;
 }

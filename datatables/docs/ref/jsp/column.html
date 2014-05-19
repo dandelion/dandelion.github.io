@@ -8,12 +8,11 @@ level2:
   url: column.html
   name: Column tag
 ---
-
 <link rel="stylesheet" href="/assets/css/site-reference.css" />
-
 <h2 class="page-title">Column tag</h2>
+<p>The <code>&lt;datatables:column&gt;</code> tag allows you to define the content of the column. You can use it only inside a {% refjsp dt table %} tag.</p> 
+
 <h3 class="section-title">Usage</h3>
-<p>The column tag allows you to define the content of the column. You can use it only inside a {% refjsp dt table %} tag.</p> 
 <p>
    You can either let the <code>property</code> attribute handle the content of a cell. This attribute allows to access to a bean's property. 
 <pre class="prettyprint">
@@ -23,7 +22,7 @@ level2:
 </pre>
 </p>
 <p>
-   Or you can set a body and put anything you want inside (HTML, JSTL tags, Spring tags, ...). See the <code>row</code> table attribute which is useful in this case.
+   Or you can set a body and put anything you want inside (HTML, JSTL tags, Spring tags, ...). See the {% refjsp dt table row %} table attribute which can be particularly useful in this case.
 <pre class="prettyprint">
 &lt;datatables:table id="myTableId" data="${myCollection}" row="aStringRepresentingTheBean" ...>
    &lt;datatables:column ...>
@@ -37,9 +36,7 @@ level2:
 
 <h3 class="section-title">
    Reference
-   <div class="custom-filter" style="float:right;">
-      <input id="customFilter" type="text" placeholder="Search for an attribute...">
-   </div>
+   <input id="customFilter" type="text" placeholder="Search for an attribute..." style="float:right;">
 </h3>
 <p>
 <table id="tableReference" class="table table-striped table-bordered table-hover">
@@ -55,21 +52,31 @@ level2:
    <tbody>
       <tr>
          <td>title</td>
-         <td>Column title</td>
+         <td>Title to be given to the column (<code>th</code> content). Optionnaly, the title can be assigned thanks to the <strong>titleKey</strong> attribute.</td>
          <td></td>
          <td></td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
          <td>titleKey</td>
-         <td>Resource key used to lookup the title value in the configured resource bundle. See the <a href="http://localhost:4000/datatables/tutorials/i18n/internationalization.html#tch">i18n tutorial</a> for more details.</td>
+         <td>Resource key used to lookup the title value in the configured resource bundle</td>
+         <td></td>
+         <td></td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
+         <td>name</td>
+         <td>Name to be given to the column. Mainly used when using AJAX source and server-side processing</td>
          <td></td>
          <td></td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
          <td>property</td>
-         <td>Name of the attribute of the current object being iterated object on, regardless the data source (DOM or AJAX)</td>
+         <td>When using a DOM source, this is the name of the
+            object's attribute of the collection being iterated on. When
+            using an AJAX source, this is the name of the JSON property
+            to be read from the data obtained by the AJAX call.</td>
          <td></td>
          <td></td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
@@ -77,141 +84,200 @@ level2:
       <tr>
          <td>sortable</td>
          <td>Enable or disable sorting on column</td>
-         <td>true|false</td>
+         <td>true | false</td>
          <td>true</td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
-         <td>sortInit</td>
-         <td>If <code>sortable</code> is enabled, set the default sorting direction</td>
-         <td>asc|desc</td>
+         <td>sortInitDirection</td>
+         <td>If the column is sortable, sets the default sorting direction</td>
+         <td>asc | desc</td>
          <td>asc</td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
-         <td>sortDirection</td>
-         <td>If <code>sortable</code> is enabled, allow to control the sorting direction(s)</td>
+         <td>sortInitOrder</td>
+         <td>If the column is sortable, sets the order in which the sort should be initialized</td>
+         <td>Any column index (starting from 0)</td>
          <td></td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
+         <td>sortDirection</td>
+         <td>Comma-separated list of directions to be used to control the sorting sequence</td>
+         <td>Comma-separated list of 'asc' or 'desc' strings</td>
          <td></td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
          <td>sortType</td>
-         <td>Type of sorting function to apply on the column</td>
+         <td>If the column is sortable, configures the type of sort to apply to the column</td>
          <td>natural | date | anti_the | alt_string | currency | filesize | formatted_number</td>
-         <td></td>
+         <td>Type-based, internally guessed by DataTables</td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
+         <td>escapeXml</td>
+         <td>Whether XML characters should be escaped or not</td>
+         <td>true | false</td>
+         <td>true</td>
+         <td></td>
+      </tr>
+      <tr>
          <td>filterable</td>
-         <td>Enable or disable filtering on column</td>
-         <td>true|false</td>
+         <td>Enable or disable filtering in the column. By default,
+            an input field will be created in the tfoot section of the
+            table</td>
+         <td>true | false</td>
          <td>false</td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
          <td>filterType</td>
-         <td>If <code>filterable</code> is enabled, you can choose the filter type between 'select' and 'input', adding either select box or input field in the table's footer</td>
-         <td>select|input</td>
+         <td>If the column is filterable, confires the filter type</td>
+         <td>select | input | number | number_range | date_range</td>
          <td>input</td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
          <td>filterValues</td>
-         <td>Name of a Javascript array of string that will be used to populate a filtering drop-down list. The value of the <code>filterType</code> attribute must be set to <code>select</code>.</td>
-         <td></td>
+         <td>Name of a Javascript variable containing data used to populate the filtering select</td>
+         <td>Either an array of values or an array of objects</td>
          <td></td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
+         <td>filterMinLength</td>
+         <td>Number of characters to be entered in the filtering input field before filtering is triggered</td>
+         <td>Any number</td>
+         <td>0 (filtering is triggered on keyup)</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
+         <td>filterDateFormat</td>
+         <td>Date format to be applied to the datepicker when the filterType is set to "date_range"</td>
+         <td>Any combination of 'dd', 'd', 'mm', 'm', 'yyyy', 'yy' with '-', '/' or '.' as separator</td>
+         <td>mm/dd/yyyy</td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
+      </tr>
+      <tr>
          <td>filterCssClass</td>
-         <td>If <code>filterable</code> is enabled and <code>filterType</code> is 'input', you can apply a CSS class to the input field with this attribute</td>
+         <td>If the column is filterable, CSS class(s) to be applied on the filtering element (whose type depends on the filter type)</td>
          <td></td>
          <td></td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
          <td>cssStyle</td>
-         <td>CSS style applied on header cell (<code>th</code> tag)</td>
+         <td>CSS style to be applied on the header cell of the column (<code>th</code>)</td>
          <td></td>
          <td></td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
          <td>cssCellStyle</td>
-         <td>CSS style applied on every table cell (<code>td</code> tag)</td>
+         <td>CSS style to be applied on all column cells (<code>td</code>)</td>
          <td></td>
          <td></td>
          <td><span class="label label-success">DOM</span></td>
       </tr>
       <tr>
          <td>cssClass</td>
-         <td>CSS class applied on header cell (<code>th</code> tag)</td>
+         <td>CSS class(es) to be applied on the header cell of the column (<code>th</code>)</td>
          <td></td>
          <td></td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
          <td>cssCellClass</td>
-         <td>CSS class applied on every table cell (<code>td</code> tag)</td>
+         <td>CSS class(es) to be applied on all column cells (<code>td</code>)</td>
          <td></td>
          <td></td>
          <td><span class="label label-success">DOM</span></td>
       </tr>
       <tr>
          <td>display</td>
-         <td>Comma-separated list of string which indicates in which view(s) the column content will be displayed</td>
-         <td>all|html|xml|csv|pdf|xls|xlsx</td>
-         <td>all (HTML and in all exports)</td>
+         <td>Comma-separated list of strings used to filter in
+            which view(s) the column content will be displayed. Not that
+            some strings are reserved:
+            <ul>
+               <li>'all': the content will appear both client-side
+                  and is all export formats</li>
+               <li>'csv': the content will appear only in the csv
+                  export</li>
+               <li>'xls': the content will appear only in the xls
+                  export</li>
+               <li>'xlsx': the content will appear only in the xlsx
+                  export</li>
+               <li>'pdf': the content will appear only in the pdf
+                  export</li>
+               <li>'xml': the content will appear only in the xml
+                  export</li>
+            </ul>
+         </td>
+         <td></td>
+         <td>all (HTML and in all export formats)</td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
-         <td>uid</td>
-         <td>Unique arbitrary id of the column, used in relation to the {% refjsp dt columnHead %} tag</td>
+         <td>id</td>
+         <td>DOM id to be given to the header cell (<code>th</code>)</td>
          <td></td>
          <td></td>
-         <td><span class="label label-success">DOM</span></td>
+         <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
          <td>default</td>
-         <td>Default value if the property's value is null</td>
+         <td>Default string to be used if the value return from the <strong>property</strong> attribute is empty or null</td>
          <td></td>
          <td>Empty string</td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
          <td>searchable</td>
-         <td>Enable or disable filtering on column</td>
-         <td>true|false</td>
+         <td>Enable or disable searching in the column. If false, the column won't be filtered by the global search field</td>
+         <td>true | false</td>
          <td>true</td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
          <td>renderFunction</td>
-         <td>Name of an external Javascript function that will be used to render the column</td>
-         <td></td>
+         <td>Name of a Javascript function that will be called to render the column when using an AJAX source</td>
+         <td>Any String representing the name of an accessible
+            Javascript function. <a
+            href="/datatables/features/dandelion/bundle-special-syntax.html">Bundle
+               special syntax</a> allowed
+         </td>
          <td></td>
          <td><span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
          <td>format</td>
-         <td>A MessageFormat pattern that will be used to format the <code>property</code></td>
-         <td></td>
+         <td><a
+            href="http://docs.oracle.com/javase/6/docs/api/java/text/MessageFormat.html">MessageFormat</a>
+            pattern that will be used to format the value passed in the
+            <strong>property</strong> attribute</td>
+         <td>Any valid pattern</td>
          <td></td>
          <td><span class="label label-success">DOM</span></td>
       </tr>
       <tr>
          <td>visible</td>
-         <td>Enable or disable the display of the column</td>
-         <td>true|false</td>
+         <td>Enable or disable the display of the column. Note that even if the column is not visible, it is searchable</td>
+         <td>true | false</td>
          <td>true</td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
       <tr>
          <td>selector</td>
-         <td>jQuery selector used to populate a placeholder with a filtering widget</td>
-         <td></td>
-         <td></td>
+         <td>jQuery selector targeting any element that will be
+            populated with a filtering element (depending on the <strong>filterType</strong>
+            attribute). This attribute only makes sense when the <strong>filterPlaceholder</strong>
+            attribute is set to <code>none</code> (i.e. for external
+            filtering form)
+         </td>
+         <td>Any jQuery selector</td>
+         <td>Empty string</td>
          <td><span class="label label-success">DOM</span>&nbsp;<span class="label label-info">AJAX</span></td>
       </tr>
    </tbody>
@@ -219,4 +285,5 @@ level2:
 </p>
 
 <script src="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="/assets/js/site-reference.js"></script>

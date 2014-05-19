@@ -31,6 +31,7 @@ level1:
 <h4>Step 2/3: Configure the Dandelion filter</h4>
 <p>
    Add the Dandelion filter definition and mapping to the <code>web.xml</code> file:
+</p>
 <pre class="prettyprint">
 &lt;filter>
    &lt;filter-name>dandelion&lt;/filter-name>
@@ -41,11 +42,11 @@ level1:
    &lt;url-pattern>/*&lt;/url-pattern>
 &lt;/filter-mapping>
 </pre>
-</p>
 
 <h4>Step 3/3: Configure the Dandelion servlet</h4>
 <p>
    Add the Dandelion servlet definition and mapping to the <code>web.xml</code> file:
+</p>
 <pre class="prettyprint">
 &lt;servlet>
    &lt;servlet-name>dandelionServlet&lt;/servlet-name>
@@ -56,30 +57,15 @@ level1:
    &lt;url-pattern>/dandelion-assets/*&lt;/url-pattern>
 &lt;/servlet-mapping>
 </pre>
-</p>
 
 <p>
    You're done with the basic installation! With all the steps above, you can already enjoy using
-   Dandelion.
+   Dandelion. But you might be a bit limited.
 </p>
-
-<h3 class="section-title">Optional steps</h3>
 <p>
-   Below are specific installation guides, depending on your template engine.
+   The next steps defer, depending on the template engine your project is based on:
 </p>
-<table class="table table-striped">
-   <tbody>
-      <tr>
-         <td>
-            I'm using JSP
-         </td>
-         <td><a href="jsp.html" class="btn">JSP guide »</a></td>
-      </tr>
-      <tr>
-         <td>
-            I'm using Thymeleaf
-         </td>
-         <td><a href="thymeleaf.html" class="btn">Thymeleaf guide »</a></td>
-      </tr>
-   </tbody>
-</table>
+<ul>
+   <li><a href="jsp.html">JSP guide</a></li>
+   <li><a href="thymeleaf.html">Thymeleaf guide</a></li>
+</ul>

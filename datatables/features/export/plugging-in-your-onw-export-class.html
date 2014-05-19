@@ -6,13 +6,10 @@ level2:
   url: export
   name: Export
 level3:
-  url: configuring-export-classes
-  name: Configuring export classes
+  url: plugging-in-your-onw-export-class.html
+  name: Plugging-in your own export class
 ---
-
-<h2 class="page-title">Configuring export classes</h2>
-
-<h3 class="section-title">Preamble</h3>
+<h2 class="page-title">Plugging-in your own export class</h2>
 <p>
    Dandelion-Datatables is configured to use default export classes for
    each export format. Let's see in this tutorial how it is done and how
@@ -42,10 +39,20 @@ public class MyExportClass implements DatatablesExport {
    }
 }
 </pre>
+<p>
+   Note that you can get inspired of built-in export classes:
+</p>
+<ul>
+   <li>{% javadoc dt datatables-core XmlExport %}</li>
+   <li>{% javadoc dt datatables-core CsvExport %}</li>
+   <li>{% javadoc dt datatables-export-itext PdfExport %}</li>
+   <li>{% javadoc dt datatables-export-poi XlsExport %}</li>
+   <li>{% javadoc dt datatables-export-poi-ooxml XlsxExport %}</li>
+</ul>
 
 <h3 class="section-title" id="ctcec">Configuring the custom export class</h3>
 <p>
-   Once you created the export class, you just need to register it inside the Dandelion-Datatables' configuration.
+   Once your export class created, you just need to register it inside the Dandelion-Datatables' configuration.
 </p>
 <p>
    Depending on the export format, you'll have to use one of the following configuration property:
@@ -60,28 +67,28 @@ public class MyExportClass implements DatatablesExport {
    <tbody>
       <tr>
          <td>CSV</td>
-         <td><a href="/datatables/docs/ref/configuration/#exports-export.csv.class"><code>export.csv.class</code></a></td>
+         <td><a href="/datatables/docs/ref/configuration/#export.csv.class"><code>export.csv.class</code></a></td>
       </tr>
       <tr>
          <td>XML</td>
-         <td><a href="/datatables/docs/ref/configuration/#exports-export.xml.class"><code>export.xml.class</code></a></td>
+         <td><a href="/datatables/docs/ref/configuration/#export.xml.class"><code>export.xml.class</code></a></td>
       </tr>
       <tr>
          <td>PDF</td>
-         <td><a href="/datatables/docs/ref/configuration/#exports-export.pdf.class"><code>export.pdf.class</code></a></td>
+         <td><a href="/datatables/docs/ref/configuration/#export.pdf.class"><code>export.pdf.class</code></a></td>
       </tr>
       <tr>
          <td>XLS</td>
-         <td><a href="/datatables/docs/ref/configuration/#exports-export.xls.class"><code>export.xls.class</code></a></td>
+         <td><a href="/datatables/docs/ref/configuration/#export.xls.class"><code>export.xls.class</code></a></td>
       </tr>
       <tr>
          <td>XLSX</td>
-         <td><a href="/datatables/docs/ref/configuration/#exports-export.xlsx.class"><code>export.xlsx.class</code></a></td>
+         <td><a href="/datatables/docs/ref/configuration/#export.xlsx.class"><code>export.xlsx.class</code></a></td>
       </tr>
    </tbody>
 </table>
 <p>
-   Finally, you have several alternatives to register your custom export class:
+   Remember that you have several alternatives to register your custom export class:
 </p>
 <ul>
    <li>Register it <a href="/datatables/features/configuration/override-conf.html">locally</a> in a table, by overriding the corresponding export configuration</li>

@@ -9,9 +9,7 @@ level3:
   url: customized-ajax-calls
   name: Customized AJAX calls
 ---
-
 <h2 class="page-title">Customized AJAX calls</h2>
-<h3 class="section-title">Preamble</h3>
 <p>
    You may need some additional request parameters to call your AJAX source or even a fully customized call. Well, whether or not you use server-side processing, you can completely override the default AJAX request which obtains the data from the
    server to something more suitable for your application.
@@ -48,8 +46,7 @@ function getExtraParams( aoData ) {
 </p>
 <p>
 <pre class="prettyprint">
-&lt;c:url var="datasource" value="/persons" />
-&lt;datatables:table id="myTableId" url="${datasource}" serverSide="true" serverParams="getExtraParams" processing="true">
+&lt;datatables:table id="myTableId" url="/persons" serverSide="true" serverParams="getExtraParams" processing="true">
    &lt;datatables:column title="Id" property="id" />
    &lt;datatables:column title="FirstName" property="firstName" />
    &lt;datatables:column title="LastName" property="lastName" />
@@ -65,14 +62,14 @@ function getExtraParams( aoData ) {
 </p>
 <p>
 <pre class="prettyprint">
-&lt;table id="myTableId" dt:table="true" dt:url="@{/persons3}" dt:serverside="true" dt:serverparams="'getExtraParams'">
+&lt;table id="myTableId" dt:table="true" dt:url="@{/persons}" dt:serverside="true" dt:serverparams="'getExtraParams'">
    &lt;thead>
       &lt;tr>
-         &lt;th dt:property="'id'">Id&lt;/th>
-         &lt;th dt:property="'firstName'">Firstname&lt;/th>
-         &lt;th dt:property="'lastName'">Lastname&lt;/th>
-         &lt;th dt:property="'address.town.name'">City&lt;/th>
-         &lt;th dt:property="'mail'">Mail&lt;/th>
+         &lt;th dt:property="id">Id&lt;/th>
+         &lt;th dt:property="firstName">Firstname&lt;/th>
+         &lt;th dt:property="lastName">Lastname&lt;/th>
+         &lt;th dt:property="address.town.name">City&lt;/th>
+         &lt;th dt:property="mail">Mail&lt;/th>
       &lt;/tr>
   &lt;/thead>
 &lt;/table>
@@ -129,8 +126,7 @@ function myAjaxRequest ( sSource, aoData, fnCallback, oSettings ) {
 </p>
 <p>
 <pre class="prettyprint">
-&lt;c:url var="datasource" value="/persons" />
-&lt;datatables:table id="myTableId" url="${datasource}" serverSide="true" serverData="myAjaxRequest" processing="true">
+&lt;datatables:table id="myTableId" url="/persons" serverSide="true" serverData="myAjaxRequest" processing="true">
    &lt;datatables:column title="Id" property="id" />
    &lt;datatables:column title="FirstName" property="firstName" />
    &lt;datatables:column title="LastName" property="lastName" />
@@ -148,11 +144,11 @@ function myAjaxRequest ( sSource, aoData, fnCallback, oSettings ) {
 &lt;table id="myTableId" dt:table="true" dt:url="@{/persons}" dt:serverside="true" dt:serverdata="'myAjaxRequest'">
    &lt;thead>
       &lt;tr>
-         &lt;th dt:property="'id'">Id&lt;/th>
-         &lt;th dt:property="'firstName'">Firstname&lt;/th>
-         &lt;th dt:property="'lastName'">Lastname&lt;/th>
-         &lt;th dt:property="'address.town.name'">City&lt;/th>
-         &lt;th dt:property="'mail'">Mail&lt;/th>
+         &lt;th dt:property="id">Id&lt;/th>
+         &lt;th dt:property="firstName">Firstname&lt;/th>
+         &lt;th dt:property="lastName">Lastname&lt;/th>
+         &lt;th dt:property="address.town.name">City&lt;/th>
+         &lt;th dt:property="mail">Mail&lt;/th>
       &lt;/tr>
   &lt;/thead>
 &lt;/table>

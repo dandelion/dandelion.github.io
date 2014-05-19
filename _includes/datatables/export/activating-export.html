@@ -1,27 +1,7 @@
----
-layout: datatables
-menu: export
-level1: tutorials
-level2:
-  url: export
-  name: Export
-level3:
-  url: activating-export
-  name: Activating export
----
-
-<h2 class="page-title">Activating export</h2>
-
-<h3 class="section-title">Preamble</h3>
+<h3 class="section-title" id="eae">Activating export</h3>
+<h4>Using JSP</h4>
 <p>
-   Once you set up the necessary plumbing, you can now activate export in your
-   table either using the JSP taglib or the Thymeleaf dialect. Let's
-   see in this tutorial how to proceed.
-</p>
-
-<h3 class="section-title" id="uj">Using JSP</h3>
-<p>
-   To activate the export, just set the {% refjsp dt table export %} table attribute to <code>csv</code> or whatever format you need among all <a href="available-export-formats.html">available formats</a>. An export link will be generated (defaults to top right of the table).
+   To activate the export, just set the {% refjsp dt table export %} table attribute to <code>csv</code> or whatever format you need. An export link will be generated (defaults to top right of the table).
 </p>
 <p>
    You can of course set multiple formats, just use a comma as a separator.
@@ -38,9 +18,9 @@ level3:
 &lt;/datatables:table>
 </pre>
 
-<h3 class="section-title" id="uj">Using Thymeleaf</h3>
+<h4>Using Thymeleaf</h4>
 <p>
-   With Thymeleaf, use the {% reftl dt table dt:export %} table attribute in the same manner.
+   With Thymeleaf, use the {% reftl dt table export %} table attribute in the same manner.
 </p>
 <pre class="prettyprint">
 &lt;table id="myTable" dt:table="true" dt:export="csv,pdf">
@@ -65,9 +45,10 @@ level3:
 &lt;/table>
 </pre>
 
-<p>
+<p class="alert alert-info">
+   <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp;
    Note that by default, export links are a bit ugly. Indeed,
-   Dandelion-Datatables generates unstyled links by default, in order to
+   Dandelion-Datatables generates unstyled links by default in order to
    be as flexible as possible but you can of course
    <a href="customizing-export-links.html">adapt the links</a> to fit
    your needs.

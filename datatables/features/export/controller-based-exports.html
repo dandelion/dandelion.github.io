@@ -9,10 +9,7 @@ level3:
   url: controller-based-exports
   name: Controller-based exports
 ---
-
 <h2 class="page-title">Controller-based exports</h2>
-
-<h3 class="section-title">Preamble</h3>
 <p>
    Contrary to <a href="filter-based-exports.html">filter-based
       exports</a>, controller-based exports allow you to fully configure
@@ -24,18 +21,13 @@ level3:
    In return, you'll see in this tutorial that it requires a bit more work.
 </p>
 
-<h3 class="section-title" id="rs">Required steps</h3>
-<p>
-   Export based on filter
-</p>
-
 <h3 class="section-title" id="suaec">Setting up an export controller</h3>
 <p>
    Actually, there are several ways to do it:
 </p>
 <ul>
    <li>Writing a controller dedicated to all exports in your application</li>
-   <li>Use only one controller that mixes methods that redirect to views and methods that render exports</li>
+   <li>Use only one controller that mixes methods that redirect to views and methods used for exporting data</li>
    <li>It's up to you :-)</li>
 </ul>
 <p>
@@ -59,13 +51,12 @@ List&lt;Person> persons = personService.findPersonsWithDatatablesCriterias(crite
 </p>
 
 <p class="alert alert-info">
-   <strong><i class="icon-info-sign icon-2x"></i></strong> 
-   Note that the {% javadoc dt datatables-core DatatablesCriterias %} object is same used in <a href="/datatables/features/ajax/">AJAX tutorials</a>.
+   <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp; Note that the {% javadoc dt datatables-core DatatablesCriterias %} object is same used in <a href="/datatables/features/ajax/">AJAX tutorials</a>.
 </p>
 
 <h4 id="suaec-baioe">2. Build an instance of {% javadoc dt datatables-core ExportConf %}</h4>
 <p>
-   Then, you need to build an instance of {% javadoc dt datatables-core ExportConf %}, which allows you to configure the export:
+   Then, you need to build an instance of {% javadoc dt datatables-core ExportConf %}, which allows you to configure the export in multiple ways:
 </p>
 <ul>
    <li>column headers displaying</li>
@@ -74,24 +65,25 @@ List&lt;Person> persons = personService.findPersonsWithDatatablesCriterias(crite
    <li>export class: the class used to generate the export content</li>
 </ul>
 <p>
-   A builder has been written to ease its creation. You can see below an example usage of the builder for a CSV format:
+   A builder has been written to ease its creation. You can see below an usage example of the builder for a CSV format:
 </p>
 <pre class="prettyprint">
-ExportConf exportCsvConf = new ExportConf.Builder(ExportType.CSV)
+ExportConf exportCsvConf = new ExportConf.Builder(ReservedFormat.CSV)
    .header(true)
    .exportClass(new CsvExport())
    .build();
 </pre>
 <p>Note that:</p>
 <ul>
-   <li>you need to pass the desired {% javadoc dt datatables-core ExportType %} in the constructor of the builder</li>
+   <li>you need to pass the desired export format in the constructor of the builder. Some formats use reserved keywords. See {% javadoc dt datatables-core ReservedFormat %}</li>
    <li>the <code>header(Boolean)</code> method indicates that column headers need to be displayed in the export file</li>
-   <li>the <code>exportClass(DatatablesExport)</code> method is used to set up the class that will generate the export content. Here we use the default CSV export class.</li>
+   <li>the <code>exportClass(DatatablesExport)</code> method is used to set up the class that will generate the export content. Here we use the built-in {% javadoc dt datatables-core CsvExport %} class</li>
 </ul>
 
 <p class="alert alert-info">
-   <strong><i class="icon-info-sign icon-2x"></i></strong> 
-   You can of course use your own export class. See <a href="configuring-export-classes#wyoec.html">this tutorial</a> for more details.
+   <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp; You
+   can of course use your own export class. Read more
+   <a href="/datatables/features/export/plugging-in-your-onw-export-class.html">here</a>.
 </p>
 
 <h4 id="suaec-baioh">3. Build an instance of {% javadoc dt datatables-core HtmlTable %}</h4>
@@ -102,25 +94,25 @@ ExportConf exportCsvConf = new ExportConf.Builder(ExportType.CSV)
    Once again, you have at your disposal a fluent API allowing you to easily build an instance of {% javadoc dt datatables-core HtmlTable %}. See below:
 </p>
 <pre class="prettyprint">
-HtmlTable table = new HtmlTableBuilder&lt;Person>().newBuilder("tableId", persons, request)
+HtmlTable table = new HtmlTableBuilder&lt;Person&gt;().newBuilder("tableId", persons, request, exportCsvConf)
    .column().fillWithProperty("id").title("Id")
    .column().fillWithProperty("firstName").title("Firtname")
    .column().fillWithProperty("lastName").title("Lastname")
    .column().fillWithProperty("address.town.name").title("City")
    .column().fillWithProperty("mail").title("Mail")
-   .configureExport(exportCsvConf)
+   .column().fillWithProperty("birthDate", "{0,date,dd-MM-yyyy}").title("Birth date")
    .build();
 </pre>
 <p>
    Note in the above example that:
 </p>
 <ul>
-   <li>columns are added thanks to the <code>column()</code> and are finally declared using the <code>title(String)</code> method</li>
-   <li>you can easily configure the content using the <code>fillWith</code>, <code>fillWithProperty</code>, <code>andProperty</code> and <code>and</code> methods.</li>
-   <li>you need to configure the export by passing the previously created instance of {% javadoc dt datatables-core ExportConf %} thanks to the <code>configureExport(ExportConf)</code> method</li>
+   <li>columns are added thanks to the <code>column(...)</code> method and must terminate with the <code>title(...)</code> method</li>
+   <li>you can easily configure the column content using the <code>fillWith(...)</code>, <code>fillWithProperty(...)</code>, and <code>andProperty(...)</code> methods</li>
+   <li>you need to configure the export by passing the previously created instance of {% javadoc dt datatables-core ExportConf %} in the constructor of the builder</li>
 </ul>
 <p class="alert alert-info">
-   <strong><i class="icon-info-sign icon-2x"></i></strong>
+   <strong><i class="fa fa-info-circle fa-2x"></i></strong>&nbsp; 
    It is also worth noting that the {% javadoc dt datatables-core HtmlTable %} instance just wraps data that will
    appear in the export file. It means that all the
    filtering/sorting/paging part should have already been done in the
@@ -129,7 +121,9 @@ HtmlTable table = new HtmlTableBuilder&lt;Person>().newBuilder("tableId", person
 
 <h4 id="suaec-rtgef">4. Render the generated export file</h4>
 <p>
-   Last step, you need to use the configured export class to generate the export content and write it to the response (instead of redirecting to a view).
+   Last step, you need to use the configured export class to generate
+   the export content and write it to the response (instead of
+   redirecting to a view).
 </p>
 <p>
    Fortunately, a utility method has been written for that, located in the {% javadoc dt datatables-core ExportUtils %} class. Use it as follows: 
@@ -143,12 +137,14 @@ ExportUtils.renderExport(table, exportCsvConf, response);
 <ul>
    <li>table is the instance of {% javadoc dt datatables-core HtmlTable %} built in the step 3</li>
    <li>exportCsvConf is the instance of {% javadoc dt datatables-core ExportConf %} built in the step 2</li>
-   <li>response in the <code>HttpServletResponse</code> in which the content of the export will be written (and proposed to download)</li>
+   <li>response is the <code>HttpServletResponse</code> in which the content of the export will be written (and proposed to download)</li>
 </ul>
 
-<p><strong>
-   At this point, you have set up the plumbing necessary to make exports work. You can now <a href="activating-export.html">activate export</a> locally.
-</strong></p>
+<p>
+   At this point, you have set up the plumbing necessary to make exports work. You can now activate export locally.
+</p>
+
+{% include datatables/export/activating-export.html %}
 
 <h3 class="section-title" id="ewsm">Example with Spring MVC</h3>
 <p>
@@ -164,33 +160,44 @@ public class ExportController {
    
    @RequestMapping(produces = "text/csv")
    public void csv(@DatatablesParams DatatablesCriterias criterias, HttpServletRequest request, HttpServletResponse response) throws ExportException, IOException {
-      
-      List<Person> persons = personService.findPersonsWithDatatablesCriterias(criterias).getRows();
-      
-      ExportConf exportCsvConf = new ExportConf.Builder(ExportType.CSV)
-            .header(true)
-            .exportClass(new CsvExport())
-            .build();
+	
+   // Get data to export
+   List&lt;Person&gt; persons = personService.findPersonsWithDatatablesCriterias(criterias).getRows();
+   
+   // Build the export configuration
+   // The custom format "myFormat" is just a wrapper around pdf
+   ExportConf exportCsvConf = new ExportConf.Builder("csv")
+      .header(true)
+      .exportClass(new CsvExport())
+      .build();
 
-      HtmlTable table = new HtmlTable.Builder<Person>("tableId", persons, request)
-            .column("id").title("Id")
-            .column("firstName").title("FirstName")
-            .column("lastName").title("LastName")
-            .column("address.town.name").title("City")
-            .column("mail").title("Mail")
-            .configureExport(exportCsvConf)
-            .build();
-      
-      ExportUtils.renderExport(table, exportCsvConf, response);
-   }
+   // Build the table to export from the data and the export configuration
+   HtmlTable table = new HtmlTableBuilder&lt;Person&gt;().newBuilder("tableId", persons, request, exportCsvConf)
+      .column().fillWithProperty("id").title("Id")
+      .column().fillWithProperty("firstName").title("Firtname")
+      .column().fillWithProperty("lastName").title("Lastname")
+      .column().fillWithProperty("address.town.name").title("City")
+      .column().fillWithProperty("mail").title("Mail")
+      .column().fillWithProperty("birthDate", "{0,date,dd-MM-yyyy}").title("BirthDate")
+      .build();
+
+   // Render the export in the browser
+   ExportUtils.renderExport(table, exportCsvConf, response);
+}
 </pre>
 <p>
-   In this example, you noticed that:
+   In this example, you may have noticed that:
 </p>
 <ul>
    <li>the class is mapped to the request <code>/export</code></li>
    <li>the <code>csv(...)</code> method has just a <code>@RequestMapping</code> configured with <code>produces = "text/csv"</code></li>
 </ul>
 <p>
-   Since we use the default strategy of the content negociation manager (i.e. PPA, for path extension, then parameter, then Accept header), URLs like <code>http://domain/context/export.csv</code> should match and the <code>csv(...)</code> will be called. 
+   Since we use the default strategy of the content negociation manager
+   (i.e. PPA, for path extension, then parameter, then Accept header),
+   URLs like
+   <code>http://domain/contextPath/export.csv</code>
+   should match and the
+   <code>csv(...)</code>
+   method will be called.
 </p>
