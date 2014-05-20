@@ -1,0 +1,134 @@
+---
+layout: datatables
+menu: ajax
+level1:
+   url: features
+   name: Features
+level2: 
+   url: ajax
+   name: AJAX
+level3:
+   url: reloading-data.html
+   name: Reloading data
+---
+<h2 class="page-title">Reloading data</h2>
+<p>
+   By default DataTables only uses the {% refjsp dt table url %}
+   (JSP) / {% reftl dt table url %} (Thymeleaf) table attribute at
+   initialisation time, however it can be useful to re-read an AJAX
+   source and have the table update
+</p>
+<p>
+   Starting from the v0.10.0, Dandelion-Datatables provides utilities to allow data reloading.
+</p>
+
+<h3 class="section-title" id="erq">Default reloading</h3>
+<p>The default reloading fits for use cases when you just need a
+   "Refresh" button/link. Internally, Dandelion-Datatables will load the
+   needed API and call the <code>fnReloadAjax()</code> function.</p>
+<p>Dandelion-Datatables makes available the {% refjsp dt table reloadSelector %} (JSP)
+ / {% reftl dt table reloadSelector %}
+   (Thymeleaf) attribute. You just need to pass in a jQuery selector
+   targeting the element on which a 'click' event will be bound to
+   trigger the table reloading.</p>
+
+<h4>Using JSP</h4>
+<pre class="prettyprint">
+&lt;a id="reload">Click me to refresh the table!&lt;/a>
+
+&lt;datatables:table id="myTableId" url="/persons" serverSide="true" processing="true" reloadSelector="#reload">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
+
+<h4>Using Thymeleaf</h4>
+<p>
+<pre class="prettyprint">
+&lt;a id="reload">Click me to refresh the table!&lt;/a>   
+
+&lt;table id="myTableId" dt:table="true" dt:url="@{/ajax/persons}" dt:serverside="true" dt:processing="true" dt:reloadSelector="#reload">
+   &lt;thead>
+      &lt;tr>
+         &lt;th dt:property="id">Id&lt;/th>
+         &lt;th dt:property="firstName">Firstname&lt;/th>
+         &lt;th dt:property="lastName">Lastname&lt;/th>
+         &lt;th dt:property="address.town.name">City&lt;/th>
+         &lt;th dt:property="mail">Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+&lt;/table>
+</pre>
+
+<h3 class="section-title" id="dcr">Custom reloading</h3>
+<p>
+   If you need to configure more actions during a data reloading, you may prefer to use the custom realoading.
+</p>
+<p>
+   You can use the {% refjsp dt table reloadFunction %} (JSP) / {% reftl dt table reloadFunction %} (Thymeleaf) table attribute.
+   Just pass the name of a Javascript function that will be called in
+   the 'click' event bound by the {% refjsp dt table reloadSelector %} (JSP) / {% reftl dt table reloadSelector %} (Thymeleaf) attribute.
+</p>
+<p>Note that when using this attribute, you will have to call
+   manually the <code>fnReloadAjax()</code> function.</p>
+
+<h4>Using JSP</h4>
+<p>
+   Assuming the following custom function:
+</p>
+<pre class="prettyprint">
+function customReload() {
+   // Some custom code...
+   oTable_myTableId.fnReloadAjax();
+   // Some custom code...
+}
+</pre>
+<p>
+   In the example below, a click on the link with ID "reload" will call the <code>customReload()</code> function.
+</p>
+<pre class="prettyprint">
+&lt;a id="reload">Click me to refresh the table!&lt;/a>
+
+&lt;datatables:table id="myTableId" url="/persons" serverSide="true" processing="true" reloadSelector="#reload" reloadFunction="customReload">
+   &lt;datatables:column title="Id" property="id" />
+   &lt;datatables:column title="FirstName" property="firstName" />
+   &lt;datatables:column title="LastName" property="lastName" />
+   &lt;datatables:column title="City" property="address.town.name" />
+   &lt;datatables:column title="Mail" property="mail" />
+&lt;/datatables:table>
+</pre>
+<p>
+
+<h4>Using Thymeleaf</h4>
+<p>
+   Assuming the following custom function:
+</p>
+<pre class="prettyprint">
+function customReload() {
+   // Some custom code...
+   oTable_myTableId.fnReloadAjax();
+   // Some custom code...
+}
+</pre>
+<p>
+   In the example below, a click on the link with ID "reload" will call the <code>customReload()</code> function.
+</p>
+<p>
+<pre class="prettyprint">
+&lt;a id="reload">Click me to refresh the table!&lt;/a>   
+
+&lt;table id="myTableId" dt:table="true" dt:url="@{/ajax/persons}" dt:serverside="true" dt:processing="true" dt:reloadSelector="#reload" dt:reloadFunction="customReload">
+   &lt;thead>
+      &lt;tr>
+         &lt;th dt:property="id">Id&lt;/th>
+         &lt;th dt:property="firstName">Firstname&lt;/th>
+         &lt;th dt:property="lastName">Lastname&lt;/th>
+         &lt;th dt:property="address.town.name">City&lt;/th>
+         &lt;th dt:property="mail">Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+&lt;/table>
+</pre>

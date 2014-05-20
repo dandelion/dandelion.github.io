@@ -317,6 +317,9 @@ cookiePath: /datatables
                         </li>
                      </ul>
                      {% endif %}
+                     <li {% if page.url contains '/ajax/reloading-data' %}class="active"{% endif %}>
+                        <a href="/datatables/features/ajax/reloading-data.html"><i class="fa fa-angle-double-right"></i> Reloading data</a>
+                     </li>
                      <li {% if page.url contains '/ajax/integration-with-spring.html' %}class="active"{% endif %}>
                         <a href="/datatables/features/ajax/integration-with-spring.html"><i class="fa fa-angle-double-right"></i> Integration with Spring</a>
                      </li>
