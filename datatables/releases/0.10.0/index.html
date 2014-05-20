@@ -41,7 +41,7 @@ level2:
                <li>Read more <a href="/datatables/features/dandelion/bundle-special-syntax.html">here</a></li>
             </ul>
          </li>
-         <li>New main.standalone configuration property allowing to use Dandelion-Datatables as a standalone library</li>
+         <li>New <a href="/datatables/docs/ref/configuration/#main.standalone">main.standalone</a> configuration property allowing to use Dandelion-Datatables as a standalone library</li>
       </ul>
    </li>
    <li><strong>Configuration improvements</strong>
@@ -146,14 +146,14 @@ level2:
    <li><strong>AJAX</strong>
       <ul>
          <li>Added support for ranges in {% javadoc dt datatables-core DatatablesCriterias %}: the {% javadoc dt datatables-core DatatablesCriterias %} object can now parse range values and update all {% javadoc dt datatables-core ColumnDef %} accordingly</li>
-         <li>Added support for table reloading (lien)</li>
+         <li>Added support for <a href="/datatables/features/ajax/reloading-data.html">data reloading</a></li>
       </ul>
    </li>
    <li><strong>Themes</strong>
       <ul>
          <li>Fixed conflict when using the Bootstrap2 theme and a custom pagination type</li>
-         <li>Added a new theme for <a href="">Bootstrap Responsive</a></li>
-         <li>Added a new theme for <a href="">Bootstrap v3</a></li>
+         <li>Added a new theme options for <a href="/datatables/features/styling/">Bootstrap Responsive</a></li>
+         <li>Added a new theme for <a href="/datatables/features/styling/">Bootstrap v3</a></li>
       </ul>
    </li>
    <li><strong>Plugins</strong>
@@ -164,7 +164,7 @@ level2:
    <li><strong>Javascript generation</strong>
       <ul>
          <li>Cleaned the DataTables generated configuration: unneccessary parameters are non longer generated</li>
-         <li>Added the ability to plug in a custom Javascript generator (lien)</li>
+         <li>Added the ability to plug in a custom Javascript generato</li>
          <li>Refactored the Javascript generation to be able to compute the code before rendering it</li>
          <li>Refactored the {% javadoc dt datatables-core WebResourceGenerator %} using the extension mechanism
             <ul>
@@ -219,11 +219,11 @@ level2:
          <li>New {% refjsp dt column filterDelay %} column attribute, allowing to set a delay (in ms) before the AJAX call is performed to obtain data from server</li>
          <li>New {% refjsp dt column filterSelector %} column attribute, allowing </li>
          <li>New {% refjsp dt column filterClearSelector %} column attribute, allowing </li>
-         <li>New {% refjsp dt column name %} column attribute (lien), allowing to apply a name to a column. Used with server-side processing.</li>
+         <li>New {% refjsp dt column name %} column attribute, allowing to apply a name to a column. Used with server-side processing.</li>
          <li>New {% refjsp dt column escapeXml %} column attribute, allowing to disable the XML characters escaping</li>
          <li>Renamed the <code>sortInit</code> column attribute to {% refjsp dt column sortInitDirection %}</li>
          <li>New {% refjsp dt column sortInitOrder %} column attribute, allowing to set the order in which columns must be initialized</li>
-         <li>New {% refjsp dt extraHtml %} tag, allowing to create DataTables feature plug-ins that can be used to decorate the table. Read more here. (lien)</li>
+         <li>New {% refjsp dt extraHtml %} tag, allowing to create DataTables feature plug-ins that can be used to decorate the table. Read more <a href="/datatables/features/advanced/using-extra-html.html">here</a>.</li>
          <li>New {% refjsp dt export orientation %} export attribute, allowing to change the default PDF orientation</li>
          <li>New {% refjsp dt export fileExtension %} export attribute, allowing to set the extension of the exported file</li>
          <li>New {% refjsp dt export mimeType %} export attribute, allowing to set the mime Type of the response when exporting data</li>
@@ -288,11 +288,11 @@ level2:
          <li>New {% reftl dt column filterDelay %} column attribute, allowing to set a delay (in ms) before the AJAX call is performed to obtain data from server</li>
          <li>New {% reftl dt column filterSelector %} column attribute, allowing </li>
          <li>New {% reftl dt column filterClearSelector %} column attribute, allowing </li>
-         <li>New {% reftl dt column name %} column attribute (lien), allowing to apply a name to a column. Used with server-side processing.</li>
+         <li>New {% reftl dt column name %} column attribute, allowing to apply a name to a column. Used with server-side processing.</li>
          <li>New {% reftl dt column escapeXml %} column attribute, allowing to disable the XML characters escaping</li>
          <li>Renamed the <code>sortInit</code> column attribute to {% reftl dt column sortInitDirection %}</li>
          <li>New {% reftl dt column sortInitOrder %} column attribute, allowing to set the order in which columns must be initialized</li>
-         <li>New {% reftl dt extraHtml %} tag, allowing to create DataTables feature plug-ins that can be used to decorate the table. Read more here. (lien)</li>
+         <li>New {% reftl dt extraHtml %} tag, allowing to create DataTables feature plug-ins that can be used to decorate the table. Read more <a href="/datatables/features/advanced/using-extra-html.html">here</a>.</li>
          <li>New {% reftl dt export orientation %} export attribute, allowing to change the default PDF orientation</li>
          <li>New {% reftl dt export fileExtension %} export attribute, allowing to set the extension of the exported file</li>
          <li>New {% reftl dt export mimeType %} export attribute, allowing to set the mime Type of the response when exporting data</li>
@@ -317,31 +317,9 @@ level2:
    </li>
 </ul>
 
-<h3 class="section-title">Spring3 extra</h3> 
-<ul>
-   <li>A new <code>dandelion-datatables.xml</code> file has been made available to bundle the Spring configuration. Read more <a href="">here</a>. (lien)</li>
-</ul>
-
-<h3 class="section-title">Struts1 extra</h3> 
-<ul>
-   <li></li>
-</ul>
-
-<h3 class="section-title">Struts2 extra</h3> 
-<p>
-   <ul>
-      <li></li>
-   </ul>
-</p>
-
 <h3 class="section-title">Export iText extra</h3> 
 <ul>
    <li>Better exception handling in the default PDF export class</li>
-</ul>
-
-<h3 class="section-title">Export iText extra</h3> 
-<ul>
-   <li></li>
 </ul>
 
 <h3 class="section-title">Closed issues</h3>
