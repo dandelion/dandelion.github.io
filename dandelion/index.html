@@ -4,15 +4,32 @@ menu: home
 ---
 
 <h2 class="page-title">Overview</h2>
+<p>Dandelion is a Java web framework aimed at applying - as easily
+   as possible - best pratices of web developpement in JVM-based
+   environments.</p>
+<p>In this regard, Dandelion will help you to:</p>
+<ul>
+   <li>organize your web assets in <a
+      href="/dandelion/features/asset-bundles/">bundles</a></li>
+   <li>making your web application more responsive:
+      <ul>
+         <li>by injecting in an optimal way the &lt;script&gt; and
+            &lt;link&gt; tags: usually stylesheets at the top and
+            scripts at the bottom</li>
+         <li>by performing typical optimizations such assets
+            minification, assets merging or GZIP compression (in beta),
+            whether your assets comes from the webapp, a JAR, a <a
+            href="http://www.webjars.org/">WebJar</a> or a <a
+            href="http://en.wikipedia.org/wiki/Content_delivery_network">CDN</a>
+         </li>
+      </ul>
+   </li>
+</ul>
 <p>
-   <i>Dandelion Core</i> is the fundation of the <a href="/">Dandelion
-      framework</a>. It provides a runtime solution designed to make web
-   development simpler in JVM-based environments.
-</p>
-<p>
-   Dandelion is mainly based on <a href="">asset bundles</a> (TODO) and
-   on a servlet filter which automatically inject assets into your HTML
-   pages. Take a look at a general overview below.
+   Dandelion is mainly based on a servlet filter which automatically
+   injects assets into your HTML pages. As such it is considered as a
+   runtime solution. But rather than making a long speech, take a look
+   at the general overview below.
 </p>
 <p style="margin-top:25px;">
    <img src="/assets/images/dandelion/dandelion-overview.png" />

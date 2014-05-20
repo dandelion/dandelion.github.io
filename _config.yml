@@ -39,7 +39,7 @@ dandelion :
       name: core
       version: 0.10.0
       url: dandelion
-      breadcrumb: Dandelion
+      breadcrumb: Dandelion-Core
       sources: dandelion
       issues: dandelion
       forum: http://dandelion-forum.48353.x6.nabble.com/Dandelion-f295.html
