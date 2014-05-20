@@ -16,19 +16,15 @@ level3:
 <p>
    But you can of course override it in multiple ways:
    <ul>
-      <li>First, you can add a file called <code>datatables.properties</code> at the root of the classpath, allowing you to redefine every property you need. Your custom global configuration will then be
+      <li>First, you can add a file called <code>datatables.properties</code> in TODOOOOOOOOOOOOOOOat the root of the classpath, allowing you to redefine every property you need. Your custom global configuration will then be
          merged with the default one.
       </li>
-      <li>Or you can locally overload properties using the {% refjsp dt prop %} JSP tag or the ??? (lien). Just define the property's name and value.</li>
+      <li>Or you can locally overload properties using the {% refjsp dt prop %} JSP tag or the <a href="/datatables/features/advanced/configuration-div.html">Thymeleaf configuration div</a>.</li>
    </ul>
 </p>
 
-<h3 class="section-title">Example</h3>
-<p>
-   For instance, the compression feature is disabled by default. Thanks to the {% refjsp dt prop %} tag, you can enable it locally, just for the current table.
-</p>
+<h3 class="section-title">Examples</h3>
 <h4>Using JSP</h4>
-<p>
 <pre class="prettyprint">
 &lt;datatables:table id="myTableId" data="${persons}">
    &lt;datatables:column title="Id" property="id" />
@@ -36,7 +32,34 @@ level3:
    &lt;datatables:column title="LastName" property="lastName" />
    &lt;datatables:column title="City" property="address.town.name" />
    &lt;datatables:column title="Mail" property="mail" />
-   &lt;datatables:prop name="compressor.enable" value="true" />
+   &lt;datatables:prop name="some.property" value="true" />
 &lt;/datatables:table>
 </pre>
-</p>
+
+<h4>Using Thymeleaf</h4>
+<pre class="prettyprint">
+&lt;div dt:conf="myTableId">
+   &lt;div dt:confType="property" dt:name="some.property" dt:value="true">&lt;/div>
+&lt;/div>
+      
+&lt;table id="myTableId" dt:table="true">
+   &lt;thead>
+      &lt;tr>
+         &lt;th>Id&lt;/th>
+         &lt;th>LastName&lt;/th>
+         &lt;th>FirstName&lt;/th>
+         &lt;th>City&lt;/th>
+         &lt;th>Mail&lt;/th>
+      &lt;/tr>
+   &lt;/thead>
+   &lt;tbody>
+      &lt;tr th:each="person : ${persons}">
+         &lt;td th:text="${person?.id}">1&lt;/td>
+         &lt;td th:text="${person?.lastName}">Doe&lt;/td>
+         &lt;td th:text="${person?.firstName}">John&lt;/td>
+         &lt;td th:text="${person?.address?.town?.name}">Nobody knows!&lt;/td>
+         &lt;td th:text="${person?.mail}">john@doe.com&lt;/td>
+      &lt;/tr>
+   &lt;/tbody>
+&lt;/table>
+</pre>
