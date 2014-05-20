@@ -15,12 +15,18 @@ level3:
 </p>
 <p>
    But you can of course override it in multiple ways:
-   <ul>
-      <li>First, you can add a file called <code>datatables.properties</code> in TODOOOOOOOOOOOOOOOat the root of the classpath, allowing you to redefine every property you need. Your custom global configuration will then be
-         merged with the default one.
-      </li>
-      <li>Or you can locally overload properties using the {% refjsp dt prop %} JSP tag or the <a href="/datatables/features/advanced/configuration-div.html">Thymeleaf configuration div</a>.</li>
-   </ul>
+   
+<ul>
+   <li>First, you can add a file called <code>datatables.properties</code>
+      under the <code>/dandelion/datatables</code> folder, allowing you
+      to redefine every property you need. Your custom global
+      configuration will then be merged with the default one.
+   </li>
+   <li>Or you can locally overload properties using the {% refjsp dt prop %} JSP tag or the <a
+      href="/datatables/features/advanced/configuration-div.html">Thymeleaf
+         configuration div</a>.
+   </li>
+</ul>
 </p>
 
 <h3 class="section-title">Examples</h3>
