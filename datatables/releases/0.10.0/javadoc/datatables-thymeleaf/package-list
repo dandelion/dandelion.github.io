@@ -1,11 +1,7 @@
 com.github.dandelion.datatables.thymeleaf.dialect
 com.github.dandelion.datatables.thymeleaf.extension.feature
 com.github.dandelion.datatables.thymeleaf.processor
-com.github.dandelion.datatables.thymeleaf.processor.attr.ajax
-com.github.dandelion.datatables.thymeleaf.processor.attr.basic
-com.github.dandelion.datatables.thymeleaf.processor.attr.export
-com.github.dandelion.datatables.thymeleaf.processor.attr.feature
-com.github.dandelion.datatables.thymeleaf.processor.attr.plugin
-com.github.dandelion.datatables.thymeleaf.processor.attr.theme
+com.github.dandelion.datatables.thymeleaf.processor.attr
+com.github.dandelion.datatables.thymeleaf.processor.config
 com.github.dandelion.datatables.thymeleaf.processor.el
 com.github.dandelion.datatables.thymeleaf.util
