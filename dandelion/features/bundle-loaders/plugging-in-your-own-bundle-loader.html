@@ -28,7 +28,7 @@ level3:
    So, in order to plug-in your own asset loader, just follow these steps:
 </p>
 <ol>
-   <li>Create a class that extends AbstractBundleLoader (lien) or directly implements BundleLoader (lien).
+   <li>Create a class that extends {% javadoc ddl dandelion-core AbstractBundleLoader %} or directly implements {% javadoc ddl dandelion-core BundleLoader %}.
 <pre class="prettyprint">
 package com.foo.bundle.loader.impl;
 
@@ -92,7 +92,7 @@ com.foo.bundle.loader.impl.MyBundleLoader
 </p>
 <p>
    Indeed, the <a href="/datatables">Dandelion-Datatables</a> component provides its own bundle
-   loader: DatatablesBundleLoader (lien). This loaders scans for JSON files only inside the
+   loader: {% javadoc dt datatables-core DatatablesBundleLoader %}. This loaders scans for JSON files only inside the
    <code>dandelion/datatables</code>
    folder.
 </p>
