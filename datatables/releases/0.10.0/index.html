@@ -289,31 +289,26 @@ level2:
    
    <li>Changes in attributes
       <ul>
-         <li>New {% reftl dt column id %} column attribute, allowing to assign an ID to the header cell</li>
-         <li>New {% reftl dt column filterMinLength %} column attribute, allowing to trigger the filtering after a minimum number of characters has been reached in a filtering field.</li>
-         <li>New {% reftl dt column filterDelay %} column attribute, allowing to set a delay (in ms) before the AJAX call is performed to obtain data from server</li>
-         <li>New {% reftl dt column filterSelector %} column attribute, allowing </li>
-         <li>New {% reftl dt column filterClearSelector %} column attribute, allowing </li>
-         <li>New {% reftl dt column name %} column attribute, allowing to apply a name to a column. Used with server-side processing.</li>
-         <li>New {% reftl dt column escapeXml %} column attribute, allowing to disable the XML characters escaping</li>
+         <li>New {% reftl dt th id %} column attribute, allowing to assign an ID to the header cell</li>
+         <li>New {% reftl dt table filterMinLength %} column attribute, allowing to trigger the filtering after a minimum number of characters has been reached in a filtering field.</li>
+         <li>New {% reftl dt table filterDelay %} column attribute, allowing to set a delay (in ms) before the AJAX call is performed to obtain data from server</li>
+         <li>New {% reftl dt table filterSelector %} column attribute, allowing </li>
+         <li>New {% reftl dt table filterClearSelector %} column attribute, allowing </li>
+         <li>New {% reftl dt th name %} column attribute, allowing to apply a name to a column. Used with server-side processing.</li>
          <li>Renamed the <code>sortInit</code> column attribute to {% reftl dt column sortInitDirection %}</li>
-         <li>New {% reftl dt column sortInitOrder %} column attribute, allowing to set the order in which columns must be initialized</li>
-         <li>New {% reftl dt extraHtml %} tag, allowing to create DataTables feature plug-ins that can be used to decorate the table. Read more <a href="/datatables/features/advanced/using-extra-html.html">here</a>.</li>
-         <li>New {% reftl dt export orientation %} export attribute, allowing to change the default PDF orientation</li>
-         <li>New {% reftl dt export fileExtension %} export attribute, allowing to set the extension of the exported file</li>
-         <li>New {% reftl dt export mimeType %} export attribute, allowing to set the mime Type of the response when exporting data</li>
-         <li>New {% reftl dt export escapeXml  %} export attribute, allowing to disable the XML characters escaping</li>
+         <li>New {% reftl dt th sortInitOrder %} column attribute, allowing to set the order in which columns must be initialized</li>
+         <li>New {% reftl dt div orientation %} export attribute, allowing to change the default PDF orientation</li>
+         <li>New {% reftl dt div fileExtension %} export attribute, allowing to set the extension of the exported file</li>
+         <li>New {% reftl dt div mimeType %} export attribute, allowing to set the mime Type of the response when exporting data</li>
          <li>New {% reftl dt table reloadSelector %} table attribute, allowing to bind a "click" event to element that will trigger the table reloading</li>
          <li>New {% reftl dt table reloadFunction %} table attribute, allowing to customize the table reloading</li>
-         <li>New {% reftl dt table escapeXml %} table attribute, allowing to disable the XML characters escaping</li>
-         <li>Renamed the <code>rowIdSufix</code> table attribute to {% reftl dt table rowIdSuffix %}</li>
          <li>Renamed the <code>filter</code> table attribute to {% reftl dt table filterable %}</li>
          <li>Renamed the <code>sort</code> table attribute to {% reftl dt table sortable %}</li>
          <li>Renamed the <code>paginate</code> table attribute to {% reftl dt table pageable %}</li>
          <li>Removed the unused <code>footer</code> table attribute</li>
          <li>Removed the <code>&lt;datatables:extraConf&gt;</code> tag</li>
          <li>
-            Removed the <code>cdn</code> table attribute from the dialect: it is now activated
+            Removed the <code>dt:cdn</code> table attribute from the dialect: it is now activated
             by default thanks to the <a
             href="/dandelion/features/asset-bundles/introducing-asset-bundles.html">scope mechanism</a>
             of <a href="/dandelion">Dandelion</a>
