@@ -57,5 +57,11 @@ dandelion :
       url: webanalytics
       breadcrumb: Dandelion-Webanalytics
       sources: dandelion-webanalytics
+    gua:
+      name: gua
+      version: 0.1.0-SNAPSHOT
+      url: gua
+      breadcrumb: Dandelion-GUA
+      sources: dandelion-gua
     blog:
       name: blog
