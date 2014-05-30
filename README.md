@@ -1,7 +1,7 @@
 dandelion.github.io
 ===================
 
-Source of the Dandelion Project Website: http://dandelion.github.io/
+Sources of the Dandelion Project Website: http://dandelion.github.io/
 
 ## To run it locally
 
