@@ -2,19 +2,21 @@
 layout: dandelion
 menu: bundles
 submenu: interacting
-level1:
-   url: features
-   name: Features
-level2:
-   url: asset-bundles
-   name: Asset bundles
-level3:
-   url: interacting-with-the-asset-bundles
-   name: Interacting with the asset bundles
-level4:
-   url: using-the-jsp-taglib.html
-   name: Using the JSP taglib
+level1: 
+  url: features
+  name: Features
+level2: 
+  url: "asset-bundles"
+  name: Asset bundles
+level3: 
+  url: "interacting-with-the-asset-bundles"
+  name: Interacting with the asset bundles
+level4: 
+  url: "using-the-jsp-taglib.html"
+  name: Using the JSP taglib
+published: true
 ---
+
 <h2 class="page-title">Using the JSP taglib</h2>
 
 <h3 class="section-title" id="rq">Requirements</h3>
@@ -41,7 +43,7 @@ level4:
 </p>
 <p>
 <pre class="prettyprint">
-&lt;dandelion:bundle includes="bundle1" /&gt;
+&lt;dandelion:bundle excludes="bundle1" /&gt;
 </pre>
 </p>
 
