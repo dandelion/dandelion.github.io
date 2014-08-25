@@ -37,7 +37,7 @@ dandelion :
   components:
     core:
       name: core
-      version: 0.10.0
+      version: 0.10.1
       url: dandelion
       breadcrumb: Dandelion-Core
       sources: dandelion
@@ -45,7 +45,7 @@ dandelion :
       forum: http://dandelion-forum.48353.x6.nabble.com/Dandelion-f295.html
     datatables:
       name: datatables
-      version: 0.10.0
+      version: 0.10.1
       url: datatables
       breadcrumb: Dandelion-Datatables
       sources: dandelion-datatables

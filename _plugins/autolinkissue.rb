@@ -9,11 +9,20 @@ module Jekyll
 
     def render(context)
       args = @params.split(" ").map(&:strip)
-      if(args.length > 1)
-        raise SyntaxError.new("Syntax error: wrong number of arguments. Usage: {% issue 1 %}")
+
+      if(args.length != 2)
+        raise SyntaxError.new("Syntax error: wrong number of arguments. Usage: {% issue ddl 1 %}")
       end
-      @refparam = args[0]
-      "<a href=\"https://github.com/dandelion/issues/issues/#{@refparam}\">Issue #{@refparam}</a>"
+      
+      @module = args[0].downcase
+      @issue = args[1]
+      
+      case @module
+      when "dt"
+        "<a href=\"https://github.com/dandelion/dandelion-datatables/issues/#{@issue}\">Issue #{@issue}</a>" 
+      when "ddl"
+        "<a href=\"https://github.com/dandelion/dandelion/issues/#{@issue}\">Issue #{@issue}</a>"
+      end  
     end
   end
 end

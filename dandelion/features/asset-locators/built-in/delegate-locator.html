@@ -86,7 +86,7 @@ level4:
    this asset.
 </p>
 <p>
-   This can be done thanks to the AssetRequestContext (lien javadoc):
+   This can be done thanks to the {% javadoc ddl dandelion-core AssetRequestContext %}:
 <pre class="prettyprint">
 AssetRequestContext
    .get(request)
@@ -116,9 +116,9 @@ AssetRequestContext
          parameters map with this key.
       </p>
       <p>
-         Also note that the given JavaScriptGenerator (lien javadoc) implements the DelegatedContent (lien javadoc) interface.
+         Also note that the given JavaScriptGenerator (lien javadoc) implements the {% javadoc ddl dandelion-core DelegatedContent %} interface.
 <pre class="prettyprint">
-public interface JavascriptGenerator extends DelegatedContent {
+public class SomeJavascriptGenerator extends DelegatedContent {
    ...
 }
 </pre>
