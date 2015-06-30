@@ -4,9 +4,9 @@ encoding: utf-8
 title: Dandelion Project
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments.
+  It helps to manipulate the web assets (JS, CSS) in different ways: assets organization in a bundle graph and classical optimizations like minification, compression or caching.
+  It also facilitates the integration of powerful JavaScript libraries thanks to a set of extensible components.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://dandelion.github.io/" # the base hostname & protocol for your site
 twitter: https://twitter.com/dandelion_proj
