@@ -10,14 +10,14 @@ categories:
 [.margin-top-30]
 It's been a while since the last release but it was worth the wait: Dandelion-Core and Dandelion-Datatables have finally been released in v1.0.0!
 
-Obviously, theses versions contain major changes as well as great improvements and bug fixes. Let's have an overview of both changelogs.
+Obviously, these versions contain major changes as well as great improvements and bug fixes. Let's have an overview of both changelogs.
 
 == Dandelion-Core
 
 === Better coverage of application servers
 
 One of the key internal feature of Dandelion-Core is to scan for asset bundles within classpath. Unfortunately, it's not an easy task to cover all kinds of application servers since most of them work differently.
-Since Dandelion-Core v1.0.0, more applications servers are supported, such as JBoss AS 6+, Wildfly and Websphere AS.
+Since Dandelion-Core v1.0.0, more app servers are supported, such as JBoss AS 6+, Wildfly and Websphere AS.
 
 Note however that requirements have evolved: the Servlet API 3.x is now required to make all Dandelion components work. Therefore you must ensure to deploy your applications in a Servlet 3.x compatible container such as Jetty 8.x, Tomcat 7.x, JBoss AS 6, Weblogic Server 12c, ...
 
@@ -119,7 +119,7 @@ You can now make full use of the exposed objects, directly in assets, using Thym
 ./assets/js/app.js
 [source, javascript]
 ----
-function loadProjects() {
+function loadProject() {
    $.ajax({
       url : /*[[@{/api/projects/{p}(p=${project.name})}]]*/ "/my-context/api/projects/dandelion",
       type : "GET",
@@ -166,7 +166,7 @@ And if you like whales as I do, note that (almost) all samples are now distribut
 
 == Contributions
 
-One final word about contributions. I wanted to sincerely thank new contributors: https://github.com/RizziCR[Christoph Rizzotti] from Germany, https://github.com/dmorellet[Damien Morellet] and https://github.com/rnowif[Renaud Humbert-Labeaumaz] from France and https://github.com/ammachado[Adriano Marcondes Machado] from Brazil. The team page has been updated accordingly. And once again: thank you guys!
+One final word about contributions. I wanted to sincerely thank new contributors: https://github.com/RizziCR[Christoph Rizzotti] from Germany, https://github.com/dmorellet[Damien Morellet] and https://github.com/rnowif[Renaud Humbert-Labeaumaz] from France and https://github.com/ammachado[Adriano Marcondes Machado] from Brazil. The link:{{ '/team' | append: site.baseurl }}[team page] has been updated accordingly. Once again: thank you guys!
 
 [.margin-top-20]
 I hope you'll enjoy with these new releases.
