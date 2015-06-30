@@ -36,7 +36,7 @@ component: core
 
 <div class="row margin-top-20">
   <div class="col-md-12">
-    <h3>Releases</h3>
+    <h3>Latest releases</h3>
     <table class="table table-striped table-hover">
       <thead>
         <tr>
@@ -59,13 +59,14 @@ component: core
               | <a href="{{ version.number | append: '/docs/pdf/' | prepend: site.baseurl }}">Docs (PDF)</a>
               {% endif %} 
               | <a href="{{ version.number | append: '/api/' | prepend: site.baseurl }}">API</a>
-            {% endif %}
             <br />
+            {% endif %}
             <a href="{{ version.number | append: '/changelog/' | prepend: site.baseurl }}">Changelog</a>
             {% if version.extraDocs != null %}
               <br />
               {% for extraDoc in version.extraDocs %}
               <a href="{{ version.number | append: '/docs/' | append: extraDoc.url | prepend: site.baseurl }}">{{ extraDoc.name }}</a>
+              <br />
               {% endfor %}
             {% endif %}
           </td>

@@ -69,13 +69,14 @@ component: datatables
               | <a href="{{ version.number | append: '/docs/pdf/' | prepend: site.baseurl }}">Docs (PDF)</a>
               {% endif %} 
               | <a href="{{ version.number | append: '/api/' | prepend: site.baseurl }}">API</a>
-            {% endif %}
             <br />
+            {% endif %}
             <a href="{{ version.number | append: '/changelog/' | prepend: site.baseurl }}">Changelog</a>
             {% if version.extraDocs != null %}
               <br />
               {% for extraDoc in version.extraDocs %}
               <a href="{{ version.number | append: '/docs/' | append: extraDoc.url | prepend: site.baseurl }}">{{ extraDoc.name }}</a>
+              <br />
               {% endfor %}
             {% endif %}
           </td>

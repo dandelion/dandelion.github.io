@@ -28,13 +28,14 @@ component: datatables
               | <a href="{{ '../' | append: version.number | append: '/docs/pdf/' | prepend: site.baseurl }}">Docs (PDF)</a>
               {% endif %}
               | <a href="{{ '../' | append: version.number | append: '/api/' | prepend: site.baseurl }}">API</a>
+              <br />
             {% endif %}
-            <br />
             <a href="{{ '../' | append: version.number | append: '/changelog/' | prepend: site.baseurl }}">Changelog</a>
             {% if version.extraDocs != null %}
-              {% for extraDoc in version.extraDocs %}
               <br />
+              {% for extraDoc in version.extraDocs %}
               <a href="{{ '../' | append: version.number | append: '/docs/' | append: extraDoc.url | prepend: site.baseurl }}">{{ extraDoc.name }}</a>
+              <br />
               {% endfor %}
             {% endif %}
           </td>
