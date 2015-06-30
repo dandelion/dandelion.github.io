@@ -1,0 +1,55 @@
+---
+layout: component
+component: datatables
+cookiePath: /datatables
+---
+
+[.margin-top-30]
+== Migrating from Dandelion-Datatables 0.10.x to 1.x
+
+Below are listed the major changes brought by the latest version. Read the full changelog here.
+
+[.margin-top-10]
+=== New requirements
+
+Requirements have evolved. Starting from Dandelion-Datatables v1.0.0, the Servlet API 3.x is required. 
+Therefore you must ensure to deploy your applications in a Servlet 3.x compatible container such as Jetty 8.x, Tomcat 7.x, JBoss AS 6, Weblogic Server 12c, ...
+Also ensure to configure the application with the Servlet 3.0 minimum in your `web.xml` file.
+
+[source, xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+   version="3.0">
+----
+
+[.margin-top-10]
+=== Standalone mode
+
+Starting from Dandelion-Datatables v1.0.0, if you wish use the component standalone, you have to declare it in the Dandelion-Core configuration file: `dandelion/dandelion.properties`.
+
+[source, properties]
+----
+components.standalone = ddl-dt <1>
+----
+<1> `ddl-dt` is the component identifier of Dandelion-Datatables
+
+Now the standalone mode doesn't load any vendor bundle into the bundle storage.
+
+[.margin-top-10]
+=== JSP taglib
+
+* The `<datatables:prop>` tag has been renamed to `<datatables:option>` tag.
+
+The following column attributes have been removed:
+
+* name
+* filterCssClass
+* filterMinLength
+* filterDateFormat
+
+[.margin-top-10]
+=== Filtering
+
+When you mark a column as filterable, only `select` and `input` are available for the  `filterType` (JSP) / `dt:filterType` (Thymeleaf) attribute

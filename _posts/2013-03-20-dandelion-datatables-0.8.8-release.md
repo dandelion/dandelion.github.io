@@ -1,6 +1,6 @@
 ---
 layout: post
-categories : ['News', 'Release']
+categories : ['Release']
 tags : ['Dandelion-datatables', 'Tests']
 author: 'Thibault Duchateau'
 ---

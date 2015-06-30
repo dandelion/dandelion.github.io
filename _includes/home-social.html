@@ -1,0 +1,33 @@
+<div class="container-fluid area-social">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" style="overflow: hidden;">
+        <h3 class="section-title">
+          <i class="fa fa-rss"></i> Latest news
+        </h3>
+        <ul>
+          {% for post in site.posts limit:4 %}
+          <li>
+            <p>
+              <a href="{{ post.url }}">{{ post.title }}</a> <br /> <span style="color: #8e8e8e;">{{ post.date | date: "%Y/%m/%d" }}</span>
+            </p>
+            <p>{{ post.content | strip_html | truncatewords: 20 }}</p>
+          </li> 
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-md-6 hidden-phone">
+        <h3 class="section-title">
+          <i class="fa fa-twitter"></i> Social
+        </h3>
+        <div>
+          <a class="twitter-timeline" href="https://twitter.com/dandelion_proj" data-widget-id="306774071041986562" data-chrome="noheader nofooter noborders noscrollbar transparent">Tweets de @dandelion_proj</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ "/assets/js/site-home.js" | prepend: site.baseurl }}"></script>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-516d4b686f218f23"></script>

@@ -1,0 +1,32 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} 0.8.12
+
+=== Core
+
+* `dandelion.dev.mode` enabled by default: now you don't need to set the dandelion.dev.mode system property to `true` to disable caching. Caching is disabled by default, which means the DataTables configuration is computed each time you access a page
+* Performance improvement: the `DisplayType` object, used in export, is now instantiated much less time than before.
+
+=== JSP implementation
+
+* New `visible` column attribute, allowing you to hide column. Note that a hidden column is automatically unsearchable
+
+=== Thymeleaf implementation
+
+* `dt:export`, `dt:exportLinks` and `dt:filterType` attributes don't expect a Thymeleaf expression any longer. Actually you can use both header-coded values and Thymeleaf Standard expressions
+* New `dt:visible` column attribute, allowing you to hide column. Note that a hidden column is automatically unsearchable 
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion-datatables/issues/87[#87]: 'rel' attribute is missing in link tags
+* https://github.com/dandelion/dandelion-datatables/issues/86[#86]: Enable the dev mode by default
+* https://github.com/dandelion/dandelion-datatables/issues/85[#85]: Improve tag's values validation
+* https://github.com/dandelion/dandelion-datatables/issues/83[#83]: Exclude dt:export/dt:exportLinks from being processed by Thymeleaf Standard Expression
+* https://github.com/dandelion/dandelion-datatables/issues/82[#82]: Make the dt:filtertype values unnecessary to process
+* https://github.com/dandelion/dandelion-datatables/issues/76[#76]: Add support for hidden columns
+* https://github.com/dandelion/dandelion-datatables/issues/49[#49]: Performance : improve DisplayType feature
+* https://github.com/dandelion/dandelion-datatables/issues/31[#31]: Error when the table's id is generated with the "th:id" processor

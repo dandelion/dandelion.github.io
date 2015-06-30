@@ -1,0 +1,12 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} 0.8.4
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion-datatables/issues/16[#16]: Dynamic value for table's id
+* https://github.com/dandelion/dandelion-datatables/issues/17[#17]: Table display issue

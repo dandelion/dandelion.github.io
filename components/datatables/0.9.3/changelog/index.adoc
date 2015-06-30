@@ -1,0 +1,16 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} 0.9.3
+
+=== Core
+
+* Minor improvement in table initialization
+* New pagination styles based on Bootstrap 2: bootstrap_four_button and bootstrap_full_numbers
+
+=== Thymeleaf implementation
+
+* Added support for Thymeleaf 2.1.x

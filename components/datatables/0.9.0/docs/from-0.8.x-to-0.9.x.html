@@ -1,0 +1,38 @@
+---
+layout: component
+component: datatables
+---
+
+<h2 class="page-title">Migrating from 0.8.x to 0.9.x</h2>
+<p>
+   Looooots of changes have been made in the v0.9.0. All major changes are listed here. 
+</p>
+
+<h3 class="section-title">Configuration properties</h3>
+<p>
+   Almost all the internal configuration has been refactored. As a
+   consequence, if you were previously using a custom
+   <i>datatables.properties</i> file, please update it following the
+   <a href="/datatables/docs/ref/configuration/">configuration
+      reference</a>.
+</p>
+
+<h3 class="section-title">Internationalization</h3>
+<p>
+   The
+   <code>labels</code>
+   (JSP) and
+   <code>dt:labels</code>
+   (Thymeleaf) table attributes have been removed in favour of a
+   Java-based i18n mechanism (ResourceBundle). Please read
+   <a
+      href="/datatables/tutorials/i18n/internationalization.html">this
+      tutorial</a> for more information.
+</p>
+
+<h3 class="section-title">Thymeleaf</h3>
+<ul>
+   <li>All export attributes has been moved from the <code>&lt;tbody&gt;</code> tag to the <code>&lt;thead&gt;</code> tag.</li>
+   <li>The value of some attributes don't require to be surrounded by single quotes anymore. See the explanations <a href="/faq/#thymeleafquote">here</a>.</li>
+   
+</ul>

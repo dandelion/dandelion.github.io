@@ -1,0 +1,18 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} 0.9.2
+
+=== Closes issues
+
+* https://github.com/dandelion/dandelion-datatables/issues/278[#278]: Allow vendor bundles to work in a standalone environment
+* https://github.com/dandelion/dandelion-datatables/issues/212[#212]: Using AJAX sources export not add extra params to server
+* https://github.com/dandelion/dandelion-datatables/issues/211[#211]: Add support for cssCellClass on ajax-mode
+* https://github.com/dandelion/dandelion-datatables/issues/210[#210]: Cookie callback function generated without return sentence
+* https://github.com/dandelion/dandelion-datatables/issues/206[#206]: JSP extraFile bug: insert = BeforeStartDocumentReady causes internal failure 
+* https://github.com/dandelion/dandelion-datatables/issues/205[#205]: Title of column is now displayed using the titleKey attribute when using AJAX sources
+* https://github.com/dandelion/dandelion-datatables/issues/125[#125]: Add support for `cssCellClass` using Thymeleaf
+

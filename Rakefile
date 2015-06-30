@@ -6,7 +6,7 @@ require "jekyll"
 # Change your GitHub reponame
 GITHUB_REPONAME = "dandelion/dandelion.github.io"
 
-desc "Generate blog files"
+desc "Generate Dandelion site"
 task :generate do
   Jekyll::Site.new(Jekyll.configuration({
     "source"      => ".",
@@ -14,7 +14,7 @@ task :generate do
   })).process
 end
 
-desc "Generate and publish blog to gh-pages"
+desc "Generate and publish Dandelion site to gh-pages"
 task :publish => [:generate] do
   Dir.mktmpdir do |tmp|
     cp_r "_site/.", tmp
@@ -25,7 +25,7 @@ task :publish => [:generate] do
     message = "Site updated at #{Time.now.utc}"
     system "git commit -m #{message.inspect}"
     system "git remote add origin git@github.com:#{GITHUB_REPONAME}.git"
-    system "git push origin master --force"
+    system "git push -f origin master"
     Dir.chdir pwd
   end
 end

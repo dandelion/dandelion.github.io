@@ -1,0 +1,69 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} v1.0.0
+
+=== Core
+
+* Refactored the extension mechanism with the Service Provider Interface, thus improving performance
+* All extensions can now be extended by providing the right implementation + META-INF/services file
+* New `DatatablesCriteria.isFiltered()` method allowing to determine programmatically if a column is being filtered
+* Brand new debug menu (composed of debug pages) added to the recently added debugger
+* The `global.feature.processing` is now enabled by default
+* Upgraded supported DataTables' version to v1.10.7
+* Added stateSave, stateLoad, stateSaveParams, stateLoadParams and stateLoaded callback functionality
+* New JAR location added to all vendor bundles, allowing to fetch all assets from local instead of going out on Internet
+* Lots of vendor libraries upgrades
+* Removed TableCloth dependencies and the corresponding theme option when using Bootstrap themes
+* Added support for new callbacks: statesave, statesaveparams, stateload, stateloadparams and stateloaded
+
+==== Export
+
+* Fixed issue with export when using HTTP POST method
+* Iterate over columns for autosizing only if autosize is enabled in configuration
+* The dom option now takes into account the jQueryUI theme
+
+==== Paging
+
+* Removed the `four_button` paging type, since the new built-in paging type are now supported: `simple`, `simple_numbers`, `full`, `full_numbers`
+* Renamed `bootstrap` to `bootstrap_simple`
+* Renamed `bootstrap_four_button` to `bootstrap_full`, to comply with the built-in paging options
+* Modified all paging-related bundles so that a version is now "fixed", preventing the auto-versioning to compute work on these assets
+* Renamed `feature.paginationType` option to `feature.pagingType`
+
+==== Filtering
+
+* Old filtering feature replaced by the awesome YADCF plugin
+* Removed ddl-dt-multifilter bundle and assets since it is fully integrated in yadcf
+* Updated the YadcfConfigGenerator so that it can handle filters which are externally triggered
+
+==== Plugins
+
+* The Responsive plugin now based on the official http://datatables.net/extensions/responsive/[responsive extension], not on Datatables-responsive any longer
+
+=== JSP implementation
+
+* Fixed issue with AJAX-sourced data, an empty `<body>` was generated (only with the JSP taglib) when using an AJAX source
+* Renamed the `insert` attribute of the `<datatables:extraJs>` tag to `placeholder`
+* Renamed `paginationType` table attribute to `pagingType`
+
+=== Thymeleaf implementation
+
+* New parser used allowing to use any Thymeleaf expression in the dialect attributes
+* Upgraded Thymeleaf to 2.1.4.RELEASE
+* Renamed `dt:insert` attribute to `dt:placeholder`
+* Renamed `dt:paginationType` table attribute to `dt:pagingType`
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion-datatables/issues/278[#278]: Allow vendor bundles to work in a standalone environment
+* https://github.com/dandelion/dandelion-datatables/issues/268[#268]: Unable to load use different sort types in the same table
+* https://github.com/dandelion/dandelion-datatables/issues/267[#267]: export attribut of jsp tag "tables" breaks theme
+* https://github.com/dandelion/dandelion-datatables/issues/264[#264]: Implement ColumnDef.isFiltered() 
+* https://github.com/dandelion/dandelion-datatables/issues/261[#261]: Make possible to extend already existing extensions
+* https://github.com/dandelion/dandelion-datatables/issues/258[#258]: StandardConfigurationLoader non string values bug
+* https://github.com/dandelion/dandelion-datatables/issues/254[#254]: Generalize the use of the service provider mechanism
+* https://github.com/dandelion/dandelion-datatables/issues/241[#241]: Support for data tables 1.10

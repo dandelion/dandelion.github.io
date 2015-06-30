@@ -1,0 +1,89 @@
+---
+layout: post
+title: Release of Dandelion 0.10.0
+categories : ['Release']
+tags : ['Dandelion-Core', 'Dandelion-Datatables']
+author: 'Thibault Duchateau'
+---
+
+After several months hibernation, I'm happy to announce the Release of Dandelion v0.10.0!
+
+image::/assets/images/blog/gif_dance_now.gif[align=center]
+
+== Past and present
+
+Until this release, Dandelion-Core and Dandelion-Datatables were evolving separatly. It began about 2 years ago with _Datatables4j_, aimed at easing the integration of the http://datatables.net/[DataTables jQuery plugin] in JVM-based web applications. But with a recurring observation: the web resources management can sometimes become a hell of a job. Especially with DataTables, however complete, which sometimes requires extra resources and can become hard to configure. Also with about 2 tons of new librairies released every month (approximate number).
+
+That's why https://twitter.com/rlespinasse[Romain] and https://twitter.com/tduchateau[I], as good global citizens, decided to find something to address this issue.
+
+After several prototypes based on a perfect use case - _Datatables4j_ - Dandelion was born. We continued to improve it independently during some months and finally, despite   several sudden new developments which held up the release for nearly four months, we ended up releasing a whole new version of Dandelion-Core and connecting Dandelion-Datatables to Dandelion-Core in the same time.
+
+This is of course extremely satisfying for us. This is all the more satisfying because Dandelion is, since the beginning, an after-dinner project.
+
+== Versioning
+
+Starting from the v0.10.0, we have aligned Dandelion-Core and Dandelion-Datatables versions. As for example with http://spring.io/[Spring], you won't get a headache studying which version of the component C2 is compatible with the component C1. Every artifact is now released under the same version number.
+
+Note however that we have left out Dandelion-Webanalytics, which is still incubating.
+
+== Dandelion-Datatables
+
+Much has changed! Below is an extract from the link:{{ "/components/datatables/0.10.0/changelog/" | prepend: site.baseurl }}[full change log].
+
+* All extension mechanism has been refreshed and improved thanks to the Dandelion-Core features
+* Performance increased by refactoring the internal configuration system
+* New way to generate the Javascript code and possibility to plug in a custom generator
+* Improved filtering with AJAX sources: delayed filtering, data reloading,...
+* New themes and theme options available:
+** Bootstrap 3
+** BS2/BS3-Responsive option, based on https://github.com/Comanche/datatables-responsive[datatables-responsive] by https://github.com/Comanche[Comanche]
+
+For those who are already using Dandelion-Datatables, note that a migration guide is link:{{ "/components/datatables/0.10.0/docs/from-0.9.x-to-0.10.x.html" | prepend: site.baseurl }}[available here].
+
+== Dandelion-Core
+
+Dandelion-Core has became the fundation of the Dandelion Framework. In this regard:
+
+* the previous version (0.2.1) has been fully refactored and now offers plenty of new features
+* Dandelion-Datatables is now fully integrated with Dandelion-Core, as mentioned above
+* and the cool thing is that you can also use Dandelion-Core as a standalone library!
+
+Of course, much remains to be done. But it is something like that popular saying: "done is better than perfect".
+
+Feel free to take a look at:
+
+* the brand new documentation
+* the link:{{ "/components/core/0.10.0/changelog/" | prepend: site.baseurl }}[full change log]
+
+== Sample applications
+
+Looots of sample applications have been added to the https://github.com/dandelion/dandelion-samples[dedicated repository]:
+
+* Under the `/dandelion` folder, you will find some sample apps demonstrating the key features of Dandelion-Core. And others will soon follow.
+* Under `/datatables`, plenty of new sample apps demonstrating each of the Dandelion-Datatables' features.
+
+Note that we have also made a new https://github.com/dandelion/dandelion-samples/tree/master/dandelion/dandelion-petclinic[Dandelion-enabled version of the Spring PetClinic sample application] in which are integrated both Dandelion-Core and Dandelion-Datatables. A series of blog posts will be soon published in this regard.
+
+Finally, the official Spring PetClinic sample application will be soon updated with this new version.
+
+== Issue tracker and workflow automation
+
+We previously used a single Github repository for all issues but it turned out to be less practical than we initially thought. That's why each repository uses now its own issue tracker (the Github one). Again, sorry for the notification bombing during the migration. :-/
+
+And to add some sugar to the issue management, all repositories are now plugged in https://waffle.io/[waffle.io]. We will progressively migrate issues/ideas from https://trello.com/[Trello] to https://waffle.io/[waffle.io], hoping that this will bring more interaction and transparency to the issue workflow. Of course, you can still use the native Github issue tracker, it's really up to you.
+
+== Documentation
+
+Of course, all documentation has been refreshed to reflect the last changes, both in Dandelion-Core and Dandelion-Datatables.
+
+But there is one other point it's worth noting: you can now contribute to the documentation.
+
+The doc site is now plugged in http://prose.io/[prose.io]. https://github.com/prose/prose[Prose] is an awesome tool for editing sites hosted on https://github.com[GitHub]. You don't even need to know what a pull request means, this is done automatically once you have submitted your changes. Long story short, don't hesitate to improve the documentation!
+
+== Happy coding with Dandelion!
+
+As usual, your thoughts and feedback are very welcome:
+
+* https://twitter.com/dandelion_proj[Twitter]
+* http://dandelion-forum.48353.n6.nabble.com/[Forum]
+* Or using the comments below!

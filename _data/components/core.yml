@@ -1,0 +1,41 @@
+id: core
+name: Dandelion-Core
+description: "Provides core support for assets management: locators, processors, debugger and more."
+sources_url: https://github.com/dandelion/dandelion
+samples_url: https://github.com/dandelion/dandelion-core-samples
+issues_url: https://github.com/dandelion/dandelion/issues
+ci_url: https://dandelion.ci.cloudbees.com
+chat_url: https://gitter.im/dandelion/dandelion
+forum_url: http://dandelion-forum.48353.x6.nabble.com/Dandelion-f295.html
+versions:  
+  - number: 1.0.0
+    date: 2015-06-30
+    docs: [ 'html' ]
+  - number: 0.10.1
+    date: 2014-08-24
+    docs: [ 'html' ]
+    displayDocs: false
+  - number: 0.10.0
+    date: 2014-05-24
+    docs: [ 'html' ]
+    displayDocs: false
+  - number: 0.2.1
+    date: 2013-07-28
+    docs: [ 'html' ]
+    displayDocs: false
+  - number: 0.2.0
+    date: 2013-05-19
+    docs: [ 'html' ]
+    displayDocs: false
+samples:
+  - name: core-jsp-starter  
+    docker_url: https://registry.hub.docker.com/u/dandelion/core-jsp-starter
+  - name: core-jsp-petclinic
+    docker_url: https://registry.hub.docker.com/u/dandelion/core-jsp-petclinic
+  - name: core-thymeleaf-starter  
+    docker_url: https://registry.hub.docker.com/u/dandelion/core-tml-starter
+  - name: core-thymeleaf-webjars
+    docker_url: https://registry.hub.docker.com/u/dandelion/core-tml-webjars
+  - name: core-thymeleaf-versioning-fixed
+  - name: core-thymeleaf-jquery-js-generator
+  - name: core-thymeleaf-raw-js-generator

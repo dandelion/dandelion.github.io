@@ -1,0 +1,31 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} 0.8.8
+
+=== Core
+
+* Better performance : the configuration file is now loaded only once
+* Code cleaningAll classes/interfaces have been logically reorganized
+
+=== JSP implementation
+
+* Tests reorganization
+* More integration tests
+
+=== Thymeleaf implementation
+
+* New `dt:exportLinks` table attribute, allowing you to configure the export links' position
+* New `dt:paginationtype` table attribute, allowing you to configure the pagination type
+* Lots of new Thymeleaf attributes added to configure export
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion-datatables/issues/12[#12]: Improve export using Thymeleaf
+* https://github.com/dandelion/dandelion-datatables/issues/14[#14]: Add dt:paginationtype Thymeleaf processor
+* https://github.com/dandelion/dandelion-datatables/issues/28[#28]: Add the possibility to configure export link style and position
+* https://github.com/dandelion/dandelion-datatables/issues/29[#29]: Add the possibility to configure export with Thymeleaf
+* https://github.com/dandelion/dandelion-datatables/issues/44[#44]: Performance : load Dandelion properties only once

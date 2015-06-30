@@ -1,36 +1,7 @@
 ---
-layout: dandelion
-menu: home
+layout: default
 ---
+<meta http-equiv="refresh" content="2; url={{ '/components/core' | prepend: site.baseurl }}" />
 
-<h2 class="page-title">Overview</h2>
-<p>Dandelion is a Java web framework aimed at applying - as easily
-   as possible - best pratices of web developpement in JVM-based
-   environments.</p>
-<p>
-   In this regard, Dandelion invites you to organize your web assets
-   into <a href="/dandelion/features/asset-bundles/">bundles</a>. Once
-   all bundles prepared, Dandelion will help you to make your web
-   application more responsive:
-</p>
-<ul>
-   <li>by injecting in an optimal way the <code>&lt;script&gt;</code>
-      and <code>&lt;link&gt;</code> tags: usually stylesheets at the top
-      and scripts at the bottom (configurable)
-   </li>
-   <li>by performing typical optimizations such assets
-      minification, assets merging or GZIP compression (in beta),
-      whether your assets comes from the webapp, a JAR, a <a
-      href="http://www.webjars.org/">WebJar</a> or a <a
-      href="http://en.wikipedia.org/wiki/Content_delivery_network">CDN</a>
-   </li>
-</ul>
-<p>
-   Dandelion is mainly based on a servlet filter which automatically
-   injects assets into your HTML pages and is therefore considered as a
-   runtime solution. But rather than making a long speech, take a look
-   at the general overview below.
-</p>
-<p style="margin-top:25px;">
-   <img src="/assets/images/dandelion/dandelion-overview.png" />
-</p>
+<h3>The page has moved to:</h3>
+<a href="{{ 'components/core' | prepend: site.url }}">{{ 'components/core' | prepend: site.url }}</a></p>

@@ -1,0 +1,58 @@
+---
+layout: default
+component: core
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} v0.10.0
+
+=== Core
+
+* Lots of internal features are now based on the http://docs.oracle.com/javase/6/docs/api/java/util/ServiceLoader.html[Service Provider Interface API]: processors, asset locators, bundle loaders and caching in order to provide plenty of extension points
+* The asset rendering is now based on a servlet filter: `DandelionFilter`, which optimally injects `<script>` and `<link>` tags into the page
+* The old `DatatablesController` (used to serve generated assets of the Dandelion-Datatables component) has been repatriated to Dandelion core, renamed to `DandelionServlet` and is now used to serve all kinds of generated assets
+* Dropped Servlet 3.x annotations usage in favour of plain old XML
+* Asset bundle are no longer based on a tree but on a http://en.wikipedia.org/wiki/Directed_acyclic_graph[DAG]. The old `parent` properties of bundles has been replaced by the `dependencies` attribute
+* New utilities related to assets and bundles:
+** Ability to exclude assets by type
+** The asset position can be forced using a new JSON parameter (dom)
+** Ability to activate bundles permanently (e.g. handy for global CSS files)
+** The URL of generated asset is now built with a SHA1 key instead of the old parameters previously used in Dandelion-Datatables
+
+* All bundle loaders are now mutually exclusives in order to be able to disable one or more loaders (useful for Dandelion integration in legacy apps)
+* Bundle and asset names are not case sensitive any longer
+
+* Fixed issue with protocol-relative URLs used as locations (aka //cdn)
+* Added a new CdnLocator used to rewrite URLs in CSS files. Automatically activated when minification is enabled
+* Improved the _dandelion-webjars_
+* New asset processors available for JS and CSS compression (based on YUICompressor)
+
+* Lots of new configuration properties
+* All configuration properties can now be loaded using different strategies
+
+* Development mode refactored to avoid re-initializing the bundle graph at each request thus drastically improving performance
+* Added a _bundle graph viewer_, allowing to visualize how Dandelion deals with your current request
+* Added support for manual bundle reloading
+* New caching policy applied when using the _production mode_
+
+=== JSP implementation
+
+* The JSP taglib has been fully refactored
+
+=== Thymeleaf implementation
+
+* The Thymeleaf dialect has been fully refactored
+* Added support for the https://github.com/thymeleaf/thymeleaf-extras-eclipse-plugin[content assist Eclipse plugin]
+
+=== Ehcache extra
+
+* A new dandelion-ehcache module has been added, allowing to plug an Ehcache-based cache in the Dandelion cache system
+
+=== Webjars extra
+
+* The Webjars extra now provides two different locators, automatically picked up depending on the version of the Servlet API supported by the server
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion/issues/7[#7]: Provide multiple configuration points for the dandelion.dev.mode
+* https://github.com/dandelion/dandelion/issues/2[#2]: Content assist for the Dandelion dialect (Eclipse)

@@ -1,0 +1,167 @@
+---
+layout: component
+component: datatables
+---
+
+<div class="row margin-top-20">
+  <div class="col-md-12">
+    <h1>{{ site.data.components[page.component].name }}</h1>
+    <p>
+      Dandelion-Datatables allows you to quickly create full-featured HTML tables based on the
+      amazing <a href="http://datatables.net">DataTables</a> jQuery plugin authored by <a href="https://github.com/DataTables">Allan
+      Jardine</a>.
+    </p>
+    <p>
+      Basically, it generates all the configuration required by DataTables to initialize a table and
+      integrates into the <a href="">Dandelion-Core</a> asset mechanism.
+    </p>
+  </div>
+</div>
+
+<div class="row margin-top-30">
+  <div class="col-md-12 text-center">
+    <a href="{{ site.data.components[page.component].sources_url }}" title="Sources (GitHub)"><i class="fa fa-github fa-4x fa-border"></i></a>
+    <a href="{{ site.data.components[page.component].issues_url }}" title="Issues (GitHub)"><i class="fa fa-bug fa-4x fa-border"></i></a>
+    <a href="{{ site.data.components[page.component].ci_url }}" title="Continuous Integration (Jenkins)"><i class="fa fa-cogs fa-4x fa-border"></i></a>
+    <a href="{{ site.data.components[page.component].forum_url }}" title="Forum (Nabble)"><i class="fa fa-comments-o fa-4x fa-border"></i></a>
+    <a href="{{ site.data.components[page.component].chat_url }}" title="Chat (Gitter)"><i class="fa fa-weixin fa-4x fa-border"></i></a>
+  </div>
+</div>
+
+<div class="row margin-top-20">
+  <div class="col-md-12">
+    <h3>Features</h3>
+    <ul>
+      <li>Basic operations like sorting, filtering, paging, ...</li>
+      <li>DOM and AJAX sources</li>
+      <li>Server-side processing</li>
+      <li>Theming: Bootstrap 2, Bootstrap 3 and jQueryUI</li>
+      <li>Fully customizable exports (XLS, XLSX, PDF, XML, ...)</li>
+      <li>I18n</li>
+      <li>Integration with <a href="http://spring.io/">Spring</a> and other projects</li>
+      <li>Support for both template engines: JSP and <a href="http://www.thymeleaf.org/">Thymeleaf</a></li> 
+    </ul>
+  </div>
+</div>
+
+<div class="row margin-top-20">
+  <div class="col-md-12">
+    <h3>Latest releases</h3>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>Date</th>
+          <th>Documentation</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for version in site.data.components[page.component].versions limit:5 %}
+        <tr>
+          <td>{{ version.number }}</td>
+          <td>{{ version.date }}</td>
+          <td>
+            {% if version.displayDocs == null || version.displayDocs == true %}
+              {% if version.docs != null and version.docs contains 'html' %}
+              <a href="{{ version.number | append: '/docs/html/' | prepend: site.baseurl }}">Docs (HTML)</a>
+              {% endif %}
+              {% if version.docs != null and version.docs contains 'pdf' %}
+              | <a href="{{ version.number | append: '/docs/pdf/' | prepend: site.baseurl }}">Docs (PDF)</a>
+              {% endif %} 
+              | <a href="{{ version.number | append: '/api/' | prepend: site.baseurl }}">API</a>
+            {% endif %}
+            <br />
+            <a href="{{ version.number | append: '/changelog/' | prepend: site.baseurl }}">Changelog</a>
+            {% if version.extraDocs != null %}
+              <br />
+              {% for extraDoc in version.extraDocs %}
+              <a href="{{ version.number | append: '/docs/' | append: extraDoc.url | prepend: site.baseurl }}">{{ extraDoc.name }}</a>
+              {% endfor %}
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p>
+      <a href="{{ '/components/' | append: site.data.components[page.component].id | append:'/releases' | prepend: site.baseurl }}">Older releases</a>
+    </p>
+  </div>
+</div>
+
+<div class="row margin-top-20">
+  <div class="col-md-12">
+    <h3>Samples</h3>
+    <p>
+      All sample applications below are based on the latest release: {{ site.data.components[page.component].versions[0].number }}.
+    </p>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th style="width:20%">Access</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for sample in site.data.components[page.component].samples | sort:'name' %}
+        <tr>
+          <td>{{ sample.name }}</td>
+          <td>
+            <a title="Sources (GitHub)" href="{{ site.data.components[page.component].samples_url | append: '/tree/' | append: site.data.components[page.component].versions[0].number | append: '/' | append: sample.name }}"><i class="fa fa-2x fa-github"></i></a>
+            {% if sample.docker_url %}
+            &nbsp;<a title="Image (Docker)" href="{{ sample.docker_url }}"><i class="fa fa-2x fa-docker"></i></a>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row margin-top-20">
+  <div class="col-md-12">
+    <h3>External resources</h3>
+    <p>Listed below are all integrations and external resources coming from all around the web.</p>
+
+    <h4>Integration</h4>
+    <ul>
+       <li>
+          <p>
+             <strong>gvNIX</strong> by <a href="http://www.disid.com/">DiSiD Technologies</a>
+          </p>
+          <p>
+             gvNIX is a Spring Roo distribution that focuses both enterprise knowledge and enterprise
+             standards to build Java applications. gvNIX is sponsored by the Directorate General of
+             Information Technology, Generalitat Valenciana (Spain) and led by <a href="http://www.disid.com/">DiSiD Technologies</a>. 
+          </p>
+          <p>   
+             gvNIX provides, among other things, an add-on based on Dandelion-Datatables to enhance HTML tables.
+          </p>
+          <ul>
+             <li><i class="fa fa-globe"></i> Website: <a href="http://www.gvnix.org/">http://www.gvnix.org/</a></li>
+             <li><i class="fa fa-github"></i> Sources: <a href="https://github.com/DISID/gvnix">https://github.com/DISID/gvnix</a></li>
+          </ul>
+       </li>
+    </ul>
+
+    <h4>Blogs</h4>
+    <ul>
+      <li><a href="http://spring.io/blog/2012/10/30/spring-mvc-from-jsp-and-tiles-to-thymeleaf/">Spring MVC : From JSP and Tiles to Thymeleaf</a> (spring.io) by <a href="https://twitter.com/michaelisvy">Michael Isvy</a></li>
+      <li><a href="http://blog.ippon.fr/2013/03/11/improving-the-performance-of-the-spring-petclinic-sample-application-part-1-of-5/">Improving the performance of the Spring-Petclinic sample application</a> (blog.ippon.fr) by <a href="https://twitter.com/juliendubois">Julien Dubois</a></li>
+      <li><a href="http://spring.io/blog/2013/03/21/spring-petclinic-is-on-github/">Spring PetClinic is on Github</a> (spring.io) by <a href="https://twitter.com/michaelisvy">Michael Isvy</a></li>
+      <li><a href="http://shunned-it.blogspot.fr/2013/07/dandelion-datatables-integration-with.html">Dandelion-Datatables integration with Grails</a> (shunned-it.blogspot.fr) by <a href="https://twitter.com/gdhordain">Gautier Dhordain</a></li>
+      <li><a href="http://www.javacodebook.com/2013/08/02/technology-stack-for-a-web-application-2013-part-ii/">Technology stack for a web application (2013) – Part II</a> (www.javacodebook.com) by <a href="http://www.javacodebook.com/">Tomcy John</a></li>
+    </ul>
+    
+    <h4>Repositories</h4>
+    <ul>
+      <li><a href="https://github.com/ohiocowboy/datatable-thymeleaf-spring-boot-starter">datatable-thymeleaf-spring-boot-starter</a> (github.com) by <a href="https://github.com/ohiocowboy">Nicholas Drone</a></li>  
+    </ul>
+    
+    <h4>Presentations</h4>
+    <ul>
+       <li><a href="https://speakerdeck.com/michaelisvy/spring-meet-up-spring-kuang-jia-hui">Spring inside the Spring-Petclinic application</a> by <a href="https://twitter.com/michaelisvy">Michael Isvy</a></li>
+    </ul>
+  </div>
+</div>

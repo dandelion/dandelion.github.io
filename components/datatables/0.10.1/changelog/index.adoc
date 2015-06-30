@@ -1,0 +1,32 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} 0.10.1
+
+=== Core
+
+* Replaced the ugly NPE by a log when the DandelionFilter is missing
+* Fixed issue with the configured MessageResolver
+
+=== JSP implementation
+
+* The body of the ColumnTag is now evaluated when working with AJAX sources
+
+=== Thymeleaf implementation
+
+* The processStandardExpression method of AttributeUtils is now less restrictive
+* The content of div dt:confType="extrahtml" is now evaluated
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion-datatables/issues/258[#258]: StandardConfigurationLoader non string values bug
+* https://github.com/dandelion/dandelion-datatables/issues/257[#257]: ClassNotFound in MessageResolverProcessor
+* https://github.com/dandelion/dandelion-datatables/issues/256[#256]: The body of the ColumnTag is not evaluated when working with AJAX sources
+* https://github.com/dandelion/dandelion-datatables/issues/253[#253]: The [group].i18n.message.resolver property is not used
+* https://github.com/dandelion/dandelion-datatables/issues/252[#252]: Improve logging when encountering dependency issues
+* https://github.com/dandelion/dandelion-datatables/issues/251[#251]: The content of div dt:confType="extrahtml" is not evaluated
+* https://github.com/dandelion/dandelion-datatables/issues/250[#250]: The processStandardExpression method of AttributeUtils is too restrictive
+* https://github.com/dandelion/dandelion-datatables/issues/248[#248]: Avoid NPE and add logging when the filter is not declared

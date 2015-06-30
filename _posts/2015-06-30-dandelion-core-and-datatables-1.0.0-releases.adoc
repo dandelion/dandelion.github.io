@@ -1,0 +1,175 @@
+---
+layout: post
+title: Dandelion-Core and Dandelion-Datatables 1.0.0 releases
+date: 2015-06-30
+author: 'Thibault Duchateau'
+categories:
+- Release
+---
+
+[.margin-top-30]
+It's been a while since the last release but it was worth the wait: Dandelion-Core and Dandelion-Datatables have finally been released in v1.0.0!
+
+Obviously, theses versions contain major changes as well as great improvements and bug fixes. Let's have an overview of both changelogs.
+
+== Dandelion-Core
+
+=== Better coverage of application servers
+
+One of the key internal feature of Dandelion-Core is to scan for asset bundles within classpath. Unfortunately, it's not an easy task to cover all kinds of application servers since most of them work differently.
+Since Dandelion-Core v1.0.0, more applications servers are supported, such as JBoss AS 6+, Wildfly and Websphere AS.
+
+Note however that requirements have evolved: the Servlet API 3.x is now required to make all Dandelion components work. Therefore you must ensure to deploy your applications in a Servlet 3.x compatible container such as Jetty 8.x, Tomcat 7.x, JBoss AS 6, Weblogic Server 12c, ...
+
+=== Profiles
+
+New Dandelion profiles provide a way to segregate parts of your configuration and make it only available in certain environments.
+
+All configuration options are created with two default values, one for the built-in `dev` profile, another for the `prod` one. For example, in `dev` profile, you can access the live debugger whereas you can't in `prod` profile.
+
+Custom profile can of course be created to suit your particular needs. Refer to the documentation for more details.
+
+=== Manual & automatic versioning
+
+Prior to the v1.0.0, only manual versioning was supported. It was done by using the `version` attribute in every asset of a bundle.
+
+.dandelion/bundle.json
+[source, json]
+----
+{
+  "assets" : [
+    {
+      "version" : "1.2.3", <1>
+      "locations" : {
+        "webapp" : "/assets/css/application.css"
+      }
+    }
+  ]
+}
+----
+<1> The version is manual here, set to `1.2.3`
+
+In such a situation, Dandelion-Core generates this kind of HTML code:
+
+[source, html]
+----
+<link rel="stylesheet" href="/context/dandelion-assets/[MD5-STORAGE-HASH]/css/application-1.2.3.css"></link>
+----
+
+Starting from the v1.0.0, if you leave the `version` attribute blank, Dandelion-Core will defaultly use an automatic versioning based on the contents of the asset. The HTML will become:
+
+[source, html]
+----
+<link rel="stylesheet" href="/context/dandelion-assets/[MD5-STORAGE-HASH]/css/application-[MD5-VERSION-HASH].css"></link>
+----
+
+This versioning, also called _fingerprinting_, is ideal during development since a new hash is automatically calculated as soon as the file changes, thus invalidating browser cache.
+
+Others strategies also exist. Refer to the documentation to find out more.
+
+=== New live debugger
+
+The debugger has been fully refactored to be much clearer and more complete. I hope the way how Dandelion processes requests and responses will become much clearer.
+
+Moreover, a new alert reporting tool has been added, allowing you know as soon as possible when wrong/unexisting bundles are used in pages.
+
+=== Thymeleaf
+
+For Thymeleaf users, one of the great addition is the Thymeleaf processing of JavaScript assets. Starting from the v1.0.0, you can now use any Thymeleaf expressions in your external JavaScript assets, as if you were using http://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html#script-inlining-javascript-and-dart[script inlining] in templates.
+
+For example, consider the following bundle, which contains a single asset configured with the `webapp` location:
+
+.dandelion/app.json
+[source, json]
+----
+{
+  "assets": [
+    {
+      "locations": {
+        "webapp" : "/assets/js/app.js"
+      }
+    }
+  ]
+}
+----
+
+You can now easily get the current context directly within the asset:
+
+./assets/js/app.js
+[source, javascript]
+----
+var contextPath = /*[[@{/}]]*/ "/my-context";
+----
+
+Even greater, all objects passed in the `HttpServletRequest` are available to all assets loaded from the same page.
+
+For example, consider the following Spring MVC controller.
+
+[source, java]
+----
+@ModelAttribute("project") <1>
+public Project populateModel(){
+   return new Project("dandelion");
+}
+----
+<1> The `@ModelAttribute` annotation is typically used to expose beans to the web view. Here we expose a `Project` bean as a model attribute
+
+You can now make full use of the exposed objects, directly in assets, using Thymeleaf expressions:
+
+./assets/js/app.js
+[source, javascript]
+----
+function loadProjects() {
+   $.ajax({
+      url : /*[[@{/api/projects/{p}(p=${project.name})}]]*/ "/my-context/api/projects/dandelion",
+      type : "GET",
+      dataType : "json",
+      ...
+   });
+}
+----
+
+Of course, as soon as you use an expression inside one of your JavaScript asset, Dandelion will always invalidate cache since the asset has actually become dynamic!
+
+For a complete list of changes in Dandelion-Core, feel free to see the full changelog link:{{ '/components/core/1.0.0/changelog/' | append: site.baseurl }}[here].
+
+== Dandelion-Datatables
+
+=== Support for DataTables 1.10.x
+
+Dandelion-Datatables now generates v1.10.x-compatible code. All features have been updated in this direction.
+
+=== New filtering plugin
+
+The component now uses the awesome http://yadcf-showcase.appspot.com/[yadcf plugin] authored by https://github.com/vedmack[Daniel Reznick]. All features are not covered yet, but it should be quickly improved in next versions.
+
+=== Better performance
+
+The extension API has been fully refactored and is now based on http://docs.oracle.com/javase/tutorial/sound/SPI-intro.html[SPI], thus leading to much better performance.
+
+You can see the full changelog link:{{ '/components/datatables/1.0.0/changelog/' | append: site.baseurl }}[here].
+
+== Site, docs and samples
+
+As you may have noticed, the site has been refreshed and, most importantly, should require much less effort for maintenance.
+
+Regarding docs, all components now use the awesome http://asciidoctor.org/[Asciidoctor project] to generate their documentation (soon in multiple formats). Once again, it will require less effort for maintenance even if the main point was to be able to properly version each component's documentation.
+
+Finally, note that each component has now its own Git repository for sample applications:
+
+* https://github.com/dandelion/dandelion-core-samples for all samples in relation to Dandelion-Core
+* https://github.com/dandelion/dandelion-datatables-samples for all samples in relation to Dandelion-Datatables
+
+Lost of sample applications have been added and of course, all of them have been refreshed to reflect the latest changes. 
+
+And if you like whales as I do, note that (almost) all samples are now distributed via https://www.docker.com/[Docker] images. ;-)
+
+== Contributions
+
+One final word about contributions. I wanted to sincerely thank new contributors: https://github.com/RizziCR[Christoph Rizzotti] from Germany, https://github.com/dmorellet[Damien Morellet] and https://github.com/rnowif[Renaud Humbert-Labeaumaz] from France and https://github.com/ammachado[Adriano Marcondes Machado] from Brazil. The team page has been updated accordingly. And once again: thank you guys!
+
+[.margin-top-20]
+I hope you'll enjoy with these new releases.
+As usual, feel free to spread the word. And thoughts and feedback are of course very welcome.
+
+Happy coding!

@@ -1,0 +1,146 @@
+---
+layout: default
+component: core
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} v1.0.0
+
+=== Breaking change
+
+* Servlet API v3.x is now required
+
+=== Core
+
+* Improved the bundle declaration mechanism
+** The bundle name is now optional. By default, the name of the file (without extension) will be used as a bundle name
+** Both asset type and name are now optional. They are deducted from the first location found
+** Added lots of new checks for consistency of bundles
+** Added a new `bundle.location` config option, mainly used for testing purpose, allowing to tell bundle loaders to load JSON files from a specific folder
+** Generally speaking, formatting and consistency errors are now buffered before being flushed in a DandelionException.
+** Bundle definitions (whether XML or JSON) are now checked just after they are parsed (consistency, required configuration)
+
+* Added support for profiles
+** The StandardConfigurationLoader has been updated in order to be able to load different properties files depending on the active profile
+** A profile is activated using the `-Ddandelion.profile.active` system property
+** Some reserved words are used to load preconfigured sets of configurations
+*** "", "dev", "development" => each DandelionConfig entry is configured using the default dev value
+*** "prod", "production" => each DandelionConfig entry is configured using the default prod value
+** Any custom profile name can be used. All options that are not specified in the corresponding properties file will default to dev values
+** Plenty of configuration points have been renamed or added (toolAssetPrettyPrintingEnabled, toolBundleGraphEnabled, assetCachingEnabled, ...) for more consistency
+
+* Moved i18n-related classes from dandelion-datatables to dandelion-core in order to allow other components to use the same mechanism for locale and messages resolution
+
+* Refactored resource scanning
+** Added support for JBoss VFS2/VFS3 ensuring compatibility with JBoss AS 5+ / WildFly servers
+** Added support for Websphere Application Server
+
+* Added initial support for asset automatic versioning
+** An AssetVersioningStrategy can be configured within the configuration
+** 2 built-in implementations are provided: ContentAssetVersioningStrategy (for fingerprinting) and FixedAssetVersioningStrategy
+* The FixedAssetVersioningStrategy provides some built-in FixedVersionTypes: string and date
+* New configuration options have been added:
+** `asset.versioning.mode` ASSET_VERSIONING to enable automatic asset versioning
+** `asset.versioning.strategy`:to select a particular strategy
+** `asset.fixed.version.type`: to select the FixedVersionType if the FixedAssetVersioningStrategy is selected
+** `asset.fixed.version.value`: to pass a value to the NUMBER and DATE version types
+** `asset.fixed.version.datepattern` to configure the version if the version type is set to DATE
+* Whatever strategy is selected, all vendor assets are left untouched. All other assets are impacted by the versioning.
+
+* (Beta) Added initial support for a new XML representation of asset bundles
+** Added new strategy allowing to load XML file using a validating SAX parser
+** All loaders have been updated to be able to apply 2 loading strategy sequentially : first by scanning for bundles in JSON, then XML
+
+* Added support for custom URL pattern thanks to a new `asset.url.pattern` configuration option
+
+* Added new request handler mechanism, bringing a better separation of concern in the DandelionFilter
+** New handlers are now in charge of a specific task: injecting the requested assets (main feature), displaying the debugger, reloading the bundles, clear the cache store, clear the asset storage, etc...
+** All handlers are assembled, using their rank, into two chains: a pre-handler chain (in charge of pre-processing requests) and a post-handler chain (in charge of post-processing responses)
+** Added support for GZIP compression via a new request handler. Enabled thanks to a new `tool.gzip` configuration option. By default, the GZIP compression is done on several text-based mime types: text/html, text/css, application/x-javascript, application/javascript, text/javascript, text/plain, text/xml, application/xhtml+xml, image/svg+xml
+** Each handler can decide to stop the chain (usage example: when the value of the If-None-Match header equals the value of the ETag header: no need to go further)
+** Custom handlers can be added thanks to the new SPI: `com.github.dandelion.core.web.handler.RequestHandler`
+
+* New `encoding` option, which is used to encode any content processed by the DandelionFilter
+* Removed the `asset.processing.encoding` option in favour of the avobe `encoding`  
+
+* New debugger
+** The debugger has been fully refactored and now contains multiple pages (asset, options)
+** Old graph viewer (and all related stuff) have been removed
+** The bundle graph viewer is now accessible with the "ddl-debug" URL parameter (previously "showGraph")
+** The bundle reloading is now performed with the "ddl-reload" URL parameter (previously "bundleReload")
+** Added new debug page allowing to visualize the asset storage, the caching system, ...
+
+* Improved caching policy
+** Cache headers are now set by a dedicated request handler which is part of the filter chain
+** Asset caching and gzipping disabled in dev profile
+
+* Vendor assets was processed, thus leading to issues
+* Removed dandelion-yuicompressor extra. It was providing redundant processors compared to CssMin and JsMin ones
+* Filtering of assets made in the AssetQuery has been improved (performance)
+* Added a new `asset.storage` configuration option allowing to select the implementation for the asset storage
+* Renamed `asset.caching` to `cache`
+* Removed `cache.asset.max.size`
+* Renamed `cache.request.max.size` to `cache_max_size`
+* Removed `cache.manager.name` config option, too specialized for Ehcache
+
+* Added support for IE conditional comments via a new `condition` attribute in bundle definitions
+
+* New API intended to ease asset generation
+** Make a mecanism of Asset generator based on a AssetContent and a AssetContentGenerator.
+** Built-in generator
+*** Javascript content generator
+*** JQuery content generator (with placeholder)
+** The generated Javascript code is now pretty printed by default when in dev profile, using JS Beautifier
+
+* New reporting tool, composed of:
+** a new debug page that displays all alerts for the current request and suggestions if applicable 
+** a new post-filtering handler which performs the check for each request and can report in multiple ways
+** Added a new `tool.alert.reporting` config option in order to enable/disable alert reporting
+** Reporting type can be configured thanks to a new `tool.alert.reporting.mode` config option (console, notification, none or all)
+
+* Standalone components
+** Added a new `components.standalone` config option used to mark components as standalone. In this case, the corresponding loader will only scan for regular bundles (not vendor ones)
+
+=== Thymeleaf
+
+* Fixed issue with HTML5-friendly attributes
+* Add support for Thymeleaf expression processing in Javascript assets
+** JavaScript processing is made using customized Thymeleaf template engine
+** Added a new template mode "DANDELION-JS" (and all related classes: template resolver, template parser, template writer) allowing to process Javascript assets with Thymeleaf expressions
+** Only "user assets" are concerned, not vendor ones
+** For all "user assets", the final location now contains a request key (also based on a MD5 hash) as follows: "/servletUrlPattern/requestKey/cacheKey/assetType/assetName-assetVersion.assetType" (should be cleaned for CSS)
+** Only for concerned "user-assets" (JS), server & browser caching are disabled thanks to HTTP headers
+** All attributes from the original request (the one which serves the view) are wrapped in a new RequestData object and stored in a basic cache, whose data expire after 30s from their instanciation
+** Added a new `asset.js.processing` config option to enable/disable Thymeleaf processing of external js assets (enabled by default)
+** Added new handlers in charge of feeding/clearing session with/from flash data
+** Asset final locations can now contain one more MD5 hash corresponding to the request key, used to lookup in the attribute stored in session
+** The cache is only initialized if Thymeleaf is present in the classpath, in which case JavaScript assets may be processed
+** The cache is initialized with a max capacity of 100 entries
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion/issues/59[#59]: Fix issue with JavaScript processing when mime type also contains a charset 
+* https://github.com/dandelion/dandelion/issues/58[#58]: Issue with webapp locations with port forwarding
+* https://github.com/dandelion/dandelion/issues/57[#57]: Add support for Thymeleaf expression processing in Javascript assets
+* https://github.com/dandelion/dandelion/issues/56[#56]: Avoid ugly exceptions when loading empty assets with content-based versioning strategy
+* https://github.com/dandelion/dandelion/issues/54[#54]: Fix attribute name in BundleSaxHandler
+* https://github.com/dandelion/dandelion/issues/51[#51]: Bundle loader deactivation
+* https://github.com/dandelion/dandelion/issues/48[#48]: 0.11.0 - `ddl-debug` links uses absolute root URL
+* https://github.com/dandelion/dandelion/issues/47[#47]: 0.11.0 - CacheManager#getContent(cacheKey) in DandelionServlet can return null
+* https://github.com/dandelion/dandelion/issues/46[#46]: Add an error reporting tool
+* https://github.com/dandelion/dandelion/issues/41[#41]: Improve the debugger
+* https://github.com/dandelion/dandelion/issues/40[#40]: Add support for automatic versioning
+* https://github.com/dandelion/dandelion/issues/39[#39]: The Dandelion dialect breaks built-in support for HTML5-friendly attributes
+* https://github.com/dandelion/dandelion/issues/38[#38]: Remove the name attribute when writing bundles
+* https://github.com/dandelion/dandelion/issues/37[#37]: Remove the type attribute when writing bundles 
+* https://github.com/dandelion/dandelion/issues/36[#36]: Add new Dandelion profiles
+* https://github.com/dandelion/dandelion/issues/33[#33]: Add an extension point allowing to configure the conditions under which the filter can apply
+* https://github.com/dandelion/dandelion/issues/30[#30]: Custom DANDELION_ASSETS_URL_PATTERN
+* https://github.com/dandelion/dandelion/issues/25[#25]: New XML representation for asset bundles 
+* https://github.com/dandelion/dandelion/issues/23[#23]: Add support for vfs/vfszip protocols
+* https://github.com/dandelion/dandelion/issues/21[#21]: Improve the caching policy
+* https://github.com/dandelion/dandelion/issues/20[#20]: Add support for conditionnal comments
+* https://github.com/dandelion/dandelion/issues/19[#19]: Relative URLs in CSS when using Webjar/JarLocators with the Servlet 2.x API
+* https://github.com/dandelion/dandelion/issues/11[#11]: Error reporting at startup is too aggressive
+* https://github.com/dandelion/dandelion/issues/10[#10]: Add support for GZIP compression
+

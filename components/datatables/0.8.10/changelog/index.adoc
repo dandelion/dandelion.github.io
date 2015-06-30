@@ -1,0 +1,13 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} 0.8.10
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion-datatables/issues/59[#59]: servermethod attribute is mapped to an object instead of a string
+* https://github.com/dandelion/dandelion-datatables/issues/58[#58]: stripeclasses table attribute is missing
+      

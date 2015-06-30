@@ -1,0 +1,54 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400italic" type="text/css">
+  <link rel="stylesheet" href="{{ "/assets/css/bootstrap.min.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ "/assets/css/fontcustom.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/css/asciidoctor.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/css/coderay.css" | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "/assets/images/dandelion_square.png" | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ "/assets/images/dandelion_square.png" | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ "/assets/images/dandelion_square.png" | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon-precomposed" href="{{ "/assets/images/dandelion_square.png" | prepend: site.baseurl }}">
+  <link rel="shortcut icon" href="{{ "/assets/images/dandelion_square.png" | prepend: site.baseurl }}">  
+  <script>
+   var _gaq = _gaq || [];
+   _gaq.push([ '_setAccount', '{{ site.gaid }}' ]);
+   _gaq.push([ '_trackPageview' ]);
+   (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+   })();
+   </script>
+   <style>
+      .conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+      .conum[data-value] *{color:#fff!important}
+      .conum[data-value]+b{display:none}
+      .conum[data-value]:after{content:attr(data-value)}
+      pre .conum[data-value]{position:relative;top:-.125em}
+      b.conum *{color:inherit!important}
+      .conum:not([data-value]):empty{display:none}
+      .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+      .admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:15px;font-style:italic}
+   </style>
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:site" content="@dandelion_proj">
+   <meta name="twitter:creator" content="@dandelion_proj">
+   <meta name="twitter:url" content="http://dandelion.github.io">
+   <meta name="twitter:title" content="Dandelion Project">
+   <meta name="twitter:description" content="Web framework made in Java aimed at making web development simpler">
+   <meta name="twitter:image" content="http://dandelion.github.com/assets/images/dandelion_square.png">
+</head> 

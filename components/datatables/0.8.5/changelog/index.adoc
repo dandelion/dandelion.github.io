@@ -1,0 +1,12 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} 0.8.5
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion-datatables/issues/19[#19]: Shift in the first row if a columnTag has a body
+* https://github.com/dandelion/dandelion-datatables/issues/20[#20]: ExportLink position issue when Bootstrap2 theme enabled

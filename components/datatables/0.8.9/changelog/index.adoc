@@ -1,0 +1,45 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} 0.8.9
+
+=== Core
+
+* All classes/interfaces have been logically reorganized
+* All POMs cleaned, updated some dependencies
+* New configuration available, called url.base, allowing you to override the base URL used in all URLs (assets sources, export links)
+* The sSearch_(int) DataTables parameter is now parsed in DatatablesCriterias, allowing you to filter data on individual column when using server-side processing
+
+=== JSP implementation
+
+* New `<datatables:callback>` tag, allowing you to execute one or more callbacks
+* New `lengthMenu` table attribute, allowing you to adapt the length menu (when pagination is enabled)
+* New `cssStripes` table attribute, allowing you to set an array of CSS classes that will be apply on the table's rows
+* New `serverData` and `serverParam` table attributes, allowing to custmomize the AJAX call made to populate the tabke
+
+=== Thymeleaf implementation
+
+* All attribute and element processors now use the new abstract Datatables processors
+* New `dt:processing` table attribute
+* New callback-related tbody attributes : `dt:cbk:cookie`, `dt:cbk:createdrow`, `dt:cbk:draw`, `dt:cbk:footer`, `dt:cbk:format`, `dt:cbk:header`, `dt:cbk:info`, `dt:cbk:init`, `dt:cbk:predraw` and `dt:cbk:row`
+* New `dt:lengthmenu` table attribute, allowing you to adapt the length menu (when pagination is enabled)
+* New `dt:sortinit` and `dt:sortdir` th attributes, allowing you to initiliaze the sort
+* New `dt:stripclasses` table attribute, allowing you to define a sequence of CSS classes that will be applied on each row
+* New `dt:serverdata` and `dt:serverparams` table attributes, allowing you to custom the AJAX call
+   
+=== Closed issues
+
+* https://github.com/dandelion/dandelion-datatables/issues/81[#81]: Support for customed AJAX calls
+* https://github.com/dandelion/dandelion-datatables/issues/78[#78]: Add a configuration allowing to override the base URL used in all URLs (assets, export)
+* https://github.com/dandelion/dandelion-datatables/issues/76[#76]: dt:processing attribute is missing in Thymeleaf implementation
+* https://github.com/dandelion/dandelion-datatables/issues/74[#74]: Also parse sSearch_(int) before sending parameter to the server
+* https://github.com/dandelion/dandelion-datatables/issues/73[#73]: Add extension points based on DataTables callbacks
+* https://github.com/dandelion/dandelion-datatables/issues/69[#69]: Handling column filters with server-side processing
+* https://github.com/dandelion/dandelion-datatables/issues/64[#64]: Add custom javascript after “server-side” call
+* https://github.com/dandelion/dandelion-datatables/issues/52[#52]: Add support for sorting direction control
+* https://github.com/dandelion/dandelion-datatables/issues/51[#51]: Add support for sorting initialisation
+* https://github.com/dandelion/dandelion-datatables/issues/50[#50]: Add the possibility to define the length menu
+

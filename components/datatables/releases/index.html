@@ -1,0 +1,46 @@
+---
+layout: component
+component: datatables
+---
+
+<div class="row margin-top-20">
+  <div class="col-md-12">
+    <h3>All Dandelion-Datatables releases</h3>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>Date</th>
+          <th>Documentation</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for version in site.data.components[page.component].versions %}
+        <tr>
+          <td>{{ version.number }}</td>
+          <td>{{ version.date }}</td>
+          <td>
+            {% if version.displayDocs == null || version.displayDocs == true %}
+              {% if version.docs != null and version.docs contains 'html' %}
+              <a href="{{ '../' | append: version.number | append: '/docs/html/' | prepend: site.baseurl }}">Docs (HTML)</a>
+              {% endif %}
+              {% if version.docs != null and version.docs contains 'pdf' %}
+              | <a href="{{ '../' | append: version.number | append: '/docs/pdf/' | prepend: site.baseurl }}">Docs (PDF)</a>
+              {% endif %}
+              | <a href="{{ '../' | append: version.number | append: '/api/' | prepend: site.baseurl }}">API</a>
+            {% endif %}
+            <br />
+            <a href="{{ '../' | append: version.number | append: '/changelog/' | prepend: site.baseurl }}">Changelog</a>
+            {% if version.extraDocs != null %}
+              {% for extraDoc in version.extraDocs %}
+              <br />
+              <a href="{{ '../' | append: version.number | append: '/docs/' | append: extraDoc.url | prepend: site.baseurl }}">{{ extraDoc.name }}</a>
+              {% endfor %}
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+---
+layout: default
+component: datatables
+---
+
+=== Core
+
+* Removed final marker from the % javadoc dt datatables-core DatatablesCriterias % class</li>
+* User's bundles are now loaded using UTF-8 encoding</li>
+* Added new theme options for the Bootstrap 2 theme, based on <a href="http://tableclothjs.com/">tablecloth.js</a>. See the <a href="/datatables/tutorials/styling/themes/bootstrap2.html">updated tutorial</a>.</li>
+
+=== Extras
+
+* Added new Struts1 module, providing new compatibility classes for i18n with Struts1
+* Added new Struts2 module, providing new compatibility classes for i18n with Struts2
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion-datatables/issues/204[#204]: Add i18n support for Struts2
+* https://github.com/dandelion/dandelion-datatables/issues/203[#203]: Add i18n support for Struts1
+* https://github.com/dandelion/dandelion-datatables/issues/196[#196]: Unable to enable server-side processing using global configuration
+* https://github.com/dandelion/dandelion-datatables/issues/174[#174]: Add new themes

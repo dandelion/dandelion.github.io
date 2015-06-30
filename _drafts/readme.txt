@@ -1,1 +1,0 @@
-Drafts for blog posts

@@ -1,0 +1,23 @@
+---
+layout: post
+title: Dandelion-Core and Dandelion-Datatables 0.10.1 releases
+date: 2014-08-25
+author: 'Thibault Duchateau'
+categories:
+- Release
+---
+
+I'm happy to announce the release of Dandelion v0.10.1.
+
+Even if it's mainly a bugfixing version, this release stabilizes the basis for the next important release: the v0.11.0 https://github.com/dandelion/dandelion/issues?q=is%3Aopen+is%3Aissue+milestone%3A0.11.0[Dandelion] / https://github.com/dandelion/dandelion-datatables/issues?q=is%3Aopen+is%3Aissue+milestone%3A0.11.0[Dandelion-Datatables])
+
+The full change logs are available here:
+
+* **Dandelion-Core:** link:/dandelion/releases/0.10.1/[Change log]
+* **Dandelion-Datatables**: link:/datatables/releases/0.10.1/[Change log]
+
+As usual, your thoughts and feedback are very welcome:
+
+* https://twitter.com/dandelion_proj[Twitter]
+* http://dandelion-forum.48353.n6.nabble.com[Forum]
+* Or using the comments below!

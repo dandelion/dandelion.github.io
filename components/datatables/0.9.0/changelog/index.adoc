@@ -1,0 +1,114 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} 0.9.0
+
+Migration guide : <a href="/datatables/docs/migration/from-0.8.x-to-0.9.x.html">migration guide</a>
+
+=== Core
+
+* Added support for Java-based i18n (resource bundle) and provided ready-to-use integration with JSTL and Spring. Also added and extension point allowing to plug any other locale and message resolvers
+* Added support for global configuration and configuration groups, allowing:
+** to join together in one properties file a configuration which will be applied on all tables in the application
+** to put together table configurations inside multiple groups that can be then activated locally using tag attributes
+** you also plug your own configuration loader
+* Added an extension point for custom extensions (feature, plugin, theme) scanned at runtime
+* Improved sorting features: you can now apply sorting functions on columns: currency, natural sort, filesize, "anti-the",...
+* Improved filtering features
+** Filtering elements can be configured in different locations: after the thead, before the thead, in the tfoot or in an external form
+** Dandelion-Datatables now uses its own column filter plugin
+* Added support for AJAX exports using a new fluent API for building table from a data source
+* Improved DOM-based exports
+* Improved CDN support: it’s now fully configurable through properties (enablement, css link, js link)
+* Added support for horizontal scrolling
+* Reduced needed third-party libraries (commons-lang removed)
+* Added plenty of comments and logs, removed plenty of dead code
+
+=== JSP implementation
+
+* Added support for dynamic attributes in `<datatables:table>` and `<datatables:column>` tags, allowing for example to use any of the native HTML table attributes like border
+* Improved JSP tags composition, allowing e.g. to nest Dandelion-Datatables and JSTL tags.
+* Added support for runtime expressions in all attributes of the JSP taglib
+* Removed the `labels` table attribute in favour of full Java-based i18n
+* New `sortType` column attribute, allowing you to apply different sorting function in columns 
+* New `url` export attribute, allowing you to export a table using a custom URL.
+* New `method` export attribute, allowing you make the call to the export URL using the HTTP method you set
+* New `filterPlaceholder` table attribute, allowing you change the default filtering placeholder (tfoot) for all 
+* New `ext` table attribute, allowing you activate multiple custom extensions
+
+=== Thymeleaf implementation
+
+* `<script>` and `<link>` generation is now optimized using Thymeleaf
+* Moved all previous export attributes from the `<tbody>` tag to the `<thead>` tag
+* Removed the `dt:labels` table attribute in favour of full Java-based i18n
+* New `dt:sortType %} th attribute, allowing you to apply different sorting function in columns
+* New `dt:csv:url`, `dt:xml:url`, `dt:pdf:url`, `dt:xls:url` and `dt:xlsx:url` thead attributes, allowing you to export a table using a custom URL
+* New `dt:csv:method`, `dt:xml:method`, `dt:pdf:method`, `dt:xls:method` and `dt:xlsx:method` thead attributes, allowing you make the call to the export URL using the HTTP method you set
+* New `dt:ext` table attribute, allowing you activate multiple custom extensions
+</ul>
+
+=== Spring3 extra
+
+* Spring dependencies are now marked as provided
+* Added ready-to-use `SpringLocaleResolver` and `SpringMessageResolver` to connect Dandelion-Datatables to the Spring i18n mechanism
+* Added `DatatablesCriteriasMethodArgumentResolver` allowing you to resolve a method argument of type `DatatablesCriterias` annotated with `DatatablesParams` (compatible with Spring 3.1+)
+
+=== Export iText extra
+
+* The PdfExport now implements the new `DatatablesExport` interface
+* A default title is now always added
+
+=== Export POI extra
+
+* The XlsExport now implements the new `DatatablesExport` interface
+
+=== Export POI-OOXML extra
+
+* The XlsxExport now implements the new `DatatablesExport` interface
+
+=== Servlet2 extra
+
+* There's no distinction anymore between binary and text export. All exports are considered as binary.
+* The name of the export file is now based on the corresponding ExportConf instance
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion-datatables/issues/190[#190]: Thymeleaf AJAX handling of URLs ending with json
+* https://github.com/dandelion/dandelion-datatables/issues/188[#188]: IOException when using the itext module and an empty table 
+* https://github.com/dandelion/dandelion-datatables/issues/183[#183]: Improve dependency management
+* https://github.com/dandelion/dandelion-datatables/issues/181[#181]: Improve Javadoc for the Spring DatatablesCriteriasResolver
+* https://github.com/dandelion/dandelion-datatables/issues/180[#180]: Improve DatatablesCriterias#getFromRequest method
+* https://github.com/dandelion/dandelion-datatables/issues/178[#178]: Erroneous regex match in Utils.java
+* https://github.com/dandelion/dandelion-datatables/issues/177[#177]: Attributes duplicated in dandelion-datatables.tld
+* https://github.com/dandelion/dandelion-datatables/issues/176[#176]: datatables-spring3 criteria resolver does not work with spring 3.1+ if using RequestMappingHandlerMethodAdapter
+* https://github.com/dandelion/dandelion-datatables/issues/175[#175]: Bug when displaying native tables and tables with Dandelion-Datatables on the same page
+* https://github.com/dandelion/dandelion-datatables/issues/172[#172]: Add Tag support for EL expressions at attribute's values
+* https://github.com/dandelion/dandelion-datatables/issues/170[#170]: Customize the values used in the filtering combo box
+* https://github.com/dandelion/dandelion-datatables/issues/169[#169]: CDN should be entirely configurable through configuration
+* https://github.com/dandelion/dandelion-datatables/issues/166[#166]: StringIndexOutOfBoundsException in StandardConfigurationLoader
+* https://github.com/dandelion/dandelion-datatables/issues/165[#165]: ConfigurationStore.getPrototype() fails with "global" group
+* https://github.com/dandelion/dandelion-datatables/issues/164[#164]: Replace getParent() by findAncestorWithClass() method
+* https://github.com/dandelion/dandelion-datatables/issues/163[#163]: StandardConfigurationLoader doesn't resolve 'global' group
+* https://github.com/dandelion/dandelion-datatables/issues/159[#159]: dandelion_dataTables_export layer is inside dataTables_scrollBody layer
+* https://github.com/dandelion/dandelion-datatables/issues/158[#158]: Reduce dependencies using home made utility methods
+* https://github.com/dandelion/dandelion-datatables/issues/157[#157]: Improve export when using DOM sources
+* https://github.com/dandelion/dandelion-datatables/issues/156[#156]: Optimize link and script tags positions
+* https://github.com/dandelion/dandelion-datatables/issues/154[#154]: displayLength attribute does not accept expressions
+* https://github.com/dandelion/dandelion-datatables/issues/151[#151]: Fix issue with repeated content when using the ColumnHead tag 
+* https://github.com/dandelion/dandelion-datatables/issues/144[#144]: Remove the Logback dependency from datatables-jsp and datatables-thymeleaf
+* https://github.com/dandelion/dandelion-datatables/issues/143[#143]: Bug serverside processing [Thymeleaf]
+* https://github.com/dandelion/dandelion-datatables/issues/142[#142]: Add support for more placeholders when using the filtering feature
+* https://github.com/dandelion/dandelion-datatables/issues/141[#141]: Make the table's footer optional when using custom filtering form
+* https://github.com/dandelion/dandelion-datatables/issues/139[#139]: Add support for global configuration for all tables
+* https://github.com/dandelion/dandelion-datatables/issues/137[#137]: dt:filterType="'select'" not working with ajaxsource
+* https://github.com/dandelion/dandelion-datatables/issues/134[#134]: Add an extension point allowing users to write and activate their own extensions
+* https://github.com/dandelion/dandelion-datatables/issues/120[#120]: Add support for horizontal scrolling
+* https://github.com/dandelion/dandelion-datatables/issues/106[#106]: Add the export feature using AJAX sources
+* https://github.com/dandelion/dandelion-datatables/issues/83[#83]: Add new FilterTypes in column filtering
+* https://github.com/dandelion/dandelion-datatables/issues/79[#79]: Improve sorting
+* https://github.com/dandelion/dandelion-datatables/issues/47[#47]: ExportLink not displayed when paging, filtering or info are disabled
+* https://github.com/dandelion/dandelion-datatables/issues/30[#30]: Improve i18n support
+* https://github.com/dandelion/dandelion-datatables/issues/27[#27]: Add support for more native HTML attributes

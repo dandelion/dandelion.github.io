@@ -6,7 +6,6 @@ author: 'Thibault Duchateau'
 ---
 **Hi all!**
 
-
 Along with the [DataTables4j](https://github.com/datatables4j) development, Romain and I have been working on a new project for several weeks. Its name? Dandelion! 
 
 A brand new doc site is coming, with lots of explanations, but to be succinct, here are the main guidelines of Dandelion :

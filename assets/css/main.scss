@@ -1,0 +1,189 @@
+---
+---
+
+/* Main */
+
+body {
+   /*background-color: #fcfcfc;*/
+   background-color: #f1f1f1;
+   font-family: 'Trebuchet MS', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   font-size: 16px;
+}
+
+a {
+	color: #5aae2a;
+}
+
+a:hover,a:focus {
+	color: #5aae2a;
+	text-decoration: underline;
+}
+
+pre {
+  font-size: 15px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #509b25;
+    background-image: linear-gradient(to right, #ccc, #509b25, #ccc);
+}
+
+.margin-top-05 { margin-top: 0.5em; }
+.margin-top-10 { margin-top: 1.0em; }
+.margin-top-15 { margin-top: 1.5em; }
+.margin-top-20 { margin-top: 2.0em; }
+.margin-top-25 { margin-top: 2.5em; }
+.margin-top-30 { margin-top: 3.0em; }
+.margin-top-35 { margin-top: 3.5em; }
+.margin-top-40 { margin-top: 4.0em; }
+
+/* Navbar */
+
+.navbar {
+  border: none;
+  margin-bottom: 0;
+}
+
+.navbar-dandelion {
+  background-color: #509b25;
+}
+
+.navbar-dandelion a {
+  color: white;
+}
+
+.navbar-brand {
+  font-family: 'Lato', 'Trebuchet MS';
+  line-height: 70px;
+    height: 70px;
+    padding-top: 0;
+}
+
+.navbar-nav li.active {
+  background: #84b966;
+}
+
+.navbar-nav li a {
+    line-height: 70px;
+    height: 70px;
+    padding-top: 0;
+    font-size: 20px;
+}
+
+.navbar .nav>li>a:hover {
+	color: #ffffff;
+	background: #84b966;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+	transition: all .25s;
+	-moz-transition: all .25s;
+	-webkit-transition: all .25s;
+}
+
+/* Home */
+.dandelion-jumbotron {
+	background: #65c22f no-repeat 50% 30%;
+	margin: 0;
+	color: white;
+}
+
+#dandelion-logo {
+	background-image: url(/assets/images/logo-dandelion_02-blanc.png);
+}
+.dandelion-logo {
+	height: 410px;
+    background: #65c22f no-repeat 50% 30%;
+}
+
+.area-share {
+	background-color: #f5f5f5;
+	padding: 15px 0 5px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	margin-top: 30px;
+}
+.area-share h2 {
+	line-height: 20px;
+}
+
+/* AddThis configuration */
+p.addthis_toolbox {
+	width: 790px;
+	margin: 0 auto;
+}
+
+/* Components */
+
+.row-component {
+   height: 100px;
+}
+
+btn-default:hover {
+  background-color: white;
+}
+
+.btn-component {
+  padding: 38px 38px;
+  font-size: 28px;
+  border-radius: 10px;
+  width: 330px;
+}
+
+.btn-component:hover {
+   border: 1px solid #509b25;
+}
+
+.area-social {
+	background-color: #ffffff;
+	margin: 0;
+	color: black;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 30px;
+	padding-top: 20px;
+}
+.area-social ul {
+	margin: 0;
+}
+.area-social li {
+	border-bottom: 1px solid #e8e8e8;
+	margin-bottom: 10px;
+}
+
+/* Footer configuration */
+.area-footer {
+	background-color: #5f5f5f;
+	color: #d6d6d6;
+	margin: 0;
+	padding: 27px;
+}
+
+footer a {
+	color: #00bfff;
+}
+
+footer a:hover,footer a:focus {
+	color: #00bfff;
+	text-decoration: underline;
+}
+
+footer ul {
+	list-style-type: none;
+}
+/*
+End Footer configuration
+*/
+
+/* Blog */
+
+.blog-category {
+	margin-right: 10px;
+}
+
+.blog-author {
+margin-right: 10px;
+}
+
+.blog-date {
+margin-right: 10px;
+}

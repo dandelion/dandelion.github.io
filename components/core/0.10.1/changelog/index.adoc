@@ -1,0 +1,27 @@
+---
+layout: default
+component: core
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} v0.10.1
+
+=== Core
+
+* `<script>` tags are now injected in the `<head>` section after the `<link>` ones when the dom attribute is forced to `head`
+* All asset processors now use a ProcessingContext which hold all needed information such as the asset to be processed and the current request
+* Removed FestAssert in favor of AssertJ and adapted all tests accordingly
+* Added a new url rewriter, making URL rewriting in CSS functional
+* Improved the DandelionFilter
+** Now the scope of application of the filter is determined using the content type of the response instead of looking for some particular headers in the request, which is not reliable
+** The HttpServletResponse is now wrapped in a refactored ByteArrayResponseWrapper
+** Removed old OutputStreamWrapper
+* Removed a useless and misleading WARNING log
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion/issues/31[#31]: Wrong WARNING logged
+* https://github.com/dandelion/dandelion/issues/27[#27]: Fix the conditions under which the DandelionFilter should apply
+* https://github.com/dandelion/dandelion/issues/24[#24]: Font Support
+* https://github.com/dandelion/dandelion/issues/22[#22]: Improve the URL rewriting done in CSS files
+* https://github.com/dandelion/dandelion/issues/13[#13]: Inject scripts after CSS when the dom attribute is forced to head

@@ -1,0 +1,32 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} 0.8.14
+
+=== Core
+
+* AJAX sources: starting from this release, you have to configure yourself the URL used to populate your AJAX-enabled tables (the context path won't be prepended any longer)
+
+=== JSP implementation
+
+* New `dom` table attribute, allowing you to specify exactly where in the DOM you want DataTables to inject the various controls it adds to the page
+* New `selector` column attribute, which is a jQuery selector used to populate a placeholder with a filtering widgets (e.g. useful if you want externalized search form)
+
+=== Thymeleaf implementation
+
+* New `dt:dom` table attribute
+* New `dt:selector` th attribute
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion-datatables/issues/100[#100]: Fix base.url configuration point
+* https://github.com/dandelion/dandelion-datatables/issues/101[#101]: Add support for cssStyle and cssClass when using AJAX source
+* https://github.com/dandelion/dandelion-datatables/issues/102[#102]: "TypeError: oColumn is undefined" on DOM when data is a empty list
+* https://github.com/dandelion/dandelion-datatables/issues/103[#103]: Support dynamic value for the column's "visible" attribute
+* https://github.com/dandelion/dandelion-datatables/issues/105[#105]: Not all existing properties did appear as "valid"
+* https://github.com/dandelion/dandelion-datatables/issues/106[#106]: Add support for sDom parameter
+* https://github.com/dandelion/dandelion-datatables/issues/107[#107]: Add support for sSelector parameter of the ColumnFilter plugin
+* https://github.com/dandelion/dandelion-datatables/issues/109[#109]: Conflict between the Bootstrap2 theme and basic features enablement

@@ -1,0 +1,235 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} 0.10.0
+
+If you were using Dandelion-Datatables 0.9.x, please read the link:{{ "/components/datatables/0.10.0/docs/from-0.9.x-to-0.10.x.html" | prepend: site.baseurl }}[migration guide].
+
+=== Core
+
+* Finally connected Dandelion-Datatables to Dandelion-Core</a>!
+** All extensions have been refactored in order to be able to interact with the bundle graph
+** Lots of vendor bundles have been added and are available in the **datatables-core** JAR:
+*** jQuery
+*** DataTables
+*** Bootstrap v2
+*** Bootstrap v3
+** New syntax available is some attributes (JSP and Thymeleaf)
+*** For instance in the `renderFunction` column attribute, the following syntax can now be used: `renderFunction="bundleNameToIncludeInTheCurrentRequest#javascriptFunction"` thus allowing to avoid using the Dandelion JSP taglib or Thymeleaf dialect to include manually the bundle in the request
+*** Multiple bundles can now be added, separated by a comma. For example: `renderFunction="bundle1,bundle2#javascriptFunction"`
+*** In order to read more, refer to the "bundle special syntax"
+** New `main.standalone` configuration property allowing to use Dandelion-Datatables as a standalone library
+
+* Configuration improvements
+** Refactored the whole configuration system for greater clarity and better performance
+*** The main goal of this refactoring was to increase performance by removing reflection
+*** Added a new `ConfigToken` class allowing to store a configuration, how to read it from properties and how to process it. Note that even if all configurations have been refactored to comply with CamelCase syntax, the case remains insensitive when it's read
+*** Added `TableConfig` and `ColumnConfig` classes: placeholders for all possible configurations
+*** Refactored `TableConfiguration` and `ColumnConfiguration` objects to use the recently added `ConfigToken` instead of plenty of fields/accessors
+*** All configurations are now lazy processed, i.e. in the JSP taglib or in the Thymeleaf dialect but no longer when a TableConfiguration is instantiated. Two operations are now well decoupled: first the local configuration is applied (and overloads the one loaded from properties) and then the whole configuration is processed only once
+*** Now all processors extends the same processor: `AbstractConfigurationProcessor`. This allowed to remove code duplication and especially to handle in one place the case of processor that accept the recently added "bundle syntax"
+** The user properties file is now read from the `dandelion/datatables` folder. When read from a system property, it remains unchanged
+** Fixed auto configuration of the `JstlMessageResolver`: it was auto-configured because of the presence of the JSTL JAR in the classpath, even in Thymeleaf-based applications (only when using the Thymeleaf Tiles2 extra)
+** The `AjaxReloadFunctionProcessor` now accepts the "bunble special syntax"
+** Added support for hot reloading of whole the configuration when the development mode is enabled
+
+* Improved the extension API
+** Fixed issue with the `addCssClass` method when one or more CSS classes was added to a column (header or not)
+** Fixed issue when trying to modify CSS classes inside an extension using Thymeleaf
+** New utilities available in the `AbstractExtension` class
+
+* Reintegrated URL processing
+** The URL passed in some of the JSP taglib attributes is now processed again (context path applied) in order to be able to apply some internal request parameters
+** Removed RequestHelper and added some utilites in UrlUtils
+** The HttpServletResponse is now part of the `TableConfiguration` object, in order to be able to encode URLs if necessary
+
+* Sorting
+** Custom sort types can now be used in the `sortType` column attribute (JSP) / `dt:sortType` th attribute (Thymeleaf)
+
+* Filtering
+** Added support for filtering on click
+** Added support for delayed filtering, either based on time or on entered characters
+** Added support for multi-filtering based on a new `name` column attribute (JSP) / `dt:name` th attribute (Thymeleaf)
+** New "date_range" filter type, automatically created with bootstrap datepicker when enabled
+** Fixed issue with repeated headers: now the duplicated cells added for filtering but without any filtering element remains empty
+** Updated the filtering add-on to the latest version
+
+* Pagination
+** Fixed display issue in the listbox pagination style
+** New pagination styles based on Bootstrap 2: bootstrap_four_button and bootstrap_full_numbers
+
+* Export
+** Refactored export mechanism to be able to use a totally custom export. Some export formats use reserved words, such as "csv", "pdf", "xml", "xls" and "xlsx" and are used to activate default configurations (e.g. mimeType, built-in export classes)
+** Added support for landscape orientation when exporting in PDF (overloadable with JSP/Thymeleaf attributes)
+** Fixed issue with export URL: now both custom and default export URL are updated with the parameter telling Dandelion to disable the asset filter
+** Modified the custom export function name: the name now contains only the table id, without "oTable"
+** The autoSize option is now set to true by default (XLS and XLSX export only)
+** Improved export feature when using controller
+*** The `ExportConf` instance built with any controller is now optional. By default, the parameter set via the JSP taglib / Thymeleaf dialect will be used to initialize an `ExportConf` instance
+*** the `ExportConf` instance built by hand in a controller will override the default `ExportConf` built from the request
+** URL parameters are now decoded if necessary
+** Refactored the passed export parameters. Now all requests (default or custom export) contains the tableId being exported
+
+* AJAX
+** Added support for ranges in `DatatablesCriterias`: the `DatatablesCriterias` object can now parse range values and update all `ColumnDef` accordingly
+** Added support for data reloading
+
+* Themes
+** Fixed conflict when using the Bootstrap2 theme and a custom pagination type
+** Added a new theme options for Bootstrap Responsive
+** Added a new theme for Bootstrap v3
+
+* Plugins
+** All supported DataTables plugins have been updated to their latest version
+
+* Javascript generation
+** Cleaned the DataTables generated configuration: unneccessary parameters are non longer generated
+** Added the ability to plug in a custom Javascript generato
+** Refactored the Javascript generation to be able to compute the code before rendering it
+** Refactored the `WebResourceGenerator` by using the extension mechanism
+*** Added new internal extensions: `ExportFeature`, `AppearFeature`, `ExtraFileFeature` and `ExtraHtmlFeature`
+*** Improved Javascript generation (indentations, CR)
+*** A random ID is not needed any longer. Dandelion can properly handle multiple tables on the same page (no more Javascript duplication)
+*** Table id security: all special characters are removed when creating the Javascript name but the original one is preserved
+
+* Refactored exception handling
+** All exceptions now extend a new `DandelionDatatablesException` (RuntimeException)
+** A new `ExtraFileNotFoundException` is now thrown when an extra file is not found
+** Better exception handling when the export class is not present in the classpath
+** Better exception handling when a wrong configuration group is activated
+
+=== JSP implementation
+
+* Configuration renaming and TLD improvement
+** The TLD has been refactored with the new attributes and all descriptions have been improved to help the content assist plugins of IDEs
+** Some attributes have been renamed for a better consistency:
+*** `sort` => `sortable`
+*** `paginate` => `pageable`
+*** `filter` => `filterable`
+*** `ajax.processing` => `feature.processing`
+** Generally speaking, `<rtexprvalue>true</rtexprvalue>` has been added in the TLD where it was missing
+** Removed unused attributes and corresponding processors
+** Added new `escapeXml` attributes in almost all JSP tags. XML escaping is now enabled by default and can be disabled using `escapeXml="false"`
+** Improved column sorting initialization: a new column attribute has been added (`sortInitOrder`/`dt:sortInitOrder`) allowing to set the order in which column sorting must be initialized
+** Improved exception handling in JSP tags
+** Added support for dynamic attributes in the CaptionTag
+** Removed the `extraConf` JSP tag and all related resources
+** Replaced the `extraFile` JSP tag with the new `extraJs` tag
+** The `function` callback attribute now accepst the _bundle special syntax_
+
+* Changes in attributes
+** New `id` column attribute, allowing to assign an ID to each column header
+** New `filterMinLength` column attribute, allowing to trigger the filtering after a minimum number of characters has been reached in a filtering field.
+** New `filterDelay` column attribute, allowing to set a delay (in ms) before the AJAX call is performed to obtain data from server
+** New `filterSelector` column attribute, allowing 
+** New `filterClearSelector` column attribute, allowing 
+** New `name` column attribute, allowing to apply a name to a column. Used with server-side processing.
+** New `escapeXml` column attribute, allowing to disable the XML characters escaping
+** Renamed the `sortInit` column attribute to `sortInitDirection`
+** New `sortInitOrder` column attribute, allowing to set the order in which columns must be initialized
+** New `extraHtml` tag, allowing to create DataTables feature plug-ins that can be used to decorate the table
+** New `orientation` export attribute, allowing to change the default PDF orientation
+** New `fileExtension` export attribute, allowing to set the extension of the exported file
+** New `mimeType` export attribute, allowing to set the mime Type of the response when exporting data
+** New `escapeXml` export attribute, allowing to disable the XML characters escaping
+** New `reloadSelector` table attribute, allowing to bind a "click" event to element that will trigger the table reloading
+** New `reloadFunction` table attribute, allowing to customize the table reloading
+** New `escapeXml` table attribute, allowing to disable the XML characters escaping
+** Renamed the `rowIdSufix` table attribute to `rowIdSuffix`
+** Renamed the `filter` table attribute to `filterable`
+** Renamed the `sort` table attribute to `sortable`
+** Renamed the `paginate` table attribute to `pageable`
+** Removed the unused `footer` table attribute
+** Removed the `<datatables:extraConf>` tag
+** Removed the `cdn` table attribute from the taglib: it is now activated by default thanks to the bundle mechanism of Dandelion-Core
+** Removed the `exportLinks` table attribute from the taglib: export links are now positioned thanks to the `dom` table attribute
+** Removed the `uid` column attribute and changed the usage of the `columnHead` tag
+
+=== Thymeleaf implementation
+
+* Added support for Thymeleaf 2.1.x and removed deprecated usage of StandardExpressionProcessor
+* Refactored the Thymeleaf implementation
+** All abstract processors now contain utilities to facilitate the creation of processors
+** No longer necessary to wrap string values with single quotes, thus alleviating the dialect usage
+** Added new processors allowing to write a "configuring div" inside a template, just before the table tag. This div allows to configure: exports, callback, extraFile and configuration properties.
+** Comments updated/added in almost all processors
+** Renamed some processors for the sake of consistency
+** Removed all processors related to export and callback (now handled by the new "configuring div")
+** Huge code cleaning
+* All processors are now well isolated
+* Added support for stateSave using Thymeleaf
+* Renamed some attribute processors to be more consistent with the JSP taglib
+* Added a missing Thymeleaf processor for the fixedHeader plugin
+* Removed unused attributes and corresponding processors (plugins are now enabled thanks to the `ext` / `dt:ext` table attribute)
+* Improved column sorting initialization: aA new column attribute has been added (`sortInitOrder`/`dt:sortInitOrder`) allowing to set the order in which column sorting must be initialized.
+* Added Thymeleaf support for extraHTML snippets
+* Cleaned `ColumnInitializedElProcessor`: now, the property, renderFunction and default have their own processor
+* The DataTables defaultContent parameter is now always added
+* Added missing processor for the dt:filterMinLengh column attribute
+* Fixed the scope of application of the dialect: all processors are now applied only if they match a particular context. It prevents bugs when native `<table>` were being used in the same page
+* Changes in attributes
+** New `id` column attribute, allowing to assign an ID to the header cell
+** New `filterMinLength` column attribute, allowing to trigger the filtering after a minimum number of characters has been reached in a filtering field.
+** New `filterDelay` column attribute, allowing to set a delay (in ms) before the AJAX call is performed to obtain data from server
+** New `filterSelector` column attribute, allowing 
+** New `filterClearSelector` column attribute, allowing 
+** New `name` column attribute, allowing to apply a name to a column. Used with server-side processing.
+** Renamed the `sortInit` column attribute to `sortInitDirection`
+** New `sortInitOrder` column attribute, allowing to set the order in which columns must be initialized
+** New `orientation` export attribute, allowing to change the default PDF orientation
+** New `fileExtension` export attribute, allowing to set the extension of the exported file
+** New `mimeType` export attribute, allowing to set the mime Type of the response when exporting data
+** New `reloadSelector` table attribute, allowing to bind a "click" event to element that will trigger the table reloading
+** New `reloadFunction` table attribute, allowing to customize the table reloading
+** Renamed the `filter` table attribute to `filterable`
+** Renamed the `sort` table attribute to `sortable`
+** Renamed the `paginate` table attribute to `pageable`
+** Removed the unused `footer` table attribute
+** Removed the `<datatables:extraConf>` tag
+** Removed the `dt:cdn` table attribute from the dialect: it is now activated by default thanks to the bundle mechanism of Dandelion-Core
+** Removed the `dt:exportLinks` table attribute from the dialect: export links are now positioned using the `dt:dom` table attribute
+
+=== Export iText extra
+
+Better exception handling in the default PDF export class
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion-datatables/issues/236[#236]: Concurrency bug : Wrong WebResources linked to an HtmlTable
+* https://github.com/dandelion/dandelion-datatables/issues/234[#234]: Move the columnHead tag inside the column tag
+* https://github.com/dandelion/dandelion-datatables/issues/233[#233]: Use of columnHead tag renders empty header if table has less than 2 rows
+* https://github.com/dandelion/dandelion-datatables/issues/231[#231]: Add support for state saving in Thymeleaf
+* https://github.com/dandelion/dandelion-datatables/issues/228[#228]: Add support for extraFile in Thymeleaf Dialect
+* https://github.com/dandelion/dandelion-datatables/issues/227[#227]: Provide a new configuration option allowing to generate PDF in landscape mode
+* https://github.com/dandelion/dandelion-datatables/issues/226[#226]: Escape XML to prevent XSS attacks
+* https://github.com/dandelion/dandelion-datatables/issues/225[#225]: NPE with native table with th nodes
+* https://github.com/dandelion/dandelion-datatables/issues/224[#224]: BEFORESTARTDOCUMENTREADY does not work.
+* https://github.com/dandelion/dandelion-datatables/issues/223[#223]: Add support to export via AJAX when there are multiple tables
+* https://github.com/dandelion/dandelion-datatables/issues/222[#222]: Not automatically set as "unsearchable" the hidden columns
+* https://github.com/dandelion/dandelion-datatables/issues/221[#221]: Add support for Thymeleaf 2.1
+* https://github.com/dandelion/dandelion-datatables/issues/220[#220]: Allow custom order in sorting initialization
+* https://github.com/dandelion/dandelion-datatables/issues/217[#217]: Rework on all configuration names and taglib attributes
+* https://github.com/dandelion/dandelion-datatables/issues/216[#216]: Fix pipelining issue (pipelining defined but no pipesize)
+* https://github.com/dandelion/dandelion-datatables/issues/215[#215]: Export param problem
+* https://github.com/dandelion/dandelion-datatables/issues/214[#214]: Async servlet support
+* https://github.com/dandelion/dandelion-datatables/issues/213[#213]: Add support for delayed filtering
+* https://github.com/dandelion/dandelion-datatables/issues/208[#208]: Add support for dynamic internationalization
+* https://github.com/dandelion/dandelion-datatables/issues/207[#207]: Unable to use the DatatablesDialect when using Thymeleaf and the Tiles2 extra
+* https://github.com/dandelion/dandelion-datatables/issues/202[#202]: Allow usage of totally custom export
+* https://github.com/dandelion/dandelion-datatables/issues/201[#201]: Refactor the links management
+* https://github.com/dandelion/dandelion-datatables/issues/195[#195]: Add support for responsive design
+* https://github.com/dandelion/dandelion-datatables/issues/193[#193]: Avoid repeating the header again in the empty cells of the filtering bar
+* https://github.com/dandelion/dandelion-datatables/issues/191[#191]: Add the ability to use a custom sorting function
+* https://github.com/dandelion/dandelion-datatables/issues/187[#187]: Add support for configuration local overloading
+* https://github.com/dandelion/dandelion-datatables/issues/185[#185]: Add support for Bootstrap 3
+* https://github.com/dandelion/dandelion-datatables/issues/173[#173]: Add support for the id attribute in datatables:column tag
+* https://github.com/dandelion/dandelion-datatables/issues/155[#155]: Object Serialization
+* https://github.com/dandelion/dandelion-datatables/issues/129[#129]: Table with dash in id is not working
+* https://github.com/dandelion/dandelion-datatables/issues/149[#149]: Add support for ColumnHead when working with AJAX sources
+* https://github.com/dandelion/dandelion-datatables/issues/145[#145]: Enhancement. Add support for filtering after button click
+* https://github.com/dandelion/dandelion-datatables/issues/80[#80]: Connect Dandelion-DataTables to Dandelion
+* https://github.com/dandelion/dandelion-datatables/issues/63[#63]: ClassCastException if table is directly under a div which is processed by Tiles
+* https://github.com/dandelion/dandelion-datatables/issues/34[#34]: Content assist for the JSP taglib

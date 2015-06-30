@@ -1,0 +1,17 @@
+---
+layout: default
+component: core
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} v0.2.1
+
+=== Core
+
+* Added a configuration point for the caching system under assets cache
+* Added a "Cacheable" wrapper
+* Added a "Webapp" wrapper
+
+=== Closed issues
+
+* Fix 'webjars' wrapper

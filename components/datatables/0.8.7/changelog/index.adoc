@@ -1,0 +1,22 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} 0.8.7
+
+=== JSP implementation
+
+* New `renderFunction`column attribute, allowing you to use a custom Javascript function to render columns in tables AJAX-populated
+
+=== Thymeleaf implementation
+
+* New `dt:renderFunction`column attribute, allowing you to use a custom Javascript function to render columns in tables AJAX-populated
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion-datatables/issues/30[#30]: Export links generation
+* https://github.com/dandelion/dandelion-datatables/issues/36[#36]: Problem with tld file on JBoss 6
+* https://github.com/dandelion/dandelion-datatables/issues/41[#41]: Caching problems with URL that have params
+* https://github.com/dandelion/dandelion-datatables/issues/45[#45]: test-jetty-servlet dependency not marked as a test dependency

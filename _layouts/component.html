@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-   {% include layout/head.html %}
-   
-   <link href="/assets/css/site-component.css" rel="stylesheet">
-   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-</head>
+{% include head.html %}
 <body>
-   {% include layout/navbar-component.html %}
+  {% include navbar.html %}
 
-   {{ content }}
-   
-   <div class="container-fluid area-footer">     
-      {% include layout/footer.html %}
-   </div>
-   
-   <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
-   <script src="/assets/js/site-main.js"></script>
+  <div class="container-fluid">
+    <div class="row" style="position: relative;">
+      <div class="col-md-12">
+        <a href="{{ site.data.components[page.component].sources_url }}"><img
+          style="position: absolute; top: 0; right: 0; border: 0;"
+          src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67"
+          alt="Fork me on GitHub"
+          data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">{{ content }}</div>
+  {% include footer.html %}
 </body>
 </html>

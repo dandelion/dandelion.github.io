@@ -1,0 +1,15 @@
+---
+layout: default
+component: core
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} v0.2.1
+
+=== Core
+
+* The assets stack now support `async` and `defer` attributes: thoses attributes are only for scripts
+
+=== Closed issues
+
+* Fix the internal storage of resources who don't take in account the possibility of multiple folder paths

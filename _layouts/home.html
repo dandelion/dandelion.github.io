@@ -1,1 +1,11 @@
-{{ content }}
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+  {% include navbar.html %}
+  {% include home-jumbotron.html %}
+  {{ content }}
+  {% include home-social.html %}
+  {% include footer.html %}
+</body>
+</html>

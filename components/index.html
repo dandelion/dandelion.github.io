@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<div class="row margin-top-30">
+  <div class="col-md-12">
+  <h2>Components</h2>
+  <p>Listed below are the existing Dandelion components. All of them can be used standalone.</p></div>
+</div>
+
+{% for component_hash in site.data.components %}
+{% assign component = component_hash[1] %}
+<div class="row margin-top-30 row-component">
+  <div class="col-md-4">
+    <a class="btn btn-default btn-lg btn-component" href="{{ component.id | prepend: site.baseurl }}">
+      {{ component.name }}
+    </a>
+  </div>
+  <div class="col-md-4 margin-top-10">
+    {{ component.description }}
+    <p>
+      <a href="{{ component.id | prepend: site.baseurl }}">Read more...</a>
+    </p>
+  </div>
+  <div class="col-md-4 margin-top-10">
+    <strong>Latest release</strong>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td style="width:20%;">{{ component.versions[0].number }}</td>
+          <td>
+            {% if component.versions[0].docs != null and component.versions[0].docs contains 'html' %}
+            <a href="{{ component.id | append: '/' | append: component.versions[0].number | append: '/docs/html/' | prepend: site.baseurl }}">Docs (HTML)</a>
+            {% endif %}
+            {% if component.versions[0].docs != null and component.versions[0].docs contains 'pdf' %}
+            <br />
+            <a href="{{ component.id | append: '/' | append: component.versions[0].number | append: '/docs/pdf/' | prepend: site.baseurl }}">Docs (PDF)</a>
+            {% endif %}
+            {% if component.versions[0].extraDocs != null %}
+              {% for extraDoc in component.versions[0].extraDocs %}
+              <br />
+              <a href="{{ component.id | append: '/' | append: component.versions[0].number | append: '/docs/' | append: extraDoc.url | prepend: site.baseurl }}">{{ extraDoc.name }}</a>
+              {% endfor %}
+            {% endif %}
+            <br />
+            <a href="{{ component.id | append: '/' | append: component.versions[0].number | append: '/changelog/' | prepend: site.baseurl }}">Changelog</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endfor %}
+
