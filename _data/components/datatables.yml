@@ -11,9 +11,7 @@ versions:
   - number: 1.0.1
     date: 2015-07-03
     docs: [ 'html' ]
-    extraDocs:
-      - name: Migration guide from 0.10.x to 1.x
-        url: from-0.10.x-to-1.x.html
+    displayDocs: false
   - number: 1.0.0
     date: 2015-06-30
     docs: [ 'html' ]
