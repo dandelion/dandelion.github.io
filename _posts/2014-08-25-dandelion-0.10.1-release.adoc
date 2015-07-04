@@ -13,8 +13,8 @@ Even if it's mainly a bugfixing version, this release stabilizes the basis for t
 
 The full change logs are available here:
 
-* **Dandelion-Core:** link:/dandelion/releases/0.10.1/[Change log]
-* **Dandelion-Datatables**: link:/datatables/releases/0.10.1/[Change log]
+* **Dandelion-Core:** link:/components/core/0.10.1/changelog/[Change log]
+* **Dandelion-Datatables**: link:/components/datatables/0.10.1/changelog/[Change log]
 
 As usual, your thoughts and feedback are very welcome:
 

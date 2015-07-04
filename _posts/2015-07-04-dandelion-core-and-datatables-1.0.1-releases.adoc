@@ -1,0 +1,19 @@
+---
+layout: post
+title: Dandelion-Core and Dandelion-Datatables 1.0.1 releases
+date: 2015-07-04
+author: 'Thibault Duchateau'
+categories:
+- Release
+---
+
+[.margin-top-30]
+
+Dandelion-Core and Dandelion-Datatables have been released in v1.0.1. These releases are mainly bugfixing versions.
+
+The full change logs are available here:
+
+* **Dandelion-Core:** link:/components/core/1.0.1/changelog/[Change log]
+* **Dandelion-Datatables**: link:/components/datatables/1.0.1/changelog/[Change log]
+
+Happy coding!

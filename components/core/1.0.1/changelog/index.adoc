@@ -1,0 +1,20 @@
+---
+layout: default
+component: core
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} v1.0.1
+
+=== Core
+
+* Fixed an issue with the DandelionFilter: the `getOutputStream()` method was overriden in `ByteArrayResponseWrapper`, causing client implementations that was calling `getOuputStream()` to send binary data in an underlying `ByteArrayOutputStream` which was neither properly handled, nor even used
+
+=== Thymeleaf
+
+* Upgraded the Thymelead dependency to 2.1.4.RELEASE
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion/issues/60	[#60]: Issue with the wrapped response 
+

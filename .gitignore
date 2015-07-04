@@ -1,5 +1,28 @@
-.idea/
+# Maven
+target/
+
+# IntelliJ
 *.iml
-.settings
+.idea/
+
+# Eclipse
 .project
-_site/
+.classpath
+.settings/
+bin/
+.metadata
+
+# JRebel
+rebel.xml
+
+# OSX
+.DS_Store
+
+# Netbeans
+nb-configuration.xml
+
+# Windows
+Thumbs.db
+
+# Jekyll
+_site

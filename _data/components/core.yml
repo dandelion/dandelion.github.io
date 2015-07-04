@@ -8,6 +8,9 @@ ci_url: https://dandelion.ci.cloudbees.com
 chat_url: https://gitter.im/dandelion/dandelion
 forum_url: http://dandelion-forum.48353.x6.nabble.com/Dandelion-f295.html
 versions:  
+  - number: 1.0.1
+    date: 2015-07-03
+    docs: [ 'html' ]
   - number: 1.0.0
     date: 2015-06-30
     docs: [ 'html' ]

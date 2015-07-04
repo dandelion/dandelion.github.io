@@ -8,6 +8,12 @@ ci_url: https://dandelion.ci.cloudbees.com
 chat_url: https://gitter.im/dandelion/dandelion-datatables
 forum_url: http://dandelion-forum.48353.x6.nabble.com/Dandelion-Datatables-f3.html
 versions:
+  - number: 1.0.1
+    date: 2015-07-03
+    docs: [ 'html' ]
+    extraDocs:
+      - name: Migration guide from 0.10.x to 1.x
+        url: from-0.10.x-to-1.x.html
   - number: 1.0.0
     date: 2015-06-30
     docs: [ 'html' ]

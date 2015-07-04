@@ -1,0 +1,25 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} v1.0.1
+
+=== Core
+
+* The `sorted` attribute of `ColumnDef` is now initialized correctly
+* Both `isFilterable()` and `hasOneFilterableColumn()` of `ColumnDef` are now deprecated, respectively replaced by `isSearchable()` and `hasOneSearchableColumn()`
+* The generated `displayLength` parameter is now corrected with `pageLength`
+* The generated `bStateSave` parameter is now corrected with `stateSave`
+
+=== Thymeleaf
+
+* Fixed an issue with type conversion in all option backed by an Integer
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion/issues/289[#289]: Wrong new option name for the displayLength parameter
+* https://github.com/dandelion/dandelion/issues/286[#286]: columnDef.isFilterable() always true
+* https://github.com/dandelion/dandelion/issues/285[#285]: The attribute sorted of ColumnDef is never setted
+
