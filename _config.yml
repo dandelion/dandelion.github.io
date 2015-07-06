@@ -8,7 +8,7 @@ description: > # this means to ignore newlines until "baseurl:"
   It helps to manipulate the web assets (JS, CSS) in different ways: assets organization in a bundle graph and classical optimizations like minification, compression or caching.
   It also facilitates the integration of powerful JavaScript libraries thanks to a set of extensible components.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://dandelion.github.io/" # the base hostname & protocol for your site
+url: "http://dandelion.github.io" # the base hostname & protocol for your site
 twitter: https://twitter.com/dandelion_proj
 forum: http://dandelion.48353.n6.nabble.com/
 
