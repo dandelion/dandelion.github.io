@@ -1,0 +1,96 @@
+---
+layout: post
+title: Dandelion-Core 1.1.0 release
+date: 2015-07-26
+author: 'Thibault Duchateau'
+categories:
+- Release
+---
+
+[.margin-top-30]
+
+Dandelion-Core has been released in v1.1.0!
+
+This release brings some nice improvements that will be reviewed here.
+
+image::/assets/images/logo_bower.png[Bower, 150, 150, float=right, link="http://bower.io/"]
+
+== Bower integration
+
+Dandelion-Core now provides a http://bower.io/[Bower] integration. The integration consists in scanning the downloaded `bower_components` folder for all `bower.json` manifests. Once scanned, all manifests are automatically converted into **vendor bundles**. A particular strategy is used for scanning, refer to the documentation for more details.
+
+This feature is awesome for 2 reasons:
+
+* It's a great time saver: no need to write and maintain vendor bundles any longer. 
+* After http://www.webjars.org/[WebJars], it provides another integration with a widely used web package manager
+* If you see more, please use the comments below :-)
+
+WARNING: For now, only JavaScript and CSS assets are supported. So please check what kind of assets are referenced in the http://bower.io/docs/creating-packages/#main[main] section of Bower manifests.
+
+== Configurable placeholders for asset injection
+
+Prior to the v1.1.0, assets were automatically inserted either at the end of the `<head>` section (default location for CSS files) or at the end of the `<body>` section (default location for JavaScript files).
+
+This behaviour could be adapted thanks to the `dom` attribute in the definition of each asset. In the following example, the `app.js` is configured to be inserted at the end of the `<head>` section instead of its default location.
+
+.dandelion/any-bundle.json
+[source, json]
+----
+{ 
+   "assets" : [{ 
+      "dom" : "head", 
+      "location" : { 
+         "webapp" : "/assets/js/app.js" 
+      } 
+   ] 
+} 
+----
+
+But in legacy apps, inlined scrips are often necessary. And if these scripts require a vendor asset, which is automatically loaded at the end of the body, it forces end-users to create a bundle for these assets. From a bundle management perspective, it can quickly become a pain.
+
+So in order to provide more flexibility, this feature is about providing precise control over asset placement, thanks to some improvements in the JSP taglib, in the Thymeleaf dialect and in the asset injection handler.
+
+Here follows an usage example with Thymeleaf:
+
+[source, html]
+----
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      xmlns:ddl="http://www.thymeleaf.org/dandelion"
+      ddl:bundle-includes="bootstrap2,bootstrap-datepicker2">
+<head>
+    <title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">App</title>
+
+    <style ddl:placeholder-replace="css"/> <1>
+
+    <div layout:fragments="styles">
+        <p>optional style and link tags</p>
+    </div>
+</head>
+<body>
+    <div th:include="common/fragments/main-menu :: top-menu">Top Menu</div>
+
+    <div layout:fragment="content" class="container">
+        <p>Page content goes here</p>
+    </div>
+
+    <div ddl:placeholder-include="js"> <2>
+        <p>Dandelion injects script tags here</p>
+    </div>
+
+    <div layout:fragment="scripts">
+        <p>optional script tags</p>
+    </div>
+</body>
+</html>
+----
+<1> The `ddl:placeholder-replace="css"` attribute will replace the targeted `<style>` tag by all `<link>` tags referenced in the included bundles
+<2> The `ddl:placeholder-include="js"` attribute will here include into the targeted `<div>` tag all included `<script>` tags referenced in the included bundles
+
+[.margin-top-20]
+
+The full change logs is available link:/components/core/1.1.0/changelog/[here].
+
+Happy coding!

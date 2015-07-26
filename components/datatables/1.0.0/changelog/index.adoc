@@ -59,6 +59,7 @@ component: datatables
 
 === Closed issues
 
+* https://github.com/dandelion/dandelion-datatables/issues/282[#282]: sortInit not working when columns with display xls
 * https://github.com/dandelion/dandelion-datatables/issues/278[#278]: Allow vendor bundles to work in a standalone environment
 * https://github.com/dandelion/dandelion-datatables/issues/268[#268]: Unable to load use different sort types in the same table
 * https://github.com/dandelion/dandelion-datatables/issues/267[#267]: export attribut of jsp tag "tables" breaks theme
@@ -67,3 +68,4 @@ component: datatables
 * https://github.com/dandelion/dandelion-datatables/issues/258[#258]: StandardConfigurationLoader non string values bug
 * https://github.com/dandelion/dandelion-datatables/issues/254[#254]: Generalize the use of the service provider mechanism
 * https://github.com/dandelion/dandelion-datatables/issues/241[#241]: Support for data tables 1.10
+* https://github.com/dandelion/dandelion-datatables/issues/48[#48]: Remove HTML tags when filtering columns with body

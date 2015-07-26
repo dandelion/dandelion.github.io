@@ -1,0 +1,54 @@
+---
+layout: default
+component: core
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} v1.1.0
+
+=== Core
+
+* Added Bower integration
+
+** Introduced new "PreLoader": intended to load bundles before any other BundleLoaders. New SPI available to plug in any other implementation.
+** First implementation is BowerPreLoader, which scans for Bower components using the following strategy:
+*** first check is the "bower.components.location" option is set, if so, the Bower components scanning will start from the specified location. The location can contain "classpath:" (scan in classpath), "file:" (scan in the local file system) or no prefix (scan in the web application directory)
+*** If no "bower.components.location", Dandelion will scan for a "bower_components" folder in the webapp directory. If found, it scans for Bower components
+*** If no "bower_components" folder is found in the webapp directory, Dandelion will scan in the classpath
+** New config option `bundle.extra.loaders` which allows to enable/disable all pre loaders
+
+* New configurable placeholders for asset injection
+** Adapted the AssetInjectionPostHandler so that it can read new attributes from the AssetRequestContext used as placeholders for asset injection
+** If the placeholders are blank, the default placeholders are used (end of body for JavaScript, end of head for CSS)
+
+* Added new options processing utilities originally coming from dandelion-datatables. These utilities have been made generic in order to be used by future components
+
+* Improved scanning utilities
+** Added new implementations for file system and webapp scanning
+** All scanning utilities now fail silently (but with logging)
+
+* Removed XML support in bundle loader definitions
+
+=== Thymeleaf
+
+* New configurable placeholders for asset injection
+** New `ddl:placeholder-include` and `ddl:placeholder-replace` attribute, that allow to mark an HTML element as a placeholder for assets injection
+** `ddl:placeholder-include` will include assets in the corresponding element (a bit like th:include)
+** `ddl:placeholder-replace` will replace the corresponding element by assets (a bit like th:replace)
+** Updated the Dialect help file accordingly
+
+=== JSP
+
+* New configurable placeholders for asset injection
+** New `<dandelion:placeholder>` tag, that will be replaced by the assets that correspond to the `type` attribute
+** Update the TLD accordingly
+** Upgraded the TLD version to 110 (1.1.0)
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion/issues/65[#65]: Generic options processing
+* https://github.com/dandelion/dandelion/issues/64[#64]: Expand the asset injection feature with configurable placeholders
+* https://github.com/dandelion/dandelion/issues/63[#63]: Improve scanning utilities to be able to scan in both web app and file system
+* https://github.com/dandelion/dandelion/issues/62[#62]: Add Bower integration
+* https://github.com/dandelion/dandelion/issues/61[#61]: Context initialization issue when a component has no debug menu
+* https://github.com/dandelion/dandelion/issues/8[#8]: Add a new FilesystemLocator

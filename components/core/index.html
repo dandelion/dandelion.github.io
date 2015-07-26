@@ -23,7 +23,7 @@ component: core
 
 <div class="row margin-top-20">
   <div class="col-md-12">
-    <h3>Features</h3>
+    <h3 id="features">Features</h3>
     <ul>
       <li>asset organization in bundles, with several possible asset locations such as <code>webapp</code>, <code>webjar</code>, <code>remote</code>, <code>classpath</code>, ...</li>
       <li>asset processing, such as minification</li>
@@ -36,7 +36,7 @@ component: core
 
 <div class="row margin-top-20">
   <div class="col-md-12">
-    <h3>Latest releases</h3>
+    <h3 id="releases">Latest releases</h3>
     <table class="table table-striped table-hover">
       <thead>
         <tr>
@@ -82,7 +82,7 @@ component: core
 
 <div class="row margin-top-20">
   <div class="col-md-12">
-    <h3>Samples</h3>
+    <h3 id="samples">Samples</h3>
     <p>
       All sample applications below are based on the latest release: {{ site.data.components[page.component].versions[0].number }}.
     </p>
@@ -107,5 +107,14 @@ component: core
         {% endfor %}
       </tbody>
     </table>
+  </div>
+</div>
+
+<div class="row margin-top-20" style="margin-bottom:30px;">
+  <div class="col-md-12">
+    <h4 id="presentations">Presentations</h4>
+    <ul>
+       <li><a href="http://dandelion.github.io/slides/dandelion-0.10.0">Dandelion v0.10.0</a> by <a href="https://twitter.com/tduchateau">Thibault Duchateau</a></li>
+    </ul>
   </div>
 </div>
