@@ -8,10 +8,12 @@ ci_url: https://dandelion.ci.cloudbees.com
 chat_url: https://gitter.im/dandelion/dandelion-datatables
 forum_url: http://dandelion-forum.48353.x6.nabble.com/Dandelion-Datatables-f3.html
 versions:
+  - number: 1.1.0
+    date: 2015-07-29
+    docs: [ 'html' ]
   - number: 1.0.1
     date: 2015-07-03
     docs: [ 'html' ]
-    displayDocs: false
   - number: 1.0.0
     date: 2015-06-30
     docs: [ 'html' ]

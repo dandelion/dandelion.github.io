@@ -1,0 +1,82 @@
+---
+layout: post
+title: Dandelion-Datatables 1.1.0 release
+date: 2015-07-29
+author: 'Thibault Duchateau'
+categories:
+- Release
+---
+
+[.margin-top-30]
+
+Dandelion-Datatables has been released in v1.1.0!
+
+This release is mainly focused on the export feature but also fixes performance and security issues. Let's review some of the changes.
+
+== Export
+
+Some utilities have been added to facilitate controller-based export. You can now make full use of the criteria sent by DataTables when using an AJAX source to build an instance of `HtmlTable`. See the following example extracted from a Spring `@Controller`.
+
+[source, java]
+----
+@RequestMapping(value = "/export", produces = "text/csv")
+public String csv(@DatatablesParams DatatablesCriterias criterias, HttpServletRequest request, 
+
+  // Get data to export
+  List<Person> persons = personService.findPersonsWithDatatablesCriterias(criterias).getRows();
+
+  // Build the export configuration
+  ExportConf exportCsvConf = new ExportConf.Builder(ReservedFormat.CSV)
+	.header(true)
+	.exportClass(new CsvExport())
+	.build();
+		
+  // Build an instance of table to pass to the export feature
+  HtmlTable table = new HtmlTableBuilder<Person>().newBuilder("tableId", persons, request, exportCsvConf)
+    .column().fillFromCriteria(criterias).title("Id") <1>
+    .column().fillFromCriteria(criterias).title("Firtname")
+    .column().fillFromCriteria(criterias).title("Lastname")
+    .column().fillFromCriteria(criterias).title("City")
+    .column().fillFromCriteria(criterias).title("Mail")
+    .column().fillFromCriteria(criterias, "{0,date,dd-MM-yyyy}").title("BirthDate") <2>
+    .build();
+
+  // Render exported data in the browser
+  ExportUtils.renderExport(table, exportCsvConf, response);
+}
+----
+<1> No need to retype the property to extract from the passed collection
+<2> You can still perform custom formatting when needed
+
+[.margin-top-15]
+
+If you need raw export, a new auto mode has been added as well.
+
+[source, java]
+----
+@RequestMapping(value = "/export", produces = "text/csv")
+public String csv(@DatatablesParams DatatablesCriterias criterias, HttpServletRequest request, 
+
+  ...
+  
+  // Build an instance of table to pass to the export feature
+  HtmlTable table = new HtmlTableBuilder<Person>().newBuilder("tableId", persons, request, exportCsvConf)
+    .auto(criterias) <1>
+    .build();
+
+  ...
+}
+----
+<1> The `auto()` method will automatically configure column as they are defined client-side. In return, no formatting is possible.
+
+== Performance
+
+Nasty concurrency issues have been detected under heavy load. After hours of struggling, https://twitter.com/rlespinasse[Romain] and I have finally defeated them. If you are interested, more details are available in the original http://dandelion-forum.48353.x6.nabble.com/Concurrency-problems-under-heavy-load-td1947.html[discussion].
+
+As a consequence, lots of performance tests have been performed and some sample applications now contain http://jmeter.apache.org/[JMeter] test plans.
+
+[.margin-top-20]
+
+The full change logs is available link:/components/datatables/1.1.0/changelog/[here].
+
+Happy coding!

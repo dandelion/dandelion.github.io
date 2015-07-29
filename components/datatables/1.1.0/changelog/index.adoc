@@ -1,0 +1,34 @@
+---
+layout: default
+component: datatables
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} v1.1.0
+
+=== Core
+
+* Added support for deffered loading
+* Removed `appear` table attribute
+* Fixed major concurrency issues
+* New utilities in `HtmlTableBuilder` to deal with export
+
+=== JSP
+
+* Removed `appear` table attribute
+* New `deferLoading` table attribute
+* Fixed XSS vulnerability in the `<datatables:column>` tag
+
+=== Thymeleaf
+
+* Removed `dt:appear` table attribute
+* New `dt:deferLoading` table attribute
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion/issues/291[#291]: Concurrency problems under heavy load
+* https://github.com/dandelion/dandelion/issues/284[#284]: Add support for defer loading
+* https://github.com/dandelion/dandelion/issues/283[#283]: XSS in Column Tag possible
+* https://github.com/dandelion/dandelion/issues/243[#243]: Provide some utilities on top of the HtmlTableBuilder
+* https://github.com/dandelion/dandelion/issues/242[#242]: Improve the HtmlTableBuilder (ColumnDef) 
+
