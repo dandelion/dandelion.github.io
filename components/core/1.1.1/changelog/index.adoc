@@ -1,0 +1,23 @@
+---
+layout: default
+component: core
+---
+
+[.margin-top-30]
+== Changelog of {{ site.data.components[page.component].name }} v1.1.1
+
+=== Core
+
+* Improved Bower integration
+
+** Bower components without a `main` parameter are no longer scanned
+** The debugger has been improved: bundles loaded with Bower are now properly identified
+
+* Fixed an issue with webapp scanning when the scanned folder is empty
+
+=== Closed issues
+
+* https://github.com/dandelion/dandelion/issues/79[#79]: Mention the Spring default servlet handler in the installation section
+* https://github.com/dandelion/dandelion/issues/73[#73]: Avoid scanning Bower components without a main parameter
+* https://github.com/dandelion/dandelion/issues/72[#72]: Improve debugger for Bower
+* https://github.com/dandelion/dandelion/issues/66[#66]: dandelionFilter failed to start when there's an empty resource folder

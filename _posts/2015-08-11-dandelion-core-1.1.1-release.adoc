@@ -1,0 +1,18 @@
+---
+layout: post
+title: Dandelion-Core 1.1.1 release
+date: 2015-08-11
+author: 'Thibault Duchateau'
+categories:
+- Release
+---
+
+[.margin-top-30]
+
+Dandelion-Core has been released in v1.1.1. This is a maintenance version, mainly focused on the http://bower.io/[Bower] integration, and should work as a drop-in replacement for 1.1.x versions. 
+
+By the way, thanks to https://github.com/wmh[Hunter Wu] from Taiwan for his contributions!
+
+The full change logs is available link:/components/core/1.1.1/changelog/[here].
+
+Happy coding!
