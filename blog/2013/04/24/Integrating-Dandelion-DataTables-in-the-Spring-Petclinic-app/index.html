@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Integrating Dandelion Datatables In The Spring Petclinic App</title>
+  <meta name="description" content="Petclinic is one of the sample applications created by SpringSource to demonstrate the key features of the Spring Framework.">
+
+  <link rel="canonical" href="http://dandelion.github.io/blog/2013/04/24/Integrating-Dandelion-DataTables-in-the-Spring-Petclinic-app">
+  <link rel="alternate" type="application/rss+xml" title="Dandelion Project" href="http://dandelion.github.io/feed.xml" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400italic" type="text/css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/fontcustom.css">
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css">
+  <link rel="stylesheet" href="/assets/css/coderay.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+  <link rel="shortcut icon" href="/assets/images/dandelion_square.png">  
+  <script>
+   var _gaq = _gaq || [];
+   _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+   _gaq.push([ '_trackPageview' ]);
+   (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+   })();
+   </script>
+   <style>
+      .conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+      .conum[data-value] *{color:#fff!important}
+      .conum[data-value]+b{display:none}
+      .conum[data-value]:after{content:attr(data-value)}
+      pre .conum[data-value]{position:relative;top:-.125em}
+      b.conum *{color:inherit!important}
+      .conum:not([data-value]):empty{display:none}
+      .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+      .admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:15px;font-style:italic}
+   </style>
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:site" content="@dandelion_proj">
+   <meta name="twitter:creator" content="@dandelion_proj">
+   <meta name="twitter:url" content="http://dandelion.github.io">
+   <meta name="twitter:title" content="Dandelion Project">
+   <meta name="twitter:description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments">
+   <meta name="twitter:image" content="http://dandelion.github.com/assets/images/dandelion_square.png">
+</head> 
+
+<body>
+  <!-- Static navbar -->
+<nav class="navbar navbar-dandelion navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+          class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><span style="font-size:30px;">Dandelion</span></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a href="/components">Components</a></li>
+        <li  class="active"><a href="/blog">Blog</a></li>
+        <li ><a href="/support.html">Support</a></li>
+        <li><a href="/search.html"><i class="fa fa-search"></i></a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+
+  <div class="container">
+    <script type="text/javascript">
+     var addthis_config = {
+        "data_track_addressbar":false,
+        "data_track_clickback":true,
+        "ui_offset_top": 187,
+        "ui_offset_left": 30,
+        "data_ga_tracker": "UA-33818546-8"
+     };
+     var addthis_share = {
+        "url" : "http://dandelion.github.io/blog/2013/04/24/Integrating-Dandelion-DataTables-in-the-Spring-Petclinic-app",
+        "title" : "[Blog] Integrating Dandelion Datatables In The Spring Petclinic App"
+     }  
+  </script>
+  
+  <div class="row margin-top-30">
+    <div class="col-md-12">
+      <header class="post-header">
+        <h1 class="post-title">Integrating Dandelion Datatables In The Spring Petclinic App</h1>
+      </header>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Tutorial</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-04-24</span>
+        </div>
+        <div class="row margin-top-20">
+          <div class="col-md-12">
+            <section class="margin-top-10"><p>Petclinic is one of the sample applications created by <a href="http://www.springsource.org/">SpringSource</a> to demonstrate the key features of the <a href="http://www.springsource.org/spring-framework">Spring Framework</a>.</p>
+
+<p>We recently had the opportunity to integrate <a href="http://dandelion.github.io/datatables">Dandelion-Datatables</a> into this app. Here is a tutorial describing how it has been done, step by step.</p>
+
+<p class="text-center">
+<img class="blog_img" src="/assets/images/blog/petclinic01.png" />
+</p>
+
+<p>Technically speaking, we’ll focus on the view layer, i.e. where <a href="http://dandelion.github.io/datatables">Dandelion-Datatables</a> mainly comes into action in this use case.</p>
+
+<p class="text-center">
+<img class="blog_img" src="/assets/images/blog/petclinic02.png" />
+</p>
+
+<p>Before starting, note that :
+ * the source code is <a href="https://github.com/SpringSource/spring-petclinic/">available on GitHub</a>
+ * you can access the live demo on <a href="http://spring-petclinic.cloudfoundry.com/">Cloudfoundry</a>
+ * <a href="https://twitter.com/michaelisvy">Michael Isvy</a> from SpringSource has written an article about the <a href="http://blog.springsource.org/2013/03/21/spring-petclinic-is-on-github/">new Spring PetClinic app in the SpringSource blog</a> and has made available <a href="https://speakerdeck.com/michaelisvy">some slides</a></p>
+
+<p><br />
+#### Step 1 : collecting information
+The first thing to do is to gather information in order to know what dependencies will be needed.</p>
+
+<ul>
+  <li><strong>what template engine is being used?</strong></li>
+</ul>
+
+<p>Dandelion-Datatables provides a JSP taglib and a Thymeleaf dialect, allowing you to use both template engines.</p>
+
+<p>In our case, the Petclinic app is based on plain old JSP.</p>
+
+<ul>
+  <li><strong>what version of the servlet API is being used?</strong></li>
+</ul>
+
+<p>By default, Dandelion-Datatables takes advantage of one of the key features added in the Servlet 3.x API (<a href="http://jcp.org/en/jsr/detail?id=315">JSR 315</a>) : configuration through annotations, allowing us to qualify some classes as a Servlet or a Filter. This way, no need to manually update the deployment descriptor ( <code>web.xml</code> ) any longer.</p>
+
+<p>Note that currently, the Servlet 3.x API is supported by almost all application servers in their latest version. For example <a href="http://tomcat.apache.org/tomcat-7.0-doc/">Tomcat 7.x</a> or <a href="https://docs.jboss.org/author/display/AS7/Getting+Started+Guide">JBoss AS 7</a>.</p>
+
+<p>In our case, in order to keep a backward compatibility with a large majority of legacy app servers, we’ll use the <a href="https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-servlet2">datatables-servlet2</a> extra.</p>
+
+<p><br />
+#### Step 2 : updating the dependencies
+Since the build of the Petclinic app is based on Maven, let’s add the needed dependencies in the <code>pom.xml</code>.</p>
+
+<pre class="prettyprint">
+&lt;dependency&gt;
+    &lt;groupId&gt;com.github.dandelion&lt;/groupId&gt;
+    &lt;artifactId&gt;datatables-jsp&lt;/artifactId&gt;
+    &lt;version&gt;0.8.11&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.github.dandelion&lt;/groupId&gt;
+    &lt;artifactId&gt;datatables-servlet2&lt;/artifactId&gt;
+    &lt;version&gt;0.8.11&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
+
+<p><br />
+#### Step 3 : updating the deployment descriptor</p>
+
+<p>Since we want to keep backward compatibility with legacy app servers, we need to update the <code>web.xml</code> by adding the Datatables’ servlet definition.</p>
+
+<pre class="prettyprint">
+&lt;!-- Dandelion-Datatables servlet definition --&gt;
+&lt;servlet&gt;
+    &lt;servlet-name&gt;datatablesController&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;com.github.dandelion.datatables.extras.servlet2.servlet.DatatablesServlet&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;datatablesController&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/datatablesController/*&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</pre>
+
+<p><br />
+#### Step 4 : replacing plain old HTML tables with DataTables
+At this point, we’re done regarding the Dandelion-Datatables configuration. Now we just have to update the JSPs that use the plain old table and use the Dandelion-Datatables taglib instead.</p>
+
+<p>In the Petclinic app, there are two contenders : the list of owners (<a href="https://github.com/SpringSource/spring-petclinic/blob/14f882221f9f12de71331ce3eac44c297150c373/src/main/webapp/WEB-INF/jsp/owners/ownersList.jsp#L16-44">ownersList.jsp</a>) and the list of vets (<a href="https://github.com/SpringSource/spring-petclinic/blob/14f882221f9f12de71331ce3eac44c297150c373/src/main/webapp/WEB-INF/jsp/vets/vetList.jsp#L17-37">vetList.jsp</a>).</p>
+
+<p>Let’s start by the easiest one : the list of vets.</p>
+
+<p><br />
+##### vetList.jsp</p>
+
+<p>The JSP currently uses the typical JSTL <code>c:forEach</code> tag to iterate over a collection of vets and generate HTML <code>tr</code> tags.</p>
+
+<pre class="prettyprint">
+&lt;table class="table table-stripped" style="width:600px;"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Specialties&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;c:forEach var="vet" items="${vets.vetList}"&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;c:out value="${vet.firstName} ${vet.lastName}"/&gt;&lt;/td&gt;
+            &lt;td&gt;
+                &lt;c:forEach var="specialty" items="${vet.specialties}"&gt;
+                    &lt;c:out value="${specialty.name}"/&gt;
+                &lt;/c:forEach&gt;
+                &lt;c:if test="${vet.nrOfSpecialties == 0}"&gt;none&lt;/c:if&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/c:forEach&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+
+<p>Before adapting the above table, note some items :
+ * the table looks pretty nice thanks to the awesome <a href="http://twitter.github.io/bootstrap/">Bootstrap</a> library
+ * a CSS style is directly set using the HTML <code>style</code> attribute</p>
+
+<p><em>Now, let’s use Dandelion-Datatables!</em></p>
+
+<p>The first thing to do, as for any other taglib, is to import the TLD using the <code>taglib</code> directive</p>
+
+<pre class="prettyprint">
+&lt;%@ taglib prefix="datatables" uri="http://github.com/dandelion/datatables" %&gt;
+</pre>
+
+<p>Then, let’s update the markup :</p>
+
+<pre class="prettyprint">
+&lt;datatables:table id="vets" data="${vets.vetList}" cdn="true" row="vet" theme="bootstrap2" cssClass="table table-striped"&gt;
+    &lt;datatables:column title="Name"&gt;
+        &lt;c:out value="${vet.firstName} ${vet.lastName}"&gt;&lt;/c:out&gt;
+    &lt;/datatables:column&gt;
+    &lt;datatables:column title="Specialties"&gt;
+        &lt;c:forEach var="specialty" items="${vet.specialties}"&gt;
+            &lt;c:out value="${specialty.name}"/&gt;
+        &lt;/c:forEach&gt;
+        &lt;c:if test="${vet.nrOfSpecialties == 0}"&gt;none&lt;/c:if&gt;
+    &lt;/datatables:column&gt;
+&lt;/datatables:table&gt;
+</pre>
+
+<p>Let’s comment a bit the <code>datatables:table</code> tag and its attributes:</p>
+
+<ul>
+  <li>
+    <p>With Dandelion-Datatables, you don’t need to use the native HTML <code>table</code> tag any longer. All the HTML markup will be generated by the taglib thanks to the <code>datatables:table</code> tag</p>
+  </li>
+  <li>
+    <p>The <code>id</code> and <code>data</code> attributes are mandatory here.</p>
+  </li>
+</ul>
+
+ 	* <code>id</code> is just a HTML pass through attribute
+
+ 	* <code>data</code> is the data source used to populate the table. We use Expression Language here to access the collection previously set in the request.
+
+<ul>
+  <li>
+    <p>The <code>row</code> attribute is quite important here: this attribute tells Dandelion-Datatables to set a variable (page-scoped) that will be available during the iteration through the name it was assigned (“vet” here). This way, you will be able to use this variable and so access all the bean’s properties in the columns.</p>
+  </li>
+  <li>
+    <p>We use the <code>cdn</code> attribute here to tell Dandelion-Datatables to grab the needed static resources from a compatible CDN (the Microsoft’s one today). This way, all JS and CSS needed by DataTables will be automatically loaded in the page</p>
+  </li>
+  <li>
+    <p>We also use one of the the cool features of Dandelion-Datatables : theming. Today, <a href="http://dandelion.github.io/datatables/features/styling/bootstrap2.html">Bootstrap 2</a> and <a href="http://dandelion.github.io/datatables/features/styling/jqueryui.html">jQuery UI ThemeRoller</a> are supported. Just use the <code>theme</code> attribute to activate the theme you want. 
+Note that the static resources needed by those themes must be added manually before using the taglib.</p>
+  </li>
+  <li>
+    <p><code>cssClass</code> is, as for <code>id</code>, a HTML pass through attribute</p>
+  </li>
+</ul>
+
+<p>Now let’s comment a bit the <code>datatables:column</code> tag and its attributes :</p>
+
+<ul>
+  <li>
+    <p>Since no property is directly displayed in a column, we can’t use the <code>property</code> attribute but instead, we set a body to the <code>datatables:column</code> tag. This will allows us to use anything we need inside (JSTL, Expression Language, plain HTML, …)</p>
+  </li>
+  <li>
+    <p>The <code>title</code> attribute is used to fill the <code>th</code> cells</p>
+  </li>
+</ul>
+
+<p>At this point, the taglib will generate the needed DataTables configuration (composed of Javascript and potentially CSS) and the table will be rendered using DataTables. Pretty cool right? :-)</p>
+
+<p class="text-center">
+<img class="blog_img" src="/assets/images/blog/petclinic03.png" />
+</p>
+
+<p><br />
+##### ownersList.jsp
+Let’s adapt the other JSP. This time, we also use the JSTL <code>c:forEach</code> tag to iterate over a collection of owners.</p>
+
+<pre class="prettyprint">
+&lt;table class="table table-striped"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th style="width: 150px;"&gt;Name&lt;/th&gt;
+            &lt;th style="width: 200px;"&gt;Address&lt;/th&gt;
+            &lt;th&gt;City&lt;/th&gt;
+            &lt;th&gt;Telephone&lt;/th&gt;
+            &lt;th style="width: 100px;"&gt;Pets&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;c:forEach var="owner" items="${selections}"&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;spring:url value="owners/{ownerId}.html" var="ownerUrl"&gt;
+                    &lt;spring:param name="ownerId" value="${owner.id}"/&gt;
+                &lt;/spring:url&gt;
+                &lt;a href="${fn:escapeXml(ownerUrl)}"&gt;&lt;c:out value="${owner.firstName} ${owner.lastName}"/&gt;&lt;/a&gt;
+            &lt;/td&gt;
+            &lt;td&gt;&lt;c:out value="${owner.address}"/&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;c:out value="${owner.city}"/&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;c:out value="${owner.telephone}"/&gt;&lt;/td&gt;
+            &lt;td&gt;
+                &lt;c:forEach var="pet" items="${owner.pets}"&gt;
+                    &lt;c:out value="${pet.name}"/&gt;
+                &lt;/c:forEach&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/c:forEach&gt;
+&lt;/table&gt;
+</pre>
+
+<p>Now, using Dandelion-Datatables:</p>
+
+<pre class="prettyprint">
+&lt;datatables:table id="owners" data="${selections}" cdn="true" row="owner" theme="bootstrap2" cssClass="table table-striped"&gt;
+    &lt;datatables:column title="Name" cssStyle="width: 150px;"&gt;
+        &lt;spring:url value="owners/{ownerId}.html" var="ownerUrl"&gt;
+            &lt;spring:param name="ownerId" value="${owner.id}"/&gt;
+        &lt;/spring:url&gt;
+        &lt;a href="${fn:escapeXml(ownerUrl)}"&gt;&lt;c:out value="${owner.firstName} ${owner.lastName}"/&gt;&lt;/a&gt;
+    &lt;/datatables:column&gt;
+    &lt;datatables:column title="Address" property="address" cssStyle="width: 200px;"/&gt;
+    &lt;datatables:column title="City" property="city"/&gt;
+    &lt;datatables:column title="Telephone" property="telephone"/&gt;
+    &lt;datatables:column title="Pets" cssStyle="width: 100px;"&gt;
+        &lt;c:forEach var="pet" items="${owner.pets}"&gt;
+            &lt;c:out value="${pet.name}"/&gt;
+        &lt;/c:forEach&gt;
+    &lt;/datatables:column&gt;
+&lt;/datatables:table&gt;
+</pre>
+
+<p>Note here that:</p>
+
+<ul>
+  <li>
+    <p>You can use anything you want inside a <code>datatables:column</code> tag: plain HTML, Expression Language, JSTL, Spring taglibs, …</p>
+  </li>
+  <li>
+    <p>In the “Address”, “City” and “Telephone” columns, we just display a bean’s property. For this purpose, you can use the <code>property</code> attribute where you just need to pass the name of the property.</p>
+  </li>
+</ul>
+
+<p>At this point, we have achieved our initial goal. The main tables of the application are now displayed using DataTables.</p>
+
+<p class="text-center">
+<img class="blog_img" src="/assets/images/blog/petclinic04.png" />
+</p>
+
+<p>Also note that both tables have additional features:</p>
+
+<ul>
+  <li>
+    <p>You can sort on any column</p>
+  </li>
+  <li>
+    <p>A search box appeared on the top-right, allowing you to filter data on every column very quickly</p>
+  </li>
+</ul>
+
+<p><br />
+#### Bonus step : adding PDF export
+In order to show another cool feature of <a href="http://dandelion.github.io/datatables">Dandelion-Datatables</a>, we decided to add a PDF export. Well, let’s do this!</p>
+
+<p>Some extras already exist and provide some utilities to deal with export. In this use case, since we want to export in PDF format, we will use the <a href="https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-itext">datatables-export-itext</a> that contains :</p>
+
+<ul>
+  <li>
+    <p>the <a href="http://itextpdf.com/">iText library</a></p>
+  </li>
+  <li>
+    <p>an <a href="https://github.com/dandelion/dandelion-datatables/blob/master/datatables-extras/datatables-export-itext/src/main/java/com/github/dandelion/datatables/extras/export/itext/PdfExport.java">export class</a> that Dandelion-Datatables will use <a href="https://github.com/dandelion/dandelion-datatables/blob/master/datatables-core/src/main/resources/config/datatables-default.properties#L35">by default</a> when exporting data</p>
+  </li>
+</ul>
+
+<p>First, let’s update the <code>pom.xml</code> to add the new dependency :</p>
+
+<pre class="prettyprint">
+&lt;dependency&gt;
+    &lt;groupId&gt;com.github.dandelion&lt;/groupId&gt;
+    &lt;artifactId&gt;datatables-export-itext&lt;/artifactId&gt;
+    &lt;version&gt;0.8.11&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
+
+<p>Second step, since we’re keeping backward compatibility with the Servlet 2.x API, we need to update the deployment descriptor again (<code>web.xml</code>) by adding the Datatables filter :</p>
+
+<pre class="prettyprint">
+&lt;!-- Dandelion-Datatables filter definition (used for export) --&gt;
+&lt;filter&gt;
+    &lt;filter-name&gt;datatablesFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;com.github.dandelion.datatables.extras.servlet2.filter.DatatablesFilter&lt;/filter-class&gt;
+&lt;/filter&gt;
+&lt;filter-mapping&gt;
+    &lt;filter-name&gt;datatablesFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+</pre>
+
+<div class="alert alert-info"><strong>Info!</strong><br />
+Note that the above filter configuration is automatically done using a Servlet 3.x compatible container, so that you don’t need to add anything in the <code>web.xml</code> file.
+</div>
+
+<p><em>Let’s adapt the markup now.</em></p>
+
+<p>Enabling export is quite easy. Just set the <code>export</code> table attribute to the type of export you want (<code>pdf</code> here). Remember that Dandelion-Datatables will use the <a href="https://github.com/dandelion/dandelion-datatables/tree/master/datatables-extras/datatables-export-itext">datatables-export-itext</a> extra by default (based on the <a href="http://itextpdf.com/">iText library</a>).</p>
+
+<pre class="prettyprint">
+&lt;datatables:table id="owners" data="${selections}" ... <span style="color:red;font-weight:bold;">export="pdf"</span>&gt;
+...
+&lt;/datatables:table&gt;
+</pre>
+
+<p>As a consequence, you will see an export link appearing at the top-right of the table.</p>
+
+<p class="text-center">
+<img class="blog_img" src="/assets/images/blog/petclinic05.png" />
+</p>
+
+<p>Let’s click and see!</p>
+
+<p class="text-center">
+<img class="blog_img" src="/assets/images/blog/petclinic06.png" />
+</p>
+
+<p>Two problems here.</p>
+
+<ol>
+  <li>First, the export link is a bit ugly.</li>
+</ol>
+
+<p>Indeed, <a href="http://dandelion.github.io/datatables">Dandelion-Datatables</a> generates unstyled links by default, in order to be as flexible as possible. You can however adapt the link to fit your need using the <code>datatables:export</code> tag.</p>
+
+<p>Just add a <code>datatables:export</code> tag as follows:</p>
+
+<pre class="prettyprint">
+&lt;datatables:table id="owners" data="${selections}" ... <span style="color:red;font-weight:bold;">export="pdf"</span>&gt;
+    ...
+    <span style="color:red;font-weight:bold;">&lt;datatables:export type="pdf" cssClass="btn btn-small" /&gt;</span>
+&lt;/datatables:table&gt;
+</pre>
+
+<p>The <code>datatables:export</code> tag allows you to <a href="http://dandelion.github.io/datatables/ref/jsp/export.html">configure all exports</a> that are currently enabled in the table.</p>
+
+<p>You need to bind the tag using the <code>type</code> attribute and then add all the configuration you need (css classes to apply, the export file name, header inclusion/exclusion, …).
+In our case, we just add the Bootstrap classes as we did before on buttons using the <code>cssClass</code> attribute.</p>
+
+<ol>
+  <li>Second, more important, HTML markup appears in the PDF export.</li>
+</ol>
+
+<p>Fortunately, you can also configure the column’s content in each export. Let’s see how to do this.
+Actually, you want two different types of display, one for the HTML (containing the HTML markup, links, formatting, …) and another one for the PDF, without any HTML markup.</p>
+
+<p>For this purpose, you can use the <code>display</code> attribute of the <code>datatables:column</code> tag as follows :</p>
+
+<pre class="prettyprint">
+&lt;datatables:table id="owners" data="${selections}" ... <span style="color:red;font-weight:bold;">export="pdf"</span>&gt;
+    &lt;datatables:column <span style="color:red;font-weight:bold;">title="Name" display="html"</span> cssStyle="width: 150px;"&gt;
+        &lt;spring:url value="owners/{ownerId}.html" var="ownerUrl"&gt;
+            &lt;spring:param name="ownerId" value="${owner.id}"/&gt;
+        &lt;/spring:url&gt;
+        &lt;a href="${fn:escapeXml(ownerUrl)}"&gt;&lt;c:out value="${owner.firstName} ${owner.lastName}"/&gt;&lt;/a&gt;
+    &lt;/datatables:column&gt;
+    &lt;datatables:column <span style="color:red;font-weight:bold;">title="Name" display="pdf"</span>&gt;
+        &lt;c:out value="${owner.firstName} ${owner.lastName}"/&gt;
+    &lt;/datatables:column&gt;
+    ...
+    &lt;datatables:export type="pdf" cssClass="btn btn-small" /&gt;
+&lt;/datatables:table&gt;
+</pre>
+
+<p>You’ve noticed that two columns have been added here, with the same title, but not with the same value in the <code>display</code> attribute.
+It just means that :</p>
+
+<ul>
+  <li>
+    <p>the first one (with “html” as a value) will only be rendered in the HTML source, nowhere else.</p>
+  </li>
+  <li>
+    <p>the second one (with “pdf” as a value) will only be rendered in the PDF export, nowhere else.</p>
+  </li>
+</ul>
+
+<p>As a result, let’s look at both the HTML page and the PDF export:</p>
+
+<p class="text-center">
+<img class="blog_img" src="/assets/images/blog/petclinic07.png" />
+</p>
+
+<p class="text-center">
+<img class="blog_img" src="/assets/images/blog/petclinic08.png" />
+</p>
+
+<p>Both issues are now fixed. :-)</p>
+
+<p><br />
+#### Conclusion
+We’ve seen in this tutorial how to integrate Dandelion-Datatables in a classic web app whose view layer is based on JSP.</p>
+
+<p>Note that <a href="http://dandelion.github.io/datatables/">Dandelion-Datatables</a> has lots of other features : <a href="http://dandelion.github.io/datatables/ref/thymeleaf/">Thymeleaf</a> support, <a href="http://datatables.net/extras/">DataTables plugins</a> support, AJAX sources, server-side processing, …</p>
+
+<p>If you have any question, feel free to contact us using the <a href="http://dandelion.48353.n6.nabble.com/">forum</a>, filling out a <a href="https://github.com/dandelion/issues/issues">new issue</a> or using the comments below.</p>
+
+<p><br />
+#### References
+<a href="http://dandelion.github.io/datatables/">Dandelion-Datatables site</a></p>
+
+<p><a href="https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application">Full presentation of the Spring Petclinic app</a></p>
+
+<p><a href="https://github.com/SpringSource/spring-petclinic">Spring Petclinic on GitHub</a></p>
+
+<p><a href="http://spring-petclinic.cloudfoundry.com/">Spring Petclinic on CloudFoundry</a></p>
+</section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row margin-top-20">
+    <div class="col-md-12">
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+         <a class="addthis_button_twitter"></a>
+         <a class="addthis_button_google_plusone_share"></a>
+         <a class="addthis_button_linkedin"></a>
+         <a class="addthis_button_facebook"></a>
+         <a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+      </div>
+      <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-516d4b686f218f23"></script>
+      <!-- AddThis Button END -->
+  
+      <div id="disqus_thread" style="margin-top:15px;"></div>
+      <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'dandelionproject'; // required: replace example with your forum shortname
+      
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </div>
+  </div>
+  <footer class="footer area-footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-9">
+            
+            <div class="row">
+               <div class="col-md-4">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="fa fa-github"></i> GitHub</a></li>
+                     <li><a href="/team"><i class="fa fa-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="fa fa-road"></i> Roadmap</a></li>
+                     <li><a href="/faq"> <i class="fa fa-book"></i> FAQ</a></li>
+                     <li><a href="/acknowledgements/"><i class="fa fa-info-circle"></i> Acknowledgements</a></li>
+                     <li><a href="/history"><i class="fa fa-history"></i> History</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-puzzle-piece"></i> Components</h3>
+                  <ul>
+                     <li><a href="/components/core">Dandelion-Core</a></li>
+                     <li><a href="/components/datatables">Dandelion-Datatables</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-beer"></i> Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="fa fa-comment-o"></i> Blog</a></li>
+                     <li><a href="http://dandelion.48353.n6.nabble.com/"><i class="fa fa-comments-o"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="fa fa-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="col-md-3">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:5px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <a href="https://www.cloudbees.com"><img src="/assets/images/logo_cloudbees.png" /></a>
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+</body>
+</html>

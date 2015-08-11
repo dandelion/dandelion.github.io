@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dandelion Project</title>
+    <description>Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments. It helps to manipulate the web assets (JS, CSS) in different ways: assets organization in a bundle graph and classical optimizations like minification, compression or caching. It also facilitates the integration of powerful JavaScript libraries thanks to a set of extensible components.
+</description>
+    <link>http://dandelion.github.io/</link>
+    <atom:link href="http://dandelion.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 11 Aug 2015 07:39:57 -0400</pubDate>
+    <lastBuildDate>Tue, 11 Aug 2015 07:39:57 -0400</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Dandelion-Core 1.1.1 release</title>
+        <description>&lt;div class=&quot;paragraph margin-top-30&quot;&gt;
+&lt;p&gt;Dandelion-Core has been released in v1.1.1. This is a maintenance version, mainly focused on the &lt;a href=&quot;http://bower.io/&quot;&gt;Bower&lt;/a&gt; integration, and should work as a drop-in replacement for 1.1.x versions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;By the way, thanks to &lt;a href=&quot;https://github.com/wmh&quot;&gt;Hunter Wu&lt;/a&gt; from Taiwan for his contributions!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The full change logs is available &lt;a href=&quot;/components/core/1.1.1/changelog/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Happy coding!&lt;/p&gt;
+&lt;/div&gt;</description>
+        <pubDate>Tue, 11 Aug 2015 00:00:00 -0400</pubDate>
+        <link>http://dandelion.github.io/blog/2015/08/11/dandelion-core-1.1.1-release</link>
+        <guid isPermaLink="true">http://dandelion.github.io/blog/2015/08/11/dandelion-core-1.1.1-release</guid>
+        
+        
+        <category>release</category>
+        
+      </item>
+    
+      <item>
+        <title>Dandelion-Datatables 1.1.0 release</title>
+        <description>&lt;div class=&quot;paragraph margin-top-30&quot;&gt;
+&lt;p&gt;Dandelion-Datatables has been released in v1.1.0!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This release is mainly focused on the export feature but also fixes performance and security issues. Let&amp;#8217;s review some of the changes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;export&quot;&gt;Export&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Some utilities have been added to facilitate controller-based export. You can now make full use of the criteria sent by DataTables when using an AJAX source to build an instance of &lt;code&gt;HtmlTable&lt;/code&gt;. See the following example extracted from a Spring &lt;code&gt;@Controller&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;annotation&quot;&gt;@RequestMapping&lt;/span&gt;(value = &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/export&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, produces = &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;text/csv&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)
+&lt;span class=&quot;directive&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt; csv(&lt;span class=&quot;annotation&quot;&gt;@DatatablesParams&lt;/span&gt; DatatablesCriterias criterias, HttpServletRequest request,
+
+  &lt;span class=&quot;comment&quot;&gt;// Get data to export&lt;/span&gt;
+  &lt;span class=&quot;predefined-type&quot;&gt;List&lt;/span&gt;&amp;lt;Person&amp;gt; persons = personService.findPersonsWithDatatablesCriterias(criterias).getRows();
+
+  &lt;span class=&quot;comment&quot;&gt;// Build the export configuration&lt;/span&gt;
+  ExportConf exportCsvConf = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ExportConf.Builder(ReservedFormat.CSV)
+        .header(&lt;span class=&quot;predefined-constant&quot;&gt;true&lt;/span&gt;)
+        .exportClass(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; CsvExport())
+        .build();
+
+  &lt;span class=&quot;comment&quot;&gt;// Build an instance of table to pass to the export feature&lt;/span&gt;
+  HtmlTable table = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; HtmlTableBuilder&amp;lt;Person&amp;gt;().newBuilder(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;tableId&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, persons, request, exportCsvConf)
+    .column().fillFromCriteria(criterias).title(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Id&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;) &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+    .column().fillFromCriteria(criterias).title(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Firtname&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)
+    .column().fillFromCriteria(criterias).title(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Lastname&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)
+    .column().fillFromCriteria(criterias).title(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;City&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)
+    .column().fillFromCriteria(criterias).title(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Mail&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)
+    .column().fillFromCriteria(criterias, &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;{0,date,dd-MM-yyyy}&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;).title(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;BirthDate&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;) &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+    .build();
+
+  &lt;span class=&quot;comment&quot;&gt;// Render exported data in the browser&lt;/span&gt;
+  ExportUtils.renderExport(table, exportCsvConf, response);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;colist arabic&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;No need to retype the property to extract from the passed collection&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;You can still perform custom formatting when needed&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph margin-top-15&quot;&gt;
+&lt;p&gt;If you need raw export, a new auto mode has been added as well.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;annotation&quot;&gt;@RequestMapping&lt;/span&gt;(value = &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/export&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, produces = &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;text/csv&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)
+&lt;span class=&quot;directive&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt; csv(&lt;span class=&quot;annotation&quot;&gt;@DatatablesParams&lt;/span&gt; DatatablesCriterias criterias, HttpServletRequest request,
+
+  ...
+
+  &lt;span class=&quot;comment&quot;&gt;// Build an instance of table to pass to the export feature&lt;/span&gt;
+  HtmlTable table = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; HtmlTableBuilder&amp;lt;Person&amp;gt;().newBuilder(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;tableId&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, persons, request, exportCsvConf)
+    .auto(criterias) &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+    .build();
+
+  ...
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;colist arabic&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The &lt;code&gt;auto()&lt;/code&gt; method will automatically configure column as they are defined client-side. In return, no formatting is possible.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;performance&quot;&gt;Performance&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Nasty concurrency issues have been detected under heavy load. After hours of struggling, &lt;a href=&quot;https://twitter.com/rlespinasse&quot;&gt;Romain&lt;/a&gt; and I have finally defeated them. If you are interested, more details are available in the original &lt;a href=&quot;http://dandelion-forum.48353.x6.nabble.com/Concurrency-problems-under-heavy-load-td1947.html&quot;&gt;discussion&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;As a consequence, lots of performance tests have been performed and some sample applications now contain &lt;a href=&quot;http://jmeter.apache.org/&quot;&gt;JMeter&lt;/a&gt; test plans.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph margin-top-20&quot;&gt;
+&lt;p&gt;The full change logs is available &lt;a href=&quot;/components/datatables/1.1.0/changelog/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Happy coding!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        <pubDate>Wed, 29 Jul 2015 00:00:00 -0400</pubDate>
+        <link>http://dandelion.github.io/blog/2015/07/29/dandelion-datatables-1.1.0-release</link>
+        <guid isPermaLink="true">http://dandelion.github.io/blog/2015/07/29/dandelion-datatables-1.1.0-release</guid>
+        
+        
+        <category>release</category>
+        
+      </item>
+    
+      <item>
+        <title>Dandelion-Core 1.1.0 release</title>
+        <description>&lt;div class=&quot;paragraph margin-top-30&quot;&gt;
+&lt;p&gt;Dandelion-Core has been released in v1.1.0!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This release brings some nice improvements that will be reviewed here.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot; style=&quot;float: right&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;a class=&quot;image&quot; href=&quot;http://bower.io/&quot;&gt;&lt;img src=&quot;/assets/images/logo_bower.png&quot; alt=&quot;Bower&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;bower-integration&quot;&gt;Bower integration&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Dandelion-Core now provides a &lt;a href=&quot;http://bower.io/&quot;&gt;Bower&lt;/a&gt; integration. The integration consists in scanning the downloaded &lt;code&gt;bower_components&lt;/code&gt; folder for all &lt;code&gt;bower.json&lt;/code&gt; manifests. Once scanned, all manifests are automatically converted into &lt;strong&gt;vendor bundles&lt;/strong&gt;. A particular strategy is used for scanning, refer to the documentation for more details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This feature is awesome for 2 reasons:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;It&amp;#8217;s a great time saver: no need to write and maintain vendor bundles any longer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After &lt;a href=&quot;http://www.webjars.org/&quot;&gt;WebJars&lt;/a&gt;, it provides another integration with a widely used web package manager&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you see more, please use the comments below :-)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock warning&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-warning&quot; title=&quot;Warning&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+For now, only JavaScript and CSS assets are supported. So please check what kind of assets are referenced in the &lt;a href=&quot;http://bower.io/docs/creating-packages/#main&quot;&gt;main&lt;/a&gt; section of Bower manifests.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;configurable-placeholders-for-asset-injection&quot;&gt;Configurable placeholders for asset injection&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Prior to the v1.1.0, assets were automatically inserted either at the end of the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; section (default location for CSS files) or at the end of the &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; section (default location for JavaScript files).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This behaviour could be adapted thanks to the &lt;code&gt;dom&lt;/code&gt; attribute in the definition of each asset. In the following example, the &lt;code&gt;app.js&lt;/code&gt; is configured to be inserted at the end of the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; section instead of its default location.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;dandelion/any-bundle.json&lt;/div&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;json&quot;&gt;{
+   &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;assets&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : [{
+      &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;dom&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+      &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : {
+         &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;webapp&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/assets/js/app.js&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+      }
+   ]
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;But in legacy apps, inlined scrips are often necessary. And if these scripts require a vendor asset, which is automatically loaded at the end of the body, it forces end-users to create a bundle for these assets. From a bundle management perspective, it can quickly become a pain.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;So in order to provide more flexibility, this feature is about providing precise control over asset placement, thanks to some improvements in the JSP taglib, in the Thymeleaf dialect and in the asset injection handler.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Here follows an usage example with Thymeleaf:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;html&quot;&gt;&lt;span class=&quot;doctype&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;attribute-name&quot;&gt;xmlns&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;http://www.w3.org/1999/xhtml&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;attribute-name&quot;&gt;xmlns:th&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;http://www.thymeleaf.org&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;attribute-name&quot;&gt;xmlns:layout&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;http://www.ultraq.net.nz/web/thymeleaf/layout&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;attribute-name&quot;&gt;xmlns:ddl&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;http://www.thymeleaf.org/dandelion&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;attribute-name&quot;&gt;ddl:bundle-includes&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;bootstrap2,bootstrap-datepicker2&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;title&lt;/span&gt; &lt;span class=&quot;attribute-name&quot;&gt;layout:title-pattern&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;$DECORATOR_TITLE - $CONTENT_TITLE&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;gt;&lt;/span&gt;App&lt;span class=&quot;tag&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;style&lt;/span&gt; &lt;span class=&quot;attribute-name&quot;&gt;ddl:placeholder-replace&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;/&amp;gt;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span class=&quot;inline&quot;&gt;
+    &lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pseudo-class&quot;&gt;:fragments&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;styles&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&amp;gt;
+        &lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;span class=&quot;tag&quot;&gt;optional&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;style&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;/&lt;span class=&quot;tag&quot;&gt;p&lt;/span&gt;&amp;gt;
+    &lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;/&lt;span class=&quot;tag&quot;&gt;div&lt;/span&gt;&amp;gt;
+&lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;/&lt;span class=&quot;tag&quot;&gt;head&lt;/span&gt;&amp;gt;
+&lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;body&lt;/span&gt;&amp;gt;
+    &lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;th&lt;/span&gt;&lt;span class=&quot;pseudo-class&quot;&gt;:include&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;common/fragments/main-menu :: top-menu&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&amp;gt;&lt;span class=&quot;tag&quot;&gt;Top&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;Menu&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;/&lt;span class=&quot;tag&quot;&gt;div&lt;/span&gt;&amp;gt;
+
+    &lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pseudo-class&quot;&gt;:fragment&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;container&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&amp;gt;
+        &lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;span class=&quot;tag&quot;&gt;Page&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;goes&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;here&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;/&lt;span class=&quot;tag&quot;&gt;p&lt;/span&gt;&amp;gt;
+    &lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;/&lt;span class=&quot;tag&quot;&gt;div&lt;/span&gt;&amp;gt;
+
+    &lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;ddl&lt;/span&gt;&lt;span class=&quot;pseudo-class&quot;&gt;:placeholder-include&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;js&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&amp;gt; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+        &lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;span class=&quot;tag&quot;&gt;Dandelion&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;injects&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;tags&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;here&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;/&lt;span class=&quot;tag&quot;&gt;p&lt;/span&gt;&amp;gt;
+    &lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;/&lt;span class=&quot;tag&quot;&gt;div&lt;/span&gt;&amp;gt;
+
+    &lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pseudo-class&quot;&gt;:fragment&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;scripts&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&amp;gt;
+        &lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;span class=&quot;tag&quot;&gt;optional&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;/&lt;span class=&quot;tag&quot;&gt;p&lt;/span&gt;&amp;gt;
+    &lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;/&lt;span class=&quot;tag&quot;&gt;div&lt;/span&gt;&amp;gt;
+&lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;/&lt;span class=&quot;tag&quot;&gt;body&lt;/span&gt;&amp;gt;
+&lt;span class=&quot;error&quot;&gt;&amp;lt;&lt;/span&gt;/&lt;span class=&quot;tag&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;colist arabic&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The &lt;code&gt;ddl:placeholder-replace=&quot;css&quot;&lt;/code&gt; attribute will replace the targeted &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt; tag by all &lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt; tags referenced in the included bundles&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;2&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The &lt;code&gt;ddl:placeholder-include=&quot;js&quot;&lt;/code&gt; attribute will here include into the targeted &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; tag all included &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tags referenced in the included bundles&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph margin-top-20&quot;&gt;
+&lt;p&gt;The full change logs is available &lt;a href=&quot;/components/core/1.1.0/changelog/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Happy coding!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        <pubDate>Sun, 26 Jul 2015 00:00:00 -0400</pubDate>
+        <link>http://dandelion.github.io/blog/2015/07/26/dandelion-core-1.1.0-releases</link>
+        <guid isPermaLink="true">http://dandelion.github.io/blog/2015/07/26/dandelion-core-1.1.0-releases</guid>
+        
+        
+        <category>release</category>
+        
+      </item>
+    
+      <item>
+        <title>Dandelion-Core and Dandelion-Datatables 1.0.1 releases</title>
+        <description>&lt;div class=&quot;paragraph margin-top-30&quot;&gt;
+&lt;p&gt;Dandelion-Core and Dandelion-Datatables have been released in v1.0.1. These releases are mainly bugfixing versions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The full change logs are available here:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Dandelion-Core:&lt;/strong&gt; &lt;a href=&quot;/components/core/1.0.1/changelog/&quot;&gt;Change log&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Dandelion-Datatables&lt;/strong&gt;: &lt;a href=&quot;/components/datatables/1.0.1/changelog/&quot;&gt;Change log&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Happy coding!&lt;/p&gt;
+&lt;/div&gt;</description>
+        <pubDate>Sat, 04 Jul 2015 00:00:00 -0400</pubDate>
+        <link>http://dandelion.github.io/blog/2015/07/04/dandelion-core-and-datatables-1.0.1-releases</link>
+        <guid isPermaLink="true">http://dandelion.github.io/blog/2015/07/04/dandelion-core-and-datatables-1.0.1-releases</guid>
+        
+        
+        <category>release</category>
+        
+      </item>
+    
+      <item>
+        <title>Dandelion-Core and Dandelion-Datatables 1.0.0 releases</title>
+        <description>&lt;div class=&quot;paragraph margin-top-30&quot;&gt;
+&lt;p&gt;It&amp;#8217;s been a while since the last release but it was worth the wait: Dandelion-Core and Dandelion-Datatables have finally been released in v1.0.0!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Obviously, these versions contain major changes as well as great improvements and bug fixes. Let&amp;#8217;s have an overview of both changelogs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;dandelion-core&quot;&gt;Dandelion-Core&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;better-coverage-of-application-servers&quot;&gt;Better coverage of application servers&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;One of the key internal feature of Dandelion-Core is to scan for asset bundles within classpath. Unfortunately, it&amp;#8217;s not an easy task to cover all kinds of application servers since most of them work differently.&lt;br&gt;
+Since Dandelion-Core v1.0.0, more app servers are supported, such as JBoss AS 6+, Wildfly and Websphere AS.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Note however that requirements have evolved: the Servlet API 3.x is now required to make all Dandelion components work. Therefore you must ensure to deploy your applications in a Servlet 3.x compatible container such as Jetty 8.x, Tomcat 7.x, JBoss AS 6, Weblogic Server 12c, &amp;#8230;&amp;#8203;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;profiles&quot;&gt;Profiles&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;New Dandelion profiles provide a way to segregate parts of your configuration and make it only available in certain environments.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;All configuration options are created with two default values, one for the built-in &lt;code&gt;dev&lt;/code&gt; profile, another for the &lt;code&gt;prod&lt;/code&gt; one. For example, in &lt;code&gt;dev&lt;/code&gt; profile, you can access the live debugger whereas you can&amp;#8217;t in &lt;code&gt;prod&lt;/code&gt; profile.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Custom profile can of course be created to suit your particular needs. Refer to the documentation for more details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;manual-automatic-versioning&quot;&gt;Manual &amp;amp; automatic versioning&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Prior to the v1.0.0, only manual versioning was supported. It was done by using the &lt;code&gt;version&lt;/code&gt; attribute in every asset of a bundle.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;dandelion/bundle.json&lt;/div&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;json&quot;&gt;{
+  &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;assets&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : [
+    {
+      &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;1.2.3&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+      &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;locations&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : {
+        &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;webapp&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/assets/css/application.css&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+      }
+    }
+  ]
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;colist arabic&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The version is manual here, set to &lt;code&gt;1.2.3&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In such a situation, Dandelion-Core generates this kind of HTML code:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;html&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;attribute-name&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;stylesheet&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;attribute-name&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/context/dandelion-assets/[MD5-STORAGE-HASH]/css/application-1.2.3.css&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/link&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Starting from the v1.0.0, if you leave the &lt;code&gt;version&lt;/code&gt; attribute blank, Dandelion-Core will defaultly use an automatic versioning based on the contents of the asset. The HTML will become:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;html&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;attribute-name&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;stylesheet&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;attribute-name&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/context/dandelion-assets/[MD5-STORAGE-HASH]/css/application-[MD5-VERSION-HASH].css&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/link&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This versioning, also called &lt;em&gt;fingerprinting&lt;/em&gt;, is ideal during development since a new hash is automatically calculated as soon as the file changes, thus invalidating browser cache.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Others strategies also exist. Refer to the documentation to find out more.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;new-live-debugger&quot;&gt;New live debugger&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The debugger has been fully refactored to be much clearer and more complete. I hope the way how Dandelion processes requests and responses will become much clearer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Moreover, a new alert reporting tool has been added, allowing you know as soon as possible when wrong/unexisting bundles are used in pages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;thymeleaf&quot;&gt;Thymeleaf&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For Thymeleaf users, one of the great addition is the Thymeleaf processing of JavaScript assets. Starting from the v1.0.0, you can now use any Thymeleaf expressions in your external JavaScript assets, as if you were using &lt;a href=&quot;http://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html#script-inlining-javascript-and-dart&quot;&gt;script inlining&lt;/a&gt; in templates.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For example, consider the following bundle, which contains a single asset configured with the &lt;code&gt;webapp&lt;/code&gt; location:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;dandelion/app.json&lt;/div&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;json&quot;&gt;{
+  &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;assets&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: [
+    {
+      &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;locations&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: {
+        &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;webapp&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/assets/js/app.js&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+      }
+    }
+  ]
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;You can now easily get the current context directly within the asset:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;/assets/js/app.js&lt;/div&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; contextPath = &lt;span class=&quot;comment&quot;&gt;/*[[@{/}]]*/&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/my-context&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Even greater, all objects passed in the &lt;code&gt;HttpServletRequest&lt;/code&gt; are available to all assets loaded from the same page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For example, consider the following Spring MVC controller.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;annotation&quot;&gt;@ModelAttribute&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;project&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;) &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span class=&quot;directive&quot;&gt;public&lt;/span&gt; Project populateModel(){
+   &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Project(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;dandelion&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;colist arabic&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;1&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The &lt;code&gt;@ModelAttribute&lt;/code&gt; annotation is typically used to expose beans to the web view. Here we expose a &lt;code&gt;Project&lt;/code&gt; bean as a model attribute&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;You can now make full use of the exposed objects, directly in assets, using Thymeleaf expressions:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;/assets/js/app.js&lt;/div&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;loadProject&lt;/span&gt;() {
+   &lt;span class=&quot;predefined&quot;&gt;$&lt;/span&gt;.ajax({
+      &lt;span class=&quot;key&quot;&gt;url&lt;/span&gt; : &lt;span class=&quot;comment&quot;&gt;/*[[@{/api/projects/{p}(p=${project.name})}]]*/&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/my-context/api/projects/dandelion&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+      &lt;span class=&quot;key&quot;&gt;type&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+      &lt;span class=&quot;key&quot;&gt;dataType&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+      ...
+   });
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Of course, as soon as you use an expression inside one of your JavaScript asset, Dandelion will always invalidate cache since the asset has actually become dynamic!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For a complete list of changes in Dandelion-Core, feel free to see the full changelog &lt;a href=&quot;/components/core/1.0.0/changelog/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;dandelion-datatables&quot;&gt;Dandelion-Datatables&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;support-for-datatables-1-10-x&quot;&gt;Support for DataTables 1.10.x&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Dandelion-Datatables now generates v1.10.x-compatible code. All features have been updated in this direction.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;new-filtering-plugin&quot;&gt;New filtering plugin&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The component now uses the awesome &lt;a href=&quot;http://yadcf-showcase.appspot.com/&quot;&gt;yadcf plugin&lt;/a&gt; authored by &lt;a href=&quot;https://github.com/vedmack&quot;&gt;Daniel Reznick&lt;/a&gt;. All features are not covered yet, but it should be quickly improved in next versions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;better-performance&quot;&gt;Better performance&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The extension API has been fully refactored and is now based on &lt;a href=&quot;http://docs.oracle.com/javase/tutorial/sound/SPI-intro.html&quot;&gt;SPI&lt;/a&gt;, thus leading to much better performance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;You can see the full changelog &lt;a href=&quot;/components/datatables/1.0.0/changelog/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;site-docs-and-samples&quot;&gt;Site, docs and samples&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;As you may have noticed, the site has been refreshed and, most importantly, should require much less effort for maintenance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Regarding docs, all components now use the awesome &lt;a href=&quot;http://asciidoctor.org/&quot;&gt;Asciidoctor project&lt;/a&gt; to generate their documentation (soon in multiple formats). Once again, it will require less effort for maintenance even if the main point was to be able to properly version each component&amp;#8217;s documentation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Finally, note that each component has now its own Git repository for sample applications:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/dandelion/dandelion-core-samples&quot; class=&quot;bare&quot;&gt;https://github.com/dandelion/dandelion-core-samples&lt;/a&gt; for all samples in relation to Dandelion-Core&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/dandelion/dandelion-datatables-samples&quot; class=&quot;bare&quot;&gt;https://github.com/dandelion/dandelion-datatables-samples&lt;/a&gt; for all samples in relation to Dandelion-Datatables&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Lost of sample applications have been added and of course, all of them have been refreshed to reflect the latest changes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;And if you like whales as I do, note that (almost) all samples are now distributed via &lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt; images. ;-)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;contributions&quot;&gt;Contributions&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;One final word about contributions. I wanted to sincerely thank new contributors: &lt;a href=&quot;https://github.com/RizziCR&quot;&gt;Christoph Rizzotti&lt;/a&gt; from Germany, &lt;a href=&quot;https://github.com/dmorellet&quot;&gt;Damien Morellet&lt;/a&gt; and &lt;a href=&quot;https://github.com/rnowif&quot;&gt;Renaud Humbert-Labeaumaz&lt;/a&gt; from France and &lt;a href=&quot;https://github.com/ammachado&quot;&gt;Adriano Marcondes Machado&lt;/a&gt; from Brazil. The &lt;a href=&quot;/team&quot;&gt;team page&lt;/a&gt; has been updated accordingly. Once again: thank you guys!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph margin-top-20&quot;&gt;
+&lt;p&gt;I hope you&amp;#8217;ll enjoy with these new releases.&lt;br&gt;
+As usual, feel free to spread the word. And thoughts and feedback are of course very welcome.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Happy coding!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        <pubDate>Tue, 30 Jun 2015 00:00:00 -0400</pubDate>
+        <link>http://dandelion.github.io/blog/2015/06/30/dandelion-core-and-datatables-1.0.0-releases</link>
+        <guid isPermaLink="true">http://dandelion.github.io/blog/2015/06/30/dandelion-core-and-datatables-1.0.0-releases</guid>
+        
+        
+        <category>release</category>
+        
+      </item>
+    
+      <item>
+        <title>Dandelion-Core and Dandelion-Datatables 0.10.1 releases</title>
+        <description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I&amp;#8217;m happy to announce the release of Dandelion v0.10.1.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Even if it&amp;#8217;s mainly a bugfixing version, this release stabilizes the basis for the next important release: the v0.11.0 &lt;a href=&quot;https://github.com/dandelion/dandelion/issues?q=is%3Aopen+is%3Aissue+milestone%3A0.11.0&quot;&gt;Dandelion&lt;/a&gt; / &lt;a href=&quot;https://github.com/dandelion/dandelion-datatables/issues?q=is%3Aopen+is%3Aissue+milestone%3A0.11.0&quot;&gt;Dandelion-Datatables&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The full change logs are available here:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Dandelion-Core:&lt;/strong&gt; &lt;a href=&quot;/components/core/0.10.1/changelog/&quot;&gt;Change log&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Dandelion-Datatables&lt;/strong&gt;: &lt;a href=&quot;/components/datatables/0.10.1/changelog/&quot;&gt;Change log&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;As usual, your thoughts and feedback are very welcome:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/dandelion_proj&quot;&gt;Twitter&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://dandelion-forum.48353.n6.nabble.com&quot;&gt;Forum&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Or using the comments below!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</description>
+        <pubDate>Mon, 25 Aug 2014 00:00:00 -0400</pubDate>
+        <link>http://dandelion.github.io/blog/2014/08/25/dandelion-0.10.1-release</link>
+        <guid isPermaLink="true">http://dandelion.github.io/blog/2014/08/25/dandelion-0.10.1-release</guid>
+        
+        
+        <category>release</category>
+        
+      </item>
+    
+      <item>
+        <title>Release of Dandelion 0.10.0</title>
+        <description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;After several months hibernation, I&amp;#8217;m happy to announce the Release of Dandelion v0.10.0!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot; style=&quot;text-align: center&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;/assets/images/blog/gif_dance_now.gif&quot; alt=&quot;gif dance now&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;past-and-present&quot;&gt;Past and present&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Until this release, Dandelion-Core and Dandelion-Datatables were evolving separatly. It began about 2 years ago with &lt;em&gt;Datatables4j&lt;/em&gt;, aimed at easing the integration of the &lt;a href=&quot;http://datatables.net/&quot;&gt;DataTables jQuery plugin&lt;/a&gt; in JVM-based web applications. But with a recurring observation: the web resources management can sometimes become a hell of a job. Especially with DataTables, however complete, which sometimes requires extra resources and can become hard to configure. Also with about 2 tons of new librairies released every month (approximate number).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;That&amp;#8217;s why &lt;a href=&quot;https://twitter.com/rlespinasse&quot;&gt;Romain&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/tduchateau&quot;&gt;I&lt;/a&gt;, as good global citizens, decided to find something to address this issue.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;After several prototypes based on a perfect use case - &lt;em&gt;Datatables4j&lt;/em&gt; - Dandelion was born. We continued to improve it independently during some months and finally, despite   several sudden new developments which held up the release for nearly four months, we ended up releasing a whole new version of Dandelion-Core and connecting Dandelion-Datatables to Dandelion-Core in the same time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This is of course extremely satisfying for us. This is all the more satisfying because Dandelion is, since the beginning, an after-dinner project.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;versioning&quot;&gt;Versioning&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Starting from the v0.10.0, we have aligned Dandelion-Core and Dandelion-Datatables versions. As for example with &lt;a href=&quot;http://spring.io/&quot;&gt;Spring&lt;/a&gt;, you won&amp;#8217;t get a headache studying which version of the component C2 is compatible with the component C1. Every artifact is now released under the same version number.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Note however that we have left out Dandelion-Webanalytics, which is still incubating.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;dandelion-datatables&quot;&gt;Dandelion-Datatables&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Much has changed! Below is an extract from the &lt;a href=&quot;/components/datatables/0.10.0/changelog/&quot;&gt;full change log&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;All extension mechanism has been refreshed and improved thanks to the Dandelion-Core features&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Performance increased by refactoring the internal configuration system&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;New way to generate the Javascript code and possibility to plug in a custom generator&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Improved filtering with AJAX sources: delayed filtering, data reloading,&amp;#8230;&amp;#8203;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;New themes and theme options available:&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Bootstrap 3&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;BS2/BS3-Responsive option, based on &lt;a href=&quot;https://github.com/Comanche/datatables-responsive&quot;&gt;datatables-responsive&lt;/a&gt; by &lt;a href=&quot;https://github.com/Comanche&quot;&gt;Comanche&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For those who are already using Dandelion-Datatables, note that a migration guide is &lt;a href=&quot;/components/datatables/0.10.0/docs/from-0.9.x-to-0.10.x.html&quot;&gt;available here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;dandelion-core&quot;&gt;Dandelion-Core&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Dandelion-Core has became the fundation of the Dandelion Framework. In this regard:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;the previous version (0.2.1) has been fully refactored and now offers plenty of new features&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dandelion-Datatables is now fully integrated with Dandelion-Core, as mentioned above&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;and the cool thing is that you can also use Dandelion-Core as a standalone library!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Of course, much remains to be done. But it is something like that popular saying: &quot;done is better than perfect&quot;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Feel free to take a look at:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;the brand new documentation&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the &lt;a href=&quot;/components/core/0.10.0/changelog/&quot;&gt;full change log&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;sample-applications&quot;&gt;Sample applications&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Looots of sample applications have been added to the &lt;a href=&quot;https://github.com/dandelion/dandelion-samples&quot;&gt;dedicated repository&lt;/a&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Under the &lt;code&gt;/dandelion&lt;/code&gt; folder, you will find some sample apps demonstrating the key features of Dandelion-Core. And others will soon follow.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Under &lt;code&gt;/datatables&lt;/code&gt;, plenty of new sample apps demonstrating each of the Dandelion-Datatables&#39; features.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Note that we have also made a new &lt;a href=&quot;https://github.com/dandelion/dandelion-samples/tree/master/dandelion/dandelion-petclinic&quot;&gt;Dandelion-enabled version of the Spring PetClinic sample application&lt;/a&gt; in which are integrated both Dandelion-Core and Dandelion-Datatables. A series of blog posts will be soon published in this regard.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Finally, the official Spring PetClinic sample application will be soon updated with this new version.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;issue-tracker-and-workflow-automation&quot;&gt;Issue tracker and workflow automation&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We previously used a single Github repository for all issues but it turned out to be less practical than we initially thought. That&amp;#8217;s why each repository uses now its own issue tracker (the Github one). Again, sorry for the notification bombing during the migration. :-/&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;And to add some sugar to the issue management, all repositories are now plugged in &lt;a href=&quot;https://waffle.io/&quot;&gt;waffle.io&lt;/a&gt;. We will progressively migrate issues/ideas from &lt;a href=&quot;https://trello.com/&quot;&gt;Trello&lt;/a&gt; to &lt;a href=&quot;https://waffle.io/&quot;&gt;waffle.io&lt;/a&gt;, hoping that this will bring more interaction and transparency to the issue workflow. Of course, you can still use the native Github issue tracker, it&amp;#8217;s really up to you.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;documentation&quot;&gt;Documentation&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Of course, all documentation has been refreshed to reflect the last changes, both in Dandelion-Core and Dandelion-Datatables.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;But there is one other point it&amp;#8217;s worth noting: you can now contribute to the documentation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The doc site is now plugged in &lt;a href=&quot;http://prose.io/&quot;&gt;prose.io&lt;/a&gt;. &lt;a href=&quot;https://github.com/prose/prose&quot;&gt;Prose&lt;/a&gt; is an awesome tool for editing sites hosted on &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;. You don&amp;#8217;t even need to know what a pull request means, this is done automatically once you have submitted your changes. Long story short, don&amp;#8217;t hesitate to improve the documentation!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;happy-coding-with-dandelion&quot;&gt;Happy coding with Dandelion!&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;As usual, your thoughts and feedback are very welcome:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/dandelion_proj&quot;&gt;Twitter&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://dandelion-forum.48353.n6.nabble.com/&quot;&gt;Forum&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Or using the comments below!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        <pubDate>Sun, 25 May 2014 00:00:00 -0400</pubDate>
+        <link>http://dandelion.github.io/blog/2014/05/25/dandelion-0.10.0-release</link>
+        <guid isPermaLink="true">http://dandelion.github.io/blog/2014/05/25/dandelion-0.10.0-release</guid>
+        
+        <category>Dandelion-Core</category>
+        
+        <category>Dandelion-Datatables</category>
+        
+        
+        <category>release</category>
+        
+      </item>
+    
+      <item>
+        <title>Release of Dandelion-Datatables 0.9.3</title>
+        <description>&lt;p&gt;
+   &lt;strong&gt;Dandelion-Datatables v0.9.3 has been released!&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;br /&gt;
+&lt;p&gt;
+   The main thing in this release is the support for &lt;a href=&quot;http://www.thymeleaf.org/&quot;&gt;Thymeleaf&lt;/a&gt; 2.1.x. You can now peacefully use Dandelion-Datatables in your Thymeleaf templates. :-)
+&lt;/p&gt;
+&lt;p&gt;
+   Some other improvements have also been shipped.
+&lt;/p&gt;
+&lt;p&gt;
+   I take this opportunity to thank the new &lt;a href=&quot;/team&quot;&gt;contributors&lt;/a&gt;: &lt;strong&gt;Bill Gorder&lt;/strong&gt;, &lt;strong&gt;David Cervera Pérez&lt;/strong&gt; and &lt;strong&gt;Serdyn du Toit&lt;/strong&gt;. Many thanks to them for their help! 
+&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;
+   You can see the full changelog &lt;a href=&quot;/datatables/releases/0.9.3/&quot;&gt;here&lt;/a&gt; and as usual, your thoughts and feedback are very welcome. :-)
+&lt;/p&gt;</description>
+        <pubDate>Mon, 25 Nov 2013 00:00:00 -0500</pubDate>
+        <link>http://dandelion.github.io/blog/2013/11/25/dandelion-datatables-0.9.3-release</link>
+        <guid isPermaLink="true">http://dandelion.github.io/blog/2013/11/25/dandelion-datatables-0.9.3-release</guid>
+        
+        <category>Dandelion-datatables</category>
+        
+        
+        <category>release</category>
+        
+      </item>
+    
+      <item>
+        <title>Release of Dandelion-Datatables 0.9.2</title>
+        <description>&lt;p&gt;
+   &lt;strong&gt;Dandelion-Datatables v0.9.2 has been released in &lt;a href=&quot;http://search.maven.org/#search%7Cga%7C1%7Cdandelion&quot;&gt;Maven Central&lt;/a&gt;!&lt;/strong&gt;
+&lt;/p&gt;
+&lt;p&gt;
+   This is mainly a bugfixing version.
+&lt;/p&gt;
+&lt;p&gt;
+   You can see the full changelog &lt;a href=&quot;/datatables/releases/0.9.2/&quot;&gt;here&lt;/a&gt; and as usual, your thoughts and feedback are very welcome. :-)
+&lt;/p&gt;</description>
+        <pubDate>Thu, 03 Oct 2013 00:00:00 -0400</pubDate>
+        <link>http://dandelion.github.io/blog/2013/10/03/dandelion-datatables-0.9.2-release</link>
+        <guid isPermaLink="true">http://dandelion.github.io/blog/2013/10/03/dandelion-datatables-0.9.2-release</guid>
+        
+        <category>Dandelion-datatables</category>
+        
+        
+        <category>release</category>
+        
+      </item>
+    
+      <item>
+        <title>Dandelion Datatables 0.9.1 Release</title>
+        <description>&lt;strong&gt;Dandelion-Datatables v0.9.1 has been released in &lt;a href=&quot;http://search.maven.org/#search%7Cga%7C1%7Cdandelion&quot;&gt;Maven Central&lt;/a&gt;!&lt;/strong&gt;
+&lt;p&gt;
+   This version in mainly focused on the i18n feature.
+&lt;/p&gt;
+&lt;p&gt;
+   You can see the full changelog &lt;a href=&quot;/datatables/releases/0.9.1/&quot;&gt;here&lt;/a&gt; and as usual, your thoughts and feedback are very welcome. :-)
+&lt;/p&gt;</description>
+        <pubDate>Thu, 12 Sep 2013 00:00:00 -0400</pubDate>
+        <link>http://dandelion.github.io/blog/2013/09/12/dandelion-datatables-0.9.1-release</link>
+        <guid isPermaLink="true">http://dandelion.github.io/blog/2013/09/12/dandelion-datatables-0.9.1-release</guid>
+        
+        <category>Dandelion-datatables</category>
+        
+        
+        <category>release</category>
+        
+      </item>
+    
+  </channel>
+</rss>

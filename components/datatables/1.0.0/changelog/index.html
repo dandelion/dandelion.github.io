@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dandelion Project</title>
+  <meta name="description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments. It helps to manipulate the web assets (JS, CSS) in different ways: assets organization in a bundle graph and classical optimizations like minification, compression or caching. It also facilitates the integration of powerful JavaScript libraries thanks to a set of extensible components.
+">
+
+  <link rel="canonical" href="http://dandelion.github.io/components/datatables/1.0.0/changelog/">
+  <link rel="alternate" type="application/rss+xml" title="Dandelion Project" href="http://dandelion.github.io/feed.xml" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400italic" type="text/css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/fontcustom.css">
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css">
+  <link rel="stylesheet" href="/assets/css/coderay.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+  <link rel="shortcut icon" href="/assets/images/dandelion_square.png">  
+  <script>
+   var _gaq = _gaq || [];
+   _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+   _gaq.push([ '_trackPageview' ]);
+   (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+   })();
+   </script>
+   <style>
+      .conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+      .conum[data-value] *{color:#fff!important}
+      .conum[data-value]+b{display:none}
+      .conum[data-value]:after{content:attr(data-value)}
+      pre .conum[data-value]{position:relative;top:-.125em}
+      b.conum *{color:inherit!important}
+      .conum:not([data-value]):empty{display:none}
+      .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+      .admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:15px;font-style:italic}
+   </style>
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:site" content="@dandelion_proj">
+   <meta name="twitter:creator" content="@dandelion_proj">
+   <meta name="twitter:url" content="http://dandelion.github.io">
+   <meta name="twitter:title" content="Dandelion Project">
+   <meta name="twitter:description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments">
+   <meta name="twitter:image" content="http://dandelion.github.com/assets/images/dandelion_square.png">
+</head> 
+
+<body>
+  <!-- Static navbar -->
+<nav class="navbar navbar-dandelion navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+          class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><span style="font-size:30px;">Dandelion</span></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li  class="active"><a href="/components">Components</a></li>
+        <li ><a href="/blog">Blog</a></li>
+        <li ><a href="/support.html">Support</a></li>
+        <li><a href="/search.html"><i class="fa fa-search"></i></a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+
+  <div class="container" style="min-height:750px;"><div class="sect1 margin-top-30">
+<h2 id="changelog-of-dandelion-datatables-v1-0-0">Changelog of Dandelion-Datatables v1.0.0</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="core">Core</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Refactored the extension mechanism with the Service Provider Interface, thus improving performance</p>
+</li>
+<li>
+<p>All extensions can now be extended by providing the right implementation + META-INF/services file</p>
+</li>
+<li>
+<p>New <code>DatatablesCriteria.isFiltered()</code> method allowing to determine programmatically if a column is being filtered</p>
+</li>
+<li>
+<p>Brand new debug menu (composed of debug pages) added to the recently added debugger</p>
+</li>
+<li>
+<p>The <code>global.feature.processing</code> is now enabled by default</p>
+</li>
+<li>
+<p>Upgraded supported DataTables' version to v1.10.7</p>
+</li>
+<li>
+<p>Added stateSave, stateLoad, stateSaveParams, stateLoadParams and stateLoaded callback functionality</p>
+</li>
+<li>
+<p>New JAR location added to all vendor bundles, allowing to fetch all assets from local instead of going out on Internet</p>
+</li>
+<li>
+<p>Lots of vendor libraries upgrades</p>
+</li>
+<li>
+<p>Removed TableCloth dependencies and the corresponding theme option when using Bootstrap themes</p>
+</li>
+<li>
+<p>Added support for new callbacks: statesave, statesaveparams, stateload, stateloadparams and stateloaded</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="export">Export</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Fixed issue with export when using HTTP POST method</p>
+</li>
+<li>
+<p>Iterate over columns for autosizing only if autosize is enabled in configuration</p>
+</li>
+<li>
+<p>The dom option now takes into account the jQueryUI theme</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="paging">Paging</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Removed the <code>four_button</code> paging type, since the new built-in paging type are now supported: <code>simple</code>, <code>simple_numbers</code>, <code>full</code>, <code>full_numbers</code></p>
+</li>
+<li>
+<p>Renamed <code>bootstrap</code> to <code>bootstrap_simple</code></p>
+</li>
+<li>
+<p>Renamed <code>bootstrap_four_button</code> to <code>bootstrap_full</code>, to comply with the built-in paging options</p>
+</li>
+<li>
+<p>Modified all paging-related bundles so that a version is now "fixed", preventing the auto-versioning to compute work on these assets</p>
+</li>
+<li>
+<p>Renamed <code>feature.paginationType</code> option to <code>feature.pagingType</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="filtering">Filtering</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Old filtering feature replaced by the awesome YADCF plugin</p>
+</li>
+<li>
+<p>Removed ddl-dt-multifilter bundle and assets since it is fully integrated in yadcf</p>
+</li>
+<li>
+<p>Updated the YadcfConfigGenerator so that it can handle filters which are externally triggered</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="plugins">Plugins</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>The Responsive plugin now based on the official <a href="http://datatables.net/extensions/responsive/">responsive extension</a>, not on Datatables-responsive any longer</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="jsp-implementation">JSP implementation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Fixed issue with AJAX-sourced data, an empty <code>&lt;body&gt;</code> was generated (only with the JSP taglib) when using an AJAX source</p>
+</li>
+<li>
+<p>Renamed the <code>insert</code> attribute of the <code>&lt;datatables:extraJs&gt;</code> tag to <code>placeholder</code></p>
+</li>
+<li>
+<p>Renamed <code>paginationType</code> table attribute to <code>pagingType</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="thymeleaf-implementation">Thymeleaf implementation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>New parser used allowing to use any Thymeleaf expression in the dialect attributes</p>
+</li>
+<li>
+<p>Upgraded Thymeleaf to 2.1.4.RELEASE</p>
+</li>
+<li>
+<p>Renamed <code>dt:insert</code> attribute to <code>dt:placeholder</code></p>
+</li>
+<li>
+<p>Renamed <code>dt:paginationType</code> table attribute to <code>dt:pagingType</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="closed-issues">Closed issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/282">#282</a>: sortInit not working when columns with display xls</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/278">#278</a>: Allow vendor bundles to work in a standalone environment</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/268">#268</a>: Unable to load use different sort types in the same table</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/267">#267</a>: export attribut of jsp tag "tables" breaks theme</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/264">#264</a>: Implement ColumnDef.isFiltered()</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/261">#261</a>: Make possible to extend already existing extensions</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/258">#258</a>: StandardConfigurationLoader non string values bug</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/254">#254</a>: Generalize the use of the service provider mechanism</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/241">#241</a>: Support for data tables 1.10</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/48">#48</a>: Remove HTML tags when filtering columns with body</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+  <footer class="footer area-footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-9">
+            
+            <div class="row">
+               <div class="col-md-4">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="fa fa-github"></i> GitHub</a></li>
+                     <li><a href="/team"><i class="fa fa-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="fa fa-road"></i> Roadmap</a></li>
+                     <li><a href="/faq"> <i class="fa fa-book"></i> FAQ</a></li>
+                     <li><a href="/acknowledgements/"><i class="fa fa-info-circle"></i> Acknowledgements</a></li>
+                     <li><a href="/history"><i class="fa fa-history"></i> History</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-puzzle-piece"></i> Components</h3>
+                  <ul>
+                     <li><a href="/components/core">Dandelion-Core</a></li>
+                     <li><a href="/components/datatables">Dandelion-Datatables</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-beer"></i> Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="fa fa-comment-o"></i> Blog</a></li>
+                     <li><a href="http://dandelion.48353.n6.nabble.com/"><i class="fa fa-comments-o"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="fa fa-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="col-md-3">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:5px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <a href="https://www.cloudbees.com"><img src="/assets/images/logo_cloudbees.png" /></a>
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+</body>
+</html>

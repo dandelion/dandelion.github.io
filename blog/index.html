@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dandelion Project</title>
+  <meta name="description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments. It helps to manipulate the web assets (JS, CSS) in different ways: assets organization in a bundle graph and classical optimizations like minification, compression or caching. It also facilitates the integration of powerful JavaScript libraries thanks to a set of extensible components.
+">
+
+  <link rel="canonical" href="http://dandelion.github.io/blog/">
+  <link rel="alternate" type="application/rss+xml" title="Dandelion Project" href="http://dandelion.github.io/feed.xml" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400italic" type="text/css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/fontcustom.css">
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css">
+  <link rel="stylesheet" href="/assets/css/coderay.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+  <link rel="shortcut icon" href="/assets/images/dandelion_square.png">  
+  <script>
+   var _gaq = _gaq || [];
+   _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+   _gaq.push([ '_trackPageview' ]);
+   (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+   })();
+   </script>
+   <style>
+      .conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+      .conum[data-value] *{color:#fff!important}
+      .conum[data-value]+b{display:none}
+      .conum[data-value]:after{content:attr(data-value)}
+      pre .conum[data-value]{position:relative;top:-.125em}
+      b.conum *{color:inherit!important}
+      .conum:not([data-value]):empty{display:none}
+      .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+      .admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:15px;font-style:italic}
+   </style>
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:site" content="@dandelion_proj">
+   <meta name="twitter:creator" content="@dandelion_proj">
+   <meta name="twitter:url" content="http://dandelion.github.io">
+   <meta name="twitter:title" content="Dandelion Project">
+   <meta name="twitter:description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments">
+   <meta name="twitter:image" content="http://dandelion.github.com/assets/images/dandelion_square.png">
+</head> 
+
+<body>
+  <!-- Static navbar -->
+<nav class="navbar navbar-dandelion navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+          class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><span style="font-size:30px;">Dandelion</span></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a href="/components">Components</a></li>
+        <li  class="active"><a href="/blog">Blog</a></li>
+        <li ><a href="/support.html">Support</a></li>
+        <li><a href="/search.html"><i class="fa fa-search"></i></a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+
+  <div class="container" style="min-height:750px;"><div class="row margin-top-20">
+  <div class="col-md-8">
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2015/08/11/dandelion-core-1.1.1-release">Dandelion-Core 1.1.1 release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2015-08-11</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><div class="paragraph margin-top-30"> <p>Dandelion-Core has been released in v1.1.1. This is a maintenance version, mainly focused on the <a href="http://bower.io/">Bower</a> integration, and should work as a drop-in replacement for 1.1.x versions.</p> </div> <div class="paragraph"> <p>By the way, thanks to <a href="https://github.com/wmh">Hunter Wu</a> from Taiwan for his contributions!</p> </div> <div class="paragraph">...</section>
+    </article>
+    <p>
+      <a href="/blog/2015/08/11/dandelion-core-1.1.1-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2015/07/29/dandelion-datatables-1.1.0-release">Dandelion-Datatables 1.1.0 release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2015-07-29</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><div class="paragraph margin-top-30"> <p>Dandelion-Datatables has been released in v1.1.0!</p> </div> <div class="paragraph"> <p>This release is mainly focused on the export feature but also fixes performance and security issues. Let&#8217;s review some of the changes.</p> </div> <div class="sect1"> <h2 id="export">Export</h2> <div class="sectionbody"> <div class="paragraph"> <p>Some utilities have been added to facilitate...</section>
+    </article>
+    <p>
+      <a href="/blog/2015/07/29/dandelion-datatables-1.1.0-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2015/07/26/dandelion-core-1.1.0-releases">Dandelion-Core 1.1.0 release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2015-07-26</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><div class="paragraph margin-top-30"> <p>Dandelion-Core has been released in v1.1.0!</p> </div> <div class="paragraph"> <p>This release brings some nice improvements that will be reviewed here.</p> </div> <div class="imageblock" style="float: right"> <div class="content"> <a class="image" href="http://bower.io/"><img src="/assets/images/logo_bower.png" alt="Bower" width="150" height="150"></a> </div> </div> <div class="sect1"> <h2 id="bower-integration">Bower integration</h2> <div class="sectionbody"> <div class="paragraph"> <p>Dandelion-Core now...</section>
+    </article>
+    <p>
+      <a href="/blog/2015/07/26/dandelion-core-1.1.0-releases">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2015/07/04/dandelion-core-and-datatables-1.0.1-releases">Dandelion-Core and Dandelion-Datatables 1.0.1 releases</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2015-07-04</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><div class="paragraph margin-top-30"> <p>Dandelion-Core and Dandelion-Datatables have been released in v1.0.1. These releases are mainly bugfixing versions.</p> </div> <div class="paragraph"> <p>The full change logs are available here:</p> </div> <div class="ulist"> <ul> <li> <p><strong>Dandelion-Core:</strong> <a href="/components/core/1.0.1/changelog/">Change log</a></p> </li> <li> <p><strong>Dandelion-Datatables</strong>: <a href="/components/datatables/1.0.1/changelog/">Change log</a></p> </li> </ul> </div> <div class="paragraph"> <p>Happy coding!</p> </div>...</section>
+    </article>
+    <p>
+      <a href="/blog/2015/07/04/dandelion-core-and-datatables-1.0.1-releases">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2015/06/30/dandelion-core-and-datatables-1.0.0-releases">Dandelion-Core and Dandelion-Datatables 1.0.0 releases</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2015-06-30</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><div class="paragraph margin-top-30"> <p>It&#8217;s been a while since the last release but it was worth the wait: Dandelion-Core and Dandelion-Datatables have finally been released in v1.0.0!</p> </div> <div class="paragraph"> <p>Obviously, these versions contain major changes as well as great improvements and bug fixes. Let&#8217;s have an overview of both changelogs.</p>...</section>
+    </article>
+    <p>
+      <a href="/blog/2015/06/30/dandelion-core-and-datatables-1.0.0-releases">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2014/08/25/dandelion-0.10.1-release">Dandelion-Core and Dandelion-Datatables 0.10.1 releases</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2014-08-25</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><div class="paragraph"> <p>I&#8217;m happy to announce the release of Dandelion v0.10.1.</p> </div> <div class="paragraph"> <p>Even if it&#8217;s mainly a bugfixing version, this release stabilizes the basis for the next important release: the v0.11.0 <a href="https://github.com/dandelion/dandelion/issues?q=is%3Aopen+is%3Aissue+milestone%3A0.11.0">Dandelion</a> / <a href="https://github.com/dandelion/dandelion-datatables/issues?q=is%3Aopen+is%3Aissue+milestone%3A0.11.0">Dandelion-Datatables</a>)</p> </div> <div class="paragraph"> <p>The full change logs are available here:</p> </div> <div...</section>
+    </article>
+    <p>
+      <a href="/blog/2014/08/25/dandelion-0.10.1-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2014/05/25/dandelion-0.10.0-release">Release of Dandelion 0.10.0</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2014-05-25</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><div class="paragraph"> <p>After several months hibernation, I&#8217;m happy to announce the Release of Dandelion v0.10.0!</p> </div> <div class="imageblock" style="text-align: center"> <div class="content"> <img src="/assets/images/blog/gif_dance_now.gif" alt="gif dance now"> </div> </div> <div class="sect1"> <h2 id="past-and-present">Past and present</h2> <div class="sectionbody"> <div class="paragraph"> <p>Until this release, Dandelion-Core and Dandelion-Datatables were evolving separatly. It began...</section>
+    </article>
+    <p>
+      <a href="/blog/2014/05/25/dandelion-0.10.0-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/11/25/dandelion-datatables-0.9.3-release">Release of Dandelion-Datatables 0.9.3</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-11-25</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p> <strong>Dandelion-Datatables v0.9.3 has been released!</strong> </p> <br /> <p> The main thing in this release is the support for <a href="http://www.thymeleaf.org/">Thymeleaf</a> 2.1.x. You can now peacefully use Dandelion-Datatables in your Thymeleaf templates. :-) </p> <p> Some other improvements have also been shipped. </p> <p> I take this opportunity to...</section>
+    </article>
+    <p>
+      <a href="/blog/2013/11/25/dandelion-datatables-0.9.3-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/10/03/dandelion-datatables-0.9.2-release">Release of Dandelion-Datatables 0.9.2</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-10-03</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p>
+   <strong>Dandelion-Datatables v0.9.2 has been released in <a href="http://search.maven.org/#search%7Cga%7C1%7Cdandelion">Maven Central</a>!</strong>
+</p>
+<p>
+   This is mainly a bugfixing version.
+</p>
+<p>
+   You can see the full changelog <a href="/datatables/releases/0.9.2/">here</a> and as usual, your thoughts and feedback are very welcome. :-)
+</p></section>
+    </article>
+    <p>
+      <a href="/blog/2013/10/03/dandelion-datatables-0.9.2-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/09/12/dandelion-datatables-0.9.1-release">Dandelion Datatables 0.9.1 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-09-12</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><strong>Dandelion-Datatables v0.9.1 has been released in <a href="http://search.maven.org/#search%7Cga%7C1%7Cdandelion">Maven Central</a>!</strong>
+<p>
+   This version in mainly focused on the i18n feature.
+</p>
+<p>
+   You can see the full changelog <a href="/datatables/releases/0.9.1/">here</a> and as usual, your thoughts and feedback are very welcome. :-)
+</p></section>
+    </article>
+    <p>
+      <a href="/blog/2013/09/12/dandelion-datatables-0.9.1-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/09/03/dandelion-datatables-0.9.0-release">Dandelion Datatables 0.9.0 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-09-03</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p> <strong>Dandelion-Datatables v0.9.0 has been released!</strong> </p> <p> Since the beginning of the project, this is clearly the biggest release ever published. Beside, even if it looks more like a major version, we prefer to keep the 1.x.y version number for the first stable version. </p> <p> Some works about...</section>
+    </article>
+    <p>
+      <a href="/blog/2013/09/03/dandelion-datatables-0.9.0-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/07/28/dandelion-0.2.1-release">Dandelion 0.2.1 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Romain Lespinasse</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-07-28</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion v0.2.1 has been released in <a href="http://search.maven.org/#search%7Cga%7C1%7Cdandelion">Maven Central</a>.</strong></p> <p>the assets stack now support * <code>async</code> and <code>defer</code> attributes for scripts, * dom positionning : <code>head</code> or <code>body</code> (Only for Thymeleaf)</p> <p>You can see the full changelog <a href="/dandelion/changelog.html">here</a> and as usual, your thoughts and feedback are very welcome. :-)</p>...</section>
+    </article>
+    <p>
+      <a href="/blog/2013/07/28/dandelion-0.2.1-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/06/29/dandelion-webanalytics-0.2.2-release">Dandelion Webanalytics 0.2.2 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Romain Lespinasse</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-06-29</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion-Webanalytics v0.2.2 has been released in <a href="http://search.maven.org/#search%7Cga%7C1%7Cdandelion-webanalytics">Maven Central</a>.</strong></p>
+
+<p>You can see the full changelog <a href="/webanalytics/changelog.html">here</a> and as usual, your thoughts and feedback are very welcome. :-)</p>
+</section>
+    </article>
+    <p>
+      <a href="/blog/2013/06/29/dandelion-webanalytics-0.2.2-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/06/06/dandelion-webanalytics-0.2.1-release">Dandelion Webanalytics 0.2.1 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Romain Lespinasse</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-06-06</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion-Webanalytics v0.2.1 has been released in <a href="http://search.maven.org/#search%7Cga%7C1%7Cdandelion-webanalytics">Maven Central</a>.</strong></p>
+
+<p>This is mainly a bugfixing version.</p>
+
+<p>You can see the full changelog <a href="/webanalytics/changelog.html">here</a> and as usual, your thoughts and feedback are very welcome. :-)</p>
+</section>
+    </article>
+    <p>
+      <a href="/blog/2013/06/06/dandelion-webanalytics-0.2.1-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/05/19/dandelion-datatables-0.8.13-and-0.8.14-releases">Dandelion Datatables 0.8.13 And 0.8.14 Releases</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-05-19</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion-Datatables v0.8.13 has been released in <a href="http://search.maven.org/#search%7Cga%7C1%7Cdandelion">Maven Central</a></strong> and the <strong>v0.8.14 as well</strong>, because of a shameful omission :-/</p> <p>This is mainly a bugfixing version.</p> <p>However, a major change has been added. The inner workings of the <code>url</code> / <code>dt:url</code> attributes (JSP/Thymeleaf), which are used to set the data...</section>
+    </article>
+    <p>
+      <a href="/blog/2013/05/19/dandelion-datatables-0.8.13-and-0.8.14-releases">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/05/18/dandelion-webanalytics-0.2.0-release">Dandelion Webanalytics 0.2.0 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Romain Lespinasse</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-05-18</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion-Webanalytics v0.2.0 has been released in <a href="http://search.maven.org/#search%7Cga%7C1%7Cdandelion">Maven Central</a>.</strong></p>
+
+<p>You can see the full changelog <a href="/webanalytics/changelog.html">here</a> and as usual, your thoughts and feedback are very welcome. :-)</p>
+</section>
+    </article>
+    <p>
+      <a href="/blog/2013/05/18/dandelion-webanalytics-0.2.0-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/05/18/dandelion-0.2.0-release">Dandelion 0.2.0 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Romain Lespinasse</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-05-18</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion v0.2.0 has been released in <a href="http://search.maven.org/#search%7Cga%7C1%7Cdandelion">Maven Central</a>.</strong></p>
+
+<p>You can see the full changelog <a href="/dandelion/changelog.html">here</a> and as usual, your thoughts and feedback are very welcome. :-)</p>
+</section>
+    </article>
+    <p>
+      <a href="/blog/2013/05/18/dandelion-0.2.0-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/05/03/dandelion-datatables-0.8.12-release">Dandelion Datatables 0.8.12 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-05-03</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion-Datatables v0.8.12 has been released in <a href="http://search.maven.org/#search%7Cga%7C1%7Cdandelion">Maven Central</a>.</strong></p>
+
+<p>This is mainly a bugfixing version, even if some new features has been added (e.g. hiding column).</p>
+
+<p>You can see the full changelog <a href="/datatables/changelog.html">here</a> and as usual, your thoughts and feedback are very welcome. :-)</p>
+</section>
+    </article>
+    <p>
+      <a href="/blog/2013/05/03/dandelion-datatables-0.8.12-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/04/24/Integrating-Dandelion-DataTables-in-the-Spring-Petclinic-app">Integrating Dandelion Datatables In The Spring Petclinic App</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Tutorial</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-04-24</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p>Petclinic is one of the sample applications created by <a href="http://www.springsource.org/">SpringSource</a> to demonstrate the key features of the <a href="http://www.springsource.org/spring-framework">Spring Framework</a>.</p> <p>We recently had the opportunity to integrate <a href="http://dandelion.github.io/datatables">Dandelion-Datatables</a> into this app. Here is a tutorial describing how it has been done, step by step.</p> <p class="text-center"> <img class="blog_img"...</section>
+    </article>
+    <p>
+      <a href="/blog/2013/04/24/Integrating-Dandelion-DataTables-in-the-Spring-Petclinic-app">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/04/22/dandelion-webanalytics-0.1.0-release">Dandelion Webanalytics 0.1.0 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Romain Lespinasse</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-04-22</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion-Webanalytics v0.1.0 has been released in <a href="http://search.maven.org/#search%7Cga%7C1%7Cdandelion">Maven Central</a>.</strong></p>
+
+<p>This is the first version of Dandelion-Webanalytics.</p>
+
+<p>You can see the full changelog <a href="/webanalytics/changelog.html">here</a> and as usual, your thoughts and feedback are very welcome. :-)</p>
+</section>
+    </article>
+    <p>
+      <a href="/blog/2013/04/22/dandelion-webanalytics-0.1.0-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/04/22/dandelion-0.1.0-release">Dandelion 0.1.0 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Romain Lespinasse</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-04-22</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion v0.1.0 has been released in <a href="http://search.maven.org/#search%7Cga%7C1%7Cdandelion">Maven Central</a>.</strong></p>
+
+<p>This is the first version of Dandelion.</p>
+
+<p>You can see the full changelog <a href="/dandelion/changelog.html">here</a> and as usual, your thoughts and feedback are very welcome. :-)</p>
+</section>
+    </article>
+    <p>
+      <a href="/blog/2013/04/22/dandelion-0.1.0-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/04/20/dandelion-datatables-0.8.11-release">Dandelion Datatables 0.8.11 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-04-20</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion-Datatables v0.8.11 has been released in Maven Central.</strong></p> <p>This new version really looks like a major version but we reserved the release of the v0.9.0 for the <a href="https://github.com/dandelion/issues/issues/54">connection between Dandelion-Datatables and Dandelion</a>.</p> <p>Well, let’s see some changes.</p> <p><br /> #### Core First of all, we really moved forward regarding...</section>
+    </article>
+    <p>
+      <a href="/blog/2013/04/20/dandelion-datatables-0.8.11-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/04/18/some-interesting-statistics">Some Interesting Statistics</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> News</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-04-18</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p>I recently looked at download the stats in Maven Central and … was pleasantly surprised! So I decided to make a quick review of the first seven months, since the beginning of the project (previously called DataTables4j).</p> <p>Here are some figures:</p> <ul> <li><a href="http://dandelion.github.io/datatables/changelog.html">16 releases</a>, from the v0.0.0-SNAPSHOT (DataTables4j) to...</section>
+    </article>
+    <p>
+      <a href="/blog/2013/04/18/some-interesting-statistics">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/03/27/dandelion-datatables-0.8.10-release">Dandelion Datatables 0.8.10 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-03-27</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion-Datatables v0.8.10 has been released in Maven Central.</strong></p> <p>The new release contains lots of new features, for both JSP and Thymeleaf. See the <a href="/datatables/changelog.html">changelog</a> for more details.</p> <p>The other thing to mention is that we tried to integrate the awesome new design made by <a href="/acknowledgments.html">Gianni Polito</a>. For now,...</section>
+    </article>
+    <p>
+      <a href="/blog/2013/03/27/dandelion-datatables-0.8.10-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/03/20/dandelion-datatables-0.8.8-release">Dandelion Datatables 0.8.8 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-03-20</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion-Datatables v0.8.8 has been released in Maven Central.</strong></p> <p>The new release contains 2 major changes :</p> <ul> <li> <p>integration tests have been significantly improved</p> </li> <li> <p>the export feature has been improved for the Thymeleaf implementation</p> </li> </ul> <h4 id="integration-tests">Integration tests</h4> <p>More and more features are covered by integration tests...</section>
+    </article>
+    <p>
+      <a href="/blog/2013/03/20/dandelion-datatables-0.8.8-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/03/15/dandelion-datatables-0.8.7-release">Dandelion Datatables 0.8.7 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-03-15</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion-Datatables v0.8.7 has been released in Maven Central.</strong></p> <p>The important thing to mention for this new release is that it embeds the first pull-request!! Thanks to <a href="https://github.com/Sorceror">Pavel Janecka</a>, you can now add a Javascript rendering function in AJAX-populated tables. Many thanks to him!</p> <p>For the rest, the 0.8.7 contains...</section>
+    </article>
+    <p>
+      <a href="/blog/2013/03/15/dandelion-datatables-0.8.7-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/03/11/documentation-update">Documentation Update</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> News</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-03-11</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><h4 id="fresh-documentation-available">Fresh documentation available!</h4> <p>The new documentation has been published! From now, we’ll use <a href="http://pages.github.com/">Github Pages</a> for the whole documentation generation and publication process.</p> <p>All the informations are now centralized in <a href="http://dandelion.github.com">http://dandelion.github.com</a> (documentation, blog, …). We tried to make the site as user friendly as possible.</p> <ul> <li><a...</section>
+    </article>
+    <p>
+      <a href="/blog/2013/03/11/documentation-update">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/03/05/dandelion-datatables-0.8.6-release">Dandelion Datatables 0.8.6 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-03-05</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion-Datatables v0.8.6 has been released in Maven Central.</strong></p> <h4 id="major-changes">Major Changes</h4> <ul> <li><strong>New release management</strong> : now, all JARs (core and extras) have the same version number. This will be much clearer and simpler for both developers and users.</li> <li><strong>New cache system</strong> : a huge <a href="http://github.com/dandelion/issues/issues/34">performance issue</a> has been...</section>
+    </article>
+    <p>
+      <a href="/blog/2013/03/05/dandelion-datatables-0.8.6-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/02/23/dandelion-datatables-0.8.5-release">Dandelion Datatables 0.8.5 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-02-23</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion-Datatables v0.8.5 has been released in Maven Central.</strong></p>
+
+<h4 id="issues">Issues</h4>
+<ul>
+  <li><a href="https://github.com/dandelion/issues/issues/19">issue #19</a> - Shift in the first row if a columnTag has a body</li>
+  <li><a href="https://github.com/dandelion/issues/issues/20">issue #20</a> - ExportLink position issue when Bootstrap2 theme enabled</li>
+</ul>
+
+<p><em>for more information, see the dandelion-datatables’ <a href="http://dandelion.github.com/datatables/changelog.html">changelog</a></em></p>
+</section>
+    </article>
+    <p>
+      <a href="/blog/2013/02/23/dandelion-datatables-0.8.5-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/02/21/dandelion-datatables-0.8.4-release">Dandelion Datatables 0.8.4 Release</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-02-21</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Dandelion-Datatables v0.8.4 has been released in Maven Central.</strong></p>
+
+<h4 id="changes">Changes</h4>
+<ul>
+  <li><strong>DataTables4j</strong> has became <strong>Dandelion-datatables</strong>! See the <a href="http://dandelion.github.com/datatables/migration.html">migration guide</a>!</li>
+</ul>
+
+<h4 id="issues">Issues</h4>
+<ul>
+  <li><a href="https://github.com/dandelion/issues/issues/16">issue #16</a> - Dynamic value for table’s id</li>
+  <li><a href="https://github.com/dandelion/issues/issues/17">issue #17</a> - Table display issue</li>
+</ul>
+
+<p><em>for more information, see the dandelion-datatables’ <a href="http://dandelion.github.com/datatables/changelog.html">changelog</a></em></p>
+</section>
+    </article>
+    <p>
+      <a href="/blog/2013/02/21/dandelion-datatables-0.8.4-release">Read more...</a>
+    </p>
+    <hr />
+    
+    <article>
+      <h2>
+        <a class="post-link" href="/blog/2013/02/16/announcement">Announcement</a>
+      </h2>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> News</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2013-02-16</span>
+        </div>
+      </div>
+      <section class="margin-top-10"><p><strong>Hi all!</strong></p> <p>Along with the <a href="https://github.com/datatables4j">DataTables4j</a> development, Romain and I have been working on a new project for several weeks. Its name? Dandelion!</p> <p>A brand new doc site is coming, with lots of explanations, but to be succinct, here are the main guidelines of Dandelion :</p> <ul> <li>Simplications in...</section>
+    </article>
+    <p>
+      <a href="/blog/2013/02/16/announcement">Read more...</a>
+    </p>
+    <hr />
+    
+  </div>
+  <div class="col-md-4 margin-top-20">
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <td><a href="categories.html">All posts (31)</a></td>
+        </tr>
+        
+        <tr>
+          <td><a href="categories.html#news">News (3)</a></td>
+        </tr>
+        
+        <tr>
+          <td><a href="categories.html#release">Release (27)</a></td>
+        </tr>
+        
+        <tr>
+          <td><a href="categories.html#tutorial">Tutorial (1)</a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <a href="/feed.xml"><i class="fa fa-3x fa-rss"></i></a>
+    <a href="https://twitter.com/dandelion_proj"><i class="fa fa-3x fa-twitter"></i></a>
+    <a class="twitter-timeline" height="400" href="https://twitter.com/dandelion_proj"
+            data-widget-id="306779829204828161"
+            data-chrome="noheader transparent noscrollbar nofooter">Tweets de @dandelion_proj</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div>
+</div>
+</div>
+  <footer class="footer area-footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-9">
+            
+            <div class="row">
+               <div class="col-md-4">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="fa fa-github"></i> GitHub</a></li>
+                     <li><a href="/team"><i class="fa fa-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="fa fa-road"></i> Roadmap</a></li>
+                     <li><a href="/faq"> <i class="fa fa-book"></i> FAQ</a></li>
+                     <li><a href="/acknowledgements/"><i class="fa fa-info-circle"></i> Acknowledgements</a></li>
+                     <li><a href="/history"><i class="fa fa-history"></i> History</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-puzzle-piece"></i> Components</h3>
+                  <ul>
+                     <li><a href="/components/core">Dandelion-Core</a></li>
+                     <li><a href="/components/datatables">Dandelion-Datatables</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-beer"></i> Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="fa fa-comment-o"></i> Blog</a></li>
+                     <li><a href="http://dandelion.48353.n6.nabble.com/"><i class="fa fa-comments-o"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="fa fa-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="col-md-3">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:5px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <a href="https://www.cloudbees.com"><img src="/assets/images/logo_cloudbees.png" /></a>
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dandelion Project</title>
+  <meta name="description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments. It helps to manipulate the web assets (JS, CSS) in different ways: assets organization in a bundle graph and classical optimizations like minification, compression or caching. It also facilitates the integration of powerful JavaScript libraries thanks to a set of extensible components.
+">
+
+  <link rel="canonical" href="http://dandelion.github.io/components/datatables/">
+  <link rel="alternate" type="application/rss+xml" title="Dandelion Project" href="http://dandelion.github.io/feed.xml" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400italic" type="text/css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/fontcustom.css">
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css">
+  <link rel="stylesheet" href="/assets/css/coderay.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+  <link rel="shortcut icon" href="/assets/images/dandelion_square.png">  
+  <script>
+   var _gaq = _gaq || [];
+   _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+   _gaq.push([ '_trackPageview' ]);
+   (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+   })();
+   </script>
+   <style>
+      .conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+      .conum[data-value] *{color:#fff!important}
+      .conum[data-value]+b{display:none}
+      .conum[data-value]:after{content:attr(data-value)}
+      pre .conum[data-value]{position:relative;top:-.125em}
+      b.conum *{color:inherit!important}
+      .conum:not([data-value]):empty{display:none}
+      .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+      .admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:15px;font-style:italic}
+   </style>
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:site" content="@dandelion_proj">
+   <meta name="twitter:creator" content="@dandelion_proj">
+   <meta name="twitter:url" content="http://dandelion.github.io">
+   <meta name="twitter:title" content="Dandelion Project">
+   <meta name="twitter:description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments">
+   <meta name="twitter:image" content="http://dandelion.github.com/assets/images/dandelion_square.png">
+</head> 
+
+<body>
+  <!-- Static navbar -->
+<nav class="navbar navbar-dandelion navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+          class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><span style="font-size:30px;">Dandelion</span></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li  class="active"><a href="/components">Components</a></li>
+        <li ><a href="/blog">Blog</a></li>
+        <li ><a href="/support.html">Support</a></li>
+        <li><a href="/search.html"><i class="fa fa-search"></i></a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+
+
+  <div class="container-fluid">
+    <div class="row" style="position: relative;">
+      <div class="col-md-12">
+        <a href="https://github.com/dandelion/dandelion-datatables"><img
+          style="position: absolute; top: 0; right: 0; border: 0;"
+          src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67"
+          alt="Fork me on GitHub"
+          data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" >
+    <div class="row" >
+      <div class="col-md-12">
+        <div class="row margin-top-20">
+  <div class="col-md-12">
+    <h1>Dandelion-Datatables</h1>
+    <p>
+      Dandelion-Datatables allows you to quickly create full-featured HTML tables based on the
+      amazing <a href="http://datatables.net">DataTables</a> jQuery plugin authored by <a href="https://github.com/DataTables">Allan
+      Jardine</a>.
+    </p>
+    <p>
+      Basically, it generates all the configuration required by DataTables to initialize a table and
+      integrates into the <a href="">Dandelion-Core</a> asset mechanism.
+    </p>
+  </div>
+</div>
+
+<div class="row margin-top-30">
+  <div class="col-md-12 text-center">
+    <a href="https://github.com/dandelion/dandelion-datatables" title="Sources (GitHub)"><i class="fa fa-github fa-4x fa-border"></i></a>
+    <a href="https://github.com/dandelion/dandelion-datatables/issues" title="Issues (GitHub)"><i class="fa fa-bug fa-4x fa-border"></i></a>
+    <a href="https://dandelion.ci.cloudbees.com" title="Continuous Integration (Jenkins)"><i class="fa fa-cogs fa-4x fa-border"></i></a>
+    <a href="http://dandelion-forum.48353.x6.nabble.com/Dandelion-Datatables-f3.html" title="Forum (Nabble)"><i class="fa fa-comments-o fa-4x fa-border"></i></a>
+    <a href="https://gitter.im/dandelion/dandelion-datatables" title="Chat (Gitter)"><i class="fa fa-weixin fa-4x fa-border"></i></a>
+  </div>
+</div>
+
+<div class="row margin-top-20">
+  <div class="col-md-12">
+    <h3>Features</h3>
+    <ul>
+      <li>Basic operations like sorting, filtering, paging, ...</li>
+      <li>DOM and AJAX sources</li>
+      <li>Server-side processing</li>
+      <li>Theming: Bootstrap 2, Bootstrap 3 and jQueryUI</li>
+      <li>Fully customizable exports (XLS, XLSX, PDF, XML, ...)</li>
+      <li>I18n</li>
+      <li>Integration with <a href="http://spring.io/">Spring</a> and other projects</li>
+      <li>Support for both template engines: JSP and <a href="http://www.thymeleaf.org/">Thymeleaf</a></li> 
+    </ul>
+  </div>
+</div>
+
+<div class="row margin-top-20">
+  <div class="col-md-12">
+    <h3>Latest releases</h3>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>Date</th>
+          <th>Documentation</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>1.1.0</td>
+          <td>2015-07-29</td>
+          <td>
+            
+              
+              <a href="1.1.0/docs/html/">Docs (HTML)</a>
+              
+               
+              | <a href="1.1.0/api/">API</a>
+            <br />
+            
+            <a href="1.1.0/changelog/">Changelog</a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>1.0.1</td>
+          <td>2015-07-03</td>
+          <td>
+            
+              
+              <a href="1.0.1/docs/html/">Docs (HTML)</a>
+              
+               
+              | <a href="1.0.1/api/">API</a>
+            <br />
+            
+            <a href="1.0.1/changelog/">Changelog</a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>1.0.0</td>
+          <td>2015-06-30</td>
+          <td>
+            
+              
+              <a href="1.0.0/docs/html/">Docs (HTML)</a>
+              
+               
+              | <a href="1.0.0/api/">API</a>
+            <br />
+            
+            <a href="1.0.0/changelog/">Changelog</a>
+            
+              <br />
+              
+              <a href="1.0.0/docs/from-0.10.x-to-1.x.html">Migration guide from 0.10.x to 1.x</a>
+              <br />
+              
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>0.10.1</td>
+          <td>2014-08-24</td>
+          <td>
+            
+            <a href="0.10.1/changelog/">Changelog</a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>0.10.0</td>
+          <td>2014-05-24</td>
+          <td>
+            
+            <a href="0.10.0/changelog/">Changelog</a>
+            
+              <br />
+              
+              <a href="0.10.0/docs/from-0.9.x-to-0.10.x.html">Migration guide from 0.9.x to 0.10.x</a>
+              <br />
+              
+            
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <p>
+      <a href="/components/datatables/releases">Older releases</a>
+    </p>
+  </div>
+</div>
+
+<div class="row margin-top-20">
+  <div class="col-md-12">
+    <h3>Samples</h3>
+    <p>
+      All sample applications below are based on the latest release: 1.1.0.
+    </p>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th style="width:20%">Access</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>datatables-jsp-ajax</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-jsp-ajax"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-jsp-ajax/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-jsp-configuration-groups</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-jsp-configuration-groups"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-jsp-configuration-groups/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-jsp-export</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-jsp-export"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-jsp-export/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-jsp-extension</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-jsp-extension"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-jsp-extension/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-jsp-i18n-struts1</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-jsp-i18n-struts1"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-jsp-i18n-struts1/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-jsp-i18n-struts2</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-jsp-i18n-struts2"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-jsp-i18n-struts2/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-jsp-plugins</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-jsp-plugins"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-jsp-plugins/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-jsp-spring-boot</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-jsp-spring-boot"><i class="fa fa-2x fa-github"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-jsp-starter</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-jsp-starter"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-jsp-starter/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-jsp-themes</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-jsp-themes"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-jsp-themes/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-thymeleaf-ajax</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-thymeleaf-ajax"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-tml-ajax/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-thymeleaf-configuration-groups</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-thymeleaf-configuration-groups"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-tml-configuration-groups/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-thymeleaf-export</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-thymeleaf-export"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-tml-export/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-thymeleaf-extension</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-thymeleaf-extension"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-tml-extension/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-thymeleaf-javaconfig</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-thymeleaf-javaconfig"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-tml-javaconfig/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-thymeleaf-plugins</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-thymeleaf-plugins"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-tml-plugins/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-thymeleaf-starter</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-thymeleaf-starter"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-tml-starter/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>datatables-thymeleaf-themes</td>
+          <td>
+            <a title="Sources (GitHub)" href="https://github.com/dandelion/dandelion-datatables-samples/tree/1.1.0/datatables-thymeleaf-themes"><i class="fa fa-2x fa-github"></i></a>
+            
+            &nbsp;<a title="Image (Docker)" href="https://registry.hub.docker.com/u/dandelion/dt-tml-themes/"><i class="fa fa-2x fa-docker"></i></a>
+            
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row margin-top-20">
+  <div class="col-md-12">
+    <h3>External resources</h3>
+    <p>Listed below are all integrations and external resources coming from all around the web.</p>
+
+    <h4 id="integration">Integration</h4>
+    <ul>
+       <li>
+          <p>
+             <strong>gvNIX</strong> by <a href="http://www.disid.com/">DiSiD Technologies</a>
+          </p>
+          <p>
+             gvNIX is a Spring Roo distribution that focuses both enterprise knowledge and enterprise
+             standards to build Java applications. gvNIX is sponsored by the Directorate General of
+             Information Technology, Generalitat Valenciana (Spain) and led by <a href="http://www.disid.com/">DiSiD Technologies</a>. 
+          </p>
+          <p>   
+             gvNIX provides, among other things, an add-on based on Dandelion-Datatables to enhance HTML tables.
+          </p>
+          <ul>
+             <li><i class="fa fa-globe"></i> Website: <a href="http://www.gvnix.org/">http://www.gvnix.org/</a></li>
+             <li><i class="fa fa-github"></i> Sources: <a href="https://github.com/DISID/gvnix">https://github.com/DISID/gvnix</a></li>
+          </ul>
+       </li>
+    </ul>
+
+    <h4 id="blogs">Blogs</h4>
+    <ul>
+      <li><a href="http://spring.io/blog/2012/10/30/spring-mvc-from-jsp-and-tiles-to-thymeleaf/">Spring MVC : From JSP and Tiles to Thymeleaf</a> (spring.io) by <a href="https://twitter.com/michaelisvy">Michael Isvy</a></li>
+      <li><a href="http://blog.ippon.fr/2013/03/11/improving-the-performance-of-the-spring-petclinic-sample-application-part-1-of-5/">Improving the performance of the Spring-Petclinic sample application</a> (blog.ippon.fr) by <a href="https://twitter.com/juliendubois">Julien Dubois</a></li>
+      <li><a href="http://spring.io/blog/2013/03/21/spring-petclinic-is-on-github/">Spring PetClinic is on Github</a> (spring.io) by <a href="https://twitter.com/michaelisvy">Michael Isvy</a></li>
+      <li><a href="http://shunned-it.blogspot.fr/2013/07/dandelion-datatables-integration-with.html">Dandelion-Datatables integration with Grails</a> (shunned-it.blogspot.fr) by <a href="https://twitter.com/gdhordain">Gautier Dhordain</a></li>
+      <li><a href="http://www.javacodebook.com/2013/08/02/technology-stack-for-a-web-application-2013-part-ii/">Technology stack for a web application (2013) – Part II</a> (www.javacodebook.com) by <a href="http://www.javacodebook.com/">Tomcy John</a></li>
+    </ul>
+    
+    <h4 id="repositories">Repositories</h4>
+    <ul>
+      <li><a href="https://github.com/ohiocowboy/datatable-thymeleaf-spring-boot-starter">datatable-thymeleaf-spring-boot-starter</a> (github.com) by <a href="https://github.com/ohiocowboy">Nicholas Drone</a></li>  
+    </ul>
+    
+    <h4 id="presentations">Presentations</h4>
+    <ul>
+       <li><a href="https://speakerdeck.com/michaelisvy/spring-meet-up-spring-kuang-jia-hui">Spring inside the Spring-Petclinic application</a> by <a href="https://twitter.com/michaelisvy">Michael Isvy</a></li>
+    </ul>
+  </div>
+</div>
+      </div>
+    </div>    
+  </div>
+</div>
+  <footer class="footer area-footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-9">
+            
+            <div class="row">
+               <div class="col-md-4">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="fa fa-github"></i> GitHub</a></li>
+                     <li><a href="/team"><i class="fa fa-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="fa fa-road"></i> Roadmap</a></li>
+                     <li><a href="/faq"> <i class="fa fa-book"></i> FAQ</a></li>
+                     <li><a href="/acknowledgements/"><i class="fa fa-info-circle"></i> Acknowledgements</a></li>
+                     <li><a href="/history"><i class="fa fa-history"></i> History</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-puzzle-piece"></i> Components</h3>
+                  <ul>
+                     <li><a href="/components/core">Dandelion-Core</a></li>
+                     <li><a href="/components/datatables">Dandelion-Datatables</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-beer"></i> Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="fa fa-comment-o"></i> Blog</a></li>
+                     <li><a href="http://dandelion.48353.n6.nabble.com/"><i class="fa fa-comments-o"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="fa fa-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="col-md-3">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:5px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <a href="https://www.cloudbees.com"><img src="/assets/images/logo_cloudbees.png" /></a>
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+</body>
+</html>

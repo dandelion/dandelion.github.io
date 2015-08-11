@@ -1,0 +1,59 @@
+#!/bin/sh
+################################################################################
+#  Copyright 2010-2011 CloudBees Inc.
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+################################################################################
+# To call this script:
+# wget -q https://repository-cloudbees.forge.cloudbees.com/distributions/ci-addons/ruby/use-ruby
+# RUBY_VERSION=1.8.7-p352 . ./use-ruby
+
+if [[ -z $RUBY_VERSION ]]; then
+   echo "You must set the RUBY_VERSION environment variable. See http://wiki.cloudbees.com/bin/view/DEV/Ruby+Builds" 1>&2
+fi
+
+ruby187="1.8.7-*"
+if [[ $RUBY_VERSION == $ruby187 ]]; then
+  echo "Ruby 1.8.7 is EOL - it is no longer supported by our build system."
+  exit 1
+fi
+
+BASE=/scratch/jenkins/addons
+mkdir -p ${BASE}
+
+# Grab our library file
+if [ ! -f ${BASE}/use.sh ]; then
+  wget -q -P ${BASE} https://repository-cloudbees.forge.cloudbees.com/distributions/ci-addons/lib/use.sh
+fi
+. ${BASE}/use.sh
+
+
+mkdir -p ${BASE}/ruby
+
+ruby_name=ruby-${RUBY_VERSION}-$(addon_architecture)
+
+if [ ! -f ${BASE}/ruby/${ruby_name}.tar.bz2 ]; then
+  wget -q -P ${BASE}/ruby \
+             https://repository-cloudbees.forge.cloudbees.com/distributions/ci-addons/ruby/$(addon_platform)/${ruby_name}.tar.bz2
+fi
+
+if [ ! -f ${BASE}/ruby/${ruby_name}/bin/ruby ]; then
+  tar xjf ${BASE}/ruby/${ruby_name}.tar.bz2 -C ${BASE}/ruby
+fi
+
+export RUBY_HOME=${BASE}/ruby/${ruby_name}
+export PATH=${BASE}/ruby/${ruby_name}/bin:$PATH
+
+unset GEM_PATH
+unset GEM_HOME
+unset BUNDLE_PATH

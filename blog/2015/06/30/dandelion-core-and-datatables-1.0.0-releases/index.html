@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dandelion-Core and Dandelion-Datatables 1.0.0 releases</title>
+  <meta name="description" content="It&#8217;s been a while since the last release but it was worth the wait: Dandelion-Core and Dandelion-Datatables have finally been released in v1.0.0!">
+
+  <link rel="canonical" href="http://dandelion.github.io/blog/2015/06/30/dandelion-core-and-datatables-1.0.0-releases">
+  <link rel="alternate" type="application/rss+xml" title="Dandelion Project" href="http://dandelion.github.io/feed.xml" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400italic" type="text/css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/fontcustom.css">
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css">
+  <link rel="stylesheet" href="/assets/css/coderay.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+  <link rel="shortcut icon" href="/assets/images/dandelion_square.png">  
+  <script>
+   var _gaq = _gaq || [];
+   _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+   _gaq.push([ '_trackPageview' ]);
+   (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+   })();
+   </script>
+   <style>
+      .conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+      .conum[data-value] *{color:#fff!important}
+      .conum[data-value]+b{display:none}
+      .conum[data-value]:after{content:attr(data-value)}
+      pre .conum[data-value]{position:relative;top:-.125em}
+      b.conum *{color:inherit!important}
+      .conum:not([data-value]):empty{display:none}
+      .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+      .admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:15px;font-style:italic}
+   </style>
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:site" content="@dandelion_proj">
+   <meta name="twitter:creator" content="@dandelion_proj">
+   <meta name="twitter:url" content="http://dandelion.github.io">
+   <meta name="twitter:title" content="Dandelion Project">
+   <meta name="twitter:description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments">
+   <meta name="twitter:image" content="http://dandelion.github.com/assets/images/dandelion_square.png">
+</head> 
+
+<body>
+  <!-- Static navbar -->
+<nav class="navbar navbar-dandelion navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+          class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><span style="font-size:30px;">Dandelion</span></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a href="/components">Components</a></li>
+        <li  class="active"><a href="/blog">Blog</a></li>
+        <li ><a href="/support.html">Support</a></li>
+        <li><a href="/search.html"><i class="fa fa-search"></i></a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+
+  <div class="container">
+    <script type="text/javascript">
+     var addthis_config = {
+        "data_track_addressbar":false,
+        "data_track_clickback":true,
+        "ui_offset_top": 187,
+        "ui_offset_left": 30,
+        "data_ga_tracker": "UA-33818546-8"
+     };
+     var addthis_share = {
+        "url" : "http://dandelion.github.io/blog/2015/06/30/dandelion-core-and-datatables-1.0.0-releases",
+        "title" : "[Blog] Dandelion-Core and Dandelion-Datatables 1.0.0 releases"
+     }  
+  </script>
+  
+  <div class="row margin-top-30">
+    <div class="col-md-12">
+      <header class="post-header">
+        <h1 class="post-title">Dandelion-Core and Dandelion-Datatables 1.0.0 releases</h1>
+      </header>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2015-06-30</span>
+        </div>
+        <div class="row margin-top-20">
+          <div class="col-md-12">
+            <section class="margin-top-10"><div class="paragraph margin-top-30">
+<p>It&#8217;s been a while since the last release but it was worth the wait: Dandelion-Core and Dandelion-Datatables have finally been released in v1.0.0!</p>
+</div>
+<div class="paragraph">
+<p>Obviously, these versions contain major changes as well as great improvements and bug fixes. Let&#8217;s have an overview of both changelogs.</p>
+</div>
+<div class="sect1">
+<h2 id="dandelion-core">Dandelion-Core</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="better-coverage-of-application-servers">Better coverage of application servers</h3>
+<div class="paragraph">
+<p>One of the key internal feature of Dandelion-Core is to scan for asset bundles within classpath. Unfortunately, it&#8217;s not an easy task to cover all kinds of application servers since most of them work differently.<br>
+Since Dandelion-Core v1.0.0, more app servers are supported, such as JBoss AS 6+, Wildfly and Websphere AS.</p>
+</div>
+<div class="paragraph">
+<p>Note however that requirements have evolved: the Servlet API 3.x is now required to make all Dandelion components work. Therefore you must ensure to deploy your applications in a Servlet 3.x compatible container such as Jetty 8.x, Tomcat 7.x, JBoss AS 6, Weblogic Server 12c, &#8230;&#8203;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="profiles">Profiles</h3>
+<div class="paragraph">
+<p>New Dandelion profiles provide a way to segregate parts of your configuration and make it only available in certain environments.</p>
+</div>
+<div class="paragraph">
+<p>All configuration options are created with two default values, one for the built-in <code>dev</code> profile, another for the <code>prod</code> one. For example, in <code>dev</code> profile, you can access the live debugger whereas you can&#8217;t in <code>prod</code> profile.</p>
+</div>
+<div class="paragraph">
+<p>Custom profile can of course be created to suit your particular needs. Refer to the documentation for more details.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="manual-automatic-versioning">Manual &amp; automatic versioning</h3>
+<div class="paragraph">
+<p>Prior to the v1.0.0, only manual versioning was supported. It was done by using the <code>version</code> attribute in every asset of a bundle.</p>
+</div>
+<div class="listingblock">
+<div class="title">dandelion/bundle.json</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">assets</span><span class="delimiter">&quot;</span></span> : [
+    {
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">version</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">1.2.3</span><span class="delimiter">&quot;</span></span>, <i class="conum" data-value="1"></i><b>(1)</b>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">locations</span><span class="delimiter">&quot;</span></span> : {
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">webapp</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">/assets/css/application.css</span><span class="delimiter">&quot;</span></span>
+      }
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The version is manual here, set to <code>1.2.3</code></td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In such a situation, Dandelion-Core generates this kind of HTML code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="html"><span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stylesheet</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">/context/dandelion-assets/[MD5-STORAGE-HASH]/css/application-1.2.3.css</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/link&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Starting from the v1.0.0, if you leave the <code>version</code> attribute blank, Dandelion-Core will defaultly use an automatic versioning based on the contents of the asset. The HTML will become:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="html"><span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stylesheet</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">/context/dandelion-assets/[MD5-STORAGE-HASH]/css/application-[MD5-VERSION-HASH].css</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/link&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This versioning, also called <em>fingerprinting</em>, is ideal during development since a new hash is automatically calculated as soon as the file changes, thus invalidating browser cache.</p>
+</div>
+<div class="paragraph">
+<p>Others strategies also exist. Refer to the documentation to find out more.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="new-live-debugger">New live debugger</h3>
+<div class="paragraph">
+<p>The debugger has been fully refactored to be much clearer and more complete. I hope the way how Dandelion processes requests and responses will become much clearer.</p>
+</div>
+<div class="paragraph">
+<p>Moreover, a new alert reporting tool has been added, allowing you know as soon as possible when wrong/unexisting bundles are used in pages.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="thymeleaf">Thymeleaf</h3>
+<div class="paragraph">
+<p>For Thymeleaf users, one of the great addition is the Thymeleaf processing of JavaScript assets. Starting from the v1.0.0, you can now use any Thymeleaf expressions in your external JavaScript assets, as if you were using <a href="http://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html#script-inlining-javascript-and-dart">script inlining</a> in templates.</p>
+</div>
+<div class="paragraph">
+<p>For example, consider the following bundle, which contains a single asset configured with the <code>webapp</code> location:</p>
+</div>
+<div class="listingblock">
+<div class="title">dandelion/app.json</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">assets</span><span class="delimiter">&quot;</span></span>: [
+    {
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">locations</span><span class="delimiter">&quot;</span></span>: {
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">webapp</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">/assets/js/app.js</span><span class="delimiter">&quot;</span></span>
+      }
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can now easily get the current context directly within the asset:</p>
+</div>
+<div class="listingblock">
+<div class="title">/assets/js/app.js</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="keyword">var</span> contextPath = <span class="comment">/*[[@{/}]]*/</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">/my-context</span><span class="delimiter">&quot;</span></span>;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Even greater, all objects passed in the <code>HttpServletRequest</code> are available to all assets loaded from the same page.</p>
+</div>
+<div class="paragraph">
+<p>For example, consider the following Spring MVC controller.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@ModelAttribute</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">project</span><span class="delimiter">&quot;</span></span>) <i class="conum" data-value="1"></i><b>(1)</b>
+<span class="directive">public</span> Project populateModel(){
+   <span class="keyword">return</span> <span class="keyword">new</span> Project(<span class="string"><span class="delimiter">&quot;</span><span class="content">dandelion</span><span class="delimiter">&quot;</span></span>);
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>@ModelAttribute</code> annotation is typically used to expose beans to the web view. Here we expose a <code>Project</code> bean as a model attribute</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>You can now make full use of the exposed objects, directly in assets, using Thymeleaf expressions:</p>
+</div>
+<div class="listingblock">
+<div class="title">/assets/js/app.js</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="keyword">function</span> <span class="function">loadProject</span>() {
+   <span class="predefined">$</span>.ajax({
+      <span class="key">url</span> : <span class="comment">/*[[@{/api/projects/{p}(p=${project.name})}]]*/</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">/my-context/api/projects/dandelion</span><span class="delimiter">&quot;</span></span>,
+      <span class="key">type</span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">GET</span><span class="delimiter">&quot;</span></span>,
+      <span class="key">dataType</span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">json</span><span class="delimiter">&quot;</span></span>,
+      ...
+   });
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Of course, as soon as you use an expression inside one of your JavaScript asset, Dandelion will always invalidate cache since the asset has actually become dynamic!</p>
+</div>
+<div class="paragraph">
+<p>For a complete list of changes in Dandelion-Core, feel free to see the full changelog <a href="/components/core/1.0.0/changelog/">here</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dandelion-datatables">Dandelion-Datatables</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="support-for-datatables-1-10-x">Support for DataTables 1.10.x</h3>
+<div class="paragraph">
+<p>Dandelion-Datatables now generates v1.10.x-compatible code. All features have been updated in this direction.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="new-filtering-plugin">New filtering plugin</h3>
+<div class="paragraph">
+<p>The component now uses the awesome <a href="http://yadcf-showcase.appspot.com/">yadcf plugin</a> authored by <a href="https://github.com/vedmack">Daniel Reznick</a>. All features are not covered yet, but it should be quickly improved in next versions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="better-performance">Better performance</h3>
+<div class="paragraph">
+<p>The extension API has been fully refactored and is now based on <a href="http://docs.oracle.com/javase/tutorial/sound/SPI-intro.html">SPI</a>, thus leading to much better performance.</p>
+</div>
+<div class="paragraph">
+<p>You can see the full changelog <a href="/components/datatables/1.0.0/changelog/">here</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="site-docs-and-samples">Site, docs and samples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As you may have noticed, the site has been refreshed and, most importantly, should require much less effort for maintenance.</p>
+</div>
+<div class="paragraph">
+<p>Regarding docs, all components now use the awesome <a href="http://asciidoctor.org/">Asciidoctor project</a> to generate their documentation (soon in multiple formats). Once again, it will require less effort for maintenance even if the main point was to be able to properly version each component&#8217;s documentation.</p>
+</div>
+<div class="paragraph">
+<p>Finally, note that each component has now its own Git repository for sample applications:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-core-samples" class="bare">https://github.com/dandelion/dandelion-core-samples</a> for all samples in relation to Dandelion-Core</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables-samples" class="bare">https://github.com/dandelion/dandelion-datatables-samples</a> for all samples in relation to Dandelion-Datatables</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Lost of sample applications have been added and of course, all of them have been refreshed to reflect the latest changes.</p>
+</div>
+<div class="paragraph">
+<p>And if you like whales as I do, note that (almost) all samples are now distributed via <a href="https://www.docker.com/">Docker</a> images. ;-)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions">Contributions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One final word about contributions. I wanted to sincerely thank new contributors: <a href="https://github.com/RizziCR">Christoph Rizzotti</a> from Germany, <a href="https://github.com/dmorellet">Damien Morellet</a> and <a href="https://github.com/rnowif">Renaud Humbert-Labeaumaz</a> from France and <a href="https://github.com/ammachado">Adriano Marcondes Machado</a> from Brazil. The <a href="/team">team page</a> has been updated accordingly. Once again: thank you guys!</p>
+</div>
+<div class="paragraph margin-top-20">
+<p>I hope you&#8217;ll enjoy with these new releases.<br>
+As usual, feel free to spread the word. And thoughts and feedback are of course very welcome.</p>
+</div>
+<div class="paragraph">
+<p>Happy coding!</p>
+</div>
+</div>
+</div></section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row margin-top-20">
+    <div class="col-md-12">
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+         <a class="addthis_button_twitter"></a>
+         <a class="addthis_button_google_plusone_share"></a>
+         <a class="addthis_button_linkedin"></a>
+         <a class="addthis_button_facebook"></a>
+         <a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+      </div>
+      <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-516d4b686f218f23"></script>
+      <!-- AddThis Button END -->
+  
+      <div id="disqus_thread" style="margin-top:15px;"></div>
+      <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'dandelionproject'; // required: replace example with your forum shortname
+      
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </div>
+  </div>
+  <footer class="footer area-footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-9">
+            
+            <div class="row">
+               <div class="col-md-4">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="fa fa-github"></i> GitHub</a></li>
+                     <li><a href="/team"><i class="fa fa-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="fa fa-road"></i> Roadmap</a></li>
+                     <li><a href="/faq"> <i class="fa fa-book"></i> FAQ</a></li>
+                     <li><a href="/acknowledgements/"><i class="fa fa-info-circle"></i> Acknowledgements</a></li>
+                     <li><a href="/history"><i class="fa fa-history"></i> History</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-puzzle-piece"></i> Components</h3>
+                  <ul>
+                     <li><a href="/components/core">Dandelion-Core</a></li>
+                     <li><a href="/components/datatables">Dandelion-Datatables</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-beer"></i> Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="fa fa-comment-o"></i> Blog</a></li>
+                     <li><a href="http://dandelion.48353.n6.nabble.com/"><i class="fa fa-comments-o"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="fa fa-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="col-md-3">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:5px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <a href="https://www.cloudbees.com"><img src="/assets/images/logo_cloudbees.png" /></a>
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+</body>
+</html>

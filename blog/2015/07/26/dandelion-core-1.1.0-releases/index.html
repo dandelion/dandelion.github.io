@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dandelion-Core 1.1.0 release</title>
+  <meta name="description" content="">
+
+  <link rel="canonical" href="http://dandelion.github.io/blog/2015/07/26/dandelion-core-1.1.0-releases">
+  <link rel="alternate" type="application/rss+xml" title="Dandelion Project" href="http://dandelion.github.io/feed.xml" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400italic" type="text/css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/fontcustom.css">
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css">
+  <link rel="stylesheet" href="/assets/css/coderay.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+  <link rel="shortcut icon" href="/assets/images/dandelion_square.png">  
+  <script>
+   var _gaq = _gaq || [];
+   _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+   _gaq.push([ '_trackPageview' ]);
+   (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+   })();
+   </script>
+   <style>
+      .conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+      .conum[data-value] *{color:#fff!important}
+      .conum[data-value]+b{display:none}
+      .conum[data-value]:after{content:attr(data-value)}
+      pre .conum[data-value]{position:relative;top:-.125em}
+      b.conum *{color:inherit!important}
+      .conum:not([data-value]):empty{display:none}
+      .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+      .admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:15px;font-style:italic}
+   </style>
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:site" content="@dandelion_proj">
+   <meta name="twitter:creator" content="@dandelion_proj">
+   <meta name="twitter:url" content="http://dandelion.github.io">
+   <meta name="twitter:title" content="Dandelion Project">
+   <meta name="twitter:description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments">
+   <meta name="twitter:image" content="http://dandelion.github.com/assets/images/dandelion_square.png">
+</head> 
+
+<body>
+  <!-- Static navbar -->
+<nav class="navbar navbar-dandelion navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+          class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><span style="font-size:30px;">Dandelion</span></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a href="/components">Components</a></li>
+        <li  class="active"><a href="/blog">Blog</a></li>
+        <li ><a href="/support.html">Support</a></li>
+        <li><a href="/search.html"><i class="fa fa-search"></i></a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+
+  <div class="container">
+    <script type="text/javascript">
+     var addthis_config = {
+        "data_track_addressbar":false,
+        "data_track_clickback":true,
+        "ui_offset_top": 187,
+        "ui_offset_left": 30,
+        "data_ga_tracker": "UA-33818546-8"
+     };
+     var addthis_share = {
+        "url" : "http://dandelion.github.io/blog/2015/07/26/dandelion-core-1.1.0-releases",
+        "title" : "[Blog] Dandelion-Core 1.1.0 release"
+     }  
+  </script>
+  
+  <div class="row margin-top-30">
+    <div class="col-md-12">
+      <header class="post-header">
+        <h1 class="post-title">Dandelion-Core 1.1.0 release</h1>
+      </header>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2015-07-26</span>
+        </div>
+        <div class="row margin-top-20">
+          <div class="col-md-12">
+            <section class="margin-top-10"><div class="paragraph margin-top-30">
+<p>Dandelion-Core has been released in v1.1.0!</p>
+</div>
+<div class="paragraph">
+<p>This release brings some nice improvements that will be reviewed here.</p>
+</div>
+<div class="imageblock" style="float: right">
+<div class="content">
+<a class="image" href="http://bower.io/"><img src="/assets/images/logo_bower.png" alt="Bower" width="150" height="150"></a>
+</div>
+</div>
+<div class="sect1">
+<h2 id="bower-integration">Bower integration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dandelion-Core now provides a <a href="http://bower.io/">Bower</a> integration. The integration consists in scanning the downloaded <code>bower_components</code> folder for all <code>bower.json</code> manifests. Once scanned, all manifests are automatically converted into <strong>vendor bundles</strong>. A particular strategy is used for scanning, refer to the documentation for more details.</p>
+</div>
+<div class="paragraph">
+<p>This feature is awesome for 2 reasons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It&#8217;s a great time saver: no need to write and maintain vendor bundles any longer.</p>
+</li>
+<li>
+<p>After <a href="http://www.webjars.org/">WebJars</a>, it provides another integration with a widely used web package manager</p>
+</li>
+<li>
+<p>If you see more, please use the comments below :-)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+For now, only JavaScript and CSS assets are supported. So please check what kind of assets are referenced in the <a href="http://bower.io/docs/creating-packages/#main">main</a> section of Bower manifests.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configurable-placeholders-for-asset-injection">Configurable placeholders for asset injection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Prior to the v1.1.0, assets were automatically inserted either at the end of the <code>&lt;head&gt;</code> section (default location for CSS files) or at the end of the <code>&lt;body&gt;</code> section (default location for JavaScript files).</p>
+</div>
+<div class="paragraph">
+<p>This behaviour could be adapted thanks to the <code>dom</code> attribute in the definition of each asset. In the following example, the <code>app.js</code> is configured to be inserted at the end of the <code>&lt;head&gt;</code> section instead of its default location.</p>
+</div>
+<div class="listingblock">
+<div class="title">dandelion/any-bundle.json</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+   <span class="key"><span class="delimiter">&quot;</span><span class="content">assets</span><span class="delimiter">&quot;</span></span> : [{
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">dom</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">head</span><span class="delimiter">&quot;</span></span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">location</span><span class="delimiter">&quot;</span></span> : {
+         <span class="key"><span class="delimiter">&quot;</span><span class="content">webapp</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">/assets/js/app.js</span><span class="delimiter">&quot;</span></span>
+      }
+   ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>But in legacy apps, inlined scrips are often necessary. And if these scripts require a vendor asset, which is automatically loaded at the end of the body, it forces end-users to create a bundle for these assets. From a bundle management perspective, it can quickly become a pain.</p>
+</div>
+<div class="paragraph">
+<p>So in order to provide more flexibility, this feature is about providing precise control over asset placement, thanks to some improvements in the JSP taglib, in the Thymeleaf dialect and in the asset injection handler.</p>
+</div>
+<div class="paragraph">
+<p>Here follows an usage example with Thymeleaf:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="html"><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.w3.org/1999/xhtml</span><span class="delimiter">&quot;</span></span>
+      <span class="attribute-name">xmlns:th</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.thymeleaf.org</span><span class="delimiter">&quot;</span></span>
+      <span class="attribute-name">xmlns:layout</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.ultraq.net.nz/web/thymeleaf/layout</span><span class="delimiter">&quot;</span></span>
+      <span class="attribute-name">xmlns:ddl</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.thymeleaf.org/dandelion</span><span class="delimiter">&quot;</span></span>
+      <span class="attribute-name">ddl:bundle-includes</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">bootstrap2,bootstrap-datepicker2</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;title</span> <span class="attribute-name">layout:title-pattern</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">$DECORATOR_TITLE - $CONTENT_TITLE</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>App<span class="tag">&lt;/title&gt;</span>
+
+    <span class="tag">&lt;style</span> <span class="attribute-name">ddl:placeholder-replace</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">css</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+<span class="inline">
+    <span class="error">&lt;</span><span class="tag">div</span> <span class="tag">layout</span><span class="pseudo-class">:fragments</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">styles</span><span class="delimiter">&quot;</span></span>&gt;
+        <span class="error">&lt;</span><span class="tag">p</span>&gt;<span class="tag">optional</span> <span class="tag">style</span> <span class="tag">and</span> <span class="tag">link</span> <span class="tag">tags</span><span class="error">&lt;</span>/<span class="tag">p</span>&gt;
+    <span class="error">&lt;</span>/<span class="tag">div</span>&gt;
+<span class="error">&lt;</span>/<span class="tag">head</span>&gt;
+<span class="error">&lt;</span><span class="tag">body</span>&gt;
+    <span class="error">&lt;</span><span class="tag">div</span> <span class="tag">th</span><span class="pseudo-class">:include</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">common/fragments/main-menu :: top-menu</span><span class="delimiter">&quot;</span></span>&gt;<span class="tag">Top</span> <span class="tag">Menu</span><span class="error">&lt;</span>/<span class="tag">div</span>&gt;
+
+    <span class="error">&lt;</span><span class="tag">div</span> <span class="tag">layout</span><span class="pseudo-class">:fragment</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span> <span class="tag">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">container</span><span class="delimiter">&quot;</span></span>&gt;
+        <span class="error">&lt;</span><span class="tag">p</span>&gt;<span class="tag">Page</span> <span class="tag">content</span> <span class="tag">goes</span> <span class="tag">here</span><span class="error">&lt;</span>/<span class="tag">p</span>&gt;
+    <span class="error">&lt;</span>/<span class="tag">div</span>&gt;
+
+    <span class="error">&lt;</span><span class="tag">div</span> <span class="tag">ddl</span><span class="pseudo-class">:placeholder-include</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">js</span><span class="delimiter">&quot;</span></span>&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+        <span class="error">&lt;</span><span class="tag">p</span>&gt;<span class="tag">Dandelion</span> <span class="tag">injects</span> <span class="tag">script</span> <span class="tag">tags</span> <span class="tag">here</span><span class="error">&lt;</span>/<span class="tag">p</span>&gt;
+    <span class="error">&lt;</span>/<span class="tag">div</span>&gt;
+
+    <span class="error">&lt;</span><span class="tag">div</span> <span class="tag">layout</span><span class="pseudo-class">:fragment</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">scripts</span><span class="delimiter">&quot;</span></span>&gt;
+        <span class="error">&lt;</span><span class="tag">p</span>&gt;<span class="tag">optional</span> <span class="tag">script</span> <span class="tag">tags</span><span class="error">&lt;</span>/<span class="tag">p</span>&gt;
+    <span class="error">&lt;</span>/<span class="tag">div</span>&gt;
+<span class="error">&lt;</span>/<span class="tag">body</span>&gt;
+<span class="error">&lt;</span>/<span class="tag">html</span>&gt;</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>ddl:placeholder-replace="css"</code> attribute will replace the targeted <code>&lt;style&gt;</code> tag by all <code>&lt;link&gt;</code> tags referenced in the included bundles</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The <code>ddl:placeholder-include="js"</code> attribute will here include into the targeted <code>&lt;div&gt;</code> tag all included <code>&lt;script&gt;</code> tags referenced in the included bundles</td>
+</tr>
+</table>
+</div>
+<div class="paragraph margin-top-20">
+<p>The full change logs is available <a href="/components/core/1.1.0/changelog/">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>Happy coding!</p>
+</div>
+</div>
+</div></section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row margin-top-20">
+    <div class="col-md-12">
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+         <a class="addthis_button_twitter"></a>
+         <a class="addthis_button_google_plusone_share"></a>
+         <a class="addthis_button_linkedin"></a>
+         <a class="addthis_button_facebook"></a>
+         <a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+      </div>
+      <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-516d4b686f218f23"></script>
+      <!-- AddThis Button END -->
+  
+      <div id="disqus_thread" style="margin-top:15px;"></div>
+      <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'dandelionproject'; // required: replace example with your forum shortname
+      
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </div>
+  </div>
+  <footer class="footer area-footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-9">
+            
+            <div class="row">
+               <div class="col-md-4">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="fa fa-github"></i> GitHub</a></li>
+                     <li><a href="/team"><i class="fa fa-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="fa fa-road"></i> Roadmap</a></li>
+                     <li><a href="/faq"> <i class="fa fa-book"></i> FAQ</a></li>
+                     <li><a href="/acknowledgements/"><i class="fa fa-info-circle"></i> Acknowledgements</a></li>
+                     <li><a href="/history"><i class="fa fa-history"></i> History</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-puzzle-piece"></i> Components</h3>
+                  <ul>
+                     <li><a href="/components/core">Dandelion-Core</a></li>
+                     <li><a href="/components/datatables">Dandelion-Datatables</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-beer"></i> Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="fa fa-comment-o"></i> Blog</a></li>
+                     <li><a href="http://dandelion.48353.n6.nabble.com/"><i class="fa fa-comments-o"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="fa fa-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="col-md-3">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:5px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <a href="https://www.cloudbees.com"><img src="/assets/images/logo_cloudbees.png" /></a>
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+</body>
+</html>

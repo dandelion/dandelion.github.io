@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dandelion Project</title>
+  <meta name="description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments. It helps to manipulate the web assets (JS, CSS) in different ways: assets organization in a bundle graph and classical optimizations like minification, compression or caching. It also facilitates the integration of powerful JavaScript libraries thanks to a set of extensible components.
+">
+
+  <link rel="canonical" href="http://dandelion.github.io/components/datatables/0.9.0/changelog/">
+  <link rel="alternate" type="application/rss+xml" title="Dandelion Project" href="http://dandelion.github.io/feed.xml" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400italic" type="text/css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/fontcustom.css">
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css">
+  <link rel="stylesheet" href="/assets/css/coderay.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+  <link rel="shortcut icon" href="/assets/images/dandelion_square.png">  
+  <script>
+   var _gaq = _gaq || [];
+   _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+   _gaq.push([ '_trackPageview' ]);
+   (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+   })();
+   </script>
+   <style>
+      .conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+      .conum[data-value] *{color:#fff!important}
+      .conum[data-value]+b{display:none}
+      .conum[data-value]:after{content:attr(data-value)}
+      pre .conum[data-value]{position:relative;top:-.125em}
+      b.conum *{color:inherit!important}
+      .conum:not([data-value]):empty{display:none}
+      .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+      .admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:15px;font-style:italic}
+   </style>
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:site" content="@dandelion_proj">
+   <meta name="twitter:creator" content="@dandelion_proj">
+   <meta name="twitter:url" content="http://dandelion.github.io">
+   <meta name="twitter:title" content="Dandelion Project">
+   <meta name="twitter:description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments">
+   <meta name="twitter:image" content="http://dandelion.github.com/assets/images/dandelion_square.png">
+</head> 
+
+<body>
+  <!-- Static navbar -->
+<nav class="navbar navbar-dandelion navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+          class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><span style="font-size:30px;">Dandelion</span></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li  class="active"><a href="/components">Components</a></li>
+        <li ><a href="/blog">Blog</a></li>
+        <li ><a href="/support.html">Support</a></li>
+        <li><a href="/search.html"><i class="fa fa-search"></i></a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+
+  <div class="container" style="min-height:750px;"><div class="sect1 margin-top-30">
+<h2 id="changelog-of-dandelion-datatables-0-9-0">Changelog of Dandelion-Datatables 0.9.0</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Migration guide : &lt;a href="/datatables/docs/migration/from-0.8.x-to-0.9.x.html"&gt;migration guide&lt;/a&gt;</p>
+</div>
+<div class="sect2">
+<h3 id="core">Core</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Added support for Java-based i18n (resource bundle) and provided ready-to-use integration with JSTL and Spring. Also added and extension point allowing to plug any other locale and message resolvers</p>
+</li>
+<li>
+<p>Added support for global configuration and configuration groups, allowing:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>to join together in one properties file a configuration which will be applied on all tables in the application</p>
+</li>
+<li>
+<p>to put together table configurations inside multiple groups that can be then activated locally using tag attributes</p>
+</li>
+<li>
+<p>you also plug your own configuration loader</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Added an extension point for custom extensions (feature, plugin, theme) scanned at runtime</p>
+</li>
+<li>
+<p>Improved sorting features: you can now apply sorting functions on columns: currency, natural sort, filesize, "anti-the",&#8230;&#8203;</p>
+</li>
+<li>
+<p>Improved filtering features</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Filtering elements can be configured in different locations: after the thead, before the thead, in the tfoot or in an external form</p>
+</li>
+<li>
+<p>Dandelion-Datatables now uses its own column filter plugin</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Added support for AJAX exports using a new fluent API for building table from a data source</p>
+</li>
+<li>
+<p>Improved DOM-based exports</p>
+</li>
+<li>
+<p>Improved CDN support: it’s now fully configurable through properties (enablement, css link, js link)</p>
+</li>
+<li>
+<p>Added support for horizontal scrolling</p>
+</li>
+<li>
+<p>Reduced needed third-party libraries (commons-lang removed)</p>
+</li>
+<li>
+<p>Added plenty of comments and logs, removed plenty of dead code</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="jsp-implementation">JSP implementation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Added support for dynamic attributes in <code>&lt;datatables:table&gt;</code> and <code>&lt;datatables:column&gt;</code> tags, allowing for example to use any of the native HTML table attributes like border</p>
+</li>
+<li>
+<p>Improved JSP tags composition, allowing e.g. to nest Dandelion-Datatables and JSTL tags.</p>
+</li>
+<li>
+<p>Added support for runtime expressions in all attributes of the JSP taglib</p>
+</li>
+<li>
+<p>Removed the <code>labels</code> table attribute in favour of full Java-based i18n</p>
+</li>
+<li>
+<p>New <code>sortType</code> column attribute, allowing you to apply different sorting function in columns</p>
+</li>
+<li>
+<p>New <code>url</code> export attribute, allowing you to export a table using a custom URL.</p>
+</li>
+<li>
+<p>New <code>method</code> export attribute, allowing you make the call to the export URL using the HTTP method you set</p>
+</li>
+<li>
+<p>New <code>filterPlaceholder</code> table attribute, allowing you change the default filtering placeholder (tfoot) for all</p>
+</li>
+<li>
+<p>New <code>ext</code> table attribute, allowing you activate multiple custom extensions</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="thymeleaf-implementation">Thymeleaf implementation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;script&gt;</code> and <code>&lt;link&gt;</code> generation is now optimized using Thymeleaf</p>
+</li>
+<li>
+<p>Moved all previous export attributes from the <code>&lt;tbody&gt;</code> tag to the <code>&lt;thead&gt;</code> tag</p>
+</li>
+<li>
+<p>Removed the <code>dt:labels</code> table attribute in favour of full Java-based i18n</p>
+</li>
+<li>
+<p>New `dt:sortType %} th attribute, allowing you to apply different sorting function in columns</p>
+</li>
+<li>
+<p>New <code>dt:csv:url</code>, <code>dt:xml:url</code>, <code>dt:pdf:url</code>, <code>dt:xls:url</code> and <code>dt:xlsx:url</code> thead attributes, allowing you to export a table using a custom URL</p>
+</li>
+<li>
+<p>New <code>dt:csv:method</code>, <code>dt:xml:method</code>, <code>dt:pdf:method</code>, <code>dt:xls:method</code> and <code>dt:xlsx:method</code> thead attributes, allowing you make the call to the export URL using the HTTP method you set</p>
+</li>
+<li>
+<p>New <code>dt:ext</code> table attribute, allowing you activate multiple custom extensions<br>
+&lt;/ul&gt;</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spring3-extra">Spring3 extra</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Spring dependencies are now marked as provided</p>
+</li>
+<li>
+<p>Added ready-to-use <code>SpringLocaleResolver</code> and <code>SpringMessageResolver</code> to connect Dandelion-Datatables to the Spring i18n mechanism</p>
+</li>
+<li>
+<p>Added <code>DatatablesCriteriasMethodArgumentResolver</code> allowing you to resolve a method argument of type <code>DatatablesCriterias</code> annotated with <code>DatatablesParams</code> (compatible with Spring 3.1+)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="export-itext-extra">Export iText extra</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The PdfExport now implements the new <code>DatatablesExport</code> interface</p>
+</li>
+<li>
+<p>A default title is now always added</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="export-poi-extra">Export POI extra</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The XlsExport now implements the new <code>DatatablesExport</code> interface</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="export-poi-ooxml-extra">Export POI-OOXML extra</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The XlsxExport now implements the new <code>DatatablesExport</code> interface</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="servlet2-extra">Servlet2 extra</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>There&#8217;s no distinction anymore between binary and text export. All exports are considered as binary.</p>
+</li>
+<li>
+<p>The name of the export file is now based on the corresponding ExportConf instance</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="closed-issues">Closed issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/190">#190</a>: Thymeleaf AJAX handling of URLs ending with json</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/188">#188</a>: IOException when using the itext module and an empty table</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/183">#183</a>: Improve dependency management</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/181">#181</a>: Improve Javadoc for the Spring DatatablesCriteriasResolver</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/180">#180</a>: Improve DatatablesCriterias#getFromRequest method</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/178">#178</a>: Erroneous regex match in Utils.java</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/177">#177</a>: Attributes duplicated in dandelion-datatables.tld</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/176">#176</a>: datatables-spring3 criteria resolver does not work with spring 3.1+ if using RequestMappingHandlerMethodAdapter</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/175">#175</a>: Bug when displaying native tables and tables with Dandelion-Datatables on the same page</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/172">#172</a>: Add Tag support for EL expressions at attribute&#8217;s values</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/170">#170</a>: Customize the values used in the filtering combo box</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/169">#169</a>: CDN should be entirely configurable through configuration</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/166">#166</a>: StringIndexOutOfBoundsException in StandardConfigurationLoader</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/165">#165</a>: ConfigurationStore.getPrototype() fails with "global" group</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/164">#164</a>: Replace getParent() by findAncestorWithClass() method</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/163">#163</a>: StandardConfigurationLoader doesn&#8217;t resolve 'global' group</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/159">#159</a>: dandelion_dataTables_export layer is inside dataTables_scrollBody layer</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/158">#158</a>: Reduce dependencies using home made utility methods</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/157">#157</a>: Improve export when using DOM sources</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/156">#156</a>: Optimize link and script tags positions</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/154">#154</a>: displayLength attribute does not accept expressions</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/151">#151</a>: Fix issue with repeated content when using the ColumnHead tag</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/144">#144</a>: Remove the Logback dependency from datatables-jsp and datatables-thymeleaf</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/143">#143</a>: Bug serverside processing [Thymeleaf]</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/142">#142</a>: Add support for more placeholders when using the filtering feature</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/141">#141</a>: Make the table&#8217;s footer optional when using custom filtering form</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/139">#139</a>: Add support for global configuration for all tables</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/137">#137</a>: dt:filterType="'select'" not working with ajaxsource</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/134">#134</a>: Add an extension point allowing users to write and activate their own extensions</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/120">#120</a>: Add support for horizontal scrolling</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/106">#106</a>: Add the export feature using AJAX sources</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/83">#83</a>: Add new FilterTypes in column filtering</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/79">#79</a>: Improve sorting</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/47">#47</a>: ExportLink not displayed when paging, filtering or info are disabled</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/30">#30</a>: Improve i18n support</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion-datatables/issues/27">#27</a>: Add support for more native HTML attributes</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+  <footer class="footer area-footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-9">
+            
+            <div class="row">
+               <div class="col-md-4">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="fa fa-github"></i> GitHub</a></li>
+                     <li><a href="/team"><i class="fa fa-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="fa fa-road"></i> Roadmap</a></li>
+                     <li><a href="/faq"> <i class="fa fa-book"></i> FAQ</a></li>
+                     <li><a href="/acknowledgements/"><i class="fa fa-info-circle"></i> Acknowledgements</a></li>
+                     <li><a href="/history"><i class="fa fa-history"></i> History</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-puzzle-piece"></i> Components</h3>
+                  <ul>
+                     <li><a href="/components/core">Dandelion-Core</a></li>
+                     <li><a href="/components/datatables">Dandelion-Datatables</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-beer"></i> Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="fa fa-comment-o"></i> Blog</a></li>
+                     <li><a href="http://dandelion.48353.n6.nabble.com/"><i class="fa fa-comments-o"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="fa fa-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="col-md-3">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:5px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <a href="https://www.cloudbees.com"><img src="/assets/images/logo_cloudbees.png" /></a>
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+</body>
+</html>

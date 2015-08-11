@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dandelion Project</title>
+  <meta name="description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments. It helps to manipulate the web assets (JS, CSS) in different ways: assets organization in a bundle graph and classical optimizations like minification, compression or caching. It also facilitates the integration of powerful JavaScript libraries thanks to a set of extensible components.
+">
+
+  <link rel="canonical" href="http://dandelion.github.io/faq/">
+  <link rel="alternate" type="application/rss+xml" title="Dandelion Project" href="http://dandelion.github.io/feed.xml" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400italic" type="text/css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/fontcustom.css">
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css">
+  <link rel="stylesheet" href="/assets/css/coderay.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+  <link rel="shortcut icon" href="/assets/images/dandelion_square.png">  
+  <script>
+   var _gaq = _gaq || [];
+   _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+   _gaq.push([ '_trackPageview' ]);
+   (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+   })();
+   </script>
+   <style>
+      .conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+      .conum[data-value] *{color:#fff!important}
+      .conum[data-value]+b{display:none}
+      .conum[data-value]:after{content:attr(data-value)}
+      pre .conum[data-value]{position:relative;top:-.125em}
+      b.conum *{color:inherit!important}
+      .conum:not([data-value]):empty{display:none}
+      .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+      .admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:15px;font-style:italic}
+   </style>
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:site" content="@dandelion_proj">
+   <meta name="twitter:creator" content="@dandelion_proj">
+   <meta name="twitter:url" content="http://dandelion.github.io">
+   <meta name="twitter:title" content="Dandelion Project">
+   <meta name="twitter:description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments">
+   <meta name="twitter:image" content="http://dandelion.github.com/assets/images/dandelion_square.png">
+</head> 
+
+<body>
+  <!-- Static navbar -->
+<nav class="navbar navbar-dandelion navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+          class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><span style="font-size:30px;">Dandelion</span></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a href="/components">Components</a></li>
+        <li ><a href="/blog">Blog</a></li>
+        <li ><a href="/support.html">Support</a></li>
+        <li><a href="/search.html"><i class="fa fa-search"></i></a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+
+  <div class="container" style="min-height:750px;"><div class="row margin-top-20">
+   <div class="span12">
+      <h2>Frequently Asked Questions</h2>
+   </div>      
+</div>
+      
+<div class="row">
+   <div class="span12">
+      <h3 class="section-title">Questions</h3>
+      <p>
+         <ul>
+            <li>
+               <h4>The Dandelion project</h4>
+               <ul>
+                  <li><a href="#dandelion">Where does Dandelion come from?</a></li>
+                  <li><a href="#contributing">How can I contribute to Dandelion?</a></li>
+                  <li><a href="#keepupdated">How can I keep updated about Dandelion and its components?</a></li>
+                  <li><a href="#productionready">Is it stable? Can it be considered production-ready?</a></li>
+                  <li><a href="#snapshot">How to use a SNAPSHOT version of a Dandelion module?</a></li>
+               </ul>
+            </li>
+            <li>
+               <h4>Dandelion Datatables</h4>
+               <ul>
+                  <li><a href="#domajax">Can I use the exact same configuration with DOM and AJAX sources?</a></li>
+               </ul>
+            </li>
+         </ul>
+      </p>
+   </div>
+</div>
+      
+      <div class="row">
+         <div class="span12">
+            <section>
+               <h3 id="dandelion" class="section-title">Where does Dandelion come from?</h3>
+               <p>
+                  Dandelion is an after-dinner project which comes first from <a
+                     href="http://tduchateau.github.com/DataTables-taglib/">Datatables-taglib</a>, a first attempt to write a JSP taglib allowing to generate HTML tables improved by <a href="http://datatables.net/">DataTables</a>.
+               </p>
+               <p>
+                  Then the project evolved to become <a href="https://github.com/datatables4j">DataTables4j</a>, a second attempt to write a more featured library, but this time almost capable of
+                  competing with <a href="http://www.displaytag.org/">Displaytag</a>, the reference for displaying HTML tables in Java-based web applications.
+               </p>
+               <p> 
+                  The project has continued to evolve but with the a recurring observation: the web asset management (js, css, ...) can often become a hell of a job in web apps. That's why we took those 3 decisions:
+                  <ul>
+                     <li>try to create something capable of simplifying the web asset management - what a programme! :-)</li>
+                     <li>enlarge the area, from HTML tables to other components or even to wider issues still related to the web environment, like web analytics</li>
+                     <li>find a new name for the project, something's more generic, allowing us to start developing a real framework. After lengthy and not always constructive discussions, we found it: <strong>Dandelion</strong> :-)</li>                  
+                  </ul>
+               </p>
+            </section>
+            
+            <section>
+               <h3 id="contributing" class="section-title">How can I contribute to Dandelion?</h3>
+               <p>
+                  In many ways actually:
+                  <ul>
+                     <li>feel free to get in touch with the <a href="/team">team</a> to propose your idea(s), e.g. using the <a href="http://dandelion.48353.n6.nabble.com/">forum</a></li>
+                     <li>you can make pull requests but before:
+                        <ul>
+                           <li>please contact the team before, in order to guide you through the process</li>
+                           <li>please read and accept the <a href="https://github.com/dandelion/dandelion/blob/master/CONTRIBUTING.md">terms of contributing</a></li>
+                        </ul>
+                     </li>
+                     <li>you can write articles, tutorials, blog posts, reviews or anything else about Dandelion</li>
+                     <li>you can promote Dandelion in your company or among your (nerdy) friends/colleagues</li>
+                     <li>you can follow us on <a href="https://twitter.com/dandelion_proj">Twitter</a></li>
+                     <li>French people are known for their catastrophic skills in foreign languages so you can also help us fixing typos in the whole documentation :-)</li>
+                  </ul>
+               </p>
+            </section>
+            
+            <section>
+               <h3 id="keepupdated" class="section-title">How can I keep updated about Dandelion and its components?</h3>
+               <p>
+                  You have several options:
+               </p>
+               <ul>
+                  <li>you can follow us on <a href="https://twitter.com/dandelion_proj">Twitter</a></li>
+                  <li>you can suscribe to the <a href="http://dandelion-forum.48353.x6.nabble.com/General-news-and-announcements-f2.html">General news and announcements section</a> of our forum</li>
+               </ul>
+            </section>
+            
+            <section>
+               <h3 id="productionready" class="section-title">Is it stable? Can it be considered production-ready?</h3>
+               <p>
+                  Not yet. You may consider Dandelion (and any of its component) as production-ready as soon as a v1.0.0 is released.
+               </p>
+            </section>
+            
+            <section>
+               <h3 id="snapshot" class="section-title">How to use a SNAPSHOT version of a Dandelion module?</h3>
+               <p>
+                  Whichever module is being developed, a <strong>snapshot release</strong> is always built as soon as a commit is pushed in its GitHub repository. You can of course use it, for testing purposes. It will allow you to try new features or specific bug fixes.
+               </p>
+               <p>
+                  In order to use snapshot releases, you need to add the Sonatype OSS Snapshots repository in your Maven <code>pom.xml</code> file, as follows:
+<pre class="prettyprint">&lt;repositories>
+   &lt;repository>
+      &lt;id>sonatype-nexus-snapshots&lt;/id>
+      &lt;name>Sonatype Nexus Snapshots&lt;/name>
+      &lt;url>https://oss.sonatype.org/content/repositories/snapshots&lt;/url>
+      &lt;snapshots>
+         &lt;enabled>true&lt;/enabled>
+      &lt;/snapshots>
+   &lt;/repository>
+&lt;/repositories></pre>
+               </p>
+               <p>
+                  Also, you will have to update the dependencies. If the version under development is the 0.9.0, you will have to modify the versions like this:
+<pre class="prettyprint">&lt;dependencies>
+   ...
+   &lt;dependency>
+      &lt;groupId>com.github.dandelion&lt;/groupId>
+      &lt;artifactId>datatables-jsp&lt;/artifactId>
+      &lt;version>0.9.0-SNAPSHOT&lt;/version>
+   &lt;/dependency>         
+   &lt;dependency>
+      &lt;groupId>com.github.dandelion&lt;/groupId>
+      &lt;artifactId>datatables-servlet2&lt;/artifactId>
+      &lt;version>0.9.0-SNAPSHOT&lt;/version>
+   &lt;/dependency>
+   ...
+&lt;/dependencies></pre>
+               </p>
+            </section>
+            
+            <section>
+               <h3 id="domajax" class="section-title">Can I use the exact same configuration with DOM and AJAX sources?</h3>
+               <p>
+                  No you can't. With DOM sources (i.e. when you set some
+                  collection in the page scope), the creation of the
+                  <code>table</code>
+                  HTML tag and all its content is entirely managed by
+                  Dandelion-Datatables.
+               </p>
+               <p>Whereas when using AJAX sources, Dandelion-Datatables
+                  is limited to the thead section of the table. The
+                  creation of the tbody section of the table is
+                  delegated to DataTables. 
+               </p>
+               <p>All the tag references display a "Data source
+                  compatibility" column, helping you to choose the right
+                  attribute, depending on the data source you use.</p>
+            </section>
+            
+         </div>
+      </div>
+</div>
+  <footer class="footer area-footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-9">
+            
+            <div class="row">
+               <div class="col-md-4">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="fa fa-github"></i> GitHub</a></li>
+                     <li><a href="/team"><i class="fa fa-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="fa fa-road"></i> Roadmap</a></li>
+                     <li><a href="/faq"> <i class="fa fa-book"></i> FAQ</a></li>
+                     <li><a href="/acknowledgements/"><i class="fa fa-info-circle"></i> Acknowledgements</a></li>
+                     <li><a href="/history"><i class="fa fa-history"></i> History</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-puzzle-piece"></i> Components</h3>
+                  <ul>
+                     <li><a href="/components/core">Dandelion-Core</a></li>
+                     <li><a href="/components/datatables">Dandelion-Datatables</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-beer"></i> Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="fa fa-comment-o"></i> Blog</a></li>
+                     <li><a href="http://dandelion.48353.n6.nabble.com/"><i class="fa fa-comments-o"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="fa fa-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="col-md-3">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:5px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <a href="https://www.cloudbees.com"><img src="/assets/images/logo_cloudbees.png" /></a>
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+</body>
+</html>

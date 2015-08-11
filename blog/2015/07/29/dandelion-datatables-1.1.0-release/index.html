@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dandelion-Datatables 1.1.0 release</title>
+  <meta name="description" content="">
+
+  <link rel="canonical" href="http://dandelion.github.io/blog/2015/07/29/dandelion-datatables-1.1.0-release">
+  <link rel="alternate" type="application/rss+xml" title="Dandelion Project" href="http://dandelion.github.io/feed.xml" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400italic" type="text/css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/fontcustom.css">
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css">
+  <link rel="stylesheet" href="/assets/css/coderay.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+  <link rel="shortcut icon" href="/assets/images/dandelion_square.png">  
+  <script>
+   var _gaq = _gaq || [];
+   _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+   _gaq.push([ '_trackPageview' ]);
+   (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+   })();
+   </script>
+   <style>
+      .conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+      .conum[data-value] *{color:#fff!important}
+      .conum[data-value]+b{display:none}
+      .conum[data-value]:after{content:attr(data-value)}
+      pre .conum[data-value]{position:relative;top:-.125em}
+      b.conum *{color:inherit!important}
+      .conum:not([data-value]):empty{display:none}
+      .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+      .admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:15px;font-style:italic}
+   </style>
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:site" content="@dandelion_proj">
+   <meta name="twitter:creator" content="@dandelion_proj">
+   <meta name="twitter:url" content="http://dandelion.github.io">
+   <meta name="twitter:title" content="Dandelion Project">
+   <meta name="twitter:description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments">
+   <meta name="twitter:image" content="http://dandelion.github.com/assets/images/dandelion_square.png">
+</head> 
+
+<body>
+  <!-- Static navbar -->
+<nav class="navbar navbar-dandelion navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+          class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><span style="font-size:30px;">Dandelion</span></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a href="/components">Components</a></li>
+        <li  class="active"><a href="/blog">Blog</a></li>
+        <li ><a href="/support.html">Support</a></li>
+        <li><a href="/search.html"><i class="fa fa-search"></i></a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+
+  <div class="container">
+    <script type="text/javascript">
+     var addthis_config = {
+        "data_track_addressbar":false,
+        "data_track_clickback":true,
+        "ui_offset_top": 187,
+        "ui_offset_left": 30,
+        "data_ga_tracker": "UA-33818546-8"
+     };
+     var addthis_share = {
+        "url" : "http://dandelion.github.io/blog/2015/07/29/dandelion-datatables-1.1.0-release",
+        "title" : "[Blog] Dandelion-Datatables 1.1.0 release"
+     }  
+  </script>
+  
+  <div class="row margin-top-30">
+    <div class="col-md-12">
+      <header class="post-header">
+        <h1 class="post-title">Dandelion-Datatables 1.1.0 release</h1>
+      </header>
+      <div class="row margin-top-10">
+        <div class="col-md-12">
+           
+          <span class="blog-category"><i class="fa fa-folder-open-o"></i> Release</span>&nbsp;
+          
+          <span class="blog-author"><i class="fa fa-user"></i> Thibault Duchateau</span>
+          <span class="blog-date"><i class="fa fa-calendar-o"></i> 2015-07-29</span>
+        </div>
+        <div class="row margin-top-20">
+          <div class="col-md-12">
+            <section class="margin-top-10"><div class="paragraph margin-top-30">
+<p>Dandelion-Datatables has been released in v1.1.0!</p>
+</div>
+<div class="paragraph">
+<p>This release is mainly focused on the export feature but also fixes performance and security issues. Let&#8217;s review some of the changes.</p>
+</div>
+<div class="sect1">
+<h2 id="export">Export</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some utilities have been added to facilitate controller-based export. You can now make full use of the criteria sent by DataTables when using an AJAX source to build an instance of <code>HtmlTable</code>. See the following example extracted from a Spring <code>@Controller</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@RequestMapping</span>(value = <span class="string"><span class="delimiter">&quot;</span><span class="content">/export</span><span class="delimiter">&quot;</span></span>, produces = <span class="string"><span class="delimiter">&quot;</span><span class="content">text/csv</span><span class="delimiter">&quot;</span></span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> csv(<span class="annotation">@DatatablesParams</span> DatatablesCriterias criterias, HttpServletRequest request,
+
+  <span class="comment">// Get data to export</span>
+  <span class="predefined-type">List</span>&lt;Person&gt; persons = personService.findPersonsWithDatatablesCriterias(criterias).getRows();
+
+  <span class="comment">// Build the export configuration</span>
+  ExportConf exportCsvConf = <span class="keyword">new</span> ExportConf.Builder(ReservedFormat.CSV)
+        .header(<span class="predefined-constant">true</span>)
+        .exportClass(<span class="keyword">new</span> CsvExport())
+        .build();
+
+  <span class="comment">// Build an instance of table to pass to the export feature</span>
+  HtmlTable table = <span class="keyword">new</span> HtmlTableBuilder&lt;Person&gt;().newBuilder(<span class="string"><span class="delimiter">&quot;</span><span class="content">tableId</span><span class="delimiter">&quot;</span></span>, persons, request, exportCsvConf)
+    .column().fillFromCriteria(criterias).title(<span class="string"><span class="delimiter">&quot;</span><span class="content">Id</span><span class="delimiter">&quot;</span></span>) <i class="conum" data-value="1"></i><b>(1)</b>
+    .column().fillFromCriteria(criterias).title(<span class="string"><span class="delimiter">&quot;</span><span class="content">Firtname</span><span class="delimiter">&quot;</span></span>)
+    .column().fillFromCriteria(criterias).title(<span class="string"><span class="delimiter">&quot;</span><span class="content">Lastname</span><span class="delimiter">&quot;</span></span>)
+    .column().fillFromCriteria(criterias).title(<span class="string"><span class="delimiter">&quot;</span><span class="content">City</span><span class="delimiter">&quot;</span></span>)
+    .column().fillFromCriteria(criterias).title(<span class="string"><span class="delimiter">&quot;</span><span class="content">Mail</span><span class="delimiter">&quot;</span></span>)
+    .column().fillFromCriteria(criterias, <span class="string"><span class="delimiter">&quot;</span><span class="content">{0,date,dd-MM-yyyy}</span><span class="delimiter">&quot;</span></span>).title(<span class="string"><span class="delimiter">&quot;</span><span class="content">BirthDate</span><span class="delimiter">&quot;</span></span>) <i class="conum" data-value="2"></i><b>(2)</b>
+    .build();
+
+  <span class="comment">// Render exported data in the browser</span>
+  ExportUtils.renderExport(table, exportCsvConf, response);
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>No need to retype the property to extract from the passed collection</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>You can still perform custom formatting when needed</td>
+</tr>
+</table>
+</div>
+<div class="paragraph margin-top-15">
+<p>If you need raw export, a new auto mode has been added as well.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@RequestMapping</span>(value = <span class="string"><span class="delimiter">&quot;</span><span class="content">/export</span><span class="delimiter">&quot;</span></span>, produces = <span class="string"><span class="delimiter">&quot;</span><span class="content">text/csv</span><span class="delimiter">&quot;</span></span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> csv(<span class="annotation">@DatatablesParams</span> DatatablesCriterias criterias, HttpServletRequest request,
+
+  ...
+
+  <span class="comment">// Build an instance of table to pass to the export feature</span>
+  HtmlTable table = <span class="keyword">new</span> HtmlTableBuilder&lt;Person&gt;().newBuilder(<span class="string"><span class="delimiter">&quot;</span><span class="content">tableId</span><span class="delimiter">&quot;</span></span>, persons, request, exportCsvConf)
+    .auto(criterias) <i class="conum" data-value="1"></i><b>(1)</b>
+    .build();
+
+  ...
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>auto()</code> method will automatically configure column as they are defined client-side. In return, no formatting is possible.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="performance">Performance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nasty concurrency issues have been detected under heavy load. After hours of struggling, <a href="https://twitter.com/rlespinasse">Romain</a> and I have finally defeated them. If you are interested, more details are available in the original <a href="http://dandelion-forum.48353.x6.nabble.com/Concurrency-problems-under-heavy-load-td1947.html">discussion</a>.</p>
+</div>
+<div class="paragraph">
+<p>As a consequence, lots of performance tests have been performed and some sample applications now contain <a href="http://jmeter.apache.org/">JMeter</a> test plans.</p>
+</div>
+<div class="paragraph margin-top-20">
+<p>The full change logs is available <a href="/components/datatables/1.1.0/changelog/">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>Happy coding!</p>
+</div>
+</div>
+</div></section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row margin-top-20">
+    <div class="col-md-12">
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+         <a class="addthis_button_twitter"></a>
+         <a class="addthis_button_google_plusone_share"></a>
+         <a class="addthis_button_linkedin"></a>
+         <a class="addthis_button_facebook"></a>
+         <a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+      </div>
+      <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-516d4b686f218f23"></script>
+      <!-- AddThis Button END -->
+  
+      <div id="disqus_thread" style="margin-top:15px;"></div>
+      <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'dandelionproject'; // required: replace example with your forum shortname
+      
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </div>
+  </div>
+  <footer class="footer area-footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-9">
+            
+            <div class="row">
+               <div class="col-md-4">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="fa fa-github"></i> GitHub</a></li>
+                     <li><a href="/team"><i class="fa fa-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="fa fa-road"></i> Roadmap</a></li>
+                     <li><a href="/faq"> <i class="fa fa-book"></i> FAQ</a></li>
+                     <li><a href="/acknowledgements/"><i class="fa fa-info-circle"></i> Acknowledgements</a></li>
+                     <li><a href="/history"><i class="fa fa-history"></i> History</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-puzzle-piece"></i> Components</h3>
+                  <ul>
+                     <li><a href="/components/core">Dandelion-Core</a></li>
+                     <li><a href="/components/datatables">Dandelion-Datatables</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-beer"></i> Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="fa fa-comment-o"></i> Blog</a></li>
+                     <li><a href="http://dandelion.48353.n6.nabble.com/"><i class="fa fa-comments-o"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="fa fa-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="col-md-3">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:5px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <a href="https://www.cloudbees.com"><img src="/assets/images/logo_cloudbees.png" /></a>
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+</body>
+</html>

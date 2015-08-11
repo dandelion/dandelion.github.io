@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dandelion Project</title>
+  <meta name="description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments. It helps to manipulate the web assets (JS, CSS) in different ways: assets organization in a bundle graph and classical optimizations like minification, compression or caching. It also facilitates the integration of powerful JavaScript libraries thanks to a set of extensible components.
+">
+
+  <link rel="canonical" href="http://dandelion.github.io/components/core/1.0.0/changelog/">
+  <link rel="alternate" type="application/rss+xml" title="Dandelion Project" href="http://dandelion.github.io/feed.xml" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400italic" type="text/css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/fontcustom.css">
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css">
+  <link rel="stylesheet" href="/assets/css/coderay.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/dandelion_square.png">
+  <link rel="apple-touch-icon-precomposed" href="/assets/images/dandelion_square.png">
+  <link rel="shortcut icon" href="/assets/images/dandelion_square.png">  
+  <script>
+   var _gaq = _gaq || [];
+   _gaq.push([ '_setAccount', 'UA-33818546-8' ]);
+   _gaq.push([ '_trackPageview' ]);
+   (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+   })();
+   </script>
+   <style>
+      .conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+      .conum[data-value] *{color:#fff!important}
+      .conum[data-value]+b{display:none}
+      .conum[data-value]:after{content:attr(data-value)}
+      pre .conum[data-value]{position:relative;top:-.125em}
+      b.conum *{color:inherit!important}
+      .conum:not([data-value]):empty{display:none}
+      .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+      .admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:15px;font-style:italic}
+   </style>
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:site" content="@dandelion_proj">
+   <meta name="twitter:creator" content="@dandelion_proj">
+   <meta name="twitter:url" content="http://dandelion.github.io">
+   <meta name="twitter:title" content="Dandelion Project">
+   <meta name="twitter:description" content="Dandelion is a free and Open Source Java framework aimed at making web development simpler in JVM-based environments">
+   <meta name="twitter:image" content="http://dandelion.github.com/assets/images/dandelion_square.png">
+</head> 
+
+<body>
+  <!-- Static navbar -->
+<nav class="navbar navbar-dandelion navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+          class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><span style="font-size:30px;">Dandelion</span></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li  class="active"><a href="/components">Components</a></li>
+        <li ><a href="/blog">Blog</a></li>
+        <li ><a href="/support.html">Support</a></li>
+        <li><a href="/search.html"><i class="fa fa-search"></i></a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+
+  <div class="container" style="min-height:750px;"><div class="sect1 margin-top-30">
+<h2 id="changelog-of-dandelion-core-v1-0-0">Changelog of Dandelion-Core v1.0.0</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="breaking-change">Breaking change</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Servlet API v3.x is now required</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="core">Core</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Improved the bundle declaration mechanism</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The bundle name is now optional. By default, the name of the file (without extension) will be used as a bundle name</p>
+</li>
+<li>
+<p>Both asset type and name are now optional. They are deducted from the first location found</p>
+</li>
+<li>
+<p>Added lots of new checks for consistency of bundles</p>
+</li>
+<li>
+<p>Added a new <code>bundle.location</code> config option, mainly used for testing purpose, allowing to tell bundle loaders to load JSON files from a specific folder</p>
+</li>
+<li>
+<p>Generally speaking, formatting and consistency errors are now buffered before being flushed in a DandelionException.</p>
+</li>
+<li>
+<p>Bundle definitions (whether XML or JSON) are now checked just after they are parsed (consistency, required configuration)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Added support for profiles</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The StandardConfigurationLoader has been updated in order to be able to load different properties files depending on the active profile</p>
+</li>
+<li>
+<p>A profile is activated using the <code>-Ddandelion.profile.active</code> system property</p>
+</li>
+<li>
+<p>Some reserved words are used to load preconfigured sets of configurations</p>
+<div class="ulist">
+<ul>
+<li>
+<p>"", "dev", "development" &#8658; each DandelionConfig entry is configured using the default dev value</p>
+</li>
+<li>
+<p>"prod", "production" &#8658; each DandelionConfig entry is configured using the default prod value</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Any custom profile name can be used. All options that are not specified in the corresponding properties file will default to dev values</p>
+</li>
+<li>
+<p>Plenty of configuration points have been renamed or added (toolAssetPrettyPrintingEnabled, toolBundleGraphEnabled, assetCachingEnabled, &#8230;&#8203;) for more consistency</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Moved i18n-related classes from dandelion-datatables to dandelion-core in order to allow other components to use the same mechanism for locale and messages resolution</p>
+</li>
+<li>
+<p>Refactored resource scanning</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added support for JBoss VFS2/VFS3 ensuring compatibility with JBoss AS 5+ / WildFly servers</p>
+</li>
+<li>
+<p>Added support for Websphere Application Server</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Added initial support for asset automatic versioning</p>
+<div class="ulist">
+<ul>
+<li>
+<p>An AssetVersioningStrategy can be configured within the configuration</p>
+</li>
+<li>
+<p>2 built-in implementations are provided: ContentAssetVersioningStrategy (for fingerprinting) and FixedAssetVersioningStrategy</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The FixedAssetVersioningStrategy provides some built-in FixedVersionTypes: string and date</p>
+</li>
+<li>
+<p>New configuration options have been added:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>asset.versioning.mode</code> ASSET_VERSIONING to enable automatic asset versioning</p>
+</li>
+<li>
+<p><code>asset.versioning.strategy</code>:to select a particular strategy</p>
+</li>
+<li>
+<p><code>asset.fixed.version.type</code>: to select the FixedVersionType if the FixedAssetVersioningStrategy is selected</p>
+</li>
+<li>
+<p><code>asset.fixed.version.value</code>: to pass a value to the NUMBER and DATE version types</p>
+</li>
+<li>
+<p><code>asset.fixed.version.datepattern</code> to configure the version if the version type is set to DATE</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Whatever strategy is selected, all vendor assets are left untouched. All other assets are impacted by the versioning.</p>
+</li>
+<li>
+<p>(Beta) Added initial support for a new XML representation of asset bundles</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added new strategy allowing to load XML file using a validating SAX parser</p>
+</li>
+<li>
+<p>All loaders have been updated to be able to apply 2 loading strategy sequentially : first by scanning for bundles in JSON, then XML</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Added support for custom URL pattern thanks to a new <code>asset.url.pattern</code> configuration option</p>
+</li>
+<li>
+<p>Added new request handler mechanism, bringing a better separation of concern in the DandelionFilter</p>
+<div class="ulist">
+<ul>
+<li>
+<p>New handlers are now in charge of a specific task: injecting the requested assets (main feature), displaying the debugger, reloading the bundles, clear the cache store, clear the asset storage, etc&#8230;&#8203;</p>
+</li>
+<li>
+<p>All handlers are assembled, using their rank, into two chains: a pre-handler chain (in charge of pre-processing requests) and a post-handler chain (in charge of post-processing responses)</p>
+</li>
+<li>
+<p>Added support for GZIP compression via a new request handler. Enabled thanks to a new <code>tool.gzip</code> configuration option. By default, the GZIP compression is done on several text-based mime types: text/html, text/css, application/x-javascript, application/javascript, text/javascript, text/plain, text/xml, application/xhtml+xml, image/svg+xml</p>
+</li>
+<li>
+<p>Each handler can decide to stop the chain (usage example: when the value of the If-None-Match header equals the value of the ETag header: no need to go further)</p>
+</li>
+<li>
+<p>Custom handlers can be added thanks to the new SPI: <code>com.github.dandelion.core.web.handler.RequestHandler</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>New <code>encoding</code> option, which is used to encode any content processed by the DandelionFilter</p>
+</li>
+<li>
+<p>Removed the <code>asset.processing.encoding</code> option in favour of the avobe <code>encoding</code></p>
+</li>
+<li>
+<p>New debugger</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The debugger has been fully refactored and now contains multiple pages (asset, options)</p>
+</li>
+<li>
+<p>Old graph viewer (and all related stuff) have been removed</p>
+</li>
+<li>
+<p>The bundle graph viewer is now accessible with the "ddl-debug" URL parameter (previously "showGraph")</p>
+</li>
+<li>
+<p>The bundle reloading is now performed with the "ddl-reload" URL parameter (previously "bundleReload")</p>
+</li>
+<li>
+<p>Added new debug page allowing to visualize the asset storage, the caching system, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Improved caching policy</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cache headers are now set by a dedicated request handler which is part of the filter chain</p>
+</li>
+<li>
+<p>Asset caching and gzipping disabled in dev profile</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Vendor assets was processed, thus leading to issues</p>
+</li>
+<li>
+<p>Removed dandelion-yuicompressor extra. It was providing redundant processors compared to CssMin and JsMin ones</p>
+</li>
+<li>
+<p>Filtering of assets made in the AssetQuery has been improved (performance)</p>
+</li>
+<li>
+<p>Added a new <code>asset.storage</code> configuration option allowing to select the implementation for the asset storage</p>
+</li>
+<li>
+<p>Renamed <code>asset.caching</code> to <code>cache</code></p>
+</li>
+<li>
+<p>Removed <code>cache.asset.max.size</code></p>
+</li>
+<li>
+<p>Renamed <code>cache.request.max.size</code> to <code>cache_max_size</code></p>
+</li>
+<li>
+<p>Removed <code>cache.manager.name</code> config option, too specialized for Ehcache</p>
+</li>
+<li>
+<p>Added support for IE conditional comments via a new <code>condition</code> attribute in bundle definitions</p>
+</li>
+<li>
+<p>New API intended to ease asset generation</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Make a mecanism of Asset generator based on a AssetContent and a AssetContentGenerator.</p>
+</li>
+<li>
+<p>Built-in generator</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Javascript content generator</p>
+</li>
+<li>
+<p>JQuery content generator (with placeholder)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The generated Javascript code is now pretty printed by default when in dev profile, using JS Beautifier</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>New reporting tool, composed of:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>a new debug page that displays all alerts for the current request and suggestions if applicable</p>
+</li>
+<li>
+<p>a new post-filtering handler which performs the check for each request and can report in multiple ways</p>
+</li>
+<li>
+<p>Added a new <code>tool.alert.reporting</code> config option in order to enable/disable alert reporting</p>
+</li>
+<li>
+<p>Reporting type can be configured thanks to a new <code>tool.alert.reporting.mode</code> config option (console, notification, none or all)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Standalone components</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added a new <code>components.standalone</code> config option used to mark components as standalone. In this case, the corresponding loader will only scan for regular bundles (not vendor ones)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="thymeleaf">Thymeleaf</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Fixed issue with HTML5-friendly attributes</p>
+</li>
+<li>
+<p>Add support for Thymeleaf expression processing in Javascript assets</p>
+<div class="ulist">
+<ul>
+<li>
+<p>JavaScript processing is made using customized Thymeleaf template engine</p>
+</li>
+<li>
+<p>Added a new template mode "DANDELION-JS" (and all related classes: template resolver, template parser, template writer) allowing to process Javascript assets with Thymeleaf expressions</p>
+</li>
+<li>
+<p>Only "user assets" are concerned, not vendor ones</p>
+</li>
+<li>
+<p>For all "user assets", the final location now contains a request key (also based on a MD5 hash) as follows: "/servletUrlPattern/requestKey/cacheKey/assetType/assetName-assetVersion.assetType" (should be cleaned for CSS)</p>
+</li>
+<li>
+<p>Only for concerned "user-assets" (JS), server &amp; browser caching are disabled thanks to HTTP headers</p>
+</li>
+<li>
+<p>All attributes from the original request (the one which serves the view) are wrapped in a new RequestData object and stored in a basic cache, whose data expire after 30s from their instanciation</p>
+</li>
+<li>
+<p>Added a new <code>asset.js.processing</code> config option to enable/disable Thymeleaf processing of external js assets (enabled by default)</p>
+</li>
+<li>
+<p>Added new handlers in charge of feeding/clearing session with/from flash data</p>
+</li>
+<li>
+<p>Asset final locations can now contain one more MD5 hash corresponding to the request key, used to lookup in the attribute stored in session</p>
+</li>
+<li>
+<p>The cache is only initialized if Thymeleaf is present in the classpath, in which case JavaScript assets may be processed</p>
+</li>
+<li>
+<p>The cache is initialized with a max capacity of 100 entries</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="closed-issues">Closed issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/59">#59</a>: Fix issue with JavaScript processing when mime type also contains a charset</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/58">#58</a>: Issue with webapp locations with port forwarding</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/57">#57</a>: Add support for Thymeleaf expression processing in Javascript assets</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/56">#56</a>: Avoid ugly exceptions when loading empty assets with content-based versioning strategy</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/54">#54</a>: Fix attribute name in BundleSaxHandler</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/51">#51</a>: Bundle loader deactivation</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/48">#48</a>: 0.11.0 - <code>ddl-debug</code> links uses absolute root URL</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/47">#47</a>: 0.11.0 - CacheManager#getContent(cacheKey) in DandelionServlet can return null</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/46">#46</a>: Add an error reporting tool</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/41">#41</a>: Improve the debugger</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/40">#40</a>: Add support for automatic versioning</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/39">#39</a>: The Dandelion dialect breaks built-in support for HTML5-friendly attributes</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/38">#38</a>: Remove the name attribute when writing bundles</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/37">#37</a>: Remove the type attribute when writing bundles</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/36">#36</a>: Add new Dandelion profiles</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/33">#33</a>: Add an extension point allowing to configure the conditions under which the filter can apply</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/30">#30</a>: Custom DANDELION_ASSETS_URL_PATTERN</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/25">#25</a>: New XML representation for asset bundles</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/23">#23</a>: Add support for vfs/vfszip protocols</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/21">#21</a>: Improve the caching policy</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/20">#20</a>: Add support for conditionnal comments</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/19">#19</a>: Relative URLs in CSS when using Webjar/JarLocators with the Servlet 2.x API</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/11">#11</a>: Error reporting at startup is too aggressive</p>
+</li>
+<li>
+<p><a href="https://github.com/dandelion/dandelion/issues/10">#10</a>: Add support for GZIP compression</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+  <footer class="footer area-footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-9">
+            
+            <div class="row">
+               <div class="col-md-4">
+                  <h3>Dandelion</h3>
+                  <ul>
+                     <li><a href="https://github.com/dandelion"><i class="fa fa-github"></i> GitHub</a></li>
+                     <li><a href="/team"><i class="fa fa-group"></i> Team</a></li>
+                     <li><a href="/roadmap"><i class="fa fa-road"></i> Roadmap</a></li>
+                     <li><a href="/faq"> <i class="fa fa-book"></i> FAQ</a></li>
+                     <li><a href="/acknowledgements/"><i class="fa fa-info-circle"></i> Acknowledgements</a></li>
+                     <li><a href="/history"><i class="fa fa-history"></i> History</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-puzzle-piece"></i> Components</h3>
+                  <ul>
+                     <li><a href="/components/core">Dandelion-Core</a></li>
+                     <li><a href="/components/datatables">Dandelion-Datatables</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h3><i class="fa fa-beer"></i> Community</h3>
+                  <ul>
+                     <li><a href="/blog"><i class="fa fa-comment-o"></i> Blog</a></li>
+                     <li><a href="http://dandelion.48353.n6.nabble.com/"><i class="fa fa-comments-o"></i> Forum</a></li>
+                     <li><a href="https://twitter.com/dandelion_proj"><i class="fa fa-twitter"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+         <div class="col-md-3">
+            <p class="text-right" style="margin-top:10px;">
+               <a href="/"><img src="/assets/images/github-dandelion-logo.png" alt="dandelion logo" style="margin-bottom:10px;"/></a>
+               Copyright © The <a href="/team">Dandelion Team</a>
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:10px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <strong>Dandelion</strong> and all its components are released under the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a> licence. More information <a href="http://www.tldrlegal.com/license/bsd-3-clause-license-(revised)">here</a>.
+            </p>
+         </div>
+      </div>
+      <div class="row" style="padding-top:5px;">
+         <div class="col-md-12">
+            <p class="text-center">
+               <a href="https://www.cloudbees.com"><img src="/assets/images/logo_cloudbees.png" /></a>
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+</body>
+</html>
